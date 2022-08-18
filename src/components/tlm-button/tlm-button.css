@@ -10,6 +10,6 @@ button {
   background: #a100a1;
   transition: 0.2s;
 }
-button:hover{
+button:hover {
   background: #c500c5;
 }

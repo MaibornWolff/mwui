@@ -18,5 +18,4 @@ export class TlmButton {
       </button>
     );
   }
-
 }

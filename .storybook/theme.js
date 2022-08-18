@@ -1,12 +1,12 @@
-import { create } from "@storybook/theming";
-import logo from "./public/mwui_logo.svg";
+import { create } from '@storybook/theming';
+import logo from './public/mwui_logo.svg';
 
 export default create({
-  base: "light",
-  brandTitle: "MWUI",
+  base: 'light',
+  brandTitle: 'MWUI',
   // brandUrl: "https://example.com",
   brandImage: logo,
-  brandTarget: "_self",
+  brandTarget: '_self',
 
   // colorPrimary: 'hotpink',
   // colorSecondary: 'deepskyblue',

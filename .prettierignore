@@ -1,0 +1,11 @@
+dist/
+www/
+loader/
+.stencil/
+.idea/
+.vscode/
+.sass-cache/
+.versions/
+node_modules/
+$RECYCLE.BIN/
+docs/

@@ -1,9 +1,6 @@
 # tlm-button
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -11,7 +8,6 @@
 | ----------------------- | ----------- | ------------------------------ | -------- | ----------- |
 | `buttonId` _(required)_ | `button-id` | Unique id for each tlm-button. | `string` | `undefined` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

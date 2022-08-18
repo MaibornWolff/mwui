@@ -9,15 +9,16 @@ A web component library which uses Figma's [token plugin](https://www.figma.com/
 ### Creation
 
 To create new components, run:
+
 ```bash
 npm run generate
 ```
 
 Alternatively you can manually create components by adding them to `src/components`.
 
-*NOT FINAL* Component names are written in dash-case and start with `tlm-` (e.g. `tlm-button`).
+_NOT FINAL_ Component names are written in dash-case and start with `tlm-` (e.g. `tlm-button`).
 
-___
+---
 
 ### Structure
 
@@ -30,7 +31,7 @@ Operators such as `!` or `?` can be used to mark a prop as optional or required.
 The HTML structure of the component is defined within the `render()` function. You can define `slots`
 which can be inserted into the component.
 
-___
+---
 
 ### Testing
 
@@ -42,11 +43,11 @@ npm test
 
 Check stencil docs [here](https://stenciljs.com/docs/my-first-component) for additional help.
 
-___
+---
 
 ## Publishing and usage in frameworks
 
-*NOT YET PUBLISHED*
+_NOT YET PUBLISHED_
 
 ### Convert to package
 
@@ -63,7 +64,7 @@ npm version major | minor | patch
 npm publish
 ```
 
-___
+---
 
 ### Import into framework
 
@@ -82,7 +83,7 @@ defineCustomElements(window);
 
 All available components should now be usable within the framework.
 
-___
+---
 
 ### Required fixes
 
@@ -97,7 +98,7 @@ schemas: [CUSTOM_ELEMENTS_SCHEMA];
 #### Vue
 
 Vue will throw a deprecation error if `slots` are used. This is due to `eslint` misidentifying the slots as outdated Vue 2
-syntax. 
+syntax.
 
 To disable the error, add the following under `eslintConfig` within the `package.json`:
 
