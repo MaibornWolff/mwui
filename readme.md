@@ -2,7 +2,7 @@
 
 # The Liberation Machine - Component Library
 
-A web component library which uses Figma's [token plugin]() to create easily modifiable design systems.
+A web component library which uses Figma's [token plugin](https://www.figma.com/community/plugin/843461159747178978/Figma-Tokens) to create easily modifiable design systems.
 
 ## Components
 
