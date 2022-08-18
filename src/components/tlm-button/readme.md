@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property                | Attribute   | Description | Type     | Default     |
-| ----------------------- | ----------- | ----------- | -------- | ----------- |
-| `buttonId` _(required)_ | `button-id` |             | `string` | `undefined` |
+| Property                | Attribute   | Description                    | Type     | Default     |
+| ----------------------- | ----------- | ------------------------------ | -------- | ----------- |
+| `buttonId` _(required)_ | `button-id` | Unique id for each tlm-button. | `string` | `undefined` |
 
 
 ----------------------------------------------

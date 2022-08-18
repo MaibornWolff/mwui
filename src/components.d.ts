@@ -21,6 +21,9 @@ export namespace Components {
         "middle": string;
     }
     interface TlmButton {
+        /**
+          * Unique id for each tlm-button.
+         */
         "buttonId": string;
     }
 }
@@ -58,6 +61,9 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface TlmButton {
+        /**
+          * Unique id for each tlm-button.
+         */
         "buttonId": string;
     }
     interface IntrinsicElements {

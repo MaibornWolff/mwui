@@ -6,10 +6,10 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class TlmButton {
-  @Prop() buttonId!: string;
   /**
    * Unique id for each tlm-button.
    */
+  @Prop() buttonId!: string;
 
   render() {
     return (
