@@ -73,6 +73,7 @@ StyleDictionaryPackage.registerTransform({
 
 const baseTransforms = ['attribute/cti', 'size/px'];
 const jsTransforms = baseTransforms.concat(['name/cti/camel']);
+const scssTransforms = baseTransforms.concat(['name/cti/kebab']);
 
 function getStyleDictionaryConfig(theme) {
   return {
@@ -88,6 +89,16 @@ function getStyleDictionaryConfig(theme) {
           {
             destination: `index.css`,
             format: 'utilityClass',
+          },
+        ],
+      },
+      json: {
+        transforms: scssTransforms,
+        buildPath: 'dist/json/',
+        files: [
+          {
+            destination: `${theme}.json`,
+            format: 'json',
           },
         ],
       },
