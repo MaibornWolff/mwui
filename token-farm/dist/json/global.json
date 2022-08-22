@@ -4445,12 +4445,12 @@
           ]
         },
         "border-radius": {
-          "value": "30px",
+          "value": "0px",
           "type": "borderRadius",
           "filePath": "input/global.json",
           "isSource": true,
           "original": {
-            "value": "30px",
+            "value": "0px",
             "type": "borderRadius"
           },
           "name": "button-button-filled-default-border-radius",
@@ -4733,12 +4733,12 @@
           ]
         },
         "border-radius": {
-          "value": "30px",
+          "value": "0px",
           "type": "borderRadius",
           "filePath": "input/global.json",
           "isSource": true,
           "original": {
-            "value": "30px",
+            "value": "0px",
             "type": "borderRadius"
           },
           "name": "button-button-outline-default-border-radius",
