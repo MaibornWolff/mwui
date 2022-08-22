@@ -1,0 +1,52 @@
+name: Update Tokens and deploy Storybook to GitHub Pages
+on:
+  push:
+    branches: [ main ]
+jobs:
+  transformTokens:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: "16.x"
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Transform Figma Tokens & Style Dictionary
+      run: npm run build-tokens
+
+    - uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Update Tokens
+  generateStencilAndStorybook:
+      needs: transformTokens
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Stencil
+        run: npm run build
+
+      - name: Generate Storybook
+        run: npm run build-storybook
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: main # The branch the action should deploy to.
+          FOLDER: docs-build # The folder that the build-storybook script generates files.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
+          TARGET_FOLDER: docs # The folder that we serve our Storybook files from
+
+

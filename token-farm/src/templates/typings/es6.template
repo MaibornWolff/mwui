@@ -1,0 +1,10 @@
+/**
+ * Do not edit directly
+ * Generated on <%= new Date().toUTCString() %>
+ */
+
+declare module 'design-tokens' {
+<% allProperties.forEach(function(property) {
+%>  export const <%= property.name %>: string;
+<% }); %>
+}
