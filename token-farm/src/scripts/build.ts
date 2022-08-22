@@ -75,6 +75,8 @@ const baseTransforms = ['attribute/cti', 'size/px'];
 const jsTransforms = baseTransforms.concat(['name/cti/camel']);
 const scssTransforms = baseTransforms.concat(['name/cti/kebab']);
 
+// Configuration of the export dictionaries happens here - currently exporting as css, json and javaScript files
+
 function getStyleDictionaryConfig(theme) {
   return {
     source: [`input/${theme}.json`],
