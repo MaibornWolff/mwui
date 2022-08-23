@@ -12,7 +12,7 @@ The Token Farm houses the exported tokens from the Figma design file and convert
 
 ## Output types
 
-*WIP*
+The Token Farm can be configured to output various different file types, such as JavaScript, TypeScript, json, css and scss. It can also create several output files for different themes. 
 
 ## Workflow
 
