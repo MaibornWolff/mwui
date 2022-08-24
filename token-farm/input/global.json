@@ -1189,7 +1189,7 @@
           "value": "#ffffff"
         },
         "border-radius": {
-          "value": "0px",
+          "value": "30px",
           "type": "borderRadius"
         }
       },
@@ -1249,7 +1249,7 @@
           "value": "#79747e"
         },
         "border-radius": {
-          "value": "0px",
+          "value": "30px",
           "type": "borderRadius"
         }
       },
