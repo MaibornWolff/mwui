@@ -94,16 +94,6 @@ function getStyleDictionaryConfig(theme) {
           },
         ],
       },
-      ts: {
-        transforms: jsTransforms,
-        buildPath: 'dist/ts/',
-        files: [
-          {
-            destination: `${theme}.d.ts`,
-            format: 'typings/es6',
-          },
-        ],
-      },
       js: {
         transforms: jsTransforms,
         buildPath: 'dist/js/',

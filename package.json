@@ -32,6 +32,7 @@
     "build-storybook": "build-storybook -o docs-build"
   },
   "dependencies": {
+    "@emotion/css": "^11.10.0",
     "@stencil/core": "^2.13.0",
     "prettier": "^2.7.1"
   },
