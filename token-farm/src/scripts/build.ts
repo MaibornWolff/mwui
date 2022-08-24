@@ -73,7 +73,7 @@ StyleDictionaryPackage.registerTransform({
 
 const baseTransforms = ['attribute/cti', 'size/px'];
 const jsTransforms = baseTransforms.concat(['name/cti/camel']);
-const scssTransforms = baseTransforms.concat(['name/cti/kebab']);
+// const scssTransforms = baseTransforms.concat(['name/cti/kebab']);
 
 // Configuration of the export dictionaries happens here - currently exporting as css, json and javaScript files
 
@@ -94,13 +94,13 @@ function getStyleDictionaryConfig(theme) {
           },
         ],
       },
-      json: {
-        transforms: scssTransforms,
-        buildPath: 'dist/json/',
+      ts: {
+        transforms: jsTransforms,
+        buildPath: 'dist/ts/',
         files: [
           {
-            destination: `${theme}.json`,
-            format: 'json',
+            destination: `${theme}.d.ts`,
+            format: 'typings/es6',
           },
         ],
       },
