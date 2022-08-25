@@ -1,0 +1,1 @@
+# The Liberation Machine - Stencil

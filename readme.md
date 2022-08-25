@@ -2,7 +2,9 @@
 
 # The Liberation Machine - Component Library
 
-➜ [Token Farm documentation](token-farm/readme.md)
+➜ [Token Farm documentation](tlm-token-farm/README.md)
+➜ [Stencil Library documentation](tlm-stencil/README.md)
+➜ [React Library documentation](tlm-react/README.md)
 
 A web component library which uses Figma's token plugin to create easily modifiable design systems.
 
@@ -20,29 +22,29 @@ Download the plugin from [here](https://www.figma.com/community/plugin/843461159
 
 ![image](https://user-images.githubusercontent.com/85286401/185928119-59c2ce2b-cc80-44a0-b629-70c38c184600.png)
 
-Generate the access token and paste it into the plugin settings. *Do not share this token with anybody!*
+Generate the access token and paste it into the plugin settings. _Do not share this token with anybody!_
 
 **Repository:** MaibornWolff/tlm-components
 
 **Default Branch:** develop
 
-**File Path:** token-farm/input/tokens.json
+**File Path:** tlm-token-farm/input/tokens.json
 
 After saving the settings you can pull the tokens from GitHub using the button in the bottom left corner.
 
 ### Pushing to GitHub
 
-After making changes to the Figma file (while using design tokens) you can push said changes to GitHub using the plugin. 
+After making changes to the Figma file (while using design tokens) you can push said changes to GitHub using the plugin.
 
 Click on the 'Push to GitHub' button in the bottom left corner. Make the sure that 'develop' is the selected branch. You have to enter a short message for every commit you push to GitHub. These messages should look like this:
 
 ```
-figma-plugin - change border-radius of buttons to none
+figma-plugin: change border-radius of buttons to none
 ```
 
-The message should be in English and serve as a quick description of what changes were made to the tokens. The 'figma-plugin - ' prefix makes it easier to understand which commits were made using the plugin. 
+The message should be in English and serve as a quick description of what changes were made to the tokens. The 'figma-plugin: ' prefix makes it easier to understand which commits were made using the plugin.
 
-___
+---
 
 ## Components
 
@@ -85,7 +87,7 @@ Check stencil docs [here](https://stenciljs.com/docs/my-first-component) for add
 
 _NOT YET PUBLISHED_
 
-### Convert to package
+### 1. Publish WebComponent Library
 
 To convert the component library into an NPM package, run:
 
@@ -100,18 +102,43 @@ npm version major | minor | patch
 npm publish
 ```
 
-### Import into framework
+### 2. Publish framework-specific WebComponent Libraries
+
+Perform step 1) and update version of `tlm-components` in `tlm-react`.
+
+```bash
+# in framework-specific directory, e.g. tlm-react
+npm run build
+```
+
+Then, publish to NPM by running:
+
+```bash
+# in framework-specific directory, e.g. tlm-react
+npm version major | minor | patch
+npm publish
+```
+
+### Usage in React
+
+To leverage the usage of our WebComponents we provide framework-specific wrappers. For React you can install and use the TLM Components via
+
+```bash
+npm i @maibornwolff/tlm-react
+```
+
+### Alternative: Import pure WebComponents
 
 To install the library within the chosen framework, run:
 
 ```bash
-npm i tlm-components
+npm i @maibornwolff/tlm-stencil
 ```
 
 Include the following in the `main.js` (e.g. Angular, Vue) or `index.js` (e.g. React):
 
 ```JavaScript
-import { defineCustomElements } from "tlm-components/loader";
+import { defineCustomElements } from "tlm-stencil/loader";
 defineCustomElements(window);
 ```
 
