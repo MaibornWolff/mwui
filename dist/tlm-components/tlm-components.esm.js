@@ -1,1 +1,0 @@
-import{p as t,b as o}from"./p-1266e3bd.js";(()=>{const o=import.meta.url,n={};return""!==o&&(n.resourcesUrl=new URL(".",o).href),t(n)})().then((t=>o([["p-cd4fef93",[[1,"my-component",{first:[1],middle:[1],last:[1]}],[4,"tlm-button",{buttonId:[1,"button-id"]}]]]],t)));

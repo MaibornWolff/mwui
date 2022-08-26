@@ -1,0 +1,56 @@
+{
+  "name": "tlm-stencil",
+  "version": "0.0.2",
+  "description": "Component Library using Figma's design tokens",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/tlm-components/tlm-components.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaibornWolff/tlm-components.git"
+  },
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -o docs-build"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.10.0",
+    "@stencil/core": "^2.13.0",
+    "@stencil/react-output-target": "^0.3.1",
+    "prettier": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/addons": "^6.5.10",
+    "@storybook/builder-webpack4": "^6.5.10",
+    "@storybook/html": "^6.1.21",
+    "@storybook/manager-webpack4": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/theming": "^6.5.10",
+    "@types/jest": "^27.0.3",
+    "babel-loader": "^8.2.5",
+    "eslint": "^8.22.0",
+    "jest": "^27.4.5",
+    "jest-cli": "^27.4.5",
+    "puppeteer": "^16.1.1"
+  },
+  "license": "MIT"
+}

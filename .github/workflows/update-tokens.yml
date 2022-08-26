@@ -34,8 +34,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Run tests
+        run: npm run test
+
       - name: Build Stencil
-        run: npm run build
+        run: npm run build-stencil
 
       - name: Generate Storybook
         run: npm run build-storybook
@@ -45,8 +48,8 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: main # The branch the action should deploy to.
-          FOLDER: docs-build # The folder that the build-storybook script generates files.
+          FOLDER: tlm-stencil/docs-build # The folder that the build-storybook script generates files.
           CLEAN: true # Automatically remove deleted files from the deploy branch
-          TARGET_FOLDER: docs # The folder that we serve our Storybook files from
+          TARGET_FOLDER: tlm-stencil/docs # The folder that we serve our Storybook files from
 
 
