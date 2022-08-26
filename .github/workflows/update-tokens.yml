@@ -1,4 +1,4 @@
-name: Update Tokens and build WebComponents
+name: Update Tokens and Build WebComponents
 on:
   push:
     branches: [main]

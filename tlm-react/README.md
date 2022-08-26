@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/tlm-react?color=blue)](https://www.npmjs.com/package/tlm-react)
+
 # The Liberation Machine - React
 
 ## Step 1.
