@@ -45,13 +45,4 @@ jobs:
       - name: Generate Storybook
         run: npm run build-storybook
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: main # The branch the action should deploy to.
-          FOLDER: tlm-stencil/docs # The folder that the build-storybook script generates files.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
-          TARGET_FOLDER: tlm-stencil/docs # The folder that we serve our Storybook files from
-
 
