@@ -23,6 +23,3 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
-tlm-stencil/docs/
-tlm-stencil/docs-build/
-tlm-stencil/dist/**/*.js
