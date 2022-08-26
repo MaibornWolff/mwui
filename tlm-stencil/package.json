@@ -50,7 +50,8 @@
     "eslint": "^8.22.0",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
-    "puppeteer": "^16.1.1"
+    "puppeteer": "^16.1.1",
+    "storybook-addon-turbo-build": "^1.1.0"
   },
   "license": "MIT"
 }
