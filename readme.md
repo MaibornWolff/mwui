@@ -124,7 +124,7 @@ npm publish
 To leverage the usage of our WebComponents we provide framework-specific wrappers. For React you can install and use the TLM Components via
 
 ```bash
-npm i @maibornwolff/tlm-react
+npm i tlm-react
 ```
 
 ### Alternative: Import pure WebComponents
@@ -132,7 +132,7 @@ npm i @maibornwolff/tlm-react
 To install the library within the chosen framework, run:
 
 ```bash
-npm i @maibornwolff/tlm-stencil
+npm i tlm-stencil
 ```
 
 Include the following in the `main.js` (e.g. Angular, Vue) or `index.js` (e.g. React):

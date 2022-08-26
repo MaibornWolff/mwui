@@ -1,5 +1,5 @@
 {
-  "name": "@maibornwolff/tlm-token-farm",
+  "name": "tlm-token-farm",
   "version": "0.0.1",
   "description": "Transforms figma design tokens to common config files serving different styling frameworks",
   "main": "src/index.ts",
