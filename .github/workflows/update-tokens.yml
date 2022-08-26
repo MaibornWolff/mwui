@@ -20,6 +20,12 @@ jobs:
     - name: Transform Figma Tokens & Style Dictionary
       run: npm run build-tokens
 
+    - name: Run tests
+      run: npm run test
+
+    - name: Build Stencil
+      run: npm run build-stencil
+
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Update Tokens
@@ -35,12 +41,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Run tests
-        run: npm run test
-
-      - name: Build Stencil
-        run: npm run build-stencil
 
       - name: Generate Storybook
         run: npm run build-storybook
