@@ -18,12 +18,8 @@
     "dist/",
     "loader/"
   ],
-  "workspaces": [
-    "token-farm"
-  ],
   "scripts": {
     "build": "stencil build --docs",
-    "build-tokens": "npm run build --workspace=token-farm",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",

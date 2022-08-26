@@ -12,10 +12,10 @@
     "tlm-stencil"
   ],
   "scripts": {
-
-  },
-  "dependencies": {
-
+    "test": "npm run test --workspace=tlm-stencil",
+    "build-tokens": "npm run build --workspace=tlm-token-farm",
+    "build-stencil": "npm run build --workspace=tlm-stencil",
+    "build-storybook": "npm run build-storybook --workspace=tlm-stencil"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
