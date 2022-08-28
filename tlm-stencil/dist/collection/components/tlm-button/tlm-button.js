@@ -2,7 +2,6 @@ import { Component, Event, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import { buttonButtonFilledDefaultBgColor, buttonButtonFilledDefaultBorderRadius, buttonButtonFilledDefaultFgColor, buttonButtonFilledDisabledBgColor, buttonButtonFilledDisabledFgColor, buttonButtonFilledHoverBgColor, buttonButtonFilledHoverFgColor, buttonButtonFilledPressedBgColor, buttonButtonFilledPressedFgColor, fontFamiliesDefault, fontSize14, fontWeightsBold, l, s, } from '../../../../tlm-token-farm/dist/js/global';
 import { getFontWeightValue } from '../../utils/utils';
-import '../../global/global.css';
 const buttonStyles = css `
   font-family: '${fontFamiliesDefault}';
   border: 0;
