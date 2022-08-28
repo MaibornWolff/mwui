@@ -1,12 +1,13 @@
 import { Component, Event, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-import { buttonButtonFilledDefaultBgColor, buttonButtonFilledDefaultBorderRadius, buttonButtonFilledDefaultFgColor, buttonButtonFilledDisabledBgColor, buttonButtonFilledDisabledFgColor, buttonButtonFilledHoverBgColor, buttonButtonFilledHoverFgColor, buttonButtonFilledPressedBgColor, buttonButtonFilledPressedFgColor, fontFamiliesDefault, fontSize16, l, s, } from '../../../../tlm-token-farm/dist/js/global';
+import { buttonButtonFilledDefaultBgColor, buttonButtonFilledDefaultBorderRadius, buttonButtonFilledDefaultFgColor, buttonButtonFilledDisabledBgColor, buttonButtonFilledDisabledFgColor, buttonButtonFilledHoverBgColor, buttonButtonFilledHoverFgColor, buttonButtonFilledPressedBgColor, buttonButtonFilledPressedFgColor, fontFamiliesDefault, fontSize14, fontWeightsBold, l, s, } from '../../../../tlm-token-farm/dist/js/global';
 const buttonStyles = css `
   font-family: ${fontFamiliesDefault};
   border: 0;
   padding: ${s}px ${l}px;
+  font-weight: ${fontWeightsBold};
   color: ${buttonButtonFilledDefaultFgColor};
-  font-size: ${fontSize16};
+  font-size: ${fontSize14};
   border-radius: ${buttonButtonFilledDefaultBorderRadius};
   background-color: ${buttonButtonFilledDefaultBgColor};
   &:hover {

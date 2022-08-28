@@ -891,12 +891,13 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Sun, 28 Aug 2022 10:36:55 GMT
+ * Generated on Sun, 28 Aug 2022 10:44:04 GMT
  */
 const s = 12;
 const l = 24;
 const fontFamiliesDefault = "roboto";
-const fontSize16 = 16;
+const fontWeightsBold = "Bold";
+const fontSize14 = 14;
 const buttonButtonFilledDefaultBgColor = "#6b60cd";
 const buttonButtonFilledDefaultFgColor = "#ffffff";
 const buttonButtonFilledDefaultBorderRadius = "30px";
@@ -911,8 +912,9 @@ const buttonStyles = css `
   font-family: ${fontFamiliesDefault};
   border: 0;
   padding: ${s}px ${l}px;
+  font-weight: ${fontWeightsBold};
   color: ${buttonButtonFilledDefaultFgColor};
-  font-size: ${fontSize16};
+  font-size: ${fontSize14};
   border-radius: ${buttonButtonFilledDefaultBorderRadius};
   background-color: ${buttonButtonFilledDefaultBgColor};
   &:hover {
