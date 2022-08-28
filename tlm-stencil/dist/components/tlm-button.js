@@ -872,15 +872,15 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Fri, 26 Aug 2022 19:29:34 GMT
+ * Generated on Sun, 28 Aug 2022 10:36:55 GMT
  */
 const xs = 8;
 const fontFamiliesDefault = "roboto";
 const fontSize16 = 16;
-const buttonButtonFilledDefaultBgColor = "#3524cc";
+const buttonButtonFilledDefaultBgColor = "#6b60cd";
 const buttonButtonFilledDefaultFgColor = "#ffffff";
 const buttonButtonFilledDefaultBorderRadius = "30px";
-const buttonButtonFilledHoverBgColor = "#3234ca";
+const buttonButtonFilledHoverBgColor = "#6b60cd";
 const buttonButtonFilledHoverFgColor = "#ffffff";
 const buttonButtonFilledPressedBgColor = "#7965AF";
 const buttonButtonFilledPressedFgColor = "#ffffff";

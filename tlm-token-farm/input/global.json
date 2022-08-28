@@ -127,7 +127,7 @@
       "type": "color"
     },
     "400": {
-      "value": "#3524cc",
+      "value": "#6b60cd",
       "type": "color"
     },
     "500": {
@@ -728,7 +728,7 @@
           "type": "color"
         },
         "400": {
-          "value": "#3234ca",
+          "value": "#6b60cd",
           "type": "color"
         },
         "500": {
@@ -796,7 +796,7 @@
         "filled": {
           "default": {
             "bg-color": {
-              "value": "#3524cc",
+              "value": "#6b60cd",
               "type": "color"
             },
             "fg-color": {
@@ -806,7 +806,7 @@
           },
           "hover": {
             "bg-color": {
-              "value": "#3234ca",
+              "value": "#6b60cd",
               "type": "color"
             },
             "fg-color": {
@@ -1182,7 +1182,7 @@
       "default": {
         "bg-color": {
           "type": "color",
-          "value": "#3524cc"
+          "value": "#6b60cd"
         },
         "fg-color": {
           "type": "color",
@@ -1196,7 +1196,7 @@
       "hover": {
         "bg-color": {
           "type": "color",
-          "value": "#3234ca"
+          "value": "#6b60cd"
         },
         "fg-color": {
           "type": "color",
@@ -1351,7 +1351,7 @@
       "default": {
         "bg-color": {
           "type": "color",
-          "value": "#3524cc"
+          "value": "#6b60cd"
         },
         "fg-color": {
           "type": "color",
@@ -1361,7 +1361,7 @@
       "hover": {
         "bg-color": {
           "type": "color",
-          "value": "#3234ca"
+          "value": "#6b60cd"
         },
         "fg-color": {
           "type": "color",
