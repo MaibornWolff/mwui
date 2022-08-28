@@ -7,6 +7,17 @@ const index = require('./index-b50f3c9d.js');
 function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
 }
+function getFontWeightValue(fontWeight) {
+  return {
+    'light': 300,
+    'regular': 400,
+    'semibold': 400,
+    'bold': 700,
+    // font-style and not font-weight (but set in design)
+    'italic': 300,
+    'light italic': 300,
+  }[fontWeight.toLowerCase()];
+}
 
 const myComponentCss = ":host{display:block}";
 
@@ -913,12 +924,12 @@ const buttonButtonFilledDisabledBgColor = "#1f1f1f1f";
 const buttonButtonFilledDisabledFgColor = "#1c1b1f61";
 
 const buttonStyles = css `
-  font-family: ${fontFamiliesDefault};
+  font-family: '${fontFamiliesDefault}';
   border: 0;
   padding: ${s}px ${l}px;
-  font-weight: ${fontWeightsBold};
+  font-weight: ${getFontWeightValue(fontWeightsBold)};
   color: ${buttonButtonFilledDefaultFgColor};
-  font-size: ${fontSize14};
+  font-size: ${fontSize14}px;
   border-radius: ${buttonButtonFilledDefaultBorderRadius};
   background-color: ${buttonButtonFilledDefaultBgColor};
   &:hover {

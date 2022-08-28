@@ -1,7 +1,7 @@
-export function format(first, middle, last) {
+function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
 }
-export function getFontWeightValue(fontWeight) {
+function getFontWeightValue(fontWeight) {
   return {
     'light': 300,
     'regular': 400,
@@ -12,3 +12,5 @@ export function getFontWeightValue(fontWeight) {
     'light italic': 300,
   }[fontWeight.toLowerCase()];
 }
+
+export { format as f, getFontWeightValue as g };

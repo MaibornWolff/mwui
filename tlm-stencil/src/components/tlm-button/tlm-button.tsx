@@ -16,14 +16,15 @@ import {
   l,
   s,
 } from '../../../../tlm-token-farm/dist/js/global';
+import { getFontWeightValue } from '../../utils/utils';
 
 const buttonStyles = css`
-  font-family: ${fontFamiliesDefault};
+  font-family: '${fontFamiliesDefault}';
   border: 0;
   padding: ${s}px ${l}px;
-  font-weight: ${fontWeightsBold};
+  font-weight: ${getFontWeightValue(fontWeightsBold)};
   color: ${buttonButtonFilledDefaultFgColor};
-  font-size: ${fontSize14};
+  font-size: ${fontSize14}px;
   border-radius: ${buttonButtonFilledDefaultBorderRadius};
   background-color: ${buttonButtonFilledDefaultBgColor};
   &:hover {

@@ -1,8 +1,5 @@
 import { proxyCustomElement, HTMLElement, h } from '@stencil/core/internal/client';
-
-function format(first, middle, last) {
-  return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
-}
+import { f as format } from './utils.js';
 
 const myComponentCss = ":host{display:block}";
 

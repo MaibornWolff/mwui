@@ -1,4 +1,5 @@
 import { proxyCustomElement, HTMLElement, createEvent, h } from '@stencil/core/internal/client';
+import { g as getFontWeightValue } from './utils.js';
 
 /*
 
@@ -890,12 +891,12 @@ const buttonButtonFilledDisabledBgColor = "#1f1f1f1f";
 const buttonButtonFilledDisabledFgColor = "#1c1b1f61";
 
 const buttonStyles = css `
-  font-family: ${fontFamiliesDefault};
+  font-family: '${fontFamiliesDefault}';
   border: 0;
   padding: ${s}px ${l}px;
-  font-weight: ${fontWeightsBold};
+  font-weight: ${getFontWeightValue(fontWeightsBold)};
   color: ${buttonButtonFilledDefaultFgColor};
-  font-size: ${fontSize14};
+  font-size: ${fontSize14}px;
   border-radius: ${buttonButtonFilledDefaultBorderRadius};
   background-color: ${buttonButtonFilledDefaultBgColor};
   &:hover {
