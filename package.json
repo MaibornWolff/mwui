@@ -12,6 +12,8 @@
     "tlm-stencil"
   ],
   "scripts": {
+    "start": "npm run start --workspace=tlm-stencil",
+    "storybook": "npm run storybook --workspace=tlm-stencil",
     "test": "npm run test --workspace=tlm-stencil",
     "build-tokens": "npm run build --workspace=tlm-token-farm",
     "build-stencil": "npm run build --workspace=tlm-stencil",

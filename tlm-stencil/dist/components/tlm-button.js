@@ -874,7 +874,8 @@ var _createEmotion = createEmotion({
  * Do not edit directly
  * Generated on Sun, 28 Aug 2022 10:36:55 GMT
  */
-const xs = 8;
+const s = 12;
+const l = 24;
 const fontFamiliesDefault = "roboto";
 const fontSize16 = 16;
 const buttonButtonFilledDefaultBgColor = "#6b60cd";
@@ -890,7 +891,7 @@ const buttonButtonFilledDisabledFgColor = "#1c1b1f61";
 const buttonStyles = css `
   font-family: ${fontFamiliesDefault};
   border: 0;
-  padding: ${xs}px;
+  padding: ${s}px ${l}px;
   color: ${buttonButtonFilledDefaultFgColor};
   font-size: ${fontSize16};
   border-radius: ${buttonButtonFilledDefaultBorderRadius};

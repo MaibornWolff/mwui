@@ -11,16 +11,19 @@ import {
   buttonButtonFilledPressedBgColor,
   buttonButtonFilledPressedFgColor,
   fontFamiliesDefault,
-  fontSize16,
-  xs,
+  fontSize14,
+  fontWeightsBold,
+  l,
+  s,
 } from '../../../../tlm-token-farm/dist/js/global';
 
 const buttonStyles = css`
   font-family: ${fontFamiliesDefault};
   border: 0;
-  padding: ${xs}px;
+  padding: ${s}px ${l}px;
+  font-weight: ${fontWeightsBold};
   color: ${buttonButtonFilledDefaultFgColor};
-  font-size: ${fontSize16};
+  font-size: ${fontSize14};
   border-radius: ${buttonButtonFilledDefaultBorderRadius};
   background-color: ${buttonButtonFilledDefaultBgColor};
   &:hover {

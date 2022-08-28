@@ -1,10 +1,10 @@
 import { Component, Event, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-import { buttonButtonFilledDefaultBgColor, buttonButtonFilledDefaultBorderRadius, buttonButtonFilledDefaultFgColor, buttonButtonFilledDisabledBgColor, buttonButtonFilledDisabledFgColor, buttonButtonFilledHoverBgColor, buttonButtonFilledHoverFgColor, buttonButtonFilledPressedBgColor, buttonButtonFilledPressedFgColor, fontFamiliesDefault, fontSize16, xs, } from '../../../../tlm-token-farm/dist/js/global';
+import { buttonButtonFilledDefaultBgColor, buttonButtonFilledDefaultBorderRadius, buttonButtonFilledDefaultFgColor, buttonButtonFilledDisabledBgColor, buttonButtonFilledDisabledFgColor, buttonButtonFilledHoverBgColor, buttonButtonFilledHoverFgColor, buttonButtonFilledPressedBgColor, buttonButtonFilledPressedFgColor, fontFamiliesDefault, fontSize16, l, s, } from '../../../../tlm-token-farm/dist/js/global';
 const buttonStyles = css `
   font-family: ${fontFamiliesDefault};
   border: 0;
-  padding: ${xs}px;
+  padding: ${s}px ${l}px;
   color: ${buttonButtonFilledDefaultFgColor};
   font-size: ${fontSize16};
   border-radius: ${buttonButtonFilledDefaultBorderRadius};
