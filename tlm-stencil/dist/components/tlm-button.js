@@ -1,5 +1,5 @@
 import { proxyCustomElement, HTMLElement, createEvent, h } from '@stencil/core/internal/client';
-import { g as getFontWeightValue } from './utils.js';
+import { g as getFontWeightValue, a as getFontStyle } from './utils.js';
 
 /*
 
@@ -873,7 +873,7 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Mon, 29 Aug 2022 09:43:39 GMT
+ * Generated on Mon, 29 Aug 2022 09:51:06 GMT
  */
 const s = 12;
 const l = 24;
@@ -895,6 +895,7 @@ const buttonStyles = css `
   border: 0;
   padding: ${s}px ${l}px;
   font-weight: ${getFontWeightValue(fontWeightsBold)};
+  font-style: ${getFontStyle(fontWeightsBold)};
   color: ${buttonButtonFilledDefaultFgColor};
   font-size: ${fontSize14}px;
   border-radius: ${buttonButtonFilledDefaultBorderRadius};

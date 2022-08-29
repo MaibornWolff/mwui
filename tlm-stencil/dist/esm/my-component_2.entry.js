@@ -9,10 +9,24 @@ function getFontWeightValue(fontWeight) {
     'regular': 400,
     'semibold': 400,
     'bold': 700,
-    // font-style and not font-weight (but set in design)
     'italic': 300,
     'light italic': 300,
   }[fontWeight.toLowerCase()];
+}
+/**
+ *
+ * @param fontWeight design token specific: includes also information about font-style
+ * @returns italic | oblique | normal
+ */
+function getFontStyle(input) {
+  const fontWeight = input.toLowerCase();
+  if (fontWeight.includes('italic')) {
+    return 'italic';
+  }
+  if (fontWeight.includes('oblique')) {
+    return 'oblique';
+  }
+  return 'normal';
 }
 
 const myComponentCss = ":host{display:block}";
@@ -902,7 +916,7 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Mon, 29 Aug 2022 09:43:39 GMT
+ * Generated on Mon, 29 Aug 2022 09:51:06 GMT
  */
 const s = 12;
 const l = 24;
@@ -924,6 +938,7 @@ const buttonStyles = css `
   border: 0;
   padding: ${s}px ${l}px;
   font-weight: ${getFontWeightValue(fontWeightsBold)};
+  font-style: ${getFontStyle(fontWeightsBold)};
   color: ${buttonButtonFilledDefaultFgColor};
   font-size: ${fontSize14}px;
   border-radius: ${buttonButtonFilledDefaultBorderRadius};

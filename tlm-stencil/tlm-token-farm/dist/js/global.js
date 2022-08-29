@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 29 Aug 2022 09:43:39 GMT
+ * Generated on Mon, 29 Aug 2022 09:51:06 GMT
  */
 export const magenta100 = "#fde8f2";
 export const magenta200 = "#f9b9d7";
