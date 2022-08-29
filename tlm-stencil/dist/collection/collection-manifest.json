@@ -1,0 +1,13 @@
+{
+  "entries": [
+    "./components/my-component/my-component.js",
+    "./components/tlm-button/tlm-button.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.17.3",
+    "typescriptVersion": "4.5.4"
+  },
+  "collections": [],
+  "bundles": []
+}
