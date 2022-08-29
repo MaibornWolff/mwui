@@ -16,13 +16,14 @@ import {
   l,
   s,
 } from '../../../../tlm-token-farm/dist/js/global';
-import { getFontWeightValue } from '../../utils/utils';
+import { getFontStyle, getFontWeightValue } from '../../utils/utils';
 
 const buttonStyles = css`
   font-family: '${fontFamiliesDefault}';
   border: 0;
   padding: ${s}px ${l}px;
   font-weight: ${getFontWeightValue(fontWeightsBold)};
+  font-style: ${getFontStyle(fontWeightsBold)};
   color: ${buttonButtonFilledDefaultFgColor};
   font-size: ${fontSize14}px;
   border-radius: ${buttonButtonFilledDefaultBorderRadius};
