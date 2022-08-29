@@ -1,6 +1,7 @@
 import { Config } from '@stencil/core';
 import { reactOutputTarget as react } from '@stencil/react-output-target';
-import { angularOutputTarget as angular } from "@stencil/angular-output-target";
+import { angularOutputTarget as angular } from '@stencil/angular-output-target';
+import { vueOutputTarget as vue } from '@stencil/vue-output-target';
 
 export const config: Config = {
   namespace: 'tlm-stencil',
@@ -15,6 +16,10 @@ export const config: Config = {
       componentCorePackage: 'tlm-stencil',
       directivesProxyFile: '../tlm-angular/projects/component-library/src/lib/stencil-generated/components.ts',
       directivesArrayFile: '../tlm-angular/projects/component-library/src/lib/stencil-generated/index.ts',
+    }),
+    vue({
+      componentCorePackage: 'tlm-stencil',
+      proxiesFile: '../tlm-vue/src/components.ts',
     }),
     {
       type: 'dist',

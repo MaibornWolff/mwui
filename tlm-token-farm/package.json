@@ -33,6 +33,7 @@
     "lodash.template": "^4.5.0",
     "postcss-cli": "^9.1.0",
     "style-dictionary": "^3.7.0",
+    "tlm-stencil": "^0.0.2",
     "token-transformer": "^0.0.22"
   }
 }
