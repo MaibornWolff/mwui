@@ -12,53 +12,18 @@ A web component library which uses Figma's token plugin to create easily modifia
 - [Token-Farm](tlm-token-farm/README.md)
 - [Stencil Library](tlm-stencil/README.md)
 - [React Library](tlm-react/README.md)
+- [Vue Library](tlm-vue/README.md)
+- [Angular Library](tlm-angular/README.md)
 - [Setup Figma Token Plugin](token-plugin.md)
 
 ---
 ## The Design System Pipeline
 
-All of the Components are developed based on the TLM Design System in Figma. We use `Design Tokens` to version and synchronize design decisions between the Design and the WebComponents.
+All the Components are developed based on the TLM Design System in Figma. We use `Design Tokens` to version and synchronize design decisions between the Design and the WebComponents.
 
 The [Token-Farm](tlm-token-farm/README.md) module transforms any changes in the Design Tokens into Style Dictionary outputs which are linked to the respective WebComponent.
 
-You can find all relevant build steps in the [Github Workflow](./.github/workflows/update-tokens.yml).
-
-## Components
-
-The Component Library is built with [StencilJs](https://stenciljs.com/). It provides WebComponents as well as framework-specific integrations to leverage usage of WebComponents in React, Vue and Angular.
-
-### Creation
-
-To create new components, run:
-
-```bash
-npm run generate
-```
-
-Alternatively you can manually create components by adding them to `src/components`.
-
-Custom Element names are written in kebab-case, prefixed with `tlm-` (e.g. `tlm-button`).
-
-### Structure
-
-Name, stylesheet and whether a shadow-dom should be created is defined within `@component`.
-
-Individual props get defined within by using `@Prop()`,
-followed by the name of the prop and its type or the default value.
-Operators such as `!` or `?` can be used to mark a prop as optional or required.
-
-The HTML structure of the component is defined within the `render()` function. You can define `slots`
-which can be inserted into the component.
-
-### Testing
-
-To run the unit tests for the components, run:
-
-```bash
-npm test
-```
-
-Check stencil docs [here](https://stenciljs.com/docs/my-first-component) for additional help.
+You can find all relevant build steps in the [GitHub Workflow](./.github/workflows/update-tokens.yml).
 
 ---
 
@@ -98,13 +63,19 @@ npm version major | minor | patch
 npm publish
 ```
 
-### Usage in React
+### Usage in React, Vue and Angular
 
-To leverage the usage of our WebComponents we provide framework-specific wrappers. For React you can install and use the TLM Components via
+To leverage the usage of our WebComponents we provide framework-specific wrappers for React, Vue and Angular. You can install and use the TLM Components accordingly:
 
 ```bash
-npm i tlm-react
+npm i tlm-react     # in React
+
+npm i tlm-vue       # in Vue
+
+npm i tlm-angular   # in Angular
 ```
+
+For more info on the individual wrappers, check out the [React](tlm-react/README.md), [Vue](tlm-vue/README.md) or [Angular](tlm-angular/README.md) documentation.
 
 ### Alternative: Import pure WebComponents
 
@@ -122,14 +93,3 @@ defineCustomElements(window);
 ```
 
 All available components should now be usable within the framework.
-
-### Required fixes
-
-#### Angular
-
-To enable support for web components in Angular, add the following to the `@NgModule` in `app.module.ts`:
-
-```TypeScript
-schemas: [CUSTOM_ELEMENTS_SCHEMA];
-```
-

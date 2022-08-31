@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "component-library": {
+    "tlm-component-library": {
       "projectType": "library",
-      "root": "projects/component-library",
-      "sourceRoot": "projects/component-library/src",
+      "root": "projects/tlm-component-library",
+      "sourceRoot": "projects/tlm-component-library/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/component-library/ng-package.json"
+            "project": "projects/tlm-component-library/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/component-library/tsconfig.lib.prod.json"
+              "tsConfig": "projects/tlm-component-library/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/component-library/tsconfig.lib.json"
+              "tsConfig": "projects/tlm-component-library/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,9 +27,9 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/component-library/src/test.ts",
-            "tsConfig": "projects/component-library/tsconfig.spec.json",
-            "karmaConfig": "projects/component-library/karma.conf.js"
+            "main": "projects/tlm-component-library/src/test.ts",
+            "tsConfig": "projects/tlm-component-library/tsconfig.spec.json",
+            "karmaConfig": "projects/tlm-component-library/karma.conf.js"
           }
         }
       }

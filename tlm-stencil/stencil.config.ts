@@ -14,8 +14,8 @@ export const config: Config = {
     }),
     angular({
       componentCorePackage: 'tlm-stencil',
-      directivesProxyFile: '../tlm-angular/projects/component-library/src/lib/stencil-generated/components.ts',
-      directivesArrayFile: '../tlm-angular/projects/component-library/src/lib/stencil-generated/index.ts',
+      directivesProxyFile: '../tlm-angular/projects/tlm-component-library/src/lib/stencil-generated/components.ts',
+      directivesArrayFile: '../tlm-angular/projects/tlm-component-library/src/lib/stencil-generated/index.ts',
     }),
     vue({
       componentCorePackage: 'tlm-stencil',

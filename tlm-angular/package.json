@@ -1,11 +1,14 @@
 {
-  "name": "tlm-angular",
-  "version": "0.0.1",
+  "name": "tlm-angular-test",
+  "version": "0.0.2",
   "description": "Angular specific wrapper for tlm-components",
   "repository": {
     "type": "git",
     "url": "https://github.com/MaibornWolff/tlm-components.git"
   },
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -13,6 +16,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "private": false,
   "dependencies": {
     "@angular/animations": "^14.0.0",
     "@angular/common": "^14.0.0",
@@ -24,7 +28,8 @@
     "@angular/router": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "tlm-stencil": "^0.0.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.1",
