@@ -133,15 +133,3 @@ To enable support for web components in Angular, add the following to the `@NgMo
 schemas: [CUSTOM_ELEMENTS_SCHEMA];
 ```
 
-#### Vue
-
-Vue will throw a deprecation error if `slots` are used. This is due to `eslint` misidentifying the slots as outdated Vue 2
-syntax.
-
-To disable the error, add the following under `eslintConfig` within the `package.json`:
-
-```json
-"rules": {
-    "vue/no-deprecated-slot-attribute": "off"
-}
-```

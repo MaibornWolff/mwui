@@ -2,14 +2,14 @@
 
 # The Liberation Machine - React
 
-## Step 1.
+## Publish package
 
-- Build your core stencil package.
+1. Build your core stencil package.
+2. Run build on this package.
+3. Publish.
 
-## Step 2.
+## Use in React
 
-- Run build on this package.
-
-## Step 3.
-
-- Publish.
+```JavaScript
+import { TlmButton } from 'tlm-stencil';
+```
