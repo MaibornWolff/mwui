@@ -31,6 +31,44 @@ You can find all relevant build steps in the [GitHub Workflow](./.github/workflo
 
 _NOT YET PUBLISHED_
 
+### 0. Versioning
+
+Prior to publishing every update needs to be versioned based on these guidelines:
+
+_NOT FINAL_
+
+<table>
+<thead>
+  <tr>
+    <th colspan="4">Versioning Guide</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><b>Type</b></td>
+    <td><b>major</b></td>
+    <td><b>minor</b></td>
+    <td><b>patch</b></td>
+  </tr>
+  <tr>
+    <td><b>Example</b></td>
+    <td><b>2</b>.0.0</td>
+    <td>1.<b>2</b>.0</td>
+    <td>1.0.<b>2</b></td>
+  </tr>
+  <tr>
+    <td><b>Rule</b></td>
+    <td>TBD</td>
+    <td>Larger changes, such as new components or bigger adjustments of existing ones</td>
+    <td>Minor adjustments, like bug fixes or style adjustments</td>
+  </tr>
+</tbody>
+</table>
+
+_This is just a first draft, should new components be minor or major? If minor, what constitutes a major release?_
+
+All tlm packages need to be on the same version, meaning if `tlm-stencil`'s version increases the versions of `tlm-react`, `tlm-vue` and `tlm-angular` need to be updated as well. 
+
 ### 1. Publish WebComponent Library
 
 To convert the component library into an NPM package, run:
