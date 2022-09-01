@@ -873,7 +873,7 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Thu, 01 Sep 2022 12:56:46 GMT
+ * Generated on Thu, 01 Sep 2022 15:01:05 GMT
  */
 const s = 12;
 const l = 24;
@@ -913,6 +913,13 @@ const buttonStyles = css `
     color: ${buttonButtonFilledDisabledFgColor};
   }
 `;
+// TODO: clarify spacing with tokens
+const iconStartStyles = css `
+  margin-right: ${s}px;
+`;
+const iconEndStyles = css `
+  margin-left: ${s}px;
+`;
 const TlmButton$1 = /*@__PURE__*/ proxyCustomElement(class extends HTMLElement {
   constructor() {
     super();
@@ -922,9 +929,14 @@ const TlmButton$1 = /*@__PURE__*/ proxyCustomElement(class extends HTMLElement {
       this.clickEmitter.emit('onClick');
     };
   }
-  render() {
-    return (h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" }, h("slot", null)));
+  componentWillLoad() {
+    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
+    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
   }
+  render() {
+    return (h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" }, this.hasIconStartSlot && (h("span", { class: iconStartStyles }, h("slot", { name: "icon-start" }))), h("slot", null), this.hasIconEndSlot && (h("span", { class: iconEndStyles }, h("slot", { name: "icon-end" })))));
+  }
+  get hostElement() { return this; }
 }, [4, "tlm-button", {
     "testId": [1, "test-id"],
     "disabled": [4]

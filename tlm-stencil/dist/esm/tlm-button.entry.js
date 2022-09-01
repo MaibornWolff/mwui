@@ -1,52 +1,5 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-const index = require('./index-b50f3c9d.js');
-
-function format(first, middle, last) {
-  return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
-}
-function getFontWeightValue(fontWeight) {
-  return {
-    'light': 300,
-    'regular': 400,
-    'semibold': 400,
-    'bold': 700,
-    'italic': 300,
-    'light italic': 300,
-  }[fontWeight.toLowerCase()];
-}
-/**
- *
- * @param fontWeight design token specific: includes also information about font-style
- * @returns italic | oblique | normal
- */
-function getFontStyle(input) {
-  const fontWeight = input.toLowerCase();
-  if (fontWeight.includes('italic')) {
-    return 'italic';
-  }
-  if (fontWeight.includes('oblique')) {
-    return 'oblique';
-  }
-  return 'normal';
-}
-
-const myComponentCss = ":host{display:block}";
-
-const MyComponent = class {
-  constructor(hostRef) {
-    index.registerInstance(this, hostRef);
-  }
-  getText() {
-    return format(this.first, this.middle, this.last);
-  }
-  render() {
-    return index.h("div", null, "Hello, World! I'm ", this.getText());
-  }
-};
-MyComponent.style = myComponentCss;
+import { r as registerInstance, c as createEvent, h, g as getElement } from './index-9a1a8ed8.js';
+import { g as getFontWeightValue, a as getFontStyle } from './utils-04cc832e.js';
 
 /*
 
@@ -920,7 +873,7 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Thu, 01 Sep 2022 12:56:46 GMT
+ * Generated on Thu, 01 Sep 2022 15:01:05 GMT
  */
 const s = 12;
 const l = 24;
@@ -960,18 +913,29 @@ const buttonStyles = css `
     color: ${buttonButtonFilledDisabledFgColor};
   }
 `;
+// TODO: clarify spacing with tokens
+const iconStartStyles = css `
+  margin-right: ${s}px;
+`;
+const iconEndStyles = css `
+  margin-left: ${s}px;
+`;
 const TlmButton = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
-    this.clickEmitter = index.createEvent(this, "clickEmitter", 4);
+    registerInstance(this, hostRef);
+    this.clickEmitter = createEvent(this, "clickEmitter", 4);
     this.handleClick = () => {
       this.clickEmitter.emit('onClick');
     };
   }
-  render() {
-    return (index.h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" }, index.h("slot", null)));
+  componentWillLoad() {
+    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
+    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
   }
+  render() {
+    return (h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" }, this.hasIconStartSlot && (h("span", { class: iconStartStyles }, h("slot", { name: "icon-start" }))), h("slot", null), this.hasIconEndSlot && (h("span", { class: iconEndStyles }, h("slot", { name: "icon-end" })))));
+  }
+  get hostElement() { return getElement(this); }
 };
 
-exports.my_component = MyComponent;
-exports.tlm_button = TlmButton;
+export { TlmButton as tlm_button };

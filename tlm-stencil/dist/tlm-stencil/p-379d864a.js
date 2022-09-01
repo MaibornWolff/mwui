@@ -1,0 +1,1 @@
+function i(i,t,l){return(i||"")+(t?` ${t}`:"")+(l?` ${l}`:"")}function t(i){return{light:300,regular:400,semibold:400,bold:700,italic:300,"light italic":300}[i.toLowerCase()]}function l(i){const t=i.toLowerCase();return t.includes("italic")?"italic":t.includes("oblique")?"oblique":"normal"}export{l as a,i as f,t as g}

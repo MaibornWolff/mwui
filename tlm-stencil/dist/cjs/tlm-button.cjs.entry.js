@@ -1,48 +1,9 @@
-import { r as registerInstance, h, c as createEvent } from './index-8f5d143b.js';
+'use strict';
 
-function format(first, middle, last) {
-  return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
-}
-function getFontWeightValue(fontWeight) {
-  return {
-    'light': 300,
-    'regular': 400,
-    'semibold': 400,
-    'bold': 700,
-    'italic': 300,
-    'light italic': 300,
-  }[fontWeight.toLowerCase()];
-}
-/**
- *
- * @param fontWeight design token specific: includes also information about font-style
- * @returns italic | oblique | normal
- */
-function getFontStyle(input) {
-  const fontWeight = input.toLowerCase();
-  if (fontWeight.includes('italic')) {
-    return 'italic';
-  }
-  if (fontWeight.includes('oblique')) {
-    return 'oblique';
-  }
-  return 'normal';
-}
+Object.defineProperty(exports, '__esModule', { value: true });
 
-const myComponentCss = ":host{display:block}";
-
-const MyComponent = class {
-  constructor(hostRef) {
-    registerInstance(this, hostRef);
-  }
-  getText() {
-    return format(this.first, this.middle, this.last);
-  }
-  render() {
-    return h("div", null, "Hello, World! I'm ", this.getText());
-  }
-};
-MyComponent.style = myComponentCss;
+const index = require('./index-fedc9739.js');
+const utils = require('./utils-55a2a453.js');
 
 /*
 
@@ -916,7 +877,7 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Thu, 01 Sep 2022 12:56:46 GMT
+ * Generated on Thu, 01 Sep 2022 15:01:05 GMT
  */
 const s = 12;
 const l = 24;
@@ -937,8 +898,8 @@ const buttonStyles = css `
   font-family: '${fontFamiliesDefault}';
   border: 0;
   padding: ${s}px ${l}px;
-  font-weight: ${getFontWeightValue(fontWeightsBold)};
-  font-style: ${getFontStyle(fontWeightsBold)};
+  font-weight: ${utils.getFontWeightValue(fontWeightsBold)};
+  font-style: ${utils.getFontStyle(fontWeightsBold)};
   color: ${buttonButtonFilledDefaultFgColor};
   font-size: ${fontSize14}px;
   border-radius: ${buttonButtonFilledDefaultBorderRadius};
@@ -956,17 +917,29 @@ const buttonStyles = css `
     color: ${buttonButtonFilledDisabledFgColor};
   }
 `;
+// TODO: clarify spacing with tokens
+const iconStartStyles = css `
+  margin-right: ${s}px;
+`;
+const iconEndStyles = css `
+  margin-left: ${s}px;
+`;
 const TlmButton = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.clickEmitter = createEvent(this, "clickEmitter", 4);
+    index.registerInstance(this, hostRef);
+    this.clickEmitter = index.createEvent(this, "clickEmitter", 4);
     this.handleClick = () => {
       this.clickEmitter.emit('onClick');
     };
   }
-  render() {
-    return (h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" }, h("slot", null)));
+  componentWillLoad() {
+    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
+    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
   }
+  render() {
+    return (index.h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" }, this.hasIconStartSlot && (index.h("span", { class: iconStartStyles }, index.h("slot", { name: "icon-start" }))), index.h("slot", null), this.hasIconEndSlot && (index.h("span", { class: iconEndStyles }, index.h("slot", { name: "icon-end" })))));
+  }
+  get hostElement() { return index.getElement(this); }
 };
 
-export { MyComponent as my_component, TlmButton as tlm_button };
+exports.tlm_button = TlmButton;

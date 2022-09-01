@@ -1,4 +1,4 @@
-import { Component, Event, h, Prop } from '@stencil/core';
+import { Component, Element, Event, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import { buttonButtonFilledDefaultBgColor, buttonButtonFilledDefaultBorderRadius, buttonButtonFilledDefaultFgColor, buttonButtonFilledDisabledBgColor, buttonButtonFilledDisabledFgColor, buttonButtonFilledHoverBgColor, buttonButtonFilledHoverFgColor, buttonButtonFilledPressedBgColor, buttonButtonFilledPressedFgColor, fontFamiliesDefault, fontSize14, fontWeightsBold, l, s, } from '../../../../tlm-token-farm/dist/js/global';
 import { getFontStyle, getFontWeightValue } from '../../utils/utils';
@@ -25,15 +25,30 @@ const buttonStyles = css `
     color: ${buttonButtonFilledDisabledFgColor};
   }
 `;
+// TODO: clarify spacing with tokens
+const iconStartStyles = css `
+  margin-right: ${s}px;
+`;
+const iconEndStyles = css `
+  margin-left: ${s}px;
+`;
 export class TlmButton {
   constructor() {
     this.handleClick = () => {
       this.clickEmitter.emit('onClick');
     };
   }
+  componentWillLoad() {
+    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
+    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
+  }
   render() {
     return (h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" },
-      h("slot", null)));
+      this.hasIconStartSlot && (h("span", { class: iconStartStyles },
+        h("slot", { name: "icon-start" }))),
+      h("slot", null),
+      this.hasIconEndSlot && (h("span", { class: iconEndStyles },
+        h("slot", { name: "icon-end" })))));
   }
   static get is() { return "tlm-button"; }
   static get properties() { return {
@@ -88,4 +103,5 @@ export class TlmButton {
         "references": {}
       }
     }]; }
+  static get elementRef() { return "hostElement"; }
 }
