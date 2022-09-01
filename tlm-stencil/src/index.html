@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
     <link rel="stylesheet" href="/build/tlm-stencil.css" />
-
+    <link rel="stylesheet" href="./global/global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
     <script type="module" src="/build/tlm-stencil.esm.js"></script>
     <script nomodule src="/build/tlm-stencil.js"></script>
   </head>
   <body>
-    <tlm-button test-id="test-button">Test Button</tlm-button>
-  <my-component></my-component>
+    <section>
+      <h2>TLM-Button</h2>
+      <h3>Filled</h3>
+      <div style="display: flex; gap: 16px">
+        <tlm-button test-id="test-button">Test Button</tlm-button>
+        <tlm-button test-id="test-button"><span slot="icon-start">🍔</span>Icon Start</tlm-button>
+        <tlm-button test-id="test-button"><span slot="icon-end">🍔</span>Icon End</tlm-button>
+        <tlm-button test-id="test-button"><span slot="icon-start">🍔</span><span slot="icon-end">🍔</span>Icon Both</tlm-button>
+      </div>
+    </section>
   </body>
 </html>

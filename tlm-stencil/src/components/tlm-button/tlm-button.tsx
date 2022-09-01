@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import {
   buttonButtonFilledDefaultBgColor,
@@ -17,6 +17,7 @@ import {
   s,
 } from '../../../../tlm-token-farm/dist/js/global';
 import { getFontStyle, getFontWeightValue } from '../../utils/utils';
+import { HTMLStencilElement } from '@stencil/core/internal';
 
 const buttonStyles = css`
   font-family: '${fontFamiliesDefault}';
@@ -42,11 +43,21 @@ const buttonStyles = css`
   }
 `;
 
+// TODO: clarify spacing with tokens
+const iconStartStyles = css`
+  margin-right: ${s}px;
+`;
+
+const iconEndStyles = css`
+  margin-left: ${s}px;
+`;
+
 @Component({
   tag: 'tlm-button',
   shadow: false,
 })
 export class TlmButton {
+  @Element() hostElement: HTMLStencilElement;
   @Prop() testId!: string;
   @Prop() disabled?: boolean;
   @Event({
@@ -56,6 +67,14 @@ export class TlmButton {
   })
   clickEmitter: EventEmitter<string>;
 
+  hasIconStartSlot: boolean;
+  hasIconEndSlot: boolean;
+
+  componentWillLoad() {
+    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
+    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
+  }
+
   handleClick = () => {
     this.clickEmitter.emit('onClick');
   };
@@ -63,7 +82,17 @@ export class TlmButton {
   render() {
     return (
       <button disabled={this.disabled} onClick={this.handleClick} class={buttonStyles} test-id={this.testId} type="button">
+        {this.hasIconStartSlot && (
+          <span class={iconStartStyles}>
+            <slot name="icon-start"></slot>
+          </span>
+        )}
         <slot></slot>
+        {this.hasIconEndSlot && (
+          <span class={iconEndStyles}>
+            <slot name="icon-end"></slot>
+          </span>
+        )}
       </button>
     );
   }
