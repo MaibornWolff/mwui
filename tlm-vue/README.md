@@ -13,9 +13,9 @@
 Import the library plugin in the `main.js` file:
 
 ```JavaScript
-import { ComponentLibrary } from 'vue-library';
+import { TlmComponents } from 'tlm-vue';
 
-createApp(App).use(ComponentLibrary).mount('#app');
+createApp(App).use(TlmComponents).mount('#app');
 ```
 You can then use your components within vue:
 

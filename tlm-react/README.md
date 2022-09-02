@@ -11,5 +11,5 @@
 ## Use in React
 
 ```JavaScript
-import { TlmButton } from 'tlm-stencil';
+import { TlmButton } from 'tlm-react';
 ```

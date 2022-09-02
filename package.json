@@ -9,7 +9,9 @@
   "workspaces": [
     "tlm-token-farm",
     "tlm-react",
-    "tlm-stencil"
+    "tlm-stencil",
+    "tlm-vue",
+    "tlm-angular"
   ],
   "scripts": {
     "start": "npm run start --workspace=tlm-stencil",
