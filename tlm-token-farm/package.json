@@ -12,7 +12,7 @@
     "start": "npm run build-tw && http-server -p 8080",
     "transform:global": "npx token-transformer input/tokens.json input/global.json global",
     "transform": "npm run transform:global",
-    "build:style-dictionary": "node src/scripts/build.ts",
+    "build:style-dictionary": "ts-node src/scripts/build.ts",
     "build": "npm run transform && npm run build:style-dictionary",
     "rollup": "rollup -c"
   },
@@ -20,9 +20,6 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.0",
-    "eslint": "^8.13.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0",
     "postcss": "^8.3.11",
     "postcss-import": "^14.0.2",
     "rollup": "^2.75.3",
@@ -34,6 +31,7 @@
     "postcss-cli": "^9.1.0",
     "style-dictionary": "^3.7.0",
     "tlm-stencil": "^0.0.2",
-    "token-transformer": "^0.0.22"
+    "token-transformer": "^0.0.22",
+    "ts-node": "^10.9.1"
   }
 }
