@@ -23,6 +23,4 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
-lerna-debug.log
-npm-debug.log
 packages/*/lib
