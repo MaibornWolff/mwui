@@ -3,7 +3,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 
 const index = require('./index-fedc9739.js');
-const utils = require('./utils-55a2a453.js');
+const utils = require('./utils-2f6b2355.js');
 
 const myComponentCss = ":host{display:block}";
 

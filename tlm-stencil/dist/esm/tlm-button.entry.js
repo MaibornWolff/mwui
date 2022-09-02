@@ -1,5 +1,5 @@
 import { r as registerInstance, c as createEvent, h, g as getElement } from './index-9a1a8ed8.js';
-import { g as getFontWeightValue, a as getFontStyle } from './utils-04cc832e.js';
+import { g as getFontWeightValue, a as getFontStyle } from './utils-c5de83dc.js';
 
 /*
 
