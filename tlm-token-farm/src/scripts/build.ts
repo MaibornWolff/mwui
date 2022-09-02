@@ -1,18 +1,18 @@
 /* eslint-disable no-console */
+const fs = require('fs');
 const template = require('lodash.template');
 const StyleDictionaryPackage = require('style-dictionary');
 const { createArray } = require('./utils.ts');
 const { utilities } = require('./utility-classes.ts');
-const fs = require('fs');
 
-const typingsES6Template = template(fs.readFileSync(`src/templates/typings/es6.template`));
+const typingsES6Template = template(fs.readFileSync('src/templates/typings/es6.template'));
 
 StyleDictionaryPackage.registerFormat({
   name: 'utilityClass',
-  formatter: function (dictionary, platform) {
+  formatter: dictionary => {
     let output = '';
-    dictionary.allProperties.forEach(function ({ type, name, value }) {
-      utilities.forEach(function (utility) {
+    dictionary.allProperties.forEach(({ type, name, value }) => {
+      utilities.forEach(utility => {
         // do not include spacings like xl-left
         if (type === utility.tokenType && !name.includes('-')) {
           const utilityClass = `${utility.name}-${name}`;
@@ -37,7 +37,7 @@ StyleDictionaryPackage.registerFormat({
 
 StyleDictionaryPackage.registerFormat({
   name: 'css/variables',
-  formatter(dictionary) {
+  formatter: dictionary => {
     const getValue = prop => prop.value;
 
     return `${this.selector} {\n${dictionary.allProperties.map(prop => `  --${prop.name}: ${getValue(prop)};`).join('\n')}\n}`;
@@ -46,7 +46,7 @@ StyleDictionaryPackage.registerFormat({
 
 StyleDictionaryPackage.registerFormat({
   name: 'scss/variables',
-  formatter(dictionary) {
+  formatter: dictionary => {
     const getValue = prop => prop.value;
 
     return `\n${dictionary.allProperties.map(prop => `  $${prop.name}: ${getValue(prop)};`).join('\n')}\n`;
@@ -61,11 +61,11 @@ StyleDictionaryPackage.registerFormat({
 StyleDictionaryPackage.registerTransform({
   name: 'sizes/px',
   type: 'value',
-  matcher(prop) {
+  matcher: prop => {
     // You can be more specific here if you only want 'em' units for font sizes
     return ['fontSizes', 'spacing', 'borderRadius', 'borderWidth', 'sizing'].includes(prop.attributes.category);
   },
-  transformer(prop) {
+  transformer: prop => {
     // You can also modify the value here if you want to convert pixels to ems
     return `${parseFloat(prop.original.value)}px`;
   },
@@ -77,7 +77,7 @@ const jsTransforms = baseTransforms.concat(['name/cti/camel']);
 
 // Configuration of the export dictionaries happens here - currently exporting as css, json and javaScript files
 
-function getStyleDictionaryConfig(theme) {
+const getStyleDictionaryConfig = (theme: string) => {
   return {
     source: [`input/${theme}.json`],
     format: {
@@ -106,7 +106,7 @@ function getStyleDictionaryConfig(theme) {
       },
     },
   };
-}
+};
 console.log('Build started...');
 
 // ["global", "mw-theme", "mw-theme_dark"].forEach((theme) => {

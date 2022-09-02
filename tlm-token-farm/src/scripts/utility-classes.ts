@@ -1,4 +1,4 @@
-const utilities = [
+export const utilities = [
   { CSSprop: ['padding'], name: 'p' },
   { CSSprop: ['padding-left'], name: 'pl' },
   { CSSprop: ['padding-right'], name: 'pr' },
@@ -18,5 +18,3 @@ const utilities = [
   name,
   CSSprop,
 }));
-
-module.exports = { utilities };

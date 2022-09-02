@@ -1,8 +1,11 @@
-/* eslint-disable no-multi-assign */
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable guard-for-in */
+interface TokenObject {
+  type: string;
+  path: string[];
+  name: string;
+  value: string;
+}
 
-function deepen(obj) {
+const deepen = (obj: TokenObject | {}) => {
   const result = {};
 
   // For each object path (property key) in the object
@@ -21,14 +24,14 @@ function deepen(obj) {
     target[parts[0]] = obj[objectPath];
   }
   return result;
-}
+};
 
-function createArray({ dictionary }) {
+export const createArray = ({ dictionary }) => {
   const arr = dictionary.allTokens;
   return JSON.stringify(arr);
-}
+};
 
-function filterTokensByType(type, tokens) {
+export const filterTokensByType = (type, tokens: Record<string, TokenObject>) => {
   const obj = Object.values(tokens).reduce((acc, cur) => {
     if (cur.type === type) {
       acc[cur.path.join('.')] = `var(--${cur.name}, ${cur.value})`;
@@ -36,11 +39,5 @@ function filterTokensByType(type, tokens) {
     return acc;
   }, {});
 
-  const deep = deepen(obj);
-  return deep;
-}
-
-module.exports = {
-  createArray,
-  filterTokensByType,
+  return deepen(obj);
 };
