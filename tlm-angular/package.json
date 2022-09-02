@@ -1,6 +1,6 @@
 {
   "name": "tlm-angular-test",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Angular specific wrapper for tlm-components",
   "repository": {
     "type": "git",

@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { DIRECTIVES } from './stencil-generated';
 
 @NgModule({
-  declarations: [DIRECTIVES],
+  declarations: [...DIRECTIVES],
   imports: [],
-  exports: [DIRECTIVES],
+  exports: [...DIRECTIVES],
 })
 export class TlmComponentLibraryModule {}
