@@ -35,8 +35,6 @@ _NOT YET PUBLISHED_
 
 Prior to publishing every update needs to be versioned based on these guidelines:
 
-_NOT FINAL_
-
 <table>
 <thead>
   <tr>
@@ -58,14 +56,12 @@ _NOT FINAL_
   </tr>
   <tr>
     <td><b>Rule</b></td>
-    <td>TBD</td>
-    <td>Larger changes, such as new components or bigger adjustments of existing ones</td>
+    <td>Breaking changes, such as fundamental reworks of existing components.</td>
+    <td>Larger changes, such as the addition of new components or props</td>
     <td>Minor adjustments, like bug fixes or style adjustments</td>
   </tr>
 </tbody>
 </table>
-
-_This is just a first draft, should new components be minor or major? If minor, what constitutes a major release?_
 
 All tlm packages need to be on the same version, meaning if `tlm-stencil`'s version increases the versions of `tlm-react`, `tlm-vue` and `tlm-angular` need to be updated as well. 
 
