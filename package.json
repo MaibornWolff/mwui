@@ -19,7 +19,10 @@
     "test": "npm run test --workspace=tlm-stencil",
     "build-tokens": "npm run build --workspace=tlm-token-farm",
     "build-stencil": "npm run build --workspace=tlm-stencil",
-    "build-storybook": "npm run build-storybook --workspace=tlm-stencil"
+    "build-storybook": "npm run build-storybook --workspace=tlm-stencil",
+    "version:patch": "./scripts/bump-version.sh patch",
+    "version:minor": "./scripts/bump-version.sh minor",
+    "version:major": "./scripts/bump-version.sh major"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
