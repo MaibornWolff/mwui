@@ -27,7 +27,7 @@
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4",
-    "tlm-stencil": "^0.0.2"
+    "tlm-stencil": "latest"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.1",

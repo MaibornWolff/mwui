@@ -33,7 +33,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "tlm-stencil": "^0.0.2"
+    "tlm-stencil": "latest"
   },
   "peerDependencies": {
     "react": "^17.0.2",
