@@ -1,4 +1,4 @@
-import { r as registerInstance, h } from './index-9a1a8ed8.js';
+import { r as registerInstance, h } from './index-5ad3efa4.js';
 import { f as format } from './utils-04cc832e.js';
 
 const myComponentCss = ":host{display:block}";

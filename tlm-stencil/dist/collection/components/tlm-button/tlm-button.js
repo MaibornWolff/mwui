@@ -1,4 +1,4 @@
-import { Component, Element, Event, h, Prop } from '@stencil/core';
+import { h } from '@stencil/core';
 import { css } from '@emotion/css';
 import { buttonButtonFilledDefaultBgColor, buttonButtonFilledDefaultBorderRadius, buttonButtonFilledDefaultFgColor, buttonButtonFilledDisabledBgColor, buttonButtonFilledDisabledFgColor, buttonButtonFilledHoverBgColor, buttonButtonFilledHoverFgColor, buttonButtonFilledPressedBgColor, buttonButtonFilledPressedFgColor, fontFamiliesDefault, fontSize14, fontWeightsBold, l, s, } from '../../../../tlm-token-farm/dist/js/global';
 import { getFontStyle, getFontWeightValue } from '../../utils/utils';
@@ -43,65 +43,64 @@ export class TlmButton {
     this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
   }
   render() {
-    return (h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" },
-      this.hasIconStartSlot && (h("span", { class: iconStartStyles },
-        h("slot", { name: "icon-start" }))),
-      h("slot", null),
-      this.hasIconEndSlot && (h("span", { class: iconEndStyles },
-        h("slot", { name: "icon-end" })))));
+    return (h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" }, this.hasIconStartSlot && (h("span", { class: iconStartStyles }, h("slot", { name: "icon-start" }))), h("slot", null), this.hasIconEndSlot && (h("span", { class: iconEndStyles }, h("slot", { name: "icon-end" })))));
   }
   static get is() { return "tlm-button"; }
-  static get properties() { return {
-    "testId": {
-      "type": "string",
-      "mutable": false,
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+  static get properties() {
+    return {
+      "testId": {
+        "type": "string",
+        "mutable": false,
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        },
+        "required": true,
+        "optional": false,
+        "docs": {
+          "tags": [],
+          "text": ""
+        },
+        "attribute": "test-id",
+        "reflect": false
       },
-      "required": true,
-      "optional": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "test-id",
-      "reflect": false
-    },
-    "disabled": {
-      "type": "boolean",
-      "mutable": false,
-      "complexType": {
-        "original": "boolean",
-        "resolved": "boolean",
-        "references": {}
-      },
-      "required": false,
-      "optional": true,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "attribute": "disabled",
-      "reflect": false
-    }
-  }; }
-  static get events() { return [{
-      "method": "clickEmitter",
-      "name": "clickEmitter",
-      "bubbles": true,
-      "cancelable": false,
-      "composed": false,
-      "docs": {
-        "tags": [],
-        "text": ""
-      },
-      "complexType": {
-        "original": "string",
-        "resolved": "string",
-        "references": {}
+      "disabled": {
+        "type": "boolean",
+        "mutable": false,
+        "complexType": {
+          "original": "boolean",
+          "resolved": "boolean",
+          "references": {}
+        },
+        "required": false,
+        "optional": true,
+        "docs": {
+          "tags": [],
+          "text": ""
+        },
+        "attribute": "disabled",
+        "reflect": false
       }
-    }]; }
+    };
+  }
+  static get events() {
+    return [{
+        "method": "clickEmitter",
+        "name": "clickEmitter",
+        "bubbles": true,
+        "cancelable": false,
+        "composed": false,
+        "docs": {
+          "tags": [],
+          "text": ""
+        },
+        "complexType": {
+          "original": "string",
+          "resolved": "string",
+          "references": {}
+        }
+      }];
+  }
   static get elementRef() { return "hostElement"; }
 }
