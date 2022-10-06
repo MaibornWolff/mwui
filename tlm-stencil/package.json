@@ -1,6 +1,6 @@
 {
   "name": "tlm-stencil",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Component Library using Figma's design tokens",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
