@@ -1,6 +1,4 @@
 #!/bin/sh
-cd ./tlm-stencil
-npm publish
 
 cd ../tlm-angular
 npm i tlm-stencil@latest

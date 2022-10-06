@@ -22,7 +22,8 @@
     "build-storybook": "npm run build-storybook --workspace=tlm-stencil",
     "version:patch": "./scripts/bump-version.sh patch",
     "version:minor": "./scripts/bump-version.sh minor",
-    "version:major": "./scripts/bump-version.sh major"
+    "version:major": "./scripts/bump-version.sh major",
+    "release": "./scripts/pre-release.sh && ./scripts/release.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
