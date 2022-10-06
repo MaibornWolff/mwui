@@ -1,6 +1,6 @@
 {
   "name": "tlm-vue",
-  "version": "0.0.3",
+  "version": "0.0.10",
   "description": "Vue specific wrapper for tlm-components",
   "repository": {
     "type": "git",
