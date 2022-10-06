@@ -21,7 +21,7 @@
     "tsc": "tsc -p ."
   },
   "dependencies": {
-    "tlm-stencil": "latest"
+    "tlm-stencil": "^0.0.3"
   },
   "devDependencies": {
     "vue": "^3.2.37"
