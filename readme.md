@@ -17,6 +17,7 @@ A web component library which uses Figma's token plugin to create easily modifia
 - [Setup Figma Token Plugin](token-plugin.md)
 
 ---
+
 ## The Design System Pipeline
 
 All the Components are developed based on the TLM Design System in Figma. We use `Design Tokens` to version and synchronize design decisions between the Design and the WebComponents.
@@ -63,7 +64,7 @@ Prior to publishing every update needs to be versioned based on these guidelines
 </tbody>
 </table>
 
-All tlm packages need to be on the same version, meaning if `tlm-stencil`'s version increases the versions of `tlm-react`, `tlm-vue` and `tlm-angular` need to be updated as well. 
+All tlm packages need to be on the same version, meaning if `tlm-stencil`'s version increases the versions of `tlm-react`, `tlm-vue` and `tlm-angular` need to be updated as well.
 
 ### 1. Publish WebComponent Library
 
@@ -76,13 +77,15 @@ npm run build
 Then, publish to NPM by running:
 
 ```bash
-npm version major | minor | patch
+npm run version:{major | minor | patch}
 npm publish
 ```
 
 ### 2. Publish framework-specific WebComponent Libraries
 
 Perform step 1) and update version of `tlm-components` in `tlm-react`.
+
+Update `tlm-stencil` dependency to latest published version.
 
 ```bash
 # in framework-specific directory, e.g. tlm-react
@@ -93,7 +96,6 @@ Then, publish to NPM by running:
 
 ```bash
 # in framework-specific directory, e.g. tlm-react
-npm version major | minor | patch
 npm publish
 ```
 
