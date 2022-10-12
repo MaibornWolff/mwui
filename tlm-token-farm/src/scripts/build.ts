@@ -40,7 +40,7 @@ StyleDictionaryPackage.registerFormat({
   formatter: dictionary => {
     const getValue = prop => prop.value;
 
-    return `${this.selector} {\n${dictionary.allProperties.map(prop => `  --${prop.name}: ${getValue(prop)};`).join('\n')}\n}`;
+    return `:root {\n${dictionary.allProperties.map(prop => `  --${prop.name}: ${getValue(prop)};`).join('\n')}\n}`;
   },
 });
 
@@ -91,6 +91,16 @@ const getStyleDictionaryConfig = (theme: string) => {
           {
             destination: `index.css`,
             format: 'utilityClass',
+          },
+        ],
+      },
+      cssVariables: {
+        transformGroup: 'css',
+        buildPath: 'dist/',
+        files: [
+          {
+            destination: `variables.css`,
+            format: 'css/variables',
           },
         ],
       },
