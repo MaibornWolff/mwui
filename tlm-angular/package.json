@@ -25,9 +25,9 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "rxjs": "~7.5.0",
+    "tlm-stencil": "^0.0.14",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "tlm-stencil": "latest"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.1",
