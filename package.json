@@ -23,7 +23,7 @@
     "version:patch": "./scripts/bump-version.sh patch",
     "version:minor": "./scripts/bump-version.sh minor",
     "version:major": "./scripts/bump-version.sh major",
-    "release": "./scripts/pre-release.sh && ./scripts/release.sh"
+    "release": "./scripts/pre-release.sh && ./scripts/update-stencil.sh && ./scripts/release.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",

@@ -1,17 +1,4 @@
 #!/bin/sh
-
-cd ./tlm-angular
-npm i tlm-stencil@latest
-#npm publish
-
-cd ../tlm-vue
-npm i tlm-stencil@latest
-#npm publish
-
-cd ../tlm-react
-npm i tlm-stencil@latest
-#npm publish
-
 echo "Committing package.json updates."
 
 git add .
