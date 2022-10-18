@@ -1,62 +1,13 @@
 /* eslint-disable no-console */
-const fs = require('fs');
-const template = require('lodash.template');
 const StyleDictionaryPackage = require('style-dictionary');
 const { createArray } = require('./utils.ts');
-const { utilities } = require('./utility-classes.ts');
+const formats = require('./formats.ts');
 
-const typingsES6Template = template(fs.readFileSync('src/templates/typings/es6.template'));
+formats.forEach(format => StyleDictionaryPackage.registerFormat(format));
 
-StyleDictionaryPackage.registerFormat({
-  name: 'utilityClass',
-  formatter: dictionary => {
-    let output = '';
-    dictionary.allProperties.forEach(({ type, name, value }) => {
-      utilities.forEach(utility => {
-        // do not include spacings like xl-left
-        if (type === utility.tokenType && !name.includes('-')) {
-          const utilityClass = `${utility.name}-${name}`;
-
-          // support x and y utilities, e.g. mx = ml & mr
-          if (utility.CSSprop.length > 1) {
-            output += `.${utilityClass} {
-  ${utility.CSSprop[0]}: ${value}px;
-  ${utility.CSSprop[1]}: ${value}px;
-  }\n\n`;
-          } else {
-            output += `.${utilityClass} {
-  ${utility.CSSprop[0]}: ${value}px;
-  }\n\n`;
-          }
-        }
-      });
-    });
-    return output;
-  },
-});
-
-StyleDictionaryPackage.registerFormat({
-  name: 'css/variables',
-  formatter: dictionary => {
-    const getValue = prop => prop.value;
-
-    return `:root {\n${dictionary.allProperties.map(prop => `  --${prop.name}: ${getValue(prop)};`).join('\n')}\n}`;
-  },
-});
-
-StyleDictionaryPackage.registerFormat({
-  name: 'scss/variables',
-  formatter: dictionary => {
-    const getValue = prop => prop.value;
-
-    return `\n${dictionary.allProperties.map(prop => `  $${prop.name}: ${getValue(prop)};`).join('\n')}\n`;
-  },
-});
-
-StyleDictionaryPackage.registerFormat({
-  name: 'typings/es6',
-  formatter: typingsES6Template,
-});
+const baseTransforms = ['attribute/cti', 'size/px'];
+const jsTransforms = baseTransforms.concat(['name/cti/camel']);
+const scssTransforms = baseTransforms.concat(['name/cti/kebab']);
 
 StyleDictionaryPackage.registerTransform({
   name: 'sizes/px',
@@ -67,15 +18,9 @@ StyleDictionaryPackage.registerTransform({
   },
   transformer: prop => {
     // You can also modify the value here if you want to convert pixels to ems
-    return `${parseFloat(prop.original.value)}px`;
+    return prop.original.value.includes('px') ? parseFloat(prop.original.value) : `${parseFloat(prop.original.value)}px`;
   },
 });
-
-const baseTransforms = ['attribute/cti', 'size/px'];
-const jsTransforms = baseTransforms.concat(['name/cti/camel']);
-// const scssTransforms = baseTransforms.concat(['name/cti/kebab']);
-
-// Configuration of the export dictionaries happens here - currently exporting as css, json and javaScript files
 
 const getStyleDictionaryConfig = (theme: string) => {
   return {
