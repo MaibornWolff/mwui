@@ -145,7 +145,7 @@
   --semantic-border-surface-border-radius-default-xl: 30px;
   --button-button-filled-default-bg-color: #6b60cd;
   --button-button-filled-default-fg-color: #ffffff;
-  --button-button-filled-default-border-radius: 30px;
+  --button-button-filled-default-border-radius: 0px;
   --button-button-filled-hover-bg-color: #6b60cd;
   --button-button-filled-hover-fg-color: #ffffff;
   --button-button-filled-focused-bg-color: #7965AF;
@@ -157,7 +157,7 @@
   --button-button-outline-default-bg-color: #ffffff;
   --button-button-outline-default-fg-color: #6750a4;
   --button-button-outline-default-border-color: #79747e;
-  --button-button-outline-default-border-radius: 30px;
+  --button-button-outline-default-border-radius: 0px;
   --button-button-outline-hover-bg-color: #6750a414;
   --button-button-outline-hover-fg-color: #6750a4;
   --button-button-outline-hover-border-color: #79747e;

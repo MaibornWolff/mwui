@@ -55,3 +55,24 @@ export class TlmButton {
     proxyOutputs(this, this.el, ['clickEmitter']);
   }
 }
+
+
+export declare interface TlmButtonGroup extends Components.TlmButtonGroup {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['testId']
+})
+@Component({
+  selector: 'tlm-button-group',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['testId']
+})
+export class TlmButtonGroup {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}

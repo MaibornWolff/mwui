@@ -21,3 +21,8 @@ export const TlmButton = /*@__PURE__*/ defineContainer<JSX.TlmButton>('tlm-butto
   'clickEmitter'
 ]);
 
+
+export const TlmButtonGroup = /*@__PURE__*/ defineContainer<JSX.TlmButtonGroup>('tlm-button-group', undefined, [
+  'testId'
+]);
+

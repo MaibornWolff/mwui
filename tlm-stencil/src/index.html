@@ -14,7 +14,7 @@
   </head>
   <body>
     <section>
-      <h2>TLM-Button</h2>
+      <h2>Button</h2>
       <h3>Filled</h3>
       <div style="display: flex; gap: 16px">
         <tlm-button test-id="test-button">Test Button</tlm-button>
@@ -22,6 +22,17 @@
         <tlm-button test-id="test-button"><span slot="icon-end">🍔</span>Icon End</tlm-button>
         <tlm-button test-id="test-button"><span slot="icon-start">🍔</span><span slot="icon-end">🍔</span>Icon Both</tlm-button>
       </div>
+    </section>
+    <section>
+      <h2>Button Group</h2>
+      <tlm-button-group>
+        <tlm-button>First</tlm-button>
+        <tlm-button>Second</tlm-button>
+        <tlm-button>Third</tlm-button>
+        <tlm-button>Third</tlm-button>
+        <tlm-button>Third</tlm-button>
+        <tlm-button>Third</tlm-button>
+      </tlm-button-group>
     </section>
   </body>
 </html>

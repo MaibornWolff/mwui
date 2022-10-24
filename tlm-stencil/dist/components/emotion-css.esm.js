@@ -1,6 +1,3 @@
-import { r as registerInstance, c as createEvent, h, g as getElement } from './index-5ad3efa4.js';
-import { g as getFontWeightValue, a as getFontStyle } from './utils-04cc832e.js';
-
 /*
 
 Based off glamor's StyleSheet, thanks Sunil ❤️
@@ -871,71 +868,4 @@ var _createEmotion = createEmotion({
 }),
     css = _createEmotion.css;
 
-/**
- * Do not edit directly
- * Generated on Tue, 18 Oct 2022 11:40:02 GMT
- */
-const s = 12;
-const l = 24;
-const fontFamiliesDefault = "roboto";
-const fontWeightsBold = "Bold";
-const fontSize14 = 14;
-const buttonButtonFilledDefaultBgColor = "#6b60cd";
-const buttonButtonFilledDefaultFgColor = "#ffffff";
-const buttonButtonFilledDefaultBorderRadius = "30px";
-const buttonButtonFilledHoverBgColor = "#6b60cd";
-const buttonButtonFilledHoverFgColor = "#ffffff";
-const buttonButtonFilledPressedBgColor = "#7965AF";
-const buttonButtonFilledPressedFgColor = "#ffffff";
-const buttonButtonFilledDisabledBgColor = "#1f1f1f1f";
-const buttonButtonFilledDisabledFgColor = "#1c1b1f61";
-
-const buttonStyles = css `
-  font-family: '${fontFamiliesDefault}';
-  border: 0;
-  padding: ${s}px ${l}px;
-  font-weight: ${getFontWeightValue(fontWeightsBold)};
-  font-style: ${getFontStyle(fontWeightsBold)};
-  color: ${buttonButtonFilledDefaultFgColor};
-  font-size: ${fontSize14}px;
-  border-radius: ${buttonButtonFilledDefaultBorderRadius};
-  background-color: ${buttonButtonFilledDefaultBgColor};
-  &:hover {
-    background-color: ${buttonButtonFilledHoverBgColor};
-    color: ${buttonButtonFilledHoverFgColor};
-  }
-  &:active {
-    background-color: ${buttonButtonFilledPressedBgColor};
-    color: ${buttonButtonFilledPressedFgColor};
-  }
-  &:disabled {
-    background-color: ${buttonButtonFilledDisabledBgColor};
-    color: ${buttonButtonFilledDisabledFgColor};
-  }
-`;
-// TODO: clarify spacing with tokens
-const iconStartStyles = css `
-  margin-right: ${s}px;
-`;
-const iconEndStyles = css `
-  margin-left: ${s}px;
-`;
-const TlmButton = class {
-  constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.clickEmitter = createEvent(this, "clickEmitter", 4);
-    this.handleClick = () => {
-      this.clickEmitter.emit('onClick');
-    };
-  }
-  componentWillLoad() {
-    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
-    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
-  }
-  render() {
-    return (h("button", { disabled: this.disabled, onClick: this.handleClick, class: buttonStyles, "test-id": this.testId, type: "button" }, this.hasIconStartSlot && (h("span", { class: iconStartStyles }, h("slot", { name: "icon-start" }))), h("slot", null), this.hasIconEndSlot && (h("span", { class: iconEndStyles }, h("slot", { name: "icon-end" })))));
-  }
-  get hostElement() { return getElement(this); }
-};
-
-export { TlmButton as tlm_button };
+export { css as c };

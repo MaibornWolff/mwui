@@ -13,5 +13,5 @@ const patchBrowser = () => {
 };
 
 patchBrowser().then(options => {
-  return bootstrapLazy([["my-component",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}]]],["tlm-button",[[4,"tlm-button",{"testId":[1,"test-id"],"disabled":[4]}]]]], options);
+  return bootstrapLazy([["tlm-button_2",[[4,"tlm-button",{"testId":[1,"test-id"],"disabled":[4]}],[4,"tlm-button-group",{"testId":[1,"test-id"]}]]],["my-component",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}]]]], options);
 });

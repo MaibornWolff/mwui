@@ -24,6 +24,9 @@ export namespace Components {
         "disabled"?: boolean;
         "testId": string;
     }
+    interface TlmButtonGroup {
+        "testId": string;
+    }
 }
 export interface TlmButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -42,9 +45,16 @@ declare global {
         prototype: HTMLTlmButtonElement;
         new (): HTMLTlmButtonElement;
     };
+    interface HTMLTlmButtonGroupElement extends Components.TlmButtonGroup, HTMLStencilElement {
+    }
+    var HTMLTlmButtonGroupElement: {
+        prototype: HTMLTlmButtonGroupElement;
+        new (): HTMLTlmButtonGroupElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
         "tlm-button": HTMLTlmButtonElement;
+        "tlm-button-group": HTMLTlmButtonGroupElement;
     }
 }
 declare namespace LocalJSX {
@@ -67,9 +77,13 @@ declare namespace LocalJSX {
         "onClickEmitter"?: (event: TlmButtonCustomEvent<string>) => void;
         "testId": string;
     }
+    interface TlmButtonGroup {
+        "testId": string;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
         "tlm-button": TlmButton;
+        "tlm-button-group": TlmButtonGroup;
     }
 }
 export { LocalJSX as JSX };
@@ -78,6 +92,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "tlm-button": LocalJSX.TlmButton & JSXBase.HTMLAttributes<HTMLTlmButtonElement>;
+            "tlm-button-group": LocalJSX.TlmButtonGroup & JSXBase.HTMLAttributes<HTMLTlmButtonGroupElement>;
         }
     }
 }

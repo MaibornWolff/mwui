@@ -14,7 +14,7 @@ const patchEsm = () => {
 const defineCustomElements = (win, options) => {
   if (typeof window === 'undefined') return Promise.resolve();
   return patchEsm().then(() => {
-  return index.bootstrapLazy([["my-component.cjs",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}]]],["tlm-button.cjs",[[4,"tlm-button",{"testId":[1,"test-id"],"disabled":[4]}]]]], options);
+  return index.bootstrapLazy([["tlm-button_2.cjs",[[4,"tlm-button",{"testId":[1,"test-id"],"disabled":[4]}],[4,"tlm-button-group",{"testId":[1,"test-id"]}]]],["my-component.cjs",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}]]]], options);
   });
 };
 

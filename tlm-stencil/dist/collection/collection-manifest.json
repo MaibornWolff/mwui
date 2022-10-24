@@ -1,7 +1,8 @@
 {
   "entries": [
     "./components/my-component/my-component.js",
-    "./components/tlm-button/tlm-button.js"
+    "./components/tlm-button/tlm-button.js",
+    "./components/tlm-button-group/tlm-button-group.js"
   ],
   "compiler": {
     "name": "@stencil/core",

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 24 Oct 2022 08:19:40 GMT
+ * Generated on Mon, 24 Oct 2022 13:56:18 GMT
  */
 
 export const magenta100 = "#fde8f2";
@@ -175,7 +175,7 @@ export const cardTextDefaultTitleLarge = {"0":"{","1":"s","2":"e","3":"m","4":"a
 export const cardTextDefaultBodyLarge = {"0":"{","1":"s","2":"e","3":"m","4":"a","5":"n","6":"t","7":"i","8":"c","9":".","10":"f","11":"o","12":"n","13":"t","14":"s","15":".","16":"c","17":"o","18":"n","19":"t","20":"e","21":"n","22":"t","23":".","24":"t","25":"e","26":"x","27":"t","28":".","29":"d","30":"e","31":"f","32":"a","33":"u","34":"l","35":"t","36":".","37":"b","38":"o","39":"d","40":"y","41":".","42":"l","43":"a","44":"r","45":"g","46":"e","47":"}"};
 export const buttonButtonFilledDefaultBgColor = "#6b60cd";
 export const buttonButtonFilledDefaultFgColor = "#ffffff";
-export const buttonButtonFilledDefaultBorderRadius = "30px";
+export const buttonButtonFilledDefaultBorderRadius = "0px";
 export const buttonButtonFilledHoverBgColor = "#6b60cd";
 export const buttonButtonFilledHoverFgColor = "#ffffff";
 export const buttonButtonFilledFocusedBgColor = "#7965AF";
@@ -187,7 +187,7 @@ export const buttonButtonFilledDisabledFgColor = "#1c1b1f61";
 export const buttonButtonOutlineDefaultBgColor = "#ffffff";
 export const buttonButtonOutlineDefaultFgColor = "#6750a4";
 export const buttonButtonOutlineDefaultBorderColor = "#79747e";
-export const buttonButtonOutlineDefaultBorderRadius = "30px";
+export const buttonButtonOutlineDefaultBorderRadius = "0px";
 export const buttonButtonOutlineHoverBgColor = "#6750a414";
 export const buttonButtonOutlineHoverFgColor = "#6750a4";
 export const buttonButtonOutlineHoverBorderColor = "#79747e";

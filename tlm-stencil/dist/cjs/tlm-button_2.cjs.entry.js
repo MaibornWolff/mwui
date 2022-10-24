@@ -877,7 +877,7 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Tue, 18 Oct 2022 11:40:02 GMT
+ * Generated on Mon, 24 Oct 2022 13:56:18 GMT
  */
 const s = 12;
 const l = 24;
@@ -886,7 +886,7 @@ const fontWeightsBold = "Bold";
 const fontSize14 = 14;
 const buttonButtonFilledDefaultBgColor = "#6b60cd";
 const buttonButtonFilledDefaultFgColor = "#ffffff";
-const buttonButtonFilledDefaultBorderRadius = "30px";
+const buttonButtonFilledDefaultBorderRadius = "0px";
 const buttonButtonFilledHoverBgColor = "#6b60cd";
 const buttonButtonFilledHoverFgColor = "#ffffff";
 const buttonButtonFilledPressedBgColor = "#7965AF";
@@ -942,4 +942,19 @@ const TlmButton = class {
   get hostElement() { return index.getElement(this); }
 };
 
+const buttonGroupStyles = css `
+  display: flex;
+  flex-wrap: wrap;
+`;
+const TlmButtonGroup = class {
+  constructor(hostRef) {
+    index.registerInstance(this, hostRef);
+  }
+  render() {
+    return (index.h("div", { class: buttonGroupStyles, "test-id": this.testId }, index.h("slot", null)));
+  }
+  get hostElement() { return index.getElement(this); }
+};
+
 exports.tlm_button = TlmButton;
+exports.tlm_button_group = TlmButtonGroup;

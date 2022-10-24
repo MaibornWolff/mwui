@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 const StyleDictionaryPackage = require('style-dictionary');
-const { createArray } = require('./utils.ts');
+const { createArray } = require('./utils.js');
 const formats = require('./formats.ts');
 
 formats.forEach(format => StyleDictionaryPackage.registerFormat(format));
