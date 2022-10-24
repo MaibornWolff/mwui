@@ -4,7 +4,7 @@ import { g as getFontWeightValue, a as getFontStyle } from './utils.js';
 
 /**
  * Do not edit directly
- * Generated on Mon, 24 Oct 2022 13:56:18 GMT
+ * Generated on Mon, 24 Oct 2022 14:19:11 GMT
  */
 const s = 12;
 const l = 24;
