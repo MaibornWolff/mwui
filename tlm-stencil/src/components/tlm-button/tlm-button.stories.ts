@@ -4,16 +4,16 @@ export default {
 
 import '../../global/global.css';
 
-
 const Template = args => `
-<tlm-button test-id="${args.testId}" onClick="${args.onClick}" disabled="${args.disabled}">${args.slot}</tlm-button>`;
+<tlm-button test-id="${args.testId}" onClick="${args.onClick}" disabled="${args.disabled}" secondary="${args.secondary}">${args.label}</tlm-button>`;
 
-export const Example = Template.bind({});
-Example.args = {
-  testId: 'button-1',
-  slot: 'Press here',
+export const Button = Template.bind({});
+Button.args = {
+  testId: 'button',
+  label: 'Button',
   onClick: () => {
     console.log('clicked');
   },
   disabled: false,
+  secondary: false,
 };

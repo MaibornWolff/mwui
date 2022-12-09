@@ -1,55 +1,113 @@
 import { Component, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
-import {
-  buttonButtonFilledDefaultBgColor,
-  buttonButtonFilledDefaultBorderRadius,
-  buttonButtonFilledDefaultFgColor,
-  buttonButtonFilledDisabledBgColor,
-  buttonButtonFilledDisabledFgColor,
-  buttonButtonFilledHoverBgColor,
-  buttonButtonFilledHoverFgColor,
-  buttonButtonFilledPressedBgColor,
-  buttonButtonFilledPressedFgColor,
-  fontFamiliesDefault,
-  fontSize14,
-  fontWeightsBold,
-  l,
-  s,
-} from '../../../../tlm-token-farm/dist/js/global';
-import { getFontStyle, getFontWeightValue } from '../../utils/utils';
+import { getFontWeightValue } from '../../utils/utils';
 import { HTMLStencilElement } from '@stencil/core/internal';
+import {
+  mwComponentButtonPrimaryColorBgDefault,
+  mwComponentButtonBorderWidthPrimaryDefault,
+  mwComponentButtonPrimaryColorFgDefault,
+  mwComponentButtonPrimaryColorBgHover,
+  mwComponentButtonPrimaryColorFgHover,
+  mwComponentButtonPrimaryColorBgPressed,
+  mwComponentButtonPrimaryColorFgFocused,
+  mwComponentButtonPrimaryColorBgDisabled,
+  mwComponentButtonPrimaryColorFgDisabled,
+  mwComponentButtonSecondaryColorFgDisabled,
+  mwComponentButtonSecondaryColorFgFocused,
+  mwComponentButtonSecondaryColorFgHover,
+  mwComponentButtonSecondaryColorBgDefault,
+  mwComponentButtonSecondaryColorFgDefault,
+  mwComponentButtonBorderWidthSecondaryDefault,
+  mwComponentButtonSecondaryColorOutlineHover,
+  mwComponentButtonSecondaryColorOutlineDisabled,
+  mwComponentButtonSecondaryColorOutlineDefault,
+  typographyButtonLargeBold,
+  mwComponentButtonSecondaryColorFgPressed,
+  mwComponentButtonSecondaryColorOutlinePressed,
+  mwComponentButtonPrimaryColorFgPressed,
+  mwComponentButtonPrimaryColorBgFocused,
+  mwComponentButtonSecondaryColorOutlineFocused,
+  mwComponentButtonPrimarySecondaryPaddingLr,
+  mwComponentButtonPrimarySecondaryPaddingTb,
+  mwComponentButtonPrimarySecondaryGap,
+  mwComponentButtonBorderRadiusDefault,
+  mwComponentButtonPrimarySecondaryMinWidth,
+  mwComponentButtonBorderWidthSecondaryFocused,
+} from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
-const buttonStyles = css`
-  font-family: '${fontFamiliesDefault}';
-  border: 0;
-  padding: ${s}px ${l}px;
-  font-weight: ${getFontWeightValue(fontWeightsBold)};
-  font-style: ${getFontStyle(fontWeightsBold)};
-  color: ${buttonButtonFilledDefaultFgColor};
-  font-size: ${fontSize14}px;
-  border-radius: ${buttonButtonFilledDefaultBorderRadius};
-  background-color: ${buttonButtonFilledDefaultBgColor};
+// figma exports percentage value instead of em
+// workaround to convert it to float
+const letterSpacing = Number(typographyButtonLargeBold.letterSpacing.replace('%', '').trim()) / 100;
+
+const base = css`
+  appearance: none;
+  padding: ${mwComponentButtonPrimarySecondaryPaddingTb} ${mwComponentButtonPrimarySecondaryPaddingLr};
+  font-family: '${typographyButtonLargeBold.fontFamily}';
+  letter-spacing: ${letterSpacing}em;
+  line-height: ${typographyButtonLargeBold.lineHeight};
+  font-weight: ${getFontWeightValue(typographyButtonLargeBold.fontWeight)};
+  font-size: ${typographyButtonLargeBold.fontSize}px;
+  border-radius: ${mwComponentButtonBorderRadiusDefault}px;
+  min-width: ${mwComponentButtonPrimarySecondaryMinWidth}px;
+`;
+
+const primaryButtonStyles = css`
+  ${base};
+  border: ${mwComponentButtonBorderWidthPrimaryDefault};
+  color: ${mwComponentButtonPrimaryColorFgDefault};
+  background-color: ${mwComponentButtonPrimaryColorBgDefault};
   &:hover {
-    background-color: ${buttonButtonFilledHoverBgColor};
-    color: ${buttonButtonFilledHoverFgColor};
+    background-color: ${mwComponentButtonPrimaryColorBgHover};
+    color: ${mwComponentButtonPrimaryColorFgHover};
+  }
+  &:focus {
+    background-color: ${mwComponentButtonPrimaryColorBgFocused};
+    color: ${mwComponentButtonPrimaryColorFgFocused};
   }
   &:active {
-    background-color: ${buttonButtonFilledPressedBgColor};
-    color: ${buttonButtonFilledPressedFgColor};
+    background-color: ${mwComponentButtonPrimaryColorBgPressed};
+    color: ${mwComponentButtonPrimaryColorFgPressed};
   }
   &:disabled {
-    background-color: ${buttonButtonFilledDisabledBgColor};
-    color: ${buttonButtonFilledDisabledFgColor};
+    background-color: ${mwComponentButtonPrimaryColorBgDisabled};
+    color: ${mwComponentButtonPrimaryColorFgDisabled};
   }
 `;
 
-// TODO: clarify spacing with tokens
+const secondaryButtonStyles = css`
+  ${base};
+  border: 0;
+  outline: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
+  outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryDefault}px;
+  color: ${mwComponentButtonSecondaryColorFgDefault};
+  background-color: ${mwComponentButtonSecondaryColorBgDefault};
+  outline-color: ${mwComponentButtonSecondaryColorOutlineDefault};
+  &:hover {
+    outline-color: ${mwComponentButtonSecondaryColorOutlineHover};
+    color: ${mwComponentButtonSecondaryColorFgHover};
+  }
+  &:focus {
+    outline-color: ${mwComponentButtonSecondaryColorOutlineFocused};
+    outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
+    outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
+    color: ${mwComponentButtonSecondaryColorFgFocused};
+  }
+  &:active {
+    outline-color: ${mwComponentButtonSecondaryColorOutlinePressed};
+    color: ${mwComponentButtonSecondaryColorFgPressed};
+  }
+  &:disabled {
+    outline-color: ${mwComponentButtonSecondaryColorOutlineDisabled};
+    color: ${mwComponentButtonSecondaryColorFgDisabled};
+  }
+`;
+
 const iconStartStyles = css`
-  margin-right: ${s}px;
+  margin-right: ${mwComponentButtonPrimarySecondaryGap};
 `;
 
 const iconEndStyles = css`
-  margin-left: ${s}px;
+  margin-left: ${mwComponentButtonPrimarySecondaryGap};
 `;
 
 @Component({
@@ -60,6 +118,7 @@ export class TlmButton {
   @Element() hostElement: HTMLStencilElement;
   @Prop() testId!: string;
   @Prop() disabled?: boolean;
+  @Prop() secondary?: boolean;
   @Event({
     bubbles: true,
     cancelable: false,
@@ -81,7 +140,7 @@ export class TlmButton {
 
   render() {
     return (
-      <button disabled={this.disabled} onClick={this.handleClick} class={buttonStyles} test-id={this.testId} type="button">
+      <button disabled={this.disabled} onClick={this.handleClick} class={this.secondary ? secondaryButtonStyles : primaryButtonStyles} test-id={this.testId} type="button">
         {this.hasIconStartSlot && (
           <span class={iconStartStyles}>
             <slot name="icon-start"></slot>

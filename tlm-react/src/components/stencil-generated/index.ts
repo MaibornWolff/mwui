@@ -10,4 +10,3 @@ import { defineCustomElements } from 'tlm-stencil/loader';
 defineCustomElements();
 export const MyComponent = /*@__PURE__*/createReactComponent<JSX.MyComponent, HTMLMyComponentElement>('my-component');
 export const TlmButton = /*@__PURE__*/createReactComponent<JSX.TlmButton, HTMLTlmButtonElement>('tlm-button');
-export const TlmButtonGroup = /*@__PURE__*/createReactComponent<JSX.TlmButtonGroup, HTMLTlmButtonGroupElement>('tlm-button-group');

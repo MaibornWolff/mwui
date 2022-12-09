@@ -18,11 +18,7 @@ export const MyComponent = /*@__PURE__*/ defineContainer<JSX.MyComponent>('my-co
 export const TlmButton = /*@__PURE__*/ defineContainer<JSX.TlmButton>('tlm-button', undefined, [
   'testId',
   'disabled',
+  'secondary',
   'clickEmitter'
-]);
-
-
-export const TlmButtonGroup = /*@__PURE__*/ defineContainer<JSX.TlmButtonGroup>('tlm-button-group', undefined, [
-  'testId'
 ]);
 
