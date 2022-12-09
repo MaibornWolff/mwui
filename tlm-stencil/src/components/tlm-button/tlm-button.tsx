@@ -35,11 +35,15 @@ import {
   mwComponentButtonBorderWidthSecondaryFocused,
 } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
+// figma exports percentage value instead of em
+// workaround to convert it to float
+const letterSpacing = Number(typographyButtonLargeBold.letterSpacing.replace('%', '').trim()) / 100;
+
 const base = css`
   appearance: none;
   padding: ${mwComponentButtonPrimarySecondaryPaddingTb} ${mwComponentButtonPrimarySecondaryPaddingLr};
   font-family: '${typographyButtonLargeBold.fontFamily}';
-  letter-spacing: ${typographyButtonLargeBold.letterSpacing};
+  letter-spacing: ${letterSpacing}em;
   line-height: ${typographyButtonLargeBold.lineHeight};
   font-weight: ${getFontWeightValue(typographyButtonLargeBold.fontWeight)};
   font-size: ${typographyButtonLargeBold.fontSize}px;
@@ -85,7 +89,7 @@ const secondaryButtonStyles = css`
   &:focus {
     outline-color: ${mwComponentButtonSecondaryColorOutlineFocused};
     outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
-    outline-offset: ${-2 *mwComponentButtonBorderWidthSecondaryFocused}px;
+    outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
     color: ${mwComponentButtonSecondaryColorFgFocused};
   }
   &:active {
