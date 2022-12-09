@@ -1,7 +1,7 @@
-function format(first, middle, last) {
+export function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
 }
-function getFontWeightValue(fontWeight) {
+export function getFontWeightValue(fontWeight) {
   return {
     'light': 300,
     'regular': 400,
@@ -16,7 +16,7 @@ function getFontWeightValue(fontWeight) {
  * @param fontWeight design token specific: includes also information about font-style
  * @returns italic | oblique | normal
  */
-function getFontStyle(input) {
+export function getFontStyle(input) {
   const fontWeight = input.toLowerCase();
   if (fontWeight.includes('italic')) {
     return 'italic';
@@ -26,5 +26,3 @@ function getFontStyle(input) {
   }
   return 'normal';
 }
-
-export { format as f, getFontWeightValue as g };
