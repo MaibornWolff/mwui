@@ -1,6 +1,6 @@
 {
   "name": "tlm-components",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Component Library using Figma's design tokens",
   "repository": {
     "type": "git",
