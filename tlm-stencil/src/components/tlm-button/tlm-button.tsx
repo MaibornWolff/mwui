@@ -12,9 +12,6 @@ import {
   mwComponentButtonPrimaryColorFgFocused,
   mwComponentButtonPrimaryColorBgDisabled,
   mwComponentButtonPrimaryColorFgDisabled,
-  mwComponentButtonPrimarySecondaryPaddingIconAll,
-  mwComponentButtonPrimarySecondaryPaddingWithoutIconLr,
-  mwComponentButtonPrimarySecondaryPaddingWithoutIconTb,
   mwComponentButtonSecondaryColorFgDisabled,
   mwComponentButtonSecondaryColorFgFocused,
   mwComponentButtonSecondaryColorFgHover,
@@ -24,23 +21,29 @@ import {
   mwComponentButtonSecondaryColorOutlineHover,
   mwComponentButtonSecondaryColorOutlineDisabled,
   mwComponentButtonSecondaryColorOutlineDefault,
-  typographyButtonXLargeBold,
+  typographyButtonLargeBold,
   mwComponentButtonSecondaryColorFgPressed,
   mwComponentButtonSecondaryColorOutlinePressed,
   mwComponentButtonPrimaryColorFgPressed,
   mwComponentButtonPrimaryColorBgFocused,
   mwComponentButtonSecondaryColorOutlineFocused,
+  mwComponentButtonPrimarySecondaryPaddingLr,
+  mwComponentButtonPrimarySecondaryPaddingTb,
+  mwComponentButtonPrimarySecondaryGap,
+  mwComponentButtonBorderRadiusDefault,
+  mwComponentButtonPrimarySecondaryMinWidth,
 } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
 const base = css`
   appearance: none;
-  padding: ${mwComponentButtonPrimarySecondaryPaddingWithoutIconTb} ${mwComponentButtonPrimarySecondaryPaddingWithoutIconLr};
-  font-family: '${typographyButtonXLargeBold.fontFamily}';
-  letter-spacing: ${typographyButtonXLargeBold.letterSpacing};
-  line-height: ${typographyButtonXLargeBold.lineHeight};
-  font-weight: ${getFontWeightValue(typographyButtonXLargeBold.fontWeight)};
-  font-size: ${typographyButtonXLargeBold.fontSize}px;
-  border-radius: 99999px;
+  padding: ${mwComponentButtonPrimarySecondaryPaddingTb} ${mwComponentButtonPrimarySecondaryPaddingLr};
+  font-family: '${typographyButtonLargeBold.fontFamily}';
+  letter-spacing: ${typographyButtonLargeBold.letterSpacing};
+  line-height: ${typographyButtonLargeBold.lineHeight};
+  font-weight: ${getFontWeightValue(typographyButtonLargeBold.fontWeight)};
+  font-size: ${typographyButtonLargeBold.fontSize}px;
+  border-radius: ${mwComponentButtonBorderRadiusDefault}px;
+  min-width: ${mwComponentButtonPrimarySecondaryMinWidth}px;
 `;
 
 const primaryButtonStyles = css`
@@ -92,11 +95,11 @@ const secondaryButtonStyles = css`
 `;
 
 const iconStartStyles = css`
-  padding: ${mwComponentButtonPrimarySecondaryPaddingIconAll};
+  margin-right: ${mwComponentButtonPrimarySecondaryGap};
 `;
 
 const iconEndStyles = css`
-  padding: ${mwComponentButtonPrimarySecondaryPaddingIconAll};
+  margin-left: ${mwComponentButtonPrimarySecondaryGap};
 `;
 
 @Component({

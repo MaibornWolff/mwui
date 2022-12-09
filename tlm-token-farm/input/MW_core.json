@@ -134,32 +134,28 @@
         },
         "borderRadius": {
           "default": {
-            "value": "50%",
+            "value": "9999px",
             "type": "borderRadius"
           }
         },
         "primary-secondary": {
           "padding": {
-            "icon": {
-              "all": {
-                "value": "4px + 4px + 4px + 4px",
-                "type": "spacing"
-              }
+            "lr": {
+              "value": "4px + 4px + 4px + 4px",
+              "type": "spacing"
             },
-            "without-icon": {
-              "lr": {
-                "value": "4px + 4px + 4px + 4px + 4px + 4px",
-                "type": "spacing"
-              },
-              "tb": {
-                "value": "4px + 4px + 4px + 4px",
-                "type": "spacing"
-              }
+            "tb": {
+              "value": "4px + 4px + 4px",
+              "type": "spacing"
             }
           },
           "gap": {
             "value": "4px + 4px + 4px",
             "type": "spacing"
+          },
+          "min-width": {
+            "value": 88,
+            "type": "other"
           }
         },
         "icon-button": {
@@ -171,15 +167,15 @@
           }
         }
       },
-      "checkbox": {
+      "controls": {
         "color": {
           "fg": {
             "default": {
               "value": "#ffffff",
               "type": "color"
             },
-            "test": {
-              "value": "#0192a7",
+            "disabled": {
+              "value": "#EEF1F3",
               "type": "color"
             }
           },
@@ -206,13 +202,41 @@
             }
           },
           "outline": {
-            "focused": {
+            "default": {
               "value": "#001418",
               "type": "color"
             },
-            "unselected": {
-              "value": "#001418",
+            "disabled": {
+              "value": "#5e6d72",
               "type": "color"
+            }
+          }
+        },
+        "padding": {
+          "all": {
+            "value": "4px + 4px + 4px",
+            "type": "spacing"
+          }
+        }
+      },
+      "checkbox": {
+        "borderRadius": {
+          "value": "2px",
+          "type": "borderRadius"
+        },
+        "selected": {
+          "borderWidth": {
+            "default": {
+              "value": 0,
+              "type": "borderWidth"
+            },
+            "focused": {
+              "value": "2px",
+              "type": "borderWidth"
+            },
+            "unselected": {
+              "value": "2px",
+              "type": "borderWidth"
             }
           }
         }

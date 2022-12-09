@@ -1156,7 +1156,7 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Thu, 08 Dec 2022 16:49:28 GMT
+ * Generated on Fri, 09 Dec 2022 11:51:25 GMT
  */
 const mwComponentButtonSecondaryColorBgDefault = "#ffffff00";
 const mwComponentButtonSecondaryColorFgDefault = "#001418";
@@ -1184,21 +1184,26 @@ const mwComponentButtonBorderWidthSecondaryDefault = 1;
 const mwComponentButtonBorderWidthSecondaryFocused = 2;
 const mwComponentButtonBorderWidthPrimaryDefault = "0px";
 const mwComponentButtonBorderWidthPrimaryFocused = 2;
-const mwComponentButtonBorderRadiusDefault = "50px";
-const mwComponentButtonPrimarySecondaryPaddingIconAll = "16px";
-const mwComponentButtonPrimarySecondaryPaddingWithoutIconLr = "24px";
-const mwComponentButtonPrimarySecondaryPaddingWithoutIconTb = "16px";
+const mwComponentButtonBorderRadiusDefault = 9999;
+const mwComponentButtonPrimarySecondaryPaddingLr = "16px";
+const mwComponentButtonPrimarySecondaryPaddingTb = "12px";
 const mwComponentButtonPrimarySecondaryGap = "12px";
+const mwComponentButtonPrimarySecondaryMinWidth = 88;
 const mwComponentButtonIconButtonPaddingAll = "12px";
-const mwComponentCheckboxColorFgDefault = "#ffffff";
-const mwComponentCheckboxColorFgTest = "#0192a7";
-const mwComponentCheckboxColorBgSelected = "#ed2985";
-const mwComponentCheckboxColorBgDisabled = "#95a0a4";
-const mwComponentCheckboxColorBgHover = "#F86F96";
-const mwComponentCheckboxColorBgFocused = "#F86F96";
-const mwComponentCheckboxColorBgPressed = "#c42177";
-const mwComponentCheckboxColorOutlineFocused = "#001418";
-const mwComponentCheckboxColorOutlineUnselected = "#001418";
+const mwComponentControlsColorFgDefault = "#ffffff";
+const mwComponentControlsColorFgDisabled = "#EEF1F3";
+const mwComponentControlsColorBgSelected = "#ed2985";
+const mwComponentControlsColorBgDisabled = "#95a0a4";
+const mwComponentControlsColorBgHover = "#F86F96";
+const mwComponentControlsColorBgFocused = "#F86F96";
+const mwComponentControlsColorBgPressed = "#c42177";
+const mwComponentControlsColorOutlineDefault = "#001418";
+const mwComponentControlsColorOutlineDisabled = "#5e6d72";
+const mwComponentControlsPaddingAll = "12px";
+const mwComponentCheckboxBorderRadius = 2;
+const mwComponentCheckboxSelectedBorderWidthDefault = "0px";
+const mwComponentCheckboxSelectedBorderWidthFocused = 2;
+const mwComponentCheckboxSelectedBorderWidthUnselected = 2;
 const mwSemanticColorOutlineHover = "#ed2985";
 const mwSemanticColorOutlineDisabled = "#5e6d72";
 const mwSemanticColorOutlineDefault = "#001418";
@@ -1460,13 +1465,14 @@ const shadowAmbient = "#0000001f";
 
 const base = css `
   appearance: none;
-  padding: ${mwComponentButtonPrimarySecondaryPaddingWithoutIconTb} ${mwComponentButtonPrimarySecondaryPaddingWithoutIconLr};
-  font-family: '${typographyButtonXLargeBold.fontFamily}';
-  letter-spacing: ${typographyButtonXLargeBold.letterSpacing};
-  line-height: ${typographyButtonXLargeBold.lineHeight};
-  font-weight: ${getFontWeightValue(typographyButtonXLargeBold.fontWeight)};
-  font-size: ${typographyButtonXLargeBold.fontSize}px;
-  border-radius: 99999px;
+  padding: ${mwComponentButtonPrimarySecondaryPaddingTb} ${mwComponentButtonPrimarySecondaryPaddingLr};
+  font-family: '${typographyButtonLargeBold.fontFamily}';
+  letter-spacing: ${typographyButtonLargeBold.letterSpacing};
+  line-height: ${typographyButtonLargeBold.lineHeight};
+  font-weight: ${getFontWeightValue(typographyButtonLargeBold.fontWeight)};
+  font-size: ${typographyButtonLargeBold.fontSize}px;
+  border-radius: ${mwComponentButtonBorderRadiusDefault}px;
+  min-width: ${mwComponentButtonPrimarySecondaryMinWidth}px;
 `;
 const primaryButtonStyles = css `
   ${base};
@@ -1515,10 +1521,10 @@ const secondaryButtonStyles = css `
   }
 `;
 const iconStartStyles = css `
-  padding: ${mwComponentButtonPrimarySecondaryPaddingIconAll};
+  margin-right: ${mwComponentButtonPrimarySecondaryGap};
 `;
 const iconEndStyles = css `
-  padding: ${mwComponentButtonPrimarySecondaryPaddingIconAll};
+  margin-left: ${mwComponentButtonPrimarySecondaryGap};
 `;
 const TlmButton = class {
   constructor(hostRef) {

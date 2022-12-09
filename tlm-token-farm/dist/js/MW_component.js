@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 08 Dec 2022 16:49:28 GMT
+ * Generated on Fri, 09 Dec 2022 11:51:25 GMT
  */
 
 export const mwComponentButtonSecondaryColorBgDefault = "#ffffff00";
@@ -29,21 +29,26 @@ export const mwComponentButtonBorderWidthSecondaryDefault = 1;
 export const mwComponentButtonBorderWidthSecondaryFocused = 2;
 export const mwComponentButtonBorderWidthPrimaryDefault = "0px";
 export const mwComponentButtonBorderWidthPrimaryFocused = 2;
-export const mwComponentButtonBorderRadiusDefault = "50px";
-export const mwComponentButtonPrimarySecondaryPaddingIconAll = "16px";
-export const mwComponentButtonPrimarySecondaryPaddingWithoutIconLr = "24px";
-export const mwComponentButtonPrimarySecondaryPaddingWithoutIconTb = "16px";
+export const mwComponentButtonBorderRadiusDefault = 9999;
+export const mwComponentButtonPrimarySecondaryPaddingLr = "16px";
+export const mwComponentButtonPrimarySecondaryPaddingTb = "12px";
 export const mwComponentButtonPrimarySecondaryGap = "12px";
+export const mwComponentButtonPrimarySecondaryMinWidth = 88;
 export const mwComponentButtonIconButtonPaddingAll = "12px";
-export const mwComponentCheckboxColorFgDefault = "#ffffff";
-export const mwComponentCheckboxColorFgTest = "#0192a7";
-export const mwComponentCheckboxColorBgSelected = "#ed2985";
-export const mwComponentCheckboxColorBgDisabled = "#95a0a4";
-export const mwComponentCheckboxColorBgHover = "#F86F96";
-export const mwComponentCheckboxColorBgFocused = "#F86F96";
-export const mwComponentCheckboxColorBgPressed = "#c42177";
-export const mwComponentCheckboxColorOutlineFocused = "#001418";
-export const mwComponentCheckboxColorOutlineUnselected = "#001418";
+export const mwComponentControlsColorFgDefault = "#ffffff";
+export const mwComponentControlsColorFgDisabled = "#EEF1F3";
+export const mwComponentControlsColorBgSelected = "#ed2985";
+export const mwComponentControlsColorBgDisabled = "#95a0a4";
+export const mwComponentControlsColorBgHover = "#F86F96";
+export const mwComponentControlsColorBgFocused = "#F86F96";
+export const mwComponentControlsColorBgPressed = "#c42177";
+export const mwComponentControlsColorOutlineDefault = "#001418";
+export const mwComponentControlsColorOutlineDisabled = "#5e6d72";
+export const mwComponentControlsPaddingAll = "12px";
+export const mwComponentCheckboxBorderRadius = 2;
+export const mwComponentCheckboxSelectedBorderWidthDefault = "0px";
+export const mwComponentCheckboxSelectedBorderWidthFocused = 2;
+export const mwComponentCheckboxSelectedBorderWidthUnselected = 2;
 export const mwSemanticColorOutlineHover = "#ed2985";
 export const mwSemanticColorOutlineDisabled = "#5e6d72";
 export const mwSemanticColorOutlineDefault = "#001418";
