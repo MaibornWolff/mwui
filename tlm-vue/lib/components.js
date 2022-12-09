@@ -7,6 +7,7 @@ export const MyComponent = defineContainer('my-component', undefined, [
 export const TlmButton = defineContainer('tlm-button', undefined, [
     'testId',
     'disabled',
+    'secondary',
     'clickEmitter'
 ]);
 //# sourceMappingURL=components.js.map

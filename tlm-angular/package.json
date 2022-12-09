@@ -1,6 +1,6 @@
 {
   "name": "tlm-angular",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Angular specific wrapper for tlm-components",
   "repository": {
     "type": "git",

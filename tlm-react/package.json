@@ -1,7 +1,7 @@
 {
   "name": "tlm-react",
   "sideEffects": false,
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "React specific wrapper for tlm-components",
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "tlm-stencil": "^0.0.14"
+    "tlm-stencil": "^0.0.16"
   },
   "peerDependencies": {
     "react": "^17.0.2",
