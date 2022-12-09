@@ -11,6 +11,8 @@ log.txt
 *.sublime-project
 *.sublime-workspace
 
+.gitconfig
+
 .stencil/
 .idea/
 .vscode/
