@@ -49,11 +49,6 @@ const filterTokensByType = (type, tokens) => {
 
     return acc;
   }, {});
-
-  // console.log(obj);
-  // console.log(deepen(obj));
-
-  // return deepen(obj);
   return res;
 };
 

@@ -1,7 +1,7 @@
 {
   "name": "tlm-react",
   "sideEffects": false,
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "React specific wrapper for tlm-components",
   "repository": {
     "type": "git",
