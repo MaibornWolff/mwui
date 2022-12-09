@@ -10,6 +10,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "tlm-react": "^0.0.17",
+    "tlm-token-farm": "^0.0.17",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

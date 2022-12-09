@@ -1,5 +1,4 @@
-const core = require('./MW_core.json');
-const c = require('tlm');
+const core = require('tlm-token-farm/input/MW_core.json');
 const filterTokensByType = (type, tokens) => {
   const entries = Object.entries(tokens);
   const res = entries.reduce((acc, cur) => {
@@ -37,8 +36,8 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     colors,
-    spacing,
     extend: {
+      spacing,  
       colors: {
         code: '#f0f0f0',
       },
