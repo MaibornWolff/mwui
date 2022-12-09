@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 09 Dec 2022 22:49:20 GMT
+ * Generated on Fri, 09 Dec 2022 22:51:24 GMT
  */
 export const mwComponentButtonSecondaryColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryColorFgDefault = "#001418";
