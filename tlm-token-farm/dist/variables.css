@@ -40,6 +40,8 @@
   --mw-component-controls-color-bg-pressed: #c42177;
   --mw-component-controls-color-outline-default: #001418;
   --mw-component-controls-color-outline-disabled: #5e6d72;
+  --mw-component-controls-color-label-default: #001418;
+  --mw-component-controls-color-label-disabled: #5e6d72;
   --mw-component-controls-padding-all: 4px + 4px + 4px;
   --mw-component-checkbox-border-radius: 2px;
   --mw-component-checkbox-selected-border-width-default: 0;
