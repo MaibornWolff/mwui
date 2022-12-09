@@ -32,6 +32,7 @@ import {
   mwComponentButtonPrimarySecondaryGap,
   mwComponentButtonBorderRadiusDefault,
   mwComponentButtonPrimarySecondaryMinWidth,
+  mwComponentButtonBorderWidthSecondaryFocused,
 } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
 const base = css`
@@ -71,25 +72,28 @@ const primaryButtonStyles = css`
 
 const secondaryButtonStyles = css`
   ${base};
-  border: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
+  border: 0;
+  outline: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
+  outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryDefault}px;
   color: ${mwComponentButtonSecondaryColorFgDefault};
   background-color: ${mwComponentButtonSecondaryColorBgDefault};
-  border-color: ${mwComponentButtonSecondaryColorOutlineDefault};
+  outline-color: ${mwComponentButtonSecondaryColorOutlineDefault};
   &:hover {
-    border-color: ${mwComponentButtonSecondaryColorOutlineHover};
+    outline-color: ${mwComponentButtonSecondaryColorOutlineHover};
     color: ${mwComponentButtonSecondaryColorFgHover};
   }
   &:focus {
-    border-color: ${mwComponentButtonSecondaryColorOutlineFocused};
+    outline-color: ${mwComponentButtonSecondaryColorOutlineFocused};
+    outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
+    outline-offset: ${-2 *mwComponentButtonBorderWidthSecondaryFocused}px;
     color: ${mwComponentButtonSecondaryColorFgFocused};
   }
   &:active {
-    border-color: ${mwComponentButtonSecondaryColorOutlinePressed};
+    outline-color: ${mwComponentButtonSecondaryColorOutlinePressed};
     color: ${mwComponentButtonSecondaryColorFgPressed};
   }
   &:disabled {
-    border: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
-    border-color: ${mwComponentButtonSecondaryColorOutlineDisabled};
+    outline-color: ${mwComponentButtonSecondaryColorOutlineDisabled};
     color: ${mwComponentButtonSecondaryColorFgDisabled};
   }
 `;
