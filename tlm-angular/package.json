@@ -1,6 +1,6 @@
 {
   "name": "tlm-angular",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Angular specific wrapper for tlm-components",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "rxjs": "~7.5.0",
-    "tlm-stencil": "^0.0.14",
+    "tlm-stencil": "^0.0.16",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

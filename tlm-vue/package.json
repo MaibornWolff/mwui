@@ -1,6 +1,6 @@
 {
   "name": "tlm-vue",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Vue specific wrapper for tlm-components",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "tsc": "tsc -p ."
   },
   "dependencies": {
-    "tlm-stencil": "^0.0.14"
+    "tlm-stencil": "^0.0.16"
   },
   "devDependencies": {
     "vue": "^3.2.37"
