@@ -5,10 +5,11 @@
 
 ## Properties
 
-| Property              | Attribute  | Description | Type      | Default     |
-| --------------------- | ---------- | ----------- | --------- | ----------- |
-| `disabled`            | `disabled` |             | `boolean` | `undefined` |
-| `testId` _(required)_ | `test-id`  |             | `string`  | `undefined` |
+| Property              | Attribute   | Description | Type      | Default     |
+| --------------------- | ----------- | ----------- | --------- | ----------- |
+| `disabled`            | `disabled`  |             | `boolean` | `undefined` |
+| `secondary`           | `secondary` |             | `boolean` | `undefined` |
+| `testId` _(required)_ | `test-id`   |             | `string`  | `undefined` |
 
 
 ## Events

@@ -1,8 +1,8 @@
 const { filterTokensByType } = require('../../src/scripts/utils');
-const global = require('../json/global.json');
+const mw = require('../json/mw.json');
 
-const colors = { ...filterTokensByType('color', global) };
-const spacing = { ...filterTokensByType('spacing', global) };
+const colors = { ...filterTokensByType('color', mw) };
+const spacing = { ...filterTokensByType('spacing', mw) };
 
 module.exports = {
   darkMode: 'class',

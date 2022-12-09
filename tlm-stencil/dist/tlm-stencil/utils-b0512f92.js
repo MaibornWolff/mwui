@@ -27,4 +27,4 @@ function getFontStyle(input) {
   return 'normal';
 }
 
-export { getFontStyle as a, format as f, getFontWeightValue as g };
+export { format as f, getFontWeightValue as g };

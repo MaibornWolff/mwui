@@ -3,4 +3,4 @@ declare const _default: {
 };
 export default _default;
 import '../../global/global.css';
-export declare const Example: any;
+export declare const Button: any;

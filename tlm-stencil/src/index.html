@@ -15,12 +15,21 @@
   <body>
     <section>
       <h2>Button</h2>
-      <h3>Filled</h3>
+      <h3>Primary</h3>
       <div style="display: flex; gap: 16px">
         <tlm-button test-id="test-button">Test Button</tlm-button>
         <tlm-button test-id="test-button"><span slot="icon-start">🍔</span>Icon Start</tlm-button>
         <tlm-button test-id="test-button"><span slot="icon-end">🍔</span>Icon End</tlm-button>
         <tlm-button test-id="test-button"><span slot="icon-start">🍔</span><span slot="icon-end">🍔</span>Icon Both</tlm-button>
+        <tlm-button test-id="test-button" disabled>Disabled</tlm-button>
+      </div>
+      <h3>Secondary</h3>
+      <div style="display: flex; gap: 16px">
+        <tlm-button test-id="test-button" secondary>Test Button</tlm-button>
+        <tlm-button test-id="test-button" secondary><span slot="icon-start">🍔</span>Icon Start</tlm-button>
+        <tlm-button test-id="test-button" secondary><span slot="icon-end">🍔</span>Icon End</tlm-button>
+        <tlm-button test-id="test-button" secondary><span slot="icon-start">🍔</span><span slot="icon-end">🍔</span>Icon Both</tlm-button>
+        <tlm-button test-id="test-button" secondary disabled>Disabled</tlm-button>
       </div>
     </section>
     <section>

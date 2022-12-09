@@ -3,6 +3,5 @@ import * as d from './components';
 
 export const DIRECTIVES = [
   d.MyComponent,
-  d.TlmButton,
-  d.TlmButtonGroup
+  d.TlmButton
 ];

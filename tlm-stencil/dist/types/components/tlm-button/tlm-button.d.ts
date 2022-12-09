@@ -4,6 +4,7 @@ export declare class TlmButton {
   hostElement: HTMLStencilElement;
   testId: string;
   disabled?: boolean;
+  secondary?: boolean;
   clickEmitter: EventEmitter<string>;
   hasIconStartSlot: boolean;
   hasIconEndSlot: boolean;
