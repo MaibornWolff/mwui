@@ -1,5 +1,5 @@
 const core = require('./MW_core.json');
-
+const c = require('tlm');
 const filterTokensByType = (type, tokens) => {
   const entries = Object.entries(tokens);
   const res = entries.reduce((acc, cur) => {

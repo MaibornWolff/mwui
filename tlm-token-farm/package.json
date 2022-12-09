@@ -1,9 +1,9 @@
 {
   "name": "tlm-token-farm",
-  "version": "0.0.1",
+  "version": "0.0.17",
   "description": "Transforms figma design tokens to common config files serving different styling frameworks",
   "main": "src/index.ts",
-  "module": "dist/design-tokens.js",
+  "module": "dist/tailwind.config.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/MaibornWolff/tlm-components.git"
