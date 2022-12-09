@@ -210,6 +210,16 @@
               "value": "#5e6d72",
               "type": "color"
             }
+          },
+          "label": {
+            "default": {
+              "value": "#001418",
+              "type": "color"
+            },
+            "disabled": {
+              "value": "#5e6d72",
+              "type": "color"
+            }
           }
         },
         "padding": {

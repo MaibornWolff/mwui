@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 09 Dec 2022 11:51:25 GMT
+ * Generated on Fri, 09 Dec 2022 21:56:20 GMT
  */
 
 export const mwComponentButtonSecondaryColorBgDefault = "#ffffff00";
@@ -44,6 +44,8 @@ export const mwComponentControlsColorBgFocused = "#F86F96";
 export const mwComponentControlsColorBgPressed = "#c42177";
 export const mwComponentControlsColorOutlineDefault = "#001418";
 export const mwComponentControlsColorOutlineDisabled = "#5e6d72";
+export const mwComponentControlsColorLabelDefault = "#001418";
+export const mwComponentControlsColorLabelDisabled = "#5e6d72";
 export const mwComponentControlsPaddingAll = "12px";
 export const mwComponentCheckboxBorderRadius = 2;
 export const mwComponentCheckboxSelectedBorderWidthDefault = "0px";
