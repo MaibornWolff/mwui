@@ -1,7 +1,7 @@
 const { filterTokensByType } = require('../../src/scripts/utils');
-const mw = require('../json/mw.json');
+const mw = require('../input/MW_core.json');
 
-const colors = { ...filterTokensByType('color', mw) };
+const colors = { ...filterTokensByType('color', mw.core.colors) };
 const spacing = { ...filterTokensByType('spacing', mw) };
 
 module.exports = {

@@ -34,7 +34,21 @@ const utilityClassFormat = {
 const cssVariablesFormat = {
   name: 'css/variables',
   formatter: dictionary => {
-    const getValue = prop => prop.value;
+    const getValue = prop => {
+      if (typeof prop.original.value === 'number') {
+        return `${parseFloat(prop.original.value)}px`;
+      }
+
+      if (typeof prop.original.value === 'string' && prop.original.value.includes('+')) {
+        const clearedValue = prop.original.value.replaceAll('px', '').replaceAll('+', ' ');
+
+        return `${clearedValue.split(' ').reduce((acc, cur) => {
+          acc = Number(acc) + Number(cur);
+          return acc;
+        }, 0)}px`;
+      }
+      return prop.value;
+    };
     const primitiveProperties = dictionary.allProperties.filter(p => typeof p.value === 'number' || typeof p.value === 'string');
 
     return `:root {\n${primitiveProperties.map(prop => `  --${prop.name}: ${getValue(prop)};`).join('\n')}\n}`;
