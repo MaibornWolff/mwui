@@ -1,9 +1,9 @@
 import type { Components, JSX } from "../types/components";
 
-interface MwRadioButton extends Components.MwRadioButton, HTMLElement {}
-export const MwRadioButton: {
-  prototype: MwRadioButton;
-  new (): MwRadioButton;
+interface TlmButton extends Components.TlmButton, HTMLElement {}
+export const TlmButton: {
+  prototype: TlmButton;
+  new (): TlmButton;
 };
 /**
  * Used to define this component and all nested components recursively.
