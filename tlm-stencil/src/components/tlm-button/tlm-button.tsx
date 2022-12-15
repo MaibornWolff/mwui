@@ -1,3 +1,4 @@
+/*
 import { Component, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
 import { css } from '@emotion/css';
 import { getFontWeightValue } from '../../utils/utils';
@@ -156,3 +157,4 @@ export class TlmButton {
     );
   }
 }
+*/

@@ -1,6 +1,6 @@
 /* TlmStencil custom elements */
+export { MwRadioButton as MwRadioButton } from '../types/components/mw-radio-button/mw-radio-button';
 export { MyComponent as MyComponent } from '../types/components/my-component/my-component';
-export { TlmButton as TlmButton } from '../types/components/tlm-button/tlm-button';
 
 /**
  * Used to manually set the base path where assets can be found.

@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-    <link rel="stylesheet" href="/build/tlm-stencil.css" />
     <link rel="stylesheet" href="/global/global.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,19 +20,13 @@
       <h2>Button</h2>
       <h3>Primary</h3>
       <div style="display: flex; gap: 16px">
-        <tlm-button test-id="test-button">BUTTON</tlm-button>
-        <tlm-button test-id="test-button"><span slot="icon-start">🍔</span>BUTTON</tlm-button>
-        <tlm-button test-id="test-button"><span slot="icon-end">🍔</span>BUTTON</tlm-button>
-        <tlm-button test-id="test-button"><span slot="icon-start">🍔</span><span slot="icon-end">🍔</span>BUTTON</tlm-button>
-        <tlm-button test-id="test-button" disabled>BUTTON</tlm-button>
+        <mw-radio-button name="transport" value="car" checked>Auto</mw-radio-button>
+        <mw-radio-button name="transport" value="bus">Bus</mw-radio-button>
+        <mw-radio-button name="transport" value="train" disabled>Zug</mw-radio-button>
       </div>
       <h3>Secondary</h3>
       <div style="display: flex; gap: 16px">
-        <tlm-button test-id="test-button" secondary>BUTTON</tlm-button>
-        <tlm-button test-id="test-button" secondary><span slot="icon-start">🍔</span>BUTTON</tlm-button>
-        <tlm-button test-id="test-button" secondary><span slot="icon-end">🍔</span>BUTTON</tlm-button>
-        <tlm-button test-id="test-button" secondary><span slot="icon-start">🍔</span><span slot="icon-end">🍔</span>BUTTON</tlm-button>
-        <tlm-button test-id="test-button" secondary disabled>BUTTON</tlm-button>
+
       </div>
     </section>
   </body>

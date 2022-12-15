@@ -1,7 +1,9 @@
-export function format(first, middle, last) {
+import { r as registerInstance, h } from './index-310f4825.js';
+
+function format(first, middle, last) {
   return (first || '') + (middle ? ` ${middle}` : '') + (last ? ` ${last}` : '');
 }
-export function getFontWeightValue(fontWeight) {
+function getFontWeightValue(fontWeight) {
   return {
     'light': 300,
     'regular': 400,
@@ -16,7 +18,7 @@ export function getFontWeightValue(fontWeight) {
  * @param fontWeight design token specific: includes also information about font-style
  * @returns italic | oblique | normal
  */
-export function getFontStyle(input) {
+function getFontStyle(input) {
   const fontWeight = input.toLowerCase();
   if (fontWeight.includes('italic')) {
     return 'italic';
@@ -26,3 +28,20 @@ export function getFontStyle(input) {
   }
   return 'normal';
 }
+
+const myComponentCss = ":host{display:block}";
+
+const MyComponent = class {
+  constructor(hostRef) {
+    registerInstance(this, hostRef);
+  }
+  getText() {
+    return format(this.first, this.middle, this.last);
+  }
+  render() {
+    return h("div", null, "Hello, World! I'm ", this.getText());
+  }
+};
+MyComponent.style = myComponentCss;
+
+export { MyComponent as my_component };
