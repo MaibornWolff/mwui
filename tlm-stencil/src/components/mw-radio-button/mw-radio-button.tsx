@@ -46,7 +46,7 @@ export class MwRadioButton {
     return (
       <label class="container">
         <input type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled}/>
-        <span class="checkmark"></span>
+        <span class="checkmark"><span class="checkmark-dot"></span></span>
         <slot></slot>
       </label>
     );
