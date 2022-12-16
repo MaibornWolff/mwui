@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 16 Dec 2022 14:07:48 GMT
+ * Generated on Fri, 16 Dec 2022 14:09:56 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -48,14 +48,24 @@ export const mwComponentControlsColorOutlineDefault = "#001418";
 export const mwComponentControlsColorOutlineDisabled = "#5e6d72";
 export const mwComponentControlsColorLabelDefault = "#001418";
 export const mwComponentControlsColorLabelDisabled = "#5e6d72";
-export const mwComponentControlsPaddingAll = "12px";
+export const mwComponentControlsPaddingAll = "0px";
 export const mwComponentCheckboxBorderRadius = 2;
 export const mwComponentCheckboxSelectedBorderWidthDefault = "0px";
 export const mwComponentCheckboxSelectedBorderWidthFocused = 2;
 export const mwComponentCheckboxSelectedBorderWidthUnselected = 2;
-export const mwComponentControlsWithLabelGap = "0px";
-export const mwComponentControlsWithLabelPaddingRight = "12px";
+export const mwComponentControlsWithLabelGap = "12px";
+export const mwComponentControlsWithLabelPaddingTb = "12px";
+export const mwComponentControlsWithLabelPaddingR = "12px";
+export const mwComponentControlsWithLabelPaddingL = "0px";
 export const mwComponentControlLabel = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 16 };
+export const mwComponentSizeToggleSwitchW = "52px";
+export const mwComponentSizeToggleSwitchH = "32px";
+export const mwComponentSizeCheckboxRadiobuttonWh = "24px";
+export const mwComponentInputLabel = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 16, "fontSize": 12 };
+export const mwComponentInputHelperText = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 16, "fontSize": 12 };
+export const mwComponentInputText = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 16 };
+export const mwComponentInputFgLabel = "#001418";
+export const mwComponentInputFgInputText = "#001418";
 export const mwSemanticColorOutlineHover = "#ed2985";
 export const mwSemanticColorOutlineDisabled = "#5e6d72";
 export const mwSemanticColorOutlineDefault = "#001418";

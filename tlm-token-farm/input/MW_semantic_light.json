@@ -243,7 +243,7 @@
         },
         "padding": {
           "all": {
-            "value": "4px + 4px + 4px",
+            "value": 0,
             "type": "spacing"
           }
         }
@@ -272,12 +272,22 @@
       },
       "controls-with-label": {
         "gap": {
-          "value": 0,
-          "type": "spacing"
-        },
-        "padding-right": {
           "value": "4px + 4px + 4px",
           "type": "spacing"
+        },
+        "padding": {
+          "tb": {
+            "value": "4px + 4px + 4px",
+            "type": "spacing"
+          },
+          "r": {
+            "value": "4px + 4px + 4px",
+            "type": "spacing"
+          },
+          "l": {
+            "value": 0,
+            "type": "spacing"
+          }
         }
       },
       "control-label": {
@@ -288,6 +298,63 @@
           "fontSize": 16
         },
         "type": "typography"
+      },
+      "size": {
+        "toggle-switch": {
+          "w": {
+            "value": 52,
+            "type": "sizing"
+          },
+          "h": {
+            "value": 32,
+            "type": "sizing"
+          }
+        },
+        "checkbox-radiobutton": {
+          "wh": {
+            "value": 24,
+            "type": "sizing"
+          }
+        }
+      },
+      "input": {
+        "label": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Regular",
+            "lineHeight": 16,
+            "fontSize": 12
+          },
+          "type": "typography"
+        },
+        "helper-text": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Regular",
+            "lineHeight": 16,
+            "fontSize": 12
+          },
+          "type": "typography"
+        },
+        "text": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Regular",
+            "lineHeight": 24,
+            "fontSize": 16
+          },
+          "type": "typography"
+        },
+        "fg": {
+          "label": {
+            "value": "#001418",
+            "type": "color"
+          },
+          "input-text": {
+            "value": "#001418",
+            "type": "color"
+          }
+        }
       }
     },
     "semantic": {
