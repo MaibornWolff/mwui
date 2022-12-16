@@ -16,11 +16,11 @@
                 "type": "color"
               },
               "hover": {
-                "value": "#28eced",
+                "value": "#ed2985",
                 "type": "color"
               },
               "focused": {
-                "value": "#28eced",
+                "value": "#ed2985",
                 "type": "color"
               },
               "pressed": {
@@ -42,7 +42,7 @@
                 "type": "color"
               },
               "hover": {
-                "value": "#28eced",
+                "value": "#ed2985",
                 "type": "color"
               },
               "pressed": {
@@ -60,7 +60,7 @@
           "color": {
             "bg": {
               "default": {
-                "value": "#28eced",
+                "value": "#ed2985",
                 "type": "color"
               },
               "disabled": {
@@ -196,7 +196,7 @@
           },
           "bg": {
             "selected": {
-              "value": "#28eced",
+              "value": "#ed2985",
               "type": "color"
             },
             "disabled": {
@@ -361,7 +361,7 @@
       "color": {
         "outline": {
           "hover": {
-            "value": "#28eced",
+            "value": "#ed2985",
             "type": "color"
           },
           "disabled": {
@@ -395,11 +395,11 @@
             "type": "color"
           },
           "hover": {
-            "value": "#28eced",
+            "value": "#ed2985",
             "type": "color"
           },
           "focused": {
-            "value": "#28eced",
+            "value": "#ed2985",
             "type": "color"
           },
           "on-disabled": {
@@ -421,7 +421,7 @@
             "type": "color"
           },
           "primary": {
-            "value": "#28eced",
+            "value": "#ed2985",
             "type": "color"
           },
           "focused": {
@@ -601,9 +601,8 @@
             "type": "color"
           },
           "500": {
-            "value": "#28eced",
-            "type": "color",
-            "description": "#ed2985"
+            "value": "#ed2985",
+            "type": "color"
           },
           "600": {
             "value": "#c42177",

@@ -1,16 +1,16 @@
 :root {
   --mw-component-button-secondary-text-color-bg-default: #ffffff00;
   --mw-component-button-secondary-text-color-fg-default: #001418;
-  --mw-component-button-secondary-text-color-fg-hover: #28eced;
-  --mw-component-button-secondary-text-color-fg-focused: #28eced;
+  --mw-component-button-secondary-text-color-fg-hover: #ed2985;
+  --mw-component-button-secondary-text-color-fg-focused: #ed2985;
   --mw-component-button-secondary-text-color-fg-pressed: #c42177;
   --mw-component-button-secondary-text-color-fg-disabled: #5e6d72;
   --mw-component-button-secondary-text-color-outline-disabled: #5e6d72;
   --mw-component-button-secondary-text-color-outline-default: #001418;
-  --mw-component-button-secondary-text-color-outline-hover: #28eced;
+  --mw-component-button-secondary-text-color-outline-hover: #ed2985;
   --mw-component-button-secondary-text-color-outline-pressed: #c42177;
   --mw-component-button-secondary-text-color-outline-focused: #001418;
-  --mw-component-button-primary-color-bg-default: #28eced;
+  --mw-component-button-primary-color-bg-default: #ed2985;
   --mw-component-button-primary-color-bg-disabled: #95a0a4;
   --mw-component-button-primary-color-bg-focused: #F86F96;
   --mw-component-button-primary-color-bg-hover: #F86F96;
@@ -34,7 +34,7 @@
   --mw-component-controls-color-fg-default: #ffffff;
   --mw-component-controls-color-fg-disabled: #EEF1F3;
   --mw-component-controls-color-fg-off: #001418;
-  --mw-component-controls-color-bg-selected: #28eced;
+  --mw-component-controls-color-bg-selected: #ed2985;
   --mw-component-controls-color-bg-disabled: #95a0a4;
   --mw-component-controls-color-bg-hover: #F86F96;
   --mw-component-controls-color-bg-focused: #F86F96;
@@ -58,7 +58,7 @@
   --mw-component-size-checkbox-radiobutton-wh: 24px;
   --mw-component-input-fg-label: #001418;
   --mw-component-input-fg-input-text: #001418;
-  --mw-semantic-color-outline-hover: #28eced;
+  --mw-semantic-color-outline-hover: #ed2985;
   --mw-semantic-color-outline-disabled: #5e6d72;
   --mw-semantic-color-outline-default: #001418;
   --mw-semantic-color-outline-pressed: #c42177;
@@ -66,13 +66,13 @@
   --mw-semantic-color-fg-disabled: #5e6d72;
   --mw-semantic-color-fg-default: #001418;
   --mw-semantic-color-fg-pressed: #c42177;
-  --mw-semantic-color-fg-hover: #28eced;
-  --mw-semantic-color-fg-focused: #28eced;
+  --mw-semantic-color-fg-hover: #ed2985;
+  --mw-semantic-color-fg-focused: #ed2985;
   --mw-semantic-color-fg-on-disabled: #EEF1F3;
   --mw-semantic-color-fg-pressed-on-primary: #EEF1F3;
   --mw-semantic-color-bg-disabled-default: #95a0a4;
   --mw-semantic-color-bg-transparent: #ffffff00;
-  --mw-semantic-color-bg-primary: #28eced;
+  --mw-semantic-color-bg-primary: #ed2985;
   --mw-semantic-color-bg-focused: #F86F96;
   --mw-semantic-color-bg-hover: #F86F96;
   --mw-semantic-color-bg-pressed: #c42177;
@@ -103,7 +103,7 @@
   --mw-core-color-primary-200: #f9c8c7;
   --mw-core-color-primary-300: #fa9ea9;
   --mw-core-color-primary-400: #F86F96;
-  --mw-core-color-primary-500: #28eced;
+  --mw-core-color-primary-500: #ed2985;
   --mw-core-color-primary-600: #c42177;
   --mw-core-color-primary-700: #991766;
   --mw-core-color-primary-800: #700f52;
