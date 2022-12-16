@@ -873,7 +873,7 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Fri, 16 Dec 2022 12:19:28 GMT
+ * Generated on Fri, 16 Dec 2022 12:26:22 GMT
  */
 const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -905,16 +905,17 @@ const mwComponentButtonPrimarySecondaryTextPaddingTb = "8px";
 const mwComponentButtonPrimarySecondaryTextGap = "12px";
 const mwComponentButtonPrimarySecondaryMinWidth = 88;
 const mwComponentButtonTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 16 };
+const letterSpacingButtons = "3%";
 
 // figma exports percentage value instead of em
 // workaround to convert it to float
-const letterSpacing = Number(mwComponentButtonTypo.letterSpacing.replace('%', '').trim()) / 100;
+const letterSpacing = Number(letterSpacingButtons.replace('%', '').trim()) / 100;
 const base = css `
   appearance: none;
   padding: ${mwComponentButtonPrimarySecondaryTextPaddingTb} ${mwComponentButtonPrimarySecondaryTextPaddingLr};
   font-family: '${mwComponentButtonTypo.fontFamily}';
   letter-spacing: ${letterSpacing}em;
-  line-height: ${mwComponentButtonTypo.lineHeight};
+  line-height: ${mwComponentButtonTypo.lineHeight}px;
   font-weight: ${getFontWeightValue(mwComponentButtonTypo.fontWeight)};
   font-size: ${mwComponentButtonTypo.fontSize}px;
   border-radius: ${mwComponentButtonBorderRadiusDefault}px;

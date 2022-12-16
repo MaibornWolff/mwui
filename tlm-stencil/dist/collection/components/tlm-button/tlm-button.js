@@ -1,16 +1,16 @@
 import { h } from '@stencil/core';
 import { css } from '@emotion/css';
 import { getFontWeightValue } from '../../utils/utils';
-import { mwComponentButtonPrimaryColorBgDefault, mwComponentButtonBorderWidthPrimaryTextDefault, mwComponentButtonPrimaryColorFgDefault, mwComponentButtonPrimaryColorBgHover, mwComponentButtonPrimaryColorFgHover, mwComponentButtonPrimaryColorBgPressed, mwComponentButtonPrimaryColorFgFocused, mwComponentButtonPrimaryColorBgDisabled, mwComponentButtonPrimaryColorFgDisabled, mwComponentButtonSecondaryTextColorFgDisabled, mwComponentButtonSecondaryTextColorFgFocused, mwComponentButtonSecondaryTextColorFgHover, mwComponentButtonSecondaryTextColorBgDefault, mwComponentButtonSecondaryTextColorFgDefault, mwComponentButtonBorderWidthSecondaryDefault, mwComponentButtonSecondaryTextColorOutlineHover, mwComponentButtonSecondaryTextColorOutlineDisabled, mwComponentButtonSecondaryTextColorOutlineDefault, mwComponentButtonTypo, mwComponentButtonSecondaryTextColorFgPressed, mwComponentButtonSecondaryTextColorOutlinePressed, mwComponentButtonPrimaryColorFgPressed, mwComponentButtonPrimaryColorBgFocused, mwComponentButtonSecondaryTextColorOutlineFocused, mwComponentButtonPrimarySecondaryTextPaddingLr, mwComponentButtonPrimarySecondaryTextPaddingTb, mwComponentButtonPrimarySecondaryTextGap, mwComponentButtonBorderRadiusDefault, mwComponentButtonPrimarySecondaryMinWidth, mwComponentButtonBorderWidthSecondaryFocused, } from '../../../../tlm-token-farm/dist/js/MW_component.js';
+import { mwComponentButtonPrimaryColorBgDefault, mwComponentButtonBorderWidthPrimaryTextDefault, mwComponentButtonPrimaryColorFgDefault, mwComponentButtonPrimaryColorBgHover, mwComponentButtonPrimaryColorFgHover, mwComponentButtonPrimaryColorBgPressed, mwComponentButtonPrimaryColorFgFocused, mwComponentButtonPrimaryColorBgDisabled, mwComponentButtonPrimaryColorFgDisabled, mwComponentButtonSecondaryTextColorFgDisabled, mwComponentButtonSecondaryTextColorFgFocused, mwComponentButtonSecondaryTextColorFgHover, mwComponentButtonSecondaryTextColorBgDefault, mwComponentButtonSecondaryTextColorFgDefault, mwComponentButtonBorderWidthSecondaryDefault, mwComponentButtonSecondaryTextColorOutlineHover, mwComponentButtonSecondaryTextColorOutlineDisabled, mwComponentButtonSecondaryTextColorOutlineDefault, mwComponentButtonTypo, mwComponentButtonSecondaryTextColorFgPressed, mwComponentButtonSecondaryTextColorOutlinePressed, mwComponentButtonPrimaryColorFgPressed, mwComponentButtonPrimaryColorBgFocused, mwComponentButtonSecondaryTextColorOutlineFocused, mwComponentButtonPrimarySecondaryTextPaddingLr, mwComponentButtonPrimarySecondaryTextPaddingTb, mwComponentButtonPrimarySecondaryTextGap, mwComponentButtonBorderRadiusDefault, mwComponentButtonPrimarySecondaryMinWidth, mwComponentButtonBorderWidthSecondaryFocused, letterSpacingButtons, } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 // figma exports percentage value instead of em
 // workaround to convert it to float
-const letterSpacing = Number(mwComponentButtonTypo.letterSpacing.replace('%', '').trim()) / 100;
+const letterSpacing = Number(letterSpacingButtons.replace('%', '').trim()) / 100;
 const base = css `
   appearance: none;
   padding: ${mwComponentButtonPrimarySecondaryTextPaddingTb} ${mwComponentButtonPrimarySecondaryTextPaddingLr};
   font-family: '${mwComponentButtonTypo.fontFamily}';
   letter-spacing: ${letterSpacing}em;
-  line-height: ${mwComponentButtonTypo.lineHeight};
+  line-height: ${mwComponentButtonTypo.lineHeight}px;
   font-weight: ${getFontWeightValue(mwComponentButtonTypo.fontWeight)};
   font-size: ${mwComponentButtonTypo.fontSize}px;
   border-radius: ${mwComponentButtonBorderRadiusDefault}px;
