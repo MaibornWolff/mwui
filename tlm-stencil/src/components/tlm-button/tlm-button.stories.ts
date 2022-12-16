@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/atoms/tlm-button',
+  title: 'Components/button',
 };
 
 import '../../global/global.css';
@@ -7,8 +7,8 @@ import '../../global/global.css';
 const Template = args => `
 <tlm-button test-id="${args.testId}" onClick="${args.onClick}" disabled="${args.disabled}" secondary="${args.secondary}">${args.label}</tlm-button>`;
 
-export const Button = Template.bind({});
-Button.args = {
+export const Default = Template.bind({});
+Default.args = {
   testId: 'button',
   label: 'Button',
   onClick: () => {
