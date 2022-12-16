@@ -873,20 +873,20 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Fri, 16 Dec 2022 14:09:56 GMT
+ * Generated on Fri, 16 Dec 2022 14:15:36 GMT
  */
 const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
-const mwComponentButtonSecondaryTextColorFgHover = "#ed2985";
-const mwComponentButtonSecondaryTextColorFgFocused = "#ed2985";
+const mwComponentButtonSecondaryTextColorFgHover = "#28eced";
+const mwComponentButtonSecondaryTextColorFgFocused = "#28eced";
 const mwComponentButtonSecondaryTextColorFgPressed = "#c42177";
 const mwComponentButtonSecondaryTextColorFgDisabled = "#5e6d72";
 const mwComponentButtonSecondaryTextColorOutlineDisabled = "#5e6d72";
 const mwComponentButtonSecondaryTextColorOutlineDefault = "#001418";
-const mwComponentButtonSecondaryTextColorOutlineHover = "#ed2985";
+const mwComponentButtonSecondaryTextColorOutlineHover = "#28eced";
 const mwComponentButtonSecondaryTextColorOutlinePressed = "#c42177";
 const mwComponentButtonSecondaryTextColorOutlineFocused = "#001418";
-const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
+const mwComponentButtonPrimaryColorBgDefault = "#28eced";
 const mwComponentButtonPrimaryColorBgDisabled = "#95a0a4";
 const mwComponentButtonPrimaryColorBgFocused = "#F86F96";
 const mwComponentButtonPrimaryColorBgHover = "#F86F96";

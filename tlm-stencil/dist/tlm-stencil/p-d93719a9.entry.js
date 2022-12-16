@@ -12,7 +12,7 @@ import{r as e,c as r,h as n,g as t}from"./p-55cfb396.js";import{g as a}from"./p-
   ${Ce};
   border: ${"0px"};
   color: ${"#ffffff"};
-  background-color: ${"#ed2985"};
+  background-color: ${"#28eced"};
   &:hover {
     background-color: ${"#F86F96"};
     color: ${"#ffffff"};
@@ -38,14 +38,14 @@ import{r as e,c as r,h as n,g as t}from"./p-55cfb396.js";import{g as a}from"./p-
   background-color: ${"#ffffff00"};
   outline-color: ${"#001418"};
   &:hover {
-    outline-color: ${"#ed2985"};
-    color: ${"#ed2985"};
+    outline-color: ${"#28eced"};
+    color: ${"#28eced"};
   }
   &:focus {
     outline-color: ${"#001418"};
     outline: ${2}px solid;
     outline-offset: ${-4}px;
-    color: ${"#ed2985"};
+    color: ${"#28eced"};
   }
   &:active {
     outline-color: ${"#c42177"};
