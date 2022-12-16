@@ -1,4 +1,5 @@
 import '../global/global.css';
+import '../../../tlm-token-farm/dist/css/MW_core.css';
 declare const _default: {
   title: string;
 };

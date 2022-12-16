@@ -873,7 +873,7 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Fri, 16 Dec 2022 13:27:43 GMT
+ * Generated on Fri, 16 Dec 2022 14:07:48 GMT
  */
 const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
