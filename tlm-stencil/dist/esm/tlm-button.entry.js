@@ -873,19 +873,19 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Thu, 15 Dec 2022 13:59:03 GMT
+ * Generated on Fri, 16 Dec 2022 12:19:28 GMT
  */
-const mwComponentButtonSecondaryColorBgDefault = "#ffffff00";
-const mwComponentButtonSecondaryColorFgDefault = "#001418";
-const mwComponentButtonSecondaryColorFgHover = "#ed2985";
-const mwComponentButtonSecondaryColorFgFocused = "#ed2985";
-const mwComponentButtonSecondaryColorFgPressed = "#c42177";
-const mwComponentButtonSecondaryColorFgDisabled = "#5e6d72";
-const mwComponentButtonSecondaryColorOutlineDisabled = "#5e6d72";
-const mwComponentButtonSecondaryColorOutlineDefault = "#001418";
-const mwComponentButtonSecondaryColorOutlineHover = "#ed2985";
-const mwComponentButtonSecondaryColorOutlinePressed = "#c42177";
-const mwComponentButtonSecondaryColorOutlineFocused = "#001418";
+const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
+const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
+const mwComponentButtonSecondaryTextColorFgHover = "#ed2985";
+const mwComponentButtonSecondaryTextColorFgFocused = "#ed2985";
+const mwComponentButtonSecondaryTextColorFgPressed = "#c42177";
+const mwComponentButtonSecondaryTextColorFgDisabled = "#5e6d72";
+const mwComponentButtonSecondaryTextColorOutlineDisabled = "#5e6d72";
+const mwComponentButtonSecondaryTextColorOutlineDefault = "#001418";
+const mwComponentButtonSecondaryTextColorOutlineHover = "#ed2985";
+const mwComponentButtonSecondaryTextColorOutlinePressed = "#c42177";
+const mwComponentButtonSecondaryTextColorOutlineFocused = "#001418";
 const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
 const mwComponentButtonPrimaryColorBgDisabled = "#95a0a4";
 const mwComponentButtonPrimaryColorBgFocused = "#F86F96";
@@ -898,31 +898,31 @@ const mwComponentButtonPrimaryColorFgHover = "#ffffff";
 const mwComponentButtonPrimaryColorFgPressed = "#EEF1F3";
 const mwComponentButtonBorderWidthSecondaryDefault = 1;
 const mwComponentButtonBorderWidthSecondaryFocused = 2;
-const mwComponentButtonBorderWidthPrimaryDefault = "0px";
+const mwComponentButtonBorderWidthPrimaryTextDefault = "0px";
 const mwComponentButtonBorderRadiusDefault = 9999;
-const mwComponentButtonPrimarySecondaryPaddingLr = "16px";
-const mwComponentButtonPrimarySecondaryPaddingTb = "12px";
-const mwComponentButtonPrimarySecondaryGap = "12px";
+const mwComponentButtonPrimarySecondaryTextPaddingLr = "24px";
+const mwComponentButtonPrimarySecondaryTextPaddingTb = "8px";
+const mwComponentButtonPrimarySecondaryTextGap = "12px";
 const mwComponentButtonPrimarySecondaryMinWidth = 88;
-const typographyButtonLargeBold = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": "150%", "fontSize": 16, "letterSpacing": "3%", "paragraphSpacing": 0, "textCase": "none", "textDecoration": "none" };
+const mwComponentButtonTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 16 };
 
 // figma exports percentage value instead of em
 // workaround to convert it to float
-const letterSpacing = Number(typographyButtonLargeBold.letterSpacing.replace('%', '').trim()) / 100;
+const letterSpacing = Number(mwComponentButtonTypo.letterSpacing.replace('%', '').trim()) / 100;
 const base = css `
   appearance: none;
-  padding: ${mwComponentButtonPrimarySecondaryPaddingTb} ${mwComponentButtonPrimarySecondaryPaddingLr};
-  font-family: '${typographyButtonLargeBold.fontFamily}';
+  padding: ${mwComponentButtonPrimarySecondaryTextPaddingTb} ${mwComponentButtonPrimarySecondaryTextPaddingLr};
+  font-family: '${mwComponentButtonTypo.fontFamily}';
   letter-spacing: ${letterSpacing}em;
-  line-height: ${typographyButtonLargeBold.lineHeight};
-  font-weight: ${getFontWeightValue(typographyButtonLargeBold.fontWeight)};
-  font-size: ${typographyButtonLargeBold.fontSize}px;
+  line-height: ${mwComponentButtonTypo.lineHeight};
+  font-weight: ${getFontWeightValue(mwComponentButtonTypo.fontWeight)};
+  font-size: ${mwComponentButtonTypo.fontSize}px;
   border-radius: ${mwComponentButtonBorderRadiusDefault}px;
   min-width: ${mwComponentButtonPrimarySecondaryMinWidth}px;
 `;
 const primaryButtonStyles = css `
   ${base};
-  border: ${mwComponentButtonBorderWidthPrimaryDefault};
+  border: ${mwComponentButtonBorderWidthPrimaryTextDefault};
   color: ${mwComponentButtonPrimaryColorFgDefault};
   background-color: ${mwComponentButtonPrimaryColorBgDefault};
   &:hover {
@@ -947,33 +947,33 @@ const secondaryButtonStyles = css `
   border: 0;
   outline: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
   outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryDefault}px;
-  color: ${mwComponentButtonSecondaryColorFgDefault};
-  background-color: ${mwComponentButtonSecondaryColorBgDefault};
-  outline-color: ${mwComponentButtonSecondaryColorOutlineDefault};
+  color: ${mwComponentButtonSecondaryTextColorFgDefault};
+  background-color: ${mwComponentButtonSecondaryTextColorBgDefault};
+  outline-color: ${mwComponentButtonSecondaryTextColorOutlineDefault};
   &:hover {
-    outline-color: ${mwComponentButtonSecondaryColorOutlineHover};
-    color: ${mwComponentButtonSecondaryColorFgHover};
+    outline-color: ${mwComponentButtonSecondaryTextColorOutlineHover};
+    color: ${mwComponentButtonSecondaryTextColorFgHover};
   }
   &:focus {
-    outline-color: ${mwComponentButtonSecondaryColorOutlineFocused};
+    outline-color: ${mwComponentButtonSecondaryTextColorOutlineFocused};
     outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
     outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
-    color: ${mwComponentButtonSecondaryColorFgFocused};
+    color: ${mwComponentButtonSecondaryTextColorFgFocused};
   }
   &:active {
-    outline-color: ${mwComponentButtonSecondaryColorOutlinePressed};
-    color: ${mwComponentButtonSecondaryColorFgPressed};
+    outline-color: ${mwComponentButtonSecondaryTextColorOutlinePressed};
+    color: ${mwComponentButtonSecondaryTextColorFgPressed};
   }
   &:disabled {
-    outline-color: ${mwComponentButtonSecondaryColorOutlineDisabled};
-    color: ${mwComponentButtonSecondaryColorFgDisabled};
+    outline-color: ${mwComponentButtonSecondaryTextColorOutlineDisabled};
+    color: ${mwComponentButtonSecondaryTextColorFgDisabled};
   }
 `;
 const iconStartStyles = css `
-  margin-right: ${mwComponentButtonPrimarySecondaryGap};
+  margin-right: ${mwComponentButtonPrimarySecondaryTextGap};
 `;
 const iconEndStyles = css `
-  margin-left: ${mwComponentButtonPrimarySecondaryGap};
+  margin-left: ${mwComponentButtonPrimarySecondaryTextGap};
 `;
 const TlmButton = class {
   constructor(hostRef) {
