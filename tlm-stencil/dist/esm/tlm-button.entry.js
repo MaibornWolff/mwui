@@ -873,15 +873,15 @@ var _createEmotion = createEmotion({
 
 /**
  * Do not edit directly
- * Generated on Fri, 16 Dec 2022 14:20:28 GMT
+ * Generated on Mon, 19 Dec 2022 10:45:54 GMT
  */
 const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
 const mwComponentButtonSecondaryTextColorFgHover = "#ed2985";
 const mwComponentButtonSecondaryTextColorFgFocused = "#ed2985";
 const mwComponentButtonSecondaryTextColorFgPressed = "#c42177";
-const mwComponentButtonSecondaryTextColorFgDisabled = "#5e6d72";
-const mwComponentButtonSecondaryTextColorOutlineDisabled = "#5e6d72";
+const mwComponentButtonSecondaryTextColorFgDisabled = "#79868b";
+const mwComponentButtonSecondaryTextColorOutlineDisabled = "#79868b";
 const mwComponentButtonSecondaryTextColorOutlineDefault = "#001418";
 const mwComponentButtonSecondaryTextColorOutlineHover = "#ed2985";
 const mwComponentButtonSecondaryTextColorOutlinePressed = "#c42177";

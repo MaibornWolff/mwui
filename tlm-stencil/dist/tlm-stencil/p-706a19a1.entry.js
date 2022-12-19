@@ -52,8 +52,8 @@ import{r as e,c as r,h as n,g as t}from"./p-55cfb396.js";import{g as a}from"./p-
     color: ${"#c42177"};
   }
   &:disabled {
-    outline-color: ${"#5e6d72"};
-    color: ${"#5e6d72"};
+    outline-color: ${"#79868b"};
+    color: ${"#79868b"};
   }
 `,je=xe`
   margin-right: ${"12px"};
