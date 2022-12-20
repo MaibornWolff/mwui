@@ -13,14 +13,16 @@ export class MwCheckboxButton {
   @Prop({mutable:true}) checked?: boolean;
 
   handleCheck = () => {
-    this.checked = !this.checked
+    if (!this.disabled) {
+      this.checked = !this.checked
+    }
   }
 
   render() {
     return (
       <div class="mw-checkbox-button" onClick={() => this.handleCheck()}>
         <input type="checkbox" checked={this.checked} value={this.value} name={this.name}/>
-        <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : ""}`}>
+        <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
           <img
             class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`}
             src={getAssetPath("../assets/mw-checkbox_icon.svg")}

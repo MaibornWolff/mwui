@@ -3,7 +3,7 @@
   cursor: pointer;
   align-items: center;
   gap: var(--mw-component-controls-with-label-gap);
-  padding: var(--mw-component-controls-with-label-padding-tb) var(--mw-component-controls-with-label-padding-r) var(--mw-component-controls-with-label-padding-tb) var(--mw-component-controls-with-label-padding-l);
+  margin: var(--mw-component-controls-with-label-padding-tb) var(--mw-component-controls-with-label-padding-r) var(--mw-component-controls-with-label-padding-tb) var(--mw-component-controls-with-label-padding-l);
 }
 .mw-checkbox-button input {
   position: absolute;
@@ -26,44 +26,52 @@
   align-items: center;
 }
 /* Unselected, Enabled */
-.mw-checkbox-button .mw-checkbox.unselected {
+.mw-checkbox-button .mw-checkbox.unselected.enabled {
   border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
   background: var(--mw-component-controls-color-bg-unselected);
 }
+/* Unselected, Disabled */
+.mw-checkbox-button .mw-checkbox.unselected.disabled {
+  background: var(--mw-component-controls-color-bg-unselected);
+  border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-disabled);
+}
 /* Unselected, Hovered */
-.mw-checkbox-button:hover .mw-checkbox.unselected {
+.mw-checkbox-button:hover .mw-checkbox.unselected.enabled {
   background: var(--mw-component-controls-color-bg-hover);
   border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
-
 }
 /* Unselected, Focused */
-input:focus + .mw-checkbox.unselected {
+input:focus + .mw-checkbox.unselected.enabled {
   background: var(--mw-component-controls-color-bg-focused);
   border: var(--mw-component-checkbox-selected-border-width-focused) solid var(--mw-component-controls-color-outline-default);
-
 }
 /* Unselected, Pressed */
-.mw-checkbox-button:active .mw-checkbox.unselected {
+.mw-checkbox-button:active .mw-checkbox.unselected.enabled {
   background: var(--mw-component-controls-color-bg-pressed);
   border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
 }
 /* Selected, Enabled */
-.mw-checkbox-button .mw-checkbox.selected {
+.mw-checkbox-button .mw-checkbox.selected.enabled {
   background: var(--mw-component-controls-color-bg-selected);
   border: var(--mw-component-checkbox-selected-border-width-default) solid var(--mw-component-controls-color-outline-default);
 }
+/* Selected, Disabled */
+.mw-checkbox-button .mw-checkbox.selected.disabled {
+  background: var(--mw-component-controls-color-bg-disabled);
+  border: var(--mw-component-checkbox-selected-border-width-default) solid var(--mw-component-controls-color-outline-disabled);
+}
 /* Selected, Hovered */
-.mw-checkbox-button:hover .mw-checkbox.selected {
+.mw-checkbox-button:hover .mw-checkbox.selected.enabled {
   background: var(--mw-component-controls-color-bg-hover);
   border: var(--mw-component-checkbox-selected-border-width-default) solid var(--mw-component-controls-color-outline-default);
 }
 /* Selected, Focused */
-input:focus + .mw-checkbox.selected {
+input:focus + .mw-checkbox.selected.enabled {
   background: var(--mw-component-controls-color-bg-focused);
   border: var(--mw-component-checkbox-selected-border-width-focused) solid var(--mw-component-controls-color-outline-default);
 }
 /* Selected, Pressed */
-.mw-checkbox-button:active .mw-checkbox.selected {
+.mw-checkbox-button:active .mw-checkbox.selected.enabled {
   background: var(--mw-component-controls-color-bg-pressed);
   border: var(--mw-component-checkbox-selected-border-width-default) solid var(--mw-component-controls-color-outline-default);
 }
