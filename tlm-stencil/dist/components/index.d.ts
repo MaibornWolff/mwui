@@ -1,4 +1,5 @@
 /* TlmStencil custom elements */
+export { MwCheckboxButton as MwCheckboxButton } from '../types/components/mw-checkbox-button/mw-checkbox-button';
 export { MyComponent as MyComponent } from '../types/components/my-component/my-component';
 export { TlmButton as TlmButton } from '../types/components/tlm-button/tlm-button';
 

@@ -1,0 +1,84 @@
+.mw-checkbox-button{
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  gap: var(--mw-component-controls-with-label-gap);
+  padding: var(--mw-component-controls-with-label-padding-tb) var(--mw-component-controls-with-label-padding-r) var(--mw-component-controls-with-label-padding-tb) var(--mw-component-controls-with-label-padding-l);
+}
+.mw-checkbox-button input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  /* Focus state doesn't work if we just do display: none */
+}
+/* mw-checkbox */
+.mw-checkbox {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: var(--mw-component-size-checkbox-radiobutton-wh);
+  height: var(--mw-component-size-checkbox-radiobutton-wh);
+  border-radius: var(--mw-component-checkbox-border-radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Unselected, Enabled */
+.mw-checkbox-button .mw-checkbox.unselected {
+  border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
+  background: var(--mw-component-controls-color-bg-unselected);
+}
+/* Unselected, Hovered */
+.mw-checkbox-button:hover .mw-checkbox.unselected {
+  background: var(--mw-component-controls-color-bg-hover);
+  border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
+
+}
+/* Unselected, Focused */
+input:focus + .mw-checkbox.unselected {
+  background: var(--mw-component-controls-color-bg-focused);
+  border: var(--mw-component-checkbox-selected-border-width-focused) solid var(--mw-component-controls-color-outline-default);
+
+}
+/* Unselected, Pressed */
+.mw-checkbox-button:active .mw-checkbox.unselected {
+  background: var(--mw-component-controls-color-bg-pressed);
+  border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
+}
+/* Selected, Enabled */
+.mw-checkbox-button .mw-checkbox.selected {
+  background: var(--mw-component-controls-color-bg-selected);
+  border: var(--mw-component-checkbox-selected-border-width-default) solid var(--mw-component-controls-color-outline-default);
+}
+/* Selected, Hovered */
+.mw-checkbox-button:hover .mw-checkbox.selected {
+  background: var(--mw-component-controls-color-bg-hover);
+  border: var(--mw-component-checkbox-selected-border-width-default) solid var(--mw-component-controls-color-outline-default);
+}
+/* Selected, Focused */
+input:focus + .mw-checkbox.selected {
+  background: var(--mw-component-controls-color-bg-focused);
+  border: var(--mw-component-checkbox-selected-border-width-focused) solid var(--mw-component-controls-color-outline-default);
+}
+/* Selected, Pressed */
+.mw-checkbox-button:active .mw-checkbox.selected {
+  background: var(--mw-component-controls-color-bg-pressed);
+  border: var(--mw-component-checkbox-selected-border-width-default) solid var(--mw-component-controls-color-outline-default);
+}
+/* mw-checkmark */
+.mw-checkmark {
+  width: 14px;
+  height: 11px;
+  display: none;
+}
+/* Selected */
+.mw-checkmark.selected{
+  display: unset;
+}
+
+/* mw-checkbox-label */
+.mw-checkbox-label{
+  color: var(--mw-component-controls-color-label-default);
+}
