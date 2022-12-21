@@ -1,9 +1,8 @@
 import { create } from '@storybook/theming';
 import logo from './public/mwui_logo.svg';
 import {
-  mwCoreColorSecondary900,
-  mwCoreColorSecondary500,
-  mwCoreColorPrimary500,
+  mwCoreColorPurple900,
+  mwCoreColorPink500,
   mwCoreFontFontFamiliesBody,
   borderRadiusMedium,
   mwCoreColorNeutral100,
@@ -16,8 +15,8 @@ export default create({
   brandImage: logo,
   brandTarget: '_self',
 
-  colorPrimary: mwCoreColorPrimary500,
-  colorSecondary: mwCoreColorSecondary900,
+  colorPink: mwCoreColorPink500,
+  colorPurple: mwCoreColorPurple900,
 
   // UI
   appBg: mwCoreColorNeutral100,
@@ -35,6 +34,6 @@ export default create({
 
   // Toolbar default and active colors
   barTextColor: 'white',
-  barSelectedColor: mwCoreColorPrimary500,
-  barBg: mwCoreColorSecondary900,
+  //barSelectedColor: mwCoreColorPink500,
+  barBg: mwCoreColorPurple900,
 });
