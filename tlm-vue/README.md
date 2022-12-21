@@ -21,7 +21,7 @@ You can then use your components within vue:
 
 ```Vue
 <template>
-  <tlm-button test-id="test-id" disabled="false">Press here</tlm-button>
+  <mw-button test-id="test-id" disabled="false">Press here</mw-button>
 </template>
 
 <script>

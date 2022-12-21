@@ -1,5 +1,5 @@
 /* TlmStencil custom elements */
-export { TlmButton as MwButton } from '../types/components/tlm-button/mw-button';
+export { TlmButton as MwButton } from '../types/components/mw-button/mw-button';
 
 /**
  * Used to manually set the base path where assets can be found.
