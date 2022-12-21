@@ -18,20 +18,20 @@ import {
   mwComponentButtonSecondaryTextColorBgDefault,
   mwComponentButtonSecondaryTextColorFgDefault,
   mwComponentButtonBorderWidthSecondaryDefault,
-  mwComponentButtonSecondaryTextColorOutlineHover,
-  mwComponentButtonSecondaryTextColorOutlineDisabled,
-  mwComponentButtonSecondaryTextColorOutlineDefault,
+  mwComponentButtonSecondaryTextColorBorderHover,
+  mwComponentButtonSecondaryTextColorBorderDisabled,
+  mwComponentButtonSecondaryTextColorBorderDefault,
   mwComponentButtonTypo,
   mwComponentButtonSecondaryTextColorFgPressed,
-  mwComponentButtonSecondaryTextColorOutlinePressed,
+  mwComponentButtonSecondaryTextColorBorderPressed,
   mwComponentButtonPrimaryColorFgPressed,
   mwComponentButtonPrimaryColorBgFocused,
-  mwComponentButtonSecondaryTextColorOutlineFocused,
+  mwComponentButtonSecondaryTextColorBorderFocused,
   mwComponentButtonPrimarySecondaryTextPaddingLr,
   mwComponentButtonPrimarySecondaryTextPaddingTb,
   mwComponentButtonPrimarySecondaryTextGap,
   mwComponentButtonBorderRadiusDefault,
-  mwComponentButtonPrimarySecondaryMinWidth,
+  mwComponentSizeButtonPrimarySecondaryMinWidth,
   mwComponentButtonBorderWidthSecondaryFocused,
   letterSpacingButtons,
 } from '../../../../tlm-token-farm/dist/js/MW_component.js';
@@ -49,7 +49,7 @@ const base = css`
   font-weight: ${getFontWeightValue(mwComponentButtonTypo.fontWeight)};
   font-size: ${mwComponentButtonTypo.fontSize}px;
   border-radius: ${mwComponentButtonBorderRadiusDefault}px;
-  min-width: ${mwComponentButtonPrimarySecondaryMinWidth}px;
+  min-width: ${mwComponentSizeButtonPrimarySecondaryMinWidth}px;
 `;
 
 const primaryButtonStyles = css`
@@ -82,23 +82,23 @@ const secondaryButtonStyles = css`
   outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryDefault}px;
   color: ${mwComponentButtonSecondaryTextColorFgDefault};
   background-color: ${mwComponentButtonSecondaryTextColorBgDefault};
-  outline-color: ${mwComponentButtonSecondaryTextColorOutlineDefault};
+  outline-color: ${mwComponentButtonSecondaryTextColorBorderDefault};
   &:hover {
-    outline-color: ${mwComponentButtonSecondaryTextColorOutlineHover};
+    outline-color: ${mwComponentButtonSecondaryTextColorBorderHover};
     color: ${mwComponentButtonSecondaryTextColorFgHover};
   }
   &:focus {
-    outline-color: ${mwComponentButtonSecondaryTextColorOutlineFocused};
+    outline-color: ${mwComponentButtonSecondaryTextColorBorderFocused};
     outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
     outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
     color: ${mwComponentButtonSecondaryTextColorFgFocused};
   }
   &:active {
-    outline-color: ${mwComponentButtonSecondaryTextColorOutlinePressed};
+    outline-color: ${mwComponentButtonSecondaryTextColorBorderPressed};
     color: ${mwComponentButtonSecondaryTextColorFgPressed};
   }
   &:disabled {
-    outline-color: ${mwComponentButtonSecondaryTextColorOutlineDisabled};
+    outline-color: ${mwComponentButtonSecondaryTextColorBorderDisabled};
     color: ${mwComponentButtonSecondaryTextColorFgDisabled};
   }
 `;
