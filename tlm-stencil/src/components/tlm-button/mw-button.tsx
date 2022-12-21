@@ -112,7 +112,7 @@ const iconEndStyles = css`
 `;
 
 @Component({
-  tag: 'tlm-button',
+  tag: 'mw-button',
   shadow: false,
 })
 export class TlmButton {

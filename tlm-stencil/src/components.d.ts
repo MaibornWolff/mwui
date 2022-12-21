@@ -6,80 +6,43 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
-    interface TlmButton {
+    interface MwButton {
         "disabled"?: boolean;
         "secondary"?: boolean;
         "testId": string;
     }
 }
-export interface TlmButtonCustomEvent<T> extends CustomEvent<T> {
+export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLTlmButtonElement;
+    target: HTMLMwButtonElement;
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLMwButtonElement extends Components.MwButton, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
-    interface HTMLTlmButtonElement extends Components.TlmButton, HTMLStencilElement {
-    }
-    var HTMLTlmButtonElement: {
-        prototype: HTMLTlmButtonElement;
-        new (): HTMLTlmButtonElement;
+    var HTMLMwButtonElement: {
+        prototype: HTMLMwButtonElement;
+        new (): HTMLMwButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
-        "tlm-button": HTMLTlmButtonElement;
+        "mw-button": HTMLMwButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
-    interface TlmButton {
+    interface MwButton {
         "disabled"?: boolean;
-        "onClickEmitter"?: (event: TlmButtonCustomEvent<string>) => void;
+        "onClickEmitter"?: (event: MwButtonCustomEvent<string>) => void;
         "secondary"?: boolean;
         "testId": string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
-        "tlm-button": TlmButton;
+        "mw-button": MwButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "tlm-button": LocalJSX.TlmButton & JSXBase.HTMLAttributes<HTMLTlmButtonElement>;
+            "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
         }
     }
 }
