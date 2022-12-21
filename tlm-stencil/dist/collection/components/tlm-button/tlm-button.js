@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 import { css } from '@emotion/css';
 import { getFontWeightValue } from '../../utils/utils';
-import { mwComponentButtonPrimaryColorBgDefault, mwComponentButtonBorderWidthPrimaryTextDefault, mwComponentButtonPrimaryColorFgDefault, mwComponentButtonPrimaryColorBgHover, mwComponentButtonPrimaryColorFgHover, mwComponentButtonPrimaryColorBgPressed, mwComponentButtonPrimaryColorFgFocused, mwComponentButtonPrimaryColorBgDisabled, mwComponentButtonPrimaryColorFgDisabled, mwComponentButtonSecondaryTextColorFgDisabled, mwComponentButtonSecondaryTextColorFgFocused, mwComponentButtonSecondaryTextColorFgHover, mwComponentButtonSecondaryTextColorBgDefault, mwComponentButtonSecondaryTextColorFgDefault, mwComponentButtonBorderWidthSecondaryDefault, mwComponentButtonSecondaryTextColorOutlineHover, mwComponentButtonSecondaryTextColorOutlineDisabled, mwComponentButtonSecondaryTextColorOutlineDefault, mwComponentButtonTypo, mwComponentButtonSecondaryTextColorFgPressed, mwComponentButtonSecondaryTextColorOutlinePressed, mwComponentButtonPrimaryColorFgPressed, mwComponentButtonPrimaryColorBgFocused, mwComponentButtonSecondaryTextColorOutlineFocused, mwComponentButtonPrimarySecondaryTextPaddingLr, mwComponentButtonPrimarySecondaryTextPaddingTb, mwComponentButtonPrimarySecondaryTextGap, mwComponentButtonBorderRadiusDefault, mwComponentButtonPrimarySecondaryMinWidth, mwComponentButtonBorderWidthSecondaryFocused, letterSpacingButtons, } from '../../../../tlm-token-farm/dist/js/MW_component.js';
+import { mwComponentButtonPrimaryColorBgDefault, mwComponentButtonBorderWidthPrimaryTextDefault, mwComponentButtonPrimaryColorFgDefault, mwComponentButtonPrimaryColorBgHover, mwComponentButtonPrimaryColorFgHover, mwComponentButtonPrimaryColorBgPressed, mwComponentButtonPrimaryColorFgFocused, mwComponentButtonPrimaryColorBgDisabled, mwComponentButtonPrimaryColorFgDisabled, mwComponentButtonSecondaryTextColorFgDisabled, mwComponentButtonSecondaryTextColorFgFocused, mwComponentButtonSecondaryTextColorFgHover, mwComponentButtonSecondaryTextColorBgDefault, mwComponentButtonSecondaryTextColorFgDefault, mwComponentButtonBorderWidthSecondaryDefault, mwComponentButtonSecondaryTextColorBorderHover, mwComponentButtonSecondaryTextColorBorderDisabled, mwComponentButtonSecondaryTextColorBorderDefault, mwComponentButtonTypo, mwComponentButtonSecondaryTextColorFgPressed, mwComponentButtonSecondaryTextColorBorderPressed, mwComponentButtonPrimaryColorFgPressed, mwComponentButtonPrimaryColorBgFocused, mwComponentButtonSecondaryTextColorBorderFocused, mwComponentButtonPrimarySecondaryTextPaddingLr, mwComponentButtonPrimarySecondaryTextPaddingTb, mwComponentButtonPrimarySecondaryTextGap, mwComponentButtonBorderRadiusDefault, mwComponentSizeButtonPrimarySecondaryMinWidth, mwComponentButtonBorderWidthSecondaryFocused, letterSpacingButtons, } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 // figma exports percentage value instead of em
 // workaround to convert it to float
 const letterSpacing = Number(letterSpacingButtons.replace('%', '').trim()) / 100;
@@ -14,7 +14,7 @@ const base = css `
   font-weight: ${getFontWeightValue(mwComponentButtonTypo.fontWeight)};
   font-size: ${mwComponentButtonTypo.fontSize}px;
   border-radius: ${mwComponentButtonBorderRadiusDefault}px;
-  min-width: ${mwComponentButtonPrimarySecondaryMinWidth}px;
+  min-width: ${mwComponentSizeButtonPrimarySecondaryMinWidth}px;
 `;
 const primaryButtonStyles = css `
   ${base};
@@ -45,23 +45,23 @@ const secondaryButtonStyles = css `
   outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryDefault}px;
   color: ${mwComponentButtonSecondaryTextColorFgDefault};
   background-color: ${mwComponentButtonSecondaryTextColorBgDefault};
-  outline-color: ${mwComponentButtonSecondaryTextColorOutlineDefault};
+  outline-color: ${mwComponentButtonSecondaryTextColorBorderDefault};
   &:hover {
-    outline-color: ${mwComponentButtonSecondaryTextColorOutlineHover};
+    outline-color: ${mwComponentButtonSecondaryTextColorBorderHover};
     color: ${mwComponentButtonSecondaryTextColorFgHover};
   }
   &:focus {
-    outline-color: ${mwComponentButtonSecondaryTextColorOutlineFocused};
+    outline-color: ${mwComponentButtonSecondaryTextColorBorderFocused};
     outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
     outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
     color: ${mwComponentButtonSecondaryTextColorFgFocused};
   }
   &:active {
-    outline-color: ${mwComponentButtonSecondaryTextColorOutlinePressed};
+    outline-color: ${mwComponentButtonSecondaryTextColorBorderPressed};
     color: ${mwComponentButtonSecondaryTextColorFgPressed};
   }
   &:disabled {
-    outline-color: ${mwComponentButtonSecondaryTextColorOutlineDisabled};
+    outline-color: ${mwComponentButtonSecondaryTextColorBorderDisabled};
     color: ${mwComponentButtonSecondaryTextColorFgDisabled};
   }
 `;
