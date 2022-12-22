@@ -1,1 +1,0 @@
-import{p as t,b as e}from"./p-ceea9a0a.js";(()=>{const e=import.meta.url,s={};return""!==e&&(s.resourcesUrl=new URL(".",e).href),t(s)})().then((t=>e([["p-c33c1682",[[4,"mw-button",{testId:[1,"test-id"],disabled:[4],secondary:[4]}]]]],t)));
