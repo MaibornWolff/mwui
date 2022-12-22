@@ -9,7 +9,7 @@ const Template = () => `
 <div style="display: flex; justify-content: center">
   <div style="text-align: center">
     <h1>Hello World</h1>
-    <tlm-button>BUTTON</tlm-button>
+    <mw-button>BUTTON</mw-button>
   </div>
 </div>
 `;

@@ -1,10 +1,12 @@
 import '../global/global.css';
 import '../../../tlm-token-farm/dist/css/MW_core.css';
 import { Meta } from '@storybook/addon-docs';
+import logo from '../../.storybook/public/mwui_logo.svg';
 
 <Meta title="Introduction" />
 
-<h1 style={{ color: 'var(--mw-core-color-primary-500)' }}>The Liberation Machine</h1>
+<img src={logo} width="150" style={{marginBottom: '20px'}} />
+<h2>The Liberation Machine</h2>
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
 accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -17,7 +19,6 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
 elitr.
 
-
 ### Some other things
 
 - Learn more in the [Storybook tutorials](https://storybook.js.org/tutorials/).
@@ -26,4 +27,4 @@ elitr.
 
 ### random buttons
 
-<tlm-button style={{marginRight: '10px'}} secondary>I'm a Button</tlm-button><tlm-button>Mee too!</tlm-button>
+<mw-button style={{marginRight: '10px'}} secondary>I'm a Button</mw-button><mw-button>Mee too!</mw-button>

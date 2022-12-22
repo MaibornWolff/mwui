@@ -2,7 +2,7 @@
 
 # The Liberation Machine - Stencil
 
-`tlm-stencil` houses the component library of the Liberation Machine and is built using [StencilJs](https://stenciljs.com/). 
+`tlm-stencil` houses the component library of the Liberation Machine and is built using [StencilJs](https://stenciljs.com/).
 Stencil provides WebComponents as well as framework-specific integrations to leverage usage of WebComponents in React, Vue and Angular.
 
 ### Creation
@@ -15,7 +15,7 @@ npm run generate
 
 Alternatively you can manually create components by adding them to `src/components`.
 
-Custom Element names are written in kebab-case, prefixed with `tlm-` (e.g. `tlm-button`).
+Custom Element names are written in kebab-case, prefixed with `mw-` (e.g. `mw-button`).
 
 ### Structure
 

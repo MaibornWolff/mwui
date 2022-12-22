@@ -8,28 +8,7 @@ import { Components } from 'tlm-stencil';
 
 
 
-export declare interface MyComponent extends Components.MyComponent {}
-
-@ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['first', 'last', 'middle']
-})
-@Component({
-  selector: 'my-component',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['first', 'last', 'middle']
-})
-export class MyComponent {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
-}
-
-
-export declare interface TlmButton extends Components.TlmButton {
+export declare interface MwButton extends Components.MwButton {
   /**
    *  
    */
@@ -42,12 +21,12 @@ export declare interface TlmButton extends Components.TlmButton {
   inputs: ['disabled', 'secondary', 'testId']
 })
 @Component({
-  selector: 'tlm-button',
+  selector: 'mw-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   inputs: ['disabled', 'secondary', 'testId']
 })
-export class TlmButton {
+export class MwButton {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

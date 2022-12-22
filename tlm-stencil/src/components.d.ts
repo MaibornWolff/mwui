@@ -6,101 +6,43 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MwCheckbox {
-        "checked"?: boolean;
-        "disabled"?: boolean;
-        "name": string;
-        "value": string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
-    interface TlmButton {
+    interface MwButton {
         "disabled"?: boolean;
         "secondary"?: boolean;
         "testId": string;
     }
 }
-export interface TlmButtonCustomEvent<T> extends CustomEvent<T> {
+export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
-    target: HTMLTlmButtonElement;
+    target: HTMLMwButtonElement;
 }
 declare global {
-    interface HTMLMwCheckboxElement extends Components.MwCheckbox, HTMLStencilElement {
+    interface HTMLMwButtonElement extends Components.MwButton, HTMLStencilElement {
     }
-    var HTMLMwCheckboxElement: {
-        prototype: HTMLMwCheckboxElement;
-        new (): HTMLMwCheckboxElement;
-    };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
-    }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
-    interface HTMLTlmButtonElement extends Components.TlmButton, HTMLStencilElement {
-    }
-    var HTMLTlmButtonElement: {
-        prototype: HTMLTlmButtonElement;
-        new (): HTMLTlmButtonElement;
+    var HTMLMwButtonElement: {
+        prototype: HTMLMwButtonElement;
+        new (): HTMLMwButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "mw-checkbox": HTMLMwCheckboxElement;
-        "my-component": HTMLMyComponentElement;
-        "tlm-button": HTMLTlmButtonElement;
+        "mw-button": HTMLMwButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MwCheckbox {
-        "checked"?: boolean;
+    interface MwButton {
         "disabled"?: boolean;
-        "name"?: string;
-        "value"?: string;
-    }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
-    interface TlmButton {
-        "disabled"?: boolean;
-        "onClickEmitter"?: (event: TlmButtonCustomEvent<string>) => void;
+        "onClickEmitter"?: (event: MwButtonCustomEvent<string>) => void;
         "secondary"?: boolean;
         "testId": string;
     }
     interface IntrinsicElements {
-        "mw-checkbox": MwCheckbox;
-        "my-component": MyComponent;
-        "tlm-button": TlmButton;
+        "mw-button": MwButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
-            "tlm-button": LocalJSX.TlmButton & JSXBase.HTMLAttributes<HTMLTlmButtonElement>;
+            "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
         }
     }
 }

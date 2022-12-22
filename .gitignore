@@ -26,3 +26,6 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 .env
 packages/*/lib
+
+tlm-stencil/dist/
+tlm-token-farm/dist/
