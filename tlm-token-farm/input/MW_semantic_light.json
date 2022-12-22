@@ -201,6 +201,14 @@
           "min-width": {
             "value": 120,
             "type": "sizing"
+          },
+          "label": {
+            "horizontal": {
+              "width": {
+                "value": 120,
+                "type": "sizing"
+              }
+            }
           }
         }
       },
@@ -408,8 +416,18 @@
           "type": "borderWidth"
         },
         "gap": {
-          "value": "4px / 2",
-          "type": "spacing"
+          "group": {
+            "vertical": {
+              "value": "4px / 2",
+              "type": "spacing"
+            }
+          },
+          "input-field": {
+            "horizontal": {
+              "value": "4px + 4px + 4px",
+              "type": "spacing"
+            }
+          }
         },
         "padding": {
           "input-field": {
@@ -422,9 +440,17 @@
               "type": "spacing"
             },
             "label": {
-              "lr": {
-                "value": "4px + 4px + 4px + 4px",
-                "type": "spacing"
+              "vertical": {
+                "lr": {
+                  "value": "4px + 4px + 4px + 4px",
+                  "type": "spacing"
+                }
+              },
+              "horizontal": {
+                "all": {
+                  "value": 0,
+                  "type": "spacing"
+                }
               }
             }
           },

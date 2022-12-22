@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 22 Dec 2022 10:25:35 GMT
+ * Generated on Thu, 22 Dec 2022 10:41:43 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -39,6 +39,7 @@ export const mwComponentSizeToggleSwitchW = "52px";
 export const mwComponentSizeToggleSwitchH = "32px";
 export const mwComponentSizeCheckboxRadiobuttonWh = "24px";
 export const mwComponentSizeInputMinWidth = "120px";
+export const mwComponentSizeInputLabelHorizontalWidth = "120px";
 export const mwComponentControlsColorFgDefault = "#ffffff";
 export const mwComponentControlsColorFgDisabled = "#EEF1F3";
 export const mwComponentControlsColorFgOff = "#001418";
@@ -77,10 +78,12 @@ export const mwComponentInputBgError = "#FCBDB7";
 export const mwComponentInputBorderDefault = "#5e6d72";
 export const mwComponentInputBorderFocused = "#001418";
 export const mwComponentInputDefault = 1;
-export const mwComponentInputGap = 4;
+export const mwComponentInputGapGroupVertical = 4;
+export const mwComponentInputGapInputFieldHorizontal = "12px";
 export const mwComponentInputPaddingInputFieldTb = "8px";
 export const mwComponentInputPaddingInputFieldLr = "16px";
-export const mwComponentInputPaddingInputFieldLabelLr = "16px";
+export const mwComponentInputPaddingInputFieldLabelVerticalLr = "16px";
+export const mwComponentInputPaddingInputFieldLabelHorizontalAll = "0px";
 export const mwComponentInputPaddingHelperTextTb = 4;
 export const mwComponentInputFocused = 2;
 export const mwSemanticColorBorderDisabled = "#79868b";
