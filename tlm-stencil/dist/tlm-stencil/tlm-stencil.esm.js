@@ -125,5 +125,5 @@ const patchCloneNodeFix = (HTMLElementPrototype) => {
 
 patchBrowser().then(options => {
   globalScripts();
-  return bootstrapLazy([["mw-checkbox-button",[[4,"mw-checkbox-button",{"value":[1],"name":[1],"disabled":[4],"checked":[1028]}]]],["my-component",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}]]],["tlm-button",[[4,"tlm-button",{"testId":[1,"test-id"],"disabled":[4],"secondary":[4]}]]]], options);
+  return bootstrapLazy([["mw-checkbox",[[1,"mw-checkbox",{"value":[1],"name":[1],"disabled":[4],"checked":[1028]}]]],["my-component",[[1,"my-component",{"first":[1],"middle":[1],"last":[1]}]]],["tlm-button",[[4,"tlm-button",{"testId":[1,"test-id"],"disabled":[4],"secondary":[4]}]]]], options);
 });

@@ -1,12 +1,12 @@
 import {Component, getAssetPath, h, Prop} from '@stencil/core';
 
 @Component({
-  tag: 'mw-checkbox-button',
-  styleUrl: 'mw-checkbox-button.css',
+  tag: 'mw-checkbox',
+  styleUrl: 'mw-checkbox.css',
   assetsDirs: ['../assets'],
-  shadow: false,
+  shadow: true,
 })
-export class MwCheckboxButton {
+export class MwCheckbox {
   @Prop() value: string;
   @Prop() name: string;
   @Prop() disabled?: boolean;
@@ -20,7 +20,7 @@ export class MwCheckboxButton {
 
   render() {
     return (
-      <div class="mw-checkbox-button" onClick={() => this.handleCheck()}>
+      <div class="mw-checkbox-container" onClick={this.handleCheck}>
         <input type="checkbox" checked={this.checked} value={this.value} name={this.name}/>
         <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
           <img

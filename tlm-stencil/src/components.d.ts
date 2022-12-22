@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MwCheckboxButton {
+    interface MwCheckbox {
         "checked"?: boolean;
         "disabled"?: boolean;
         "name": string;
@@ -37,11 +37,11 @@ export interface TlmButtonCustomEvent<T> extends CustomEvent<T> {
     target: HTMLTlmButtonElement;
 }
 declare global {
-    interface HTMLMwCheckboxButtonElement extends Components.MwCheckboxButton, HTMLStencilElement {
+    interface HTMLMwCheckboxElement extends Components.MwCheckbox, HTMLStencilElement {
     }
-    var HTMLMwCheckboxButtonElement: {
-        prototype: HTMLMwCheckboxButtonElement;
-        new (): HTMLMwCheckboxButtonElement;
+    var HTMLMwCheckboxElement: {
+        prototype: HTMLMwCheckboxElement;
+        new (): HTMLMwCheckboxElement;
     };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
@@ -56,13 +56,13 @@ declare global {
         new (): HTMLTlmButtonElement;
     };
     interface HTMLElementTagNameMap {
-        "mw-checkbox-button": HTMLMwCheckboxButtonElement;
+        "mw-checkbox": HTMLMwCheckboxElement;
         "my-component": HTMLMyComponentElement;
         "tlm-button": HTMLTlmButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface MwCheckboxButton {
+    interface MwCheckbox {
         "checked"?: boolean;
         "disabled"?: boolean;
         "name"?: string;
@@ -89,7 +89,7 @@ declare namespace LocalJSX {
         "testId": string;
     }
     interface IntrinsicElements {
-        "mw-checkbox-button": MwCheckboxButton;
+        "mw-checkbox": MwCheckbox;
         "my-component": MyComponent;
         "tlm-button": TlmButton;
     }
@@ -98,7 +98,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "mw-checkbox-button": LocalJSX.MwCheckboxButton & JSXBase.HTMLAttributes<HTMLMwCheckboxButtonElement>;
+            "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "tlm-button": LocalJSX.TlmButton & JSXBase.HTMLAttributes<HTMLTlmButtonElement>;
         }
