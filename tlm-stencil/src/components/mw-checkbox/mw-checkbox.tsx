@@ -3,7 +3,7 @@ import {Component, getAssetPath, h, Prop} from '@stencil/core';
 @Component({
   tag: 'mw-checkbox',
   styleUrl: 'mw-checkbox.css',
-  assetsDirs: ['../assets'],
+  assetsDirs: ['./../assets'],
   shadow: true,
 })
 export class MwCheckbox {
@@ -25,7 +25,7 @@ export class MwCheckbox {
         <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
           <img
             class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`}
-            src={getAssetPath("../assets/mw-checkbox_icon.svg")}
+            src={getAssetPath("./../assets/mw-checkbox_icon.svg")}
             alt="Checkmark"
           />
         </span>

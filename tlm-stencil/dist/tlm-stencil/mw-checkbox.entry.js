@@ -12,9 +12,9 @@ const MwCheckbox = class {
     };
   }
   render() {
-    return (h("div", { class: "mw-checkbox-container", onClick: this.handleCheck }, h("input", { type: "checkbox", checked: this.checked, value: this.value, name: this.name }), h("span", { class: `mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}` }, h("img", { class: `mw-checkmark ${this.checked ? "selected" : "unselected"}`, src: getAssetPath("../assets/mw-checkbox_icon.svg"), alt: "Checkmark" })), h("span", { class: "mw-checkbox-label" }, h("slot", null))));
+    return (h("div", { class: "mw-checkbox-container", onClick: this.handleCheck }, h("input", { type: "checkbox", checked: this.checked, value: this.value, name: this.name }), h("span", { class: `mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}` }, h("img", { class: `mw-checkmark ${this.checked ? "selected" : "unselected"}`, src: getAssetPath("./../assets/mw-checkbox_icon.svg"), alt: "Checkmark" })), h("span", { class: "mw-checkbox-label" }, h("slot", null))));
   }
-  static get assetsDirs() { return ["../assets"]; }
+  static get assetsDirs() { return ["./../assets"]; }
 };
 MwCheckbox.style = mwCheckboxCss;
 
