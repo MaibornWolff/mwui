@@ -11,6 +11,12 @@ export namespace Components {
         "secondary"?: boolean;
         "testId": string;
     }
+    interface MwCheckbox {
+        "checked"?: boolean;
+        "disabled"?: boolean;
+        "name": string;
+        "value": string;
+    }
 }
 export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -23,8 +29,15 @@ declare global {
         prototype: HTMLMwButtonElement;
         new (): HTMLMwButtonElement;
     };
+    interface HTMLMwCheckboxElement extends Components.MwCheckbox, HTMLStencilElement {
+    }
+    var HTMLMwCheckboxElement: {
+        prototype: HTMLMwCheckboxElement;
+        new (): HTMLMwCheckboxElement;
+    };
     interface HTMLElementTagNameMap {
         "mw-button": HTMLMwButtonElement;
+        "mw-checkbox": HTMLMwCheckboxElement;
     }
 }
 declare namespace LocalJSX {
@@ -34,8 +47,15 @@ declare namespace LocalJSX {
         "secondary"?: boolean;
         "testId": string;
     }
+    interface MwCheckbox {
+        "checked"?: boolean;
+        "disabled"?: boolean;
+        "name"?: string;
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "mw-button": MwButton;
+        "mw-checkbox": MwCheckbox;
     }
 }
 export { LocalJSX as JSX };
@@ -43,6 +63,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
+            "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
         }
     }
 }

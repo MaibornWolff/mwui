@@ -34,3 +34,24 @@ export class MwButton {
     proxyOutputs(this, this.el, ['clickEmitter']);
   }
 }
+
+
+export declare interface MwCheckbox extends Components.MwCheckbox {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['checked', 'disabled', 'name', 'value']
+})
+@Component({
+  selector: 'mw-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'disabled', 'name', 'value']
+})
+export class MwCheckbox {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}

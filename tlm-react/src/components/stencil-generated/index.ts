@@ -9,3 +9,4 @@ import { defineCustomElements } from 'tlm-stencil/loader';
 
 defineCustomElements();
 export const MwButton = /*@__PURE__*/createReactComponent<JSX.MwButton, HTMLMwButtonElement>('mw-button');
+export const MwCheckbox = /*@__PURE__*/createReactComponent<JSX.MwCheckbox, HTMLMwCheckboxElement>('mw-checkbox');
