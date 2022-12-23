@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 22 Dec 2022 10:41:43 GMT
+ * Generated on Fri, 23 Dec 2022 09:27:47 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -72,6 +72,7 @@ export const mwComponentInputFgPlaceholder = "#5e6d72";
 export const mwComponentInputFgDisabled = "#79868b";
 export const mwComponentInputFgError = "#9f1b00";
 export const mwComponentInputFgRequired = "#9f1b00";
+export const mwComponentInputFgIconDefault = "#5e6d72";
 export const mwComponentInputBgDefault = "#EEF1F3";
 export const mwComponentInputBgHover = "#ffffff";
 export const mwComponentInputBgError = "#FCBDB7";
@@ -79,7 +80,8 @@ export const mwComponentInputBorderDefault = "#5e6d72";
 export const mwComponentInputBorderFocused = "#001418";
 export const mwComponentInputDefault = 1;
 export const mwComponentInputGapGroupVertical = 4;
-export const mwComponentInputGapInputFieldHorizontal = "12px";
+export const mwComponentInputGapHorizontalInputGroup = "12px";
+export const mwComponentInputGapHorizontalInputField = "8px";
 export const mwComponentInputPaddingInputFieldTb = "8px";
 export const mwComponentInputPaddingInputFieldLr = "16px";
 export const mwComponentInputPaddingInputFieldLabelVerticalLr = "16px";

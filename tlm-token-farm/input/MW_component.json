@@ -385,6 +385,10 @@
           "required": {
             "value": "#9f1b00",
             "type": "color"
+          },
+          "icon-default": {
+            "value": "#5e6d72",
+            "type": "color"
           }
         },
         "bg": {
@@ -422,9 +426,13 @@
               "type": "spacing"
             }
           },
-          "input-field": {
-            "horizontal": {
+          "horizontal": {
+            "input-group": {
               "value": "4px + 4px + 4px",
+              "type": "spacing"
+            },
+            "input-field": {
+              "value": "4px + 4px",
               "type": "spacing"
             }
           }

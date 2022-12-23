@@ -64,6 +64,7 @@
   --mw-component-input-fg-disabled: #79868b;
   --mw-component-input-fg-error: #9f1b00;
   --mw-component-input-fg-required: #9f1b00;
+  --mw-component-input-fg-icon-default: #5e6d72;
   --mw-component-input-bg-default: #EEF1F3;
   --mw-component-input-bg-hover: #ffffff;
   --mw-component-input-bg-error: #FCBDB7;
@@ -71,7 +72,8 @@
   --mw-component-input-border-focused: #001418;
   --mw-component-input-default: 1px;
   --mw-component-input-gap-group-vertical: 4px / 2;
-  --mw-component-input-gap-input-field-horizontal: 12px;
+  --mw-component-input-gap-horizontal-input-group: 12px;
+  --mw-component-input-gap-horizontal-input-field: 8px;
   --mw-component-input-padding-input-field-tb: 8px;
   --mw-component-input-padding-input-field-lr: 16px;
   --mw-component-input-padding-input-field-label-vertical-lr: 16px;
