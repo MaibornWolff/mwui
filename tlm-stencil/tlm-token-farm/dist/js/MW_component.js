@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 23 Dec 2022 09:27:47 GMT
+ * Generated on Tue, 27 Dec 2022 08:28:58 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -114,13 +114,13 @@ export const mwSemanticColorErrorOnError = "#ffffff";
 export const mwSemanticColorWarningBg = "#FAE39E";
 export const mwSemanticColorWarningIntense = "#FFB218";
 export const mwSemanticColorWarningFg = "#975c0b";
-export const mwSemanticColorWarningMuted = "#FFB218";
+export const mwSemanticColorWarningMuted = "#DD8916";
 export const mwSemanticColorWarningSubtle = "#FCEBCA";
 export const mwSemanticColorWarningOnWarning = "#000000";
 export const mwSemanticColorInfoBg = "#97E0FC";
 export const mwSemanticColorInfoIntense = "#0bd2ff";
 export const mwSemanticColorInfoFg = "#027784";
-export const mwSemanticColorInfoMuted = "#00B9DB";
+export const mwSemanticColorInfoMuted = "#0192a7";
 export const mwSemanticColorInfoSubtle = "#C8EFFD";
 export const mwSemanticColorInfoOnInfo = "#000000";
 export const mwSemanticColorSuccessBg = "#77F885";
