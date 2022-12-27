@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 27 Dec 2022 12:27:26 GMT
+ * Generated on Tue, 27 Dec 2022 13:49:03 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -146,7 +146,7 @@ export const mwSemanticFontLineHeightH3Regular = 84;
 export const mwSemanticFontLineHeightH4Regular = 72;
 export const mwSemanticFontLineHeightH5Regular = 60;
 export const mwSemanticFontLineHeightCaptionRegular = 48;
-export const mwSemanticFontLineHeightLabelRegular = 48;
+export const mwSemanticFontLineHeightLabelRegular = 16;
 export const mwSemanticFontLineHeightOverlineRegular = 48;
 export const mwSemanticFontFontSizeBodyRegular = "16px";
 export const mwSemanticFontFontSizeHeroRegular = "112px";

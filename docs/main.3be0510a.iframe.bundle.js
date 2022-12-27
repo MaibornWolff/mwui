@@ -137,7 +137,7 @@
   --mw-semantic-font-line-height-h4-regular: 72px;
   --mw-semantic-font-line-height-h5-regular: 60px;
   --mw-semantic-font-line-height-caption-regular: 48px;
-  --mw-semantic-font-line-height-label-regular: 48px;
+  --mw-semantic-font-line-height-label-regular: 16px;
   --mw-semantic-font-line-height-overline-regular: 48px;
   --mw-semantic-font-font-size-body-regular: 16px;
   --mw-semantic-font-font-size-hero-regular: 112px;
