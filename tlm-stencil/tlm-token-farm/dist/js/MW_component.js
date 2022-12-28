@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Dec 2022 14:53:52 GMT
+ * Generated on Wed, 28 Dec 2022 15:30:57 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -91,7 +91,6 @@ export const mwComponentInputPaddingInputFieldLabelHorizontalAll = "0px";
 export const mwComponentInputPaddingHelperTextTb = 4;
 export const mwComponentInputFocused = 2;
 export const mwComponentMenuItem = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 16 };
-export const mwComponentMenuPaddingTb = "8px";
 export const mwComponentDividerFgDefault = "#B1BABE";
 export const mwComponentDividerInset = "16px";
 export const mwComponentDividerBorderWidthDefault = 1;

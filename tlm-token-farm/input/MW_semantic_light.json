@@ -519,7 +519,15 @@
               "type": "color"
             },
             "pressed": {
-              "value": "$mw.semantic.color.accent.primary.default",
+              "value": "$mw.semantic.color.accent.primary.intense",
+              "type": "color"
+            },
+            "default": {
+              "value": "$mw.semantic.color.fg.default",
+              "type": "color"
+            },
+            "disabled": {
+              "value": "$mw.semantic.color.fg.disabled",
               "type": "color"
             }
           },
@@ -529,6 +537,14 @@
               "type": "color"
             },
             "hover": {
+              "value": "$mw.semantic.color.bg.subtle",
+              "type": "color"
+            },
+            "default": {
+              "value": "$mw.semantic.color.bg.default",
+              "type": "color"
+            },
+            "focused": {
               "value": "$mw.semantic.color.bg.subtle",
               "type": "color"
             }
@@ -544,12 +560,6 @@
               "value": "$mw.semantic.color.border.default",
               "type": "color"
             }
-          }
-        },
-        "padding": {
-          "tb": {
-            "value": "4px + 4px",
-            "type": "spacing"
           }
         }
       },

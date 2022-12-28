@@ -81,7 +81,6 @@
   --mw-component-input-padding-input-field-label-horizontal-all: 0px;
   --mw-component-input-padding-helper-text-tb: 4px;
   --mw-component-input-focused: 2px;
-  --mw-component-menu-padding-tb: 8px;
   --mw-component-divider-fg-default: #B1BABE;
   --mw-component-divider-inset: 16px;
   --mw-component-divider-border-width-default: 1px;
