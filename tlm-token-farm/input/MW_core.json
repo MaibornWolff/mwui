@@ -409,7 +409,7 @@
         },
         "border": {
           "default": {
-            "value": "#5e6d72",
+            "value": "#B1BABE",
             "type": "color"
           },
           "focused": {
@@ -536,7 +536,7 @@
             "type": "color"
           },
           "subtle": {
-            "value": "#5e6d72",
+            "value": "#B1BABE",
             "type": "color"
           }
         },
@@ -622,6 +622,10 @@
             },
             "subtle": {
               "value": "#f9c8c7",
+              "type": "color"
+            },
+            "disabled": {
+              "value": "#CFD6D8",
               "type": "color"
             }
           }

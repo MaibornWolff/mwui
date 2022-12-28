@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 27 Dec 2022 14:24:45 GMT
+ * Generated on Wed, 28 Dec 2022 08:03:10 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -76,7 +76,7 @@ export const mwComponentInputFgIconDefault = "#B1BABE";
 export const mwComponentInputBgDefault = "#EEF1F3";
 export const mwComponentInputBgHover = "#ffffff";
 export const mwComponentInputBgError = "#FCBAB7";
-export const mwComponentInputBorderDefault = "#5e6d72";
+export const mwComponentInputBorderDefault = "#B1BABE";
 export const mwComponentInputBorderFocused = "#001418";
 export const mwComponentInputDefault = 1;
 export const mwComponentInputGapGroupVertical = 4;
@@ -98,7 +98,7 @@ export const mwComponentDividerInset = "16px";
 export const mwComponentDividerDefault = 1;
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
-export const mwSemanticColorBorderSubtle = "#5e6d72";
+export const mwSemanticColorBorderSubtle = "#B1BABE";
 export const mwSemanticColorFgDefault = "#001418";
 export const mwSemanticColorFgMuted = "#44555b";
 export const mwSemanticColorFgSubtle = "#B1BABE";
@@ -118,6 +118,7 @@ export const mwSemanticColorAccentPrimaryDefault = "#ed2985";
 export const mwSemanticColorAccentPrimaryMuted = "#F86F96";
 export const mwSemanticColorAccentPrimaryIntense = "#c42177";
 export const mwSemanticColorAccentPrimarySubtle = "#f9c8c7";
+export const mwSemanticColorAccentPrimaryDisabled = "#CFD6D8";
 export const mwSemanticColorErrorBg = "#FCBAB7";
 export const mwSemanticColorErrorIntense = "#E51B00";
 export const mwSemanticColorErrorFg = "#9f1b00";
