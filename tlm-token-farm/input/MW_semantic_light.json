@@ -477,26 +477,6 @@
         }
       },
       "menu": {
-        "bg": {
-          "default": {
-            "value": "#ffffff",
-            "type": "color"
-          },
-          "selected": {
-            "value": "#f9c8c7",
-            "type": "color"
-          }
-        },
-        "fg": {
-          "default": {
-            "value": "#001418",
-            "type": "color"
-          },
-          "disabled": {
-            "value": "#95a0a4",
-            "type": "color"
-          }
-        },
         "item": {
           "value": {
             "fontFamily": "Poppins",
@@ -504,7 +484,53 @@
             "lineHeight": 24,
             "fontSize": 16
           },
-          "type": "typography"
+          "type": "typography",
+          "fg": {
+            "selected": {
+              "value": "$mw.semantic.color.accent.primary.default",
+              "type": "color"
+            },
+            "hover": {
+              "value": "$mw.semantic.color.accent.primary.default",
+              "type": "color"
+            },
+            "focused": {
+              "value": "$mw.semantic.color.accent.primary.default",
+              "type": "color"
+            },
+            "pressed": {
+              "value": "$mw.semantic.color.accent.primary.default",
+              "type": "color"
+            }
+          },
+          "bg": {
+            "pressed": {
+              "value": "$mw.semantic.color.bg.muted",
+              "type": "color"
+            },
+            "hover": {
+              "value": "$mw.semantic.color.bg.subtle",
+              "type": "color"
+            }
+          },
+          "padding": {
+            "all": {
+              "value": "$mw.core.spacing.linear.large",
+              "type": "spacing"
+            }
+          },
+          "border": {
+            "focused": {
+              "value": "$mw.semantic.color.border.default",
+              "type": "color"
+            }
+          }
+        },
+        "padding": {
+          "tb": {
+            "value": "4px + 4px",
+            "type": "spacing"
+          }
         }
       },
       "divider": {
@@ -518,9 +544,27 @@
           "value": "4px + 4px + 4px + 4px",
           "type": "spacing"
         },
-        "default": {
-          "value": "1px",
-          "type": "borderWidth"
+        "borderWidth": {
+          "default": {
+            "value": "1px",
+            "type": "borderWidth"
+          }
+        }
+      },
+      "menu-item": {
+        "borderRadius": {
+          "value": "4px",
+          "type": "borderRadius"
+        },
+        "borderWidth": {
+          "default": {
+            "value": 0,
+            "type": "borderWidth"
+          },
+          "focused": {
+            "value": "2px",
+            "type": "borderWidth"
+          }
         }
       }
     },

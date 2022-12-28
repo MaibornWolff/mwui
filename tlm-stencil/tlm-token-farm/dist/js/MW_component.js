@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Dec 2022 08:03:10 GMT
+ * Generated on Wed, 28 Dec 2022 11:20:30 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -88,14 +88,14 @@ export const mwComponentInputPaddingInputFieldLabelVerticalLr = "16px";
 export const mwComponentInputPaddingInputFieldLabelHorizontalAll = "0px";
 export const mwComponentInputPaddingHelperTextTb = 4;
 export const mwComponentInputFocused = 2;
-export const mwComponentMenuBgDefault = "#ffffff";
-export const mwComponentMenuBgSelected = "#f9c8c7";
-export const mwComponentMenuFgDefault = "#001418";
-export const mwComponentMenuFgDisabled = "#95a0a4";
 export const mwComponentMenuItem = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 16 };
+export const mwComponentMenuPaddingTb = "8px";
 export const mwComponentDividerFgDefault = "#B1BABE";
 export const mwComponentDividerInset = "16px";
-export const mwComponentDividerDefault = 1;
+export const mwComponentDividerBorderWidthDefault = 1;
+export const mwComponentMenuItemBorderRadius = 4;
+export const mwComponentMenuItemBorderWidthDefault = "0px";
+export const mwComponentMenuItemBorderWidthFocused = 2;
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";
