@@ -30,6 +30,7 @@
   --mw-component-button-primary-secondary-text-padding-tb: 8px;
   --mw-component-button-primary-secondary-text-gap: 12px;
   --mw-component-button-icon-button-padding-all: 12px;
+  --mw-component-link-color-fg-default: #001418;
   --mw-component-size-button-primary-secondary-min-width: 88px;
   --mw-component-size-toggle-switch-w: 52px;
   --mw-component-size-toggle-switch-h: 32px;
@@ -225,7 +226,7 @@
   --mw-core-color-red-700: #9f1b00;
   --mw-core-color-red-800: #731700;
   --mw-core-color-red-900: #440B05;
-  --mw-core-font-size-scale: 1.25px;
+  --mw-core-font-size-scale-default: 1.25px;
   --mw-core-font-size-scale-sm: 1.33px;
   --mw-core-font-size-scale-lg: 1.5px;
   --mw-core-font-size-scale-xl: 2px;
@@ -233,6 +234,10 @@
   --mw-core-font-size-scale-5xl: 4px;
   --mw-core-font-size-scale-3xl: 3px;
   --mw-core-font-size-scale-4xl: 3.5px;
+  --mw-core-font-size-scale-6xl: 4.5px;
+  --mw-core-font-size-scale-7xl: 7px;
+  --mw-core-font-size-scale-xs: 1.33px;
+  --mw-core-font-size-scale-xxs: 1.6px;
   --mw-core-font-size-sm: 12px;
   --mw-core-font-size-base: 16px;
   --mw-core-font-size-lg: 24px;
@@ -243,16 +248,12 @@
   --mw-core-font-size-5xl: 64px;
   --mw-core-font-size-6xl: 72px;
   --mw-core-font-size-7xl: 112px;
-  --mw-core-font-size-scale-6xl: 4.5px;
-  --mw-core-font-size-scale-7xl: 7px;
-  --mw-core-font-size-scale-xs: 1.33px;
-  --mw-core-font-size-scale-xxs: 1.6px;
   --mw-core-font-size-xs: 12px;
   --mw-core-font-size-xxs: 10px;
   --mw-core-font-font-families-headlines: Poppins;
   --mw-core-font-font-families-body: Poppins;
   --mw-core-font-line-height-base: 24px;
-  --mw-core-font-line-height-scale: 1.25px;
+  --mw-core-font-line-height-scale-default: 1.25px;
   --mw-core-font-line-height-scale-sm: 1.33px;
   --mw-core-font-line-height-scale-xs: 1.5px;
   --mw-core-font-line-height-scale-xxs: 2px;

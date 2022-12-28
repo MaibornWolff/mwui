@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Dec 2022 11:20:30 GMT
+ * Generated on Wed, 28 Dec 2022 14:53:52 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -34,6 +34,8 @@ export const mwComponentButtonPrimarySecondaryTextPaddingTb = "8px";
 export const mwComponentButtonPrimarySecondaryTextGap = "12px";
 export const mwComponentButtonIconButtonPaddingAll = "12px";
 export const mwComponentButtonTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 16 };
+export const mwComponentLinkTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 16, "textDecoration": "underline" };
+export const mwComponentLinkColorFgDefault = "#001418";
 export const mwComponentSizeButtonPrimarySecondaryMinWidth = "88px";
 export const mwComponentSizeToggleSwitchW = "52px";
 export const mwComponentSizeToggleSwitchH = "32px";
@@ -234,7 +236,7 @@ export const mwCoreColorRed600 = "#cb2400";
 export const mwCoreColorRed700 = "#9f1b00";
 export const mwCoreColorRed800 = "#731700";
 export const mwCoreColorRed900 = "#440B05";
-export const mwCoreFontSizeScale = "1.25px";
+export const mwCoreFontSizeScaleDefault = "1.25px";
 export const mwCoreFontSizeScaleSm = "1.33px";
 export const mwCoreFontSizeScaleLg = "1.5px";
 export const mwCoreFontSizeScaleXl = "2px";
@@ -242,6 +244,10 @@ export const mwCoreFontSizeScale2xl = "2.5px";
 export const mwCoreFontSizeScale5xl = "4px";
 export const mwCoreFontSizeScale3xl = "3px";
 export const mwCoreFontSizeScale4xl = "3.5px";
+export const mwCoreFontSizeScale6xl = "4.5px";
+export const mwCoreFontSizeScale7xl = "7px";
+export const mwCoreFontSizeScaleXs = "1.33px";
+export const mwCoreFontSizeScaleXxs = "1.6px";
 export const mwCoreFontSizeSm = "12px";
 export const mwCoreFontSizeBase = "16px";
 export const mwCoreFontSizeLg = "24px";
@@ -252,16 +258,12 @@ export const mwCoreFontSize4xl = "56px";
 export const mwCoreFontSize5xl = "64px";
 export const mwCoreFontSize6xl = "72px";
 export const mwCoreFontSize7xl = "112px";
-export const mwCoreFontSizeScale6xl = "4.5px";
-export const mwCoreFontSizeScale7xl = "7px";
-export const mwCoreFontSizeScaleXs = "1.33px";
-export const mwCoreFontSizeScaleXxs = "1.6px";
 export const mwCoreFontSizeXs = "12px";
 export const mwCoreFontSizeXxs = "10px";
 export const mwCoreFontFontFamiliesHeadlines = "Poppins";
 export const mwCoreFontFontFamiliesBody = "Poppins";
 export const mwCoreFontLineHeightBase = 24;
-export const mwCoreFontLineHeightScale = 1.25;
+export const mwCoreFontLineHeightScaleDefault = 1.25;
 export const mwCoreFontLineHeightScaleSm = 1.33;
 export const mwCoreFontLineHeightScaleXs = 1.5;
 export const mwCoreFontLineHeightScaleXxs = 2;

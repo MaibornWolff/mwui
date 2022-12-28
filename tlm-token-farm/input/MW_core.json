@@ -172,6 +172,26 @@
           "type": "typography"
         }
       },
+      "link": {
+        "typo": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Bold",
+            "lineHeight": 24,
+            "fontSize": 16,
+            "textDecoration": "underline"
+          },
+          "type": "typography"
+        },
+        "color": {
+          "fg": {
+            "default": {
+              "value": "#001418",
+              "type": "color"
+            }
+          }
+        }
+      },
       "size": {
         "button": {
           "primary-secondary": {
@@ -1214,36 +1234,54 @@
       "font": {
         "size": {
           "scale": {
-            "value": 1.25,
-            "type": "fontSizes"
-          },
-          "scale-sm": {
-            "value": 1.33,
-            "type": "fontSizes"
-          },
-          "scale-lg": {
-            "value": 1.5,
-            "type": "fontSizes"
-          },
-          "scale-xl": {
-            "value": 2,
-            "type": "fontSizes"
-          },
-          "scale-2xl": {
-            "value": 2.5,
-            "type": "fontSizes"
-          },
-          "scale-5xl": {
-            "value": 4,
-            "type": "fontSizes"
-          },
-          "scale-3xl": {
-            "value": 3,
-            "type": "fontSizes"
-          },
-          "scale-4xl": {
-            "value": 3.5,
-            "type": "fontSizes"
+            "default": {
+              "value": 1.25,
+              "type": "fontSizes"
+            },
+            "sm": {
+              "value": 1.33,
+              "type": "fontSizes"
+            },
+            "lg": {
+              "value": 1.5,
+              "type": "fontSizes"
+            },
+            "xl": {
+              "value": 2,
+              "type": "fontSizes"
+            },
+            "2xl": {
+              "value": 2.5,
+              "type": "fontSizes"
+            },
+            "5xl": {
+              "value": 4,
+              "type": "fontSizes"
+            },
+            "3xl": {
+              "value": 3,
+              "type": "fontSizes"
+            },
+            "4xl": {
+              "value": 3.5,
+              "type": "fontSizes"
+            },
+            "6xl": {
+              "value": 4.5,
+              "type": "fontSizes"
+            },
+            "7xl": {
+              "value": 7,
+              "type": "fontSizes"
+            },
+            "xs": {
+              "value": 1.33,
+              "type": "fontSizes"
+            },
+            "xxs": {
+              "value": 1.6,
+              "type": "fontSizes"
+            }
           },
           "sm": {
             "value": 12,
@@ -1285,22 +1323,6 @@
             "value": 112,
             "type": "fontSizes"
           },
-          "scale-6xl": {
-            "value": 4.5,
-            "type": "fontSizes"
-          },
-          "scale-7xl": {
-            "value": 7,
-            "type": "fontSizes"
-          },
-          "scale-xs": {
-            "value": 1.33,
-            "type": "fontSizes"
-          },
-          "scale-xxs": {
-            "value": 1.6,
-            "type": "fontSizes"
-          },
           "xs": {
             "value": 12,
             "type": "fontSizes"
@@ -1326,52 +1348,54 @@
             "type": "lineHeights"
           },
           "scale": {
-            "value": 1.25,
-            "type": "lineHeights"
-          },
-          "scale-sm": {
-            "value": 1.33,
-            "type": "lineHeights"
-          },
-          "scale-xs": {
-            "value": 1.5,
-            "type": "lineHeights"
-          },
-          "scale-xxs": {
-            "value": 2,
-            "type": "lineHeights"
-          },
-          "scale-lg": {
-            "value": 1.5,
-            "type": "lineHeights"
-          },
-          "scale-xl": {
-            "value": 2,
-            "type": "lineHeights"
-          },
-          "scale-2xl": {
-            "value": 2.5,
-            "type": "lineHeights"
-          },
-          "scale-3xl": {
-            "value": 3,
-            "type": "lineHeights"
-          },
-          "scale-4xl": {
-            "value": 3.5,
-            "type": "lineHeights"
-          },
-          "scale-5xl": {
-            "value": 4,
-            "type": "lineHeights"
-          },
-          "scale-6xl": {
-            "value": 4.5,
-            "type": "lineHeights"
-          },
-          "scale-7xl": {
-            "value": 5,
-            "type": "lineHeights"
+            "default": {
+              "value": 1.25,
+              "type": "lineHeights"
+            },
+            "sm": {
+              "value": 1.33,
+              "type": "lineHeights"
+            },
+            "xs": {
+              "value": 1.5,
+              "type": "lineHeights"
+            },
+            "xxs": {
+              "value": 2,
+              "type": "lineHeights"
+            },
+            "lg": {
+              "value": 1.5,
+              "type": "lineHeights"
+            },
+            "xl": {
+              "value": 2,
+              "type": "lineHeights"
+            },
+            "2xl": {
+              "value": 2.5,
+              "type": "lineHeights"
+            },
+            "3xl": {
+              "value": 3,
+              "type": "lineHeights"
+            },
+            "4xl": {
+              "value": 3.5,
+              "type": "lineHeights"
+            },
+            "5xl": {
+              "value": 4,
+              "type": "lineHeights"
+            },
+            "6xl": {
+              "value": 4.5,
+              "type": "lineHeights"
+            },
+            "7xl": {
+              "value": 5,
+              "type": "lineHeights"
+            }
           },
           "sm": {
             "value": 18,
