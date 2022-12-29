@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 28 Dec 2022 15:30:57 GMT
+ * Generated on Thu, 29 Dec 2022 15:26:18 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -42,6 +42,7 @@ export const mwComponentSizeToggleSwitchH = "32px";
 export const mwComponentSizeCheckboxRadiobuttonWh = "24px";
 export const mwComponentSizeInputMinWidth = "120px";
 export const mwComponentSizeInputLabelHorizontalWidth = "120px";
+export const mwComponentSizeChipsIcons = "20px";
 export const mwComponentControlsColorFgDefault = "#ffffff";
 export const mwComponentControlsColorFgDisabled = "#EEF1F3";
 export const mwComponentControlsColorFgOff = "#001418";
@@ -97,9 +98,19 @@ export const mwComponentDividerBorderWidthDefault = 1;
 export const mwComponentMenuItemBorderRadius = 4;
 export const mwComponentMenuItemBorderWidthDefault = "0px";
 export const mwComponentMenuItemBorderWidthFocused = 2;
+export const mwComponentChipsTypo = { "fontFamily": "Poppins", "fontWeight": "Medium", "fontSize": 12, "lineHeight": 16 };
+export const mwComponentChipsPaddingTb = "8px";
+export const mwComponentChipsPaddingLr = "12px";
+export const mwComponentChipsBorderWidth = 1;
+export const mwComponentChipsColorBorderDefault = "#44555b";
+export const mwComponentChipsColorFgDefault = "#44555b";
+export const mwComponentChipsColorBgDefault = "#ffffff";
+export const mwComponentChipsBorderRadius = 8;
+export const mwComponentChipsGap = "8px";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";
+export const mwSemanticColorBorderMuted = "#44555b";
 export const mwSemanticColorFgDefault = "#001418";
 export const mwSemanticColorFgMuted = "#44555b";
 export const mwSemanticColorFgSubtle = "#B1BABE";
@@ -289,6 +300,7 @@ export const mwCoreFontWeightHeadlinesBold = "Bold";
 export const mwCoreFontWeightHeadlinesRegular = "Regular";
 export const mwCoreFontWeightBodyBold = "Bold";
 export const mwCoreFontWeightBodyRegular = "Regular";
+export const mwCoreFontWeightBodyMedium = "Medium";
 export const mwCoreSpacingLinearBase = 4;
 export const mwCoreSpacingLinearScale = 4;
 export const mwCoreSpacingLinearXsmall = 4;

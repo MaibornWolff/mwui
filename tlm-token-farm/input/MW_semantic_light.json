@@ -230,6 +230,12 @@
               }
             }
           }
+        },
+        "chips": {
+          "icons": {
+            "value": 20,
+            "type": "sizing"
+          }
         }
       },
       "controls": {
@@ -596,6 +602,59 @@
             "type": "borderWidth"
           }
         }
+      },
+      "chips": {
+        "typo": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Medium",
+            "fontSize": 12,
+            "lineHeight": 16
+          },
+          "type": "typography"
+        },
+        "padding": {
+          "tb": {
+            "value": "4px + 4px",
+            "type": "spacing"
+          },
+          "lr": {
+            "value": "4px + 4px + 4px",
+            "type": "spacing"
+          }
+        },
+        "borderWidth": {
+          "value": "1px",
+          "type": "borderWidth"
+        },
+        "color": {
+          "border": {
+            "default": {
+              "value": "#44555b",
+              "type": "color"
+            }
+          },
+          "fg": {
+            "default": {
+              "value": "#44555b",
+              "type": "color"
+            }
+          },
+          "bg": {
+            "default": {
+              "value": "#ffffff",
+              "type": "color"
+            }
+          }
+        },
+        "borderRadius": {
+          "value": "8px",
+          "type": "borderRadius"
+        },
+        "gap": {
+          "value": "4px + 4px",
+          "type": "spacing"
+        }
       }
     },
     "semantic": {
@@ -611,6 +670,10 @@
           },
           "subtle": {
             "value": "#B1BABE",
+            "type": "color"
+          },
+          "muted": {
+            "value": "#44555b",
             "type": "color"
           }
         },
@@ -1470,6 +1533,10 @@
             },
             "regular": {
               "value": "Regular",
+              "type": "fontWeights"
+            },
+            "medium": {
+              "value": "Medium",
               "type": "fontWeights"
             }
           }
