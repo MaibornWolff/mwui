@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 29 Dec 2022 15:26:18 GMT
+ * Generated on Thu, 29 Dec 2022 15:56:44 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -43,6 +43,8 @@ export const mwComponentSizeCheckboxRadiobuttonWh = "24px";
 export const mwComponentSizeInputMinWidth = "120px";
 export const mwComponentSizeInputLabelHorizontalWidth = "120px";
 export const mwComponentSizeChipsIcons = "20px";
+export const mwComponentSizeChipsHeight = "32px";
+export const mwComponentSizeChipsMinWidth = "64px";
 export const mwComponentControlsColorFgDefault = "#ffffff";
 export const mwComponentControlsColorFgDisabled = "#EEF1F3";
 export const mwComponentControlsColorFgOff = "#001418";
@@ -99,13 +101,20 @@ export const mwComponentMenuItemBorderRadius = 4;
 export const mwComponentMenuItemBorderWidthDefault = "0px";
 export const mwComponentMenuItemBorderWidthFocused = 2;
 export const mwComponentChipsTypo = { "fontFamily": "Poppins", "fontWeight": "Medium", "fontSize": 12, "lineHeight": 16 };
-export const mwComponentChipsPaddingTb = "8px";
 export const mwComponentChipsPaddingLr = "12px";
-export const mwComponentChipsBorderWidth = 1;
+export const mwComponentChipsBorderWidthDefault = 1;
+export const mwComponentChipsBorderWidthFocused = 2;
 export const mwComponentChipsColorBorderDefault = "#44555b";
+export const mwComponentChipsColorBorderDisabled = "#79868b";
+export const mwComponentChipsColorBorderSelected = "#ed2985";
 export const mwComponentChipsColorFgDefault = "#44555b";
+export const mwComponentChipsColorFgDisabled = "#95a0a4";
+export const mwComponentChipsColorFgSelected = "#ed2985";
 export const mwComponentChipsColorBgDefault = "#ffffff";
-export const mwComponentChipsBorderRadius = 8;
+export const mwComponentChipsColorBgHover = "#EEF1F3";
+export const mwComponentChipsColorBgPressed = "#CFD6D8";
+export const mwComponentChipsColorSelectedDefault = "#f9c8c7";
+export const mwComponentChipsBorderRadius = 9999;
 export const mwComponentChipsGap = "8px";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";

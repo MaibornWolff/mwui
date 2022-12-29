@@ -235,6 +235,14 @@
           "icons": {
             "value": 20,
             "type": "sizing"
+          },
+          "height": {
+            "value": 32,
+            "type": "sizing"
+          },
+          "min-width": {
+            "value": 64,
+            "type": "sizing"
           }
         }
       },
@@ -614,23 +622,33 @@
           "type": "typography"
         },
         "padding": {
-          "tb": {
-            "value": "4px + 4px",
-            "type": "spacing"
-          },
           "lr": {
             "value": "4px + 4px + 4px",
             "type": "spacing"
           }
         },
         "borderWidth": {
-          "value": "1px",
-          "type": "borderWidth"
+          "default": {
+            "value": "1px",
+            "type": "borderWidth"
+          },
+          "focused": {
+            "value": "2px",
+            "type": "borderWidth"
+          }
         },
         "color": {
           "border": {
             "default": {
               "value": "#44555b",
+              "type": "color"
+            },
+            "disabled": {
+              "value": "#79868b",
+              "type": "color"
+            },
+            "selected": {
+              "value": "#ed2985",
               "type": "color"
             }
           },
@@ -638,17 +656,39 @@
             "default": {
               "value": "#44555b",
               "type": "color"
+            },
+            "disabled": {
+              "value": "#95a0a4",
+              "type": "color"
+            },
+            "selected": {
+              "value": "#ed2985",
+              "type": "color"
             }
           },
           "bg": {
             "default": {
               "value": "#ffffff",
               "type": "color"
+            },
+            "hover": {
+              "value": "#EEF1F3",
+              "type": "color"
+            },
+            "pressed": {
+              "value": "#CFD6D8",
+              "type": "color"
+            }
+          },
+          "selected": {
+            "default": {
+              "value": "#f9c8c7",
+              "type": "color"
             }
           }
         },
         "borderRadius": {
-          "value": "8px",
+          "value": "9999px",
           "type": "borderRadius"
         },
         "gap": {
