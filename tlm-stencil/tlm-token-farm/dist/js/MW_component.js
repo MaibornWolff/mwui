@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 30 Dec 2022 07:52:37 GMT
+ * Generated on Fri, 30 Dec 2022 09:09:25 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -36,6 +36,9 @@ export const mwComponentButtonIconButtonPaddingAll = "12px";
 export const mwComponentButtonTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 16 };
 export const mwComponentLinkTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 16, "textDecoration": "underline" };
 export const mwComponentLinkColorFgDefault = "#001418";
+export const mwComponentLinkColorFgHover = "#ed2985";
+export const mwComponentLinkColorFgFocused = "#ed2985";
+export const mwComponentLinkColorFgPressed = "#c42177";
 export const mwComponentSizeButtonPrimarySecondaryMinWidth = "88px";
 export const mwComponentSizeToggleSwitchW = "52px";
 export const mwComponentSizeToggleSwitchH = "32px";
@@ -114,7 +117,7 @@ export const mwComponentChipsColorBgDefault = "#ffffff";
 export const mwComponentChipsColorBgHover = "#EEF1F3";
 export const mwComponentChipsColorBgPressed = "#CFD6D8";
 export const mwComponentChipsColorSelectedDefault = "#f9c8c7";
-export const mwComponentChipsBorderRadius = 9999;
+export const mwComponentChipsBorderRadius = 16;
 export const mwComponentChipsGapWithin = "8px";
 export const mwComponentChipsGapBetween = "8px";
 export const mwSemanticColorBorderDisabled = "#79868b";

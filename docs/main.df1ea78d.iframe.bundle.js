@@ -31,6 +31,9 @@
   --mw-component-button-primary-secondary-text-gap: 12px;
   --mw-component-button-icon-button-padding-all: 12px;
   --mw-component-link-color-fg-default: #001418;
+  --mw-component-link-color-fg-hover: #ed2985;
+  --mw-component-link-color-fg-focused: #ed2985;
+  --mw-component-link-color-fg-pressed: #c42177;
   --mw-component-size-button-primary-secondary-min-width: 88px;
   --mw-component-size-toggle-switch-w: 52px;
   --mw-component-size-toggle-switch-h: 32px;
@@ -103,7 +106,7 @@
   --mw-component-chips-color-bg-hover: #EEF1F3;
   --mw-component-chips-color-bg-pressed: #CFD6D8;
   --mw-component-chips-color-selected-default: #f9c8c7;
-  --mw-component-chips-border-radius: 9999px;
+  --mw-component-chips-border-radius: 16px;
   --mw-component-chips-gap-within: 8px;
   --mw-component-chips-gap-between: 8px;
   --mw-semantic-color-border-disabled: #79868b;
