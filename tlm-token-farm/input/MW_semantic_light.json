@@ -256,6 +256,38 @@
             "value": 64,
             "type": "sizing"
           }
+        },
+        "avatars": {
+          "large": {
+            "value": 56,
+            "type": "sizing"
+          },
+          "medium": {
+            "value": 40,
+            "type": "sizing"
+          },
+          "small": {
+            "value": 24,
+            "type": "sizing"
+          },
+          "x-small": {
+            "value": 20,
+            "type": "sizing"
+          },
+          "icon": {
+            "large": {
+              "value": 36,
+              "type": "sizing"
+            },
+            "medium": {
+              "value": 24,
+              "type": "sizing"
+            },
+            "small": {
+              "value": 16,
+              "type": "sizing"
+            }
+          }
         }
       },
       "controls": {
@@ -711,6 +743,60 @@
           "between": {
             "value": "4px + 4px",
             "type": "spacing"
+          }
+        }
+      },
+      "avatars": {
+        "color": {
+          "bg": {
+            "default": {
+              "value": "#C8EBFD",
+              "type": "color"
+            }
+          },
+          "fg": {
+            "default": {
+              "value": "#001418",
+              "type": "color"
+            }
+          }
+        },
+        "typo": {
+          "large": {
+            "value": {
+              "fontFamily": "Poppins",
+              "fontWeight": "Regular",
+              "lineHeight": 48,
+              "fontSize": 32
+            },
+            "type": "typography"
+          },
+          "medium": {
+            "value": {
+              "fontFamily": "Poppins",
+              "fontWeight": "Regular",
+              "lineHeight": 48,
+              "fontSize": 24
+            },
+            "type": "typography"
+          },
+          "small": {
+            "value": {
+              "fontFamily": "Poppins",
+              "fontWeight": "Regular",
+              "lineHeight": 16,
+              "fontSize": 12
+            },
+            "type": "typography"
+          },
+          "x-small": {
+            "value": {
+              "fontFamily": "Poppins",
+              "fontWeight": "Regular",
+              "lineHeight": 16,
+              "fontSize": 10
+            },
+            "type": "typography"
           }
         }
       }

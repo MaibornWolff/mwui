@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 30 Dec 2022 09:09:25 GMT
+ * Generated on Fri, 30 Dec 2022 10:26:51 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -48,6 +48,13 @@ export const mwComponentSizeInputLabelHorizontalWidth = "120px";
 export const mwComponentSizeChipsIcons = "20px";
 export const mwComponentSizeChipsHeight = "32px";
 export const mwComponentSizeChipsMinWidth = "64px";
+export const mwComponentSizeAvatarsLarge = "56px";
+export const mwComponentSizeAvatarsMedium = "40px";
+export const mwComponentSizeAvatarsSmall = "24px";
+export const mwComponentSizeAvatarsXSmall = "20px";
+export const mwComponentSizeAvatarsIconLarge = "36px";
+export const mwComponentSizeAvatarsIconMedium = "24px";
+export const mwComponentSizeAvatarsIconSmall = "16px";
 export const mwComponentControlsColorFgDefault = "#ffffff";
 export const mwComponentControlsColorFgDisabled = "#EEF1F3";
 export const mwComponentControlsColorFgOff = "#001418";
@@ -120,6 +127,12 @@ export const mwComponentChipsColorSelectedDefault = "#f9c8c7";
 export const mwComponentChipsBorderRadius = 16;
 export const mwComponentChipsGapWithin = "8px";
 export const mwComponentChipsGapBetween = "8px";
+export const mwComponentAvatarsColorBgDefault = "#C8EBFD";
+export const mwComponentAvatarsColorFgDefault = "#001418";
+export const mwComponentAvatarsTypoLarge = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 48, "fontSize": 32 };
+export const mwComponentAvatarsTypoMedium = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 48, "fontSize": 24 };
+export const mwComponentAvatarsTypoSmall = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 16, "fontSize": 12 };
+export const mwComponentAvatarsTypoXSmall = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 16, "fontSize": 10 };
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";
