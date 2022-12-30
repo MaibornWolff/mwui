@@ -50,6 +50,7 @@
   --mw-component-size-avatars-icon-large: 36px;
   --mw-component-size-avatars-icon-medium: 24px;
   --mw-component-size-avatars-icon-small: 16px;
+  --mw-component-size-avatars-icon-x-small: 12px;
   --mw-component-controls-color-fg-default: #ffffff;
   --mw-component-controls-color-fg-disabled: #EEF1F3;
   --mw-component-controls-color-fg-off: #001418;
@@ -116,7 +117,7 @@
   --mw-component-chips-border-radius: 16px;
   --mw-component-chips-gap-within: 8px;
   --mw-component-chips-gap-between: 8px;
-  --mw-component-avatars-color-bg-default: #C8EBFD;
+  --mw-component-avatars-color-bg-default: #CFD6D8;
   --mw-component-avatars-color-fg-default: #001418;
   --mw-semantic-color-border-disabled: #79868b;
   --mw-semantic-color-border-default: #001418;

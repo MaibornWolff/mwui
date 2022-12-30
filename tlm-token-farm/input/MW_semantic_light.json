@@ -286,6 +286,10 @@
             "small": {
               "value": 16,
               "type": "sizing"
+            },
+            "x-small": {
+              "value": 12,
+              "type": "sizing"
             }
           }
         }
@@ -750,7 +754,7 @@
         "color": {
           "bg": {
             "default": {
-              "value": "#C8EBFD",
+              "value": "#CFD6D8",
               "type": "color"
             }
           },
