@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 29 Dec 2022 15:56:44 GMT
+ * Generated on Fri, 30 Dec 2022 07:52:37 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -115,7 +115,8 @@ export const mwComponentChipsColorBgHover = "#EEF1F3";
 export const mwComponentChipsColorBgPressed = "#CFD6D8";
 export const mwComponentChipsColorSelectedDefault = "#f9c8c7";
 export const mwComponentChipsBorderRadius = 9999;
-export const mwComponentChipsGap = "8px";
+export const mwComponentChipsGapWithin = "8px";
+export const mwComponentChipsGapBetween = "8px";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";

@@ -692,8 +692,14 @@
           "type": "borderRadius"
         },
         "gap": {
-          "value": "4px + 4px",
-          "type": "spacing"
+          "within": {
+            "value": "4px + 4px",
+            "type": "spacing"
+          },
+          "between": {
+            "value": "4px + 4px",
+            "type": "spacing"
+          }
         }
       }
     },

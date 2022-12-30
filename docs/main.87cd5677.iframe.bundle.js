@@ -104,7 +104,8 @@
   --mw-component-chips-color-bg-pressed: #CFD6D8;
   --mw-component-chips-color-selected-default: #f9c8c7;
   --mw-component-chips-border-radius: 9999px;
-  --mw-component-chips-gap: 8px;
+  --mw-component-chips-gap-within: 8px;
+  --mw-component-chips-gap-between: 8px;
   --mw-semantic-color-border-disabled: #79868b;
   --mw-semantic-color-border-default: #001418;
   --mw-semantic-color-border-subtle: #B1BABE;
