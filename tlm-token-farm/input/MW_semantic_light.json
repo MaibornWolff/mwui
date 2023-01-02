@@ -928,6 +928,39 @@
             }
           }
         },
+        "title": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Regular",
+            "lineHeight": 32,
+            "fontSize": 24
+          },
+          "type": "typography",
+          "gap": {
+            "text": {
+              "value": "$mw.core.spacing.linear.none",
+              "type": "spacing"
+            },
+            "avatar-text": {
+              "value": "$mw.core.spacing.linear.large",
+              "type": "spacing"
+            }
+          },
+          "padding": {
+            "tb": {
+              "value": "$mw.core.spacing.linear.medium",
+              "type": "spacing"
+            },
+            "l": {
+              "value": "$mw.core.spacing.linear.large",
+              "type": "spacing"
+            },
+            "r": {
+              "value": "$mw.core.spacing.linear.base",
+              "type": "spacing"
+            }
+          }
+        },
         "subhead": {
           "value": {
             "fontFamily": "Poppins",
@@ -936,6 +969,50 @@
             "fontSize": 16
           },
           "type": "typography"
+        },
+        "subtitle": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Regular",
+            "lineHeight": 24,
+            "fontSize": 16
+          },
+          "type": "typography"
+        },
+        "metadata": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Regular",
+            "lineHeight": 16,
+            "fontSize": 10
+          },
+          "type": "typography"
+        },
+        "fg": {
+          "default": {
+            "value": "#001418",
+            "type": "color"
+          },
+          "muted": {
+            "value": "#44555b",
+            "type": "color"
+          }
+        },
+        "padding": {
+          "components": {
+            "lr": {
+              "default": {
+                "value": "4px + 4px + 4px + 4px",
+                "type": "spacing"
+              }
+            },
+            "tb": {
+              "default": {
+                "value": "4px + 4px + 4px",
+                "type": "spacing"
+              }
+            }
+          }
         }
       }
     },
@@ -1212,7 +1289,7 @@
           },
           "overline": {
             "regular": {
-              "value": 48,
+              "value": 16,
               "type": "lineHeights"
             }
           }

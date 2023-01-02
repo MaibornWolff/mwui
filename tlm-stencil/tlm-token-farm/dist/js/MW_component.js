@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 02 Jan 2023 07:26:22 GMT
+ * Generated on Mon, 02 Jan 2023 11:35:11 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -144,7 +144,14 @@ export const mwComponentCardBorderWidthElevated = "0px";
 export const mwComponentCardBorderWidthOutlined = 1;
 export const mwComponentCardBorderOutlined = "#44555b";
 export const mwComponentCardHeader = { "fontFamily": "Poppins", "fontWeight": "SemiBold", "lineHeight": 24, "fontSize": 16 };
+export const mwComponentCardTitle = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 32, "fontSize": 24 };
 export const mwComponentCardSubhead = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 16 };
+export const mwComponentCardSubtitle = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 16 };
+export const mwComponentCardMetadata = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 16, "fontSize": 10 };
+export const mwComponentCardFgDefault = "#001418";
+export const mwComponentCardFgMuted = "#44555b";
+export const mwComponentCardPaddingComponentsLrDefault = "16px";
+export const mwComponentCardPaddingComponentsTbDefault = "12px";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";
@@ -202,7 +209,7 @@ export const mwSemanticFontLineHeightH4Regular = 72;
 export const mwSemanticFontLineHeightH5Regular = 60;
 export const mwSemanticFontLineHeightCaptionRegular = 48;
 export const mwSemanticFontLineHeightLabelRegular = 16;
-export const mwSemanticFontLineHeightOverlineRegular = 48;
+export const mwSemanticFontLineHeightOverlineRegular = 16;
 export const mwSemanticFontFontSizeBodyRegular = "16px";
 export const mwSemanticFontFontSizeHeroRegular = "112px";
 export const mwSemanticFontFontSizeH1Regular = "72px";
