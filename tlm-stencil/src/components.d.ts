@@ -47,11 +47,11 @@ export namespace Components {
          */
         "label"?: string;
         /**
-          * Label to be shown when switch state is true. Overrides label prop
+          * Label to be shown when switch state is unchecked. Overrides label prop
          */
         "offText"?: string;
         /**
-          * Label to be shown when switch state is true. Overrides label prop
+          * Label to be shown when switch state is checked. Overrides label prop
          */
         "onText"?: string;
     }
@@ -120,11 +120,11 @@ declare namespace LocalJSX {
          */
         "label"?: string;
         /**
-          * Label to be shown when switch state is true. Overrides label prop
+          * Label to be shown when switch state is unchecked. Overrides label prop
          */
         "offText"?: string;
         /**
-          * Label to be shown when switch state is true. Overrides label prop
+          * Label to be shown when switch state is checked. Overrides label prop
          */
         "onText"?: string;
     }

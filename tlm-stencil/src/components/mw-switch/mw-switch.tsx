@@ -29,7 +29,10 @@ export class MwSwitch {
    */
   @Prop({ mutable: true }) checked: boolean = false;
 
-  toggleSwitch() {
+  toggleSwitch(event: Event) {
+    (event.target as HTMLInputElement).blur();
+    // @ts-ignore
+    (event.path[1] as HTMLInputElement).blur();
     this.checked = this.checkbox.checked;
   }
 
