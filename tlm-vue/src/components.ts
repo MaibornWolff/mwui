@@ -11,6 +11,7 @@ import type { JSX } from 'tlm-stencil';
 export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>('mw-button', undefined, [
   'testId',
   'disabled',
+  'label',
   'secondary',
   'href',
   'target',

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2022-12-22T10:20:23",
+  "timestamp": "2023-01-02T07:18:18",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -38,6 +38,22 @@
           "attr": "href",
           "reflectToAttr": false,
           "docs": "If provided the button will act as a link",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Label to be displayed",
           "docsTags": [],
           "values": [
             {
