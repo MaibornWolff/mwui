@@ -27,13 +27,13 @@ import {
   mwComponentButtonPrimaryColorFgPressed,
   mwComponentButtonPrimaryColorBgFocused,
   mwComponentButtonSecondaryTextColorBorderFocused,
-  mwComponentButtonPrimarySecondaryTextPaddingLr,
-  mwComponentButtonPrimarySecondaryTextPaddingTb,
-  mwComponentButtonPrimarySecondaryTextGap,
+  mwComponentButtonPaddingLr,
+  mwComponentButtonPaddingTb,
+  mwComponentButtonGapBetween,
   mwComponentButtonBorderRadiusDefault,
   mwComponentSizeButtonPrimarySecondaryMinWidth,
   mwComponentButtonBorderWidthSecondaryFocused,
-  mwComponentButtonIconButtonPaddingAll,
+  mwComponentButtonPaddingIconAll,
   letterSpacingButtons,
 } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
@@ -44,7 +44,7 @@ const letterSpacing = Number(letterSpacingButtons.replace('%', '').trim()) / 100
 const base = css`
   appearance: none;
   text-decoration: none;
-  padding: ${mwComponentButtonPrimarySecondaryTextPaddingTb} ${mwComponentButtonPrimarySecondaryTextPaddingLr};
+  padding: ${mwComponentButtonPaddingTb} ${mwComponentButtonPaddingLr};
   font-family: '${mwComponentButtonTypo.fontFamily}';
   letter-spacing: ${letterSpacing}em;
   line-height: ${mwComponentButtonTypo.lineHeight}px;
@@ -106,7 +106,7 @@ const secondaryButtonStyles = css`
 `;
 
 const iconButtonStyles = css`
-  padding: ${mwComponentButtonIconButtonPaddingAll};
+  padding: ${mwComponentButtonPaddingIconAll};
   min-width: 0px;
 `;
 
@@ -126,7 +126,7 @@ const iconStyles = css`
 `;
 
 const iconStartStyles = css`
-  margin-right: ${mwComponentButtonPrimarySecondaryTextGap};
+  margin-right: ${mwComponentButtonGapBetween};
   display: inline-block;
   height: 18px;
   > span {
@@ -137,7 +137,7 @@ const iconStartStyles = css`
 `;
 
 const iconEndStyles = css`
-  margin-left: ${mwComponentButtonPrimarySecondaryTextGap};
+  margin-left: ${mwComponentButtonGapBetween};
   display: inline-block;
   height: 18px;
   > span {
