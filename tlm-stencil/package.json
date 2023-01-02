@@ -19,7 +19,7 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "stencil build --docs --docs-json docs.json",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
+    "@pxtrn/storybook-addon-docs-stencil": "^6.4.1",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.5.10",

@@ -33,6 +33,7 @@ import {
   mwComponentButtonBorderRadiusDefault,
   mwComponentSizeButtonPrimarySecondaryMinWidth,
   mwComponentButtonBorderWidthSecondaryFocused,
+  mwComponentButtonIconButtonPaddingAll,
   letterSpacingButtons,
 } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
@@ -42,6 +43,7 @@ const letterSpacing = Number(letterSpacingButtons.replace('%', '').trim()) / 100
 
 const base = css`
   appearance: none;
+  text-decoration: none;
   padding: ${mwComponentButtonPrimarySecondaryTextPaddingTb} ${mwComponentButtonPrimarySecondaryTextPaddingLr};
   font-family: '${mwComponentButtonTypo.fontFamily}';
   letter-spacing: ${letterSpacing}em;
@@ -49,7 +51,7 @@ const base = css`
   font-weight: ${getFontWeightValue(mwComponentButtonTypo.fontWeight)};
   font-size: ${mwComponentButtonTypo.fontSize}px;
   border-radius: ${mwComponentButtonBorderRadiusDefault}px;
-  min-width: ${mwComponentSizeButtonPrimarySecondaryMinWidth}px;
+  min-width: ${mwComponentSizeButtonPrimarySecondaryMinWidth};
 `;
 
 const primaryButtonStyles = css`
@@ -103,23 +105,81 @@ const secondaryButtonStyles = css`
   }
 `;
 
+const iconButtonStyles = css`
+  padding: ${mwComponentButtonIconButtonPaddingAll};
+  min-width: 0px;
+`;
+
+const flexStyles = css`
+  display: flex;
+  align-items: center;
+`;
+
+const iconStyles = css`
+  display: inline-block;
+  height: 18px;
+  > span {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+  }
+`;
+
 const iconStartStyles = css`
   margin-right: ${mwComponentButtonPrimarySecondaryTextGap};
+  display: inline-block;
+  height: 18px;
+  > span {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+  }
 `;
 
 const iconEndStyles = css`
   margin-left: ${mwComponentButtonPrimarySecondaryTextGap};
+  display: inline-block;
+  height: 18px;
+  > span {
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+  }
 `;
+
+export type Target = '_blank' | '_self' | '_parent' | '_top';
 
 @Component({
   tag: 'mw-button',
   shadow: false,
+  assetsDirs: ['../assets'],
 })
-export class TlmButton {
+export class MWButton {
   @Element() hostElement: HTMLStencilElement;
+  /**
+   * Must be provided for automated testing
+   */
   @Prop() testId!: string;
+  /**
+   * Visually and functionally disable button
+   */
   @Prop() disabled?: boolean;
-  @Prop() secondary?: boolean;
+  /**
+   * Label to be displayed
+   */
+  @Prop() label?: string;
+  /**
+   * Use secondary button style
+   */
+  @Prop() secondary?: boolean = false;
+  /**
+   * If provided the button will act as a link
+   */
+  @Prop() href?: string;
+  /**
+   * If using href the target prop can be provided
+   */
+  @Prop() target?: Target = '_self';
   @Event({
     bubbles: true,
     cancelable: false,
@@ -129,10 +189,14 @@ export class TlmButton {
 
   hasIconStartSlot: boolean;
   hasIconEndSlot: boolean;
+  hasIcon: boolean;
+  hasLabel: boolean;
 
   componentWillLoad() {
     this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
     this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
+    this.hasIcon = this.hasIconStartSlot || this.hasIconEndSlot;
+    this.hasLabel = !!this.label;
   }
 
   handleClick = () => {
@@ -140,16 +204,39 @@ export class TlmButton {
   };
 
   render() {
+    if (this.href) {
+      return (
+        <a href={this.href} target={this.target} class={this.secondary ? secondaryButtonStyles : primaryButtonStyles} test-id={this.testId}>
+          {this.hasIconStartSlot && (
+            <span class={this.hasLabel ? iconStartStyles : iconStyles}>
+              <slot name="icon-start"></slot>
+            </span>
+          )}
+          <span>{this.label}</span>
+          {this.hasIconEndSlot && (
+            <span class={this.hasLabel ? iconEndStyles : iconStyles}>
+              <slot name="icon-end"></slot>
+            </span>
+          )}
+        </a>
+      );
+    }
     return (
-      <button disabled={this.disabled} onClick={this.handleClick} class={this.secondary ? secondaryButtonStyles : primaryButtonStyles} test-id={this.testId} type="button">
+      <button
+        disabled={this.disabled}
+        onClick={this.handleClick}
+        class={`${this.secondary ? secondaryButtonStyles : primaryButtonStyles} ${this.hasIcon && flexStyles} ${!this.hasLabel && iconButtonStyles}`}
+        test-id={this.testId}
+        type="button"
+      >
         {this.hasIconStartSlot && (
-          <span class={iconStartStyles}>
+          <span class={this.hasLabel ? iconStartStyles : iconStyles}>
             <slot name="icon-start"></slot>
           </span>
         )}
-        <slot></slot>
+        <span>{this.label}</span>
         {this.hasIconEndSlot && (
-          <span class={iconEndStyles}>
+          <span class={this.hasLabel ? iconEndStyles : iconStyles}>
             <slot name="icon-end"></slot>
           </span>
         )}

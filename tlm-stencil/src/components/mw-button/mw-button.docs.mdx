@@ -1,0 +1,51 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Button
+
+Buttons execute an action, either in the background or foreground of an experience. Different button categories help guide users through certain actions. Buttons express what action will occur when the user clicks or touches it either by text, icon, or both. Additional meaning can be derived from the button variant.
+
+`mw-button` is the primary component. It has several variants which:
+
+> The variants can be used in combination
+
+- [Primary (default)](#primary)
+- [Secondary](#secondary)
+- [Icons](#icons)
+- [Link](#link)
+
+### Primary
+
+<Canvas>
+  <Story id="components-button--primary" />
+</Canvas>
+
+### Secondary
+
+<Canvas>
+  <Story id="components-button--secondary" />
+</Canvas>
+
+### Icons
+
+The `mw-button` component uses slots (`icon-start`, `icon-end`) to provide space for e.g. icons at the start or end of the button.
+> The order of the slots does not matter.
+
+```jsx
+<mw-button test-id="button">
+  <span slot="icon-start">ICON</span>
+  <span slot="icon-end">ICON</span>
+  BUTTON
+</mw-button>
+```
+
+<Canvas>
+  <Story id="components-button--icon" />
+</Canvas>
+
+### Link
+
+If provided a `href` property, the button will render as a link with the button appearance. The link target can be specified by setting `target`.
+
+<Canvas>
+  <Story id="components-button--link" />
+</Canvas>

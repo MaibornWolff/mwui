@@ -18,13 +18,13 @@ export declare interface MwButton extends Components.MwButton {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'secondary', 'testId']
+  inputs: ['disabled', 'href', 'secondary', 'target', 'testId']
 })
 @Component({
   selector: 'mw-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'secondary', 'testId']
+  inputs: ['disabled', 'href', 'secondary', 'target', 'testId']
 })
 export class MwButton {
   protected el: HTMLElement;

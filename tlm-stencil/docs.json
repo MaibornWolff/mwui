@@ -1,0 +1,135 @@
+{
+  "timestamp": "2022-12-22T10:20:23",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.18.1",
+    "typescriptVersion": "4.7.4"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/mw-button/mw-button.tsx",
+      "encapsulation": "none",
+      "tag": "mw-button",
+      "readme": "# mw-button\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disable button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "If provided the button will act as a link",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "secondary",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "secondary",
+          "reflectToAttr": false,
+          "docs": "Use secondary button style",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\"",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "If using href the target prop can be provided",
+          "docsTags": [],
+          "default": "'_self'",
+          "values": [
+            {
+              "value": "_blank",
+              "type": "string"
+            },
+            {
+              "value": "_parent",
+              "type": "string"
+            },
+            {
+              "value": "_self",
+              "type": "string"
+            },
+            {
+              "value": "_top",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "clickEmitter",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}
