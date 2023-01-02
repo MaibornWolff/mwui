@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 02 Jan 2023 11:35:11 GMT
+ * Generated on Mon, 02 Jan 2023 12:06:35 GMT
  */
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
@@ -150,8 +150,9 @@ export const mwComponentCardSubtitle = { "fontFamily": "Poppins", "fontWeight": 
 export const mwComponentCardMetadata = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 16, "fontSize": 10 };
 export const mwComponentCardFgDefault = "#001418";
 export const mwComponentCardFgMuted = "#44555b";
-export const mwComponentCardPaddingComponentsLrDefault = "16px";
-export const mwComponentCardPaddingComponentsTbDefault = "12px";
+export const mwComponentCardPaddingComponentsLrDefault = "24px";
+export const mwComponentCardPaddingComponentsTbDefault = "16px";
+export const mwComponentCardPaddingComponentsTbFooter = "24px";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";

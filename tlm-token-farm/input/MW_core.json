@@ -1002,13 +1002,17 @@
           "components": {
             "lr": {
               "default": {
-                "value": "4px + 4px + 4px + 4px",
+                "value": "4px + 4px + 4px + 4px + 4px + 4px",
                 "type": "spacing"
               }
             },
             "tb": {
               "default": {
-                "value": "4px + 4px + 4px",
+                "value": "4px + 4px + 4px + 4px",
+                "type": "spacing"
+              },
+              "footer": {
+                "value": "4px + 4px + 4px + 4px + 4px + 4px",
                 "type": "spacing"
               }
             }
