@@ -1,28 +1,28 @@
 /**
  * Do not edit directly
- * Generated on Tue, 03 Jan 2023 08:34:50 GMT
+ * Generated on Tue, 03 Jan 2023 10:14:09 GMT
  */
 export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
-export const mwComponentButtonPrimaryColorBgDisabled = "#95a0a4";
-export const mwComponentButtonPrimaryColorBgFocused = "#F86F96";
 export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
 export const mwComponentButtonPrimaryColorBgPressed = "#c42177";
+export const mwComponentButtonPrimaryColorBgDisabled = "#95a0a4";
+export const mwComponentButtonPrimaryColorBgFocused = "#F86F96";
 export const mwComponentButtonPrimaryColorFgDefault = "#ffffff";
-export const mwComponentButtonPrimaryColorFgDisabled = "#EEF1F3";
-export const mwComponentButtonPrimaryColorFgFocused = "#ffffff";
 export const mwComponentButtonPrimaryColorFgHover = "#ffffff";
 export const mwComponentButtonPrimaryColorFgPressed = "#EEF1F3";
+export const mwComponentButtonPrimaryColorFgDisabled = "#EEF1F3";
+export const mwComponentButtonPrimaryColorFgFocused = "#ffffff";
 export const mwComponentButtonPrimaryColorOutlineFocused = "#001418";
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
 export const mwComponentButtonSecondaryTextColorFgHover = "#ed2985";
-export const mwComponentButtonSecondaryTextColorFgFocused = "#ed2985";
 export const mwComponentButtonSecondaryTextColorFgPressed = "#c42177";
 export const mwComponentButtonSecondaryTextColorFgDisabled = "#95a0a4";
-export const mwComponentButtonSecondaryTextColorBorderDisabled = "#79868b";
+export const mwComponentButtonSecondaryTextColorFgFocused = "#ed2985";
 export const mwComponentButtonSecondaryTextColorBorderDefault = "#001418";
 export const mwComponentButtonSecondaryTextColorBorderHover = "#ed2985";
 export const mwComponentButtonSecondaryTextColorBorderPressed = "#c42177";
+export const mwComponentButtonSecondaryTextColorBorderDisabled = "#79868b";
 export const mwComponentButtonSecondaryTextColorBorderFocused = "#001418";
 export const mwComponentButtonBorderWidthSecondaryDefault = 1;
 export const mwComponentButtonBorderWidthSecondaryFocused = 2;
@@ -38,8 +38,8 @@ export const mwComponentButtonTypo = { "fontFamily": "Poppins", "fontWeight": "B
 export const mwComponentLinkTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 16, "textDecoration": "underline" };
 export const mwComponentLinkColorFgDefault = "#001418";
 export const mwComponentLinkColorFgHover = "#ed2985";
-export const mwComponentLinkColorFgFocused = "#ed2985";
 export const mwComponentLinkColorFgPressed = "#c42177";
+export const mwComponentLinkColorFgFocused = "#ed2985";
 export const mwComponentSizeButtonPrimarySecondaryMinWidth = "88px";
 export const mwComponentSizeToggleSwitchW = "52px";
 export const mwComponentSizeToggleSwitchH = "32px";
