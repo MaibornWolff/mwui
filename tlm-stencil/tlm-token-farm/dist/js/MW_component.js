@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 03 Jan 2023 10:14:09 GMT
+ * Generated on Tue, 03 Jan 2023 10:43:01 GMT
  */
 export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
 export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
@@ -147,12 +147,13 @@ export const mwComponentCardHeader = { "fontFamily": "Poppins", "fontWeight": "S
 export const mwComponentCardTitle = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 32, "fontSize": 24 };
 export const mwComponentCardSubhead = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 16 };
 export const mwComponentCardSubtitle = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 16 };
-export const mwComponentCardMetadata = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 16, "fontSize": 10 };
+export const mwComponentCardMetadata = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 12 };
 export const mwComponentCardFgDefault = "#001418";
 export const mwComponentCardFgMuted = "#44555b";
 export const mwComponentCardPaddingComponentsLrDefault = "24px";
-export const mwComponentCardPaddingComponentsTbDefault = "16px";
-export const mwComponentCardPaddingComponentsTbFooter = "24px";
+export const mwComponentCardPaddingComponentsTbDefault = "24px";
+export const mwComponentCardPaddingComponentsTFooter = "24px";
+export const mwComponentCardPaddingB = "24px";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";

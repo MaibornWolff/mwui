@@ -983,8 +983,8 @@
           "value": {
             "fontFamily": "Poppins",
             "fontWeight": "Regular",
-            "lineHeight": 16,
-            "fontSize": 10
+            "lineHeight": 24,
+            "fontSize": 12
           },
           "type": "typography"
         },
@@ -1008,14 +1008,20 @@
             },
             "tb": {
               "default": {
-                "value": "4px + 4px + 4px + 4px",
+                "value": "4px + 4px + 4px + 4px + 4px + 4px",
                 "type": "spacing"
-              },
+              }
+            },
+            "t": {
               "footer": {
                 "value": "4px + 4px + 4px + 4px + 4px + 4px",
                 "type": "spacing"
               }
             }
+          },
+          "b": {
+            "value": "4px + 4px + 4px + 4px + 4px + 4px",
+            "type": "spacing"
           }
         }
       }
