@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 03 Jan 2023 13:32:20 GMT
+ * Generated on Tue, 03 Jan 2023 13:46:57 GMT
  */
 export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
 export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
