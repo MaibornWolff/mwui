@@ -259,6 +259,12 @@
             "type": "sizing"
           }
         },
+        "menu-item": {
+          "height": {
+            "value": 56,
+            "type": "sizing"
+          }
+        },
         "avatars": {
           "large": {
             "value": 56,

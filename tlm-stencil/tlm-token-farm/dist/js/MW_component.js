@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 03 Jan 2023 12:33:24 GMT
+ * Generated on Tue, 03 Jan 2023 12:44:06 GMT
  */
 export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
 export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
@@ -49,6 +49,7 @@ export const mwComponentSizeInputLabelHorizontalWidth = "120px";
 export const mwComponentSizeChipsIcons = "20px";
 export const mwComponentSizeChipsHeight = "32px";
 export const mwComponentSizeChipsMinWidth = "64px";
+export const mwComponentSizeMenuItemHeight = "56px";
 export const mwComponentSizeAvatarsLarge = "56px";
 export const mwComponentSizeAvatarsMedium = "40px";
 export const mwComponentSizeAvatarsSmall = "24px";
