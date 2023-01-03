@@ -32,7 +32,7 @@
   height: var(--mw-component-size-avatars-x-small);
 }
 
-img {
+.avatar img {
   position: absolute;
   border-radius: 50%;
 }
