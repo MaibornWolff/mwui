@@ -152,7 +152,6 @@ export type Target = '_blank' | '_self' | '_parent' | '_top';
 @Component({
   tag: 'mw-button',
   shadow: false,
-  assetsDirs: ['../assets'],
 })
 export class MWButton {
   @Element() hostElement: HTMLStencilElement;

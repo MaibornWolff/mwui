@@ -8,6 +8,13 @@ import type { JSX } from 'tlm-stencil';
 
 
 
+export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>('mw-avatar', undefined, [
+  'src',
+  'alt',
+  'size'
+]);
+
+
 export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>('mw-button', undefined, [
   'testId',
   'disabled',
@@ -16,6 +23,12 @@ export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>('mw-button',
   'href',
   'target',
   'clickEmitter'
+]);
+
+
+export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>('mw-icon', undefined, [
+  'icon',
+  'size'
 ]);
 
 

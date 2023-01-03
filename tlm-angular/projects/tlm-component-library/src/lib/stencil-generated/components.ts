@@ -8,6 +8,27 @@ import { Components } from 'tlm-stencil';
 
 
 
+export declare interface MwAvatar extends Components.MwAvatar {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['alt', 'size', 'src']
+})
+@Component({
+  selector: 'mw-avatar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['alt', 'size', 'src']
+})
+export class MwAvatar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MwButton extends Components.MwButton {
   /**
    *  
@@ -32,6 +53,27 @@ export class MwButton {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['clickEmitter']);
+  }
+}
+
+
+export declare interface MwIcon extends Components.MwIcon {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['icon', 'size']
+})
+@Component({
+  selector: 'mw-icon',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['icon', 'size']
+})
+export class MwIcon {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
   }
 }
 
