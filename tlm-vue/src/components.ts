@@ -9,6 +9,7 @@ import type { JSX } from 'tlm-stencil';
 
 
 export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>('mw-avatar', undefined, [
+  'testId',
   'src',
   'alt',
   'size'

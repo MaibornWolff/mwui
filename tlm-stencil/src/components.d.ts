@@ -22,6 +22,10 @@ export namespace Components {
           * Image source
          */
         "src"?: string;
+        /**
+          * Test Id
+         */
+        "testId"?: string;
     }
     interface MwButton {
         /**
@@ -126,6 +130,10 @@ declare namespace LocalJSX {
           * Image source
          */
         "src"?: string;
+        /**
+          * Test Id
+         */
+        "testId"?: string;
     }
     interface MwButton {
         /**

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-03T13:17:17",
+  "timestamp": "2023-01-03T13:32:35",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -68,6 +68,22 @@
           "attr": "src",
           "reflectToAttr": false,
           "docs": "Image source",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Test Id",
           "docsTags": [],
           "values": [
             {
