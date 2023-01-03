@@ -8,5 +8,6 @@ import type { JSX } from 'tlm-stencil';
 import { defineCustomElements } from 'tlm-stencil/loader';
 
 defineCustomElements();
+export const MwAvatar = /*@__PURE__*/createReactComponent<JSX.MwAvatar, HTMLMwAvatarElement>('mw-avatar');
 export const MwButton = /*@__PURE__*/createReactComponent<JSX.MwButton, HTMLMwButtonElement>('mw-button');
 export const MwSwitch = /*@__PURE__*/createReactComponent<JSX.MwSwitch, HTMLMwSwitchElement>('mw-switch');

@@ -8,6 +8,27 @@ import { Components } from 'tlm-stencil';
 
 
 
+export declare interface MwAvatar extends Components.MwAvatar {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['alt', 'size', 'src']
+})
+@Component({
+  selector: 'mw-avatar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['alt', 'size', 'src']
+})
+export class MwAvatar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MwButton extends Components.MwButton {
   /**
    *  

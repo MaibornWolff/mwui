@@ -5,8 +5,23 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Size } from "./components/mw-avatar/mw-avatar";
 import { Target } from "./components/mw-button/mw-button";
 export namespace Components {
+    interface MwAvatar {
+        /**
+          * Alt text, first letter used as fallback when no src or icon given
+         */
+        "alt"?: string;
+        /**
+          * Size variant
+         */
+        "size"?: Size;
+        /**
+          * Image source
+         */
+        "src"?: string;
+    }
     interface MwButton {
         /**
           * Visually and functionally disable button
@@ -61,6 +76,12 @@ export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
     target: HTMLMwButtonElement;
 }
 declare global {
+    interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {
+    }
+    var HTMLMwAvatarElement: {
+        prototype: HTMLMwAvatarElement;
+        new (): HTMLMwAvatarElement;
+    };
     interface HTMLMwButtonElement extends Components.MwButton, HTMLStencilElement {
     }
     var HTMLMwButtonElement: {
@@ -74,11 +95,26 @@ declare global {
         new (): HTMLMwSwitchElement;
     };
     interface HTMLElementTagNameMap {
+        "mw-avatar": HTMLMwAvatarElement;
         "mw-button": HTMLMwButtonElement;
         "mw-switch": HTMLMwSwitchElement;
     }
 }
 declare namespace LocalJSX {
+    interface MwAvatar {
+        /**
+          * Alt text, first letter used as fallback when no src or icon given
+         */
+        "alt"?: string;
+        /**
+          * Size variant
+         */
+        "size"?: Size;
+        /**
+          * Image source
+         */
+        "src"?: string;
+    }
     interface MwButton {
         /**
           * Visually and functionally disable button
@@ -129,6 +165,7 @@ declare namespace LocalJSX {
         "onText"?: string;
     }
     interface IntrinsicElements {
+        "mw-avatar": MwAvatar;
         "mw-button": MwButton;
         "mw-switch": MwSwitch;
     }
@@ -137,6 +174,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
             "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
         }
