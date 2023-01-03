@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 03 Jan 2023 10:43:01 GMT
+ * Generated on Tue, 03 Jan 2023 12:08:12 GMT
  */
 export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
 export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
@@ -85,11 +85,12 @@ export const mwComponentInputHelperText = { "fontFamily": "Poppins", "fontWeight
 export const mwComponentInputText = { "fontFamily": "Poppins", "fontWeight": "Regular", "lineHeight": 24, "fontSize": 16 };
 export const mwComponentInputFgDefault = "#001418";
 export const mwComponentInputFgHelperText = "#B1BABE";
-export const mwComponentInputFgPlaceholder = "#B1BABE";
+export const mwComponentInputFgPlaceholder = "#44555b";
 export const mwComponentInputFgDisabled = "#95a0a4";
 export const mwComponentInputFgError = "#9f1b00";
 export const mwComponentInputFgRequired = "#9f1b00";
-export const mwComponentInputFgIconDefault = "#B1BABE";
+export const mwComponentInputFgIconDefault = "#44555b";
+export const mwComponentInputFgIconFocused = "#ed2985";
 export const mwComponentInputBgDefault = "#EEF1F3";
 export const mwComponentInputBgHover = "#ffffff";
 export const mwComponentInputBgError = "#FCBAB7";

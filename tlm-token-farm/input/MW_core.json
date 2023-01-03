@@ -457,7 +457,7 @@
             "type": "color"
           },
           "placeholder": {
-            "value": "#B1BABE",
+            "value": "#44555b",
             "type": "color"
           },
           "disabled": {
@@ -473,7 +473,11 @@
             "type": "color"
           },
           "icon-default": {
-            "value": "#B1BABE",
+            "value": "#44555b",
+            "type": "color"
+          },
+          "icon-focused": {
+            "value": "#ed2985",
             "type": "color"
           }
         },
