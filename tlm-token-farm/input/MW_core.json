@@ -1134,12 +1134,16 @@
             "type": "color"
           }
         },
-        "icon": {
-          "padding": {
-            "tb": {
-              "value": "4px + 4px",
-              "type": "spacing"
-            }
+        "padding": {
+          "tb": {
+            "value": "4px + 4px",
+            "type": "spacing"
+          }
+        },
+        "gab": {
+          "within": {
+            "value": "4px",
+            "type": "spacing"
           }
         }
       }
