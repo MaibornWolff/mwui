@@ -623,7 +623,7 @@
           },
           "padding": {
             "all": {
-              "value": "$mw.core.spacing.linear.large",
+              "value": "$mw.core.spacing.linear.medium",
               "type": "spacing"
             }
           },
@@ -692,7 +692,7 @@
           },
           "padding": {
             "all": {
-              "value": "$mw.core.spacing.linear.large",
+              "value": "$mw.core.spacing.linear.medium",
               "type": "spacing"
             }
           },
