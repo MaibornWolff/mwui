@@ -1130,8 +1130,16 @@
         },
         "bg": {
           "default": {
-            "value": "#ffffff00",
+            "value": "#FAFAFA",
             "type": "color"
+          }
+        },
+        "icon": {
+          "padding": {
+            "tb": {
+              "value": "4px + 4px",
+              "type": "spacing"
+            }
           }
         }
       }

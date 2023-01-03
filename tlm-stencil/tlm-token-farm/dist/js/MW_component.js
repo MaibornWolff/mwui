@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 03 Jan 2023 14:26:38 GMT
+ * Generated on Tue, 03 Jan 2023 14:32:40 GMT
  */
 export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
 export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
@@ -160,7 +160,8 @@ export const mwComponentCardPaddingB = "24px";
 export const mwComponentTabsFgSelected = "#ed2985";
 export const mwComponentTabsFgDefault = "#44555b";
 export const mwComponentTabsLabel = { "fontFamily": "Poppins", "fontWeight": "Medium", "lineHeight": 20, "fontSize": 14 };
-export const mwComponentTabsBgDefault = "#ffffff00";
+export const mwComponentTabsBgDefault = "#FAFAFA";
+export const mwComponentTabsIconPaddingTb = "8px";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";
