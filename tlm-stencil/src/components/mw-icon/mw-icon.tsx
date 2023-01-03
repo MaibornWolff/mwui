@@ -18,8 +18,19 @@ const getDimensionForSize = (size: Size) =>
 })
 export class LibraryNameIcon {
   @Element() el: HTMLElement;
+  /**
+   * The icon name to be rendered
+   */
   @Prop() icon: string = null;
+  /**
+   * Size variant
+   */
   @Prop() size: Size = 'medium';
+  /**
+   * Overwrite default color
+   */
+  @Prop() color?: string;
+
   @State() private pathData: string;
   @State() private visible = false;
   @State() private baseDimension = getDimensionForSize('medium');
@@ -50,7 +61,14 @@ export class LibraryNameIcon {
   render() {
     return (
       <Host style={{ height: `${this.dimension}px` }}>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" height={this.dimension} width={this.dimension} viewBox={`0 0 ${this.dimension} ${this.dimension}`}>
+        <svg
+          style={this.color && { color: this.color }}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          height={this.dimension}
+          width={this.dimension}
+          viewBox={`0 0 ${this.dimension} ${this.dimension}`}
+        >
           <path style={{ transform: `scale(${this.scale})` }} d={this.pathData || ''} />
         </svg>
       </Host>

@@ -61,13 +61,13 @@ export declare interface MwIcon extends Components.MwIcon {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['icon', 'size']
+  inputs: ['color', 'icon', 'size']
 })
 @Component({
   selector: 'mw-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['icon', 'size']
+  inputs: ['color', 'icon', 'size']
 })
 export class MwIcon {
   protected el: HTMLElement;

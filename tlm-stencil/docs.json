@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-03T13:47:13",
+  "timestamp": "2023-01-03T13:52:22",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -255,12 +255,28 @@
       "usage": {},
       "props": [
         {
+          "name": "color",
+          "type": "string",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "Overwrite default color",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "icon",
           "type": "string",
           "mutable": false,
           "attr": "icon",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "The icon name to be rendered",
           "docsTags": [],
           "default": "null",
           "values": [
@@ -277,7 +293,7 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Size variant",
           "docsTags": [],
           "default": "'medium'",
           "values": [

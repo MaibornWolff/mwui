@@ -54,7 +54,17 @@ export namespace Components {
         "testId": string;
     }
     interface MwIcon {
+        /**
+          * Overwrite default color
+         */
+        "color"?: string;
+        /**
+          * The icon name to be rendered
+         */
         "icon": string;
+        /**
+          * Size variant
+         */
         "size": Size1;
     }
     interface MwSwitch {
@@ -163,7 +173,17 @@ declare namespace LocalJSX {
         "testId": string;
     }
     interface MwIcon {
+        /**
+          * Overwrite default color
+         */
+        "color"?: string;
+        /**
+          * The icon name to be rendered
+         */
         "icon"?: string;
+        /**
+          * Size variant
+         */
         "size"?: Size1;
     }
     interface MwSwitch {

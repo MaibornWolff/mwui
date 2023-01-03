@@ -7,10 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                                          | Default    |
-| -------- | --------- | ----------- | --------------------------------------------- | ---------- |
-| `icon`   | `icon`    |             | `string`                                      | `null`     |
-| `size`   | `size`    |             | `"large" \| "medium" \| "small" \| "x-small"` | `'medium'` |
+| Property | Attribute | Description                  | Type                                          | Default     |
+| -------- | --------- | ---------------------------- | --------------------------------------------- | ----------- |
+| `color`  | `color`   | Overwrite default color      | `string`                                      | `undefined` |
+| `icon`   | `icon`    | The icon name to be rendered | `string`                                      | `null`      |
+| `size`   | `size`    | Size variant                 | `"large" \| "medium" \| "small" \| "x-small"` | `'medium'`  |
 
 
 ----------------------------------------------
