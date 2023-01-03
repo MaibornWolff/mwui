@@ -1,0 +1,32 @@
+<!-- colors.stories.mdx -->
+
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import * as colors from '../../../tlm-token-farm/dist/js/MW_core.js';
+export const palette = Object.entries(colors).filter(([key, value]) => key.toLowerCase().includes('mwcorecolor'));
+
+export const groupedPalette = palette.reduce((acc, cur) => {
+  const [key, value] = cur;
+  const simplifiedKey = key.substr(11, key.length - 3);
+  if (isNaN(key.substr(key.length - 3))) {
+    return { ...acc, [simplifiedKey]: { 100: value } };
+  }
+  acc[simplifiedKey.substr(0, simplifiedKey.length - 3)] = {
+    ...acc[simplifiedKey.substr(0, simplifiedKey.length - 3)],
+    [key.substr(key.length - 3)]: value,
+  };
+  return acc;
+}, {});
+
+<Meta title="Documentation/Colors" />
+
+<ColorPalette>
+  {Object.entries(groupedPalette).map(([key, values]) =>
+    (<ColorItem
+        key={key}
+        title={key}
+        subtitle={key.substr(11)}
+        colors={values}
+      />)
+  )}
+
+</ColorPalette>
