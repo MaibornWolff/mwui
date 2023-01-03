@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-02T14:36:05",
+  "timestamp": "2023-01-03T08:35:05",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -211,7 +211,7 @@
           "mutable": false,
           "attr": "off-text",
           "reflectToAttr": false,
-          "docs": "Label to be shown when switch state is true. Overrides label prop",
+          "docs": "Label to be shown when switch state is unchecked. Overrides label prop",
           "docsTags": [],
           "values": [
             {
@@ -227,7 +227,7 @@
           "mutable": false,
           "attr": "on-text",
           "reflectToAttr": false,
-          "docs": "Label to be shown when switch state is true. Overrides label prop",
+          "docs": "Label to be shown when switch state is checked. Overrides label prop",
           "docsTags": [],
           "values": [
             {
