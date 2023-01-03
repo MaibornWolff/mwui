@@ -199,7 +199,10 @@ export class MWButton {
     this.hasLabel = !!this.label;
   }
 
-  handleClick = () => {
+  handleClick = (event: PointerEvent) => {
+    (event.target as HTMLButtonElement).blur();
+    // @ts-ignore
+    (event.path[1] as HTMLButtonElement).blur();
     this.clickEmitter.emit('onClick');
   };
 

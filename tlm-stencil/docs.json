@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-03T08:14:29",
+  "timestamp": "2023-01-02T14:36:05",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -139,6 +139,107 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-switch/mw-switch.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-switch",
+      "readme": "# mw-switch\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "checked",
+          "reflectToAttr": false,
+          "docs": "Switch state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disable switch",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Fixed label to be displayed next to the toggle switch",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "offText",
+          "type": "string",
+          "mutable": false,
+          "attr": "off-text",
+          "reflectToAttr": false,
+          "docs": "Label to be shown when switch state is true. Overrides label prop",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "onText",
+          "type": "string",
+          "mutable": false,
+          "attr": "on-text",
+          "reflectToAttr": false,
+          "docs": "Label to be shown when switch state is true. Overrides label prop",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
       "listeners": [],
       "styles": [],
       "slots": [],

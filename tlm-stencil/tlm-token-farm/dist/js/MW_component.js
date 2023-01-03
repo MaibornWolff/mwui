@@ -1,18 +1,7 @@
 /**
  * Do not edit directly
- * Generated on Tue, 03 Jan 2023 08:14:14 GMT
+ * Generated on Mon, 02 Jan 2023 12:36:38 GMT
  */
-export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
-export const mwComponentButtonPrimaryColorBgDisabled = "#95a0a4";
-export const mwComponentButtonPrimaryColorBgFocused = "#F86F96";
-export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
-export const mwComponentButtonPrimaryColorBgPressed = "#c42177";
-export const mwComponentButtonPrimaryColorFgDefault = "#ffffff";
-export const mwComponentButtonPrimaryColorFgDisabled = "#EEF1F3";
-export const mwComponentButtonPrimaryColorFgFocused = "#ffffff";
-export const mwComponentButtonPrimaryColorFgHover = "#ffffff";
-export const mwComponentButtonPrimaryColorFgPressed = "#EEF1F3";
-export const mwComponentButtonPrimaryColorOutlineFocused = "#001418";
 export const mwComponentButtonSecondaryTextColorBgDefault = "#ffffff00";
 export const mwComponentButtonSecondaryTextColorFgDefault = "#001418";
 export const mwComponentButtonSecondaryTextColorFgHover = "#ed2985";
@@ -24,6 +13,17 @@ export const mwComponentButtonSecondaryTextColorBorderDefault = "#001418";
 export const mwComponentButtonSecondaryTextColorBorderHover = "#ed2985";
 export const mwComponentButtonSecondaryTextColorBorderPressed = "#c42177";
 export const mwComponentButtonSecondaryTextColorBorderFocused = "#001418";
+export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
+export const mwComponentButtonPrimaryColorBgDisabled = "#95a0a4";
+export const mwComponentButtonPrimaryColorBgFocused = "#F86F96";
+export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
+export const mwComponentButtonPrimaryColorBgPressed = "#c42177";
+export const mwComponentButtonPrimaryColorFgDefault = "#ffffff";
+export const mwComponentButtonPrimaryColorFgDisabled = "#EEF1F3";
+export const mwComponentButtonPrimaryColorFgFocused = "#ffffff";
+export const mwComponentButtonPrimaryColorFgHover = "#ffffff";
+export const mwComponentButtonPrimaryColorFgPressed = "#EEF1F3";
+export const mwComponentButtonPrimaryColorOutlineFocused = "#001418";
 export const mwComponentButtonBorderWidthSecondaryDefault = 1;
 export const mwComponentButtonBorderWidthSecondaryFocused = 2;
 export const mwComponentButtonBorderWidthPrimaryTextDefault = "0px";

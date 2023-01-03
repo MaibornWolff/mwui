@@ -18,3 +18,12 @@ export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>('mw-button',
   'clickEmitter'
 ]);
 
+
+export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>('mw-switch', undefined, [
+  'disabled',
+  'label',
+  'onText',
+  'offText',
+  'checked'
+]);
+

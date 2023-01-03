@@ -34,3 +34,24 @@ export class MwButton {
     proxyOutputs(this, this.el, ['clickEmitter']);
   }
 }
+
+
+export declare interface MwSwitch extends Components.MwSwitch {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['checked', 'disabled', 'label', 'offText', 'onText']
+})
+@Component({
+  selector: 'mw-switch',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'disabled', 'label', 'offText', 'onText']
+})
+export class MwSwitch {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}

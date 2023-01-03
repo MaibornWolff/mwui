@@ -33,6 +33,28 @@ export namespace Components {
          */
         "testId": string;
     }
+    interface MwSwitch {
+        /**
+          * Switch state
+         */
+        "checked": boolean;
+        /**
+          * Visually and functionally disable switch
+         */
+        "disabled"?: boolean;
+        /**
+          * Fixed label to be displayed next to the toggle switch
+         */
+        "label"?: string;
+        /**
+          * Label to be shown when switch state is unchecked. Overrides label prop
+         */
+        "offText"?: string;
+        /**
+          * Label to be shown when switch state is checked. Overrides label prop
+         */
+        "onText"?: string;
+    }
 }
 export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -45,8 +67,15 @@ declare global {
         prototype: HTMLMwButtonElement;
         new (): HTMLMwButtonElement;
     };
+    interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {
+    }
+    var HTMLMwSwitchElement: {
+        prototype: HTMLMwSwitchElement;
+        new (): HTMLMwSwitchElement;
+    };
     interface HTMLElementTagNameMap {
         "mw-button": HTMLMwButtonElement;
+        "mw-switch": HTMLMwSwitchElement;
     }
 }
 declare namespace LocalJSX {
@@ -77,8 +106,31 @@ declare namespace LocalJSX {
          */
         "testId": string;
     }
+    interface MwSwitch {
+        /**
+          * Switch state
+         */
+        "checked"?: boolean;
+        /**
+          * Visually and functionally disable switch
+         */
+        "disabled"?: boolean;
+        /**
+          * Fixed label to be displayed next to the toggle switch
+         */
+        "label"?: string;
+        /**
+          * Label to be shown when switch state is unchecked. Overrides label prop
+         */
+        "offText"?: string;
+        /**
+          * Label to be shown when switch state is checked. Overrides label prop
+         */
+        "onText"?: string;
+    }
     interface IntrinsicElements {
         "mw-button": MwButton;
+        "mw-switch": MwSwitch;
     }
 }
 export { LocalJSX as JSX };
@@ -86,6 +138,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
+            "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
         }
     }
 }
