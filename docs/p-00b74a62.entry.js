@@ -9,7 +9,7 @@ import{r as t,h as e,H as n,c as r,g as o,a as i}from"./p-cd041edb.js";var a=fun
   font-weight: ${Ct("Regular")};
   line-height: ${48}px;
 `,St=zt`
-  font-size: ${12}px;
+  font-size: ${14}px;
   font-family: ${"Poppins"};
   font-weight: ${Ct("Regular")};
   line-height: ${16}px;

@@ -431,7 +431,7 @@
             "fontFamily": "Poppins",
             "fontWeight": "Regular",
             "lineHeight": 16,
-            "fontSize": 12
+            "fontSize": 14
           },
           "type": "typography"
         },
@@ -440,7 +440,7 @@
             "fontFamily": "Poppins",
             "fontWeight": "Regular",
             "lineHeight": 16,
-            "fontSize": 12
+            "fontSize": 14
           },
           "type": "typography"
         },
@@ -645,7 +645,7 @@
             "fontFamily": "Poppins",
             "fontWeight": "Regular",
             "lineHeight": 24,
-            "fontSize": 12
+            "fontSize": 14
           },
           "type": "typography",
           "fg": {
@@ -769,7 +769,7 @@
           "value": {
             "fontFamily": "Poppins",
             "fontWeight": "Medium",
-            "fontSize": 12,
+            "fontSize": 14,
             "lineHeight": 16
           },
           "type": "typography"
@@ -894,7 +894,7 @@
               "fontFamily": "Poppins",
               "fontWeight": "Regular",
               "lineHeight": 16,
-              "fontSize": 12
+              "fontSize": 14
             },
             "type": "typography"
           },
@@ -1067,7 +1067,7 @@
             "fontFamily": "Poppins",
             "fontWeight": "Regular",
             "lineHeight": 24,
-            "fontSize": 12
+            "fontSize": 14
           },
           "type": "typography"
         },
@@ -1105,6 +1105,33 @@
           "b": {
             "value": "4px + 4px + 4px + 4px + 4px + 4px",
             "type": "spacing"
+          }
+        }
+      },
+      "tabs": {
+        "fg": {
+          "selected": {
+            "value": "#ed2985",
+            "type": "color"
+          },
+          "default": {
+            "value": "#44555b",
+            "type": "color"
+          }
+        },
+        "label": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Medium",
+            "lineHeight": 20,
+            "fontSize": 14
+          },
+          "type": "typography"
+        },
+        "bg": {
+          "default": {
+            "value": "#ffffff00",
+            "type": "color"
           }
         }
       }
@@ -1426,13 +1453,13 @@
           },
           "label": {
             "regular": {
-              "value": 12,
+              "value": 14,
               "type": "fontSizes"
             }
           },
           "caption": {
             "regular": {
-              "value": 12,
+              "value": 14,
               "type": "fontSizes"
             }
           },
@@ -1764,7 +1791,7 @@
               "type": "fontSizes"
             },
             "sm": {
-              "value": 1.33,
+              "value": 0.875,
               "type": "fontSizes"
             },
             "lg": {
@@ -1809,7 +1836,7 @@
             }
           },
           "sm": {
-            "value": 12,
+            "value": 14,
             "type": "fontSizes"
           },
           "base": {
@@ -1878,15 +1905,15 @@
               "type": "lineHeights"
             },
             "sm": {
-              "value": 1.33,
+              "value": 0.833,
               "type": "lineHeights"
             },
             "xs": {
-              "value": 1.5,
+              "value": 0.66,
               "type": "lineHeights"
             },
             "xxs": {
-              "value": 2,
+              "value": 0.5,
               "type": "lineHeights"
             },
             "lg": {
@@ -1923,7 +1950,7 @@
             }
           },
           "sm": {
-            "value": 18,
+            "value": 20,
             "type": "lineHeights"
           },
           "xs": {
