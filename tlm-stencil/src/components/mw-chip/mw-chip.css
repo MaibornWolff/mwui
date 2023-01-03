@@ -1,0 +1,76 @@
+:host {
+  display: block;
+}
+
+.chip {
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: var(--mw-component-size-chips-height);
+  min-width: var(--mw-component-size-chips-min-width);
+  border-radius: var(--mw-component-chips-border-radius);
+  gap: var(--mw-component-chips-gap-within);
+  padding: 0 var(--mw-component-chips-padding-lr);
+  outline: var(--mw-component-chips-border-width-default) solid var(--mw-component-chips-color-border-default);
+  color: var(--mw-component-chips-color-fg-default);
+  background: var(--mw-component-chips-color-bg-default);
+}
+
+/* hover */
+.chip:hover:not(.disabled) {
+  color: var(--mw-component-chips-color-fg-hover);
+  background: var(--mw-component-chips-color-bg-hover);
+}
+
+/* selected */
+.chip.selected {
+  color: var(--mw-component-chips-color-fg-selected);
+  background: var(--mw-component-chips-color-bg-default);
+  outline-color: var(--mw-component-chips-color-border-selected);
+}
+
+/* selected, hover */
+.chip.selected:hover:not(.disabled) {
+  color: var(--mw-component-chips-color-fg-selected);
+  background: var(--mw-component-chips-color-bg-hover);
+  outline-color: var(--mw-component-chips-color-border-selected);
+}
+
+/* focus, selected */
+.chip.selected:focus:not(.disabled) {
+  color: var(--mw-component-chips-color-fg-selected);
+  background: var(--mw-component-chips-color-bg-hover);
+  outline-color: var(--mw-component-chips-color-border-selected);
+  outline-width: var(--mw-component-chips-border-width-focused);
+}
+
+/* active, selected */
+.chip.selected:active:not(.disabled) {
+  color: var(--mw-component-chips-color-fg-selected);
+  background: var(--mw-component-chips-color-bg-pressed);
+  outline-color: var(--mw-component-chips-color-border-selected);
+  outline-width: var(--mw-component-chips-border-width-default);
+}
+
+/* focus, not selected */
+.chip:focus:not(.selected):not(.disabled) {
+  color: var(--mw-component-chips-color-fg-default);
+  background: var(--mw-component-chips-color-bg-hover);
+  outline-color: var(--mw-component-chips-color-border-default);
+  outline-width: var(--mw-component-chips-border-width-focused);
+}
+
+/* active, not selected */
+.chip:active:not(.selected):not(.disabled) {
+  color: var(--mw-component-chips-color-fg-default);
+  background: var(--mw-component-chips-color-bg-pressed);
+
+}
+
+/* disabled */
+.chip.disabled {
+  color: var(--mw-component-chips-color-fg-disabled);
+  outline-color: var(--mw-component-chips-color-border-disabled);
+}

@@ -57,6 +57,34 @@ export class MwButton {
 }
 
 
+export declare interface MwChip extends Components.MwChip {
+  /**
+   *  
+   */
+  clickEmitter: EventEmitter<CustomEvent<string>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['close', 'disabled', 'icon', 'testId']
+})
+@Component({
+  selector: 'mw-chip',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['close', 'disabled', 'icon', 'testId']
+})
+export class MwChip {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['clickEmitter']);
+  }
+}
+
+
 export declare interface MwIcon extends Components.MwIcon {}
 
 @ProxyCmp({
@@ -82,13 +110,13 @@ export declare interface MwSwitch extends Components.MwSwitch {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['checked', 'disabled', 'label', 'offText', 'onText']
+  inputs: ['checked', 'disabled', 'label', 'offText', 'onText', 'testId']
 })
 @Component({
   selector: 'mw-switch',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'label', 'offText', 'onText']
+  inputs: ['checked', 'disabled', 'label', 'offText', 'onText', 'testId']
 })
 export class MwSwitch {
   protected el: HTMLElement;

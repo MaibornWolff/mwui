@@ -72,7 +72,7 @@ export class MwAvatar {
   render() {
     return (
       <Host>
-        <div class={`avatar ${this.size}`}>
+        <div test-id={this.testId} class={`avatar ${this.size}`}>
           {this.alt && <div class={`fallback ${getTypoStyles(this.size)}`}>{this.alt.substring(0, 1)}</div>}
           {this.src && <img src={this.src} alt={this.alt} />}
           <slot></slot>

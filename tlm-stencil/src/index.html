@@ -21,7 +21,7 @@
       <h2>Button</h2>
       <h3>Primary</h3>
       <div style="display: flex; gap: 16px">
-        <mw-button label="BUTTON" test-id="test-button-1"></mw-button>
+        <mw-button onClick="alert('hooo')" label="BUTTON" test-id="test-button-1"></mw-button>
         <mw-button test-id="test-button-1.1"
           ><span slot="icon-start"><mw-icon icon="placeholder" /></span
         ></mw-button>
@@ -105,6 +105,17 @@
         <mw-icon icon="placeholder" size="small"></mw-icon>
         <mw-icon icon="placeholder" size="x-small"></mw-icon>
         <mw-icon icon="placeholder" color="#ff00ff" size="large"></mw-icon>
+      </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Chips</h2>
+      <div style="display: flex; gap: var(--mw-component-chips-gap-between)">
+        <mw-chip icon="placeholder">Presentations</mw-chip>
+        <mw-chip>John Doe</mw-chip>
+        <mw-chip onClose="alert('close clicked')" close>John Doe</mw-chip>
+        <mw-chip disabled close>John Doe</mw-chip>
       </div>
     </section>
   </body>

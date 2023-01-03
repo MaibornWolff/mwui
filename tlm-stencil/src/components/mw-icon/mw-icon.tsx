@@ -1,14 +1,22 @@
 import { Build, Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
 import { fetchIcon } from './utils';
 import { Size } from '../mw-avatar/mw-avatar';
+import {
+  mwComponentSizeAvatarsIconLarge,
+  mwComponentSizeAvatarsIconMedium,
+  mwComponentSizeAvatarsIconSmall,
+  mwComponentSizeAvatarsIconXSmall,
+} from '../../../../tlm-token-farm/dist/js/MW_component';
 
 const getDimensionForSize = (size: Size) =>
-  ({
-    'large': 27,
-    'medium': 18,
-    'small': 12,
-    'x-small': 9,
-  }[size]);
+  Number(
+    {
+      'large': mwComponentSizeAvatarsIconLarge,
+      'medium': mwComponentSizeAvatarsIconMedium,
+      'small': mwComponentSizeAvatarsIconSmall,
+      'x-small': mwComponentSizeAvatarsIconXSmall,
+    }[size].replace('px', ''),
+  );
 
 @Component({
   assetsDirs: ['./assets'],

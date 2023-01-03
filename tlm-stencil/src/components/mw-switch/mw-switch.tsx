@@ -7,7 +7,10 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 export class MwSwitch {
   checkbox: HTMLInputElement;
-
+  /**
+   * Must be provided for automated testing
+   */
+  @Prop() testId!: string;
   /**
    * Visually and functionally disable switch
    */
@@ -47,7 +50,7 @@ export class MwSwitch {
   render() {
     return (
       <Host>
-        <label onClick={this.toggleSwitch.bind(this)} class="switch">
+        <label test-id={this.testId} onClick={this.toggleSwitch.bind(this)} class="switch">
           <input disabled={this.disabled} ref={(el: HTMLInputElement) => (this.checkbox = el)} type="checkbox" checked={this.checked} />
           <span class="slider round"></span>
         </label>

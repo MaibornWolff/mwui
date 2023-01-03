@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-03T14:41:44",
+  "timestamp": "2023-01-03T16:56:04",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -246,6 +246,107 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/mw-chip/mw-chip.tsx",
+      "encapsulation": "none",
+      "tag": "mw-chip",
+      "readme": "# mw-chip\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "close",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "close",
+          "reflectToAttr": false,
+          "docs": "Flag wether to show close icon or not",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disable button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Name identifier of icon to be displayed in chip",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "clickEmitter",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mw-icon"
+      ],
+      "dependencyGraph": {
+        "mw-chip": [
+          "mw-icon"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon",
@@ -324,9 +425,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mw-chip"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-chip": [
+          "mw-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/mw-switch/mw-switch.tsx",
@@ -417,6 +524,22 @@
           ],
           "optional": true,
           "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
         }
       ],
       "methods": [],

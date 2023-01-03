@@ -115,36 +115,12 @@ const flexStyles = css`
   align-items: center;
 `;
 
-const iconStyles = css`
-  display: inline-block;
-  height: 18px;
-  > span {
-    display: inline-block;
-    height: 18px;
-    width: 18px;
-  }
-`;
-
 const iconStartStyles = css`
   margin-right: ${mwComponentButtonGapBetween};
-  display: inline-block;
-  height: 18px;
-  > span {
-    display: inline-block;
-    height: 18px;
-    width: 18px;
-  }
 `;
 
 const iconEndStyles = css`
   margin-left: ${mwComponentButtonGapBetween};
-  display: inline-block;
-  height: 18px;
-  > span {
-    display: inline-block;
-    height: 18px;
-    width: 18px;
-  }
 `;
 
 export type Target = '_blank' | '_self' | '_parent' | '_top';
@@ -210,13 +186,13 @@ export class MWButton {
       return (
         <a href={this.href} target={this.target} class={this.secondary ? secondaryButtonStyles : primaryButtonStyles} test-id={this.testId}>
           {this.hasIconStartSlot && (
-            <span class={this.hasLabel ? iconStartStyles : iconStyles}>
+            <span class={this.hasLabel ? iconStartStyles : ''}>
               <slot name="icon-start"></slot>
             </span>
           )}
           <span>{this.label}</span>
           {this.hasIconEndSlot && (
-            <span class={this.hasLabel ? iconEndStyles : iconStyles}>
+            <span class={this.hasLabel ? iconEndStyles : ''}>
               <slot name="icon-end"></slot>
             </span>
           )}
@@ -232,13 +208,13 @@ export class MWButton {
         type="button"
       >
         {this.hasIconStartSlot && (
-          <span class={this.hasLabel ? iconStartStyles : iconStyles}>
+          <span class={this.hasLabel ? iconStartStyles : ''}>
             <slot name="icon-start"></slot>
           </span>
         )}
         <span>{this.label}</span>
         {this.hasIconEndSlot && (
-          <span class={this.hasLabel ? iconEndStyles : iconStyles}>
+          <span class={this.hasLabel ? iconEndStyles : ''}>
             <slot name="icon-end"></slot>
           </span>
         )}

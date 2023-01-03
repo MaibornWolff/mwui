@@ -53,6 +53,24 @@ export namespace Components {
          */
         "testId": string;
     }
+    interface MwChip {
+        /**
+          * Flag wether to show close icon or not
+         */
+        "close"?: boolean;
+        /**
+          * Visually and functionally disable button
+         */
+        "disabled"?: boolean;
+        /**
+          * Name identifier of icon to be displayed in chip
+         */
+        "icon"?: string;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
+    }
     interface MwIcon {
         /**
           * Overwrite default color
@@ -88,11 +106,19 @@ export namespace Components {
           * Label to be shown when switch state is checked. Overrides label prop
          */
         "onText"?: string;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
     }
 }
 export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMwButtonElement;
+}
+export interface MwChipCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMwChipElement;
 }
 declare global {
     interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {
@@ -106,6 +132,12 @@ declare global {
     var HTMLMwButtonElement: {
         prototype: HTMLMwButtonElement;
         new (): HTMLMwButtonElement;
+    };
+    interface HTMLMwChipElement extends Components.MwChip, HTMLStencilElement {
+    }
+    var HTMLMwChipElement: {
+        prototype: HTMLMwChipElement;
+        new (): HTMLMwChipElement;
     };
     interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {
     }
@@ -122,6 +154,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "mw-avatar": HTMLMwAvatarElement;
         "mw-button": HTMLMwButtonElement;
+        "mw-chip": HTMLMwChipElement;
         "mw-icon": HTMLMwIconElement;
         "mw-switch": HTMLMwSwitchElement;
     }
@@ -172,6 +205,25 @@ declare namespace LocalJSX {
          */
         "testId": string;
     }
+    interface MwChip {
+        /**
+          * Flag wether to show close icon or not
+         */
+        "close"?: boolean;
+        /**
+          * Visually and functionally disable button
+         */
+        "disabled"?: boolean;
+        /**
+          * Name identifier of icon to be displayed in chip
+         */
+        "icon"?: string;
+        "onClickEmitter"?: (event: MwChipCustomEvent<string>) => void;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
+    }
     interface MwIcon {
         /**
           * Overwrite default color
@@ -207,10 +259,15 @@ declare namespace LocalJSX {
           * Label to be shown when switch state is checked. Overrides label prop
          */
         "onText"?: string;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
     }
     interface IntrinsicElements {
         "mw-avatar": MwAvatar;
         "mw-button": MwButton;
+        "mw-chip": MwChip;
         "mw-icon": MwIcon;
         "mw-switch": MwSwitch;
     }
@@ -221,6 +278,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
             "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
+            "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
         }

@@ -14,6 +14,19 @@
 | `size`   | `size`    | Size variant                 | `"large" \| "medium" \| "small" \| "x-small"` | `'medium'`  |
 
 
+## Dependencies
+
+### Used by
+
+ - [mw-chip](../mw-chip)
+
+### Graph
+```mermaid
+graph TD;
+  mw-chip --> mw-icon
+  style mw-icon fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
