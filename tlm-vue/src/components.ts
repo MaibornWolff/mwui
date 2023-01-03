@@ -26,6 +26,12 @@ export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>('mw-button',
 ]);
 
 
+export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>('mw-icon', undefined, [
+  'icon',
+  'size'
+]);
+
+
 export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>('mw-switch', undefined, [
   'disabled',
   'label',

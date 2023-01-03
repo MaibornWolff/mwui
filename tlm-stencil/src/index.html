@@ -22,18 +22,32 @@
       <h3>Primary</h3>
       <div style="display: flex; gap: 16px">
         <mw-button label="BUTTON" test-id="test-button-1"></mw-button>
-        <mw-button test-id="test-button-1.1"><span slot="icon-start">🍔</span></mw-button>
-        <mw-button label="BUTTON" test-id="test-button-2"><span slot="icon-start">🍔</span></mw-button>
-        <mw-button label="BUTTON" test-id="test-button-3"><span slot="icon-end">🍔</span></mw-button>
-        <mw-button label="BUTTON" test-id="test-button-4"><span slot="icon-start">🍔</span><span slot="icon-end">🍔</span></mw-button>
+        <mw-button test-id="test-button-1.1"
+          ><span slot="icon-start"><mw-icon icon="placeholder" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-2"
+          ><span slot="icon-start"><mw-icon icon="placeholder" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-3"
+          ><span slot="icon-end"><mw-icon icon="placeholder" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-4"
+          ><span slot="icon-start"><mw-icon icon="placeholder" /></span><span slot="icon-end"><mw-icon icon="placeholder" /></span
+        ></mw-button>
         <mw-button label="BUTTON" test-id="test-button-5" disabled></mw-button>
       </div>
       <h3>Secondary</h3>
       <div style="display: flex; gap: 16px">
         <mw-button label="BUTTON" test-id="test-button-6" secondary></mw-button>
-        <mw-button label="BUTTON" test-id="test-button-7" secondary><span slot="icon-start">🍔</span></mw-button>
-        <mw-button label="BUTTON" test-id="test-button-8" secondary><span slot="icon-end">🍔</span></mw-button>
-        <mw-button label="BUTTON" test-id="test-button-9" secondary><span slot="icon-start">🍔</span><span slot="icon-end">🍔</span></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-7" secondary
+          ><span slot="icon-start"><mw-icon icon="placeholder" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-8" secondary
+          ><span slot="icon-end"><mw-icon icon="placeholder" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-9" secondary
+          ><span slot="icon-start"><mw-icon icon="placeholder" /></span><span slot="icon-end"><mw-icon icon="placeholder" /></span
+        ></mw-button>
         <mw-button label="BUTTON" test-id="test-button-10" secondary disabled></mw-button>
       </div>
       <h3>Link Button</h3>
@@ -56,6 +70,8 @@
       </div>
     </section>
     <section>
+      <br />
+      <hr />
       <h2>Avatar</h2>
       <h3>Image</h3>
       <div style="display: flex; gap: 16px">
@@ -66,10 +82,10 @@
       </div>
       <h3>Icon</h3>
       <div style="display: flex; gap: 16px">
-        <mw-avatar size="large">Icon</mw-avatar>
-        <mw-avatar size="medium">Icon</mw-avatar>
-        <mw-avatar size="small">Icon</mw-avatar>
-        <mw-avatar size="x-small">Icon</mw-avatar>
+        <mw-avatar size="large"><mw-icon icon="placeholder" size="large" /></mw-avatar>
+        <mw-avatar size="medium"><mw-icon icon="placeholder" /></mw-avatar>
+        <mw-avatar size="small"><mw-icon icon="placeholder" size="small" /></mw-avatar>
+        <mw-avatar size="x-small"><mw-icon icon="placeholder" size="x-small" /></mw-avatar>
       </div>
       <h3>Fallback</h3>
       <div style="display: flex; gap: 16px">
@@ -77,6 +93,17 @@
         <mw-avatar alt="John Doe" size="medium"></mw-avatar>
         <mw-avatar alt="John Doe" size="small"></mw-avatar>
         <mw-avatar alt="John Doe" size="x-small"></mw-avatar>
+      </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Icons</h2>
+      <div style="display: flex; gap: 16px">
+        <mw-icon icon="placeholder" size="large"></mw-icon>
+        <mw-icon icon="placeholder"></mw-icon>
+        <mw-icon icon="placeholder" size="small"></mw-icon>
+        <mw-icon icon="placeholder" size="x-small"></mw-icon>
       </div>
     </section>
   </body>

@@ -58,24 +58,7 @@ img {
 }
 
 .fallback {
-  font-family: 'Poppins', sans-serif;
   position: absolute;
-}
-
-.avatar.large .fallback {
-  font-size: var(--mw-component-avatars-typo-large);
-}
-
-.avatar.medium .fallback {
-  font-size: var(--mw-component-avatars-typo-medium);
-}
-
-.avatar.small .fallback {
-  font-size: var(--mw-component-avatars-typo-small);
-}
-
-.avatar.x-small .fallback {
-  font-size: var(--mw-component-avatars-typo-x-small);
 }
 
 .icon {

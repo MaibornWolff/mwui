@@ -1,4 +1,3 @@
-import icon from '../assets/icon-placeholder.svg';
 import '../../global/global.css';
 // @ts-ignore
 import docs from './mw-button.docs.mdx';
@@ -34,7 +33,7 @@ Secondary.args = {
 };
 
 const IconTemplate = args => `
-<mw-button test-id="${args.testId}" label="${args.label}" onClick="${args.onClick}" disabled="${args.disabled}" secondary="${args.secondary}"><span slot="icon-start"><img width="20" src="${icon}" alt="icon-placeholder" /></span></mw-button>`;
+<mw-button test-id="${args.testId}" label="${args.label}" onClick="${args.onClick}" disabled="${args.disabled}" secondary="${args.secondary}"><span slot="icon-start"><mw-icon icon="placeholder"></mw-icon></span></mw-button>`;
 
 export const Icon = IconTemplate.bind({});
 Icon.args = {
@@ -44,7 +43,10 @@ Icon.args = {
   secondary: false,
 };
 
-export const IconOnly = IconTemplate.bind({});
+const IconOnlyTemplate = args => `
+<mw-button test-id="${args.testId}" onClick="${args.onClick}" disabled="${args.disabled}" secondary="${args.secondary}"><span slot="icon-start"><mw-icon icon="placeholder"></mw-icon></span></mw-button>`;
+
+export const IconOnly = IconOnlyTemplate.bind({});
 IconOnly.args = {
   testId: 'button',
   disabled: false,

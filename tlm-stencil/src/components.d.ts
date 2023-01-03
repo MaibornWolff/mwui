@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Size } from "./components/mw-avatar/mw-avatar";
 import { Target } from "./components/mw-button/mw-button";
+import { Size as Size1 } from "./components/mw-avatar/mw-avatar";
 export namespace Components {
     interface MwAvatar {
         /**
@@ -48,6 +49,10 @@ export namespace Components {
          */
         "testId": string;
     }
+    interface MwIcon {
+        "icon": string;
+        "size": Size1;
+    }
     interface MwSwitch {
         /**
           * Switch state
@@ -88,6 +93,12 @@ declare global {
         prototype: HTMLMwButtonElement;
         new (): HTMLMwButtonElement;
     };
+    interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {
+    }
+    var HTMLMwIconElement: {
+        prototype: HTMLMwIconElement;
+        new (): HTMLMwIconElement;
+    };
     interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {
     }
     var HTMLMwSwitchElement: {
@@ -97,6 +108,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "mw-avatar": HTMLMwAvatarElement;
         "mw-button": HTMLMwButtonElement;
+        "mw-icon": HTMLMwIconElement;
         "mw-switch": HTMLMwSwitchElement;
     }
 }
@@ -142,6 +154,10 @@ declare namespace LocalJSX {
          */
         "testId": string;
     }
+    interface MwIcon {
+        "icon"?: string;
+        "size"?: Size1;
+    }
     interface MwSwitch {
         /**
           * Switch state
@@ -167,6 +183,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mw-avatar": MwAvatar;
         "mw-button": MwButton;
+        "mw-icon": MwIcon;
         "mw-switch": MwSwitch;
     }
 }
@@ -176,6 +193,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
             "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
+            "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
         }
     }

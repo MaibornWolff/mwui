@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-03T09:00:14",
+  "timestamp": "2023-01-03T13:17:17",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -8,8 +8,9 @@
   "components": [
     {
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "none",
       "tag": "mw-avatar",
+      "readme": "# mw-avatar\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -66,7 +67,7 @@
           "mutable": false,
           "attr": "src",
           "reflectToAttr": false,
-          "docs": "image source",
+          "docs": "Image source",
           "docsTags": [],
           "values": [
             {
@@ -220,6 +221,73 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-icon/mw-icon.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-icon",
+      "readme": "# mw-icon\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "null",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\" | \"x-small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "x-small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
       "listeners": [],
       "styles": [],
       "slots": [],
