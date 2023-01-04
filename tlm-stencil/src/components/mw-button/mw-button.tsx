@@ -3,7 +3,9 @@ import { css } from '@emotion/css';
 import { getFontWeightValue } from '../../utils/utils';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import {
+  mwComponentButtonBorderWidthPrimaryTextFocused,
   mwComponentButtonFilledColorBgDefault,
+  mwComponentButtonFilledColorOutlineFocused,
   mwComponentButtonBorderWidthPrimaryTextDefault,
   mwComponentButtonFilledColorFgDefault,
   mwComponentButtonFilledColorBgHover,
@@ -69,6 +71,9 @@ const filledButtonStyles = css`
     color: ${mwComponentButtonFilledColorFgHover};
   }
   &:focus {
+    outline-color: ${mwComponentButtonFilledColorOutlineFocused};
+    outline: ${mwComponentButtonBorderWidthPrimaryTextFocused} solid;
+    outline-offset: ${-2 * mwComponentButtonBorderWidthPrimaryTextFocused};
     background-color: ${mwComponentButtonFilledColorBgFocused};
     color: ${mwComponentButtonFilledColorFgFocused};
   }
@@ -82,7 +87,7 @@ const filledButtonStyles = css`
   }
 `;
 
-const secondaryButtonStyles = css`
+const outlineButtonStyles = css`
   ${base};
   border: 0;
   outline: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
@@ -95,18 +100,45 @@ const secondaryButtonStyles = css`
     color: ${mwComponentButtonOutlineGhostColorFgHover};
   }
   &:focus {
-    outline-color: ${mwComponentButtonOutlineGhostColorBorderFocused};
     outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
+    outline-color: ${mwComponentButtonOutlineGhostColorBorderFocused};
     outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
     color: ${mwComponentButtonOutlineGhostColorFgFocused};
   }
   &:active {
+    outline: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
     outline-color: ${mwComponentButtonOutlineGhostColorBorderPressed};
+    outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryDefault}px;
     color: ${mwComponentButtonOutlineGhostColorFgPressed};
   }
   &:disabled {
     outline-color: ${mwComponentButtonOutlineGhostColorBorderDisabled};
     color: ${mwComponentButtonOutlineGhostColorFgDisabled};
+  }
+`;
+
+const ghostButtonStyles = css`
+  ${base};
+  outline: none;
+  border: none;
+  color: ${mwComponentButtonOutlineGhostColorFgDefault};
+  background-color: ${mwComponentButtonOutlineGhostColorBgDefault};
+  &:hover {
+    color: ${mwComponentButtonOutlineGhostColorFgHover};
+  }
+  &:focus {
+    outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
+    outline-color: ${mwComponentButtonOutlineGhostColorBorderFocused};
+    outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
+    color: ${mwComponentButtonOutlineGhostColorFgFocused};
+  }
+  &:active {
+    color: ${mwComponentButtonOutlineGhostColorFgPressed};
+    outline: none;
+  }
+  &:disabled {
+    color: ${mwComponentButtonOutlineGhostColorFgDisabled};
+    outline: none;
   }
 `;
 
@@ -127,6 +159,15 @@ const iconStartStyles = css`
 const iconEndStyles = css`
   margin-left: ${mwComponentButtonMdGapBetween};
 `;
+
+const getButtonVariantStyles = (variant: ButtonVariant) =>
+  ({
+    filled: filledButtonStyles,
+    outline: outlineButtonStyles,
+    ghost: ghostButtonStyles,
+  }[variant]);
+
+export type ButtonVariant = 'filled' | 'outline' | 'ghost';
 
 export type Target = '_blank' | '_self' | '_parent' | '_top';
 
@@ -149,9 +190,9 @@ export class MWButton {
    */
   @Prop() label?: string;
   /**
-   * Use secondary button style
+   * Button variants
    */
-  @Prop() secondary?: boolean = false;
+  @Prop() variant?: ButtonVariant = 'filled';
   /**
    * If provided the button will act as a link
    */
@@ -192,7 +233,7 @@ export class MWButton {
   render() {
     if (this.href) {
       return (
-        <a href={this.href} target={this.target} class={this.secondary ? secondaryButtonStyles : filledButtonStyles} test-id={this.testId}>
+        <a href={this.href} target={this.target} class={getButtonVariantStyles(this.variant)} test-id={this.testId}>
           {this.hasIconStartSlot && (
             <span class={this.hasLabel ? iconStartStyles : ''}>
               <slot name="icon-start"></slot>
@@ -211,7 +252,7 @@ export class MWButton {
       <button
         disabled={this.disabled}
         onClick={this.handleClick}
-        class={`${this.secondary ? secondaryButtonStyles : filledButtonStyles} ${this.hasIcon && flexStyles} ${!this.hasLabel && iconButtonStyles}`}
+        class={`${getButtonVariantStyles(this.variant)} ${this.hasIcon && flexStyles} ${!this.hasLabel && iconButtonStyles}`}
         test-id={this.testId}
         type="button"
       >

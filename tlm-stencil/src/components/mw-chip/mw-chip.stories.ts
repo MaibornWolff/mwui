@@ -19,6 +19,17 @@ Default.args = {
   icon: 'placeholder',
 };
 
+const SelectedTemplate = args => `
+<mw-chip test-id="${args.testId}" selected="${args.selected}">Chip & Chap</mw-chip>`;
+
+
+export const Selected = SelectedTemplate.bind({});
+Selected.args = {
+  testId: 'chip',
+  icon: 'placeholder',
+  selected: true,
+};
+
 const Template = args => `
 <mw-chip
   icon="${args.icon}"

@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Size } from "./components/mw-avatar/mw-avatar";
-import { Target } from "./components/mw-button/mw-button";
+import { ButtonVariant, Target } from "./components/mw-button/mw-button";
 import { Size as Size1 } from "./components/mw-avatar/mw-avatar";
 export namespace Components {
     interface MwAvatar {
@@ -45,10 +45,6 @@ export namespace Components {
          */
         "label"?: string;
         /**
-          * Use secondary button style
-         */
-        "secondary"?: boolean;
-        /**
           * If using href the target prop can be provided
          */
         "target"?: Target;
@@ -56,6 +52,10 @@ export namespace Components {
           * Must be provided for automated testing
          */
         "testId": string;
+        /**
+          * Button variants
+         */
+        "variant"?: ButtonVariant;
     }
     interface MwChip {
         /**
@@ -208,10 +208,6 @@ declare namespace LocalJSX {
          */
         "onClickEmitter"?: (event: MwButtonCustomEvent<string>) => void;
         /**
-          * Use secondary button style
-         */
-        "secondary"?: boolean;
-        /**
           * If using href the target prop can be provided
          */
         "target"?: Target;
@@ -219,6 +215,10 @@ declare namespace LocalJSX {
           * Must be provided for automated testing
          */
         "testId": string;
+        /**
+          * Button variants
+         */
+        "variant"?: ButtonVariant;
     }
     interface MwChip {
         /**

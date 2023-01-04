@@ -21,7 +21,7 @@ export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>('mw-button',
   'testId',
   'disabled',
   'label',
-  'secondary',
+  'variant',
   'href',
   'target',
   'clickEmitter'

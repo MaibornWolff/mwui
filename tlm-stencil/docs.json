@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-04T14:34:48",
+  "timestamp": "2023-01-04T15:09:28",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -184,23 +184,6 @@
           "required": false
         },
         {
-          "name": "secondary",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "secondary",
-          "reflectToAttr": false,
-          "docs": "Use secondary button style",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "target",
           "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\"",
           "mutable": false,
@@ -245,6 +228,32 @@
           ],
           "optional": false,
           "required": true
+        },
+        {
+          "name": "variant",
+          "type": "\"filled\" | \"ghost\" | \"outline\"",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Button variants",
+          "docsTags": [],
+          "default": "'filled'",
+          "values": [
+            {
+              "value": "filled",
+              "type": "string"
+            },
+            {
+              "value": "ghost",
+              "type": "string"
+            },
+            {
+              "value": "outline",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
