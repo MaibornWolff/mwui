@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-03T16:56:04",
+  "timestamp": "2023-01-04T08:19:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -22,6 +22,22 @@
           "attr": "alt",
           "reflectToAttr": false,
           "docs": "Alt text, first letter used as fallback when no src or icon given",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Icon name. Will be ignored if `src` is provided",
           "docsTags": [],
           "values": [
             {
@@ -101,8 +117,14 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "mw-icon"
+      ],
+      "dependencyGraph": {
+        "mw-avatar": [
+          "mw-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/mw-button/mw-button.tsx",
@@ -426,10 +448,14 @@
       "slots": [],
       "parts": [],
       "dependents": [
+        "mw-avatar",
         "mw-chip"
       ],
       "dependencies": [],
       "dependencyGraph": {
+        "mw-avatar": [
+          "mw-icon"
+        ],
         "mw-chip": [
           "mw-icon"
         ]

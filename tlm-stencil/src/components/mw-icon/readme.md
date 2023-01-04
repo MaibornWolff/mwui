@@ -18,11 +18,13 @@
 
 ### Used by
 
+ - [mw-avatar](../mw-avatar)
  - [mw-chip](../mw-chip)
 
 ### Graph
 ```mermaid
 graph TD;
+  mw-avatar --> mw-icon
   mw-chip --> mw-icon
   style mw-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

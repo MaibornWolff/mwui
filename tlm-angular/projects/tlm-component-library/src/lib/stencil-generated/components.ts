@@ -12,13 +12,13 @@ export declare interface MwAvatar extends Components.MwAvatar {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['alt', 'size', 'src', 'testId']
+  inputs: ['alt', 'icon', 'size', 'src', 'testId']
 })
 @Component({
   selector: 'mw-avatar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['alt', 'size', 'src', 'testId']
+  inputs: ['alt', 'icon', 'size', 'src', 'testId']
 })
 export class MwAvatar {
   protected el: HTMLElement;
