@@ -250,13 +250,21 @@
             "value": 20,
             "type": "sizing"
           },
-          "height": {
-            "value": 32,
-            "type": "sizing"
-          },
           "min-width": {
             "value": 64,
             "type": "sizing"
+          }
+        },
+        "tabs": {
+          "height": {
+            "default": {
+              "value": 48,
+              "type": "sizing"
+            },
+            "with-icon": {
+              "value": 64,
+              "type": "sizing"
+            }
           }
         },
         "menu-item": {
@@ -832,12 +840,6 @@
               "value": "#CFD6D8",
               "type": "color"
             }
-          },
-          "selected": {
-            "default": {
-              "value": "#f9c8c7",
-              "type": "color"
-            }
           }
         },
         "borderRadius": {
@@ -1117,6 +1119,10 @@
           "default": {
             "value": "#44555b",
             "type": "color"
+          },
+          "disabled": {
+            "value": "#95a0a4",
+            "type": "color"
           }
         },
         "label": {
@@ -1132,18 +1138,28 @@
           "default": {
             "value": "#FAFAFA",
             "type": "color"
-          }
-        },
-        "padding": {
-          "tb": {
-            "value": "4px + 4px",
-            "type": "spacing"
+          },
+          "hover": {
+            "value": "#EEF1F3",
+            "type": "color"
           }
         },
         "gab": {
           "within": {
             "value": "4px",
             "type": "spacing"
+          }
+        },
+        "padding": {
+          "lr": {
+            "value": "4px + 4px + 4px + 4px + 4px + 4px",
+            "type": "spacing"
+          }
+        },
+        "border": {
+          "focused": {
+            "value": "[object Object]",
+            "type": "border"
           }
         }
       }

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 04 Jan 2023 08:50:24 GMT
+ * Generated on Wed, 04 Jan 2023 09:59:21 GMT
  */
 export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
 export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
@@ -47,8 +47,9 @@ export const mwComponentSizeCheckboxRadiobuttonWh = "24px";
 export const mwComponentSizeInputMinWidth = "120px";
 export const mwComponentSizeInputLabelHorizontalWidth = "120px";
 export const mwComponentSizeChipsIcons = "20px";
-export const mwComponentSizeChipsHeight = "32px";
 export const mwComponentSizeChipsMinWidth = "64px";
+export const mwComponentSizeTabsHeightDefault = "48px";
+export const mwComponentSizeTabsHeightWithIcon = "64px";
 export const mwComponentSizeMenuItemHeight = "56px";
 export const mwComponentSizeAvatarsLarge = "56px";
 export const mwComponentSizeAvatarsMedium = "40px";
@@ -129,7 +130,6 @@ export const mwComponentChipsColorFgSelected = "#ed2985";
 export const mwComponentChipsColorBgDefault = "#ffffff";
 export const mwComponentChipsColorBgHover = "#EEF1F3";
 export const mwComponentChipsColorBgPressed = "#CFD6D8";
-export const mwComponentChipsColorSelectedDefault = "#f9c8c7";
 export const mwComponentChipsBorderRadius = 16;
 export const mwComponentChipsGapWithin = "8px";
 export const mwComponentChipsGapBetween = "8px";
@@ -159,10 +159,13 @@ export const mwComponentCardPaddingComponentsTFooter = "24px";
 export const mwComponentCardPaddingB = "24px";
 export const mwComponentTabsFgSelected = "#ed2985";
 export const mwComponentTabsFgDefault = "#44555b";
+export const mwComponentTabsFgDisabled = "#95a0a4";
 export const mwComponentTabsLabel = { "fontFamily": "Poppins", "fontWeight": "Medium", "lineHeight": 20, "fontSize": 14 };
 export const mwComponentTabsBgDefault = "#FAFAFA";
-export const mwComponentTabsPaddingTb = "8px";
+export const mwComponentTabsBgHover = "#EEF1F3";
 export const mwComponentTabsGabWithin = 4;
+export const mwComponentTabsPaddingLr = "24px";
+export const mwComponentTabsBorderFocused = "[object Object]";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";
