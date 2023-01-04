@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 04 Jan 2023 09:59:21 GMT
+ * Generated on Wed, 04 Jan 2023 12:22:55 GMT
  */
 export const mwComponentButtonPrimaryColorBgDefault = "#ed2985";
 export const mwComponentButtonPrimaryColorBgHover = "#F86F96";
@@ -29,12 +29,12 @@ export const mwComponentButtonBorderWidthSecondaryFocused = 2;
 export const mwComponentButtonBorderWidthPrimaryTextDefault = "0px";
 export const mwComponentButtonBorderWidthPrimaryTextFocused = 2;
 export const mwComponentButtonBorderRadiusDefault = 9999;
-export const mwComponentButtonPaddingLr = "24px";
-export const mwComponentButtonPaddingTb = "8px";
-export const mwComponentButtonPaddingIconAll = "12px";
-export const mwComponentButtonGapWithin = "12px";
-export const mwComponentButtonGapBetween = "12px";
 export const mwComponentButtonTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 16 };
+export const mwComponentButtonMdPaddingLr = "24px";
+export const mwComponentButtonMdPaddingTb = "8px";
+export const mwComponentButtonMdPaddingIcon = "12px";
+export const mwComponentButtonMdGapWithin = "12px";
+export const mwComponentButtonMdGapBetween = "12px";
 export const mwComponentLinkTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 16, "textDecoration": "underline" };
 export const mwComponentLinkColorFgDefault = "#001418";
 export const mwComponentLinkColorFgHover = "#ed2985";
@@ -166,6 +166,17 @@ export const mwComponentTabsBgHover = "#EEF1F3";
 export const mwComponentTabsGabWithin = 4;
 export const mwComponentTabsPaddingLr = "24px";
 export const mwComponentTabsBorderFocused = "[object Object]";
+export const mwComponentButtonSmPaddingLr = "16px";
+export const mwComponentButtonSmPaddingTb = 4;
+export const mwComponentButtonSmPaddingIcon = "8px";
+export const mwComponentButtonSmGapWithin = "8px";
+export const mwComponentButtonSmGapBetween = "8px";
+export const mwComponentButtonSmTypo = { "fontFamily": "Poppins", "fontWeight": "Bold", "lineHeight": 24, "fontSize": 14 };
+export const mwComponentButtonLgPaddingLr = "24px";
+export const mwComponentButtonLgPaddingTb = "12px";
+export const mwComponentButtonLgPaddingIcon = "16px";
+export const mwComponentButtonLgGapWithin = "16px";
+export const mwComponentButtonLgGapBetween = "16px";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";
