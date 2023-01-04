@@ -11,15 +11,19 @@ export default {
 };
 
 const Template = args => `
-<mw-button test-id="${args.testId}" label="${args.label}"  onClick="${args.onClick}" disabled="${args.disabled}" secondary="${args.secondary}"></mw-button>`;
+<mw-button
+  test-id="${args.testId}"
+  label="${args.label}"
+  onClick="${args.onClick}"
+  disabled="${args.disabled}"
+  secondary="${args.secondary}">
+</mw-button>`;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  testId: 'button',
+  testId: 'some-button-id',
   label: 'BUTTON',
-  onClick: () => {
-    console.log('clicked');
-  },
+  onClick: () => {},
   disabled: false,
   secondary: false,
 };

@@ -1,0 +1,41 @@
+import { Canvas, Story } from '@storybook/addon-docs';
+
+# Chip
+
+`mw-chip` is the primary component. There are several variants as described below. All variants share an internal `selection` state acting as a toggle when clicked.
+
+### Default
+
+<Canvas withSource="open">
+  <Story id="components-chip--default" />
+</Canvas>
+
+### With Icon
+
+When providing a `icon` prop containing the name of an icon, a `mw-icon` will be shown at the start of the chip.
+
+<Canvas withSource="open">
+  <Story id="components-chip--icon" />
+</Canvas>
+
+### With Avatar
+
+<Canvas withSource="open">
+  <Story id="components-chip--avatar" />
+</Canvas>
+
+### Close Icon
+
+Any variant of a `chip` can be configured to render a close icon at the end by setting the `close` prop.
+
+<Canvas withSource="open">
+  <Story id="components-chip--closable" />
+</Canvas>
+
+### Disabled
+
+Setting the `disabled` prop, the `chip` is visually and functionally disabled and cannot be clicked.
+
+<Canvas>
+  <Story id="components-chip--disabled" />
+</Canvas>
