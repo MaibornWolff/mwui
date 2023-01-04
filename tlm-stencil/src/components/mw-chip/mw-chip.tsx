@@ -1,13 +1,10 @@
 import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 import { css } from '@emotion/css';
 import { getFontWeightValue } from '../../utils/utils';
-import { mwComponentChipsTypo } from '../../../../tlm-token-farm/dist/js/MW_component.js';
+import { mwComponentChipsTypoFontWeight } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
 const typo = css`
-  font-size: ${mwComponentChipsTypo.fontSize}px;
-  font-family: ${mwComponentChipsTypo.fontFamily};
-  font-weight: ${getFontWeightValue(mwComponentChipsTypo.fontWeight)};
-  line-height: ${mwComponentChipsTypo.lineHeight}px;
+  font-weight: ${getFontWeightValue(mwComponentChipsTypoFontWeight)};
 `;
 
 @Component({

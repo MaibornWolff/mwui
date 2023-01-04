@@ -3,38 +3,41 @@ import { css } from '@emotion/css';
 import { getFontWeightValue } from '../../utils/utils';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import {
-  mwComponentButtonPrimaryColorBgDefault,
+  mwComponentButtonFilledColorBgDefault,
   mwComponentButtonBorderWidthPrimaryTextDefault,
-  mwComponentButtonPrimaryColorFgDefault,
-  mwComponentButtonPrimaryColorBgHover,
-  mwComponentButtonPrimaryColorFgHover,
-  mwComponentButtonPrimaryColorBgPressed,
-  mwComponentButtonPrimaryColorFgFocused,
-  mwComponentButtonPrimaryColorBgDisabled,
-  mwComponentButtonPrimaryColorFgDisabled,
-  mwComponentButtonSecondaryTextColorFgDisabled,
-  mwComponentButtonSecondaryTextColorFgFocused,
-  mwComponentButtonSecondaryTextColorFgHover,
-  mwComponentButtonSecondaryTextColorBgDefault,
-  mwComponentButtonSecondaryTextColorFgDefault,
+  mwComponentButtonFilledColorFgDefault,
+  mwComponentButtonFilledColorBgHover,
+  mwComponentButtonFilledColorFgHover,
+  mwComponentButtonFilledColorBgPressed,
+  mwComponentButtonFilledColorFgFocused,
+  mwComponentButtonFilledColorBgDisabled,
+  mwComponentButtonFilledColorFgDisabled,
+  mwComponentButtonFilledColorFgPressed,
+  mwComponentButtonFilledColorBgFocused,
   mwComponentButtonBorderWidthSecondaryDefault,
-  mwComponentButtonSecondaryTextColorBorderHover,
-  mwComponentButtonSecondaryTextColorBorderDisabled,
-  mwComponentButtonSecondaryTextColorBorderDefault,
-  mwComponentButtonTypo,
-  mwComponentButtonSecondaryTextColorFgPressed,
-  mwComponentButtonSecondaryTextColorBorderPressed,
-  mwComponentButtonPrimaryColorFgPressed,
-  mwComponentButtonPrimaryColorBgFocused,
-  mwComponentButtonSecondaryTextColorBorderFocused,
+  mwComponentButtonOutlineGhostColorFgDisabled,
+  mwComponentButtonOutlineGhostColorFgFocused,
+  mwComponentButtonOutlineGhostColorFgHover,
+  mwComponentButtonOutlineGhostColorBgDefault,
+  mwComponentButtonOutlineGhostColorFgDefault,
+  mwComponentButtonOutlineGhostColorBorderHover,
+  mwComponentButtonOutlineGhostColorBorderDisabled,
+  mwComponentButtonOutlineGhostColorBorderDefault,
+  mwComponentButtonOutlineGhostColorFgPressed,
+  mwComponentButtonOutlineGhostColorBorderPressed,
+  mwComponentButtonOutlineGhostColorBorderFocused,
+  mwComponentButtonLabelMediumFontFamily,
+  mwComponentButtonLabelMediumFontWeight,
+  mwComponentButtonLabelMediumLineHeight,
+  mwComponentButtonLabelMediumFontSize,
   mwComponentButtonMdPaddingLr,
   mwComponentButtonMdPaddingTb,
   mwComponentButtonMdGapBetween,
+  mwComponentButtonMdPaddingIcon,
+  mwComponentSizeButtonFilledOutlineMinWidth,
   mwComponentButtonBorderRadiusDefault,
-  mwComponentSizeButtonPrimarySecondaryMinWidth,
   mwComponentButtonBorderWidthSecondaryFocused,
   letterSpacingButtons,
-  mwComponentButtonMdPaddingIcon,
 } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
 // figma exports percentage value instead of em
@@ -47,35 +50,35 @@ const base = css`
   white-space: nowrap;
   overflow: hidden;
   padding: ${mwComponentButtonMdPaddingTb} ${mwComponentButtonMdPaddingLr};
-  font-family: '${mwComponentButtonTypo.fontFamily}';
+  font-family: ${mwComponentButtonLabelMediumFontFamily};
   letter-spacing: ${letterSpacing}em;
-  line-height: ${mwComponentButtonTypo.lineHeight}px;
-  font-weight: ${getFontWeightValue(mwComponentButtonTypo.fontWeight)};
-  font-size: ${mwComponentButtonTypo.fontSize}px;
+  line-height: ${mwComponentButtonLabelMediumLineHeight}px;
+  font-weight: ${getFontWeightValue(mwComponentButtonLabelMediumFontWeight)};
+  font-size: ${mwComponentButtonLabelMediumFontSize}px;
   border-radius: ${mwComponentButtonBorderRadiusDefault}px;
-  min-width: ${mwComponentSizeButtonPrimarySecondaryMinWidth};
+  min-width: ${mwComponentSizeButtonFilledOutlineMinWidth};
 `;
 
-const primaryButtonStyles = css`
+const filledButtonStyles = css`
   ${base};
   border: ${mwComponentButtonBorderWidthPrimaryTextDefault};
-  color: ${mwComponentButtonPrimaryColorFgDefault};
-  background-color: ${mwComponentButtonPrimaryColorBgDefault};
+  color: ${mwComponentButtonFilledColorFgDefault};
+  background-color: ${mwComponentButtonFilledColorBgDefault};
   &:hover {
-    background-color: ${mwComponentButtonPrimaryColorBgHover};
-    color: ${mwComponentButtonPrimaryColorFgHover};
+    background-color: ${mwComponentButtonFilledColorBgHover};
+    color: ${mwComponentButtonFilledColorFgHover};
   }
   &:focus {
-    background-color: ${mwComponentButtonPrimaryColorBgFocused};
-    color: ${mwComponentButtonPrimaryColorFgFocused};
+    background-color: ${mwComponentButtonFilledColorBgFocused};
+    color: ${mwComponentButtonFilledColorFgFocused};
   }
   &:active {
-    background-color: ${mwComponentButtonPrimaryColorBgPressed};
-    color: ${mwComponentButtonPrimaryColorFgPressed};
+    background-color: ${mwComponentButtonFilledColorBgPressed};
+    color: ${mwComponentButtonFilledColorFgPressed};
   }
   &:disabled {
-    background-color: ${mwComponentButtonPrimaryColorBgDisabled};
-    color: ${mwComponentButtonPrimaryColorFgDisabled};
+    background-color: ${mwComponentButtonFilledColorBgDisabled};
+    color: ${mwComponentButtonFilledColorFgDisabled};
   }
 `;
 
@@ -84,26 +87,26 @@ const secondaryButtonStyles = css`
   border: 0;
   outline: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
   outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryDefault}px;
-  color: ${mwComponentButtonSecondaryTextColorFgDefault};
-  background-color: ${mwComponentButtonSecondaryTextColorBgDefault};
-  outline-color: ${mwComponentButtonSecondaryTextColorBorderDefault};
+  color: ${mwComponentButtonOutlineGhostColorFgDefault};
+  background-color: ${mwComponentButtonOutlineGhostColorBgDefault};
+  outline-color: ${mwComponentButtonOutlineGhostColorBorderDefault};
   &:hover {
-    outline-color: ${mwComponentButtonSecondaryTextColorBorderHover};
-    color: ${mwComponentButtonSecondaryTextColorFgHover};
+    outline-color: ${mwComponentButtonOutlineGhostColorBorderHover};
+    color: ${mwComponentButtonOutlineGhostColorFgHover};
   }
   &:focus {
-    outline-color: ${mwComponentButtonSecondaryTextColorBorderFocused};
+    outline-color: ${mwComponentButtonOutlineGhostColorBorderFocused};
     outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
     outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
-    color: ${mwComponentButtonSecondaryTextColorFgFocused};
+    color: ${mwComponentButtonOutlineGhostColorFgFocused};
   }
   &:active {
-    outline-color: ${mwComponentButtonSecondaryTextColorBorderPressed};
-    color: ${mwComponentButtonSecondaryTextColorFgPressed};
+    outline-color: ${mwComponentButtonOutlineGhostColorBorderPressed};
+    color: ${mwComponentButtonOutlineGhostColorFgPressed};
   }
   &:disabled {
-    outline-color: ${mwComponentButtonSecondaryTextColorBorderDisabled};
-    color: ${mwComponentButtonSecondaryTextColorFgDisabled};
+    outline-color: ${mwComponentButtonOutlineGhostColorBorderDisabled};
+    color: ${mwComponentButtonOutlineGhostColorFgDisabled};
   }
 `;
 
@@ -189,7 +192,7 @@ export class MWButton {
   render() {
     if (this.href) {
       return (
-        <a href={this.href} target={this.target} class={this.secondary ? secondaryButtonStyles : primaryButtonStyles} test-id={this.testId}>
+        <a href={this.href} target={this.target} class={this.secondary ? secondaryButtonStyles : filledButtonStyles} test-id={this.testId}>
           {this.hasIconStartSlot && (
             <span class={this.hasLabel ? iconStartStyles : ''}>
               <slot name="icon-start"></slot>
@@ -208,7 +211,7 @@ export class MWButton {
       <button
         disabled={this.disabled}
         onClick={this.handleClick}
-        class={`${this.secondary ? secondaryButtonStyles : primaryButtonStyles} ${this.hasIcon && flexStyles} ${!this.hasLabel && iconButtonStyles}`}
+        class={`${this.secondary ? secondaryButtonStyles : filledButtonStyles} ${this.hasIcon && flexStyles} ${!this.hasLabel && iconButtonStyles}`}
         test-id={this.testId}
         type="button"
       >

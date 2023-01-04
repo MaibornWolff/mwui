@@ -10,7 +10,11 @@
   align-items: center;
   justify-content: center;
   width: fit-content;
-  height: var(--mw-component-size-chips-height);
+  font-family: var(--mw-component-chips-typo-font-family);
+  font-size: var(--mw-component-chips-typo-font-size);
+  line-height: var(--mw-component-chips-typo-line-height);
+  /* FIXME: missing token */
+  height: 32px;
   min-width: var(--mw-component-size-chips-min-width);
   border-radius: var(--mw-component-chips-border-radius);
   gap: var(--mw-component-chips-gap-within);
