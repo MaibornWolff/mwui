@@ -138,32 +138,6 @@
             "type": "borderRadius"
           }
         },
-        "padding": {
-          "lr": {
-            "value": "4px + 4px + 4px + 4px + 4px + 4px",
-            "type": "spacing"
-          },
-          "tb": {
-            "value": "4px + 4px",
-            "type": "spacing"
-          },
-          "icon": {
-            "all": {
-              "value": "4px + 4px + 4px",
-              "type": "spacing"
-            }
-          }
-        },
-        "gap": {
-          "within": {
-            "value": "4px + 4px + 4px",
-            "type": "spacing"
-          },
-          "between": {
-            "value": "4px + 4px + 4px",
-            "type": "spacing"
-          }
-        },
         "typo": {
           "value": {
             "fontFamily": "Poppins",
@@ -172,6 +146,28 @@
             "fontSize": 16
           },
           "type": "typography"
+        }
+      },
+      "buttonMd": {
+        "paddingLR": {
+          "value": "4px + 4px + 4px + 4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "paddingTB": {
+          "value": "4px + 4px",
+          "type": "spacing"
+        },
+        "paddingIcon": {
+          "value": "4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "gapWithin": {
+          "value": "4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "gapBetween": {
+          "value": "4px + 4px + 4px",
+          "type": "spacing"
         }
       },
       "link": {
@@ -1161,6 +1157,59 @@
             "value": "[object Object]",
             "type": "border"
           }
+        }
+      },
+      "buttonSM": {
+        "paddingLR": {
+          "value": "4px + 4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "paddingTB": {
+          "value": "4px",
+          "type": "spacing"
+        },
+        "paddingIcon": {
+          "value": "4px + 4px",
+          "type": "spacing"
+        },
+        "gapWithin": {
+          "value": "4px + 4px",
+          "type": "spacing"
+        },
+        "gapBetween": {
+          "value": "4px + 4px",
+          "type": "spacing"
+        },
+        "typo": {
+          "value": {
+            "fontFamily": "Poppins",
+            "fontWeight": "Bold",
+            "lineHeight": 24,
+            "fontSize": 14
+          },
+          "type": "typography"
+        }
+      },
+      "buttonLg": {
+        "paddingLR": {
+          "value": "4px + 4px + 4px + 4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "paddingTB": {
+          "value": "4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "paddingIcon": {
+          "value": "4px + 4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "gapWithin": {
+          "value": "4px + 4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "gapBetween": {
+          "value": "4px + 4px + 4px + 4px",
+          "type": "spacing"
         }
       }
     },

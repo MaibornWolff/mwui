@@ -27,14 +27,14 @@ import {
   mwComponentButtonPrimaryColorFgPressed,
   mwComponentButtonPrimaryColorBgFocused,
   mwComponentButtonSecondaryTextColorBorderFocused,
-  mwComponentButtonPaddingLr,
-  mwComponentButtonPaddingTb,
-  mwComponentButtonGapBetween,
+  mwComponentButtonMdPaddingLr,
+  mwComponentButtonMdPaddingTb,
+  mwComponentButtonMdGapBetween,
   mwComponentButtonBorderRadiusDefault,
   mwComponentSizeButtonPrimarySecondaryMinWidth,
   mwComponentButtonBorderWidthSecondaryFocused,
-  mwComponentButtonPaddingIconAll,
   letterSpacingButtons,
+  mwComponentButtonMdPaddingIcon,
 } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
 // figma exports percentage value instead of em
@@ -44,7 +44,7 @@ const letterSpacing = Number(letterSpacingButtons.replace('%', '').trim()) / 100
 const base = css`
   appearance: none;
   text-decoration: none;
-  padding: ${mwComponentButtonPaddingTb} ${mwComponentButtonPaddingLr};
+  padding: ${mwComponentButtonMdPaddingTb} ${mwComponentButtonMdPaddingLr};
   font-family: '${mwComponentButtonTypo.fontFamily}';
   letter-spacing: ${letterSpacing}em;
   line-height: ${mwComponentButtonTypo.lineHeight}px;
@@ -106,7 +106,7 @@ const secondaryButtonStyles = css`
 `;
 
 const iconButtonStyles = css`
-  padding: ${mwComponentButtonPaddingIconAll};
+  padding: ${mwComponentButtonMdPaddingIcon};
   min-width: 0px;
 `;
 
@@ -116,11 +116,11 @@ const flexStyles = css`
 `;
 
 const iconStartStyles = css`
-  margin-right: ${mwComponentButtonGapBetween};
+  margin-right: ${mwComponentButtonMdGapBetween};
 `;
 
 const iconEndStyles = css`
-  margin-left: ${mwComponentButtonGapBetween};
+  margin-left: ${mwComponentButtonMdGapBetween};
 `;
 
 export type Target = '_blank' | '_self' | '_parent' | '_top';
