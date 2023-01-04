@@ -61,6 +61,10 @@ export class MwAvatar {
    */
   @Prop() src?: string;
   /**
+   * Icon name. Will be ignored if `src` is provided
+   */
+  @Prop() icon?: string;
+  /**
    * Alt text, first letter used as fallback when no src or icon given
    */
   @Prop() alt?: string;
@@ -73,9 +77,9 @@ export class MwAvatar {
     return (
       <Host>
         <div test-id={this.testId} class={`avatar ${this.size}`}>
-          {this.alt && <div class={`fallback ${getTypoStyles(this.size)}`}>{this.alt.substring(0, 1)}</div>}
           {this.src && <img src={this.src} alt={this.alt} />}
-          <slot></slot>
+          {this.icon && <mw-icon icon={this.icon} size={this.size}></mw-icon>}
+          {this.alt && <div class={`fallback ${getTypoStyles(this.size)}`}>{this.alt.substring(0, 1)}</div>}
         </div>
       </Host>
     );

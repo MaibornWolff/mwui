@@ -15,6 +15,10 @@ export namespace Components {
          */
         "alt"?: string;
         /**
+          * Icon name. Will be ignored if `src` is provided
+         */
+        "icon"?: string;
+        /**
           * Size variant
          */
         "size"?: Size;
@@ -165,6 +169,10 @@ declare namespace LocalJSX {
           * Alt text, first letter used as fallback when no src or icon given
          */
         "alt"?: string;
+        /**
+          * Icon name. Will be ignored if `src` is provided
+         */
+        "icon"?: string;
         /**
           * Size variant
          */
