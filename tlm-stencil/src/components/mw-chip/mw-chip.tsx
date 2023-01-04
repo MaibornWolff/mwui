@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 import { css } from '@emotion/css';
 import { getFontWeightValue } from '../../utils/utils';
 import { mwComponentChipsTypo } from '../../../../tlm-token-farm/dist/js/MW_component.js';
