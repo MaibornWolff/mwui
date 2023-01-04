@@ -155,6 +155,9 @@ export class MWButton {
    * If using href the target prop can be provided
    */
   @Prop() target?: Target = '_self';
+  /**
+   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
+   */
   @Event({
     bubbles: true,
     cancelable: false,

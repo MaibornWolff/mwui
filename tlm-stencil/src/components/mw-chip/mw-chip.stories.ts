@@ -11,7 +11,7 @@ export default {
 };
 
 const DefaultTemplate = args => `
-<mw-chip test-id="${args.testId}">Chip & Chap</mw-icon>`;
+<mw-chip test-id="${args.testId}">Chip & Chap</mw-chip>`;
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
@@ -24,14 +24,14 @@ const Template = args => `
   icon="${args.icon}"
   disabled="${args.disabled}"
   test-id="${args.testId}"
-  close="${args.close}">
+  show-close="${args.showClose}">
   Peter Pan
 </mw-chip>`;
 
 export const Icon = Template.bind({});
 Icon.args = {
   testId: 'chip',
-  close: false,
+  showClose: false,
   icon: 'check',
   disabled: false,
 };
@@ -40,7 +40,7 @@ const AvatarTemplate = args => `
 <mw-chip
   disabled="${args.disabled}"
   test-id="${args.testId}"
-  close="${args.close}">
+  show-close="${args.showClose}">
     <mw-avatar
       src="https://i.pravatar.cc/150"
       alt="Peter Pan"
@@ -52,15 +52,24 @@ const AvatarTemplate = args => `
 export const Avatar = AvatarTemplate.bind({});
 Avatar.args = {
   testId: 'chip',
-  close: false,
+  showClose: false,
   disabled: false,
 };
 
-export const Closable = Template.bind({});
+const CloseTemplate = args => `
+<mw-chip
+  icon="${args.icon}"
+  disabled="${args.disabled}"
+  test-id="${args.testId}"
+  show-close="${args.showClose}">
+  Peter Pan
+</mw-chip>`;
+
+export const Closable = CloseTemplate.bind({});
 Closable.args = {
-  testId: 'chip',
+  testId: 'chip-closable',
   icon: 'check',
-  close: true,
+  showClose: true,
   disabled: false,
 };
 
@@ -68,6 +77,6 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   testId: 'chip',
   icon: 'check',
-  close: true,
+  showClose: true,
   disabled: true,
 };

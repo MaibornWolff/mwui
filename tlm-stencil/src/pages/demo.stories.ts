@@ -2,7 +2,7 @@ import '../global/global.css';
 import '../../../tlm-token-farm/dist/css/MW_core.css';
 
 export default {
-  title: 'Documentation/Demo',
+  title: 'Pages/🚧 Demo',
 };
 
 const Template = () => `

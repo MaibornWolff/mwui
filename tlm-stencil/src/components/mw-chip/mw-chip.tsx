@@ -31,21 +31,36 @@ export class MwChip {
   /**
    * Flag wether to show close icon or not
    */
-  @Prop() close?: boolean = false;
-  @State() selected: boolean = false;
+  @Prop() showClose?: boolean = false;
+  /**
+   * Selection state that changes onToggle. Can be set as mutable prop.
+   */
+  @Prop({ mutable: true }) selected: boolean = false;
+  /**
+   * 'close' event is fired when the close icon is clicked.
+   */
   @Event({
+    eventName: 'close',
     bubbles: true,
     cancelable: false,
     composed: false,
   })
-  clickEmitter: EventEmitter<string>;
+  clickEmitter: EventEmitter;
+  /**
+   * 'toggle' event is fired when the chip is clicked. Current selection state is emitted.
+   */
+  @Event({ eventName: 'toggle', bubbles: true, composed: false, cancelable: false }) selectionChangeEmitter: EventEmitter<boolean>;
 
-  handleClose = () => {
-    this.clickEmitter.emit('onClose');
+  handleClose = (event: Event) => {
+    event.stopPropagation();
+    if (!this.disabled) {
+      this.clickEmitter.emit();
+    }
   };
 
   handleClick = () => {
     this.selected = !this.selected;
+    this.selectionChangeEmitter.emit(this.selected);
   };
 
   render() {
@@ -54,7 +69,7 @@ export class MwChip {
         <div tabindex="0" class={`chip ${typo} ${this.selected && 'selected'} ${this.disabled && 'disabled'}`} onClick={this.handleClick} test-id={this.testId}>
           {!!this.icon && <mw-icon icon={this.icon} size="medium"></mw-icon>}
           <slot></slot>
-          {this.close && (
+          {this.showClose && (
             <span onClick={this.handleClose}>
               <mw-icon icon="close" color="currentcolor" size="small"></mw-icon>
             </span>

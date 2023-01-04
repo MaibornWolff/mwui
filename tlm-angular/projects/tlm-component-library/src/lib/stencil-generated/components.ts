@@ -31,7 +31,7 @@ export class MwAvatar {
 
 export declare interface MwButton extends Components.MwButton {
   /**
-   *  
+   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. 
    */
   clickEmitter: EventEmitter<CustomEvent<string>>;
 
@@ -59,28 +59,32 @@ export class MwButton {
 
 export declare interface MwChip extends Components.MwChip {
   /**
-   *  
+   * 'close' event is fired when the close icon is clicked. 
    */
-  clickEmitter: EventEmitter<CustomEvent<string>>;
+  close: EventEmitter<CustomEvent<any>>;
+  /**
+   * 'toggle' event is fired when the chip is clicked. Current selection state is emitted. 
+   */
+  toggle: EventEmitter<CustomEvent<boolean>>;
 
 }
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['close', 'disabled', 'icon', 'testId']
+  inputs: ['disabled', 'icon', 'selected', 'showClose', 'testId']
 })
 @Component({
   selector: 'mw-chip',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['close', 'disabled', 'icon', 'testId']
+  inputs: ['disabled', 'icon', 'selected', 'showClose', 'testId']
 })
 export class MwChip {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['clickEmitter']);
+    proxyOutputs(this, this.el, ['close', 'toggle']);
   }
 }
 

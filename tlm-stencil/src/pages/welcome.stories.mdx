@@ -1,0 +1,190 @@
+import '../global/global.css';
+import '../global/sb-global.css';
+import '../../../tlm-token-farm/dist/css/MW_core.css';
+import { Meta } from '@storybook/addon-docs';
+import logo from '../../.storybook/public/mwui_logo.svg';
+
+<Meta title="🚧 Welcome" />
+
+<section style={{ minHeight: '100vh'}}>
+<div id="mwui-logo" >
+  <img src={logo} width="400" style={{ position: 'absolute', right: 'calc(50% - 200px)', top: '10vh' }} />
+</div>
+
+<h1 style={{ fontSize: '3em', marginTop: '25vh', marginBottom: '20px' }}>Welcome 👋</h1>
+
+### Get started with the MaibornWolff Design System
+
+The MWUI Web Component Libary is based on the MW Design System created and maintained in Figma. The styling of the Web Components is strictly coupled to the Figma Components
+using Design Tokens. These Design decisions are versioned and synced between Design and Web, therefore this Storybook represents a synced live state of the
+Figma Designs.
+
+There are several ways to include the MWUI components in a project. Build with Stenciljs, all components can be used as **Web Components**. Framwork-specific integrations make it easier to use the Web Components.
+
+<div style={{ display: 'flex', gap: 'var(--mw-component-chips-gap-between)' }}>
+  <mw-chip selected="true" icon="check">Web Components</mw-chip>
+  <mw-chip selected="true" icon="check">React</mw-chip>
+  <mw-chip selected="true" icon="check">Vue</mw-chip>
+  <mw-chip icon="check">Angular</mw-chip>
+</div>
+
+The components seen in Storybook are pure Web Components and therefore not bound to custom events.
+
+<h3 style={{ fontSize: '2em', textAlign: 'center', marginTop: '100px', marginBottom: '50px' }}>Learn more about...</h3>
+<div style={{ marginBottom: '50px', display: 'flex', gap: '24px' }}>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'column',
+      background: '#FAFAFA',
+      width: '200px',
+      borderRadius: '12px',
+      border: '1px solid #44555B',
+      padding: '18px',
+    }}
+  >
+    <strong>Design Tokens</strong>
+    <p>Learn more about Design Tokens, how we use and manage them and what the potentials are.</p>
+    <mw-button href="#" secondary label="COMING SOON"></mw-button>
+  </div>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'column',
+      background: '#FAFAFA',
+      width: '200px',
+      borderRadius: '12px',
+      border: '1px solid #44555B',
+      padding: '18px',
+    }}
+  >
+    <div>
+      <strong>Figma and Web Components</strong>
+    </div>
+    <mw-button href="#" secondary label="COMING SOON"></mw-button>
+  </div>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'column',
+      background: '#FAFAFA',
+      width: '200px',
+      borderRadius: '12px',
+      border: '1px solid #44555B',
+      padding: '18px',
+    }}
+  >
+    <div>
+      <strong>How to contribute</strong>
+    </div>
+    <mw-button href="mailto:martin.prinz@maibornwolff.de" label="CONTACT US"></mw-button>
+  </div>
+  <div
+    style={{
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexDirection: 'column',
+      background: '#FAFAFA',
+      width: '200px',
+      borderRadius: '12px',
+      border: '1px solid #44555B',
+      padding: '18px',
+    }}
+  >
+    <div>
+      <strong>Blog</strong>
+    </div>
+    <mw-button href="#" secondary label="COMING SOON"></mw-button>
+  </div>
+</div>
+
+</section>
+
+<section>
+<h3 style={{ fontSize: '2em', textAlign: 'center', marginBottom: '50px' }}>How to use the Component Library</h3>
+
+### Web Components
+
+Integrate Web Components in any framework or none at all:
+
+1. Install npm package
+
+```bash
+npm i tlm-stencil
+```
+
+2. Include the following in the `main.js` (e.g. Angular, Vue) or `index.js` (e.g. React):
+
+```javascript
+import { defineCustomElements } from 'tlm-stencil/loader';
+defineCustomElements(window);
+```
+
+### React
+
+1. Install npm package
+
+```bash
+npm i tlm-react
+```
+
+2. Import and use as a React-like component.
+
+```javascript
+import { MWButton } from 'tlm-react';
+```
+
+### Vue
+
+1. Install npm package
+
+```bash
+npm i tlm-vue
+```
+
+2. Import the library plugin in the `main.js` file:
+
+```javascript
+import { MWComponents } from 'tlm-vue';
+createApp(App).use(MWComponents).mount('#app');
+```
+
+3. You can then use your components within vue:
+
+```javascript
+<template>
+  <mw-button test-id="test-id" label="Press here" />
+</template>
+
+<script>
+import { MWButton } from 'tlm-vue';
+
+export default {
+  name: 'HelloWorld',
+  components: {
+    MWButton
+  }
+}
+```
+
+> **_NOTE:_** for known issues, see [MWUI Vue Integration](https://github.com/MaibornWolff/tlm-components/tree/main/tlm-vue#known-issues).
+
+### Angular
+
+To enable support for web components in Angular, add the following to the `@NgModule` in `app.module.ts`:
+
+```TypeScript
+schemas: [CUSTOM_ELEMENTS_SCHEMA];
+```
+
+> **_NOTE:_** The Angular integration is still work in progress
+
+### Further Readings
+
+- Learn more about [Stenciljs](https://stenciljs.com/)
+- [Listening to events from a non-JSX element](https://stenciljs.com/docs/events#listening-to-events-from-a-non-jsx-element)
+
+</section>

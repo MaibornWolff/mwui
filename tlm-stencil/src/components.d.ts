@@ -59,10 +59,6 @@ export namespace Components {
     }
     interface MwChip {
         /**
-          * Flag wether to show close icon or not
-         */
-        "close"?: boolean;
-        /**
           * Visually and functionally disable button
          */
         "disabled"?: boolean;
@@ -70,6 +66,14 @@ export namespace Components {
           * Name identifier of icon to be displayed in chip
          */
         "icon"?: string;
+        /**
+          * Selection state that changes onToggle. Can be set as mutable prop.
+         */
+        "selected": boolean;
+        /**
+          * Flag wether to show close icon or not
+         */
+        "showClose"?: boolean;
         /**
           * Must be provided for automated testing
          */
@@ -199,6 +203,9 @@ declare namespace LocalJSX {
           * Label to be displayed
          */
         "label"?: string;
+        /**
+          * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
+         */
         "onClickEmitter"?: (event: MwButtonCustomEvent<string>) => void;
         /**
           * Use secondary button style
@@ -215,10 +222,6 @@ declare namespace LocalJSX {
     }
     interface MwChip {
         /**
-          * Flag wether to show close icon or not
-         */
-        "close"?: boolean;
-        /**
           * Visually and functionally disable button
          */
         "disabled"?: boolean;
@@ -226,7 +229,22 @@ declare namespace LocalJSX {
           * Name identifier of icon to be displayed in chip
          */
         "icon"?: string;
-        "onClickEmitter"?: (event: MwChipCustomEvent<string>) => void;
+        /**
+          * 'close' event is fired when the close icon is clicked.
+         */
+        "onClose"?: (event: MwChipCustomEvent<any>) => void;
+        /**
+          * 'toggle' event is fired when the chip is clicked. Current selection state is emitted.
+         */
+        "onToggle"?: (event: MwChipCustomEvent<boolean>) => void;
+        /**
+          * Selection state that changes onToggle. Can be set as mutable prop.
+         */
+        "selected"?: boolean;
+        /**
+          * Flag wether to show close icon or not
+         */
+        "showClose"?: boolean;
         /**
           * Must be provided for automated testing
          */

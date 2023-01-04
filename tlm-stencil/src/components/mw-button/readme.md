@@ -19,9 +19,9 @@
 
 ## Events
 
-| Event          | Description | Type                  |
-| -------------- | ----------- | --------------------- |
-| `clickEmitter` |             | `CustomEvent<string>` |
+| Event          | Description                                                                              | Type                  |
+| -------------- | ---------------------------------------------------------------------------------------- | --------------------- |
+| `clickEmitter` | 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. | `CustomEvent<string>` |
 
 
 ----------------------------------------------

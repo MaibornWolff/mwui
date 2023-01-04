@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-04T09:59:42",
+  "timestamp": "2023-01-04T11:45:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -255,7 +255,7 @@
           "bubbles": true,
           "cancelable": false,
           "composed": false,
-          "docs": "",
+          "docs": "'onClick' event is fired when clicking the button, unless it is used with a `href` prop.",
           "docsTags": []
         }
       ],
@@ -276,23 +276,6 @@
       "docsTags": [],
       "usage": {},
       "props": [
-        {
-          "name": "close",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "close",
-          "reflectToAttr": false,
-          "docs": "Flag wether to show close icon or not",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
         {
           "name": "disabled",
           "type": "boolean",
@@ -326,6 +309,40 @@
           "required": false
         },
         {
+          "name": "selected",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "selected",
+          "reflectToAttr": false,
+          "docs": "Selection state that changes onToggle. Can be set as mutable prop.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showClose",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "show-close",
+          "reflectToAttr": false,
+          "docs": "Flag wether to show close icon or not",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "testId",
           "type": "string",
           "mutable": false,
@@ -345,12 +362,21 @@
       "methods": [],
       "events": [
         {
-          "event": "clickEmitter",
-          "detail": "string",
+          "event": "close",
+          "detail": "any",
           "bubbles": true,
           "cancelable": false,
           "composed": false,
-          "docs": "",
+          "docs": "'close' event is fired when the close icon is clicked.",
+          "docsTags": []
+        },
+        {
+          "event": "toggle",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "'toggle' event is fired when the chip is clicked. Current selection state is emitted.",
           "docsTags": []
         }
       ],

@@ -32,8 +32,10 @@ export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>('mw-chip', undef
   'testId',
   'icon',
   'disabled',
+  'showClose',
+  'selected',
   'close',
-  'clickEmitter'
+  'toggle'
 ]);
 
 
