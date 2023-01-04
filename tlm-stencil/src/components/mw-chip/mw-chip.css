@@ -5,6 +5,8 @@
 .chip {
   cursor: default;
   display: flex;
+  white-space: nowrap;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   width: fit-content;

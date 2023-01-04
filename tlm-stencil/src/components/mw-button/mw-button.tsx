@@ -44,6 +44,8 @@ const letterSpacing = Number(letterSpacingButtons.replace('%', '').trim()) / 100
 const base = css`
   appearance: none;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
   padding: ${mwComponentButtonMdPaddingTb} ${mwComponentButtonMdPaddingLr};
   font-family: '${mwComponentButtonTypo.fontFamily}';
   letter-spacing: ${letterSpacing}em;
