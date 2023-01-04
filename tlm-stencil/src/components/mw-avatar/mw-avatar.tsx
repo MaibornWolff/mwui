@@ -77,9 +77,9 @@ export class MwAvatar {
     return (
       <Host>
         <div test-id={this.testId} class={`avatar ${this.size}`}>
+          {this.alt && <div class={`fallback ${getTypoStyles(this.size)}`}>{this.alt.substring(0, 1)}</div>}
           {this.src && <img src={this.src} alt={this.alt} />}
           {this.icon && <mw-icon icon={this.icon} size={this.size}></mw-icon>}
-          {this.alt && <div class={`fallback ${getTypoStyles(this.size)}`}>{this.alt.substring(0, 1)}</div>}
         </div>
       </Host>
     );
