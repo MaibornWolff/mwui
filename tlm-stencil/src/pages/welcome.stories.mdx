@@ -21,7 +21,7 @@ Figma Designs.
 
 There are several ways to include the MWUI components in a project. Build with Stenciljs, all components can be used as **Web Components**. Framwork-specific integrations make it easier to use the Web Components.
 
-<div style={{ display: 'flex', gap: 'var(--mw-component-chips-gap-between)' }}>
+<div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--mw-component-chips-gap-between)' }}>
   <mw-chip selected="true" icon="check">Web Components</mw-chip>
   <mw-chip selected="true" icon="check">React</mw-chip>
   <mw-chip selected="true" icon="check">Vue</mw-chip>
@@ -31,14 +31,15 @@ There are several ways to include the MWUI components in a project. Build with S
 The components seen in Storybook are pure Web Components and therefore not bound to custom events.
 
 <h3 style={{ fontSize: '2em', textAlign: 'center', marginTop: '100px', marginBottom: '50px' }}>Learn more about...</h3>
-<div style={{ marginBottom: '50px', display: 'flex', gap: '24px' }}>
+<div style={{ marginBottom: '50px', display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
   <div
     style={{
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'column',
       background: '#FAFAFA',
-      width: '200px',
+      width: '180px',
+      minHeight: '200px',
       borderRadius: '12px',
       border: '1px solid #44555B',
       padding: '18px',
@@ -46,15 +47,16 @@ The components seen in Storybook are pure Web Components and therefore not bound
   >
     <strong>Design Tokens</strong>
     <p>Learn more about Design Tokens, how we use and manage them and what the potentials are.</p>
-    <mw-button href="#" secondary label="COMING SOON"></mw-button>
+    <mw-button href="#" variant="outline" label="COMING SOON"></mw-button>
   </div>
   <div
     style={{
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'column',
+      minHeight: '200px',
       background: '#FAFAFA',
-      width: '200px',
+      width: '180px',
       borderRadius: '12px',
       border: '1px solid #44555B',
       padding: '18px',
@@ -63,15 +65,16 @@ The components seen in Storybook are pure Web Components and therefore not bound
     <div>
       <strong>Figma and Web Components</strong>
     </div>
-    <mw-button href="#" secondary label="COMING SOON"></mw-button>
+    <mw-button href="#" variant="outline" label="COMING SOON"></mw-button>
   </div>
   <div
     style={{
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'column',
+      minHeight: '200px',
       background: '#FAFAFA',
-      width: '200px',
+      width: '180px',
       borderRadius: '12px',
       border: '1px solid #44555B',
       padding: '18px',
@@ -87,8 +90,9 @@ The components seen in Storybook are pure Web Components and therefore not bound
       display: 'flex',
       justifyContent: 'space-between',
       flexDirection: 'column',
+      minHeight: '200px',
       background: '#FAFAFA',
-      width: '200px',
+      width: '180px',
       borderRadius: '12px',
       border: '1px solid #44555B',
       padding: '18px',
@@ -97,7 +101,7 @@ The components seen in Storybook are pure Web Components and therefore not bound
     <div>
       <strong>Blog</strong>
     </div>
-    <mw-button href="#" secondary label="COMING SOON"></mw-button>
+    <mw-button href="#" variant="outline" label="COMING SOON"></mw-button>
   </div>
 </div>
 

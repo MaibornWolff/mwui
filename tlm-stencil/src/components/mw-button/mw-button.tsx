@@ -57,7 +57,10 @@ const base = css`
   line-height: ${mwComponentButtonLabelMediumLineHeight}px;
   font-weight: ${getFontWeightValue(mwComponentButtonLabelMediumFontWeight)};
   font-size: ${mwComponentButtonLabelMediumFontSize}px;
-  border-radius: ${mwComponentButtonBorderRadiusDefault}px;
+  border-top-left-radius: ${mwComponentButtonBorderRadiusDefault}px;
+  border-top-right-radius: ${mwComponentButtonBorderRadiusDefault}px;
+  border-bottom-left-radius: ${mwComponentButtonBorderRadiusDefault}px;
+  border-bottom-right-radius: ${mwComponentButtonBorderRadiusDefault}px;
   min-width: ${mwComponentSizeButtonFilledOutlineMinWidth};
 `;
 
