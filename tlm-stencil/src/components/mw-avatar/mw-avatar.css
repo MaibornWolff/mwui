@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
   background: var(--mw-component-avatars-color-bg-default);
   color: var(--mw-component-avatars-color-fg-default);
 }
@@ -35,6 +36,7 @@
 .avatar img {
   position: absolute;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
 }
 
 .avatar.large img {

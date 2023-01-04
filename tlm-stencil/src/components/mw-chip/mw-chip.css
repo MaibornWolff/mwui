@@ -20,6 +20,10 @@
   border-top-right-radius: var(--mw-component-chips-border-radius);
   border-bottom-left-radius: var(--mw-component-chips-border-radius);
   border-bottom-right-radius: var(--mw-component-chips-border-radius);
+  -webkit-border-top-left-radius: var(--mw-component-chips-border-radius);
+  -webkit-border-top-right-radius: var(--mw-component-chips-border-radius);
+  -webkit-border-bottom-left-radius: var(--mw-component-chips-border-radius);
+  -webkit-border-bottom-right-radius: var(--mw-component-chips-border-radius);
   gap: var(--mw-component-chips-gap-within);
   padding: 0 var(--mw-component-chips-padding-lr);
   outline: var(--mw-component-chips-border-width-default) solid var(--mw-component-chips-color-border-default);

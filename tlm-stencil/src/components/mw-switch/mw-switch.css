@@ -152,8 +152,10 @@ input:not(:checked):disabled + .slider {
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
+  -webkit-border-radius: 34px;
 }
 
 .slider.round:before {
   border-radius: 50%;
+  -webkit-border-radius: 50%;
 }
