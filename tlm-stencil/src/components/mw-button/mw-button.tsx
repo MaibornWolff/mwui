@@ -3,10 +3,10 @@ import { css } from '@emotion/css';
 import { getFontWeightValue } from '../../utils/utils';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import {
-  mwComponentButtonBorderWidthPrimaryTextFocused,
+  mwComponentButtonBorderWidthFilledFocused,
   mwComponentButtonFilledColorBgDefault,
   mwComponentButtonFilledColorOutlineFocused,
-  mwComponentButtonBorderWidthPrimaryTextDefault,
+  mwComponentButtonBorderWidthFilledDefault,
   mwComponentButtonFilledColorFgDefault,
   mwComponentButtonFilledColorBgHover,
   mwComponentButtonFilledColorFgHover,
@@ -16,7 +16,7 @@ import {
   mwComponentButtonFilledColorFgDisabled,
   mwComponentButtonFilledColorFgPressed,
   mwComponentButtonFilledColorBgFocused,
-  mwComponentButtonBorderWidthSecondaryDefault,
+  mwComponentButtonBorderWidthOutlineDefault,
   mwComponentButtonOutlineGhostColorFgDisabled,
   mwComponentButtonOutlineGhostColorFgFocused,
   mwComponentButtonOutlineGhostColorFgHover,
@@ -38,7 +38,7 @@ import {
   mwComponentButtonMdPaddingIcon,
   mwComponentSizeButtonFilledOutlineMinWidth,
   mwComponentButtonBorderRadiusDefault,
-  mwComponentButtonBorderWidthSecondaryFocused,
+  mwComponentButtonBorderWidthOutlineFocused,
   letterSpacingButtons,
 } from '../../../../tlm-token-farm/dist/js/MW_component.js';
 
@@ -66,7 +66,7 @@ const base = css`
 
 const filledButtonStyles = css`
   ${base};
-  border: ${mwComponentButtonBorderWidthPrimaryTextDefault};
+  border: ${mwComponentButtonBorderWidthFilledDefault};
   color: ${mwComponentButtonFilledColorFgDefault};
   background-color: ${mwComponentButtonFilledColorBgDefault};
   &:hover {
@@ -75,8 +75,8 @@ const filledButtonStyles = css`
   }
   &:focus {
     outline-color: ${mwComponentButtonFilledColorOutlineFocused};
-    outline: ${mwComponentButtonBorderWidthPrimaryTextFocused} solid;
-    outline-offset: ${-2 * mwComponentButtonBorderWidthPrimaryTextFocused};
+    outline: ${mwComponentButtonBorderWidthFilledFocused} solid;
+    outline-offset: ${-2 * mwComponentButtonBorderWidthFilledFocused};
     background-color: ${mwComponentButtonFilledColorBgFocused};
     color: ${mwComponentButtonFilledColorFgFocused};
   }
@@ -93,8 +93,8 @@ const filledButtonStyles = css`
 const outlineButtonStyles = css`
   ${base};
   border: 0;
-  outline: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
-  outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryDefault}px;
+  outline: ${mwComponentButtonBorderWidthOutlineDefault}px solid;
+  outline-offset: ${-2 * mwComponentButtonBorderWidthOutlineDefault}px;
   color: ${mwComponentButtonOutlineGhostColorFgDefault};
   background-color: ${mwComponentButtonOutlineGhostColorBgDefault};
   outline-color: ${mwComponentButtonOutlineGhostColorBorderDefault};
@@ -103,15 +103,15 @@ const outlineButtonStyles = css`
     color: ${mwComponentButtonOutlineGhostColorFgHover};
   }
   &:focus {
-    outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
+    outline: ${mwComponentButtonBorderWidthOutlineFocused}px solid;
     outline-color: ${mwComponentButtonOutlineGhostColorBorderFocused};
-    outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
+    outline-offset: ${-2 * mwComponentButtonBorderWidthOutlineFocused}px;
     color: ${mwComponentButtonOutlineGhostColorFgFocused};
   }
   &:active {
-    outline: ${mwComponentButtonBorderWidthSecondaryDefault}px solid;
+    outline: ${mwComponentButtonBorderWidthOutlineDefault}px solid;
     outline-color: ${mwComponentButtonOutlineGhostColorBorderPressed};
-    outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryDefault}px;
+    outline-offset: ${-2 * mwComponentButtonBorderWidthOutlineDefault}px;
     color: ${mwComponentButtonOutlineGhostColorFgPressed};
   }
   &:disabled {
@@ -130,9 +130,9 @@ const ghostButtonStyles = css`
     color: ${mwComponentButtonOutlineGhostColorFgHover};
   }
   &:focus {
-    outline: ${mwComponentButtonBorderWidthSecondaryFocused}px solid;
+    outline: ${mwComponentButtonBorderWidthOutlineFocused}px solid;
     outline-color: ${mwComponentButtonOutlineGhostColorBorderFocused};
-    outline-offset: ${-2 * mwComponentButtonBorderWidthSecondaryFocused}px;
+    outline-offset: ${-2 * mwComponentButtonBorderWidthOutlineFocused}px;
     color: ${mwComponentButtonOutlineGhostColorFgFocused};
   }
   &:active {
