@@ -57,6 +57,8 @@ export namespace Components {
          */
         "variant"?: ButtonVariant;
     }
+    interface MwCard {
+    }
     interface MwChip {
         /**
           * Visually and functionally disable button
@@ -141,6 +143,12 @@ declare global {
         prototype: HTMLMwButtonElement;
         new (): HTMLMwButtonElement;
     };
+    interface HTMLMwCardElement extends Components.MwCard, HTMLStencilElement {
+    }
+    var HTMLMwCardElement: {
+        prototype: HTMLMwCardElement;
+        new (): HTMLMwCardElement;
+    };
     interface HTMLMwChipElement extends Components.MwChip, HTMLStencilElement {
     }
     var HTMLMwChipElement: {
@@ -162,6 +170,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "mw-avatar": HTMLMwAvatarElement;
         "mw-button": HTMLMwButtonElement;
+        "mw-card": HTMLMwCardElement;
         "mw-chip": HTMLMwChipElement;
         "mw-icon": HTMLMwIconElement;
         "mw-switch": HTMLMwSwitchElement;
@@ -219,6 +228,8 @@ declare namespace LocalJSX {
           * Button variants
          */
         "variant"?: ButtonVariant;
+    }
+    interface MwCard {
     }
     interface MwChip {
         /**
@@ -293,6 +304,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mw-avatar": MwAvatar;
         "mw-button": MwButton;
+        "mw-card": MwCard;
         "mw-chip": MwChip;
         "mw-icon": MwIcon;
         "mw-switch": MwSwitch;
@@ -304,6 +316,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
             "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
+            "mw-card": LocalJSX.MwCard & JSXBase.HTMLAttributes<HTMLMwCardElement>;
             "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
