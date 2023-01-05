@@ -22,87 +22,47 @@ Figma Designs.
 There are several ways to include the MWUI components in a project. Build with Stenciljs, all components can be used as **Web Components**. Framwork-specific integrations make it easier to use the Web Components.
 
 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--mw-component-chips-gap-between)' }}>
-  <mw-chip selected="true" icon="check">Web Components</mw-chip>
-  <mw-chip selected="true" icon="check">React</mw-chip>
-  <mw-chip selected="true" icon="check">Vue</mw-chip>
+  <mw-chip selected="true" icon="check">
+    Web Components
+  </mw-chip>
+  <mw-chip selected="true" icon="check">
+    React
+  </mw-chip>
+  <mw-chip selected="true" icon="check">
+    Vue
+  </mw-chip>
   <mw-chip icon="check">Angular</mw-chip>
 </div>
 
 The components seen in Storybook are pure Web Components and therefore not bound to custom events.
 
 <h3 style={{ fontSize: '2em', textAlign: 'center', marginTop: '100px', marginBottom: '50px' }}>Learn more about...</h3>
-<div style={{ marginBottom: '50px', display: 'flex', flexWrap: 'wrap', gap: '24px' }}>
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      flexDirection: 'column',
-      background: '#FAFAFA',
-      width: '180px',
-      minHeight: '200px',
-      borderRadius: '12px',
-      border: '1px solid #44555B',
-      padding: '18px',
-    }}
-  >
-    <strong>Design Tokens</strong>
-    <p>Learn more about Design Tokens, how we use and manage them and what the potentials are.</p>
-    <mw-button href="#" variant="outline" label="COMING SOON"></mw-button>
-  </div>
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      flexDirection: 'column',
-      minHeight: '200px',
-      background: '#FAFAFA',
-      width: '180px',
-      borderRadius: '12px',
-      border: '1px solid #44555B',
-      padding: '18px',
-    }}
-  >
-    <div>
-      <strong>Figma and Web Components</strong>
-    </div>
-    <mw-button href="#" variant="outline" label="COMING SOON"></mw-button>
-  </div>
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      flexDirection: 'column',
-      minHeight: '200px',
-      background: '#FAFAFA',
-      width: '180px',
-      borderRadius: '12px',
-      border: '1px solid #44555B',
-      padding: '18px',
-    }}
-  >
-    <div>
-      <strong>How to contribute</strong>
-    </div>
-    <mw-button href="mailto:martin.prinz@maibornwolff.de" label="CONTACT US"></mw-button>
-  </div>
-  <div
-    style={{
-      display: 'flex',
-      justifyContent: 'space-between',
-      flexDirection: 'column',
-      minHeight: '200px',
-      background: '#FAFAFA',
-      width: '180px',
-      borderRadius: '12px',
-      border: '1px solid #44555B',
-      padding: '18px',
-    }}
-  >
-    <div>
-      <strong>Blog</strong>
-    </div>
-    <mw-button href="#" variant="outline" label="COMING SOON"></mw-button>
-  </div>
+<div style={{ marginBottom: '50px', display: 'grid', gridAutoColumns: 'minmax(0, 1fr)', gridAutoFlow: 'column', gap: '20px' }}>
+  <mw-card style={{ display: 'contents' }} elevated>
+    <mw-card-title title="Design Tokens"></mw-card-title>
+    <mw-card-body>Learn more about Design Tokens, how we use and manage them and what the potentials are.</mw-card-body>
+    <mw-card-footer>
+      <mw-button href="#" variant="outline" label="Coming soon"></mw-button>
+    </mw-card-footer>
+  </mw-card>
+  <mw-card style={{ display: 'contents' }} elevated>
+    <mw-card-title title="Figma and Web Components"></mw-card-title>
+    <mw-card-footer>
+      <mw-button href="#" variant="outline" label="Coming soon"></mw-button>
+    </mw-card-footer>
+  </mw-card>
+  <mw-card style={{ display: 'contents' }} elevated>
+    <mw-card-title title="How to contribute"></mw-card-title>
+    <mw-card-footer>
+      <mw-button href="mailto:martin.prinz@maibornwolff.de" label="Get in contact"></mw-button>
+    </mw-card-footer>
+  </mw-card>
+  <mw-card style={{ display: 'contents' }} elevated>
+    <mw-card-title title="Blog"></mw-card-title>
+    <mw-card-footer>
+      <mw-button label="Coming soon"></mw-button>
+    </mw-card-footer>
+  </mw-card>
 </div>
 
 </section>

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-05T09:18:58",
+  "timestamp": "2023-01-05T22:25:27",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -184,6 +184,36 @@
           "required": false
         },
         {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\" | \"x-large\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Button size",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "x-large",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "target",
           "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\"",
           "mutable": false,
@@ -277,8 +307,476 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/mw-card/mw-card.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card",
+      "readme": "# mw-card\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "elevated",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "elevated",
+          "reflectToAttr": false,
+          "docs": "Use box-shadow for elevation style",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "outlined",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "outlined",
+          "reflectToAttr": false,
+          "docs": "Display outline",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-body",
+      "readme": "# mw-card-body\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-footer",
+      "readme": "# mw-card-footer\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "justifyCenter",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-center",
+          "reflectToAttr": false,
+          "docs": "justify-content: center",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyEnd",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-end",
+          "reflectToAttr": false,
+          "docs": "justify-content: end",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyFlexEnd",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-flex-end",
+          "reflectToAttr": false,
+          "docs": "justify-content: flex-end",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyFlexStart",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-flex-start",
+          "reflectToAttr": false,
+          "docs": "justify-content: flex-start",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyLeft",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-left",
+          "reflectToAttr": false,
+          "docs": "justify-content: left",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyNormal",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-normal",
+          "reflectToAttr": false,
+          "docs": "justify-content: normal",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyRight",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-right",
+          "reflectToAttr": false,
+          "docs": "justify-content: right",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifySpaceAround",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-space-around",
+          "reflectToAttr": false,
+          "docs": "justify-content: space-around",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifySpaceBetween",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-space-between",
+          "reflectToAttr": false,
+          "docs": "justify-content: space-between",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifySpaceEvenly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-space-evenly",
+          "reflectToAttr": false,
+          "docs": "justify-content: space-evenly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyStart",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-start",
+          "reflectToAttr": false,
+          "docs": "justify-content: start",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-card-header/mw-card-header.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-header",
+      "readme": "# mw-card-header\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "header",
+          "type": "string",
+          "mutable": false,
+          "attr": "header",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "subheader",
+          "type": "string",
+          "mutable": false,
+          "attr": "subheader",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-image",
+      "readme": "# mw-card-image\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alt",
+          "type": "string",
+          "mutable": false,
+          "attr": "alt",
+          "reflectToAttr": false,
+          "docs": "Alt text for the image",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "mutable": false,
+          "attr": "src",
+          "reflectToAttr": false,
+          "docs": "Image source",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-card-title/mw-card-title.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-title",
+      "readme": "# mw-card-title\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "metadata",
+          "type": "string",
+          "mutable": false,
+          "attr": "metadata",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "subtitle",
+          "type": "string",
+          "mutable": false,
+          "attr": "subtitle",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "mutable": false,
+          "attr": "title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/mw-chip/mw-chip.tsx",
-      "encapsulation": "none",
+      "encapsulation": "shadow",
       "tag": "mw-chip",
       "readme": "# mw-chip\n\n\n",
       "docs": "",

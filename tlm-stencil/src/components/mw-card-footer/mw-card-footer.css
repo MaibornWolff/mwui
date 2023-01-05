@@ -1,7 +1,52 @@
-:host {
-  display: block;
+.card-footer {
   display: flex;
   justify-content: end;
+  align-items: center;
   padding: var(--mw-component-card-padding-components-t-footer) var(--mw-component-card-padding-components-lr-default) 0 var(--mw-component-card-padding-components-lr-default);
   gap: var(--mw-component-button-sm-gap-between);
+}
+
+.justify-justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: start;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.justify-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.justify-left {
+  justify-content: left;
+}
+
+.justify-right {
+  justify-content: right;
+}
+
+
+.justify-normal {
+  justify-content: normal;
 }

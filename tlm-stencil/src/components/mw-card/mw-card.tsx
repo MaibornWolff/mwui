@@ -7,7 +7,17 @@ import classnames from 'classnames';
   shadow: true,
 })
 export class MwCard {
+  /**
+   * Must be provided for automated testing
+   */
+  @Prop() testId!: string;
+  /**
+   * Display outline
+   */
   @Prop() outlined?: boolean = false;
+  /**
+   * Use box-shadow for elevation style
+   */
   @Prop() elevated?: boolean = false;
 
   render() {

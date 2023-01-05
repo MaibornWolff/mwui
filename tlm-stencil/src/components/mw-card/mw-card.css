@@ -5,9 +5,11 @@
 .card {
   /* FIXME: token */
   max-width: 600px;
+  width: fit-content;
   overflow-wrap: break-word;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: var(--mw-component-card-padding-components-tb-default);
   padding-top: var(--mw-component-card-padding-components-tb-default);
   padding-bottom: var(--mw-component-card-padding-components-tb-default);
@@ -17,6 +19,7 @@
   -moz-border-radius: var(--mw-component-card-border-radius);
   color: var(--mw-component-card-fg-default);
   border: none;
+  transition: all .4 ease;
 }
 
 .card:first-child {

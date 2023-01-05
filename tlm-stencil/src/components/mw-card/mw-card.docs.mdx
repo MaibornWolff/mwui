@@ -1,0 +1,162 @@
+import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+# Card
+
+<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+  <p style={{ width: '50%' }}>
+    The <code>mw-card</code> component provides a basic structure element with <code>default</code>, <code>elevated</code> or <code>outlined</code> appearances. Different Card
+    variants can be created by composing existing Card sub-elements:
+    <ul>
+      <li>
+        <a href="#card-body">mw-card-body</a>
+      </li>
+      <li>
+        <a href="#card-header">mw-card-header</a>
+      </li>
+      <li>
+        <a href="#card-title">mw-card-title</a>
+      </li>
+      <li>
+        <a href="#card-image">mw-card-image</a>
+      </li>
+      <li>
+        <a href="#card-footer">mw-card-footer</a>
+      </li>
+    </ul>
+  </p>
+  <mw-card style={{ width: '40%' }} outlined>
+    <mw-card-header header="Header" subheader="Subheader">
+      <mw-avatar slot="icon" src="https://i.pravatar.cc/150" alt="John Doe"></mw-avatar>
+    </mw-card-header>
+    <mw-card-body>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</mw-card-body>
+  </mw-card>
+</div>
+
+<ArgsTable of="mw-card" />
+
+### Card Body
+
+<Canvas withSource="open">
+  <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+    <Story id="components-card--card-body" />
+  </div>
+</Canvas>
+
+### Card Header
+
+<Canvas withSource="open">
+  <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+    <Story id="components-card--card-header" />
+  </div>
+</Canvas>
+
+### Card Title
+
+<Canvas withSource="open">
+  <div style={{ display: 'flex', gap: '20px', justifyContent: 'space-evenly' }}>
+    <mw-card style={{ display: 'contents' }} outlined>
+      <mw-card-title title="Title"></mw-card-title>
+      <mw-card-body>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam.
+      </mw-card-body>
+    </mw-card>
+    <mw-card style={{ display: 'contents' }} outlined>
+      <mw-card-title title="Title" subtitle="Subtitle"></mw-card-title>
+      <mw-card-body>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam.
+      </mw-card-body>
+    </mw-card>
+    <div style={{ display: 'contents' }}>
+      <Story id="components-card--card-title" />
+    </div>
+  </div>
+</Canvas>
+
+### Card Image
+
+<Canvas withSource="open">
+  <div style={{ display: 'flex', gap: '20px', justifyContent: 'space-evenly' }}>
+    <Story id="components-card--card-image-top" />
+    <Story id="components-card--card-image-bottom" />
+    <mw-card elevated>
+      <mw-card-header header="Header" subheader="Subheader">
+        <mw-avatar slot="icon" src="https://i.pravatar.cc/150" alt="John Doe"></mw-avatar>
+      </mw-card-header>
+      <mw-card-image src="https://placedog.net/250/150?r" alt="card image"></mw-card-image>
+      <mw-card-title title="Title" subtitle="Subtitle" metadata="Metadata"></mw-card-title>
+    </mw-card>
+  </div>
+</Canvas>
+
+```jsx
+<mw-card elevated>
+  <mw-card-image src="https://placedog.net/250/150?r" alt="card image"></mw-card-image>
+  <mw-card-title title="Title" subtitle="Subtitle" metadata="Metadata"></mw-card-title>
+</mw-card>
+```
+
+### Card Image Only
+
+<Canvas withSource="open">
+  <div style={{ display: 'flex', gap: '20px', justifyContent: 'space-evenly' }}>
+    <mw-card elevated>
+      <mw-card-image src="https://placedog.net/350/200?r" alt="card image"></mw-card-image>
+    </mw-card>
+    <mw-card elevated>
+      <mw-card-image src="https://placedog.net/200/200?r" alt="card image"></mw-card-image>
+    </mw-card>
+    <mw-card elevated>
+      <mw-card-image src="https://placedog.net/100/200?r" alt="card image"></mw-card-image>
+    </mw-card>
+  </div>
+</Canvas>
+
+### Card Footer
+
+<Canvas withSource="open">
+  <div style={{ display: 'flex', gap: '20px' }}>
+    <Story id="components-card--card-footer" />
+    <mw-card test-id="${args.testId}" outlined>
+      <mw-card-body>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam.
+      </mw-card-body>
+      <mw-card-footer start>
+        <mw-button label="Left" size="small"></mw-button>
+      </mw-card-footer>
+    </mw-card>
+    <mw-card test-id="${args.testId}" outlined>
+      <mw-card-body>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam.
+      </mw-card-body>
+      <mw-card-footer center>
+        <mw-button label="Centerd" size="small"></mw-button>
+      </mw-card-footer>
+    </mw-card>
+
+  </div>
+</Canvas>
+
+The `mw-card-footer` element is not limited to the usage of Buttons. Any Element passed as a child is rendered in a flex-based layout.
+
+<Canvas withSource="open">
+  <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+    <mw-card test-id="${args.testId}" elevated="${args.elevated}" outlined="${args.outlined}">
+      <mw-card-header header="Header" subheader="Subheader">
+        <mw-avatar slot="icon" src="https://i.pravatar.cc/150" alt="John Doe"></mw-avatar>
+      </mw-card-header>
+      <mw-card-body>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam.
+      </mw-card-body>
+      <mw-card-footer justify-space-between>
+        <mw-switch label="switch something"></mw-switch>
+       <div style={{ display: 'flex', gap: '12px'}}>
+        <mw-button label="Read Less" size="small" variant="outline"></mw-button>
+        <mw-button label="Read More" size="small"></mw-button>
+       </div>
+      </mw-card-footer>
+    </mw-card>
+
+  </div>
+</Canvas>
+
+<ArgsTable of="mw-card-footer" />

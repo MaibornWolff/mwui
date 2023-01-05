@@ -25,7 +25,7 @@ export class MwCardImage {
 
   componentWillLoad() {
     const card = this.hostElement.parentNode;
-    this.isOnlyChild = card.childNodes.length === 3;
+    this.isOnlyChild = card.childElementCount === 1;
     this.isFirstChild = !this.isOnlyChild && this.hostElement.isSameNode(card.firstElementChild);
     this.isLastChild = !this.isOnlyChild && this.hostElement.isSameNode(card.lastElementChild);
   }

@@ -22,9 +22,54 @@ export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>('mw-button',
   'disabled',
   'label',
   'variant',
+  'size',
   'href',
   'target',
   'clickEmitter'
+]);
+
+
+export const MwCard = /*@__PURE__*/ defineContainer<JSX.MwCard>('mw-card', undefined, [
+  'testId',
+  'outlined',
+  'elevated'
+]);
+
+
+export const MwCardBody = /*@__PURE__*/ defineContainer<JSX.MwCardBody>('mw-card-body', undefined);
+
+
+export const MwCardFooter = /*@__PURE__*/ defineContainer<JSX.MwCardFooter>('mw-card-footer', undefined, [
+  'justifyCenter',
+  'justifyStart',
+  'justifyEnd',
+  'justifyNormal',
+  'justifyLeft',
+  'justifyRight',
+  'justifyFlexStart',
+  'justifyFlexEnd',
+  'justifySpaceAround',
+  'justifySpaceBetween',
+  'justifySpaceEvenly'
+]);
+
+
+export const MwCardHeader = /*@__PURE__*/ defineContainer<JSX.MwCardHeader>('mw-card-header', undefined, [
+  'header',
+  'subheader'
+]);
+
+
+export const MwCardImage = /*@__PURE__*/ defineContainer<JSX.MwCardImage>('mw-card-image', undefined, [
+  'src',
+  'alt'
+]);
+
+
+export const MwCardTitle = /*@__PURE__*/ defineContainer<JSX.MwCardTitle>('mw-card-title', undefined, [
+  'title',
+  'subtitle',
+  'metadata'
 ]);
 
 

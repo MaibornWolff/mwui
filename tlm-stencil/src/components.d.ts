@@ -62,12 +62,66 @@ export namespace Components {
         "variant"?: ButtonVariant;
     }
     interface MwCard {
+        /**
+          * Use box-shadow for elevation style
+         */
         "elevated"?: boolean;
+        /**
+          * Display outline
+         */
         "outlined"?: boolean;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
     }
     interface MwCardBody {
     }
     interface MwCardFooter {
+        /**
+          * justify-content: center
+         */
+        "justifyCenter"?: boolean;
+        /**
+          * justify-content: end
+         */
+        "justifyEnd"?: boolean;
+        /**
+          * justify-content: flex-end
+         */
+        "justifyFlexEnd"?: boolean;
+        /**
+          * justify-content: flex-start
+         */
+        "justifyFlexStart"?: boolean;
+        /**
+          * justify-content: left
+         */
+        "justifyLeft"?: boolean;
+        /**
+          * justify-content: normal
+         */
+        "justifyNormal"?: boolean;
+        /**
+          * justify-content: right
+         */
+        "justifyRight"?: boolean;
+        /**
+          * justify-content: space-around
+         */
+        "justifySpaceAround"?: boolean;
+        /**
+          * justify-content: space-between
+         */
+        "justifySpaceBetween"?: boolean;
+        /**
+          * justify-content: space-evenly
+         */
+        "justifySpaceEvenly"?: boolean;
+        /**
+          * justify-content: start
+         */
+        "justifyStart"?: boolean;
     }
     interface MwCardHeader {
         "header": string;
@@ -298,12 +352,66 @@ declare namespace LocalJSX {
         "variant"?: ButtonVariant;
     }
     interface MwCard {
+        /**
+          * Use box-shadow for elevation style
+         */
         "elevated"?: boolean;
+        /**
+          * Display outline
+         */
         "outlined"?: boolean;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
     }
     interface MwCardBody {
     }
     interface MwCardFooter {
+        /**
+          * justify-content: center
+         */
+        "justifyCenter"?: boolean;
+        /**
+          * justify-content: end
+         */
+        "justifyEnd"?: boolean;
+        /**
+          * justify-content: flex-end
+         */
+        "justifyFlexEnd"?: boolean;
+        /**
+          * justify-content: flex-start
+         */
+        "justifyFlexStart"?: boolean;
+        /**
+          * justify-content: left
+         */
+        "justifyLeft"?: boolean;
+        /**
+          * justify-content: normal
+         */
+        "justifyNormal"?: boolean;
+        /**
+          * justify-content: right
+         */
+        "justifyRight"?: boolean;
+        /**
+          * justify-content: space-around
+         */
+        "justifySpaceAround"?: boolean;
+        /**
+          * justify-content: space-between
+         */
+        "justifySpaceBetween"?: boolean;
+        /**
+          * justify-content: space-evenly
+         */
+        "justifySpaceEvenly"?: boolean;
+        /**
+          * justify-content: start
+         */
+        "justifyStart"?: boolean;
     }
     interface MwCardHeader {
         "header"?: string;
