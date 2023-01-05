@@ -10,11 +10,11 @@
                 "type": "color"
               },
               "hover": {
-                "value": "#F86F96",
+                "value": "#c42177",
                 "type": "color"
               },
               "pressed": {
-                "value": "#c42177",
+                "value": "#991766",
                 "type": "color"
               },
               "disabled": {
@@ -22,7 +22,7 @@
                 "type": "color"
               },
               "focused": {
-                "value": "#F86F96",
+                "value": "#c42177",
                 "type": "color"
               }
             },
@@ -74,7 +74,7 @@
                 "type": "color"
               },
               "pressed": {
-                "value": "#c42177",
+                "value": "#991766",
                 "type": "color"
               },
               "disabled": {
@@ -96,7 +96,7 @@
                 "type": "color"
               },
               "pressed": {
-                "value": "#c42177",
+                "value": "#991766",
                 "type": "color"
               },
               "disabled": {
@@ -335,7 +335,7 @@
               "type": "color"
             },
             "pressed": {
-              "value": "#c42177",
+              "value": "#991766",
               "type": "color"
             },
             "focused": {
@@ -475,15 +475,15 @@
               "type": "color"
             },
             "hover": {
-              "value": "#F86F96",
+              "value": "#c42177",
               "type": "color"
             },
             "focused": {
-              "value": "#F86F96",
+              "value": "#c42177",
               "type": "color"
             },
             "pressed": {
-              "value": "#c42177",
+              "value": "#991766",
               "type": "color"
             },
             "unselected": {
@@ -943,7 +943,7 @@
         "color": {
           "bg": {
             "default": {
-              "value": "#c42177",
+              "value": "#991766",
               "type": "color"
             }
           },
@@ -1379,17 +1379,17 @@
               "type": "color"
             },
             "muted": {
-              "value": "#F86F96",
+              "value": "#c42177",
               "type": "color",
               "description": "Recommended for \n- hover states\n- focused states"
             },
             "intense": {
-              "value": "#c42177",
+              "value": "#991766",
               "type": "color",
               "description": "recommended for \n- pressed states"
             },
             "subtle": {
-              "value": "#f9c8c7",
+              "value": "#F9C7E2",
               "type": "color"
             },
             "disabled": {
@@ -1670,19 +1670,19 @@
         },
         "pink": {
           "100": {
-            "value": "#FBEEEC",
+            "value": "#F9E2EE",
             "type": "color"
           },
           "200": {
-            "value": "#f9c8c7",
+            "value": "#F9C7E2",
             "type": "color"
           },
           "300": {
-            "value": "#fa9ea9",
+            "value": "#FA9EC7",
             "type": "color"
           },
           "400": {
-            "value": "#F86F96",
+            "value": "#F86FA8",
             "type": "color"
           },
           "500": {
@@ -1712,27 +1712,27 @@
         },
         "purple": {
           "100": {
-            "value": "#f6e8f8",
+            "value": "#E0DDF4",
             "type": "color"
           },
           "200": {
-            "value": "#eacaee",
+            "value": "#CAC1EB",
             "type": "color"
           },
           "300": {
-            "value": "#d8a8e6",
+            "value": "#B0A0E4",
             "type": "color"
           },
           "400": {
-            "value": "#c089dc",
+            "value": "#9F89DC",
             "type": "color"
           },
           "500": {
-            "value": "#a46cd3",
+            "value": "#8C6ED4",
             "type": "color"
           },
           "600": {
-            "value": "#8451c9",
+            "value": "#7951C9",
             "type": "color"
           },
           "700": {
