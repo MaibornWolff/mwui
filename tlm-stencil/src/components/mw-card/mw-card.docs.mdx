@@ -3,9 +3,11 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 # Card
 
 <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-  <p style={{ width: '50%' }}>
-    The <code>mw-card</code> component provides a basic structure element with <code>default</code>, <code>elevated</code> or <code>outlined</code> appearances. Different Card
-    variants can be created by composing existing Card sub-elements:
+  <div style={{ width: '50%' }}>
+    <p>
+      The <code>mw-card</code> component provides a basic structure element with <code>default</code>, <code>elevated</code> or <code>outlined</code> appearances. Different Card
+      variants can be created by composing Card sub-elements in arbitrary order:
+    </p>
     <ul>
       <li>
         <a href="#card-body">mw-card-body</a>
@@ -23,14 +25,27 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
         <a href="#card-footer">mw-card-footer</a>
       </li>
     </ul>
-  </p>
-  <mw-card style={{ width: '40%' }} outlined>
-    <mw-card-header header="Header" subheader="Subheader">
-      <mw-avatar slot="icon" src="https://i.pravatar.cc/150" alt="John Doe"></mw-avatar>
-    </mw-card-header>
-    <mw-card-body>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</mw-card-body>
-  </mw-card>
+  </div>
+  <div style={{ width: '40%' }}>
+    <Story id="components-card--card-header" />
+  </div>
 </div>
+
+### Variants
+
+<Canvas>
+  <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+    <mw-card>
+      <mw-card-body>default</mw-card-body>
+    </mw-card>
+    <mw-card outlined>
+      <mw-card-body>outlined</mw-card-body>
+    </mw-card>
+    <mw-card elevated>
+      <mw-card-body>elevated</mw-card-body>
+    </mw-card>
+  </div>
+</Canvas>
 
 <ArgsTable of="mw-card" />
 

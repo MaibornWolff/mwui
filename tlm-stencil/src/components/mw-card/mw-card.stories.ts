@@ -33,8 +33,8 @@ const HeaderTemplate = args => `
 export const CardHeader = HeaderTemplate.bind({});
 CardHeader.args = {
   testId: 'card',
-  elevated: true,
-  outlined: false,
+  elevated: false,
+  outlined: true,
 };
 
 const TitleTemplate = args => `
