@@ -16,7 +16,7 @@
     <script type="module" src="/build/tlm-stencil.esm.js"></script>
     <script nomodule src="/build/tlm-stencil.js"></script>
   </head>
-  <body>
+  <body style="padding-bottom: 20vh">
     <section>
       <h2>Button</h2>
       <h3>Filled</h3>
@@ -72,6 +72,13 @@
         <mw-button variant="ghost"
           ><span slot="icon-start"><mw-icon icon="settings" /></span
         ></mw-button>
+      </div>
+      <h3>Sizing</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-button label="SMALL" size="small"></mw-button>
+        <mw-button label="MEDIUM"></mw-button>
+        <mw-button label="LARGE" size="large"></mw-button>
+        <mw-button label="X-LARGE" size="x-large"></mw-button>
       </div>
       <h3>Link Button</h3>
       <div style="display: flex; gap: 16px">
@@ -147,8 +154,91 @@
       <br />
       <hr />
       <h2>Cards</h2>
+      <h3>CardBody</h3>
       <div style="display: flex; gap: 20px">
-        <mw-card>Simple Card</mw-card>
+        <mw-card><mw-card-body>Card Body</mw-card-body></mw-card>
+        <mw-card elevated><mw-card-body>Elevated</mw-card-body></mw-card>
+        <mw-card outlined><mw-card-body>Outlined</mw-card-body></mw-card>
+      </div>
+      <h3>CardHeader</h3>
+      <div style="display: flex; gap: 20px">
+        <mw-card>
+          <mw-card-header header="Header" subheader="Subheader"></mw-card-header>
+        </mw-card>
+        <mw-card>
+          <mw-card-header header="Header" subheader="Subheader"></mw-card-header>
+          <mw-card-body>Simple Card With Header</mw-card-body>
+        </mw-card>
+        <mw-card outlined>
+          <mw-card-header header="Outlined" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe"></mw-card-header>
+          <mw-card-body>I am the body section of this card.</mw-card-body>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-header header="Elevated" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe"></mw-card-header>
+          <mw-card-body>I have a CardFooter with a single button. And I like it. Lorem ipsum dolor sit amet, here comes the line break</mw-card-body>
+          <mw-card-footer>
+            <mw-button label="Ok" size="small" variant="filled"></mw-button>
+          </mw-card-footer>
+        </mw-card>
+      </div>
+      <h3>CardTitle</h3>
+      <div style="display: flex; gap: 20px">
+        <mw-card outlined>
+          <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
+          <mw-card-body>I have a CardFooter with a single button. And I like it. Lorem ipsum dolor sit amet, here comes the line break</mw-card-body>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
+          <mw-card-footer>
+            <mw-button label="Cool" size="small"></mw-button>
+          </mw-card-footer>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-title title="Title" subtitle="Subtitle" metadata="Metadata"></mw-card-title>
+          <mw-card-body>Lorem ipsum dolor sit amet.</mw-card-body>
+          <mw-card-footer>
+            <mw-button label="Cancel" size="small" variant="outline"></mw-button>
+            <mw-button label="Save" size="small"></mw-button>
+          </mw-card-footer>
+          </mw-card>
+        </div>
+        <h3>CardImage</h3>
+        <div style="display: flex; gap: 20px">
+        <mw-card elevated>
+          <mw-card-header header="Header" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe"></mw-card-header>
+          <mw-card-image src="https://placedog.net/500/280" alt="card image"></mw-card-image>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-image src="https://placedog.net/500/280" alt="card image"></mw-card-image>
+          <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
+          <mw-card-body>I am the body section of this card.</mw-card-body>
+          <mw-card-footer>
+            <mw-button label="Cancel" size="small" variant="outline"></mw-button>
+            <mw-button label="Save" size="small"></mw-button>
+          </mw-card-footer>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-header header="Header" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe"></mw-card-header>
+          <mw-card-image src="https://placedog.net/500/280" alt="card image"></mw-card-image>
+          <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
+          <mw-card-body>I am the body section of this card.</mw-card-body>
+          <mw-card-footer>
+            <mw-button label="Cancel" size="small" variant="outline"></mw-button>
+            <mw-button label="Save" size="small"></mw-button>
+          </mw-card-footer>
+        </mw-card>
+      </div>
+      <h3>CardImage Only</h3>
+      <div style="display: flex; gap: 20px">
+        <mw-card>
+          <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
+        </mw-card>
+        <mw-card outlined>
+          <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
+        </mw-card>
       </div>
     </section>
   </body>

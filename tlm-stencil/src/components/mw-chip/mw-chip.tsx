@@ -1,16 +1,10 @@
 import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
-import { css } from '@emotion/css';
-import { getFontWeightValue } from '../../utils/utils';
-import { mwComponentChipsTypoFontWeight } from '../../../../tlm-token-farm/dist/js/MW_component.js';
-
-const typo = css`
-  font-weight: ${getFontWeightValue(mwComponentChipsTypoFontWeight)};
-`;
+import classNames from 'classnames';
 
 @Component({
   tag: 'mw-chip',
   styleUrl: 'mw-chip.css',
-  shadow: false,
+  shadow: true,
 })
 export class MwChip {
   /**
@@ -63,7 +57,15 @@ export class MwChip {
   render() {
     return (
       <Host>
-        <div tabindex="0" class={`chip ${typo} ${this.selected && 'selected'} ${this.disabled && 'disabled'}`} onClick={this.handleClick} test-id={this.testId}>
+        <div
+          tabindex="0"
+          class={classNames('chip', {
+            selected: this.selected,
+            disabled: this.disabled,
+          })}
+          onClick={this.handleClick}
+          test-id={this.testId}
+        >
           {!!this.icon && <mw-icon icon={this.icon} size="medium"></mw-icon>}
           <slot></slot>
           {this.showClose && (

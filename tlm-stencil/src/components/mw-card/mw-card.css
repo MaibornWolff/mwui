@@ -3,13 +3,24 @@
 }
 
 .card {
+  /* FIXME: token */
+  max-width: 600px;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mw-component-card-padding-components-tb-default);
+  padding-top: var(--mw-component-card-padding-components-tb-default);
+  padding-bottom: var(--mw-component-card-padding-components-tb-default);
   background: var(--mw-component-card-bg-default);
   border-radius: var(--mw-component-card-border-radius);
   -webkit-border-radius: var(--mw-component-card-border-radius);
   -moz-border-radius: var(--mw-component-card-border-radius);
   color: var(--mw-component-card-fg-default);
-  padding: var(--mw-component-card-padding-components-tb-default) var(--mw-component-card-padding-components-lr-default);
   border: none;
+}
+
+.card:first-child {
+  margin-top: 0 !important;
 }
 
 .card.muted {
@@ -22,39 +33,5 @@
 
 .card.elevated {
   border: none;
-}
-
-.card .header {
-  font-family: var(--mw-component-card-header-font-family);
-  font-size: var(--mw-component-card-header-font-size);
-  /* font-weight: var(--mw-component-card-header-font-weight); */
-  line-height: var(--mw-component-card-header-line-height);
-}
-
-.card .subhead {
-  font-family: var(--mw-component-card-subhead-font-family);
-  font-size: var(--mw-component-card-subhead-font-size);
-  /* font-weight: var(--mw-component-card-subhead-font-weight); */
-  line-height: var(--mw-component-card-subhead-line-height);
-}
-
-.card .title {
-  font-family: var(--mw-component-card-title-font-family);
-  font-size: var(--mw-component-card-title-font-size);
-  /* font-weight: var(--mw-component-card-title-font-weight); */
-  line-height: var(--mw-component-card-title-line-height);
-}
-
-.card .subtitle {
-  font-family: var(--mw-component-card-subtitle-font-family);
-  font-size: var(--mw-component-card-subtitle-font-size);
-  /* font-weight: var(--mw-component-card-subtitle-font-weight); */
-  line-height: var(--mw-component-card-subtitle-line-height);
-}
-
-.card .metadata {
-  font-family: var(--mw-component-card-metadata-font-family);
-  font-size: var(--mw-component-card-metadata-font-size);
-  /* font-weight: var(--mw-component-card-metadata-font-weight); */
-  line-height: var(--mw-component-card-metadata-line-height);
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
 }

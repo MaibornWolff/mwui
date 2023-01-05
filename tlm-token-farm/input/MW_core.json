@@ -149,7 +149,7 @@
           }
         }
       },
-      "buttonSM": {
+      "buttonSm": {
         "paddingLR": {
           "value": "4px + 4px + 4px + 4px",
           "type": "spacing"
@@ -360,6 +360,28 @@
           "filled-outline": {
             "min-width": {
               "value": 88,
+              "type": "sizing"
+            }
+          },
+          "icon": {
+            "x-small": {
+              "value": 12,
+              "type": "sizing"
+            },
+            "small": {
+              "value": 16,
+              "type": "sizing"
+            },
+            "medium": {
+              "value": 24,
+              "type": "sizing"
+            },
+            "large": {
+              "value": 32,
+              "type": "sizing"
+            },
+            "xlarge": {
+              "value": 48,
               "type": "sizing"
             }
           }

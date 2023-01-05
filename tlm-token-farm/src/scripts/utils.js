@@ -57,7 +57,7 @@ function getFontWeightValue(fontWeight) {
     'light': 300,
     'regular': 400,
     'medium': 500,
-    'semibold': 400,
+    'semibold': 600,
     'bold': 700,
     'italic': 300,
     'light italic': 300,

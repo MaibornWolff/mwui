@@ -28,6 +28,14 @@ import {
   mwComponentButtonOutlineGhostColorFgPressed,
   mwComponentButtonOutlineGhostColorBorderPressed,
   mwComponentButtonOutlineGhostColorBorderFocused,
+  mwComponentButtonLabelSmallFontFamily,
+  mwComponentButtonLabelSmallFontWeight,
+  mwComponentButtonLabelSmallLineHeight,
+  mwComponentButtonLabelSmallFontSize,
+  mwComponentButtonSmPaddingLr,
+  mwComponentButtonSmPaddingTb,
+  mwComponentButtonSmGapBetween,
+  mwComponentButtonSmPaddingIcon,
   mwComponentButtonLabelMediumFontFamily,
   mwComponentButtonLabelMediumFontWeight,
   mwComponentButtonLabelMediumLineHeight,
@@ -36,6 +44,22 @@ import {
   mwComponentButtonMdPaddingTb,
   mwComponentButtonMdGapBetween,
   mwComponentButtonMdPaddingIcon,
+  mwComponentButtonLabelLargeFontFamily,
+  mwComponentButtonLabelLargeFontWeight,
+  mwComponentButtonLabelLargeLineHeight,
+  mwComponentButtonLabelLargeFontSize,
+  mwComponentButtonLgPaddingLr,
+  mwComponentButtonLgPaddingTb,
+  mwComponentButtonLgGapBetween,
+  mwComponentButtonLgPaddingIcon,
+  mwComponentButtonLabelXlargeFontFamily,
+  mwComponentButtonLabelXlargeFontWeight,
+  mwComponentButtonLabelXlargeLineHeight,
+  mwComponentButtonLabelXlargeFontSize,
+  mwComponentButtonXlPaddingLr,
+  mwComponentButtonXlPaddingTb,
+  mwComponentButtonXlGapBetween,
+  mwComponentButtonXlPaddingIcon,
   mwComponentSizeButtonFilledOutlineMinWidth,
   mwComponentButtonBorderRadiusDefault,
   mwComponentButtonBorderWidthOutlineFocused,
@@ -51,17 +75,44 @@ const base = css`
   text-decoration: none;
   white-space: nowrap;
   overflow: hidden;
-  padding: ${mwComponentButtonMdPaddingTb} ${mwComponentButtonMdPaddingLr};
-  font-family: ${mwComponentButtonLabelMediumFontFamily};
   letter-spacing: ${letterSpacing}em;
-  line-height: ${mwComponentButtonLabelMediumLineHeight}px;
-  font-weight: ${getFontWeightValue(mwComponentButtonLabelMediumFontWeight)};
-  font-size: ${mwComponentButtonLabelMediumFontSize}px;
   border-top-left-radius: ${mwComponentButtonBorderRadiusDefault}px;
   border-top-right-radius: ${mwComponentButtonBorderRadiusDefault}px;
   border-bottom-left-radius: ${mwComponentButtonBorderRadiusDefault}px;
   border-bottom-right-radius: ${mwComponentButtonBorderRadiusDefault}px;
   min-width: ${mwComponentSizeButtonFilledOutlineMinWidth};
+
+  &.small {
+    padding: ${mwComponentButtonSmPaddingTb} ${mwComponentButtonSmPaddingLr};
+    font-family: ${mwComponentButtonLabelSmallFontFamily};
+    line-height: ${mwComponentButtonLabelSmallLineHeight}px;
+    font-weight: ${getFontWeightValue(mwComponentButtonLabelSmallFontWeight)};
+    font-size: ${mwComponentButtonLabelSmallFontSize}px;
+  }
+
+  &.medium {
+    padding: ${mwComponentButtonMdPaddingTb} ${mwComponentButtonMdPaddingLr};
+    font-family: ${mwComponentButtonLabelMediumFontFamily};
+    line-height: ${mwComponentButtonLabelMediumLineHeight}px;
+    font-weight: ${getFontWeightValue(mwComponentButtonLabelMediumFontWeight)};
+    font-size: ${mwComponentButtonLabelMediumFontSize}px;
+  }
+
+  &.large {
+    padding: ${mwComponentButtonLgPaddingTb} ${mwComponentButtonLgPaddingLr};
+    font-family: ${mwComponentButtonLabelLargeFontFamily};
+    line-height: ${mwComponentButtonLabelLargeLineHeight}px;
+    font-weight: ${getFontWeightValue(mwComponentButtonLabelLargeFontWeight)};
+    font-size: ${mwComponentButtonLabelLargeFontSize}px;
+  }
+
+  &.x-large {
+    padding: ${mwComponentButtonXlPaddingTb} ${mwComponentButtonXlPaddingLr};
+    font-family: ${mwComponentButtonLabelXlargeFontFamily};
+    line-height: ${mwComponentButtonLabelXlargeLineHeight}px;
+    font-weight: ${getFontWeightValue(mwComponentButtonLabelXlargeFontWeight)};
+    font-size: ${mwComponentButtonLabelXlargeFontSize}px;
+  }
 `;
 
 const filledButtonStyles = css`
@@ -146,7 +197,18 @@ const ghostButtonStyles = css`
 `;
 
 const iconButtonStyles = css`
-  padding: ${mwComponentButtonMdPaddingIcon};
+  &.small {
+    padding: ${mwComponentButtonSmPaddingIcon};
+  }
+  &.medium {
+    padding: ${mwComponentButtonMdPaddingIcon};
+  }
+  &.large {
+    padding: ${mwComponentButtonLgPaddingIcon};
+  }
+  &.x-large {
+    padding: ${mwComponentButtonXlPaddingIcon};
+  }
   min-width: 0px;
 `;
 
@@ -156,11 +218,33 @@ const flexStyles = css`
 `;
 
 const iconStartStyles = css`
-  margin-right: ${mwComponentButtonMdGapBetween};
+  &.small {
+    margin-right: ${mwComponentButtonSmGapBetween};
+  }
+  &.medium {
+    margin-right: ${mwComponentButtonMdGapBetween};
+  }
+  &.large {
+    margin-right: ${mwComponentButtonLgGapBetween};
+  }
+  &.x-large {
+    margin-right: ${mwComponentButtonXlGapBetween};
+  }
 `;
 
 const iconEndStyles = css`
-  margin-left: ${mwComponentButtonMdGapBetween};
+  &.small {
+    margin-left: ${mwComponentButtonSmGapBetween};
+  }
+  &.medium {
+    margin-left: ${mwComponentButtonMdGapBetween};
+  }
+  &.large {
+    margin-left: ${mwComponentButtonLgGapBetween};
+  }
+  &.x-large {
+    margin-left: ${mwComponentButtonXlGapBetween};
+  }
 `;
 
 const getButtonVariantStyles = (variant: ButtonVariant) =>
@@ -171,6 +255,8 @@ const getButtonVariantStyles = (variant: ButtonVariant) =>
   }[variant]);
 
 export type ButtonVariant = 'filled' | 'outline' | 'ghost';
+
+export type ButtonSize = 'small' | 'medium' | 'large' | 'x-large';
 
 export type Target = '_blank' | '_self' | '_parent' | '_top';
 
@@ -196,6 +282,10 @@ export class MWButton {
    * Button variants
    */
   @Prop() variant?: ButtonVariant = 'filled';
+  /**
+   * Button size
+   */
+  @Prop() size?: ButtonSize = 'medium';
   /**
    * If provided the button will act as a link
    */
@@ -236,7 +326,7 @@ export class MWButton {
   render() {
     if (this.href) {
       return (
-        <a href={this.href} target={this.target} class={getButtonVariantStyles(this.variant)} test-id={this.testId}>
+        <a href={this.href} target={this.target} class={`${getButtonVariantStyles(this.variant)} ${this.size}`} test-id={this.testId}>
           {this.hasIconStartSlot && (
             <span class={this.hasLabel ? iconStartStyles : ''}>
               <slot name="icon-start"></slot>
@@ -255,7 +345,7 @@ export class MWButton {
       <button
         disabled={this.disabled}
         onClick={this.handleClick}
-        class={`${getButtonVariantStyles(this.variant)} ${this.hasIcon && flexStyles} ${!this.hasLabel && iconButtonStyles}`}
+        class={`${getButtonVariantStyles(this.variant)} ${this.hasIcon && flexStyles} ${!this.hasLabel && iconButtonStyles} ${this.size}`}
         test-id={this.testId}
         type="button"
       >

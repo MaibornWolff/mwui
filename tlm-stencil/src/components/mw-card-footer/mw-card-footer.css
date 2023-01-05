@@ -1,0 +1,7 @@
+:host {
+  display: block;
+  display: flex;
+  justify-content: end;
+  padding: var(--mw-component-card-padding-components-t-footer) var(--mw-component-card-padding-components-lr-default) 0 var(--mw-component-card-padding-components-lr-default);
+  gap: var(--mw-component-button-sm-gap-between);
+}

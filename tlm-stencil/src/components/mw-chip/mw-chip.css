@@ -13,6 +13,7 @@
   font-family: var(--mw-component-chips-typo-font-family);
   font-size: var(--mw-component-chips-typo-font-size);
   line-height: var(--mw-component-chips-typo-line-height);
+  font-weight: var(--mw-component-chips-typo-font-weight);
   /* FIXME: missing token */
   height: 32px;
   min-width: var(--mw-component-size-chips-min-width);

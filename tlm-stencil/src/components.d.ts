@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Size } from "./components/mw-avatar/mw-avatar";
-import { ButtonVariant, Target } from "./components/mw-button/mw-button";
+import { ButtonSize, ButtonVariant, Target } from "./components/mw-button/mw-button";
 import { Size as Size1 } from "./components/mw-avatar/mw-avatar";
 export namespace Components {
     interface MwAvatar {
@@ -45,6 +45,10 @@ export namespace Components {
          */
         "label"?: string;
         /**
+          * Button size
+         */
+        "size"?: ButtonSize;
+        /**
           * If using href the target prop can be provided
          */
         "target"?: Target;
@@ -58,6 +62,31 @@ export namespace Components {
         "variant"?: ButtonVariant;
     }
     interface MwCard {
+        "elevated"?: boolean;
+        "outlined"?: boolean;
+    }
+    interface MwCardBody {
+    }
+    interface MwCardFooter {
+    }
+    interface MwCardHeader {
+        "header": string;
+        "subheader": string;
+    }
+    interface MwCardImage {
+        /**
+          * Alt text for the image
+         */
+        "alt": string;
+        /**
+          * Image source
+         */
+        "src": string;
+    }
+    interface MwCardTitle {
+        "metadata": string;
+        "subtitle": string;
+        "title": string;
     }
     interface MwChip {
         /**
@@ -149,6 +178,36 @@ declare global {
         prototype: HTMLMwCardElement;
         new (): HTMLMwCardElement;
     };
+    interface HTMLMwCardBodyElement extends Components.MwCardBody, HTMLStencilElement {
+    }
+    var HTMLMwCardBodyElement: {
+        prototype: HTMLMwCardBodyElement;
+        new (): HTMLMwCardBodyElement;
+    };
+    interface HTMLMwCardFooterElement extends Components.MwCardFooter, HTMLStencilElement {
+    }
+    var HTMLMwCardFooterElement: {
+        prototype: HTMLMwCardFooterElement;
+        new (): HTMLMwCardFooterElement;
+    };
+    interface HTMLMwCardHeaderElement extends Components.MwCardHeader, HTMLStencilElement {
+    }
+    var HTMLMwCardHeaderElement: {
+        prototype: HTMLMwCardHeaderElement;
+        new (): HTMLMwCardHeaderElement;
+    };
+    interface HTMLMwCardImageElement extends Components.MwCardImage, HTMLStencilElement {
+    }
+    var HTMLMwCardImageElement: {
+        prototype: HTMLMwCardImageElement;
+        new (): HTMLMwCardImageElement;
+    };
+    interface HTMLMwCardTitleElement extends Components.MwCardTitle, HTMLStencilElement {
+    }
+    var HTMLMwCardTitleElement: {
+        prototype: HTMLMwCardTitleElement;
+        new (): HTMLMwCardTitleElement;
+    };
     interface HTMLMwChipElement extends Components.MwChip, HTMLStencilElement {
     }
     var HTMLMwChipElement: {
@@ -171,6 +230,11 @@ declare global {
         "mw-avatar": HTMLMwAvatarElement;
         "mw-button": HTMLMwButtonElement;
         "mw-card": HTMLMwCardElement;
+        "mw-card-body": HTMLMwCardBodyElement;
+        "mw-card-footer": HTMLMwCardFooterElement;
+        "mw-card-header": HTMLMwCardHeaderElement;
+        "mw-card-image": HTMLMwCardImageElement;
+        "mw-card-title": HTMLMwCardTitleElement;
         "mw-chip": HTMLMwChipElement;
         "mw-icon": HTMLMwIconElement;
         "mw-switch": HTMLMwSwitchElement;
@@ -217,6 +281,10 @@ declare namespace LocalJSX {
          */
         "onClickEmitter"?: (event: MwButtonCustomEvent<string>) => void;
         /**
+          * Button size
+         */
+        "size"?: ButtonSize;
+        /**
           * If using href the target prop can be provided
          */
         "target"?: Target;
@@ -230,6 +298,31 @@ declare namespace LocalJSX {
         "variant"?: ButtonVariant;
     }
     interface MwCard {
+        "elevated"?: boolean;
+        "outlined"?: boolean;
+    }
+    interface MwCardBody {
+    }
+    interface MwCardFooter {
+    }
+    interface MwCardHeader {
+        "header"?: string;
+        "subheader"?: string;
+    }
+    interface MwCardImage {
+        /**
+          * Alt text for the image
+         */
+        "alt"?: string;
+        /**
+          * Image source
+         */
+        "src"?: string;
+    }
+    interface MwCardTitle {
+        "metadata"?: string;
+        "subtitle"?: string;
+        "title"?: string;
     }
     interface MwChip {
         /**
@@ -305,6 +398,11 @@ declare namespace LocalJSX {
         "mw-avatar": MwAvatar;
         "mw-button": MwButton;
         "mw-card": MwCard;
+        "mw-card-body": MwCardBody;
+        "mw-card-footer": MwCardFooter;
+        "mw-card-header": MwCardHeader;
+        "mw-card-image": MwCardImage;
+        "mw-card-title": MwCardTitle;
         "mw-chip": MwChip;
         "mw-icon": MwIcon;
         "mw-switch": MwSwitch;
@@ -317,6 +415,11 @@ declare module "@stencil/core" {
             "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
             "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
             "mw-card": LocalJSX.MwCard & JSXBase.HTMLAttributes<HTMLMwCardElement>;
+            "mw-card-body": LocalJSX.MwCardBody & JSXBase.HTMLAttributes<HTMLMwCardBodyElement>;
+            "mw-card-footer": LocalJSX.MwCardFooter & JSXBase.HTMLAttributes<HTMLMwCardFooterElement>;
+            "mw-card-header": LocalJSX.MwCardHeader & JSXBase.HTMLAttributes<HTMLMwCardHeaderElement>;
+            "mw-card-image": LocalJSX.MwCardImage & JSXBase.HTMLAttributes<HTMLMwCardImageElement>;
+            "mw-card-title": LocalJSX.MwCardTitle & JSXBase.HTMLAttributes<HTMLMwCardTitleElement>;
             "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
