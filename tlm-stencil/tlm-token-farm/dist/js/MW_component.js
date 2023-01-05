@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 05 Jan 2023 08:51:43 GMT
+ * Generated on Thu, 05 Jan 2023 09:18:42 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -16,12 +16,12 @@ export const mwComponentButtonFilledColorOutlineFocused = "#001418";
 export const mwComponentButtonOutlineGhostColorBgDefault = "#ffffff00";
 export const mwComponentButtonOutlineGhostColorFgDefault = "#001418";
 export const mwComponentButtonOutlineGhostColorFgHover = "#ed2985";
-export const mwComponentButtonOutlineGhostColorFgPressed = "#991766";
+export const mwComponentButtonOutlineGhostColorFgPressed = "#c42177";
 export const mwComponentButtonOutlineGhostColorFgDisabled = "#95a0a4";
 export const mwComponentButtonOutlineGhostColorFgFocused = "#ed2985";
 export const mwComponentButtonOutlineGhostColorBorderDefault = "#001418";
 export const mwComponentButtonOutlineGhostColorBorderHover = "#ed2985";
-export const mwComponentButtonOutlineGhostColorBorderPressed = "#991766";
+export const mwComponentButtonOutlineGhostColorBorderPressed = "#c42177";
 export const mwComponentButtonOutlineGhostColorBorderDisabled = "#79868b";
 export const mwComponentButtonOutlineGhostColorBorderFocused = "#001418";
 export const mwComponentButtonBorderWidthSecondaryDefault = 1;
@@ -72,7 +72,7 @@ export const mwComponentLinkTypoFontSize = 16;
 export const mwComponentLinkTypoTextDecoration = "underline";
 export const mwComponentLinkColorFgDefault = "#001418";
 export const mwComponentLinkColorFgHover = "#ed2985";
-export const mwComponentLinkColorFgPressed = "#991766";
+export const mwComponentLinkColorFgPressed = "#c42177";
 export const mwComponentLinkColorFgFocused = "#ed2985";
 export const mwComponentSizeButtonFilledOutlineMinWidth = "88px";
 export const mwComponentSizeToggleSwitchW = "52px";

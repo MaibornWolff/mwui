@@ -74,7 +74,7 @@
                 "type": "color"
               },
               "pressed": {
-                "value": "#991766",
+                "value": "#c42177",
                 "type": "color"
               },
               "disabled": {
@@ -96,7 +96,7 @@
                 "type": "color"
               },
               "pressed": {
-                "value": "#991766",
+                "value": "#c42177",
                 "type": "color"
               },
               "disabled": {
@@ -335,7 +335,7 @@
               "type": "color"
             },
             "pressed": {
-              "value": "#991766",
+              "value": "#c42177",
               "type": "color"
             },
             "focused": {

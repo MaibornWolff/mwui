@@ -58,9 +58,9 @@ import{r as t,h as e,H as o,c as r,g as n,a as i}from"./p-cd041edb.js";const a=c
   }
   &:active {
     outline: ${1}px solid;
-    outline-color: ${"#991766"};
+    outline-color: ${"#c42177"};
     outline-offset: ${-2}px;
-    color: ${"#991766"};
+    color: ${"#c42177"};
   }
   &:disabled {
     outline-color: ${"#79868b"};
@@ -82,7 +82,7 @@ import{r as t,h as e,H as o,c as r,g as n,a as i}from"./p-cd041edb.js";const a=c
     color: ${"#ed2985"};
   }
   &:active {
-    color: ${"#991766"};
+    color: ${"#c42177"};
     outline: none;
   }
   &:disabled {
