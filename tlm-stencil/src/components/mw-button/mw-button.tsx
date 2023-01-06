@@ -328,13 +328,13 @@ export class MWButton {
       return (
         <a href={this.href} target={this.target} class={`${getButtonVariantStyles(this.variant)} ${this.size}`} test-id={this.testId}>
           {this.hasIconStartSlot && (
-            <span class={this.hasLabel ? iconStartStyles : ''}>
+            <span class={`${this.size} ${this.hasLabel ? iconStartStyles : ''}`}>
               <slot name="icon-start"></slot>
             </span>
           )}
           <span>{this.label}</span>
           {this.hasIconEndSlot && (
-            <span class={this.hasLabel ? iconEndStyles : ''}>
+            <span class={`${this.size} ${this.hasLabel ? iconEndStyles : ''}`}>
               <slot name="icon-end"></slot>
             </span>
           )}
@@ -350,13 +350,13 @@ export class MWButton {
         type="button"
       >
         {this.hasIconStartSlot && (
-          <span class={this.hasLabel ? iconStartStyles : ''}>
+          <span class={`${this.size} ${this.hasLabel ? iconStartStyles : ''}`}>
             <slot name="icon-start"></slot>
           </span>
         )}
         <span>{this.label}</span>
         {this.hasIconEndSlot && (
-          <span class={this.hasLabel ? iconEndStyles : ''}>
+          <span class={`${this.size} ${this.hasLabel ? iconEndStyles : ''}`}>
             <slot name="icon-end"></slot>
           </span>
         )}

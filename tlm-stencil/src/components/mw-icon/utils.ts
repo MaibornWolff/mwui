@@ -3,21 +3,21 @@ import { getAssetPath } from '@stencil/core';
 const iconCache = {};
 const requestCache = {};
 
-export async function fetchIcon({ icon }): Promise<string> {
+export async function fetchIcon({ icon }): Promise<string[]> {
   if (iconCache[icon]) {
-    return iconCache[icon];
+    return iconCache[icon].split('::');
   }
   if (!requestCache[icon]) {
-    requestCache[icon] = fetch(getAssetPath(`./assets/${icon}.svg.json`))
-      .then(resp => resp.json())
-      .catch(() => {
-        console.error(`"${icon}" is not a valid name`);
-        return '';
-      });
+    requestCache[icon] = '';
+    try {
+      const data = await fetch(getAssetPath(`./assets/${icon}.svg.json`));
+      requestCache[icon] = await data.json();
+    } catch (e) {
+      console.error(`"${icon}" is not a valid name`);
+    }
   }
+  iconCache[icon] = requestCache[icon];
 
-  const path = await requestCache[icon];
-  iconCache[icon] = path;
-
-  return path;
+  // added support for multiple paths for a single svg
+  return requestCache[icon].split('::');
 }

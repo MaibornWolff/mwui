@@ -25,7 +25,9 @@ glob('assets/icons/*.svg')
       let file = path.basename(svg.file);
       let paths = svg.contents.children.filter(child => child.name === 'path').map(child => child.attributes.d);
       let filename = `src/components/mw-icon/assets/${file}.json`;
-      fs.writeFileSync(filename, JSON.stringify(paths[0]), 'utf8');
+
+      // TODO: support groups & multiple paths
+      fs.writeFileSync(filename, JSON.stringify(paths.join('::')), 'utf8');
     });
     process.exit(0);
   });

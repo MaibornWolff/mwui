@@ -39,7 +39,7 @@ export class LibraryNameIcon {
    */
   @Prop() color?: string;
 
-  @State() private pathData: string;
+  @State() private pathData: string[];
   @State() private visible = false;
   @State() private baseDimension = getDimensionForSize('medium');
   private intersectionObserver: IntersectionObserver;
@@ -77,7 +77,9 @@ export class LibraryNameIcon {
           width={this.dimension}
           viewBox={`0 0 ${this.dimension} ${this.dimension}`}
         >
-          <path style={{ transform: `scale(${this.scale})` }} d={this.pathData || ''} />
+          {this.pathData?.map(data => (
+            <path style={{ transform: `scale(${this.scale})` }} d={data} />
+          ))}
         </svg>
       </Host>
     );
