@@ -789,8 +789,8 @@
           "type": "borderWidth"
         }
       },
-      "menu": {
-        "item": {
+      "menu-item": {
+        "title": {
           "fontFamily": {
             "value": "Poppins",
             "type": "fontFamily"
@@ -826,6 +826,140 @@
             "type": "fontSize"
           }
         },
+        "borderRadius": {
+          "value": "4px",
+          "type": "borderRadius"
+        },
+        "borderWidth": {
+          "default": {
+            "value": 0,
+            "type": "borderWidth"
+          },
+          "focused": {
+            "value": "2px",
+            "type": "borderWidth"
+          }
+        },
+        "fg": {
+          "title": {
+            "value": "#001418",
+            "type": "color"
+          },
+          "subtitle": {
+            "value": "#44555b",
+            "type": "color"
+          },
+          "selected": {
+            "value": "#ed2985",
+            "type": "color"
+          },
+          "disabled": {
+            "value": "#95a0a4",
+            "type": "color"
+          },
+          "hover": {
+            "value": "#ed2985",
+            "type": "color"
+          },
+          "focused": {
+            "value": "#ed2985",
+            "type": "color"
+          },
+          "pressed": {
+            "value": "#991766",
+            "type": "color"
+          }
+        },
+        "bg": {
+          "default": {
+            "value": "#ffffff",
+            "type": "color"
+          }
+        },
+        "border": {
+          "focused": {
+            "value": "#001418",
+            "type": "color"
+          }
+        }
+      },
+      "list-item": {
+        "title": {
+          "fontFamily": {
+            "value": "Poppins",
+            "type": "fontFamily"
+          },
+          "fontWeight": {
+            "value": "Regular",
+            "type": "fontWeight"
+          },
+          "lineHeight": {
+            "value": 24,
+            "type": "lineHeight"
+          },
+          "fontSize": {
+            "value": 16,
+            "type": "fontSize"
+          }
+        },
+        "subtitle": {
+          "fontFamily": {
+            "value": "Poppins",
+            "type": "fontFamily"
+          },
+          "fontWeight": {
+            "value": "Regular",
+            "type": "fontWeight"
+          },
+          "lineHeight": {
+            "value": 24,
+            "type": "lineHeight"
+          },
+          "fontSize": {
+            "value": 14,
+            "type": "fontSize"
+          }
+        },
+        "borderRadius": {
+          "value": "4px",
+          "type": "borderRadius"
+        },
+        "fg": {
+          "title": {
+            "value": "#001418",
+            "type": "color"
+          },
+          "subtitle": {
+            "value": "#44555b",
+            "type": "color"
+          },
+          "disabled": {
+            "value": "#95a0a4",
+            "type": "color"
+          },
+          "hover": {
+            "value": "#ed2985",
+            "type": "color"
+          }
+        },
+        "bg": {
+          "default": {
+            "value": "#ffffff",
+            "type": "color"
+          },
+          "selected": {
+            "value": "#F9E2EE",
+            "type": "color"
+          }
+        },
+        "border": {
+          "focused": {
+            "value": "[object Object]",
+            "type": "border"
+          }
+        }
+      },
+      "menu": {
         "shadow": {
           "value": {
             "0": "{",
@@ -861,22 +995,6 @@
         "borderWidth": {
           "default": {
             "value": "1px",
-            "type": "borderWidth"
-          }
-        }
-      },
-      "menu-item": {
-        "borderRadius": {
-          "value": "4px",
-          "type": "borderRadius"
-        },
-        "borderWidth": {
-          "default": {
-            "value": 0,
-            "type": "borderWidth"
-          },
-          "focused": {
-            "value": "2px",
             "type": "borderWidth"
           }
         }
@@ -1425,7 +1543,7 @@
               "description": "recommended for \n- pressed states"
             },
             "subtle": {
-              "value": "#F9C7E2",
+              "value": "#F9E2EE",
               "type": "color"
             },
             "disabled": {
