@@ -23,7 +23,7 @@
       <div style="display: flex; gap: 16px">
         <mw-button onClick="alert('hooo')" label="BUTTON" test-id="test-button-1"></mw-button>
         <mw-button label="BUTTON" test-id="test-button-2"
-          ><span slot="icon-start"><mw-icon icon="check" /></span
+          ><span slot="icon-start"><mw-icon icon="placeholder" /></span
         ></mw-button>
         <mw-button label="BUTTON" test-id="test-button-3"
           ><span slot="icon-end"><mw-icon icon="check" /></span
@@ -130,8 +130,6 @@
       <hr />
       <h2>Icons</h2>
       <div style="display: flex; gap: 16px">
-        <mw-icon icon="close_outline" size="large"></mw-icon>
-        <mw-icon icon="edit" size="large"></mw-icon>
         <mw-icon icon="check" size="large"></mw-icon>
         <mw-icon icon="check"></mw-icon>
         <mw-icon icon="check" size="small"></mw-icon>
@@ -240,8 +238,20 @@
         </mw-card>
         <mw-card elevated>
           <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
-        </mw-card>
+        </mw-card onClick="() => console.log('clicked')">
       </div>
     </section>
+    <section style="margin-top: 30px; height: 100vh">
+      <mw-icon-gallery></mw-icon-gallery>
+    </section>
   </body>
+  <script>
+    const cards = document.getElementsByTagName('mw-card');
+
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].addEventListener('click', (event) => {
+        console.log('card clicked', event);
+      });
+    }
+  </script>
 </html>

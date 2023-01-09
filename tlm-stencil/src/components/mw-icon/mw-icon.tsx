@@ -35,11 +35,15 @@ export class LibraryNameIcon {
    */
   @Prop() size: Size = 'medium';
   /**
-   * Overwrite default color
+   * Overwrite fill color
    */
-  @Prop() color?: string;
+  @Prop() fill?: string = 'currentColor';
+  /**
+   * Overwrite stroke color
+   */
+  @Prop() stroke?: string = 'none';
 
-  @State() private pathData: string[];
+  @State() private pathData: any[];
   @State() private visible = false;
   @State() private baseDimension = getDimensionForSize('medium');
   private intersectionObserver: IntersectionObserver;
@@ -70,15 +74,20 @@ export class LibraryNameIcon {
     return (
       <Host style={{ height: `${this.dimension}px` }}>
         <svg
-          style={this.color && { color: this.color }}
+          style={{ fill: this.fill, stroke: this.stroke }}
           xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
           height={this.dimension}
           width={this.dimension}
           viewBox={`0 0 ${this.dimension} ${this.dimension}`}
         >
-          {this.pathData?.map(data => (
-            <path style={{ transform: `scale(${this.scale})` }} d={data} />
+          {this.pathData?.map(({ attributes }) => (
+            <path
+              style={{ transform: `scale(${this.scale})` }}
+              d={attributes.d}
+              fill-rule={attributes['fill-rule']}
+              clip-rule={attributes['clip-rules']}
+              stroke-width={attributes['stroke-width']}
+            />
           ))}
         </svg>
       </Host>

@@ -18,4 +18,5 @@ export const MwCardImage = /*@__PURE__*/createReactComponent<JSX.MwCardImage, HT
 export const MwCardTitle = /*@__PURE__*/createReactComponent<JSX.MwCardTitle, HTMLMwCardTitleElement>('mw-card-title');
 export const MwChip = /*@__PURE__*/createReactComponent<JSX.MwChip, HTMLMwChipElement>('mw-chip');
 export const MwIcon = /*@__PURE__*/createReactComponent<JSX.MwIcon, HTMLMwIconElement>('mw-icon');
+export const MwIconGallery = /*@__PURE__*/createReactComponent<JSX.MwIconGallery, HTMLMwIconGalleryElement>('mw-icon-gallery');
 export const MwSwitch = /*@__PURE__*/createReactComponent<JSX.MwSwitch, HTMLMwSwitchElement>('mw-switch');

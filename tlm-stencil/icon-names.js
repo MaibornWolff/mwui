@@ -1,0 +1,1 @@
+export const icons = ["check","close_outline","close","edit","placeholder","search","settings"];

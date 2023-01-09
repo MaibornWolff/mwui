@@ -21,13 +21,19 @@ glob('assets/icons/*.svg')
   )
   // write a JSON file inside your component's asset folder for each icon
   .then(files => {
+    // save filenames in separate files
+    const fileNames = files.map(f => {
+      const basename = path.basename(f.file);
+      return basename.substring(0, basename.length - 4);
+    });
+    fs.writeFileSync('icon-names.js', `export const icons = ${JSON.stringify(fileNames)};`, 'utf8');
+
     files.forEach(svg => {
       let file = path.basename(svg.file);
-      let paths = svg.contents.children.filter(child => child.name === 'path').map(child => child.attributes.d);
+      let paths = svg.contents.children.filter(child => child.name === 'path');
       let filename = `src/components/mw-icon/assets/${file}.json`;
 
-      // TODO: support groups & multiple paths
-      fs.writeFileSync(filename, JSON.stringify(paths.join('::')), 'utf8');
+      fs.writeFileSync(filename, JSON.stringify(paths), 'utf8');
     });
     process.exit(0);
   });

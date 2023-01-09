@@ -32,7 +32,8 @@ export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>('mw-button',
 export const MwCard = /*@__PURE__*/ defineContainer<JSX.MwCard>('mw-card', undefined, [
   'testId',
   'outlined',
-  'elevated'
+  'elevated',
+  'clickEmitter'
 ]);
 
 
@@ -87,8 +88,12 @@ export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>('mw-chip', undef
 export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>('mw-icon', undefined, [
   'icon',
   'size',
-  'color'
+  'fill',
+  'stroke'
 ]);
+
+
+export const MwIconGallery = /*@__PURE__*/ defineContainer<JSX.MwIconGallery>('mw-icon-gallery', undefined);
 
 
 export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>('mw-switch', undefined, [

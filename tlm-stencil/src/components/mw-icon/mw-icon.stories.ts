@@ -1,8 +1,13 @@
 import '../../global/global.css';
+// @ts-ignore
+import docs from './mw-icon.docs.mdx';
 
 export default {
   title: 'Components/Icon',
   component: 'mw-icon',
+  parameters: {
+    docs: { page: docs },
+  },
 };
 
 const DefaultTemplate = args => `

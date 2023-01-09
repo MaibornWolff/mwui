@@ -166,9 +166,9 @@ export namespace Components {
     }
     interface MwIcon {
         /**
-          * Overwrite default color
+          * Overwrite fill color
          */
-        "color"?: string;
+        "fill"?: string;
         /**
           * The icon name to be rendered
          */
@@ -177,6 +177,12 @@ export namespace Components {
           * Size variant
          */
         "size": Size1;
+        /**
+          * Overwrite stroke color
+         */
+        "stroke"?: string;
+    }
+    interface MwIconGallery {
     }
     interface MwSwitch {
         /**
@@ -208,6 +214,10 @@ export namespace Components {
 export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMwButtonElement;
+}
+export interface MwCardCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMwCardElement;
 }
 export interface MwChipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -274,6 +284,12 @@ declare global {
         prototype: HTMLMwIconElement;
         new (): HTMLMwIconElement;
     };
+    interface HTMLMwIconGalleryElement extends Components.MwIconGallery, HTMLStencilElement {
+    }
+    var HTMLMwIconGalleryElement: {
+        prototype: HTMLMwIconGalleryElement;
+        new (): HTMLMwIconGalleryElement;
+    };
     interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {
     }
     var HTMLMwSwitchElement: {
@@ -291,6 +307,7 @@ declare global {
         "mw-card-title": HTMLMwCardTitleElement;
         "mw-chip": HTMLMwChipElement;
         "mw-icon": HTMLMwIconElement;
+        "mw-icon-gallery": HTMLMwIconGalleryElement;
         "mw-switch": HTMLMwSwitchElement;
     }
 }
@@ -356,6 +373,7 @@ declare namespace LocalJSX {
           * Use box-shadow for elevation style
          */
         "elevated"?: boolean;
+        "onClickEmitter"?: (event: MwCardCustomEvent<string>) => void;
         /**
           * Display outline
          */
@@ -464,9 +482,9 @@ declare namespace LocalJSX {
     }
     interface MwIcon {
         /**
-          * Overwrite default color
+          * Overwrite fill color
          */
-        "color"?: string;
+        "fill"?: string;
         /**
           * The icon name to be rendered
          */
@@ -475,6 +493,12 @@ declare namespace LocalJSX {
           * Size variant
          */
         "size"?: Size1;
+        /**
+          * Overwrite stroke color
+         */
+        "stroke"?: string;
+    }
+    interface MwIconGallery {
     }
     interface MwSwitch {
         /**
@@ -513,6 +537,7 @@ declare namespace LocalJSX {
         "mw-card-title": MwCardTitle;
         "mw-chip": MwChip;
         "mw-icon": MwIcon;
+        "mw-icon-gallery": MwIconGallery;
         "mw-switch": MwSwitch;
     }
 }
@@ -530,6 +555,7 @@ declare module "@stencil/core" {
             "mw-card-title": LocalJSX.MwCardTitle & JSXBase.HTMLAttributes<HTMLMwCardTitleElement>;
             "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
+            "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
         }
     }

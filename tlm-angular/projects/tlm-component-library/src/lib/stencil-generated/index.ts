@@ -12,5 +12,6 @@ export const DIRECTIVES = [
   d.MwCardTitle,
   d.MwChip,
   d.MwIcon,
+  d.MwIconGallery,
   d.MwSwitch
 ];

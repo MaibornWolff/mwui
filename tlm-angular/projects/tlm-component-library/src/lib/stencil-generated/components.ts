@@ -57,7 +57,13 @@ export class MwButton {
 }
 
 
-export declare interface MwCard extends Components.MwCard {}
+export declare interface MwCard extends Components.MwCard {
+  /**
+   *  
+   */
+  clickEmitter: EventEmitter<CustomEvent<string>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -74,6 +80,7 @@ export class MwCard {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['clickEmitter']);
   }
 }
 
@@ -217,15 +224,34 @@ export declare interface MwIcon extends Components.MwIcon {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['color', 'icon', 'size']
+  inputs: ['fill', 'icon', 'size', 'stroke']
 })
 @Component({
   selector: 'mw-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['color', 'icon', 'size']
+  inputs: ['fill', 'icon', 'size', 'stroke']
 })
 export class MwIcon {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface MwIconGallery extends Components.MwIconGallery {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'mw-icon-gallery',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class MwIconGallery {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();

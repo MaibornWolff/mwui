@@ -14,6 +14,26 @@
 | `testId` _(required)_ | `test-id`  | Must be provided for automated testing | `string`  | `undefined` |
 
 
+## Events
+
+| Event          | Description | Type                  |
+| -------------- | ----------- | --------------------- |
+| `clickEmitter` |             | `CustomEvent<string>` |
+
+
+## Dependencies
+
+### Used by
+
+ - [mw-icon-gallery](../mw-icon-gallery)
+
+### Graph
+```mermaid
+graph TD;
+  mw-icon-gallery --> mw-card
+  style mw-card fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

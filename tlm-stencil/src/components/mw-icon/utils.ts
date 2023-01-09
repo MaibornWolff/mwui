@@ -3,9 +3,9 @@ import { getAssetPath } from '@stencil/core';
 const iconCache = {};
 const requestCache = {};
 
-export async function fetchIcon({ icon }): Promise<string[]> {
+export async function fetchIcon({ icon }): Promise<any[]> {
   if (iconCache[icon]) {
-    return iconCache[icon].split('::');
+    return iconCache[icon];
   }
   if (!requestCache[icon]) {
     requestCache[icon] = '';
@@ -17,7 +17,6 @@ export async function fetchIcon({ icon }): Promise<string[]> {
     }
   }
   iconCache[icon] = requestCache[icon];
-
   // added support for multiple paths for a single svg
-  return requestCache[icon].split('::');
+  return requestCache[icon];
 }

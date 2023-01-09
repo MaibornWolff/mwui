@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+import { Component, Host, Prop, h, EventEmitter, Event } from '@stencil/core';
 import classnames from 'classnames';
 
 @Component({
@@ -7,6 +7,13 @@ import classnames from 'classnames';
   shadow: true,
 })
 export class MwCard {
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: false,
+  })
+  clickEmitter: EventEmitter<string>;
+
   /**
    * Must be provided for automated testing
    */
@@ -20,10 +27,16 @@ export class MwCard {
    */
   @Prop() elevated?: boolean = false;
 
+  handleClick = () => {
+    this.clickEmitter.emit('onClick');
+  };
+
   render() {
     return (
       <Host>
         <div
+          onClick={this.handleClick.bind(this)}
+          test-id={this.testId}
           class={classnames('card', {
             outlined: this.outlined,
             elevated: this.elevated,

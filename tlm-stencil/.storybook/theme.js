@@ -4,8 +4,8 @@ import {
   mwCoreColorPurple900,
   mwCoreColorPink500,
   mwCoreFontFontFamiliesBody,
-  borderRadiusMedium,
   mwCoreColorNeutral100,
+  borderRadiusStandardMedium,
 } from '../../tlm-token-farm/dist/js/MW_core';
 
 export default create({
@@ -22,7 +22,7 @@ export default create({
   appBg: mwCoreColorNeutral100,
   // appContentBg: 'white',
   // appBorderColor: 'grey',
-  appBorderRadius: borderRadiusMedium,
+  appBorderRadius: borderRadiusStandardMedium,
 
   // Typography
   fontBase: mwCoreFontFontFamiliesBody,
