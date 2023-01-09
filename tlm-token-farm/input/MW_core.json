@@ -940,6 +940,10 @@
           "hover": {
             "value": "#ed2985",
             "type": "color"
+          },
+          "pressed": {
+            "value": "#991766",
+            "type": "color"
           }
         },
         "bg": {

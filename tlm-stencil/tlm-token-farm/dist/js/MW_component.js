@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 09 Jan 2023 14:19:24 GMT
+ * Generated on Mon, 09 Jan 2023 14:31:05 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -195,6 +195,7 @@ export const mwComponentListItemFgTitle = "#001418";
 export const mwComponentListItemFgSubtitle = "#44555b";
 export const mwComponentListItemFgDisabled = "#95a0a4";
 export const mwComponentListItemFgHover = "#ed2985";
+export const mwComponentListItemFgPressed = "#991766";
 export const mwComponentListItemBgDefault = "#ffffff";
 export const mwComponentListItemBgSelected = "#F9E2EE";
 export const mwComponentListItemBorderFocused = "[object Object]";
