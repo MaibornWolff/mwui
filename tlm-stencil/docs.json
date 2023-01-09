@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-09T11:33:56",
+  "timestamp": "2023-01-09T11:55:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -1055,15 +1055,15 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
+        "mw-icon",
         "mw-card",
-        "mw-card-body",
-        "mw-icon"
+        "mw-card-body"
       ],
       "dependencyGraph": {
         "mw-icon-gallery": [
+          "mw-icon",
           "mw-card",
-          "mw-card-body",
-          "mw-icon"
+          "mw-card-body"
         ]
       }
     },

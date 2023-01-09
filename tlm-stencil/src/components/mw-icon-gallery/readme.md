@@ -9,16 +9,16 @@
 
 ### Depends on
 
+- [mw-icon](../mw-icon)
 - [mw-card](../mw-card)
 - [mw-card-body](../mw-card-body)
-- [mw-icon](../mw-icon)
 
 ### Graph
 ```mermaid
 graph TD;
+  mw-icon-gallery --> mw-icon
   mw-icon-gallery --> mw-card
   mw-icon-gallery --> mw-card-body
-  mw-icon-gallery --> mw-icon
   style mw-icon-gallery fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
