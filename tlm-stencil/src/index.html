@@ -89,6 +89,37 @@
     <br />
     <hr />
     <section>
+      <h2>Textfield</h2>
+      <div>
+      <div style="width: 200px; display: flex; flex-direction: column; gap: 16px">
+        <h3>default</h3>
+        <mw-textfield type="text" label="Label"></mw-textfield>
+        <mw-textfield type="text" value="some value" label="Label" placeholder="Placeholder" helper-text="helper text error" has-error></mw-textfield>
+        <mw-textfield required type="text" value="some value" label="Required Label" placeholder="Placeholder" helper-text="helper text default"></mw-textfield>
+        <mw-textfield disabled type="text" value="disabled" label="Label" placeholder="Placeholder" helper-text="helper text default"></mw-textfield>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; gap: 16px">
+        <h3>inline</h3>
+        <mw-textfield type="text" value="some value" label="Label" placeholder="Placeholder" helper-text="helper text default" inline></mw-textfield>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; gap: 16px">
+        <h3>Icons</h3>
+        <mw-textfield type="text" label="Label" placeholder="Search things..." helper-text="helper text" has-error="false">
+          <mw-icon slot="icon-start" icon="search"></mw-icon>
+        </mw-textfield>
+        <mw-textfield type="text" label="Label" placeholder="Placeholder" helper-text="helper text" has-error="false">
+          <mw-icon slot="icon-end" icon="check"></mw-icon>
+        </mw-textfield>
+        <mw-textfield type="text" label="Label" placeholder="Placeholder" helper-text="helper text" has-error="false">
+          <mw-icon slot="icon-start" icon="placeholder"></mw-icon>
+          <mw-icon slot="icon-end" icon="placeholder"></mw-icon>
+        </mw-textfield>
+      </div>
+    </div>
+    </section>
+    <br />
+    <hr />
+    <section>
       <h2>Controls</h2>
       <h3>Switch</h3>
       <div style="display: flex; gap: 16px">
@@ -247,11 +278,28 @@
   </body>
   <script>
     const cards = document.getElementsByTagName('mw-card');
+    const chips = document.getElementsByTagName('mw-chip');
 
     for (var i = 0; i < cards.length; i++) {
       cards[i].addEventListener('click', (event) => {
         console.log('card clicked', event);
       });
     }
+
+    for (var i = 0; i < chips.length; i++) {
+      chips[i].addEventListener('close', (event) => {
+        console.log('chip: closed', event);
+      });
+
+      chips[i].addEventListener('click', (event) => {
+        console.log('chip: clicked', event);
+      });
+
+      chips[i].addEventListener('toggle', (event) => {
+        console.log('chip: toggled', event);
+      });
+    }
+
+
   </script>
 </html>

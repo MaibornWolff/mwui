@@ -302,7 +302,7 @@ export class MWButton {
     cancelable: false,
     composed: false,
   })
-  clickEmitter: EventEmitter<string>;
+  clickEmitter: EventEmitter;
 
   hasIconStartSlot: boolean;
   hasIconEndSlot: boolean;
@@ -320,7 +320,7 @@ export class MWButton {
     (event.target as HTMLButtonElement).blur();
     // @ts-ignore
     (event.path[1] as HTMLButtonElement).blur();
-    this.clickEmitter.emit('onClick');
+    this.clickEmitter.emit();
   };
 
   render() {

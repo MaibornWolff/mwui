@@ -33,7 +33,7 @@ export declare interface MwButton extends Components.MwButton {
   /**
    * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. 
    */
-  clickEmitter: EventEmitter<CustomEvent<string>>;
+  clickEmitter: EventEmitter<CustomEvent<any>>;
 
 }
 
@@ -61,7 +61,7 @@ export declare interface MwCard extends Components.MwCard {
   /**
    *  
    */
-  clickEmitter: EventEmitter<CustomEvent<string>>;
+  clickEmitter: EventEmitter<CustomEvent<any>>;
 
 }
 
@@ -277,5 +277,33 @@ export class MwSwitch {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface MwTextfield extends Components.MwTextfield {
+  /**
+   *  
+   */
+  valueChanged: EventEmitter<CustomEvent<string>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled', 'hasError', 'helperText', 'inline', 'label', 'name', 'placeholder', 'required', 'type', 'value']
+})
+@Component({
+  selector: 'mw-textfield',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'hasError', 'helperText', 'inline', 'label', 'name', 'placeholder', 'required', 'type', 'value']
+})
+export class MwTextfield {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['valueChanged']);
   }
 }

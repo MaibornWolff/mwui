@@ -18,7 +18,7 @@ export class MwChip {
   /**
    * Visually and functionally disable button
    */
-  @Prop() disabled?: boolean;
+  @Prop({ reflect: true }) disabled?: boolean;
   /**
    * Flag wether to show close icon or not
    */
@@ -26,7 +26,7 @@ export class MwChip {
   /**
    * Selection state that changes onToggle. Can be set as mutable prop.
    */
-  @Prop({ mutable: true }) selected: boolean = false;
+  @Prop({ reflect: true, mutable: true }) selected: boolean = false;
   /**
    * 'close' event is fired when the close icon is clicked.
    */
@@ -36,22 +36,22 @@ export class MwChip {
     cancelable: false,
     composed: false,
   })
-  clickEmitter: EventEmitter;
+  closeEmitter: EventEmitter;
   /**
    * 'toggle' event is fired when the chip is clicked. Current selection state is emitted.
    */
-  @Event({ eventName: 'toggle', bubbles: true, composed: false, cancelable: false }) selectionChangeEmitter: EventEmitter<boolean>;
+  @Event({ eventName: 'toggle', bubbles: true, composed: false, cancelable: false }) toggle: EventEmitter<boolean>;
 
   handleClose = (event: Event) => {
     event.stopPropagation();
     if (!this.disabled) {
-      this.clickEmitter.emit();
+      this.closeEmitter.emit();
     }
   };
 
   handleClick = () => {
     this.selected = !this.selected;
-    this.selectionChangeEmitter.emit(this.selected);
+    this.toggle.emit(this.selected);
   };
 
   render() {

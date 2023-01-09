@@ -14,12 +14,12 @@ export class MwIconGallery {
     this.filteredIcons = this.icons;
   }
 
-  onInput(event) {
+  private onInput = (event) => {
     const filterTerm = event.target.value.toLowerCase();
     this.filteredIcons = this.icons.filter(icon => icon.toLowerCase().includes(filterTerm));
   }
 
-  copyIconName(name: string) {
+  private copyIconName = (name: string) => {
     navigator.clipboard
       .writeText(name)
       .then(() => console.info(`Copied icon name "${name}"`))
@@ -29,8 +29,12 @@ export class MwIconGallery {
   render() {
     return (
       <Host>
-        <input class="gallery-filter" onInput={event => this.onInput(event)} placeholder="Type to filter icons" id="icon-filter" type="text" />
-        <div class="hint"><mw-icon icon="placeholder"></mw-icon>Click item to copy icon name.</div>
+        <mw-textfield class="gallery-filter" onInput={this.onInput} placeholder="Type to filter icons" id="icon-filter">
+          <mw-icon icon="search" slot="icon-start"></mw-icon>
+        </mw-textfield>
+        <div class="hint">
+          <mw-icon icon="placeholder"></mw-icon>Click item to copy icon name.
+        </div>
         <div class="gallery">
           {this.filteredIcons.map(i => (
             <mw-card title={`Click to copy name to clipboard: ${i}`} class="gallery-item-container" onClick={() => this.copyIconName(i)} testId={`icon-gallery-item-${i}`}>

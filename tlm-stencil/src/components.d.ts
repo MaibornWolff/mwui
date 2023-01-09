@@ -210,6 +210,48 @@ export namespace Components {
          */
         "testId": string;
     }
+    interface MwTextfield {
+        /**
+          * Visually and functionally disabled input
+         */
+        "disabled"?: boolean;
+        /**
+          * Use to display input and helper-text in error state
+         */
+        "hasError"?: boolean;
+        /**
+          * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+         */
+        "helperText"?: string;
+        /**
+          * Display label and input horizonally
+         */
+        "inline"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * input field name
+         */
+        "name": string;
+        /**
+          * Placeholder to be displayed
+         */
+        "placeholder"?: string;
+        /**
+          * Mark input as required
+         */
+        "required"?: boolean;
+        /**
+          * HTML Input type
+         */
+        "type"?: string;
+        /**
+          * input field value
+         */
+        "value"?: string | number;
+    }
 }
 export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -222,6 +264,10 @@ export interface MwCardCustomEvent<T> extends CustomEvent<T> {
 export interface MwChipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMwChipElement;
+}
+export interface MwTextfieldCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMwTextfieldElement;
 }
 declare global {
     interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {
@@ -296,6 +342,12 @@ declare global {
         prototype: HTMLMwSwitchElement;
         new (): HTMLMwSwitchElement;
     };
+    interface HTMLMwTextfieldElement extends Components.MwTextfield, HTMLStencilElement {
+    }
+    var HTMLMwTextfieldElement: {
+        prototype: HTMLMwTextfieldElement;
+        new (): HTMLMwTextfieldElement;
+    };
     interface HTMLElementTagNameMap {
         "mw-avatar": HTMLMwAvatarElement;
         "mw-button": HTMLMwButtonElement;
@@ -309,6 +361,7 @@ declare global {
         "mw-icon": HTMLMwIconElement;
         "mw-icon-gallery": HTMLMwIconGalleryElement;
         "mw-switch": HTMLMwSwitchElement;
+        "mw-textfield": HTMLMwTextfieldElement;
     }
 }
 declare namespace LocalJSX {
@@ -350,7 +403,7 @@ declare namespace LocalJSX {
         /**
           * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
          */
-        "onClickEmitter"?: (event: MwButtonCustomEvent<string>) => void;
+        "onClickEmitter"?: (event: MwButtonCustomEvent<any>) => void;
         /**
           * Button size
          */
@@ -373,7 +426,7 @@ declare namespace LocalJSX {
           * Use box-shadow for elevation style
          */
         "elevated"?: boolean;
-        "onClickEmitter"?: (event: MwCardCustomEvent<string>) => void;
+        "onClickEmitter"?: (event: MwCardCustomEvent<any>) => void;
         /**
           * Display outline
          */
@@ -526,6 +579,49 @@ declare namespace LocalJSX {
          */
         "testId": string;
     }
+    interface MwTextfield {
+        /**
+          * Visually and functionally disabled input
+         */
+        "disabled"?: boolean;
+        /**
+          * Use to display input and helper-text in error state
+         */
+        "hasError"?: boolean;
+        /**
+          * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+         */
+        "helperText"?: string;
+        /**
+          * Display label and input horizonally
+         */
+        "inline"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * input field name
+         */
+        "name"?: string;
+        "onValueChanged"?: (event: MwTextfieldCustomEvent<string>) => void;
+        /**
+          * Placeholder to be displayed
+         */
+        "placeholder"?: string;
+        /**
+          * Mark input as required
+         */
+        "required"?: boolean;
+        /**
+          * HTML Input type
+         */
+        "type"?: string;
+        /**
+          * input field value
+         */
+        "value"?: string | number;
+    }
     interface IntrinsicElements {
         "mw-avatar": MwAvatar;
         "mw-button": MwButton;
@@ -539,6 +635,7 @@ declare namespace LocalJSX {
         "mw-icon": MwIcon;
         "mw-icon-gallery": MwIconGallery;
         "mw-switch": MwSwitch;
+        "mw-textfield": MwTextfield;
     }
 }
 export { LocalJSX as JSX };
@@ -557,6 +654,7 @@ declare module "@stencil/core" {
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
+            "mw-textfield": LocalJSX.MwTextfield & JSXBase.HTMLAttributes<HTMLMwTextfieldElement>;
         }
     }
 }

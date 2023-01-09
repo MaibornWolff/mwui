@@ -16,9 +16,9 @@
 
 ## Events
 
-| Event          | Description | Type                  |
-| -------------- | ----------- | --------------------- |
-| `clickEmitter` |             | `CustomEvent<string>` |
+| Event          | Description | Type               |
+| -------------- | ----------- | ------------------ |
+| `clickEmitter` |             | `CustomEvent<any>` |
 
 
 ## Dependencies

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-09T14:31:23",
+  "timestamp": "2023-01-09T21:03:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -290,7 +290,7 @@
       "events": [
         {
           "event": "clickEmitter",
-          "detail": "string",
+          "detail": "any",
           "bubbles": true,
           "cancelable": false,
           "composed": false,
@@ -370,7 +370,7 @@
       "events": [
         {
           "event": "clickEmitter",
-          "detail": "string",
+          "detail": "any",
           "bubbles": true,
           "cancelable": false,
           "composed": false,
@@ -810,7 +810,7 @@
           "type": "boolean",
           "mutable": false,
           "attr": "disabled",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "Visually and functionally disable button",
           "docsTags": [],
           "values": [
@@ -842,7 +842,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "selected",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "Selection state that changes onToggle. Can be set as mutable prop.",
           "docsTags": [],
           "default": "false",
@@ -1055,12 +1055,14 @@
       "parts": [],
       "dependents": [],
       "dependencies": [
+        "mw-textfield",
         "mw-icon",
         "mw-card",
         "mw-card-body"
       ],
       "dependencyGraph": {
         "mw-icon-gallery": [
+          "mw-textfield",
           "mw-icon",
           "mw-card",
           "mw-card-body"
@@ -1183,6 +1185,210 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-textfield",
+      "readme": "# mw-textfield\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disabled input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Use to display input and helper-text in error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": true,
+          "docs": "HelperText to be displayed. Can be used as hint or error text when combined with `has-error`",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Display label and input horizonally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "input field name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Mark input as required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "HTML Input type",
+          "docsTags": [],
+          "default": "'text'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "input field value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": false,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mw-icon-gallery"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-icon-gallery": [
+          "mw-textfield"
+        ]
+      }
     }
   ]
 }

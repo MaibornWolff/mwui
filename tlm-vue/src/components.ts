@@ -105,3 +105,18 @@ export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>('mw-switch',
   'checked'
 ]);
 
+
+export const MwTextfield = /*@__PURE__*/ defineContainer<JSX.MwTextfield>('mw-textfield', undefined, [
+  'type',
+  'value',
+  'name',
+  'label',
+  'placeholder',
+  'helperText',
+  'hasError',
+  'inline',
+  'required',
+  'disabled',
+  'valueChanged'
+]);
+

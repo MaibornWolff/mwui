@@ -12,7 +12,7 @@ export class MwCard {
     cancelable: false,
     composed: false,
   })
-  clickEmitter: EventEmitter<string>;
+  clickEmitter: EventEmitter;
 
   /**
    * Must be provided for automated testing
@@ -27,15 +27,11 @@ export class MwCard {
    */
   @Prop() elevated?: boolean = false;
 
-  handleClick = () => {
-    this.clickEmitter.emit('onClick');
-  };
-
   render() {
     return (
       <Host>
         <div
-          onClick={this.handleClick.bind(this)}
+          onClick={() => this.clickEmitter.emit()}
           test-id={this.testId}
           class={classnames('card', {
             outlined: this.outlined,
