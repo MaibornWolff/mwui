@@ -1,4 +1,4 @@
-import {Component, getAssetPath, h, Prop} from '@stencil/core';
+import {Component, h, Prop} from '@stencil/core';
 
 @Component({
   tag: 'mw-checkbox',
@@ -7,10 +7,26 @@ import {Component, getAssetPath, h, Prop} from '@stencil/core';
   shadow: true,
 })
 export class MwCheckbox {
+  /**
+   * Must be provided for automated testing
+   */
+  @Prop() testId!: string;
+  /**
+   * Value of checkbox input
+   */
   @Prop() value: string;
+  /**
+   * Name of checkbox input
+   */
   @Prop() name: string;
-  @Prop() disabled?: boolean;
+  /**
+   * Whether input is checked
+   */
   @Prop({mutable:true}) checked?: boolean;
+  /**
+   * Whether input is disabled
+   */
+  @Prop() disabled?: boolean;
 
   handleCheck = () => {
     if (!this.disabled) {
@@ -20,14 +36,10 @@ export class MwCheckbox {
 
   render() {
     return (
-      <div class="mw-checkbox-container" onClick={this.handleCheck}>
+      <div test-id={this.testId} class="mw-checkbox-container" onClick={this.handleCheck}>
         <input type="checkbox" checked={this.checked} value={this.value} name={this.name}/>
         <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
-          <img
-            class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`}
-            src={getAssetPath("./../assets/mw-checkbox_icon.svg")}
-            alt="Checkmark"
-          />
+          <mw-icon class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`} fill={`var(--mw-component-controls-color-fg-default`} icon="check" size="medium"></mw-icon>
         </span>
         <span class="mw-checkbox-label"><slot></slot></span>
       </div>

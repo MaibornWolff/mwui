@@ -31,7 +31,7 @@ export class MwAvatar {
 
 export declare interface MwButton extends Components.MwButton {
   /**
-   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
+   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. 
    */
   clickEmitter: EventEmitter<CustomEvent<any>>;
 
@@ -59,7 +59,7 @@ export class MwButton {
 
 export declare interface MwCard extends Components.MwCard {
   /**
-   *
+   *  
    */
   clickEmitter: EventEmitter<CustomEvent<any>>;
 
@@ -188,13 +188,34 @@ export class MwCardTitle {
 }
 
 
+export declare interface MwCheckbox extends Components.MwCheckbox {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['checked', 'disabled', 'name', 'value']
+})
+@Component({
+  selector: 'mw-checkbox',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'disabled', 'name', 'value']
+})
+export class MwCheckbox {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MwChip extends Components.MwChip {
   /**
-   * 'close' event is fired when the close icon is clicked.
+   * 'close' event is fired when the close icon is clicked. 
    */
   close: EventEmitter<CustomEvent<any>>;
   /**
-   * 'toggle' event is fired when the chip is clicked. Current selection state is emitted.
+   * 'toggle' event is fired when the chip is clicked. Current selection state is emitted. 
    */
   toggle: EventEmitter<CustomEvent<boolean>>;
 
@@ -283,7 +304,7 @@ export class MwSwitch {
 
 export declare interface MwTextfield extends Components.MwTextfield {
   /**
-   *
+   *  
    */
   valueChanged: EventEmitter<CustomEvent<string>>;
 

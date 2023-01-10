@@ -77,8 +77,6 @@ input:focus + .mw-checkbox.selected.enabled {
 }
 /* mw-checkmark */
 .mw-checkmark {
-  width: 14px;
-  height: 11px;
   display: none;
 }
 /* Selected */
@@ -88,5 +86,9 @@ input:focus + .mw-checkbox.selected.enabled {
 
 /* mw-checkbox-label */
 .mw-checkbox-label{
+  font-family: var(--mw-component-control-label-font-family);
+  font-weight: var(--mw-component-control-label-font-weight);
+  font-size: var(--mw-component-control-label-font-size);
+  line-height: var(--mw-component-control-label-line-height);
   color: var(--mw-component-controls-color-label-default);
 }
