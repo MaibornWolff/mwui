@@ -192,13 +192,13 @@ export declare interface MwCheckbox extends Components.MwCheckbox {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['checked', 'disabled', 'name', 'testId', 'value']
+  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
 })
 @Component({
   selector: 'mw-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'name', 'testId', 'value']
+  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
 })
 export class MwCheckbox {
   protected el: HTMLElement;

@@ -9,8 +9,9 @@
 
 | Property              | Attribute  | Description                            | Type      | Default     |
 | --------------------- | ---------- | -------------------------------------- | --------- | ----------- |
-| `checked`             | `checked`  | Whether input is checked               | `boolean` | `undefined` |
-| `disabled`            | `disabled` | Whether input is disabled              | `boolean` | `undefined` |
+| `checked`             | `checked`  | Whether input is checked               | `boolean` | `false`     |
+| `disabled`            | `disabled` | Whether input is disabled              | `boolean` | `false`     |
+| `label`               | `label`    | Label to be displayed                  | `string`  | `undefined` |
 | `name`                | `name`     | Name of checkbox input                 | `string`  | `undefined` |
 | `testId` _(required)_ | `test-id`  | Must be provided for automated testing | `string`  | `undefined` |
 | `value`               | `value`    | Value of checkbox input                | `string`  | `undefined` |

@@ -152,9 +152,13 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
           * Name of checkbox input
          */
-        "name": string;
+        "name"?: string;
         /**
           * Must be provided for automated testing
          */
@@ -162,7 +166,7 @@ export namespace Components {
         /**
           * Value of checkbox input
          */
-        "value": string;
+        "value"?: string;
     }
     interface MwChip {
         /**
@@ -541,6 +545,10 @@ declare namespace LocalJSX {
           * Whether input is disabled
          */
         "disabled"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
         /**
           * Name of checkbox input
          */

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-10T09:55:52",
+  "timestamp": "2023-01-10T10:33:18",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -10,7 +10,7 @@
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-avatar",
-      "readme": "# mw-avatar\n\n\n",
+      "readme": "# mw-avatar\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -130,7 +130,7 @@
       "filePath": "./src/components/mw-button/mw-button.tsx",
       "encapsulation": "none",
       "tag": "mw-button",
-      "readme": "# mw-button\n\n\n",
+      "readme": "# mw-button\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -310,7 +310,7 @@
       "filePath": "./src/components/mw-card/mw-card.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card",
-      "readme": "# mw-card\n\n\n",
+      "readme": "# mw-card\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -396,7 +396,7 @@
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-body",
-      "readme": "# mw-card-body\n\n\n",
+      "readme": "# mw-card-body\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -421,7 +421,7 @@
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-footer",
-      "readme": "# mw-card-footer\n\n\n",
+      "readme": "# mw-card-footer\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -628,7 +628,7 @@
       "filePath": "./src/components/mw-card-header/mw-card-header.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-header",
-      "readme": "# mw-card-header\n\n\n",
+      "readme": "# mw-card-header\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -680,7 +680,7 @@
       "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-image",
-      "readme": "# mw-card-image\n\n\n",
+      "readme": "# mw-card-image\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -732,7 +732,7 @@
       "filePath": "./src/components/mw-card-title/mw-card-title.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-title",
-      "readme": "# mw-card-title\n\n\n",
+      "readme": "# mw-card-title\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -800,7 +800,7 @@
       "filePath": "./src/components/mw-checkbox/mw-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "mw-checkbox",
-      "readme": "# mw-checkbox\n\n\n",
+      "readme": "# mw-checkbox\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -813,6 +813,7 @@
           "reflectToAttr": false,
           "docs": "Whether input is checked",
           "docsTags": [],
+          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -829,9 +830,26 @@
           "reflectToAttr": false,
           "docs": "Whether input is disabled",
           "docsTags": [],
+          "default": "false",
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": true,
@@ -850,7 +868,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -882,7 +900,7 @@
               "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         }
       ],
@@ -906,7 +924,7 @@
       "filePath": "./src/components/mw-chip/mw-chip.tsx",
       "encapsulation": "shadow",
       "tag": "mw-chip",
-      "readme": "# mw-chip\n\n\n",
+      "readme": "# mw-chip\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1033,7 +1051,7 @@
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon",
-      "readme": "# mw-icon\n\n\n",
+      "readme": "# mw-icon\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1152,7 +1170,7 @@
       "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon-gallery",
-      "readme": "# mw-icon-gallery\n\n\n",
+      "readme": "# mw-icon-gallery\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1183,7 +1201,7 @@
       "filePath": "./src/components/mw-switch/mw-switch.tsx",
       "encapsulation": "shadow",
       "tag": "mw-switch",
-      "readme": "# mw-switch\n\n\n",
+      "readme": "# mw-switch\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1300,7 +1318,7 @@
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
       "encapsulation": "shadow",
       "tag": "mw-textfield",
-      "readme": "# mw-textfield\n\n\n",
+      "readme": "# mw-textfield\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
