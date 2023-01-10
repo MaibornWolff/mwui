@@ -3,7 +3,7 @@
   cursor: pointer;
   align-items: center;
   gap: var(--mw-component-controls-with-label-gap);
-  margin: var(--mw-component-controls-with-label-padding-tb) var(--mw-component-controls-with-label-padding-r) var(--mw-component-controls-with-label-padding-tb) var(--mw-component-controls-with-label-padding-l);
+  margin: var(--mw-component-controls-with-label-padding-y) var(--mw-component-controls-with-label-padding-r) var(--mw-component-controls-with-label-padding-y) var(--mw-component-controls-with-label-padding-l);
 }
 .mw-checkbox-container input {
   position: absolute;

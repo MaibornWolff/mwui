@@ -26,7 +26,7 @@
   -webkit-border-bottom-left-radius: var(--mw-component-chips-border-radius);
   -webkit-border-bottom-right-radius: var(--mw-component-chips-border-radius);
   gap: var(--mw-component-chips-gap-within);
-  padding: 0 var(--mw-component-chips-padding-lr);
+  padding: 0 var(--mw-component-chips-padding-x);
   outline: var(--mw-component-chips-border-width-default) solid var(--mw-component-chips-color-border-default);
   color: var(--mw-component-chips-color-fg-default);
   background: var(--mw-component-chips-color-bg-default);
@@ -34,6 +34,7 @@
 
 /* hover */
 .chip:hover:not(.disabled) {
+  /* FIXME: fg-hover doesn't currently exist */
   color: var(--mw-component-chips-color-fg-hover);
   background: var(--mw-component-chips-color-bg-hover);
 }

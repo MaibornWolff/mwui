@@ -99,7 +99,7 @@ const base = css`
   }
 
   &.large {
-    padding: ${mwComponentButtonLgPaddingX} ${mwComponentButtonLgPaddingY};
+    padding: ${mwComponentButtonLgPaddingY} ${mwComponentButtonLgPaddingX};
     font-family: ${mwComponentButtonLabelLgFontFamily};
     line-height: ${mwComponentButtonLabelLgLineHeight}px;
     font-weight: ${getFontWeightValue(mwComponentButtonLabelLgFontWeight)};

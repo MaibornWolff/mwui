@@ -8,7 +8,7 @@
 }
 
 .card-image.top img {
-  margin-top: calc(-1 * var(--mw-component-card-padding-components-tb-default));
+  margin-top: calc(-1 * var(--mw-component-card-padding-components-y-default));
   border-top-left-radius: var(--mw-component-card-border-radius);
   border-top-right-radius: var(--mw-component-card-border-radius);
 }
@@ -16,11 +16,11 @@
 .card-image.bottom img {
   border-bottom-left-radius: var(--mw-component-card-border-radius);
   border-bottom-right-radius: var(--mw-component-card-border-radius);
-  margin-bottom: calc(-1 * var(--mw-component-card-padding-components-tb-default) - 4px);
+  margin-bottom: calc(-1 * var(--mw-component-card-padding-components-y-default) - 4px);
 }
 
 .card-image.single img {
   border-radius: var(--mw-component-card-border-radius);
-  margin-top: calc(-1 * var(--mw-component-card-padding-components-tb-default));
-  margin-bottom: calc(-1 * var(--mw-component-card-padding-components-tb-default) - 4px);
+  margin-top: calc(-1 * var(--mw-component-card-padding-components-y-default));
+  margin-bottom: calc(-1 * var(--mw-component-card-padding-components-y-default) - 4px);
 }

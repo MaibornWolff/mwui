@@ -19,7 +19,7 @@
 }
 
 label {
-  padding: 0 var(--mw-component-input-padding-input-field-label-vertical-lr);
+  padding: 0 var(--mw-component-input-padding-input-field-label-vertical-x);
   font-family: var(--mw-component-input-label-font-family);
   font-weight: var(--mw-component-input-label-font-weight);
   font-size: var(--mw-component-input-label-font-size);
@@ -39,7 +39,7 @@ label {
 
 .textfield.inline label {
   width: var(--mw-component-size-input-label-horizontal-width);
-  padding: var(--mw-component-input-padding-input-field-label-horizontal-all);
+  padding: var(--mw-component-input-padding-input-field-label-horizontal);
 }
 
 .input {
@@ -47,8 +47,8 @@ label {
   /* TODO: verify token */
   gap: var(--mw-component-input-gap-horizontal-input-field);
   /* TODO: missing token */
-  border-radius: var(--border-radius-standard-medium);
-  padding: var(--mw-component-input-padding-input-field-tb) var(--mw-component-input-padding-input-field-lr);
+  border-radius: var(--border-radius-standard-md);
+  padding: var(--mw-component-input-padding-input-field-y) var(--mw-component-input-padding-input-field-x);
   background: var(--mw-component-input-bg-default);
   outline: var(--mw-component-input-default) solid var(--mw-component-input-border-default);
 }
@@ -100,7 +100,7 @@ label {
 
 .helper-text {
   align-self: flex-end;
-  padding: var(--mw-component-input-padding-helper-text-tb) 0;
+  padding: var(--mw-component-input-padding-helper-text-y) 0;
   color: var(--mw-component-input-fg-helper-text);
   font-family: var(--mw-component-input-helper-text-font-family);
   font-weight: var(--mw-component-input-helper-text-font-weight);

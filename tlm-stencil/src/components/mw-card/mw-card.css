@@ -10,9 +10,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: var(--mw-component-card-padding-components-tb-default);
-  padding-top: var(--mw-component-card-padding-components-tb-default);
-  padding-bottom: var(--mw-component-card-padding-components-tb-default);
+  gap: var(--mw-component-card-padding-components-y-default);
+  padding-top: var(--mw-component-card-padding-components-y-default);
+  padding-bottom: var(--mw-component-card-padding-components-y-default);
   background: var(--mw-component-card-bg-default);
   border-radius: var(--mw-component-card-border-radius);
   -webkit-border-radius: var(--mw-component-card-border-radius);
