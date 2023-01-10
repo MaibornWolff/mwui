@@ -52,8 +52,8 @@ import{r as t,h as e,H as o,c as n,g as r,a as i}from"./p-8c1da0d3.js";const a=c
   }
   &:focus {
     outline-color: ${"#001418"};
-    outline: ${2} solid;
-    outline-offset: ${-4};
+    outline: ${1} solid;
+    outline-offset: ${-2};
     background-color: ${"#c42177"};
     color: ${"#ffffff"};
   }
@@ -78,9 +78,9 @@ import{r as t,h as e,H as o,c as n,g as r,a as i}from"./p-8c1da0d3.js";const a=c
     color: ${"#ed2985"};
   }
   &:focus {
-    outline: ${2}px solid;
+    outline: ${1}px solid;
     outline-color: ${"#001418"};
-    outline-offset: ${-4}px;
+    outline-offset: ${-2}px;
     color: ${"#ed2985"};
   }
   &:active {
@@ -103,9 +103,9 @@ import{r as t,h as e,H as o,c as n,g as r,a as i}from"./p-8c1da0d3.js";const a=c
     color: ${"#ed2985"};
   }
   &:focus {
-    outline: ${2}px solid;
+    outline: ${1}px solid;
     outline-color: ${"#001418"};
-    outline-offset: ${-4}px;
+    outline-offset: ${-2}px;
     color: ${"#ed2985"};
   }
   &:active {
