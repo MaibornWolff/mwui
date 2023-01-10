@@ -20,6 +20,7 @@
 ### Used by
 
  - [mw-avatar](../mw-avatar)
+ - [mw-checkbox](../mw-checkbox)
  - [mw-chip](../mw-chip)
  - [mw-icon-gallery](../mw-icon-gallery)
 
@@ -27,6 +28,7 @@
 ```mermaid
 graph TD;
   mw-avatar --> mw-icon
+  mw-checkbox --> mw-icon
   mw-chip --> mw-icon
   mw-icon-gallery --> mw-icon
   style mw-icon fill:#f9f,stroke:#333,stroke-width:4px
