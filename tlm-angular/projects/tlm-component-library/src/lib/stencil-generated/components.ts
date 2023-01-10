@@ -241,6 +241,27 @@ export class MwChip {
 }
 
 
+export declare interface MwDivider extends Components.MwDivider {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['inset']
+})
+@Component({
+  selector: 'mw-divider',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['inset']
+})
+export class MwDivider {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MwIcon extends Components.MwIcon {}
 
 @ProxyCmp({

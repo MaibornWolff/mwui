@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-10T12:24:08",
+  "timestamp": "2023-01-10T13:33:04",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -1046,6 +1046,42 @@
           "mw-icon"
         ]
       }
+    },
+    {
+      "filePath": "./src/components/mw-divider/mw-divider.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-divider",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "inset",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inset",
+          "reflectToAttr": false,
+          "docs": "Whether the divider is a middle-inset",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-icon/mw-icon.tsx",

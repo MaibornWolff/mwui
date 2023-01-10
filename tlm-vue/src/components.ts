@@ -95,6 +95,11 @@ export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>('mw-chip', undef
 ]);
 
 
+export const MwDivider = /*@__PURE__*/ defineContainer<JSX.MwDivider>('mw-divider', undefined, [
+  'inset'
+]);
+
+
 export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>('mw-icon', undefined, [
   'icon',
   'size',
