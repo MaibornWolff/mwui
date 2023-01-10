@@ -3,18 +3,18 @@ import { fetchIcon } from './utils';
 import { Size } from '../mw-avatar/mw-avatar';
 import {
   mwComponentSizeAvatarsIconLarge,
-  mwComponentSizeAvatarsIconMedium,
-  mwComponentSizeAvatarsIconSmall,
-  mwComponentSizeAvatarsIconXSmall,
+  mwComponentSizeAvatarsIconMd,
+  mwComponentSizeAvatarsIconSm,
+  mwComponentSizeAvatarsIconXs,
 } from '../../../../tlm-token-farm/dist/js/MW_component';
 
 const getDimensionForSize = (size: Size) =>
   Number(
     {
       'large': mwComponentSizeAvatarsIconLarge,
-      'medium': mwComponentSizeAvatarsIconMedium,
-      'small': mwComponentSizeAvatarsIconSmall,
-      'x-small': mwComponentSizeAvatarsIconXSmall,
+      'medium': mwComponentSizeAvatarsIconMd,
+      'small': mwComponentSizeAvatarsIconSm,
+      'x-small': mwComponentSizeAvatarsIconXs,
     }[size].replace('px', ''),
   );
 

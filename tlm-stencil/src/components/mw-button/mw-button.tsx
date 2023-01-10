@@ -28,36 +28,36 @@ import {
   mwComponentButtonOutlineGhostColorFgPressed,
   mwComponentButtonOutlineGhostColorBorderPressed,
   mwComponentButtonOutlineGhostColorBorderFocused,
-  mwComponentButtonLabelSmallFontFamily,
-  mwComponentButtonLabelSmallFontWeight,
-  mwComponentButtonLabelSmallLineHeight,
-  mwComponentButtonLabelSmallFontSize,
-  mwComponentButtonSmPaddingLr,
-  mwComponentButtonSmPaddingTb,
+  mwComponentButtonLabelSmFontFamily,
+  mwComponentButtonLabelSmFontWeight,
+  mwComponentButtonLabelSmLineHeight,
+  mwComponentButtonLabelSmFontSize,
+  mwComponentButtonSmPaddingX,
+  mwComponentButtonSmPaddingY,
   mwComponentButtonSmGapBetween,
   mwComponentButtonSmPaddingIcon,
-  mwComponentButtonLabelMediumFontFamily,
-  mwComponentButtonLabelMediumFontWeight,
-  mwComponentButtonLabelMediumLineHeight,
-  mwComponentButtonLabelMediumFontSize,
-  mwComponentButtonMdPaddingLr,
-  mwComponentButtonMdPaddingTb,
+  mwComponentButtonLabelMdFontFamily,
+  mwComponentButtonLabelMdFontWeight,
+  mwComponentButtonLabelMdLineHeight,
+  mwComponentButtonLabelMdFontSize,
+  mwComponentButtonMdPaddingX,
+  mwComponentButtonMdPaddingY,
   mwComponentButtonMdGapBetween,
   mwComponentButtonMdPaddingIcon,
-  mwComponentButtonLabelLargeFontFamily,
-  mwComponentButtonLabelLargeFontWeight,
-  mwComponentButtonLabelLargeLineHeight,
-  mwComponentButtonLabelLargeFontSize,
-  mwComponentButtonLgPaddingLr,
-  mwComponentButtonLgPaddingTb,
+  mwComponentButtonLabelLgFontFamily,
+  mwComponentButtonLabelLgFontWeight,
+  mwComponentButtonLabelLgLineHeight,
+  mwComponentButtonLabelLgFontSize,
+  mwComponentButtonLgPaddingY,
+  mwComponentButtonLgPaddingX,
   mwComponentButtonLgGapBetween,
   mwComponentButtonLgPaddingIcon,
-  mwComponentButtonLabelXlargeFontFamily,
-  mwComponentButtonLabelXlargeFontWeight,
-  mwComponentButtonLabelXlargeLineHeight,
-  mwComponentButtonLabelXlargeFontSize,
-  mwComponentButtonXlPaddingLr,
-  mwComponentButtonXlPaddingTb,
+  mwComponentButtonLabelXlFontFamily,
+  mwComponentButtonLabelXlFontWeight,
+  mwComponentButtonLabelXlLineHeight,
+  mwComponentButtonLabelXlFontSize,
+  mwComponentButtonXlPaddingX,
+  mwComponentButtonXlPaddingY,
   mwComponentButtonXlGapBetween,
   mwComponentButtonXlPaddingIcon,
   mwComponentSizeButtonFilledOutlineMinWidth,
@@ -83,35 +83,35 @@ const base = css`
   min-width: ${mwComponentSizeButtonFilledOutlineMinWidth};
 
   &.small {
-    padding: ${mwComponentButtonSmPaddingTb} ${mwComponentButtonSmPaddingLr};
-    font-family: ${mwComponentButtonLabelSmallFontFamily};
-    line-height: ${mwComponentButtonLabelSmallLineHeight}px;
-    font-weight: ${getFontWeightValue(mwComponentButtonLabelSmallFontWeight)};
-    font-size: ${mwComponentButtonLabelSmallFontSize}px;
+    padding: ${mwComponentButtonSmPaddingY} ${mwComponentButtonSmPaddingX};
+    font-family: ${mwComponentButtonLabelSmFontFamily};
+    line-height: ${mwComponentButtonLabelSmLineHeight}px;
+    font-weight: ${getFontWeightValue(mwComponentButtonLabelSmFontWeight)};
+    font-size: ${mwComponentButtonLabelSmFontSize}px;
   }
 
   &.medium {
-    padding: ${mwComponentButtonMdPaddingTb} ${mwComponentButtonMdPaddingLr};
-    font-family: ${mwComponentButtonLabelMediumFontFamily};
-    line-height: ${mwComponentButtonLabelMediumLineHeight}px;
-    font-weight: ${getFontWeightValue(mwComponentButtonLabelMediumFontWeight)};
-    font-size: ${mwComponentButtonLabelMediumFontSize}px;
+    padding: ${mwComponentButtonMdPaddingY} ${mwComponentButtonMdPaddingX};
+    font-family: ${mwComponentButtonLabelMdFontFamily};
+    line-height: ${mwComponentButtonLabelMdLineHeight}px;
+    font-weight: ${getFontWeightValue(mwComponentButtonLabelMdFontWeight)};
+    font-size: ${mwComponentButtonLabelMdFontSize}px;
   }
 
   &.large {
-    padding: ${mwComponentButtonLgPaddingTb} ${mwComponentButtonLgPaddingLr};
-    font-family: ${mwComponentButtonLabelLargeFontFamily};
-    line-height: ${mwComponentButtonLabelLargeLineHeight}px;
-    font-weight: ${getFontWeightValue(mwComponentButtonLabelLargeFontWeight)};
-    font-size: ${mwComponentButtonLabelLargeFontSize}px;
+    padding: ${mwComponentButtonLgPaddingX} ${mwComponentButtonLgPaddingY};
+    font-family: ${mwComponentButtonLabelLgFontFamily};
+    line-height: ${mwComponentButtonLabelLgLineHeight}px;
+    font-weight: ${getFontWeightValue(mwComponentButtonLabelLgFontWeight)};
+    font-size: ${mwComponentButtonLabelLgFontSize}px;
   }
 
   &.x-large {
-    padding: ${mwComponentButtonXlPaddingTb} ${mwComponentButtonXlPaddingLr};
-    font-family: ${mwComponentButtonLabelXlargeFontFamily};
-    line-height: ${mwComponentButtonLabelXlargeLineHeight}px;
-    font-weight: ${getFontWeightValue(mwComponentButtonLabelXlargeFontWeight)};
-    font-size: ${mwComponentButtonLabelXlargeFontSize}px;
+    padding: ${mwComponentButtonXlPaddingY} ${mwComponentButtonXlPaddingX};
+    font-family: ${mwComponentButtonLabelXlFontFamily};
+    line-height: ${mwComponentButtonLabelXlLineHeight}px;
+    font-weight: ${getFontWeightValue(mwComponentButtonLabelXlFontWeight)};
+    font-size: ${mwComponentButtonLabelXlFontSize}px;
   }
 `;
 

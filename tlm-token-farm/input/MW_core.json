@@ -150,11 +150,11 @@
         }
       },
       "buttonSm": {
-        "paddingLR": {
+        "paddingX": {
           "value": "4px + 4px + 4px + 4px",
           "type": "spacing"
         },
-        "paddingTB": {
+        "paddingY": {
           "value": "4px",
           "type": "spacing"
         },
@@ -172,11 +172,11 @@
         }
       },
       "buttonMd": {
-        "paddingLR": {
+        "paddingX": {
           "value": "4px + 4px + 4px + 4px + 4px + 4px",
           "type": "spacing"
         },
-        "paddingTB": {
+        "paddingY": {
           "value": "4px + 4px",
           "type": "spacing"
         },
@@ -194,11 +194,11 @@
         }
       },
       "buttonLg": {
-        "paddingLR": {
+        "paddingX": {
           "value": "4px + 4px + 4px + 4px + 4px + 4px + 4px + 4px",
           "type": "spacing"
         },
-        "paddingTB": {
+        "paddingY": {
           "value": "4px + 4px + 4px",
           "type": "spacing"
         },
@@ -216,11 +216,11 @@
         }
       },
       "buttonXl": {
-        "paddingLR": {
+        "paddingX": {
           "value": "1.5*4px + 4px + 4px + 4px + 4px + 4px + 4px + 4px",
           "type": "spacing"
         },
-        "paddingTB": {
+        "paddingY": {
           "value": "4px + 4px + 4px + 4px + 4px",
           "type": "spacing"
         },
@@ -238,7 +238,7 @@
         }
       },
       "buttonLabel": {
-        "small": {
+        "sm": {
           "fontFamily": {
             "value": "Poppins",
             "type": "fontFamily"
@@ -256,7 +256,7 @@
             "type": "fontSize"
           }
         },
-        "medium": {
+        "md": {
           "fontFamily": {
             "value": "Poppins",
             "type": "fontFamily"
@@ -274,7 +274,7 @@
             "type": "fontSize"
           }
         },
-        "large": {
+        "lg": {
           "fontFamily": {
             "value": "Poppins",
             "type": "fontFamily"
@@ -292,7 +292,7 @@
             "type": "fontSize"
           }
         },
-        "Xlarge": {
+        "xl": {
           "fontFamily": {
             "value": "Poppins",
             "type": "fontFamily"
@@ -364,23 +364,23 @@
             }
           },
           "icon": {
-            "x-small": {
+            "xs": {
               "value": 12,
               "type": "sizing"
             },
-            "small": {
+            "sm": {
               "value": 16,
               "type": "sizing"
             },
-            "medium": {
+            "md": {
               "value": 24,
               "type": "sizing"
             },
-            "large": {
+            "lg": {
               "value": 32,
               "type": "sizing"
             },
-            "xlarge": {
+            "xl": {
               "value": 48,
               "type": "sizing"
             }
@@ -445,32 +445,32 @@
           }
         },
         "avatars": {
-          "large": {
-            "value": 56,
-            "type": "sizing"
-          },
-          "medium": {
-            "value": 40,
-            "type": "sizing"
-          },
-          "small": {
-            "value": 24,
-            "type": "sizing"
-          },
-          "x-small": {
+          "xs": {
             "value": 20,
             "type": "sizing"
           },
+          "sm": {
+            "value": 24,
+            "type": "sizing"
+          },
+          "md": {
+            "value": 40,
+            "type": "sizing"
+          },
+          "lg": {
+            "value": 56,
+            "type": "sizing"
+          },
           "icon": {
-            "x-small": {
+            "xs": {
               "value": 12,
               "type": "sizing"
             },
-            "small": {
+            "sm": {
               "value": 16,
               "type": "sizing"
             },
-            "medium": {
+            "md": {
               "value": 24,
               "type": "sizing"
             },
@@ -478,7 +478,7 @@
               "value": 32,
               "type": "sizing"
             },
-            "xlarge": {
+            "xl": {
               "value": 48,
               "type": "sizing"
             }
@@ -582,19 +582,17 @@
           "value": "4px + 4px + 4px",
           "type": "spacing"
         },
-        "padding": {
-          "tb": {
-            "value": "4px + 4px + 4px",
-            "type": "spacing"
-          },
-          "r": {
-            "value": "4px + 4px + 4px",
-            "type": "spacing"
-          },
-          "l": {
-            "value": 0,
-            "type": "spacing"
-          }
+        "paddingY": {
+          "value": "4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "paddingR": {
+          "value": "4px + 4px + 4px",
+          "type": "spacing"
+        },
+        "paddingL": {
+          "value": 0,
+          "type": "spacing"
         }
       },
       "control": {
@@ -753,33 +751,25 @@
           }
         },
         "padding": {
-          "input-field": {
-            "tb": {
-              "value": "4px + 4px",
-              "type": "spacing"
-            },
-            "lr": {
+          "inputFieldX": {
+            "value": "4px + 4px + 4px + 4px",
+            "type": "spacing"
+          },
+          "inputFieldY": {
+            "value": "4px + 4px",
+            "type": "spacing"
+          },
+          "helperTextY": {
+            "value": "4px",
+            "type": "spacing"
+          },
+          "inputField": {
+            "labelVerticalX": {
               "value": "4px + 4px + 4px + 4px",
               "type": "spacing"
             },
-            "label": {
-              "vertical": {
-                "lr": {
-                  "value": "4px + 4px + 4px + 4px",
-                  "type": "spacing"
-                }
-              },
-              "horizontal": {
-                "all": {
-                  "value": 0,
-                  "type": "spacing"
-                }
-              }
-            }
-          },
-          "helper-text": {
-            "tb": {
-              "value": "4px",
+            "labelHorizontal": {
+              "value": 0,
               "type": "spacing"
             }
           }
@@ -1064,11 +1054,9 @@
             "type": "lineHeight"
           }
         },
-        "padding": {
-          "lr": {
-            "value": "4px + 4px + 4px",
-            "type": "spacing"
-          }
+        "paddingX": {
+          "value": "4px + 4px + 4px",
+          "type": "spacing"
         },
         "borderWidth": {
           "default": {
@@ -1128,15 +1116,13 @@
           "value": "16px",
           "type": "borderRadius"
         },
-        "gap": {
-          "within": {
-            "value": "4px + 4px",
-            "type": "spacing"
-          },
-          "between": {
-            "value": "4px + 4px",
-            "type": "spacing"
-          }
+        "gapWithin": {
+          "value": "4px + 4px",
+          "type": "spacing"
+        },
+        "gapBetween": {
+          "value": "4px + 4px",
+          "type": "spacing"
         }
       },
       "avatars": {
@@ -1155,7 +1141,7 @@
           }
         },
         "typo": {
-          "large": {
+          "xs": {
             "fontFamily": {
               "value": "Poppins",
               "type": "fontFamily"
@@ -1165,33 +1151,15 @@
               "type": "fontWeight"
             },
             "lineHeight": {
-              "value": 48,
+              "value": 16,
               "type": "lineHeight"
             },
             "fontSize": {
-              "value": 32,
+              "value": 10,
               "type": "fontSize"
             }
           },
-          "medium": {
-            "fontFamily": {
-              "value": "Poppins",
-              "type": "fontFamily"
-            },
-            "fontWeight": {
-              "value": "Regular",
-              "type": "fontWeight"
-            },
-            "lineHeight": {
-              "value": 48,
-              "type": "lineHeight"
-            },
-            "fontSize": {
-              "value": 24,
-              "type": "fontSize"
-            }
-          },
-          "small": {
+          "sm": {
             "fontFamily": {
               "value": "Poppins",
               "type": "fontFamily"
@@ -1209,7 +1177,7 @@
               "type": "fontSize"
             }
           },
-          "x-small": {
+          "md": {
             "fontFamily": {
               "value": "Poppins",
               "type": "fontFamily"
@@ -1219,11 +1187,29 @@
               "type": "fontWeight"
             },
             "lineHeight": {
-              "value": 16,
+              "value": 48,
               "type": "lineHeight"
             },
             "fontSize": {
-              "value": 10,
+              "value": 24,
+              "type": "fontSize"
+            }
+          },
+          "lg": {
+            "fontFamily": {
+              "value": "Poppins",
+              "type": "fontFamily"
+            },
+            "fontWeight": {
+              "value": "Regular",
+              "type": "fontWeight"
+            },
+            "lineHeight": {
+              "value": 48,
+              "type": "lineHeight"
+            },
+            "fontSize": {
+              "value": 32,
               "type": "fontSize"
             }
           }
@@ -1483,19 +1469,19 @@
           }
         },
         "padding": {
+          "componentsX": {
+            "default": {
+              "value": "4px + 4px + 4px + 4px + 4px + 4px",
+              "type": "spacing"
+            }
+          },
+          "componentsY": {
+            "default": {
+              "value": "4px + 4px + 4px + 4px + 4px + 4px",
+              "type": "spacing"
+            }
+          },
           "components": {
-            "lr": {
-              "default": {
-                "value": "4px + 4px + 4px + 4px + 4px + 4px",
-                "type": "spacing"
-              }
-            },
-            "tb": {
-              "default": {
-                "value": "4px + 4px + 4px + 4px + 4px + 4px",
-                "type": "spacing"
-              }
-            },
             "t": {
               "footer": {
                 "value": "4px + 4px + 4px + 4px + 4px + 4px",
@@ -1888,19 +1874,19 @@
             }
           },
           "label": {
-            "regular": {
+            "sm": {
               "value": 14,
               "type": "fontSizes"
             },
-            "medium": {
+            "md": {
               "value": 16,
               "type": "fontSizes"
             },
-            "large": {
+            "lg": {
               "value": 20,
               "type": "fontSizes"
             },
-            "Xlarge": {
+            "xl": {
               "value": 24,
               "type": "fontSizes"
             }
