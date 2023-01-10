@@ -10,9 +10,9 @@
   },
   "scripts": {
     "start": "npm run build-tw && http-server -p 8080",
-    "transform:core": "npx token-transformer input/tokens.json input/MW_core.json MW_core,MW_semantic_light,MW_component --expandTypography=true",
-    "transform:semantic": "npx token-transformer input/tokens.json input/MW_semantic_light.json MW_core,MW_semantic_light,MW_component --expandTypography=true",
-    "transform:component": "npx token-transformer input/tokens.json input/MW_component.json MW_core,MW_semantic_light,MW_component --expandTypography=true",
+    "transform:core": "npx token-transformer input/tokens.json input/MW_core.json MW_core,MW_semantic_light,MW_component --expandTypography=true --expandShadow=true",
+    "transform:semantic": "npx token-transformer input/tokens.json input/MW_semantic_light.json MW_core,MW_semantic_light,MW_component --expandTypography=true --expandShadow=true",
+    "transform:component": "npx token-transformer input/tokens.json input/MW_component.json MW_core,MW_semantic_light,MW_component --expandTypography=true --expandShadow=true",
     "transform": "npm run transform:core && npm run transform:semantic && npm run transform:component",
     "build:style-dictionary": "ts-node src/scripts/build.ts",
     "build": "npm run transform && npm run build:style-dictionary",
