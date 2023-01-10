@@ -190,6 +190,12 @@ export namespace Components {
          */
         "testId": string;
     }
+    interface MwDivider {
+        /**
+          * Whether the divider is a middle-inset
+         */
+        "inset"?: boolean;
+    }
     interface MwIcon {
         /**
           * Overwrite fill color
@@ -356,6 +362,12 @@ declare global {
         prototype: HTMLMwChipElement;
         new (): HTMLMwChipElement;
     };
+    interface HTMLMwDividerElement extends Components.MwDivider, HTMLStencilElement {
+    }
+    var HTMLMwDividerElement: {
+        prototype: HTMLMwDividerElement;
+        new (): HTMLMwDividerElement;
+    };
     interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {
     }
     var HTMLMwIconElement: {
@@ -391,6 +403,7 @@ declare global {
         "mw-card-title": HTMLMwCardTitleElement;
         "mw-checkbox": HTMLMwCheckboxElement;
         "mw-chip": HTMLMwChipElement;
+        "mw-divider": HTMLMwDividerElement;
         "mw-icon": HTMLMwIconElement;
         "mw-icon-gallery": HTMLMwIconGalleryElement;
         "mw-switch": HTMLMwSwitchElement;
@@ -592,6 +605,12 @@ declare namespace LocalJSX {
          */
         "testId": string;
     }
+    interface MwDivider {
+        /**
+          * Whether the divider is a middle-inset
+         */
+        "inset"?: boolean;
+    }
     interface MwIcon {
         /**
           * Overwrite fill color
@@ -692,6 +711,7 @@ declare namespace LocalJSX {
         "mw-card-title": MwCardTitle;
         "mw-checkbox": MwCheckbox;
         "mw-chip": MwChip;
+        "mw-divider": MwDivider;
         "mw-icon": MwIcon;
         "mw-icon-gallery": MwIconGallery;
         "mw-switch": MwSwitch;
@@ -712,6 +732,7 @@ declare module "@stencil/core" {
             "mw-card-title": LocalJSX.MwCardTitle & JSXBase.HTMLAttributes<HTMLMwCardTitleElement>;
             "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
             "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
+            "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;

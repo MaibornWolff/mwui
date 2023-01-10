@@ -1,0 +1,12 @@
+.mw-divider {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 0;
+  border-top: var(--mw-component-divider-border-width-default) solid var(--mw-component-divider-fg-default);
+}
+
+/* Adds margin to left-right if inset is true */
+.mw-divider.inset {
+  margin: 0 var(--mw-component-divider-inset);
+}
