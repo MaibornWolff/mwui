@@ -1,0 +1,1394 @@
+{
+  "timestamp": "2023-01-09T21:06:50",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.18.1",
+    "typescriptVersion": "4.7.4"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-avatar",
+      "readme": "# mw-avatar\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alt",
+          "type": "string",
+          "mutable": false,
+          "attr": "alt",
+          "reflectToAttr": false,
+          "docs": "Alt text, first letter used as fallback when no src or icon given",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Icon name. Will be ignored if `src` is provided",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\" | \"x-small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Size variant",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "x-small",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "mutable": false,
+          "attr": "src",
+          "reflectToAttr": false,
+          "docs": "Image source",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Test Id",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mw-icon"
+      ],
+      "dependencyGraph": {
+        "mw-avatar": [
+          "mw-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-button/mw-button.tsx",
+      "encapsulation": "none",
+      "tag": "mw-button",
+      "readme": "# mw-button\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disable button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "If provided the button will act as a link",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\" | \"x-large\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Button size",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "x-large",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\"",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "If using href the target prop can be provided",
+          "docsTags": [],
+          "default": "'_self'",
+          "values": [
+            {
+              "value": "_blank",
+              "type": "string"
+            },
+            {
+              "value": "_parent",
+              "type": "string"
+            },
+            {
+              "value": "_self",
+              "type": "string"
+            },
+            {
+              "value": "_top",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "variant",
+          "type": "\"filled\" | \"ghost\" | \"outline\"",
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Button variants",
+          "docsTags": [],
+          "default": "'filled'",
+          "values": [
+            {
+              "value": "filled",
+              "type": "string"
+            },
+            {
+              "value": "ghost",
+              "type": "string"
+            },
+            {
+              "value": "outline",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "clickEmitter",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "'onClick' event is fired when clicking the button, unless it is used with a `href` prop.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-card/mw-card.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card",
+      "readme": "# mw-card\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "elevated",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "elevated",
+          "reflectToAttr": false,
+          "docs": "Use box-shadow for elevation style",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "outlined",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "outlined",
+          "reflectToAttr": false,
+          "docs": "Display outline",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "clickEmitter",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mw-icon-gallery"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-icon-gallery": [
+          "mw-card"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-body",
+      "readme": "# mw-card-body\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mw-icon-gallery"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-icon-gallery": [
+          "mw-card-body"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-footer",
+      "readme": "# mw-card-footer\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "justifyCenter",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-center",
+          "reflectToAttr": false,
+          "docs": "justify-content: center",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyEnd",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-end",
+          "reflectToAttr": false,
+          "docs": "justify-content: end",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyFlexEnd",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-flex-end",
+          "reflectToAttr": false,
+          "docs": "justify-content: flex-end",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyFlexStart",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-flex-start",
+          "reflectToAttr": false,
+          "docs": "justify-content: flex-start",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyLeft",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-left",
+          "reflectToAttr": false,
+          "docs": "justify-content: left",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyNormal",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-normal",
+          "reflectToAttr": false,
+          "docs": "justify-content: normal",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyRight",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-right",
+          "reflectToAttr": false,
+          "docs": "justify-content: right",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifySpaceAround",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-space-around",
+          "reflectToAttr": false,
+          "docs": "justify-content: space-around",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifySpaceBetween",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-space-between",
+          "reflectToAttr": false,
+          "docs": "justify-content: space-between",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifySpaceEvenly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-space-evenly",
+          "reflectToAttr": false,
+          "docs": "justify-content: space-evenly",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "justifyStart",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "justify-start",
+          "reflectToAttr": false,
+          "docs": "justify-content: start",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-card-header/mw-card-header.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-header",
+      "readme": "# mw-card-header\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "header",
+          "type": "string",
+          "mutable": false,
+          "attr": "header",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "subheader",
+          "type": "string",
+          "mutable": false,
+          "attr": "subheader",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-image",
+      "readme": "# mw-card-image\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alt",
+          "type": "string",
+          "mutable": false,
+          "attr": "alt",
+          "reflectToAttr": false,
+          "docs": "Alt text for the image",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "mutable": false,
+          "attr": "src",
+          "reflectToAttr": false,
+          "docs": "Image source",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-card-title/mw-card-title.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-card-title",
+      "readme": "# mw-card-title\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "metadata",
+          "type": "string",
+          "mutable": false,
+          "attr": "metadata",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "subtitle",
+          "type": "string",
+          "mutable": false,
+          "attr": "subtitle",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "mutable": false,
+          "attr": "title",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-chip/mw-chip.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-chip",
+      "readme": "# mw-chip\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "Visually and functionally disable button",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Name identifier of icon to be displayed in chip",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "selected",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "selected",
+          "reflectToAttr": true,
+          "docs": "Selection state that changes onToggle. Can be set as mutable prop.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "showClose",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "show-close",
+          "reflectToAttr": false,
+          "docs": "Flag wether to show close icon or not",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "close",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "'close' event is fired when the close icon is clicked.",
+          "docsTags": []
+        },
+        {
+          "event": "toggle",
+          "detail": "boolean",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "'toggle' event is fired when the chip is clicked. Current selection state is emitted.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mw-icon"
+      ],
+      "dependencyGraph": {
+        "mw-chip": [
+          "mw-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-icon/mw-icon.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-icon",
+      "readme": "# mw-icon\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "fill",
+          "type": "string",
+          "mutable": false,
+          "attr": "fill",
+          "reflectToAttr": false,
+          "docs": "Overwrite fill color",
+          "docsTags": [],
+          "default": "'currentColor'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "The icon name to be rendered",
+          "docsTags": [],
+          "default": "null",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"medium\" | \"small\" | \"x-small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Size variant",
+          "docsTags": [],
+          "default": "'medium'",
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "x-small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "stroke",
+          "type": "string",
+          "mutable": false,
+          "attr": "stroke",
+          "reflectToAttr": false,
+          "docs": "Overwrite stroke color",
+          "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mw-avatar",
+        "mw-chip",
+        "mw-icon-gallery"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-avatar": [
+          "mw-icon"
+        ],
+        "mw-chip": [
+          "mw-icon"
+        ],
+        "mw-icon-gallery": [
+          "mw-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-icon-gallery",
+      "readme": "# mw-icon-gallery\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mw-textfield",
+        "mw-icon",
+        "mw-card",
+        "mw-card-body"
+      ],
+      "dependencyGraph": {
+        "mw-icon-gallery": [
+          "mw-textfield",
+          "mw-icon",
+          "mw-card",
+          "mw-card-body"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-switch/mw-switch.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-switch",
+      "readme": "# mw-switch\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "checked",
+          "reflectToAttr": false,
+          "docs": "Switch state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disable switch",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Fixed label to be displayed next to the toggle switch",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "offText",
+          "type": "string",
+          "mutable": false,
+          "attr": "off-text",
+          "reflectToAttr": false,
+          "docs": "Label to be shown when switch state is unchecked. Overrides label prop",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "onText",
+          "type": "string",
+          "mutable": false,
+          "attr": "on-text",
+          "reflectToAttr": false,
+          "docs": "Label to be shown when switch state is checked. Overrides label prop",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-textfield",
+      "readme": "# mw-textfield\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disabled input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Use to display input and helper-text in error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": true,
+          "docs": "HelperText to be displayed. Can be used as hint or error text when combined with `has-error`",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Display label and input horizonally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "input field name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Mark input as required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "HTML Input type",
+          "docsTags": [],
+          "default": "'text'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "input field value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": false,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mw-icon-gallery"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-icon-gallery": [
+          "mw-textfield"
+        ]
+      }
+    }
+  ]
+}

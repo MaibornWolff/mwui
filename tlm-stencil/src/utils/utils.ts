@@ -6,6 +6,7 @@ export function getFontWeightValue(fontWeight: string): number {
   return {
     'light': 300,
     'regular': 400,
+    'medium': 500,
     'semibold': 400,
     'bold': 700,
     'italic': 300,

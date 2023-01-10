@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 var(--mw-component-card-padding-components-lr-default) 0 var(--mw-component-card-padding-components-lr-default);
+  /* FIXME: token */
+  gap: 16px;
+}
+
+.card-title .title {
+  font-family: var(--mw-component-card-title-font-family);
+  font-size: var(--mw-component-card-title-font-size);
+  font-weight: var(--mw-component-card-title-font-weight);
+  line-height: var(--mw-component-card-title-line-height);
+}
+
+.card-title .subtitle {
+  font-family: var(--mw-component-card-subtitle-font-family);
+  font-size: var(--mw-component-card-subtitle-font-size);
+  font-weight: var(--mw-component-card-subtitle-font-weight);
+  line-height: var(--mw-component-card-subtitle-line-height);
+  color: var(--mw-component-card-fg-muted);
+}
+
+.card-title .metadata {
+  font-family: var(--mw-component-card-metadata-font-family);
+  font-size: var(--mw-component-card-metadata-font-size);
+  font-weight: var(--mw-component-card-metadata-font-weight);
+  line-height: var(--mw-component-card-metadata-line-height);
+  color: var(--mw-component-card-fg-muted);
+}

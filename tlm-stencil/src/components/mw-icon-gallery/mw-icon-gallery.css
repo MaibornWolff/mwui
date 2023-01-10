@@ -1,0 +1,49 @@
+:host {
+  display: block;
+}
+
+.gallery-filter {
+  margin-bottom: 20px;
+}
+
+.hint {
+  display: flex;
+  gap: 5px;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 20px;
+  color: var(--mw-core-color-neutral-500);
+  font-family: var(--mw-core-font-font-families-body);
+  font-size: var(--mw-core-font-size-sm);
+  line-height: var(--mw-core-font-line-height-sm);
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.gallery-item {
+  min-width: 80px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-item-text {
+  font-family: var(--mw-core-font-font-families-body);
+  font-size: var(--mw-core-font-size-sm);
+  line-height: var(--mw-core-font-line-height-sm);
+  color: var(--mw-core-color-neutral-500)
+}
+
+.gallery-item-container:hover {
+  cursor: pointer;
+  border-radius: var(--mw-component-card-border-radius);
+  -webkit-border-radius: var(--mw-component-card-border-radius);
+  -moz-border-radius: var(--mw-component-card-border-radius);
+  outline: var(--mw-component-card-border-width-outlined) solid var(--mw-component-card-border-outlined);
+}

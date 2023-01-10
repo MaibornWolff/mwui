@@ -2,14 +2,14 @@ import '../global/global.css';
 import '../../../tlm-token-farm/dist/css/MW_core.css';
 
 export default {
-  title: 'Documentation/Demo',
+  title: 'Pages/🚧 Demo',
 };
 
 const Template = () => `
 <div style="display: flex; justify-content: center">
   <div style="text-align: center">
     <h1>Hello World</h1>
-    <mw-button>BUTTON</mw-button>
+    <mw-button label="BUTTON" />
   </div>
 </div>
 `;

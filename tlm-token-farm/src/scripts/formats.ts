@@ -1,3 +1,5 @@
+import { getFontWeightValue } from './utils';
+
 const fs = require('fs');
 const { utilities } = require('./utility-classes.ts');
 const template = require('lodash.template');
@@ -35,10 +37,12 @@ const cssVariablesFormat = {
   name: 'css/variables',
   formatter: dictionary => {
     const getValue = prop => {
+      // append 'px' if missing
       if (typeof prop.original.value === 'number') {
         return `${parseFloat(prop.original.value)}px`;
       }
 
+      // some caluclated values in figma are not evaluated and result in values like "4px + 4px + 4px"
       if (typeof prop.original.value === 'string' && prop.original.value.includes('+')) {
         const clearedValue = prop.original.value.replaceAll('px', '').replaceAll('+', ' ');
 
@@ -47,6 +51,11 @@ const cssVariablesFormat = {
           return acc;
         }, 0)}px`;
       }
+      // map figma font-weights to CSS conform font-weights
+      if (prop.type === 'fontWeight') {
+        return getFontWeightValue(prop.original.value);
+      }
+
       return prop.value;
     };
     const primitiveProperties = dictionary.allProperties.filter(p => typeof p.value === 'number' || typeof p.value === 'string');

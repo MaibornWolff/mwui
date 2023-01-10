@@ -52,7 +52,20 @@ const filterTokensByType = (type, tokens) => {
   return res;
 };
 
+function getFontWeightValue(fontWeight) {
+  return {
+    'light': 300,
+    'regular': 400,
+    'medium': 500,
+    'semibold': 600,
+    'bold': 700,
+    'italic': 300,
+    'light italic': 300,
+  }[fontWeight.toLowerCase()];
+}
+
 module.exports = {
   createArray,
   filterTokensByType,
+  getFontWeightValue
 };

@@ -1,0 +1,161 @@
+:host {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.label {
+  /* TODO: tokenize font family, font size */
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  margin-left: var(--mw-component-controls-with-label-gap);
+  color: var(--mw-component-controls-color-label-default);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: var(--mw-component-size-toggle-switch-w);
+  height: var(--mw-component-size-toggle-switch-h);
+}
+
+/* hidden input */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* handle */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--mw-component-controls-color-bg-unselected);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+/* handle, checked */
+input:checked + .slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--mw-component-controls-color-fg-default);
+  -webkit-transition: .4s;
+  transition: .4s;
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* handle, unchecked */
+input:not(:checked) + .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 8px;
+  bottom: 8px;
+  background-color: var(--mw-component-controls-color-fg-off);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+/* handle, unchecked, active */
+input:active + .slider:before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 28px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--mw-component-controls-color-fg-default);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+/* handle, unchecked, not disabled, active */
+input:not(:checked):not(:disabled):active + .slider:before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 28px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--mw-component-controls-color-fg-off);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+/* handle, disabled */
+input:disabled + .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 8px;
+  bottom: 8px;
+  background-color: var(--mw-component-controls-color-fg-disabled);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+/* track, checked */
+input:checked + .slider {
+  background-color: var(--mw-component-controls-color-bg-selected);
+}
+
+/* track, disabled */
+input:disabled + .slider {
+  background-color: var(--mw-component-controls-color-bg-disabled);
+}
+
+/* track, focussed, not active, not disabled */
+input:focus:not(:active):not(:disabled) + .slider {
+  background-color: var(--mw-component-controls-color-bg-focused);
+  outline: var(--mw-component-checkbox-selected-border-width-focused) solid;
+  outline-color: var(--mw-component-controls-color-outline-default);
+  outline-offset: calc(-1 * var(--mw-component-checkbox-selected-border-width-focused));
+}
+
+/* track, hover, not disabled */
+input:hover:not(:disabled) + .slider {
+  background-color: var(--mw-component-controls-color-bg-hover);
+}
+
+/* track, active, not disabled */
+input:active:not(:disabled) + .slider {
+  background-color: var(--mw-component-controls-color-bg-pressed);
+}
+
+/* track, unchecked, not disabled */
+input:not(:checked):not(:disabled) + .slider {
+  outline: var(--mw-component-checkbox-selected-border-width-focused) solid;
+  outline-color: var(--mw-component-controls-color-outline-default);
+  outline-offset: calc(-1 * var(--mw-component-checkbox-selected-border-width-focused));
+}
+
+/* track unchecked, disabled */
+input:not(:checked):disabled + .slider {
+  outline: var(--mw-component-checkbox-selected-border-width-focused) solid;
+  outline-color: var(--mw-component-controls-color-outline-disabled);
+  outline-offset: calc(-1 * var(--mw-component-checkbox-selected-border-width-focused));
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+  -webkit-border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+}

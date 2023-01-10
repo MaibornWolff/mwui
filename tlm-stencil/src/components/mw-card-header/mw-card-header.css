@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 var(--mw-component-card-padding-components-lr-default) 0 var(--mw-component-card-padding-components-lr-default);
+  /* FIXME: token */
+  gap: 16px;
+}
+
+.header {
+  font-family: var(--mw-component-card-header-font-family);
+  font-size: var(--mw-component-card-header-font-size);
+  font-weight: var(--mw-component-card-header-font-weight);
+  line-height: var(--mw-component-card-header-line-height);
+}
+
+.subheader {
+  font-family: var(--mw-component-card-subhead-font-family);
+  font-size: var(--mw-component-card-subhead-font-size);
+  font-weight: var(--mw-component-card-subhead-font-weight);
+  line-height: var(--mw-component-card-subhead-line-height);
+  color: var(--mw-component-card-fg-muted);
+}
