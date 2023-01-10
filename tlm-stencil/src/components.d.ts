@@ -142,6 +142,28 @@ export namespace Components {
         "subtitle": string;
         "title": string;
     }
+    interface MwCheckbox {
+        /**
+          * Whether input is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Whether input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Name of checkbox input
+         */
+        "name": string;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
+        /**
+          * Value of checkbox input
+         */
+        "value": string;
+    }
     interface MwChip {
         /**
           * Visually and functionally disable button
@@ -318,6 +340,12 @@ declare global {
         prototype: HTMLMwCardTitleElement;
         new (): HTMLMwCardTitleElement;
     };
+    interface HTMLMwCheckboxElement extends Components.MwCheckbox, HTMLStencilElement {
+    }
+    var HTMLMwCheckboxElement: {
+        prototype: HTMLMwCheckboxElement;
+        new (): HTMLMwCheckboxElement;
+    };
     interface HTMLMwChipElement extends Components.MwChip, HTMLStencilElement {
     }
     var HTMLMwChipElement: {
@@ -357,6 +385,7 @@ declare global {
         "mw-card-header": HTMLMwCardHeaderElement;
         "mw-card-image": HTMLMwCardImageElement;
         "mw-card-title": HTMLMwCardTitleElement;
+        "mw-checkbox": HTMLMwCheckboxElement;
         "mw-chip": HTMLMwChipElement;
         "mw-icon": HTMLMwIconElement;
         "mw-icon-gallery": HTMLMwIconGalleryElement;
@@ -503,6 +532,28 @@ declare namespace LocalJSX {
         "subtitle"?: string;
         "title"?: string;
     }
+    interface MwCheckbox {
+        /**
+          * Whether input is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Whether input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Name of checkbox input
+         */
+        "name"?: string;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
+        /**
+          * Value of checkbox input
+         */
+        "value"?: string;
+    }
     interface MwChip {
         /**
           * Visually and functionally disable button
@@ -631,6 +682,7 @@ declare namespace LocalJSX {
         "mw-card-header": MwCardHeader;
         "mw-card-image": MwCardImage;
         "mw-card-title": MwCardTitle;
+        "mw-checkbox": MwCheckbox;
         "mw-chip": MwChip;
         "mw-icon": MwIcon;
         "mw-icon-gallery": MwIconGallery;
@@ -650,6 +702,7 @@ declare module "@stencil/core" {
             "mw-card-header": LocalJSX.MwCardHeader & JSXBase.HTMLAttributes<HTMLMwCardHeaderElement>;
             "mw-card-image": LocalJSX.MwCardImage & JSXBase.HTMLAttributes<HTMLMwCardImageElement>;
             "mw-card-title": LocalJSX.MwCardTitle & JSXBase.HTMLAttributes<HTMLMwCardTitleElement>;
+            "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
             "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;

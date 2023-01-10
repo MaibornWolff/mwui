@@ -74,6 +74,14 @@ export const MwCardTitle = /*@__PURE__*/ defineContainer<JSX.MwCardTitle>('mw-ca
 ]);
 
 
+export const MwCheckbox = /*@__PURE__*/ defineContainer<JSX.MwCheckbox>('mw-checkbox', undefined, [
+  'value',
+  'name',
+  'disabled',
+  'checked'
+]);
+
+
 export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>('mw-chip', undefined, [
   'testId',
   'icon',

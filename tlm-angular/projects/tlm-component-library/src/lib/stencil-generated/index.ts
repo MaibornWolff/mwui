@@ -10,6 +10,7 @@ export const DIRECTIVES = [
   d.MwCardHeader,
   d.MwCardImage,
   d.MwCardTitle,
+  d.MwCheckbox,
   d.MwChip,
   d.MwIcon,
   d.MwIconGallery,
