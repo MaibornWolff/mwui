@@ -142,23 +142,23 @@ const filledButtonStyles = css`
 const outlineButtonStyles = css`
   ${base};
   border: 0;
-  box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderDefault},
+  box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderDefault};
   color: ${mwComponentButtonOutlineGhostColorFgDefault};
   background-color: ${mwComponentButtonOutlineGhostColorBgDefault};
   &:hover {
-    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderHover},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderHover};
     color: ${mwComponentButtonOutlineGhostColorFgHover};
   }
   &:focus {
-    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineFocused}px ${mwComponentButtonOutlineGhostColorBorderFocused},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineFocused}px ${mwComponentButtonOutlineGhostColorBorderFocused};
     color: ${mwComponentButtonOutlineGhostColorFgFocused};
   }
   &:active {
-    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderPressed},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderPressed};
     color: ${mwComponentButtonOutlineGhostColorFgPressed};
   }
   &:disabled {
-    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderDisabled},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderDisabled};
     color: ${mwComponentButtonOutlineGhostColorFgDisabled};
   }
 `;
@@ -174,7 +174,7 @@ const ghostButtonStyles = css`
     color: ${mwComponentButtonOutlineGhostColorFgHover};
   }
   &:focus {
-    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineFocused}px ${mwComponentButtonOutlineGhostColorBorderFocused},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineFocused}px ${mwComponentButtonOutlineGhostColorBorderFocused};
     color: ${mwComponentButtonOutlineGhostColorFgFocused};
   }
   &:active {
