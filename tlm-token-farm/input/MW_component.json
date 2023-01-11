@@ -358,7 +358,7 @@
       "size": {
         "button": {
           "filled-outline": {
-            "min-width": {
+            "minW": {
               "value": 88,
               "type": "sizing"
             }
@@ -387,23 +387,23 @@
           }
         },
         "toggle-switch": {
-          "w": {
+          "defaultW": {
             "value": 52,
             "type": "sizing"
           },
-          "h": {
+          "defaultH": {
             "value": 32,
             "type": "sizing"
           }
         },
         "checkbox-radiobutton": {
-          "wh": {
+          "default": {
             "value": 24,
             "type": "sizing"
           }
         },
         "input": {
-          "min-width": {
+          "minW": {
             "value": 120,
             "type": "sizing"
           },
@@ -421,25 +421,23 @@
             "value": 20,
             "type": "sizing"
           },
-          "min-width": {
+          "minW": {
             "value": 64,
             "type": "sizing"
           }
         },
         "tabs": {
-          "height": {
-            "default": {
-              "value": 48,
-              "type": "sizing"
-            },
-            "with-icon": {
-              "value": 64,
-              "type": "sizing"
-            }
+          "defaultH": {
+            "value": 48,
+            "type": "sizing"
+          },
+          "withIconH": {
+            "value": 64,
+            "type": "sizing"
           }
         },
-        "menu-item": {
-          "height": {
+        "menuItem": {
+          "defaultH": {
             "value": 56,
             "type": "sizing"
           }
@@ -577,7 +575,7 @@
           }
         }
       },
-      "controls-with-label": {
+      "controlsWithLabel": {
         "gap": {
           "value": "4px + 4px + 4px",
           "type": "spacing"
@@ -586,12 +584,12 @@
           "value": "4px + 4px + 4px",
           "type": "spacing"
         },
-        "paddingR": {
-          "value": "4px + 4px + 4px",
-          "type": "spacing"
-        },
         "paddingL": {
           "value": 0,
+          "type": "spacing"
+        },
+        "paddingR": {
+          "value": "4px + 4px + 4px",
           "type": "spacing"
         }
       },
@@ -634,7 +632,7 @@
             "type": "fontSize"
           }
         },
-        "helper-text": {
+        "helperText": {
           "fontFamily": {
             "value": "Poppins",
             "type": "fontFamily"
@@ -815,7 +813,9 @@
             "value": 14,
             "type": "fontSize"
           }
-        },
+        }
+      },
+      "menuItem": {
         "borderRadius": {
           "value": "4px",
           "type": "borderRadius"
@@ -909,7 +909,9 @@
             "value": 14,
             "type": "fontSize"
           }
-        },
+        }
+      },
+      "listItem": {
         "borderRadius": {
           "value": "4px",
           "type": "borderRadius"
@@ -1770,7 +1772,7 @@
         }
       },
       "font": {
-        "line-height": {
+        "lineHeight": {
           "body": {
             "regular": {
               "value": 24,
@@ -1832,7 +1834,7 @@
             }
           }
         },
-        "font-size": {
+        "fontSize": {
           "body": {
             "regular": {
               "value": 16,
@@ -2328,7 +2330,7 @@
             "type": "fontFamilies"
           }
         },
-        "line-height": {
+        "lineHeight": {
           "base": {
             "value": 24,
             "type": "lineHeights"

@@ -2,7 +2,7 @@
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: var(--mw-component-card-padding-components-t-footer) var(--mw-component-card-padding-components-x-default) 0 var(--mw-component-card-padding-components-x-default);
+  padding: var(--mw-component-card-padding-footer-t-default) var(--mw-component-card-padding-components-x-default) 0 var(--mw-component-card-padding-components-x-default);
   gap: var(--mw-component-button-sm-gap-between);
 }
 
