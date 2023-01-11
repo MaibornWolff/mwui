@@ -203,9 +203,10 @@
   --mw-component-list-item-1-line-h: 56px;
   --mw-component-list-item-2-line-h: 72px;
   --mw-component-list-item-gap-within: 16px;
-  --mw-component-list-item-padding-l: 16px;
+  --mw-component-list-item-padding-l: 24px;
   --mw-component-list-item-padding-r: 24px;
   --mw-component-list-item-3-line-padding-y: 12px;
+  --mw-component-list-item-gap-between: 0px;
   --mw-component-menu-shadow-0: {;
   --mw-component-menu-shadow-1: e;
   --mw-component-menu-shadow-2: l;

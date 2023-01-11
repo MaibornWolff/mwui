@@ -971,7 +971,7 @@
           "type": "spacing"
         },
         "paddingL": {
-          "value": 16,
+          "value": 24,
           "type": "spacing"
         },
         "paddingR": {
@@ -980,6 +980,10 @@
         },
         "3-linePaddingY": {
           "value": 12,
+          "type": "spacing"
+        },
+        "gapBetween": {
+          "value": 0,
           "type": "spacing"
         }
       },
