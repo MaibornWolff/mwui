@@ -151,89 +151,89 @@
       },
       "buttonSm": {
         "paddingX": {
-          "value": "4px + 4px + 4px + 4px",
+          "value": 16,
           "type": "spacing"
         },
         "paddingY": {
-          "value": "4px",
+          "value": 4,
           "type": "spacing"
         },
         "paddingIcon": {
-          "value": "4px + 4px",
+          "value": 8,
           "type": "spacing"
         },
         "gapWithin": {
-          "value": "4px + 4px",
+          "value": 8,
           "type": "spacing"
         },
         "gapBetween": {
-          "value": "4px + 4px",
+          "value": 8,
           "type": "spacing"
         }
       },
       "buttonMd": {
         "paddingX": {
-          "value": "4px + 4px + 4px + 4px + 4px + 4px",
+          "value": 24,
           "type": "spacing"
         },
         "paddingY": {
-          "value": "4px + 4px",
+          "value": 8,
           "type": "spacing"
         },
         "paddingIcon": {
-          "value": "4px + 4px + 4px",
+          "value": 12,
           "type": "spacing"
         },
         "gapWithin": {
-          "value": "4px + 4px + 4px",
+          "value": 12,
           "type": "spacing"
         },
         "gapBetween": {
-          "value": "4px + 4px + 4px",
+          "value": 12,
           "type": "spacing"
         }
       },
       "buttonLg": {
         "paddingX": {
-          "value": "4px + 4px + 4px + 4px + 4px + 4px + 4px + 4px",
+          "value": 32,
           "type": "spacing"
         },
         "paddingY": {
-          "value": "4px + 4px + 4px",
+          "value": 12,
           "type": "spacing"
         },
         "paddingIcon": {
-          "value": "4px + 4px + 4px + 4px",
+          "value": 16,
           "type": "spacing"
         },
         "gapWithin": {
-          "value": "4px + 4px + 4px + 4px",
+          "value": 16,
           "type": "spacing"
         },
         "gapBetween": {
-          "value": "4px + 4px + 4px + 4px",
+          "value": 16,
           "type": "spacing"
         }
       },
       "buttonXl": {
         "paddingX": {
-          "value": "1.5*4px + 4px + 4px + 4px + 4px + 4px + 4px + 4px",
+          "value": 48,
           "type": "spacing"
         },
         "paddingY": {
-          "value": "4px + 4px + 4px + 4px + 4px",
+          "value": 20,
           "type": "spacing"
         },
         "paddingIcon": {
-          "value": "4px + 4px + 4px + 4px + 4px",
+          "value": 20,
           "type": "spacing"
         },
         "gapWithin": {
-          "value": "4px + 4px + 4px + 4px + 4px",
+          "value": 20,
           "type": "spacing"
         },
         "gapBetween": {
-          "value": "4px + 4px + 4px + 4px + 4px",
+          "value": 20,
           "type": "spacing"
         }
       },
@@ -402,7 +402,7 @@
             "type": "sizing"
           }
         },
-        "input": {
+        "textField": {
           "minW": {
             "value": 120,
             "type": "sizing"
@@ -577,11 +577,11 @@
       },
       "controlsWithLabel": {
         "gap": {
-          "value": "4px + 4px + 4px",
+          "value": 12,
           "type": "spacing"
         },
         "paddingY": {
-          "value": "4px + 4px + 4px",
+          "value": 12,
           "type": "spacing"
         },
         "paddingL": {
@@ -589,7 +589,7 @@
           "type": "spacing"
         },
         "paddingR": {
-          "value": "4px + 4px + 4px",
+          "value": 12,
           "type": "spacing"
         }
       },
@@ -613,7 +613,7 @@
           }
         }
       },
-      "input": {
+      "textField": {
         "label": {
           "fontFamily": {
             "value": "Poppins",
@@ -733,37 +733,37 @@
         "gap": {
           "group": {
             "vertical": {
-              "value": "4px / 2",
+              "value": 2,
               "type": "spacing"
             }
           },
           "horizontal": {
-            "input-group": {
-              "value": "4px + 4px + 4px",
+            "gapBetween": {
+              "value": 12,
               "type": "spacing"
             },
-            "input-field": {
-              "value": "4px + 4px",
+            "gapWithin": {
+              "value": 8,
               "type": "spacing"
             }
           }
         },
         "padding": {
-          "inputFieldX": {
-            "value": "4px + 4px + 4px + 4px",
+          "textFieldX": {
+            "value": 16,
             "type": "spacing"
           },
-          "inputFieldY": {
-            "value": "4px + 4px",
+          "textFieldY": {
+            "value": 8,
             "type": "spacing"
           },
           "helperTextY": {
-            "value": "4px",
+            "value": 4,
             "type": "spacing"
           },
-          "inputField": {
+          "textField": {
             "labelVerticalX": {
-              "value": "4px + 4px + 4px + 4px",
+              "value": 16,
               "type": "spacing"
             },
             "labelHorizontal": {
@@ -871,6 +871,10 @@
             "value": "#001418",
             "type": "color"
           }
+        },
+        "gapBetween": {
+          "value": 0,
+          "type": "spacing"
         }
       },
       "list-item": {
@@ -1027,7 +1031,7 @@
           }
         },
         "inset": {
-          "value": "4px + 4px + 4px + 4px",
+          "value": 16,
           "type": "spacing"
         },
         "borderWidth": {
@@ -1057,7 +1061,7 @@
           }
         },
         "paddingX": {
-          "value": "4px + 4px + 4px",
+          "value": 12,
           "type": "spacing"
         },
         "borderWidth": {
@@ -1119,11 +1123,11 @@
           "type": "borderRadius"
         },
         "gapWithin": {
-          "value": "4px + 4px",
+          "value": 8,
           "type": "spacing"
         },
         "gapBetween": {
-          "value": "4px + 4px",
+          "value": 8,
           "type": "spacing"
         }
       },
@@ -1473,26 +1477,26 @@
         "padding": {
           "componentsX": {
             "default": {
-              "value": "4px + 4px + 4px + 4px + 4px + 4px",
+              "value": 24,
               "type": "spacing"
             }
           },
           "componentsY": {
             "default": {
-              "value": "4px + 4px + 4px + 4px + 4px + 4px",
+              "value": 24,
               "type": "spacing"
             }
           },
           "footerT": {
             "default": {
-              "value": "4px + 4px + 4px + 4px + 4px + 4px",
+              "value": 24,
               "type": "spacing"
             }
           }
         },
         "paddingB": {
           "default": {
-            "value": "4px + 4px + 4px + 4px + 4px + 4px",
+            "value": 24,
             "type": "spacing"
           }
         }
@@ -1541,11 +1545,11 @@
           }
         },
         "paddingX": {
-          "value": "4px + 4px + 4px + 4px + 4px + 4px",
+          "value": 24,
           "type": "spacing"
         },
         "gabWithin": {
-          "value": "4px",
+          "value": 4,
           "type": "spacing"
         },
         "border": {
@@ -2464,43 +2468,43 @@
       "spacing": {
         "linear": {
           "base": {
-            "value": "4px",
+            "value": 4,
             "type": "spacing"
           },
           "scale": {
-            "value": "4px",
+            "value": 4,
             "type": "spacing"
           },
           "xs": {
-            "value": "4px",
+            "value": 4,
             "type": "spacing"
           },
           "sm": {
-            "value": "4px + 4px",
+            "value": 8,
             "type": "spacing"
           },
           "md": {
-            "value": "4px + 4px + 4px",
+            "value": 12,
             "type": "spacing"
           },
           "lg": {
-            "value": "4px + 4px + 4px + 4px",
+            "value": 16,
             "type": "spacing"
           },
           "xl": {
-            "value": "4px + 4px + 4px + 4px + 4px",
+            "value": 20,
             "type": "spacing"
           },
           "2xl": {
-            "value": "4px + 4px + 4px + 4px + 4px + 4px",
+            "value": 24,
             "type": "spacing"
           },
           "3xl": {
-            "value": "4px + 4px + 4px + 4px + 4px + 4px + 4px",
+            "value": 28,
             "type": "spacing"
           },
           "4xl": {
-            "value": "4px + 4px + 4px + 4px + 4px + 4px + 4px + 4px",
+            "value": 32,
             "type": "spacing"
           },
           "none": {
@@ -2508,7 +2512,7 @@
             "type": "spacing"
           },
           "xxs": {
-            "value": "4px / 2",
+            "value": 2,
             "type": "spacing"
           }
         },

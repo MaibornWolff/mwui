@@ -35,7 +35,7 @@ import{r as t,h as e,H as o,c as n,g as r,a as i}from"./p-8c1da0d3.js";const a=c
   }
 
   &.x-large {
-    padding: ${"20px"} ${"34px"};
+    padding: ${"20px"} ${"48px"};
     font-family: ${"Poppins"};
     line-height: ${24}px;
     font-weight: ${Ot("Bold")};
