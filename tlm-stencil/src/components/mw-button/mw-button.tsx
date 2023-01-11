@@ -60,7 +60,7 @@ import {
   mwComponentButtonXlPaddingY,
   mwComponentButtonXlGapBetween,
   mwComponentButtonXlPaddingIcon,
-  mwComponentSizeButtonFilledOutlineMinWidth,
+  mwComponentSizeButtonFilledOutlineMinW,
   mwComponentButtonBorderRadiusDefault,
   mwComponentButtonBorderWidthOutlineFocused,
   letterSpacingButtons,
@@ -80,7 +80,7 @@ const base = css`
   border-top-right-radius: ${mwComponentButtonBorderRadiusDefault}px;
   border-bottom-left-radius: ${mwComponentButtonBorderRadiusDefault}px;
   border-bottom-right-radius: ${mwComponentButtonBorderRadiusDefault}px;
-  min-width: ${mwComponentSizeButtonFilledOutlineMinWidth};
+  min-width: ${mwComponentSizeButtonFilledOutlineMinW};
 
   &.small {
     padding: ${mwComponentButtonSmPaddingY} ${mwComponentButtonSmPaddingX};
