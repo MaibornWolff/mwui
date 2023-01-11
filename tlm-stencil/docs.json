@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-11T08:55:54",
+  "timestamp": "2023-01-11T09:49:28",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -1238,6 +1238,7 @@
       "filePath": "./src/components/mw-popover/mw-popover.tsx",
       "encapsulation": "shadow",
       "tag": "mw-popover",
+      "readme": "# mw-popover\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
