@@ -2,7 +2,7 @@ import { Build, Component, Element, h, Host, Prop, State, Watch } from '@stencil
 import { fetchIcon } from './utils';
 import { Size } from '../mw-avatar/mw-avatar';
 import {
-  mwComponentSizeAvatarsIconLarge,
+  mwComponentSizeAvatarsIconLg,
   mwComponentSizeAvatarsIconMd,
   mwComponentSizeAvatarsIconSm,
   mwComponentSizeAvatarsIconXs,
@@ -11,7 +11,7 @@ import {
 const getDimensionForSize = (size: Size) =>
   Number(
     {
-      'large': mwComponentSizeAvatarsIconLarge,
+      'large': mwComponentSizeAvatarsIconLg,
       'medium': mwComponentSizeAvatarsIconMd,
       'small': mwComponentSizeAvatarsIconSm,
       'x-small': mwComponentSizeAvatarsIconXs,

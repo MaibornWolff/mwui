@@ -2,6 +2,7 @@ import { Component, Host, Prop, h, Element } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 import { createPopper } from '@popperjs/core';
 import classnames from 'classnames';
+import { ClickOutside } from 'stencil-click-outside';
 
 export type PopoverPlacement =
   | 'top'
@@ -34,13 +35,25 @@ export class MwPopover {
    */
   @Prop() placement: PopoverPlacement = 'bottom';
   @Prop() name?: string = 'tooltip';
+  /**
+   * If set to true, the popover can be closed by clicking outside
+   */
+  @Prop() dismissable?: boolean = false;
 
   contentRef!: HTMLElement;
   anchorRef!: HTMLElement;
 
+  @ClickOutside()
+  toggleIfOpen() {
+    if (this.open && this.dismissable) {
+      this.open = !this.open;
+    }
+  }
+
   private onClick = (event: Event) => {
     event.preventDefault();
     this.open = !this.open;
+
     createPopper(this.anchorRef, this.contentRef, {
       placement: this.placement,
     });

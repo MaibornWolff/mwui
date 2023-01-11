@@ -218,6 +218,10 @@ export namespace Components {
     interface MwIconGallery {
     }
     interface MwPopover {
+        /**
+          * If set to true, the popover can be closed by clicking outside
+         */
+        "dismissable"?: boolean;
         "name"?: string;
         /**
           * Whether the popover is visible
@@ -651,6 +655,10 @@ declare namespace LocalJSX {
     interface MwIconGallery {
     }
     interface MwPopover {
+        /**
+          * If set to true, the popover can be closed by clicking outside
+         */
+        "dismissable"?: boolean;
         "name"?: string;
         /**
           * Whether the popover is visible
