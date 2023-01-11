@@ -217,6 +217,14 @@ export namespace Components {
     }
     interface MwIconGallery {
     }
+    interface MwMenu {
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
+    }
+    interface MwMenuItem {
+    }
     interface MwPopover {
         /**
           * If set to true, the popover can be closed by clicking outside
@@ -400,6 +408,18 @@ declare global {
         prototype: HTMLMwIconGalleryElement;
         new (): HTMLMwIconGalleryElement;
     };
+    interface HTMLMwMenuElement extends Components.MwMenu, HTMLStencilElement {
+    }
+    var HTMLMwMenuElement: {
+        prototype: HTMLMwMenuElement;
+        new (): HTMLMwMenuElement;
+    };
+    interface HTMLMwMenuItemElement extends Components.MwMenuItem, HTMLStencilElement {
+    }
+    var HTMLMwMenuItemElement: {
+        prototype: HTMLMwMenuItemElement;
+        new (): HTMLMwMenuItemElement;
+    };
     interface HTMLMwPopoverElement extends Components.MwPopover, HTMLStencilElement {
     }
     var HTMLMwPopoverElement: {
@@ -432,6 +452,8 @@ declare global {
         "mw-divider": HTMLMwDividerElement;
         "mw-icon": HTMLMwIconElement;
         "mw-icon-gallery": HTMLMwIconGalleryElement;
+        "mw-menu": HTMLMwMenuElement;
+        "mw-menu-item": HTMLMwMenuItemElement;
         "mw-popover": HTMLMwPopoverElement;
         "mw-switch": HTMLMwSwitchElement;
         "mw-textfield": HTMLMwTextfieldElement;
@@ -658,6 +680,14 @@ declare namespace LocalJSX {
     }
     interface MwIconGallery {
     }
+    interface MwMenu {
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
+    }
+    interface MwMenuItem {
+    }
     interface MwPopover {
         /**
           * If set to true, the popover can be closed by clicking outside
@@ -760,6 +790,8 @@ declare namespace LocalJSX {
         "mw-divider": MwDivider;
         "mw-icon": MwIcon;
         "mw-icon-gallery": MwIconGallery;
+        "mw-menu": MwMenu;
+        "mw-menu-item": MwMenuItem;
         "mw-popover": MwPopover;
         "mw-switch": MwSwitch;
         "mw-textfield": MwTextfield;
@@ -782,6 +814,8 @@ declare module "@stencil/core" {
             "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
+            "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
+            "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
             "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
             "mw-textfield": LocalJSX.MwTextfield & JSXBase.HTMLAttributes<HTMLMwTextfieldElement>;
