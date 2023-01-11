@@ -44,8 +44,7 @@ label {
 
 .input {
   display: flex;
-  /* TODO: verify token */
-  gap: var(--mw-component-text-field-gap-horizontal-text-field);
+  gap: var(--mw-component-text-field-gap-horizontal-gap-within);
   /* TODO: missing token */
   border-radius: var(--border-radius-standard-md);
   padding: var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);
