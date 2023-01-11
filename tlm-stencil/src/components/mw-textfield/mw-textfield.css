@@ -19,7 +19,7 @@
 }
 
 label {
-  padding: 0 var(--mw-component-text-field-padding-text-field-field-label-vertical-x);
+  padding: 0 var(--mw-component-text-field-padding-text-field-label-vertical-x);
   font-family: var(--mw-component-text-field-label-font-family);
   font-weight: var(--mw-component-text-field-label-font-weight);
   font-size: var(--mw-component-text-field-label-font-size);
@@ -39,16 +39,16 @@ label {
 
 .textfield.inline label {
   width: var(--mw-component-size-text-field-label-horizontal-width);
-  padding: var(--mw-component-text-field-padding-text-field-field-label-horizontal);
+  padding: var(--mw-component-text-field-padding-text-field-label-horizontal);
 }
 
 .input {
   display: flex;
   /* TODO: verify token */
-  gap: var(--mw-component-text-field-gap-horizontal-text-field-field);
+  gap: var(--mw-component-text-field-gap-horizontal-text-field);
   /* TODO: missing token */
   border-radius: var(--border-radius-standard-md);
-  padding: var(--mw-component-text-field-padding-text-field-field-y) var(--mw-component-text-field-padding-text-field-field-x);
+  padding: var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);
   background: var(--mw-component-text-field-bg-default);
   box-shadow: inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default);
 }
