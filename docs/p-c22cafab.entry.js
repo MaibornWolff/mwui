@@ -66,23 +66,23 @@ import{r as t,h as e,H as o,c as n,g as r,a as i}from"./p-8c1da0d3.js";const a=c
 `,It=zt`
   ${Mt};
   border: 0;
-  box-shadow: inset 0 0 0 ${1}px ${"#001418"},
+  box-shadow: inset 0 0 0 ${1}px ${"#001418"};
   color: ${"#001418"};
   background-color: ${"#ffffff00"};
   &:hover {
-    box-shadow: inset 0 0 0 ${1}px ${"#ed2985"},
+    box-shadow: inset 0 0 0 ${1}px ${"#ed2985"};
     color: ${"#ed2985"};
   }
   &:focus {
-    box-shadow: inset 0 0 0 ${1}px ${"#001418"},
+    box-shadow: inset 0 0 0 ${1}px ${"#001418"};
     color: ${"#ed2985"};
   }
   &:active {
-    box-shadow: inset 0 0 0 ${1}px ${"#c42177"},
+    box-shadow: inset 0 0 0 ${1}px ${"#c42177"};
     color: ${"#c42177"};
   }
   &:disabled {
-    box-shadow: inset 0 0 0 ${1}px ${"#79868b"},
+    box-shadow: inset 0 0 0 ${1}px ${"#79868b"};
     color: ${"#95a0a4"};
   }
 `,Pt=zt`
@@ -96,7 +96,7 @@ import{r as t,h as e,H as o,c as n,g as r,a as i}from"./p-8c1da0d3.js";const a=c
     color: ${"#ed2985"};
   }
   &:focus {
-    box-shadow: inset 0 0 0 ${1}px ${"#001418"},
+    box-shadow: inset 0 0 0 ${1}px ${"#001418"};
     color: ${"#ed2985"};
   }
   &:active {
