@@ -1,5 +1,7 @@
 import { create } from '@storybook/theming';
 import logo from './public/mwui_logo.svg';
+import '../src/global/global.css';
+
 import {
   mwCoreColorPurple900,
   mwCoreColorPink500,
