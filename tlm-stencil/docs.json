@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-11T11:05:00",
+  "timestamp": "2023-01-11T13:23:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -1235,6 +1235,65 @@
       }
     },
     {
+      "filePath": "./src/components/mw-menu/mw-menu.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-menu",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mw-popover"
+      ],
+      "dependencyGraph": {
+        "mw-menu": [
+          "mw-popover"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-menu-item/mw-menu-item.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-menu-item",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/mw-popover/mw-popover.tsx",
       "encapsulation": "shadow",
       "tag": "mw-popover",
@@ -1378,9 +1437,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mw-menu"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-menu": [
+          "mw-popover"
+        ]
+      }
     },
     {
       "filePath": "./src/components/mw-switch/mw-switch.tsx",

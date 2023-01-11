@@ -302,6 +302,46 @@ export class MwIconGallery {
 }
 
 
+export declare interface MwMenu extends Components.MwMenu {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['testId']
+})
+@Component({
+  selector: 'mw-menu',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['testId']
+})
+export class MwMenu {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface MwMenuItem extends Components.MwMenuItem {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined
+})
+@Component({
+  selector: 'mw-menu-item',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class MwMenuItem {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MwPopover extends Components.MwPopover {}
 
 @ProxyCmp({

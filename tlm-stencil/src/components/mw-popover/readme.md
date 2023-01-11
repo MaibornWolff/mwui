@@ -16,6 +16,19 @@
 | `testId` _(required)_ | `test-id`     | Must be provided for automated testing                        | `string`                                                                                                                                                             | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [mw-menu](../mw-menu)
+
+### Graph
+```mermaid
+graph TD;
+  mw-menu --> mw-popover
+  style mw-popover fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

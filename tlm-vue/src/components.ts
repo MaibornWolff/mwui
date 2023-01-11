@@ -111,6 +111,14 @@ export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>('mw-icon', undef
 export const MwIconGallery = /*@__PURE__*/ defineContainer<JSX.MwIconGallery>('mw-icon-gallery', undefined);
 
 
+export const MwMenu = /*@__PURE__*/ defineContainer<JSX.MwMenu>('mw-menu', undefined, [
+  'testId'
+]);
+
+
+export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>('mw-menu-item', undefined);
+
+
 export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>('mw-popover', undefined, [
   'testId',
   'open',
