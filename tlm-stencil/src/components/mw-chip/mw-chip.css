@@ -27,7 +27,7 @@
   -webkit-border-bottom-right-radius: var(--mw-component-chips-border-radius);
   gap: var(--mw-component-chips-gap-within);
   padding: 0 var(--mw-component-chips-padding-x);
-  outline: var(--mw-component-chips-border-width-default) solid var(--mw-component-chips-color-border-default);
+  box-shadow: inset 0 0 0 var(--mw-component-chips-border-width-default) var(--mw-component-chips-color-border-default);
   color: var(--mw-component-chips-color-fg-default);
   background: var(--mw-component-chips-color-bg-default);
 }
@@ -43,38 +43,35 @@
 .chip.selected {
   color: var(--mw-component-chips-color-fg-selected);
   background: var(--mw-component-chips-color-bg-default);
-  outline-color: var(--mw-component-chips-color-border-selected);
+  box-shadow: inset 0 0 0 var(--mw-component-chips-border-width-default) var(--mw-component-chips-color-border-selected);
 }
 
 /* selected, hover */
 .chip.selected:hover:not(.disabled) {
   color: var(--mw-component-chips-color-fg-selected);
   background: var(--mw-component-chips-color-bg-hover);
-  outline-color: var(--mw-component-chips-color-border-selected);
+  box-shadow: inset 0 0 0 var(--mw-component-chips-border-width-default) var(--mw-component-chips-color-border-selected);
 }
 
 /* focus, selected */
 .chip.selected:focus:not(.disabled) {
   color: var(--mw-component-chips-color-fg-selected);
   background: var(--mw-component-chips-color-bg-hover);
-  outline-color: var(--mw-component-chips-color-border-selected);
-  outline-width: var(--mw-component-chips-border-width-focused);
+  box-shadow: inset 0 0 0 var(--mw-component-chips-border-width-focused) var(--mw-component-chips-color-border-selected);
 }
 
 /* active, selected */
 .chip.selected:active:not(.disabled) {
   color: var(--mw-component-chips-color-fg-selected);
   background: var(--mw-component-chips-color-bg-pressed);
-  outline-color: var(--mw-component-chips-color-border-selected);
-  outline-width: var(--mw-component-chips-border-width-default);
+  box-shadow: inset 0 0 0 var(--mw-component-chips-border-width-default) var(--mw-component-chips-color-border-selected);
 }
 
 /* focus, not selected */
 .chip:focus:not(.selected):not(.disabled) {
   color: var(--mw-component-chips-color-fg-default);
   background: var(--mw-component-chips-color-bg-hover);
-  outline-color: var(--mw-component-chips-color-border-default);
-  outline-width: var(--mw-component-chips-border-width-focused);
+  box-shadow: inset 0 0 0 var(--mw-component-chips-border-width-focused) var(--mw-component-chips-color-border-default);
 }
 
 /* active, not selected */
@@ -87,5 +84,5 @@
 /* disabled */
 .chip.disabled {
   color: var(--mw-component-chips-color-fg-disabled);
-  outline-color: var(--mw-component-chips-color-border-disabled);
+  box-shadow: inset 0 0 0 var(--mw-component-chips-border-width-default) var(--mw-component-chips-color-border-disabled);
 }

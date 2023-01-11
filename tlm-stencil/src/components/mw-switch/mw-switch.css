@@ -119,10 +119,8 @@ input:disabled + .slider {
 
 /* track, focussed, not active, not disabled */
 input:focus:not(:active):not(:disabled) + .slider {
+  box-shadow: inset 0 0 0 var(--mw-component-checkbox-selected-border-width-focused) var(--mw-component-controls-color-outline-default);
   background-color: var(--mw-component-controls-color-bg-focused);
-  outline: var(--mw-component-checkbox-selected-border-width-focused) solid;
-  outline-color: var(--mw-component-controls-color-outline-default);
-  outline-offset: calc(-1 * var(--mw-component-checkbox-selected-border-width-focused));
 }
 
 /* track, hover, not disabled */
@@ -137,16 +135,12 @@ input:active:not(:disabled) + .slider {
 
 /* track, unchecked, not disabled */
 input:not(:checked):not(:disabled) + .slider {
-  outline: var(--mw-component-checkbox-selected-border-width-focused) solid;
-  outline-color: var(--mw-component-controls-color-outline-default);
-  outline-offset: calc(-1 * var(--mw-component-checkbox-selected-border-width-focused));
+  box-shadow: inset 0 0 0 var(--mw-component-checkbox-selected-border-width-focused) var(--mw-component-controls-color-outline-default);
 }
 
 /* track unchecked, disabled */
 input:not(:checked):disabled + .slider {
-  outline: var(--mw-component-checkbox-selected-border-width-focused) solid;
-  outline-color: var(--mw-component-controls-color-outline-disabled);
-  outline-offset: calc(-1 * var(--mw-component-checkbox-selected-border-width-focused));
+  box-shadow: inset 0 0 0 var(--mw-component-checkbox-selected-border-width-focused) var(--mw-component-controls-color-outline-disabled);
 }
 
 /* Rounded sliders */

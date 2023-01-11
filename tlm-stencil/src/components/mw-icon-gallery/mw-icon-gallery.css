@@ -45,5 +45,5 @@
   border-radius: var(--mw-component-card-border-radius);
   -webkit-border-radius: var(--mw-component-card-border-radius);
   -moz-border-radius: var(--mw-component-card-border-radius);
-  outline: var(--mw-component-card-border-width-outlined) solid var(--mw-component-card-border-outlined);
+  box-shadow: inset 0 0 0 var(--mw-component-card-border-width-outlined) var(--mw-component-card-border-outlined);
 }
