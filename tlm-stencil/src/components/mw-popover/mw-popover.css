@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.mw-popover-content {
+  /* visually hide element and make it not take any space */
+  visibility: hidden;
+  position: absolute;
+  /* TODO: token */
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+  /* TODO: token*/
+  padding: 12px;
+  background: var(--mw-component-menu-item-bg-default);
+  border-radius: var(--mw-component-menu-item-border-radius);
+  border-width: var(--mw-component-menu-item-border-width-default);
+}
+
+.mw-popover-content.open {
+  visibility: visible;
+  position: relative;
+}

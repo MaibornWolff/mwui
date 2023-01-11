@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Size } from "./components/mw-avatar/mw-avatar";
 import { ButtonSize, ButtonVariant, Target } from "./components/mw-button/mw-button";
 import { Size as Size1 } from "./components/mw-avatar/mw-avatar";
+import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 export namespace Components {
     interface MwAvatar {
         /**
@@ -216,6 +217,17 @@ export namespace Components {
     }
     interface MwIconGallery {
     }
+    interface MwPopover {
+        "name"?: string;
+        /**
+          * Whether the popover is visible
+         */
+        "open": boolean;
+        /**
+          * Placement relative to anchor element
+         */
+        "placement": PopoverPlacement;
+    }
     interface MwSwitch {
         /**
           * Switch state
@@ -380,6 +392,12 @@ declare global {
         prototype: HTMLMwIconGalleryElement;
         new (): HTMLMwIconGalleryElement;
     };
+    interface HTMLMwPopoverElement extends Components.MwPopover, HTMLStencilElement {
+    }
+    var HTMLMwPopoverElement: {
+        prototype: HTMLMwPopoverElement;
+        new (): HTMLMwPopoverElement;
+    };
     interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {
     }
     var HTMLMwSwitchElement: {
@@ -406,6 +424,7 @@ declare global {
         "mw-divider": HTMLMwDividerElement;
         "mw-icon": HTMLMwIconElement;
         "mw-icon-gallery": HTMLMwIconGalleryElement;
+        "mw-popover": HTMLMwPopoverElement;
         "mw-switch": HTMLMwSwitchElement;
         "mw-textfield": HTMLMwTextfieldElement;
     }
@@ -631,6 +650,17 @@ declare namespace LocalJSX {
     }
     interface MwIconGallery {
     }
+    interface MwPopover {
+        "name"?: string;
+        /**
+          * Whether the popover is visible
+         */
+        "open"?: boolean;
+        /**
+          * Placement relative to anchor element
+         */
+        "placement"?: PopoverPlacement;
+    }
     interface MwSwitch {
         /**
           * Switch state
@@ -714,6 +744,7 @@ declare namespace LocalJSX {
         "mw-divider": MwDivider;
         "mw-icon": MwIcon;
         "mw-icon-gallery": MwIconGallery;
+        "mw-popover": MwPopover;
         "mw-switch": MwSwitch;
         "mw-textfield": MwTextfield;
     }
@@ -735,6 +766,7 @@ declare module "@stencil/core" {
             "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
+            "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
             "mw-textfield": LocalJSX.MwTextfield & JSXBase.HTMLAttributes<HTMLMwTextfieldElement>;
         }
