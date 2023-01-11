@@ -25,7 +25,10 @@ export type PopoverPlacement =
 })
 export class MwPopover {
   @Element() hostElement: HTMLStencilElement;
-
+  /**
+   * Must be provided for automated testing
+   */
+  @Prop() testId!: string;
   /**
    * Whether the popover is visible
    */
@@ -34,11 +37,11 @@ export class MwPopover {
    * Placement relative to anchor element
    */
   @Prop() placement: PopoverPlacement = 'bottom';
-  @Prop() name?: string = 'tooltip';
   /**
    * If set to true, the popover can be closed by clicking outside
    */
   @Prop() dismissable?: boolean = false;
+  @Prop() name?: string = 'tooltip';
 
   contentRef!: HTMLElement;
   anchorRef!: HTMLElement;

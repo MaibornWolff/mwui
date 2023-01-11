@@ -21,5 +21,6 @@ export const MwChip = /*@__PURE__*/createReactComponent<JSX.MwChip, HTMLMwChipEl
 export const MwDivider = /*@__PURE__*/createReactComponent<JSX.MwDivider, HTMLMwDividerElement>('mw-divider');
 export const MwIcon = /*@__PURE__*/createReactComponent<JSX.MwIcon, HTMLMwIconElement>('mw-icon');
 export const MwIconGallery = /*@__PURE__*/createReactComponent<JSX.MwIconGallery, HTMLMwIconGalleryElement>('mw-icon-gallery');
+export const MwPopover = /*@__PURE__*/createReactComponent<JSX.MwPopover, HTMLMwPopoverElement>('mw-popover');
 export const MwSwitch = /*@__PURE__*/createReactComponent<JSX.MwSwitch, HTMLMwSwitchElement>('mw-switch');
 export const MwTextfield = /*@__PURE__*/createReactComponent<JSX.MwTextfield, HTMLMwTextfieldElement>('mw-textfield');

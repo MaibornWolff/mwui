@@ -1,3 +1,78 @@
 import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 
 # Popover
+
+<Canvas withSource="open">
+  <Story id="components-popover--default" />
+</Canvas>
+
+<ArgsTable of="mw-popover" />
+
+## Placement
+
+The default placement position is `bottom`. It can be specified as a prop of `mw-popover`. Internally it is using [popper.js](https://popper.js.org/) and therefore behaves like described in its docs.
+The anchor and popover position can overwrite the specified placement if the popover would not fit within the context.
+
+<Canvas>
+  <div>
+    <div style={{ height: '150px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '50px' }}>
+      {['top', 'bottom', 'left', 'right'].map(placement => (
+        <mw-popover key={placement} placement={placement}>
+          <mw-button slot="anchor" label={placement} variant="outline"></mw-button>
+          <div slot="content">Popover {placement}</div>
+        </mw-popover>
+      ))}
+    </div>
+    <div style={{ height: '150px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '50px' }}>
+      {['top-start', 'bottom-start', 'bottom-end', 'bottom-end'].map(placement => (
+        <mw-popover key={placement} placement={placement}>
+          <mw-button slot="anchor" label={placement} variant="outline"></mw-button>
+          <div slot="content">Popover {placement}</div>
+        </mw-popover>
+      ))}
+    </div>
+  </div>
+</Canvas>
+
+### Flipping
+
+If scrolling popover near the context's boundaries, it will flip it's position to be displayed in available space.
+
+<Canvas>
+  <div style={{ height: '250px' }}>
+    <div style={{ paddingTop: '100px', height: '500px', overflow: 'scroll' }}>
+      <mw-popover style={{ width: 'fit-content' }} placement="top">
+        <mw-button slot="anchor" label="Open and scroll down..." variant="outline"></mw-button>
+        <div style={{ width: '200px' }} slot="content">
+          Popovers flip to the opposite position when scrolling to the boundaries.
+        </div>
+      </mw-popover>
+    </div>
+  </div>
+</Canvas>
+
+### Overflow Prevention
+
+When scrolling, the popover will stay within the boundaries until the opposite edges of the anchor element and the popover are aligned.
+
+<Canvas>
+  <div style={{ height: '250px' }}>
+    <div style={{ height: '500px', overflow: 'scroll' }}>
+      <mw-popover style={{ width: 'fit-content' }} placement="right-start">
+        <mw-button slot="anchor" label="Open and scroll down..." variant="outline"></mw-button>
+        <div style={{ width: '200px' }} slot="content">
+          <h3>Overflow Prevention</h3>
+          <p>When scrolling, the popover will stay within the boundaries until the opposite edges of the anchor element and the popover are aligned.</p>
+        </div>
+      </mw-popover>
+    </div>
+  </div>
+</Canvas>
+
+## Dismissable Popover
+
+With the `dismissable` prop set to true, an open popover will close when clicking outside the element.
+
+<Canvas withSource="open">
+  <Story id="components-popover--dismissable" />
+</Canvas>

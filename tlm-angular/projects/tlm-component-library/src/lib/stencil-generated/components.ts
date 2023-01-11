@@ -302,6 +302,27 @@ export class MwIconGallery {
 }
 
 
+export declare interface MwPopover extends Components.MwPopover {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['dismissable', 'name', 'open', 'placement', 'testId']
+})
+@Component({
+  selector: 'mw-popover',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['dismissable', 'name', 'open', 'placement', 'testId']
+})
+export class MwPopover {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MwSwitch extends Components.MwSwitch {}
 
 @ProxyCmp({

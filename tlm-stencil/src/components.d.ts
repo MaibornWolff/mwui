@@ -231,6 +231,10 @@ export namespace Components {
           * Placement relative to anchor element
          */
         "placement": PopoverPlacement;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
     }
     interface MwSwitch {
         /**
@@ -668,6 +672,10 @@ declare namespace LocalJSX {
           * Placement relative to anchor element
          */
         "placement"?: PopoverPlacement;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
     }
     interface MwSwitch {
         /**
