@@ -200,6 +200,12 @@
   --mw-component-list-item-bg-default: #ffffff;
   --mw-component-list-item-bg-selected: #F9E2EE;
   --mw-component-list-item-border-focused: [object Object];
+  --mw-component-list-item-1-line-h: 56px;
+  --mw-component-list-item-2-line-h: 72px;
+  --mw-component-list-item-gap-within: 16px;
+  --mw-component-list-item-padding-l: 16px;
+  --mw-component-list-item-padding-r: 24px;
+  --mw-component-list-item-3-line-padding-y: 12px;
   --mw-component-menu-shadow-0: {;
   --mw-component-menu-shadow-1: e;
   --mw-component-menu-shadow-2: l;
@@ -326,7 +332,7 @@
   --mw-component-tabs-bg-default: #FAFAFA;
   --mw-component-tabs-bg-hover: #EEF1F3;
   --mw-component-tabs-padding-x: 24px;
-  --mw-component-tabs-gab-within: 4px;
+  --mw-component-tabs-gap-within: 4px;
   --mw-component-tabs-border-focused: [object Object];
   --mw-semantic-color-border-disabled: #79868b;
   --mw-semantic-color-border-default: #001418;

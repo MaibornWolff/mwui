@@ -957,6 +957,30 @@
             "value": "[object Object]",
             "type": "border"
           }
+        },
+        "1-lineH": {
+          "value": 56,
+          "type": "sizing"
+        },
+        "2-lineH": {
+          "value": 72,
+          "type": "sizing"
+        },
+        "gapWithin": {
+          "value": 16,
+          "type": "spacing"
+        },
+        "paddingL": {
+          "value": 16,
+          "type": "spacing"
+        },
+        "paddingR": {
+          "value": 24,
+          "type": "spacing"
+        },
+        "3-linePaddingY": {
+          "value": 12,
+          "type": "spacing"
         }
       },
       "menu": {
@@ -1548,7 +1572,7 @@
           "value": 24,
           "type": "spacing"
         },
-        "gabWithin": {
+        "gapWithin": {
           "value": 4,
           "type": "spacing"
         },
