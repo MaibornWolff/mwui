@@ -125,7 +125,7 @@ const filledButtonStyles = css`
     color: ${mwComponentButtonFilledColorFgHover};
   }
   &:focus {
-    boxShadow: inset 0 0 0 ${mwComponentButtonBorderWidthFilledFocused}px ${mwComponentButtonFilledColorOutlineFocused},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthFilledFocused}px ${mwComponentButtonFilledColorOutlineFocused},
     background-color: ${mwComponentButtonFilledColorBgFocused};
     color: ${mwComponentButtonFilledColorFgFocused};
   }
@@ -142,23 +142,23 @@ const filledButtonStyles = css`
 const outlineButtonStyles = css`
   ${base};
   border: 0;
-  boxShadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderDefault},
+  box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderDefault},
   color: ${mwComponentButtonOutlineGhostColorFgDefault};
   background-color: ${mwComponentButtonOutlineGhostColorBgDefault};
   &:hover {
-    boxShadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderHover},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderHover},
     color: ${mwComponentButtonOutlineGhostColorFgHover};
   }
   &:focus {
-    boxShadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineFocused}px ${mwComponentButtonOutlineGhostColorBorderFocused},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineFocused}px ${mwComponentButtonOutlineGhostColorBorderFocused},
     color: ${mwComponentButtonOutlineGhostColorFgFocused};
   }
   &:active {
-    boxShadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderPressed},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderPressed},
     color: ${mwComponentButtonOutlineGhostColorFgPressed};
   }
   &:disabled {
-    boxShadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderDisabled},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineDefault}px ${mwComponentButtonOutlineGhostColorBorderDisabled},
     color: ${mwComponentButtonOutlineGhostColorFgDisabled};
   }
 `;
@@ -166,7 +166,7 @@ const outlineButtonStyles = css`
 const ghostButtonStyles = css`
   ${base};
   outline: none;
-  boxShadow: none;
+  box-shadow: none;
   border: none;
   color: ${mwComponentButtonOutlineGhostColorFgDefault};
   background-color: ${mwComponentButtonOutlineGhostColorBgDefault};
@@ -174,16 +174,16 @@ const ghostButtonStyles = css`
     color: ${mwComponentButtonOutlineGhostColorFgHover};
   }
   &:focus {
-    boxShadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineFocused}px ${mwComponentButtonOutlineGhostColorBorderFocused},
+    box-shadow: inset 0 0 0 ${mwComponentButtonBorderWidthOutlineFocused}px ${mwComponentButtonOutlineGhostColorBorderFocused},
     color: ${mwComponentButtonOutlineGhostColorFgFocused};
   }
   &:active {
     color: ${mwComponentButtonOutlineGhostColorFgPressed};
-    boxShadow: none;
+    box-shadow: none;
   }
   &:disabled {
     color: ${mwComponentButtonOutlineGhostColorFgDisabled};
-    boxShadow: none;
+    box-shadow: none;
   }
 `;
 

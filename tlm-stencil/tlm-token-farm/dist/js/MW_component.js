@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 11 Jan 2023 14:57:36 GMT
+ * Generated on Wed, 11 Jan 2023 12:06:44 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -203,10 +203,9 @@ export const mwComponentListItemBorderFocused = "[object Object]";
 export const mwComponentListItem1LineH = "56px";
 export const mwComponentListItem2LineH = "72px";
 export const mwComponentListItemGapWithin = "16px";
-export const mwComponentListItemPaddingL = "24px";
+export const mwComponentListItemPaddingL = "16px";
 export const mwComponentListItemPaddingR = "24px";
 export const mwComponentListItem3LinePaddingY = "12px";
-export const mwComponentListItemGapBetween = "0px";
 export const mwComponentMenuShadow0 = "{";
 export const mwComponentMenuShadow1 = "e";
 export const mwComponentMenuShadow2 = "l";
