@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-11T14:24:48",
+  "timestamp": "2023-01-11T14:29:52",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -1238,10 +1238,7 @@
       "filePath": "./src/components/mw-menu/mw-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu",
-<<<<<<< HEAD
-=======
       "readme": "# mw-menu\n\n\n",
->>>>>>> b4deaa7 (fix outline styles for safari (use box-shadow))
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1283,10 +1280,7 @@
       "filePath": "./src/components/mw-menu-item/mw-menu-item.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-item",
-<<<<<<< HEAD
-=======
       "readme": "# mw-menu-item\n\n\n",
->>>>>>> b4deaa7 (fix outline styles for safari (use box-shadow))
       "docs": "",
       "docsTags": [],
       "usage": {},
