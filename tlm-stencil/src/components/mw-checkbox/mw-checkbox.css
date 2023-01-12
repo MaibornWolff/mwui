@@ -18,8 +18,8 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  width: var(--mw-component-size-checkbox-radiobutton-wh);
-  height: var(--mw-component-size-checkbox-radiobutton-wh);
+  width: var(--mw-component-size-checkbox-radiobutton-default);
+  height: var(--mw-component-size-checkbox-radiobutton-default);
   border-radius: var(--mw-component-checkbox-border-radius);
   display: flex;
   justify-content: center;

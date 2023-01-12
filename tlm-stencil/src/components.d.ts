@@ -302,6 +302,15 @@ export namespace Components {
          */
         "testId": string;
     }
+    interface MwTab {
+        "disabled"?: boolean;
+        "icon"?: string;
+        "label"?: string;
+        "selected"?: boolean;
+    }
+    interface MwTabs {
+        "selected": number;
+    }
     interface MwTextfield {
         /**
           * Visually and functionally disabled input
@@ -468,6 +477,18 @@ declare global {
         prototype: HTMLMwSwitchElement;
         new (): HTMLMwSwitchElement;
     };
+    interface HTMLMwTabElement extends Components.MwTab, HTMLStencilElement {
+    }
+    var HTMLMwTabElement: {
+        prototype: HTMLMwTabElement;
+        new (): HTMLMwTabElement;
+    };
+    interface HTMLMwTabsElement extends Components.MwTabs, HTMLStencilElement {
+    }
+    var HTMLMwTabsElement: {
+        prototype: HTMLMwTabsElement;
+        new (): HTMLMwTabsElement;
+    };
     interface HTMLMwTextfieldElement extends Components.MwTextfield, HTMLStencilElement {
     }
     var HTMLMwTextfieldElement: {
@@ -492,6 +513,8 @@ declare global {
         "mw-menu-item": HTMLMwMenuItemElement;
         "mw-popover": HTMLMwPopoverElement;
         "mw-switch": HTMLMwSwitchElement;
+        "mw-tab": HTMLMwTabElement;
+        "mw-tabs": HTMLMwTabsElement;
         "mw-textfield": HTMLMwTextfieldElement;
     }
 }
@@ -801,6 +824,15 @@ declare namespace LocalJSX {
          */
         "testId": string;
     }
+    interface MwTab {
+        "disabled"?: boolean;
+        "icon"?: string;
+        "label"?: string;
+        "selected"?: boolean;
+    }
+    interface MwTabs {
+        "selected"?: number;
+    }
     interface MwTextfield {
         /**
           * Visually and functionally disabled input
@@ -862,6 +894,8 @@ declare namespace LocalJSX {
         "mw-menu-item": MwMenuItem;
         "mw-popover": MwPopover;
         "mw-switch": MwSwitch;
+        "mw-tab": MwTab;
+        "mw-tabs": MwTabs;
         "mw-textfield": MwTextfield;
     }
 }
@@ -886,6 +920,8 @@ declare module "@stencil/core" {
             "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
             "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
+            "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
+            "mw-tabs": LocalJSX.MwTabs & JSXBase.HTMLAttributes<HTMLMwTabsElement>;
             "mw-textfield": LocalJSX.MwTextfield & JSXBase.HTMLAttributes<HTMLMwTextfieldElement>;
         }
     }

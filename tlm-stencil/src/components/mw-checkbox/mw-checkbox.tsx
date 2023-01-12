@@ -14,7 +14,7 @@ export class MwCheckbox {
   /**
    * Value of checkbox input
    */
-  @Prop() value?: string;
+  @Prop({ mutable: true, reflect: true }) value?: string;
   /**
    * Name of checkbox input
    */
@@ -22,7 +22,7 @@ export class MwCheckbox {
   /**
    * Whether input is checked
    */
-  @Prop({ mutable: true }) checked?: boolean = false;
+  @Prop({ mutable: true, reflect: true }) checked?: boolean = false;
   /**
    * Whether input is disabled
    */

@@ -1,0 +1,6 @@
+.mw-tabs {
+  display: flex;
+  flex-flow: row;
+  gap: 0;
+  width: 100%;
+}

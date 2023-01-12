@@ -1,0 +1,39 @@
+.mw-tab {
+  box-sizing: border-box;
+  appearance: none;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  height: var(--mw-component-size-tabs-default-h);
+  display: inline-flex;
+  flex-flow: column;
+  padding: 0 var(--mw-component-tabs-padding-x);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-bottom: var(--mw-component-divider-border-width-default) solid var(--mw-component-tabs-bg-default);
+  background: var(--mw-component-tabs-bg-default);
+  color: var(--mw-component-tabs-fg-default);
+  gap: var(--mw-component-tabs-gap-within);
+  font-family: var(--mw-component-tabs-label-font-family);
+  font-weight: var(--mw-component-tabs-label-font-weight);
+  font-size: var(--mw-component-tabs-label-font-size);
+  line-height: var(--mw-component-tabs-label-line-height);
+}
+.mw-tab.label-with-icon {
+  height: var(--mw-component-size-tabs-with-icon-h);
+}
+.mw-tab.selected {
+  color: var(--mw-component-tabs-fg-selected);
+  border-bottom: var(--mw-component-divider-border-width-default) solid var(--mw-component-tabs-fg-selected);
+}
+.mw-tab:active {
+  /* TODO: --mw-component-border-focused muss in mehrere Tokens aufgeteilt werden */
+}
+.mw-tab:disabled {
+  cursor: unset;
+  color: var(--mw-component-tabs-fg-disabled);
+}
+.mw-tab:not(.selected):not(:disabled):hover {
+  background: var(--mw-component-tabs-bg-hover);
+}
