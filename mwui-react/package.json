@@ -2,10 +2,10 @@
   "name": "mwui-react",
   "sideEffects": false,
   "version": "0.1.0",
-  "description": "React specific wrapper for mwui-components",
+  "description": "React specific wrapper for mwui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MaibornWolff/mwui-components.git"
+    "url": "https://github.com/MaibornWolff/mwui.git"
   },
   "scripts": {
     "build": "npm run clean && npm run compile",

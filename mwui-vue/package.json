@@ -1,10 +1,10 @@
 {
   "name": "mwui-vue",
   "version": "0.1.0",
-  "description": "Vue specific wrapper for mwui-components",
+  "description": "Vue specific wrapper for mwui",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MaibornWolff/mwui-components.git"
+    "url": "https://github.com/MaibornWolff/mwui.git"
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
