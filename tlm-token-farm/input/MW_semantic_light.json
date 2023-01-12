@@ -781,7 +781,7 @@
           "type": "borderWidth"
         }
       },
-      "menu-item": {
+      "menuItem": {
         "title": {
           "fontFamily": {
             "value": "Poppins",
@@ -817,9 +817,7 @@
             "value": 14,
             "type": "fontSize"
           }
-        }
-      },
-      "menuItem": {
+        },
         "borderRadius": {
           "value": "4px",
           "type": "borderRadius"
@@ -881,7 +879,7 @@
           "type": "spacing"
         }
       },
-      "list-item": {
+      "listItem": {
         "title": {
           "fontFamily": {
             "value": "Poppins",
@@ -917,9 +915,7 @@
             "value": 14,
             "type": "fontSize"
           }
-        }
-      },
-      "listItem": {
+        },
         "borderRadius": {
           "value": "4px",
           "type": "borderRadius"
