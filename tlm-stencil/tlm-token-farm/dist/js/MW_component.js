@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 12 Jan 2023 10:43:24 GMT
+ * Generated on Thu, 12 Jan 2023 10:48:16 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -245,7 +245,8 @@ export const mwComponentChipsColorBgHover = "#EEF1F3";
 export const mwComponentChipsColorBgPressed = "#CFD6D8";
 export const mwComponentChipsBorderRadius = 16;
 export const mwComponentChipsGapWithin = "8px";
-export const mwComponentChipsGapBetween = "8px";
+export const mwComponentChipsGapBetweenX = "8px";
+export const mwComponentChipsGapBetweenY = "12px";
 export const mwComponentAvatarsColorBgDefault = "#991766";
 export const mwComponentAvatarsColorFgDefault = "#ffffff";
 export const mwComponentAvatarsTypoXsFontFamily = "Poppins";

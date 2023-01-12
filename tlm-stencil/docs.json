@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-12T10:43:44",
+  "timestamp": "2023-01-12T10:48:36",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -1747,6 +1747,7 @@
       "filePath": "./src/components/mw-tab/mw-tab.tsx",
       "encapsulation": "shadow",
       "tag": "mw-tab",
+      "readme": "# mw-tab\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1841,6 +1842,7 @@
       "filePath": "./src/components/mw-tabs/mw-tabs.tsx",
       "encapsulation": "shadow",
       "tag": "mw-tabs",
+      "readme": "# mw-tabs\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

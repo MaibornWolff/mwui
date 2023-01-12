@@ -1158,8 +1158,12 @@
           "value": 8,
           "type": "spacing"
         },
-        "gapBetween": {
+        "gapBetweenX": {
           "value": 8,
+          "type": "spacing"
+        },
+        "gapBetweenY": {
+          "value": 12,
           "type": "spacing"
         }
       },
