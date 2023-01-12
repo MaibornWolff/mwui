@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <link rel="stylesheet" href="/build/mwui-stencil.css" />
+    <link rel="stylesheet" href="/global/global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+    <script type="module" src="/build/mwui-stencil.esm.js"></script>
+    <script nomodule src="/build/mwui-stencil.js"></script>
+  </head>
+  <body style="padding-bottom: 20vh">
+    <section>
+      <h2>Button</h2>
+      <h3>Filled</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-button onClick="alert('hooo')" label="BUTTON" test-id="test-button-1"></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-2"
+          ><span slot="icon-start"><mw-icon icon="placeholder" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-3"
+          ><span slot="icon-end"><mw-icon icon="check" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-4"
+          ><span slot="icon-start"><mw-icon icon="check" /></span><span slot="icon-end"><mw-icon icon="check" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-5" disabled></mw-button>
+      </div>
+      <h3>Outline</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-button label="BUTTON" test-id="test-button-6" variant="outline"></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-7" variant="outline"
+          ><span slot="icon-start"><mw-icon icon="check" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-8" variant="outline"
+          ><span slot="icon-end"><mw-icon icon="check" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-9" variant="outline"
+          ><span slot="icon-start"><mw-icon icon="check" /></span><span slot="icon-end"><mw-icon icon="check" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-10" variant="outline" disabled></mw-button>
+      </div>
+      <h3>Ghost</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-button label="BUTTON" test-id="test-button-6" variant="ghost"></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-7" variant="ghost"
+          ><span slot="icon-start"><mw-icon icon="check" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-8" variant="ghost"
+          ><span slot="icon-end"><mw-icon icon="check" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-9" variant="ghost"
+          ><span slot="icon-start"><mw-icon icon="check" /></span><span slot="icon-end"><mw-icon icon="check" /></span
+        ></mw-button>
+        <mw-button label="BUTTON" test-id="test-button-10" variant="ghost" disabled></mw-button>
+      </div>
+      <h3>Icon</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-button
+          ><span slot="icon-start"><mw-icon icon="settings" /></span
+        ></mw-button>
+        <mw-button variant="outline"
+          ><span slot="icon-start"><mw-icon icon="settings" /></span
+        ></mw-button>
+        <mw-button variant="ghost"
+          ><span slot="icon-start"><mw-icon icon="settings" /></span
+        ></mw-button>
+      </div>
+      <h3>Sizing</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-button label="SMALL" size="small"></mw-button>
+        <mw-button label="MEDIUM"></mw-button>
+        <mw-button label="LARGE" size="large"></mw-button>
+        <mw-button label="X-LARGE" size="x-large"></mw-button>
+      </div>
+      <h3>Link Button</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-button label="LINK" href="https://maibornwolff.de" test-id="test-button-11"></mw-button>
+        <mw-button label="LINK" href="https://maibornwolff.de" target="_blank" test-id="test-button-12" variant="outline"></mw-button>
+      </div>
+    </section>
+    <br />
+    <hr />
+    <section>
+      <h2>Textfield</h2>
+      <div>
+      <div style="width: 200px; display: flex; flex-direction: column; gap: 16px">
+        <h3>default</h3>
+        <mw-textfield type="text" label="Label"></mw-textfield>
+        <mw-textfield type="text" value="some value" label="Label" placeholder="Placeholder" helper-text="helper text error" has-error></mw-textfield>
+        <mw-textfield required type="text" value="some value" label="Required Label" placeholder="Placeholder" helper-text="helper text default"></mw-textfield>
+        <mw-textfield disabled type="text" value="disabled" label="Label" placeholder="Placeholder" helper-text="helper text default"></mw-textfield>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; gap: 16px">
+        <h3>inline</h3>
+        <mw-textfield type="text" value="some value" label="Label" placeholder="Placeholder" helper-text="helper text default" inline></mw-textfield>
+      </div>
+      <div style="width: 200px; display: flex; flex-direction: column; gap: 16px">
+        <h3>Icons</h3>
+        <mw-textfield type="text" label="Label" placeholder="Search things..." helper-text="helper text" has-error="false">
+          <mw-icon slot="icon-start" icon="search"></mw-icon>
+        </mw-textfield>
+        <mw-textfield type="text" label="Label" placeholder="Placeholder" helper-text="helper text" has-error="false">
+          <mw-icon slot="icon-end" icon="check"></mw-icon>
+        </mw-textfield>
+        <mw-textfield type="text" label="Label" placeholder="Placeholder" helper-text="helper text" has-error="false">
+          <mw-icon slot="icon-start" icon="placeholder"></mw-icon>
+          <mw-icon slot="icon-end" icon="placeholder"></mw-icon>
+        </mw-textfield>
+      </div>
+    </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Controls</h2>
+      <h3>Switch</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-switch checked></mw-switch>
+        <mw-switch></mw-switch>
+        <mw-switch disabled></mw-switch>
+        <mw-switch label="some label"></mw-switch>
+        <mw-switch on-text="ON" off-text="OFF"></mw-switch>
+      </div>
+      <h3>Checkbox</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-checkbox test-id="checkbox-1" value="bananas" name="food" label="Bananen"></mw-checkbox>
+        <mw-checkbox test-id="checkbox-2"  value="apples" name="food" checked label="Äpfel"></mw-checkbox>
+        <mw-checkbox test-id="checkbox-3"  value="cucumbers" name="food" disabled label="Gurken"></mw-checkbox>
+        <mw-checkbox test-id="checkbox-4"  value="organes" name="food" checked disabled label="Orangen"></mw-checkbox>
+      </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Popover</h2>
+      <div style="display: flex; gap: 16px">
+      <mw-popover placement="bottom">
+        <div slot="content">Popover Content.</div>
+        <mw-button slot="anchor" label="Bottom"></mw-button>
+      </mw-popover>
+      <mw-popover placement="top">
+        <div slot="content">Popover Content.</div>
+        <mw-button slot="anchor" label="Top"></mw-button>
+      </mw-popover>
+      <mw-popover placement="left">
+        <div slot="content">Popover Content.</div>
+        <mw-button slot="anchor" label="Left"></mw-button>
+      </mw-popover>
+      <mw-popover placement="right">
+        <div slot="content">Popover Content.</div>
+        <mw-button slot="anchor" label="Right"></mw-button>
+      </mw-popover>
+      <mw-popover placement="bottom" dismissable>
+        <div slot="content">Popover Content.</div>
+        <mw-button slot="anchor" label="Bottom (dismissable)"></mw-button>
+      </mw-popover>
+      <mw-popover placement="top-end">
+        <div slot="content"><Popover Content.></div>
+        <mw-button slot="anchor" label="Top End"></mw-button>
+      </mw-popover>
+      </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Menu</h2>
+      <div style="display: flex; gap: 16px">
+        <mw-menu style="width: fit-content">
+          <mw-button slot="anchor" label="Bottom"></mw-button>
+          <mw-menu-item title="Disabled Item" disabled>
+          </mw-menu-item>
+          <mw-menu-item title="List Item Loooong" subtitle="Subtitle">
+          </mw-menu-item>
+          <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle">
+          </mw-menu-item>
+          <mw-menu-item title="List Item" subtitle="Subtitle">
+          </mw-menu-item>
+        </mw-menu>
+        <mw-menu style="width: fit-content" placement="right-start">
+          <mw-button slot="anchor" label="Right-Start"></mw-button>
+          <mw-menu-item title="Disabled Item" disabled></mw-menu-item>
+          <mw-menu-item title="List Item Loooong" subtitle="Subtitle">
+          </mw-menu-item>
+          <mw-divider></mw-divider>
+          <mw-menu-item title="Disabled Item" disabled>
+          </mw-menu-item>
+          <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle">
+          </mw-menu-item>
+          <mw-menu-item title="List Item" subtitle="Subtitle">
+          </mw-menu-item>
+        </mw-menu>
+        <mw-menu style="width: fit-content" placement="bottom" open>
+          <mw-button slot="anchor" label="Open"></mw-button>
+          <mw-menu-item title="List Item"></mw-menu-item>
+        </mw-menu>
+      </div>
+      <h3>Menu List</h3>
+      <mw-menu-list style="width: fit-content">
+        <mw-menu-item title="Disabled Item" disabled></mw-menu-item>
+        <mw-menu-item title="List Item Loooong" subtitle="Subtitle">
+        </mw-menu-item>
+        <mw-divider></mw-divider>
+        <mw-menu-item title="Disabled Item" disabled>
+        </mw-menu-item>
+        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle">
+        </mw-menu-item>
+        <mw-menu-item title="List Item" subtitle="Subtitle">
+        </mw-menu-item>
+      </mw-menu-list>
+    </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Avatar</h2>
+      <h3>Image</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-avatar src="https://i.pravatar.cc/150" alt="John Doe" size="large"></mw-avatar>
+        <mw-avatar src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>
+        <mw-avatar src="https://i.pravatar.cc/150" alt="John Doe" size="small"></mw-avatar>
+        <mw-avatar src="https://i.pravatar.cc/150" alt="John Doe" size="x-small"></mw-avatar>
+      </div>
+      <h3>Icon</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-avatar size="large" icon="settings"></mw-avatar>
+        <mw-avatar size="medium" icon="settings"></mw-avatar>
+        <mw-avatar size="small" icon="settings"></mw-avatar>
+        <mw-avatar size="x-small" icon="settings"></mw-avatar>
+      </div>
+      <h3>Fallback</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-avatar alt="John Doe" size="large"></mw-avatar>
+        <mw-avatar alt="John Doe" size="medium"></mw-avatar>
+        <mw-avatar alt="John Doe" size="small"></mw-avatar>
+        <mw-avatar alt="John Doe" size="x-small"></mw-avatar>
+      </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Icons</h2>
+      <div style="display: flex; gap: 16px">
+        <mw-icon icon="check" size="large"></mw-icon>
+        <mw-icon icon="check"></mw-icon>
+        <mw-icon icon="check" size="small"></mw-icon>
+        <mw-icon icon="check" size="x-small"></mw-icon>
+        <mw-icon icon="check" color="#ff00ff" size="large"></mw-icon>
+      </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Chips</h2>
+      <div style="display: flex; gap: var(--mw-component-chips-gap-between)">
+        <mw-chip icon="check">John Doe</mw-chip>
+        <mw-chip icon="check" show-close>John Doe</mw-chip>
+        <mw-chip>John Doe</mw-chip>
+        <mw-chip show-close>John Doe</mw-chip>
+        <mw-chip disabled show-close>John Doe</mw-chip>
+        <mw-chip><mw-avatar alt="John Doe" size="x-small"></mw-avatar>John Doe</mw-chip>
+      </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Dividers</h2>
+      <mw-divider></mw-divider>
+      <br />
+      <mw-divider inset></mw-divider>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Cards</h2>
+      <h3>CardBody</h3>
+      <div style="display: flex; gap: 20px">
+        <mw-card><mw-card-body>Card Body</mw-card-body></mw-card>
+        <mw-card elevated><mw-card-body>Elevated</mw-card-body></mw-card>
+        <mw-card outlined><mw-card-body>Outlined</mw-card-body></mw-card>
+      </div>
+      <h3>CardHeader</h3>
+      <div style="display: flex; gap: 20px">
+        <mw-card>
+          <mw-card-header header="Header" subheader="Subheader"></mw-card-header>
+        </mw-card>
+        <mw-card>
+          <mw-card-header header="Header" subheader="Subheader"></mw-card-header>
+          <mw-card-body>Simple Card With Header</mw-card-body>
+        </mw-card>
+        <mw-card outlined>
+          <mw-card-header header="Outlined" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe"></mw-card-header>
+          <mw-card-body>I am the body section of this card.</mw-card-body>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-header header="Elevated" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe"></mw-card-header>
+          <mw-card-body>I have a CardFooter with a single button. And I like it. Lorem ipsum dolor sit amet, here comes the line break</mw-card-body>
+          <mw-card-footer>
+            <mw-button label="Ok" size="small" variant="filled"></mw-button>
+          </mw-card-footer>
+        </mw-card>
+      </div>
+      <h3>CardTitle</h3>
+      <div style="display: flex; gap: 20px">
+        <mw-card outlined>
+          <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
+          <mw-card-body>I have a CardFooter with a single button. And I like it. Lorem ipsum dolor sit amet, here comes the line break</mw-card-body>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
+          <mw-card-footer>
+            <mw-button label="Cool" size="small"></mw-button>
+          </mw-card-footer>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-title title="Title" subtitle="Subtitle" metadata="Metadata"></mw-card-title>
+          <mw-card-body>Lorem ipsum dolor sit amet.</mw-card-body>
+          <mw-card-footer>
+            <mw-button label="Cancel" size="small" variant="outline"></mw-button>
+            <mw-button label="Save" size="small"></mw-button>
+          </mw-card-footer>
+          </mw-card>
+        </div>
+        <h3>CardImage</h3>
+        <div style="display: flex; gap: 20px">
+        <mw-card elevated>
+          <mw-card-header header="Header" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe"></mw-card-header>
+          <mw-card-image src="https://placedog.net/500/280" alt="card image"></mw-card-image>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-image src="https://placedog.net/500/280" alt="card image"></mw-card-image>
+          <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
+          <mw-card-body>I am the body section of this card.</mw-card-body>
+          <mw-card-footer>
+            <mw-button label="Cancel" size="small" variant="outline"></mw-button>
+            <mw-button label="Save" size="small"></mw-button>
+          </mw-card-footer>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-header header="Header" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe"></mw-card-header>
+          <mw-card-image src="https://placedog.net/500/280" alt="card image"></mw-card-image>
+          <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
+          <mw-card-body>I am the body section of this card.</mw-card-body>
+          <mw-card-footer>
+            <mw-button label="Cancel" size="small" variant="outline"></mw-button>
+            <mw-button label="Save" size="small"></mw-button>
+          </mw-card-footer>
+        </mw-card>
+      </div>
+      <h3>CardImage Only</h3>
+      <div style="display: flex; gap: 20px">
+        <mw-card>
+          <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
+        </mw-card>
+        <mw-card outlined>
+          <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
+        </mw-card>
+        <mw-card elevated>
+          <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
+        </mw-card onClick="() => console.log('clicked')">
+      </div>
+    </section>
+    <section style="margin-top: 30px;">
+      <br />
+      <hr />
+      <h2>Icon Gallery</h2>
+      <mw-icon-gallery></mw-icon-gallery>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Tabs / Tab</h2>
+      <div style="display: flex; flex-flow: column; gap: 20px">
+        <mw-tabs selected="2">
+          <mw-tab label="Liste" icon="check"></mw-tab>
+          <mw-tab label="Bearbeiten" icon="edit" disabled></mw-tab>
+          <mw-tab label="Suchen" icon="search"></mw-tab>
+          <mw-tab label="Einstellungen" icon="settings"></mw-tab>
+        </mw-tabs>
+        <mw-tabs>
+          <mw-tab label="Tab 1"></mw-tab>
+          <mw-tab label="Tab 2"></mw-tab>
+          <mw-tab label="Tab 3"></mw-tab>
+          <mw-tab label="Tab 4"></mw-tab>
+          <mw-tab label="Tab 5"></mw-tab>
+          <mw-tab label="Tab 6"></mw-tab>
+        </mw-tabs>
+        <mw-tabs selected="0">
+          <mw-tab icon="check"></mw-tab>
+          <mw-tab icon="edit"></mw-tab>
+          <mw-tab icon="search"></mw-tab>
+          <mw-tab icon="settings"></mw-tab>
+        </mw-tabs>
+      </div>
+    </section>
+  </body>
+  <script>
+    const cards = document.getElementsByTagName('mw-card');
+    const chips = document.getElementsByTagName('mw-chip');
+
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].addEventListener('click', (event) => {
+        console.log('card clicked', event);
+      });
+    }
+
+    for (var i = 0; i < chips.length; i++) {
+      chips[i].addEventListener('close', (event) => {
+        console.log('chip: closed', event);
+      });
+
+      chips[i].addEventListener('click', (event) => {
+        console.log('chip: clicked', event);
+      });
+
+      chips[i].addEventListener('toggle', (event) => {
+        console.log('chip: toggled', event);
+      });
+    }
+
+
+  </script>
+</html>

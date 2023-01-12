@@ -14,11 +14,11 @@ Download the plugin from [here](https://www.figma.com/community/plugin/843461159
 
 Generate the access token and paste it into the plugin settings. _Do not share this token with anybody!_
 
-**Repository:** MaibornWolff/tlm-components
+**Repository:** MaibornWolff/mwui
 
 **Default Branch:** develop
 
-**File Path:** tlm-token-farm/input/tokens.json
+**File Path:** mwui-token-farm/input/tokens.json
 
 After saving the settings you can pull the tokens from GitHub using the button in the bottom left corner.
 

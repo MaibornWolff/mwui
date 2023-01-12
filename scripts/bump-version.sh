@@ -1,15 +1,15 @@
 #!/bin/sh
 npm version $1
 
-cd ./tlm-stencil
+cd ./mwui-stencil
 npm version $1
 
-cd ../tlm-angular
+cd ../mwui-angular
 npm version $1
 
-cd ../tlm-react
+cd ../mwui-react
 npm version $1
 
-cd ../tlm-vue
+cd ../mwui-vue
 npm version $1
 

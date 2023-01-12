@@ -1,0 +1,69 @@
+{
+  "name": "mwui-stencil",
+  "version": "0.1.0",
+  "description": "Component Library using Figma's design tokens",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/mwui/mwui.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MaibornWolff/mwui.git"
+  },
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build": "npm run load-icons && stencil build --docs --docs-json docs.json",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate",
+    "storybook": "start-storybook -p 6006 -s www/build",
+    "load-icons": "node ./load-icons.js",
+    "build-storybook": "build-storybook public -o ../docs -s www/build"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.10.0",
+    "@emotion/styled": "^11.10.4",
+    "@stencil/angular-output-target": "^0.4.0",
+    "@stencil/core": "^2.13.0",
+    "@stencil/react-output-target": "^0.3.1",
+    "@stencil/vue-output-target": "^0.6.2",
+    "prettier": "^2.7.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@popperjs/core": "^2.11.6",
+    "@pxtrn/storybook-addon-docs-stencil": "^6.4.1",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/addons": "^6.5.10",
+    "@storybook/builder-webpack4": "^6.5.10",
+    "@storybook/html": "^6.1.21",
+    "@storybook/manager-webpack4": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "@storybook/theming": "^6.5.10",
+    "@types/jest": "^27.0.3",
+    "babel-loader": "^8.2.5",
+    "classnames": "^2.3.2",
+    "eslint": "^8.22.0",
+    "fs-extra": "^11.1.0",
+    "glob-promise": "^6.0.1",
+    "jest": "^27.4.5",
+    "jest-cli": "^27.4.5",
+    "mathjs": "^11.5.0",
+    "puppeteer": "^16.1.1",
+    "stencil-click-outside": "^1.8.0",
+    "storybook-addon-turbo-build": "^1.1.0",
+    "svgson": "^5.2.1"
+  },
+  "license": "MIT"
+}

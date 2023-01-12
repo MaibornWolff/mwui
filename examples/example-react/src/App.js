@@ -1,4 +1,4 @@
-import { TlmButton } from 'tlm-react';
+import { MwuiButton } from 'mwui-react';
 
 function App() {
   return (
@@ -10,10 +10,10 @@ function App() {
         rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
       </p>
       <div className="flex justify-end">
-        <TlmButton className="mr-2" secondary>
+        <MwuiButton className="mr-2" secondary>
           CANCEL
-        </TlmButton>
-        <TlmButton>SUBMIT</TlmButton>
+        </MwuiButton>
+        <MwuiButton>SUBMIT</MwuiButton>
       </div>
     </div>
   );

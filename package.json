@@ -1,25 +1,25 @@
 {
-  "name": "tlm-components",
-  "version": "0.0.15",
+  "name": "mwui",
+  "version": "0.1.0",
   "description": "Component Library using Figma's design tokens",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MaibornWolff/tlm-components.git"
+    "url": "https://github.com/MaibornWolff/mwui.git"
   },
   "workspaces": [
-    "tlm-token-farm",
-    "tlm-react",
-    "tlm-stencil",
-    "tlm-vue",
-    "tlm-angular"
+    "mwui-token-farm",
+    "mwui-react",
+    "mwui-stencil",
+    "mwui-vue",
+    "mwui-angular"
   ],
   "scripts": {
-    "start": "npm run start --workspace=tlm-stencil",
-    "storybook": "npm run storybook --workspace=tlm-stencil",
-    "test": "npm run test --workspace=tlm-stencil",
-    "build-tokens": "npm run build --workspace=tlm-token-farm",
-    "build-stencil": "npm run build --workspace=tlm-stencil",
-    "build-storybook": "npm run build-storybook --workspace=tlm-stencil",
+    "start": "npm run start --workspace=mwui-stencil",
+    "storybook": "npm run storybook --workspace=mwui-stencil",
+    "test": "npm run test --workspace=mwui-stencil",
+    "build-tokens": "npm run build --workspace=mwui-token-farm",
+    "build-stencil": "npm run build --workspace=mwui-stencil",
+    "build-storybook": "npm run build-storybook --workspace=mwui-stencil",
     "version:patch": "./scripts/bump-version.sh patch",
     "version:minor": "./scripts/bump-version.sh minor",
     "version:major": "./scripts/bump-version.sh major"

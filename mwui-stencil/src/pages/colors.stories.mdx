@@ -1,0 +1,42 @@
+<!-- colors.stories.mdx -->
+
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import * as colors from '../../../mwui-token-farm/dist/js/MW_core.js';
+export const palette = Object.entries(colors).filter(([key, value]) => key.toLowerCase().includes('mwcorecolor'));
+export const camelToKebabCase = str => str.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`);
+
+export const groupedPalette = palette.reduce((acc, cur) => {
+  const [key, value] = cur;
+  const simplifiedKey = key.substr(11, key.length - 3);
+  if (isNaN(key.substr(key.length - 3))) {
+    return { ...acc, [simplifiedKey]: { 100: value } };
+  }
+  acc[simplifiedKey.substr(0, simplifiedKey.length - 3)] = {
+    ...acc[simplifiedKey.substr(0, simplifiedKey.length - 3)],
+    [key.substr(key.length - 3)]: value,
+  };
+  return acc;
+}, {});
+
+<Meta title="Design Tokens/🚧 Colors" />
+
+<ColorPalette>
+  {Object.entries(groupedPalette).map(([key, values]) => {
+    let tokenName = Object.keys(colors).filter(k => k.includes(key))[0];
+     if (!isNaN(tokenName.substr(tokenName.length - 3))) {
+      tokenName = tokenName.substr(0, tokenName.length - 3)
+     }
+     if (!isNaN(tokenName.substr(tokenName.length - 2))) {
+      tokenName = tokenName.substr(0, tokenName.length - 2)
+     }
+    return (
+      <ColorItem
+        key={key}
+        title={key}
+        subtitle={camelToKebabCase(tokenName)}
+        colors={values}
+      />)
+    }
+  )}
+
+</ColorPalette>

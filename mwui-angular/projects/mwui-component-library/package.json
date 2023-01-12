@@ -1,0 +1,12 @@
+{
+  "name": "mwui-component-library",
+  "version": "0.0.3",
+  "peerDependencies": {
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "mwui-stencil": "^0.0.2"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
