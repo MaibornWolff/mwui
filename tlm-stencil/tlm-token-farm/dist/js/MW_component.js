@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 12 Jan 2023 10:48:16 GMT
+ * Generated on Wed, 11 Jan 2023 12:06:44 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -89,7 +89,6 @@ export const mwComponentSizeTextFieldMinW = "120px";
 export const mwComponentSizeTextFieldLabelHorizontalWidth = "120px";
 export const mwComponentSizeChipsIcons = "20px";
 export const mwComponentSizeChipsMinW = "64px";
-export const mwComponentSizeChipsHeight = "32px";
 export const mwComponentSizeTabsDefaultH = "48px";
 export const mwComponentSizeTabsWithIconH = "64px";
 export const mwComponentSizeMenuItemDefaultH = "56px";
@@ -200,15 +199,13 @@ export const mwComponentListItemFgHover = "#ed2985";
 export const mwComponentListItemFgPressed = "#991766";
 export const mwComponentListItemBgDefault = "#ffffff";
 export const mwComponentListItemBgSelected = "#F9E2EE";
-export const mwComponentListItemBgTransparent = "#ffffff00";
 export const mwComponentListItemBorderFocused = "[object Object]";
 export const mwComponentListItem1LineH = "56px";
 export const mwComponentListItem2LineH = "72px";
 export const mwComponentListItemGapWithin = "16px";
-export const mwComponentListItemPaddingL = "24px";
+export const mwComponentListItemPaddingL = "16px";
 export const mwComponentListItemPaddingR = "24px";
 export const mwComponentListItem3LinePaddingY = "12px";
-export const mwComponentListItemGapBetween = "0px";
 export const mwComponentMenuShadow0 = "{";
 export const mwComponentMenuShadow1 = "e";
 export const mwComponentMenuShadow2 = "l";

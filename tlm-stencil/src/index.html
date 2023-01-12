@@ -171,19 +171,37 @@
       <hr />
       <h2>Menu</h2>
       <div style="display: flex; gap: 16px">
-      <mw-menu style="width: fit-content">
-        <mw-button slot="anchor" label="Bottom"></mw-button>
-        <mw-menu-item title="Disabled Item" disabled>
-        </mw-menu-item>
-        <mw-menu-item title="List Item Loooong" subtitle="Subtitle">
-        </mw-menu-item>
-        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle">
-        </mw-menu-item>
-        <mw-menu-item title="List Item" subtitle="Subtitle">
-        </mw-menu-item>
-      </mw-menu>
-      <mw-menu style="width: fit-content" placement="right-start">
-        <mw-button slot="anchor" label="Right-Start"></mw-button>
+        <mw-menu style="width: fit-content">
+          <mw-button slot="anchor" label="Bottom"></mw-button>
+          <mw-menu-item title="Disabled Item" disabled>
+          </mw-menu-item>
+          <mw-menu-item title="List Item Loooong" subtitle="Subtitle">
+          </mw-menu-item>
+          <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle">
+          </mw-menu-item>
+          <mw-menu-item title="List Item" subtitle="Subtitle">
+          </mw-menu-item>
+        </mw-menu>
+        <mw-menu style="width: fit-content" placement="right-start">
+          <mw-button slot="anchor" label="Right-Start"></mw-button>
+          <mw-menu-item title="Disabled Item" disabled></mw-menu-item>
+          <mw-menu-item title="List Item Loooong" subtitle="Subtitle">
+          </mw-menu-item>
+          <mw-divider></mw-divider>
+          <mw-menu-item title="Disabled Item" disabled>
+          </mw-menu-item>
+          <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle">
+          </mw-menu-item>
+          <mw-menu-item title="List Item" subtitle="Subtitle">
+          </mw-menu-item>
+        </mw-menu>
+        <mw-menu style="width: fit-content" placement="bottom" open>
+          <mw-button slot="anchor" label="Open"></mw-button>
+          <mw-menu-item title="List Item"></mw-menu-item>
+        </mw-menu>
+      </div>
+      <h3>Menu List</h3>
+      <mw-menu-list style="width: fit-content">
         <mw-menu-item title="Disabled Item" disabled></mw-menu-item>
         <mw-menu-item title="List Item Loooong" subtitle="Subtitle">
         </mw-menu-item>
@@ -194,11 +212,7 @@
         </mw-menu-item>
         <mw-menu-item title="List Item" subtitle="Subtitle">
         </mw-menu-item>
-      </mw-menu>
-      <mw-menu style="width: fit-content" placement="bottom" open>
-        <mw-button slot="anchor" label="Open"></mw-button>
-        <mw-menu-item title="List Item"></mw-menu-item>
-      </mw-menu>
+      </mw-menu-list>
     </div>
     </section>
     <section>

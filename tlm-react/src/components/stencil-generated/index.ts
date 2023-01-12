@@ -23,6 +23,7 @@ export const MwIcon = /*@__PURE__*/createReactComponent<JSX.MwIcon, HTMLMwIconEl
 export const MwIconGallery = /*@__PURE__*/createReactComponent<JSX.MwIconGallery, HTMLMwIconGalleryElement>('mw-icon-gallery');
 export const MwMenu = /*@__PURE__*/createReactComponent<JSX.MwMenu, HTMLMwMenuElement>('mw-menu');
 export const MwMenuItem = /*@__PURE__*/createReactComponent<JSX.MwMenuItem, HTMLMwMenuItemElement>('mw-menu-item');
+export const MwMenuList = /*@__PURE__*/createReactComponent<JSX.MwMenuList, HTMLMwMenuListElement>('mw-menu-list');
 export const MwPopover = /*@__PURE__*/createReactComponent<JSX.MwPopover, HTMLMwPopoverElement>('mw-popover');
 export const MwSwitch = /*@__PURE__*/createReactComponent<JSX.MwSwitch, HTMLMwSwitchElement>('mw-switch');
 export const MwTab = /*@__PURE__*/createReactComponent<JSX.MwTab, HTMLMwTabElement>('mw-tab');

@@ -250,6 +250,12 @@ export namespace Components {
          */
         "title": string;
     }
+    interface MwMenuList {
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
+    }
     interface MwPopover {
         /**
           * If set to true, the popover can be closed by clicking outside
@@ -465,6 +471,12 @@ declare global {
         prototype: HTMLMwMenuItemElement;
         new (): HTMLMwMenuItemElement;
     };
+    interface HTMLMwMenuListElement extends Components.MwMenuList, HTMLStencilElement {
+    }
+    var HTMLMwMenuListElement: {
+        prototype: HTMLMwMenuListElement;
+        new (): HTMLMwMenuListElement;
+    };
     interface HTMLMwPopoverElement extends Components.MwPopover, HTMLStencilElement {
     }
     var HTMLMwPopoverElement: {
@@ -511,6 +523,7 @@ declare global {
         "mw-icon-gallery": HTMLMwIconGalleryElement;
         "mw-menu": HTMLMwMenuElement;
         "mw-menu-item": HTMLMwMenuItemElement;
+        "mw-menu-list": HTMLMwMenuListElement;
         "mw-popover": HTMLMwPopoverElement;
         "mw-switch": HTMLMwSwitchElement;
         "mw-tab": HTMLMwTabElement;
@@ -772,6 +785,12 @@ declare namespace LocalJSX {
          */
         "title"?: string;
     }
+    interface MwMenuList {
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
+    }
     interface MwPopover {
         /**
           * If set to true, the popover can be closed by clicking outside
@@ -892,6 +911,7 @@ declare namespace LocalJSX {
         "mw-icon-gallery": MwIconGallery;
         "mw-menu": MwMenu;
         "mw-menu-item": MwMenuItem;
+        "mw-menu-list": MwMenuList;
         "mw-popover": MwPopover;
         "mw-switch": MwSwitch;
         "mw-tab": MwTab;
@@ -918,6 +938,7 @@ declare module "@stencil/core" {
             "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
             "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
             "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
+            "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
             "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
             "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;

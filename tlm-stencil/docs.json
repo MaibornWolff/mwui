@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-12T10:48:36",
+  "timestamp": "2023-01-12T10:43:54",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -1435,6 +1435,54 @@
           "required": false
         }
       ],
+<<<<<<< HEAD
+=======
+      "methods": [],
+      "events": [
+        {
+          "event": "clickEmitter",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-menu-list",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Must be provided for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+>>>>>>> 76fb4fd (add mw-menu-list component; add mw-menu-* docs)
       "methods": [],
       "events": [
         {

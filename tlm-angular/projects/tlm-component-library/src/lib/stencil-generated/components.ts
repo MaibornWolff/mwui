@@ -347,6 +347,30 @@ export class MwMenuItem {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['clickEmitter']);
+<<<<<<< HEAD
+=======
+  }
+}
+
+
+export declare interface MwMenuList extends Components.MwMenuList {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['testId']
+})
+@Component({
+  selector: 'mw-menu-list',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['testId']
+})
+export class MwMenuList {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+>>>>>>> 76fb4fd (add mw-menu-list component; add mw-menu-* docs)
   }
 }
 

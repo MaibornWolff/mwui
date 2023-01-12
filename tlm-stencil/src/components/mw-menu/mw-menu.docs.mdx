@@ -1,0 +1,68 @@
+import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+
+# Menu
+
+A menu displays a list of choices on a surface that appears when interacting with an anchor element (e.g. a button). After choosing an option the menu ideally should be closed.
+
+The `mw-menu` component can be used together with `mw-menu-item` as children to display a list of options.
+The anchor element that should toggle the menu must be defined as `slot="anchor"` and is not limited to any specific element type.
+
+<Canvas>
+  <div style={{ height: '250px' }}>
+    <Story id="components-menu--default" />
+  </div>
+</Canvas>
+
+```jsx
+<mw-menu>
+  <mw-button slot="anchor" label="Label"></mw-button>
+  <mw-menu-item title="Item"></mw-menu-item>
+  // ...
+</mw-menu>
+```
+
+> If it's preferred to use a standalone menu list that is not toggled or bound to an anchor, see [mw-menu-list docs](?path=/docs/components-menulist--default).
+
+<ArgsTable of="mw-menu" />
+
+## Placement
+
+The `mw-menu` component uses `mw-popover` and therefore shares the placement options and described behavior infered from `popper.js`. See [mw-popover docs](?path=/docs/components-popover--default).
+
+## Menu Items
+
+A `mw-menu-item` can be provided with the following props:
+
+<ArgsTable of="mw-menu-item" />
+
+<Canvas>
+  <div style={{ display: 'flex', justifyContent: 'space-around', height: '300px' }}>
+    <Story id="components-menu--default" />
+    <mw-menu open style={{width: 'fit-content'}}>
+        <mw-button slot="anchor" label="Bottom"></mw-button>
+        <mw-menu-item title="Disabled Item" disabled>
+        </mw-menu-item>
+        <mw-menu-item title="This on is selected" subtitle="Subtitle" selected>
+        </mw-menu-item>
+        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle">
+        </mw-menu-item>
+        <mw-menu-item title="List Item" subtitle="Subtitle">
+        </mw-menu-item>
+      </mw-menu>
+    <mw-menu open style={{width: 'fit-content'}}>
+        <mw-button slot="anchor">
+          <mw-icon icon="settings" slot="icon-start"></mw-icon>
+        </mw-button>
+        <mw-menu-item title="Disabled Item" disabled>
+        </mw-menu-item>
+        <mw-divider></mw-divider>
+        <mw-menu-item title="List Item Loooong" subtitle="Subtitle">
+        </mw-menu-item>
+        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle">
+        </mw-menu-item>
+        <mw-menu-item title="List Item">
+        </mw-menu-item>
+    </mw-menu>
+  </div>
+
+</Canvas>
