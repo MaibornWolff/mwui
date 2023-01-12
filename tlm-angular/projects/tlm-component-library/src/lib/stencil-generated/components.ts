@@ -347,8 +347,6 @@ export class MwMenuItem {
     c.detach();
     this.el = r.nativeElement;
     proxyOutputs(this, this.el, ['clickEmitter']);
-<<<<<<< HEAD
-=======
   }
 }
 
@@ -370,7 +368,6 @@ export class MwMenuList {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
->>>>>>> 76fb4fd (add mw-menu-list component; add mw-menu-* docs)
   }
 }
 

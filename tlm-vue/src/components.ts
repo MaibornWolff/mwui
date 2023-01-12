@@ -125,14 +125,11 @@ export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>('mw-menu
   'selected',
   'clickEmitter'
 ]);
-<<<<<<< HEAD
-=======
 
 
 export const MwMenuList = /*@__PURE__*/ defineContainer<JSX.MwMenuList>('mw-menu-list', undefined, [
   'testId'
 ]);
->>>>>>> 76fb4fd (add mw-menu-list component; add mw-menu-* docs)
 
 
 export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>('mw-popover', undefined, [

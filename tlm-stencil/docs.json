@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-12T10:43:54",
+  "timestamp": "2023-01-12T10:53:02",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -1435,8 +1435,6 @@
           "required": false
         }
       ],
-<<<<<<< HEAD
-=======
       "methods": [],
       "events": [
         {
@@ -1461,6 +1459,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
+      "readme": "# mw-menu-list\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1482,19 +1481,8 @@
           "required": true
         }
       ],
->>>>>>> 76fb4fd (add mw-menu-list component; add mw-menu-* docs)
       "methods": [],
-      "events": [
-        {
-          "event": "clickEmitter",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": false,
-          "composed": false,
-          "docs": "",
-          "docsTags": []
-        }
-      ],
+      "events": [],
       "listeners": [],
       "styles": [],
       "slots": [],
