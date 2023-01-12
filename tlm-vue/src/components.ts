@@ -112,11 +112,19 @@ export const MwIconGallery = /*@__PURE__*/ defineContainer<JSX.MwIconGallery>('m
 
 
 export const MwMenu = /*@__PURE__*/ defineContainer<JSX.MwMenu>('mw-menu', undefined, [
-  'testId'
+  'testId',
+  'placement',
+  'open'
 ]);
 
 
-export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>('mw-menu-item', undefined);
+export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>('mw-menu-item', undefined, [
+  'title',
+  'subtitle',
+  'disabled',
+  'selected',
+  'clickEmitter'
+]);
 
 
 export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>('mw-popover', undefined, [
@@ -124,6 +132,7 @@ export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>('mw-popove
   'open',
   'placement',
   'dismissable',
+  'noPadding',
   'name'
 ]);
 

@@ -1,1 +1,0 @@
-import{r as s,h as t,H as o}from"./p-8c1da0d3.js";const r=class{constructor(t){s(this,t)}render(){return t(o,null,t("mw-popover",{testId:this.testId},t("div",{slot:"anchor"}),t("div",{slot:"content",class:"menu"},t("slot",null))))}};r.style=":host{display:block}";export{r as mw_menu}

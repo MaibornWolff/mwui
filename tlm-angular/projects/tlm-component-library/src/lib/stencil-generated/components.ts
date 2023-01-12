@@ -306,13 +306,13 @@ export declare interface MwMenu extends Components.MwMenu {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['testId']
+  inputs: ['open', 'placement', 'testId']
 })
 @Component({
   selector: 'mw-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['testId']
+  inputs: ['open', 'placement', 'testId']
 })
 export class MwMenu {
   protected el: HTMLElement;
@@ -323,21 +323,30 @@ export class MwMenu {
 }
 
 
-export declare interface MwMenuItem extends Components.MwMenuItem {}
+export declare interface MwMenuItem extends Components.MwMenuItem {
+  /**
+   *  
+   */
+  clickEmitter: EventEmitter<CustomEvent<any>>;
+
+}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
+  defineCustomElementFn: undefined,
+  inputs: ['disabled', 'selected', 'subtitle', 'title']
 })
 @Component({
   selector: 'mw-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'selected', 'subtitle', 'title']
 })
 export class MwMenuItem {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['clickEmitter']);
   }
 }
 
@@ -346,13 +355,13 @@ export declare interface MwPopover extends Components.MwPopover {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['dismissable', 'name', 'open', 'placement', 'testId']
+  inputs: ['dismissable', 'name', 'noPadding', 'open', 'placement', 'testId']
 })
 @Component({
   selector: 'mw-popover',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['dismissable', 'name', 'open', 'placement', 'testId']
+  inputs: ['dismissable', 'name', 'noPadding', 'open', 'placement', 'testId']
 })
 export class MwPopover {
   protected el: HTMLElement;
