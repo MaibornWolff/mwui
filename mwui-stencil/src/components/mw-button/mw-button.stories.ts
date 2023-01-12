@@ -16,6 +16,7 @@ const Template = args => `
   label="${args.label}"
   onClick="${args.onClick}"
   disabled="${args.disabled}"
+  size="${args.size}"
   variant="${args.variant}">
 </mw-button>`;
 
@@ -26,6 +27,7 @@ Filled.args = {
   onClick: () => {},
   disabled: false,
   variant: 'filled',
+  size: 'medium',
 };
 
 export const Outline = Template.bind({});
@@ -34,6 +36,7 @@ Outline.args = {
   label: 'BUTTON',
   disabled: false,
   variant: 'outline',
+  size: 'medium',
 };
 
 export const Ghost = Template.bind({});
@@ -42,6 +45,7 @@ Ghost.args = {
   label: 'BUTTON',
   disabled: false,
   variant: 'ghost',
+  size: 'medium',
 };
 
 const WithIconTemplate = args => `
@@ -56,6 +60,7 @@ WithIcon.args = {
   label: 'BUTTON',
   disabled: false,
   variant: 'filled',
+  size: 'medium',
 };
 
 const IconTemplate = args => `
@@ -68,6 +73,7 @@ Icon.args = {
   testId: 'button',
   disabled: false,
   variant: 'filled',
+  size: 'medium',
 };
 
 const LinkTemplate = args => `
