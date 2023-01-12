@@ -32,7 +32,7 @@
     "lodash.template": "^4.5.0",
     "postcss-cli": "^9.1.0",
     "style-dictionary": "^3.7.0",
-    "mwui-stencil": "^0.0.2",
+    "@maibornwolff/mwui-stencil": "^0.1.0",
     "token-transformer": "^0.0.22",
     "ts-node": "^10.9.1"
   }

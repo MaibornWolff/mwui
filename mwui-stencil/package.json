@@ -12,7 +12,7 @@
   "unpkg": "dist/mwui/mwui.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MaibornWolff/mwui.git"
+    "url": "git+https://github.com/MaibornWolff/mwui.git"
   },
   "files": [
     "dist/",
@@ -65,5 +65,19 @@
     "storybook-addon-turbo-build": "^1.1.0",
     "svgson": "^5.2.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaibornWolff/mwui/issues"
+  },
+  "homepage": "https://github.com/MaibornWolff/mwui#readme",
+  "keywords": [
+    "stencil",
+    "web-components",
+    "component",
+    "library",
+    "storybook",
+    "design",
+    "system"
+  ],
+  "author": "Martin Prinz"
 }
