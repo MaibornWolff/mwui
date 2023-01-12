@@ -8,7 +8,11 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 })
 export class MwTabs {
   @Element() host: HTMLStencilElement;
-  @Prop({ mutable: true, reflect: true }) selected: number = 0;
+  @Prop() testId!: string;
+  /**
+   * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
+   */
+  @Prop({ mutable: true, reflect: true }) selected: number | null = null;
   @State() tabs = [];
 
   componentWillRender() {
@@ -27,7 +31,7 @@ export class MwTabs {
 
   render() {
     return (
-      <div class="mw-tabs">
+      <div test-id={this.testId} class="mw-tabs">
         {this.tabs.map((item, key) => (
           <mw-tab key={key} icon={item.icon} label={item.label} selected={item.selected} disabled={item.disabled} onClick={() => (this.selected = key)}></mw-tab>
         ))}

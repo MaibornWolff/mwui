@@ -439,13 +439,13 @@ export declare interface MwTabs extends Components.MwTabs {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['selected']
+  inputs: ['selected', 'testId']
 })
 @Component({
   selector: 'mw-tabs',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['selected']
+  inputs: ['selected', 'testId']
 })
 export class MwTabs {
   protected el: HTMLElement;

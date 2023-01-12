@@ -161,6 +161,7 @@ export const MwTab = /*@__PURE__*/ defineContainer<JSX.MwTab>('mw-tab', undefine
 
 
 export const MwTabs = /*@__PURE__*/ defineContainer<JSX.MwTabs>('mw-tabs', undefined, [
+  'testId',
   'selected'
 ]);
 

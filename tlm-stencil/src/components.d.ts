@@ -315,7 +315,11 @@ export namespace Components {
         "selected"?: boolean;
     }
     interface MwTabs {
-        "selected": number;
+        /**
+          * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
+         */
+        "selected": number | null;
+        "testId": string;
     }
     interface MwTextfield {
         /**
@@ -850,7 +854,11 @@ declare namespace LocalJSX {
         "selected"?: boolean;
     }
     interface MwTabs {
-        "selected"?: number;
+        /**
+          * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
+         */
+        "selected"?: number | null;
+        "testId": string;
     }
     interface MwTextfield {
         /**

@@ -1,4 +1,9 @@
+:host {
+  width: 100%;
+  flex-grow: 1;
+}
 .mw-tab {
+  width: 100%;
   box-sizing: border-box;
   appearance: none;
   text-decoration: none;
@@ -8,7 +13,6 @@
   display: inline-flex;
   flex-flow: column;
   padding: 0 var(--mw-component-tabs-padding-x);
-  width: 100%;
   justify-content: center;
   align-items: center;
   border-bottom: var(--mw-component-divider-border-width-default) solid var(--mw-component-tabs-bg-default);

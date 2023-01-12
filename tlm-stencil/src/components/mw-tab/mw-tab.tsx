@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, Host } from '@stencil/core';
 
 @Component({
   tag: 'mw-tab',
@@ -12,10 +12,12 @@ export class MwTab {
   @Prop() disabled?: boolean;
   render() {
     return (
-      <button disabled={this.disabled} class={`mw-tab ${this.icon && this.label ? 'label-with-icon' : ''} ${this.selected ? 'selected' : ''}`}>
-        {this.icon && <mw-icon icon={this.icon} size="medium"></mw-icon>}
-        {this.label}
-      </button>
+      <Host>
+        <button disabled={this.disabled} class={`mw-tab ${this.icon && this.label ? 'label-with-icon' : ''} ${this.selected ? 'selected' : ''}`}>
+          {this.icon && <mw-icon icon={this.icon} size="medium"></mw-icon>}
+          {this.label}
+        </button>
+      </Host>
     );
   }
 }
