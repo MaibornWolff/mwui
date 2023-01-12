@@ -1,7 +1,7 @@
 {
   "name": "mwui-react",
   "sideEffects": false,
-  "version": "0.0.17",
+  "version": "0.1.0",
   "description": "React specific wrapper for mwui-components",
   "repository": {
     "type": "git",

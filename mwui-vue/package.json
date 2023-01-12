@@ -1,6 +1,6 @@
 {
   "name": "mwui-vue",
-  "version": "0.0.17",
+  "version": "0.1.0",
   "description": "Vue specific wrapper for mwui-components",
   "repository": {
     "type": "git",
