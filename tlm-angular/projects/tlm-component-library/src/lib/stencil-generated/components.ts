@@ -393,6 +393,48 @@ export class MwSwitch {
 }
 
 
+export declare interface MwTab extends Components.MwTab {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['disabled', 'icon', 'label', 'selected']
+})
+@Component({
+  selector: 'mw-tab',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['disabled', 'icon', 'label', 'selected']
+})
+export class MwTab {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface MwTabs extends Components.MwTabs {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['selected']
+})
+@Component({
+  selector: 'mw-tabs',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['selected']
+})
+export class MwTabs {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MwTextfield extends Components.MwTextfield {
   /**
    *  

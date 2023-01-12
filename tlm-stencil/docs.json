@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-12T09:10:04",
+  "timestamp": "2023-01-12T10:43:44",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.18.1",
@@ -810,7 +810,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "checked",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "Whether input is checked",
           "docsTags": [],
           "default": "false",
@@ -890,9 +890,9 @@
         {
           "name": "value",
           "type": "string",
-          "mutable": false,
+          "mutable": true,
           "attr": "value",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "Value of checkbox input",
           "docsTags": [],
           "values": [
@@ -1185,7 +1185,8 @@
         "mw-avatar",
         "mw-checkbox",
         "mw-chip",
-        "mw-icon-gallery"
+        "mw-icon-gallery",
+        "mw-tab"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -1199,6 +1200,9 @@
           "mw-icon"
         ],
         "mw-icon-gallery": [
+          "mw-icon"
+        ],
+        "mw-tab": [
           "mw-icon"
         ]
       }
@@ -1738,6 +1742,145 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-tab/mw-tab.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-tab",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "selected",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "selected",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "mw-tabs"
+      ],
+      "dependencies": [
+        "mw-icon"
+      ],
+      "dependencyGraph": {
+        "mw-tab": [
+          "mw-icon"
+        ],
+        "mw-tabs": [
+          "mw-tab"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-tabs/mw-tabs.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-tabs",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "selected",
+          "type": "number",
+          "mutable": true,
+          "attr": "selected",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "mw-tab"
+      ],
+      "dependencyGraph": {
+        "mw-tabs": [
+          "mw-tab"
+        ],
+        "mw-tab": [
+          "mw-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",

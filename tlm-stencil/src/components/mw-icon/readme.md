@@ -23,6 +23,7 @@
  - [mw-checkbox](../mw-checkbox)
  - [mw-chip](../mw-chip)
  - [mw-icon-gallery](../mw-icon-gallery)
+ - [mw-tab](../mw-tab)
 
 ### Graph
 ```mermaid
@@ -31,6 +32,7 @@ graph TD;
   mw-checkbox --> mw-icon
   mw-chip --> mw-icon
   mw-icon-gallery --> mw-icon
+  mw-tab --> mw-icon
   style mw-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

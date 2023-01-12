@@ -25,4 +25,6 @@ export const MwMenu = /*@__PURE__*/createReactComponent<JSX.MwMenu, HTMLMwMenuEl
 export const MwMenuItem = /*@__PURE__*/createReactComponent<JSX.MwMenuItem, HTMLMwMenuItemElement>('mw-menu-item');
 export const MwPopover = /*@__PURE__*/createReactComponent<JSX.MwPopover, HTMLMwPopoverElement>('mw-popover');
 export const MwSwitch = /*@__PURE__*/createReactComponent<JSX.MwSwitch, HTMLMwSwitchElement>('mw-switch');
+export const MwTab = /*@__PURE__*/createReactComponent<JSX.MwTab, HTMLMwTabElement>('mw-tab');
+export const MwTabs = /*@__PURE__*/createReactComponent<JSX.MwTabs, HTMLMwTabsElement>('mw-tabs');
 export const MwTextfield = /*@__PURE__*/createReactComponent<JSX.MwTextfield, HTMLMwTextfieldElement>('mw-textfield');

@@ -147,6 +147,19 @@ export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>('mw-switch',
 ]);
 
 
+export const MwTab = /*@__PURE__*/ defineContainer<JSX.MwTab>('mw-tab', undefined, [
+  'selected',
+  'icon',
+  'label',
+  'disabled'
+]);
+
+
+export const MwTabs = /*@__PURE__*/ defineContainer<JSX.MwTabs>('mw-tabs', undefined, [
+  'selected'
+]);
+
+
 export const MwTextfield = /*@__PURE__*/ defineContainer<JSX.MwTextfield>('mw-textfield', undefined, [
   'type',
   'value',
