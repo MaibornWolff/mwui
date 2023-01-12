@@ -85,13 +85,6 @@
         <mw-button label="LINK" href="https://maibornwolff.de" test-id="test-button-11"></mw-button>
         <mw-button label="LINK" href="https://maibornwolff.de" target="_blank" test-id="test-button-12" variant="outline"></mw-button>
       </div>
-      <h2>Checkbox</h2>
-      <div style="display: flex; gap: 16px">
-        <mw-checkbox test-id="checkbox-1" value="bananas" name="food" label="Bananen"></mw-checkbox>
-        <mw-checkbox test-id="checkbox-2"  value="apples" name="food" checked label="Äpfel"></mw-checkbox>
-        <mw-checkbox test-id="checkbox-3"  value="cucumbers" name="food" disabled label="Gurken"></mw-checkbox>
-        <mw-checkbox test-id="checkbox-4"  value="organes" name="food" checked disabled label="Orangen"></mw-checkbox>
-      </div>
     </section>
     <br />
     <hr />
@@ -124,9 +117,9 @@
       </div>
     </div>
     </section>
-    <br />
-    <hr />
     <section>
+      <br />
+      <hr />
       <h2>Controls</h2>
       <h3>Switch</h3>
       <div style="display: flex; gap: 16px">
@@ -136,8 +129,17 @@
         <mw-switch label="some label"></mw-switch>
         <mw-switch on-text="ON" off-text="OFF"></mw-switch>
       </div>
+      <h3>Checkbox</h3>
+      <div style="display: flex; gap: 16px">
+        <mw-checkbox test-id="checkbox-1" value="bananas" name="food" label="Bananen"></mw-checkbox>
+        <mw-checkbox test-id="checkbox-2"  value="apples" name="food" checked label="Äpfel"></mw-checkbox>
+        <mw-checkbox test-id="checkbox-3"  value="cucumbers" name="food" disabled label="Gurken"></mw-checkbox>
+        <mw-checkbox test-id="checkbox-4"  value="organes" name="food" checked disabled label="Orangen"></mw-checkbox>
+      </div>
     </section>
     <section>
+      <br />
+      <hr />
       <h2>Popover</h2>
       <div style="display: flex; gap: 16px">
       <mw-popover placement="bottom">
@@ -365,12 +367,16 @@
         </mw-card onClick="() => console.log('clicked')">
       </div>
     </section>
-    <section style="margin-top: 30px; height: 100vh">
+    <section style="margin-top: 30px;">
+      <br />
+      <hr />
+      <h2>Icon Gallery</h2>
       <mw-icon-gallery></mw-icon-gallery>
     </section>
     <section>
       <br />
       <hr />
+      <h2>Tabs / Tab</h2>
       <div style="display: flex; flex-flow: column; gap: 20px">
         <mw-tabs selected="1">
           <mw-tab label="Tab 1" icon="check"></mw-tab>
