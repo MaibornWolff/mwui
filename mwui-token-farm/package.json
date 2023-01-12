@@ -1,5 +1,5 @@
 {
-  "name": "@maibornwolff/mwui-token-farm",
+  "name": "mwui-token-farm",
   "version": "0.0.17",
   "description": "Transforms figma design tokens to common config files serving different styling frameworks",
   "main": "src/index.ts",
@@ -26,13 +26,14 @@
     "postcss-import": "^14.0.2",
     "rollup": "^2.75.3",
     "rollup-plugin-scss": "^3.0.0",
-    "sass": "^1.52.1"
+    "sass": "^1.52.1",
+    "mathjs": "^11.5.0"
   },
   "dependencies": {
     "lodash.template": "^4.5.0",
     "postcss-cli": "^9.1.0",
     "style-dictionary": "^3.7.0",
-    "@maibornwolff/mwui-stencil": "^0.1.0",
+    "mwui-stencil": "^0.1.0",
     "token-transformer": "^0.0.22",
     "ts-node": "^10.9.1"
   }

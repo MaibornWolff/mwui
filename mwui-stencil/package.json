@@ -1,5 +1,5 @@
 {
-  "name": "@maibornwolff/mwui-stencil",
+  "name": "mwui-stencil",
   "version": "0.1.0",
   "description": "Component Library using Figma's design tokens",
   "main": "dist/index.cjs.js",
@@ -59,7 +59,6 @@
     "glob-promise": "^6.0.1",
     "jest": "^27.4.5",
     "jest-cli": "^27.4.5",
-    "mathjs": "^11.5.0",
     "puppeteer": "^16.1.1",
     "stencil-click-outside": "^1.8.0",
     "storybook-addon-turbo-build": "^1.1.0",

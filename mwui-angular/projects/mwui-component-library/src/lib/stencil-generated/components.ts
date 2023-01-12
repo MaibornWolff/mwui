@@ -31,7 +31,7 @@ export class MwAvatar {
 
 export declare interface MwButton extends Components.MwButton {
   /**
-   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
+   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. 
    */
   clickEmitter: EventEmitter<CustomEvent<any>>;
 
@@ -59,7 +59,7 @@ export class MwButton {
 
 export declare interface MwCard extends Components.MwCard {
   /**
-   *
+   *  
    */
   clickEmitter: EventEmitter<CustomEvent<any>>;
 
@@ -211,11 +211,11 @@ export class MwCheckbox {
 
 export declare interface MwChip extends Components.MwChip {
   /**
-   * 'close' event is fired when the close icon is clicked.
+   * 'close' event is fired when the close icon is clicked. 
    */
   close: EventEmitter<CustomEvent<any>>;
   /**
-   * 'toggle' event is fired when the chip is clicked. Current selection state is emitted.
+   * 'toggle' event is fired when the chip is clicked. Current selection state is emitted. 
    */
   toggle: EventEmitter<CustomEvent<boolean>>;
 
@@ -325,7 +325,7 @@ export class MwMenu {
 
 export declare interface MwMenuItem extends Components.MwMenuItem {
   /**
-   *
+   *  
    */
   clickEmitter: EventEmitter<CustomEvent<any>>;
 
@@ -458,7 +458,7 @@ export class MwTabs {
 
 export declare interface MwTextfield extends Components.MwTextfield {
   /**
-   *
+   *  
    */
   valueChanged: EventEmitter<CustomEvent<string>>;
 
