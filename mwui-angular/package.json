@@ -1,5 +1,5 @@
 {
-  "name": "mwui-angular",
+  "name": "@maibornwolff/mwui-angular",
   "version": "0.1.0",
   "description": "Angular specific wrapper for mwui-components",
   "repository": {

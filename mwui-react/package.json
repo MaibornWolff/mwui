@@ -1,5 +1,5 @@
 {
-  "name": "mwui-react",
+  "name": "@maibornwolff/mwui-react",
   "sideEffects": false,
   "version": "0.1.0",
   "description": "React specific wrapper for mwui-components",
