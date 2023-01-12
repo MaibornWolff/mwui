@@ -424,6 +424,10 @@
           "minW": {
             "value": 64,
             "type": "sizing"
+          },
+          "height": {
+            "value": 32,
+            "type": "sizing"
           }
         },
         "tabs": {
@@ -949,6 +953,10 @@
           },
           "selected": {
             "value": "#F9E2EE",
+            "type": "color"
+          },
+          "transparent": {
+            "value": "#ffffff00",
             "type": "color"
           }
         },

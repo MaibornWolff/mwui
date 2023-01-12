@@ -89,6 +89,7 @@
   --mw-component-size-text-field-label-horizontal-width: 120px;
   --mw-component-size-chips-icons: 20px;
   --mw-component-size-chips-min-w: 64px;
+  --mw-component-size-chips-height: 32px;
   --mw-component-size-tabs-default-h: 48px;
   --mw-component-size-tabs-with-icon-h: 64px;
   --mw-component-size-menu-item-default-h: 56px;
@@ -199,6 +200,7 @@
   --mw-component-list-item-fg-pressed: #991766;
   --mw-component-list-item-bg-default: #ffffff;
   --mw-component-list-item-bg-selected: #F9E2EE;
+  --mw-component-list-item-bg-transparent: #ffffff00;
   --mw-component-list-item-border-focused: [object Object];
   --mw-component-list-item-1-line-h: 56px;
   --mw-component-list-item-2-line-h: 72px;

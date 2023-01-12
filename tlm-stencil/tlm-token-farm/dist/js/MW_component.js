@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 11 Jan 2023 15:19:34 GMT
+ * Generated on Thu, 12 Jan 2023 08:26:49 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -89,6 +89,7 @@ export const mwComponentSizeTextFieldMinW = "120px";
 export const mwComponentSizeTextFieldLabelHorizontalWidth = "120px";
 export const mwComponentSizeChipsIcons = "20px";
 export const mwComponentSizeChipsMinW = "64px";
+export const mwComponentSizeChipsHeight = "32px";
 export const mwComponentSizeTabsDefaultH = "48px";
 export const mwComponentSizeTabsWithIconH = "64px";
 export const mwComponentSizeMenuItemDefaultH = "56px";
@@ -199,6 +200,7 @@ export const mwComponentListItemFgHover = "#ed2985";
 export const mwComponentListItemFgPressed = "#991766";
 export const mwComponentListItemBgDefault = "#ffffff";
 export const mwComponentListItemBgSelected = "#F9E2EE";
+export const mwComponentListItemBgTransparent = "#ffffff00";
 export const mwComponentListItemBorderFocused = "[object Object]";
 export const mwComponentListItem1LineH = "56px";
 export const mwComponentListItem2LineH = "72px";
