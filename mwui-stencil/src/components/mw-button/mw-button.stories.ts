@@ -87,4 +87,5 @@ Link.args = {
   target: '_self',
   disabled: false,
   variant: 'filled',
+  size: 'medium',
 };
