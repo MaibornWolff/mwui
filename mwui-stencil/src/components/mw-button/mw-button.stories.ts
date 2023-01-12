@@ -49,7 +49,7 @@ Ghost.args = {
 };
 
 const WithIconTemplate = args => `
-<mw-button test-id="${args.testId}" label="${args.label}" onClick="${args.onClick}" disabled="${args.disabled}" variant="${args.variant}">
+<mw-button test-id="${args.testId}" label="${args.label}" onClick="${args.onClick}" size="${args.size}" disabled="${args.disabled}" variant="${args.variant}">
   <mw-icon slot="icon-start" icon="settings"></mw-icon>
   <mw-icon slot="icon-end" icon="search"></mw-icon>
 </mw-button>`;
@@ -64,7 +64,7 @@ WithIcon.args = {
 };
 
 const IconTemplate = args => `
-<mw-button test-id="${args.testId}" onClick="${args.onClick}" disabled="${args.disabled}" variant="${args.variant}">
+<mw-button test-id="${args.testId}" onClick="${args.onClick}" size="${args.size}" disabled="${args.disabled}" variant="${args.variant}">
   <mw-icon slot="icon-start" icon="settings"></mw-icon>
 </mw-button>`;
 
@@ -77,7 +77,7 @@ Icon.args = {
 };
 
 const LinkTemplate = args => `
-<mw-button test-id="${args.testId}" label="${args.label}" href="${args.href}" target="${args.target}" disabled="${args.disabled}" variant="${args.variant}"></mw-button>`;
+<mw-button test-id="${args.testId}" label="${args.label}" size="${args.size}" href="${args.href}" target="${args.target}" disabled="${args.disabled}" variant="${args.variant}"></mw-button>`;
 
 export const Link = LinkTemplate.bind({});
 Link.args = {
