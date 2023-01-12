@@ -41,6 +41,13 @@ export class MwPopover {
    * If set to true, the popover can be closed by clicking outside
    */
   @Prop() dismissable?: boolean = false;
+  /**
+   * disable default padding
+   */
+  @Prop() noPadding?: boolean = false;
+  /**
+   * Name used internally to reference anchor and content elements
+   */
   @Prop() name?: string = 'tooltip';
 
   contentRef!: HTMLElement;
@@ -78,7 +85,7 @@ export class MwPopover {
           <div
             role="tooltip"
             id={this.name}
-            class={classnames('mw-popover-content', { open: this.open })}
+            class={classnames('mw-popover-content', { 'open': this.open, 'no-padding': this.noPadding })}
             ref={el => {
               this.contentRef = el as HTMLElement;
             }}

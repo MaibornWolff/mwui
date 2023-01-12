@@ -15,7 +15,12 @@
   border-width: var(--mw-component-menu-item-border-width-default);
 }
 
+.mw-popover-content.no-padding {
+  padding: 0;
+}
+
 .mw-popover-content.open {
   visibility: visible;
   position: relative;
+  z-index: 999;
 }

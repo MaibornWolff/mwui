@@ -9,6 +9,7 @@ import { Size } from "./components/mw-avatar/mw-avatar";
 import { ButtonSize, ButtonVariant, Target } from "./components/mw-button/mw-button";
 import { Size as Size1 } from "./components/mw-avatar/mw-avatar";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
+import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
     interface MwAvatar {
         /**
@@ -219,18 +220,49 @@ export namespace Components {
     }
     interface MwMenu {
         /**
+          * Whether the menu is open
+         */
+        "open": boolean;
+        /**
+          * Placement relative to anchor element
+         */
+        "placement": PopoverPlacement;
+        /**
           * Must be provided for automated testing
          */
         "testId": string;
     }
     interface MwMenuItem {
+        /**
+          * Disabled state
+         */
+        "disabled"?: boolean;
+        /**
+          * Selected state
+         */
+        "selected"?: boolean;
+        /**
+          * Menu item subtitle
+         */
+        "subtitle"?: string;
+        /**
+          * Menu item title
+         */
+        "title": string;
     }
     interface MwPopover {
         /**
           * If set to true, the popover can be closed by clicking outside
          */
         "dismissable"?: boolean;
+        /**
+          * Name used internally to reference anchor and content elements
+         */
         "name"?: string;
+        /**
+          * disable default padding
+         */
+        "noPadding"?: boolean;
         /**
           * Whether the popover is visible
          */
@@ -324,6 +356,10 @@ export interface MwCardCustomEvent<T> extends CustomEvent<T> {
 export interface MwChipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMwChipElement;
+}
+export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMwMenuItemElement;
 }
 export interface MwTextfieldCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -682,18 +718,50 @@ declare namespace LocalJSX {
     }
     interface MwMenu {
         /**
+          * Whether the menu is open
+         */
+        "open"?: boolean;
+        /**
+          * Placement relative to anchor element
+         */
+        "placement"?: PopoverPlacement;
+        /**
           * Must be provided for automated testing
          */
         "testId": string;
     }
     interface MwMenuItem {
+        /**
+          * Disabled state
+         */
+        "disabled"?: boolean;
+        "onClickEmitter"?: (event: MwMenuItemCustomEvent<any>) => void;
+        /**
+          * Selected state
+         */
+        "selected"?: boolean;
+        /**
+          * Menu item subtitle
+         */
+        "subtitle"?: string;
+        /**
+          * Menu item title
+         */
+        "title"?: string;
     }
     interface MwPopover {
         /**
           * If set to true, the popover can be closed by clicking outside
          */
         "dismissable"?: boolean;
+        /**
+          * Name used internally to reference anchor and content elements
+         */
         "name"?: string;
+        /**
+          * disable default padding
+         */
+        "noPadding"?: boolean;
         /**
           * Whether the popover is visible
          */
