@@ -7,7 +7,7 @@ import {
   mwCoreColorPink500,
   mwCoreFontFontFamiliesBody,
   mwCoreColorNeutral100,
-  borderRadiusStandardMedium,
+  borderRadiusStandardMd,
 } from '../../mwui-token-farm/dist/js/MW_core';
 
 export default create({
@@ -24,7 +24,7 @@ export default create({
   appBg: mwCoreColorNeutral100,
   // appContentBg: 'white',
   // appBorderColor: 'grey',
-  appBorderRadius: borderRadiusStandardMedium,
+  appBorderRadius: borderRadiusStandardMd,
 
   // Typography
   fontBase: mwCoreFontFontFamiliesBody,
