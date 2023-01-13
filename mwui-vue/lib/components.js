@@ -50,10 +50,12 @@ export const MwCardTitle = defineContainer('mw-card-title', undefined, [
     'metadata'
 ]);
 export const MwCheckbox = defineContainer('mw-checkbox', undefined, [
+    'testId',
     'value',
     'name',
+    'checked',
     'disabled',
-    'checked'
+    'label'
 ]);
 export const MwChip = defineContainer('mw-chip', undefined, [
     'testId',
@@ -64,6 +66,9 @@ export const MwChip = defineContainer('mw-chip', undefined, [
     'close',
     'toggle'
 ]);
+export const MwDivider = defineContainer('mw-divider', undefined, [
+    'inset'
+]);
 export const MwIcon = defineContainer('mw-icon', undefined, [
     'icon',
     'size',
@@ -71,6 +76,29 @@ export const MwIcon = defineContainer('mw-icon', undefined, [
     'stroke'
 ]);
 export const MwIconGallery = defineContainer('mw-icon-gallery', undefined);
+export const MwMenu = defineContainer('mw-menu', undefined, [
+    'testId',
+    'placement',
+    'open'
+]);
+export const MwMenuItem = defineContainer('mw-menu-item', undefined, [
+    'title',
+    'subtitle',
+    'disabled',
+    'selected',
+    'clickEmitter'
+]);
+export const MwMenuList = defineContainer('mw-menu-list', undefined, [
+    'testId'
+]);
+export const MwPopover = defineContainer('mw-popover', undefined, [
+    'testId',
+    'open',
+    'placement',
+    'dismissable',
+    'noPadding',
+    'name'
+]);
 export const MwSwitch = defineContainer('mw-switch', undefined, [
     'testId',
     'disabled',
@@ -78,6 +106,16 @@ export const MwSwitch = defineContainer('mw-switch', undefined, [
     'onText',
     'offText',
     'checked'
+]);
+export const MwTab = defineContainer('mw-tab', undefined, [
+    'selected',
+    'icon',
+    'label',
+    'disabled'
+]);
+export const MwTabs = defineContainer('mw-tabs', undefined, [
+    'testId',
+    'selected'
 ]);
 export const MwTextfield = defineContainer('mw-textfield', undefined, [
     'type',

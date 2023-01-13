@@ -1,4 +1,4 @@
-import { applyPolyfills, defineCustomElements } from 'mwui-stencil/loader';
+import { applyPolyfills, defineCustomElements } from '@maibornwolff/mwui-stencil/loader';
 export const MwuiComponents = {
     async install() {
         applyPolyfills().then(() => {
