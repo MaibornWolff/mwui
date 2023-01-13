@@ -55,7 +55,8 @@ export const MwCheckbox = defineContainer('mw-checkbox', undefined, [
     'name',
     'checked',
     'disabled',
-    'label'
+    'label',
+    'emitter'
 ]);
 export const MwChip = defineContainer('mw-chip', undefined, [
     'testId',
@@ -63,8 +64,7 @@ export const MwChip = defineContainer('mw-chip', undefined, [
     'disabled',
     'showClose',
     'selected',
-    'close',
-    'toggle'
+    'emitter'
 ]);
 export const MwDivider = defineContainer('mw-divider', undefined, [
     'inset'
