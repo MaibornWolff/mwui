@@ -2,7 +2,7 @@
 
 /* CSS Token Imports */
 :root {
-  --mw-component-button-filled-color-bg-default: #ed2985;
+  --mw-component-button-filled-color-bg-default: #0192a7;
   --mw-component-button-filled-color-bg-hover: #c42177;
   --mw-component-button-filled-color-bg-pressed: #991766;
   --mw-component-button-filled-color-bg-disabled: #95a0a4;
@@ -15,12 +15,12 @@
   --mw-component-button-filled-color-outline-focused: #001418;
   --mw-component-button-outline-ghost-color-bg-default: #ffffff00;
   --mw-component-button-outline-ghost-color-fg-default: #001418;
-  --mw-component-button-outline-ghost-color-fg-hover: #ed2985;
+  --mw-component-button-outline-ghost-color-fg-hover: #0192a7;
   --mw-component-button-outline-ghost-color-fg-pressed: #c42177;
   --mw-component-button-outline-ghost-color-fg-disabled: #95a0a4;
-  --mw-component-button-outline-ghost-color-fg-focused: #ed2985;
+  --mw-component-button-outline-ghost-color-fg-focused: #0192a7;
   --mw-component-button-outline-ghost-color-border-default: #001418;
-  --mw-component-button-outline-ghost-color-border-hover: #ed2985;
+  --mw-component-button-outline-ghost-color-border-hover: #0192a7;
   --mw-component-button-outline-ghost-color-border-pressed: #c42177;
   --mw-component-button-outline-ghost-color-border-disabled: #79868b;
   --mw-component-button-outline-ghost-color-border-focused: #001418;
@@ -73,9 +73,9 @@
   --mw-component-link-typo-font-size: 16px;
   --mw-component-link-typo-text-decoration: underline;
   --mw-component-link-color-fg-default: #001418;
-  --mw-component-link-color-fg-hover: #ed2985;
+  --mw-component-link-color-fg-hover: #0192a7;
   --mw-component-link-color-fg-pressed: #c42177;
-  --mw-component-link-color-fg-focused: #ed2985;
+  --mw-component-link-color-fg-focused: #0192a7;
   --mw-component-size-button-filled-outline-min-w: 88px;
   --mw-component-size-button-icon-xs: 12px;
   --mw-component-size-button-icon-sm: 16px;
@@ -102,10 +102,11 @@
   --mw-component-size-avatars-icon-md: 24px;
   --mw-component-size-avatars-icon-lg: 32px;
   --mw-component-size-avatars-icon-xl: 48px;
+  --mw-component-size-header-height: 72px;
   --mw-component-controls-color-fg-default: #ffffff;
   --mw-component-controls-color-fg-disabled: #EEF1F3;
   --mw-component-controls-color-fg-off: #001418;
-  --mw-component-controls-color-bg-selected: #ed2985;
+  --mw-component-controls-color-bg-selected: #0192a7;
   --mw-component-controls-color-bg-disabled: #95a0a4;
   --mw-component-controls-color-bg-hover: #c42177;
   --mw-component-controls-color-bg-focused: #c42177;
@@ -147,7 +148,7 @@
   --mw-component-text-field-fg-error: #9f1b00;
   --mw-component-text-field-fg-required: #9f1b00;
   --mw-component-text-field-fg-icon-default: #44555b;
-  --mw-component-text-field-fg-icon-focused: #ed2985;
+  --mw-component-text-field-fg-icon-focused: #0192a7;
   --mw-component-text-field-bg-default: #EEF1F3;
   --mw-component-text-field-bg-hover: #ffffff;
   --mw-component-text-field-bg-error: #FCBAB7;
@@ -176,10 +177,10 @@
   --mw-component-menu-item-border-width-focused: 2px;
   --mw-component-menu-item-fg-title: #001418;
   --mw-component-menu-item-fg-subtitle: #44555b;
-  --mw-component-menu-item-fg-selected: #ed2985;
+  --mw-component-menu-item-fg-selected: #0192a7;
   --mw-component-menu-item-fg-disabled: #95a0a4;
-  --mw-component-menu-item-fg-hover: #ed2985;
-  --mw-component-menu-item-fg-focused: #ed2985;
+  --mw-component-menu-item-fg-hover: #0192a7;
+  --mw-component-menu-item-fg-focused: #0192a7;
   --mw-component-menu-item-fg-pressed: #991766;
   --mw-component-menu-item-bg-default: #ffffff;
   --mw-component-menu-item-border-focused: #001418;
@@ -196,7 +197,7 @@
   --mw-component-list-item-fg-title: #001418;
   --mw-component-list-item-fg-subtitle: #44555b;
   --mw-component-list-item-fg-disabled: #95a0a4;
-  --mw-component-list-item-fg-hover: #ed2985;
+  --mw-component-list-item-fg-hover: #0192a7;
   --mw-component-list-item-fg-pressed: #991766;
   --mw-component-list-item-bg-default: #ffffff;
   --mw-component-list-item-bg-selected: #F9E2EE;
@@ -236,10 +237,10 @@
   --mw-component-chips-border-width-focused: 2px;
   --mw-component-chips-color-border-default: #44555b;
   --mw-component-chips-color-border-disabled: #79868b;
-  --mw-component-chips-color-border-selected: #ed2985;
+  --mw-component-chips-color-border-selected: #0192a7;
   --mw-component-chips-color-fg-default: #44555b;
   --mw-component-chips-color-fg-disabled: #95a0a4;
-  --mw-component-chips-color-fg-selected: #ed2985;
+  --mw-component-chips-color-fg-selected: #0192a7;
   --mw-component-chips-color-bg-default: #ffffff;
   --mw-component-chips-color-bg-hover: #EEF1F3;
   --mw-component-chips-color-bg-pressed: #CFD6D8;
@@ -326,7 +327,7 @@
   --mw-component-card-padding-components-y-default: 24px;
   --mw-component-card-padding-footer-t-default: 24px;
   --mw-component-card-padding-b-default: 24px;
-  --mw-component-tabs-fg-selected: #ed2985;
+  --mw-component-tabs-fg-selected: #0192a7;
   --mw-component-tabs-fg-default: #44555b;
   --mw-component-tabs-fg-disabled: #95a0a4;
   --mw-component-tabs-label-font-family: Poppins;
@@ -338,6 +339,14 @@
   --mw-component-tabs-padding-x: 24px;
   --mw-component-tabs-gap-within: 4px;
   --mw-component-tabs-border-focused: [object Object];
+  --mw-component-header-padding-x: 24px;
+  --mw-component-header-gap-within: 12px;
+  --mw-component-header-bg-default: #1d184b;
+  --mw-component-header-fg-default: #ffffff;
+  --mw-component-header-title-font-family: Poppins;
+  --mw-component-header-title-font-weight: 400;
+  --mw-component-header-title-line-height: 48px;
+  --mw-component-header-title-font-size: 24px;
   --mw-semantic-color-border-disabled: #79868b;
   --mw-semantic-color-border-default: #001418;
   --mw-semantic-color-border-subtle: #B1BABE;
@@ -357,11 +366,12 @@
   --mw-semantic-color-bg-disabled: #95a0a4;
   --mw-semantic-color-bg-overlay: #000000;
   --mw-semantic-color-bg-transparent: #ffffff00;
-  --mw-semantic-color-accent-primary-default: #ed2985;
+  --mw-semantic-color-accent-primary-default: #0192a7;
   --mw-semantic-color-accent-primary-muted: #c42177;
   --mw-semantic-color-accent-primary-intense: #991766;
   --mw-semantic-color-accent-primary-subtle: #F9E2EE;
   --mw-semantic-color-accent-primary-disabled: #CFD6D8;
+  --mw-semantic-color-accent-secondary-default: #1d184b;
   --mw-semantic-color-error-bg: #FCBAB7;
   --mw-semantic-color-error-intense: #E51B00;
   --mw-semantic-color-error-fg: #9f1b00;
