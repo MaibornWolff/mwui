@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 13 Jan 2023 14:06:55 GMT
+ * Generated on Fri, 13 Jan 2023 15:43:51 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -161,8 +161,9 @@ export const mwComponentTextFieldGapHorizontalGapWithin = "8px";
 export const mwComponentTextFieldPaddingTextFieldX = "16px";
 export const mwComponentTextFieldPaddingTextFieldY = "8px";
 export const mwComponentTextFieldPaddingHelperTextY = "4px";
-export const mwComponentTextFieldPaddingTextFieldLabelVerticalX = "16px";
-export const mwComponentTextFieldPaddingTextFieldLabelHorizontal = "0px";
+export const mwComponentTextFieldPaddingHelperTextL = "16px";
+export const mwComponentTextFieldPaddingLabelVerticalX = "16px";
+export const mwComponentTextFieldPaddingLabelHorizontal = "0px";
 export const mwComponentTextFieldFocused = 1;
 export const mwComponentMenuItemTitleFontFamily = "Poppins";
 export const mwComponentMenuItemTitleFontWeight = "Regular";

@@ -161,8 +161,9 @@
   --mw-component-text-field-padding-text-field-x: 16px;
   --mw-component-text-field-padding-text-field-y: 8px;
   --mw-component-text-field-padding-helper-text-y: 4px;
-  --mw-component-text-field-padding-text-field-label-vertical-x: 16px;
-  --mw-component-text-field-padding-text-field-label-horizontal: 0px;
+  --mw-component-text-field-padding-helper-text-l: 16px;
+  --mw-component-text-field-padding-label-vertical-x: 16px;
+  --mw-component-text-field-padding-label-horizontal: 0px;
   --mw-component-text-field-focused: 2px;
   --mw-component-menu-item-title-font-family: Poppins;
   --mw-component-menu-item-title-font-weight: 400;

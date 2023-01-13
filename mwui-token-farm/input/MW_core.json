@@ -771,15 +771,17 @@
             "value": 4,
             "type": "spacing"
           },
-          "textField": {
-            "labelVerticalX": {
-              "value": 16,
-              "type": "spacing"
-            },
-            "labelHorizontal": {
-              "value": 0,
-              "type": "spacing"
-            }
+          "helperTextL": {
+            "value": 16,
+            "type": "spacing"
+          },
+          "labelVerticalX": {
+            "value": 16,
+            "type": "spacing"
+          },
+          "labelHorizontal": {
+            "value": 0,
+            "type": "spacing"
           }
         },
         "focused": {
