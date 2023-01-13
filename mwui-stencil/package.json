@@ -32,7 +32,7 @@
     "@emotion/css": "^11.10.0",
     "@emotion/styled": "^11.10.4",
     "@stencil/angular-output-target": "^0.4.0",
-    "@stencil/core": "^2.13.0",
+    "@stencil/core": "^2.21.0",
     "@stencil/react-output-target": "^0.3.1",
     "@stencil/vue-output-target": "^0.6.2",
     "prettier": "^2.7.1"

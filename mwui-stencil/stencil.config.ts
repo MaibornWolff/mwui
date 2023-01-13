@@ -6,6 +6,9 @@ import { vueOutputTarget as vue } from '@stencil/vue-output-target';
 export const config: Config = {
   namespace: 'mwui-stencil',
   globalStyle: 'src/global/global.css',
+  extras: {
+    experimentalImportInjection: true,
+  },
   outputTargets: [
     react({
       componentCorePackage: '@maibornwolff/mwui-stencil',
