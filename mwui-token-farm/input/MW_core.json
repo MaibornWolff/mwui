@@ -6,7 +6,7 @@
           "color": {
             "bg": {
               "default": {
-                "value": "#0192a7",
+                "value": "#ed2985",
                 "type": "color"
               },
               "hover": {
@@ -70,7 +70,7 @@
                 "type": "color"
               },
               "hover": {
-                "value": "#0192a7",
+                "value": "#ed2985",
                 "type": "color"
               },
               "pressed": {
@@ -82,7 +82,7 @@
                 "type": "color"
               },
               "focused": {
-                "value": "#0192a7",
+                "value": "#ed2985",
                 "type": "color"
               }
             },
@@ -92,7 +92,7 @@
                 "type": "color"
               },
               "hover": {
-                "value": "#0192a7",
+                "value": "#ed2985",
                 "type": "color"
               },
               "pressed": {
@@ -341,7 +341,7 @@
               "type": "color"
             },
             "hover": {
-              "value": "#0192a7",
+              "value": "#ed2985",
               "type": "color"
             },
             "pressed": {
@@ -349,7 +349,7 @@
               "type": "color"
             },
             "focused": {
-              "value": "#0192a7",
+              "value": "#ed2985",
               "type": "color"
             }
           }
@@ -511,7 +511,7 @@
           },
           "bg": {
             "selected": {
-              "value": "#0192a7",
+              "value": "#ed2985",
               "type": "color"
             },
             "disabled": {
@@ -708,7 +708,7 @@
             "type": "color"
           },
           "icon-focused": {
-            "value": "#0192a7",
+            "value": "#ed2985",
             "type": "color"
           }
         },
@@ -848,7 +848,7 @@
             "type": "color"
           },
           "selected": {
-            "value": "#0192a7",
+            "value": "#ed2985",
             "type": "color"
           },
           "disabled": {
@@ -856,11 +856,11 @@
             "type": "color"
           },
           "hover": {
-            "value": "#0192a7",
+            "value": "#ed2985",
             "type": "color"
           },
           "focused": {
-            "value": "#0192a7",
+            "value": "#ed2985",
             "type": "color"
           },
           "pressed": {
@@ -940,7 +940,7 @@
             "type": "color"
           },
           "hover": {
-            "value": "#0192a7",
+            "value": "#ed2985",
             "type": "color"
           },
           "pressed": {
@@ -1123,7 +1123,7 @@
               "type": "color"
             },
             "selected": {
-              "value": "#0192a7",
+              "value": "#ed2985",
               "type": "color"
             }
           },
@@ -1137,7 +1137,7 @@
               "type": "color"
             },
             "selected": {
-              "value": "#0192a7",
+              "value": "#ed2985",
               "type": "color"
             }
           },
@@ -1546,7 +1546,7 @@
       "tabs": {
         "fg": {
           "selected": {
-            "value": "#0192a7",
+            "value": "#ed2985",
             "type": "color"
           },
           "default": {
@@ -1729,7 +1729,7 @@
         "accent": {
           "primary": {
             "default": {
-              "value": "#0192a7",
+              "value": "#ed2985",
               "type": "color"
             },
             "muted": {
