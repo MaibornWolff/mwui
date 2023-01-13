@@ -1,5 +1,5 @@
 {
-  "name": "mwui-angular",
+  "name": "@maibornwolff/mwui-angular",
   "version": "0.1.0",
   "description": "Angular specific wrapper for mwui",
   "repository": {
@@ -25,7 +25,7 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "rxjs": "~7.5.0",
-    "mwui-stencil": "^0.1.0",
+    "@maibornwolff/mwui-stencil": "^0.1.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

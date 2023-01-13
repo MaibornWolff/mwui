@@ -1,5 +1,5 @@
 {
-  "name": "mwui-stencil",
+  "name": "@maibornwolff/mwui-stencil",
   "version": "0.1.0",
   "description": "Component Library using Figma's design tokens",
   "main": "dist/index.cjs.js",
