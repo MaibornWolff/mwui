@@ -77,13 +77,13 @@ Integrate Web Components in any framework or none at all:
 1. Install npm package
 
 ```bash
-npm i mwui-stencil
+npm i @maibornwolff/mwui-stencil
 ```
 
 2. Include the following in the `main.js` (e.g. Angular, Vue) or `index.js` (e.g. React):
 
 ```javascript
-import { defineCustomElements } from 'mwui-stencil/loader';
+import { defineCustomElements } from '@maibornwolff/mwui-stencil/loader';
 defineCustomElements(window);
 ```
 
@@ -92,13 +92,13 @@ defineCustomElements(window);
 1. Install npm package
 
 ```bash
-npm i mwui-react
+npm i @maibornwolff/mwui-react
 ```
 
 2. Import and use as a React-like component.
 
 ```javascript
-import { MWButton } from 'mwui-react';
+import { MWButton } from '@maibornwolff/mwui-react';
 ```
 
 ### Vue
@@ -106,13 +106,13 @@ import { MWButton } from 'mwui-react';
 1. Install npm package
 
 ```bash
-npm i mwui-vue
+npm i @maibornwolff/mwui-vue
 ```
 
 2. Import the library plugin in the `main.js` file:
 
 ```javascript
-import { MWComponents } from 'mwui-vue';
+import { MWComponents } from '@maibornwolff/mwui-vue';
 createApp(App).use(MWComponents).mount('#app');
 ```
 
@@ -124,7 +124,7 @@ createApp(App).use(MWComponents).mount('#app');
 </template>
 
 <script>
-import { MWButton } from 'mwui-vue';
+import { MWButton } from '@maibornwolff/mwui-vue';
 
 export default {
   name: 'HelloWorld',
