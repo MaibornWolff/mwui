@@ -21,7 +21,7 @@
     "tsc": "tsc -p ."
   },
   "dependencies": {
-    "@maibornwolff/mwui-stencil": "^0.1.4"
+    "@maibornwolff/mwui-stencil": "^0.1.5"
   },
   "devDependencies": {
     "vue": "^3.2.37"
