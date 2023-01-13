@@ -8,17 +8,17 @@ export const config: Config = {
   globalStyle: 'src/global/global.css',
   outputTargets: [
     react({
-      componentCorePackage: 'mwui-stencil',
+      componentCorePackage: '@maibornwolff/mwui-stencil',
       proxiesFile: '../mwui-react/src/components/stencil-generated/index.ts',
       includeDefineCustomElements: true,
     }),
     angular({
-      componentCorePackage: 'mwui-stencil',
+      componentCorePackage: '@maibornwolff/mwui-stencil',
       directivesProxyFile: '../mwui-angular/projects/mwui-component-library/src/lib/stencil-generated/components.ts',
       directivesArrayFile: '../mwui-angular/projects/mwui-component-library/src/lib/stencil-generated/index.ts',
     }),
     vue({
-      componentCorePackage: 'mwui-stencil',
+      componentCorePackage: '@maibornwolff/mwui-stencil',
       proxiesFile: '../mwui-vue/src/components.ts',
     }),
     {

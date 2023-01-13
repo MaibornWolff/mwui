@@ -3,9 +3,9 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import type { JSX } from 'mwui-stencil';
+import type { JSX } from '@maibornwolff/mwui-stencil';
 
-import { defineCustomElements } from 'mwui-stencil/loader';
+import { defineCustomElements } from '@maibornwolff/mwui-stencil/loader';
 
 defineCustomElements();
 export const MwAvatar = /*@__PURE__*/createReactComponent<JSX.MwAvatar, HTMLMwAvatarElement>('mw-avatar');

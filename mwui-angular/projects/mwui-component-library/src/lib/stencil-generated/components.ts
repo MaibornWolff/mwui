@@ -3,7 +3,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
-import { Components } from 'mwui-stencil';
+import { Components } from '@maibornwolff/mwui-stencil';
 
 
 
