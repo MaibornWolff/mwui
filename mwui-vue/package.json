@@ -1,6 +1,6 @@
 {
   "name": "@maibornwolff/mwui-vue",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Vue specific wrapper for mwui",
   "repository": {
     "type": "git",
