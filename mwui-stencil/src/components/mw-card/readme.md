@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property              | Attribute  | Description                            | Type      | Default     |
-| --------------------- | ---------- | -------------------------------------- | --------- | ----------- |
-| `elevated`            | `elevated` | Use box-shadow for elevation style     | `boolean` | `false`     |
-| `outlined`            | `outlined` | Display outline                        | `boolean` | `false`     |
-| `testId` _(required)_ | `test-id`  | Provide unique identifier for automated testing | `string`  | `undefined` |
+| Property   | Attribute  | Description                                     | Type      | Default     |
+| ---------- | ---------- | ----------------------------------------------- | --------- | ----------- |
+| `elevated` | `elevated` | Use box-shadow for elevation style              | `boolean` | `false`     |
+| `outlined` | `outlined` | Display outline                                 | `boolean` | `false`     |
+| `testId`   | `test-id`  | Provide unique identifier for automated testing | `string`  | `undefined` |
 
 
 ## Events

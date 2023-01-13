@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-13T13:21:28",
+  "timestamp": "2023-01-13T13:57:19",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -257,7 +257,7 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         },
         {
           "name": "variant",
@@ -363,7 +363,7 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         }
       ],
       "methods": [],
@@ -885,7 +885,7 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         },
         {
           "name": "value",
@@ -905,7 +905,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "emitter",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -1009,27 +1019,18 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         }
       ],
       "methods": [],
       "events": [
         {
-          "event": "close",
+          "event": "emitter",
           "detail": "any",
           "bubbles": true,
           "cancelable": false,
           "composed": false,
-          "docs": "'close' event is fired when the close icon is clicked.",
-          "docsTags": []
-        },
-        {
-          "event": "toggle",
-          "detail": "boolean",
-          "bubbles": true,
-          "cancelable": false,
-          "composed": false,
-          "docs": "'toggle' event is fired when the chip is clicked. Current selection state is emitted.",
+          "docs": "",
           "docsTags": []
         }
       ],
@@ -1340,7 +1341,7 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         }
       ],
       "methods": [],
@@ -1478,7 +1479,7 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         }
       ],
       "methods": [],
@@ -1643,7 +1644,7 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         }
       ],
       "methods": [],
@@ -1766,7 +1767,7 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         }
       ],
       "methods": [],
@@ -1924,7 +1925,7 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         }
       ],
       "methods": [],

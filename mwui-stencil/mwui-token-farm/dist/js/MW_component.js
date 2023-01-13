@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 12 Jan 2023 15:15:21 GMT
+ * Generated on Fri, 13 Jan 2023 13:57:02 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -102,6 +102,7 @@ export const mwComponentSizeAvatarsIconSm = "16px";
 export const mwComponentSizeAvatarsIconMd = "24px";
 export const mwComponentSizeAvatarsIconLg = "32px";
 export const mwComponentSizeAvatarsIconXl = "48px";
+export const mwComponentSizeHeaderHeight = "72px";
 export const mwComponentControlsColorFgDefault = "#ffffff";
 export const mwComponentControlsColorFgDisabled = "#EEF1F3";
 export const mwComponentControlsColorFgOff = "#001418";
@@ -338,6 +339,14 @@ export const mwComponentTabsBgHover = "#EEF1F3";
 export const mwComponentTabsPaddingX = "24px";
 export const mwComponentTabsGapWithin = "4px";
 export const mwComponentTabsBorderFocused = "[object Object]";
+export const mwComponentHeaderPaddingX = "24px";
+export const mwComponentHeaderGapWithin = "12px";
+export const mwComponentHeaderBgDefault = "#1d184b";
+export const mwComponentHeaderFgDefault = "#ffffff";
+export const mwComponentHeaderTitleFontFamily = "Poppins";
+export const mwComponentHeaderTitleFontWeight = "Regular";
+export const mwComponentHeaderTitleLineHeight = 48;
+export const mwComponentHeaderTitleFontSize = 24;
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";
@@ -362,6 +371,7 @@ export const mwSemanticColorAccentPrimaryMuted = "#c42177";
 export const mwSemanticColorAccentPrimaryIntense = "#991766";
 export const mwSemanticColorAccentPrimarySubtle = "#F9E2EE";
 export const mwSemanticColorAccentPrimaryDisabled = "#CFD6D8";
+export const mwSemanticColorAccentSecondaryDefault = "#1d184b";
 export const mwSemanticColorErrorBg = "#FCBAB7";
 export const mwSemanticColorErrorIntense = "#E51B00";
 export const mwSemanticColorErrorFg = "#9f1b00";

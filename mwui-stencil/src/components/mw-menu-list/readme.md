@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property              | Attribute | Description                            | Type     | Default     |
-| --------------------- | --------- | -------------------------------------- | -------- | ----------- |
-| `testId` _(required)_ | `test-id` | Provide unique identifier for automated testing | `string` | `undefined` |
+| Property | Attribute | Description                                     | Type     | Default     |
+| -------- | --------- | ----------------------------------------------- | -------- | ----------- |
+| `testId` | `test-id` | Provide unique identifier for automated testing | `string` | `undefined` |
 
 
 ----------------------------------------------

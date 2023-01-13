@@ -188,7 +188,13 @@ export class MwCardTitle {
 }
 
 
-export declare interface MwCheckbox extends Components.MwCheckbox {}
+export declare interface MwCheckbox extends Components.MwCheckbox {
+  /**
+   *  
+   */
+  emitter: EventEmitter<CustomEvent<any>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -205,19 +211,16 @@ export class MwCheckbox {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['emitter']);
   }
 }
 
 
 export declare interface MwChip extends Components.MwChip {
   /**
-   * 'close' event is fired when the close icon is clicked. 
+   *  
    */
-  close: EventEmitter<CustomEvent<any>>;
-  /**
-   * 'toggle' event is fired when the chip is clicked. Current selection state is emitted. 
-   */
-  toggle: EventEmitter<CustomEvent<boolean>>;
+  emitter: EventEmitter<CustomEvent<any>>;
 
 }
 
@@ -236,7 +239,7 @@ export class MwChip {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['close', 'toggle']);
+    proxyOutputs(this, this.el, ['emitter']);
   }
 }
 

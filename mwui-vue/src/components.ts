@@ -80,7 +80,8 @@ export const MwCheckbox = /*@__PURE__*/ defineContainer<JSX.MwCheckbox>('mw-chec
   'name',
   'checked',
   'disabled',
-  'label'
+  'label',
+  'emitter'
 ]);
 
 
@@ -90,8 +91,7 @@ export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>('mw-chip', undef
   'disabled',
   'showClose',
   'selected',
-  'close',
-  'toggle'
+  'emitter'
 ]);
 
 

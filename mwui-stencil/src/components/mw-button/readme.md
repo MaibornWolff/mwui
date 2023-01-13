@@ -7,15 +7,15 @@
 
 ## Properties
 
-| Property              | Attribute  | Description                                   | Type                                          | Default     |
-| --------------------- | ---------- | --------------------------------------------- | --------------------------------------------- | ----------- |
-| `disabled`            | `disabled` | Visually and functionally disable button      | `boolean`                                     | `undefined` |
-| `href`                | `href`     | If provided the button will act as a link     | `string`                                      | `undefined` |
-| `label`               | `label`    | Label to be displayed                         | `string`                                      | `undefined` |
-| `size`                | `size`     | Button size                                   | `"large" \| "medium" \| "small" \| "x-large"` | `'medium'`  |
-| `target`              | `target`   | If using href the target prop can be provided | `"_blank" \| "_parent" \| "_self" \| "_top"`  | `'_self'`   |
-| `testId` _(required)_ | `test-id`  | Provide unique identifier for automated testing        | `string`                                      | `undefined` |
-| `variant`             | `variant`  | Button variants                               | `"filled" \| "ghost" \| "outline"`            | `'filled'`  |
+| Property   | Attribute  | Description                                     | Type                                          | Default     |
+| ---------- | ---------- | ----------------------------------------------- | --------------------------------------------- | ----------- |
+| `disabled` | `disabled` | Visually and functionally disable button        | `boolean`                                     | `undefined` |
+| `href`     | `href`     | If provided the button will act as a link       | `string`                                      | `undefined` |
+| `label`    | `label`    | Label to be displayed                           | `string`                                      | `undefined` |
+| `size`     | `size`     | Button size                                     | `"large" \| "medium" \| "small" \| "x-large"` | `'medium'`  |
+| `target`   | `target`   | If using href the target prop can be provided   | `"_blank" \| "_parent" \| "_self" \| "_top"`  | `'_self'`   |
+| `testId`   | `test-id`  | Provide unique identifier for automated testing | `string`                                      | `undefined` |
+| `variant`  | `variant`  | Button variants                                 | `"filled" \| "ghost" \| "outline"`            | `'filled'`  |
 
 
 ## Events

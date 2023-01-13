@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property              | Attribute   | Description                            | Type                                                                                                                                                                 | Default        |
-| --------------------- | ----------- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| `open`                | `open`      | Whether the menu is open               | `boolean`                                                                                                                                                            | `false`        |
-| `placement`           | `placement` | Placement relative to anchor element   | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom-end'` |
-| `testId` _(required)_ | `test-id`   | Provide unique identifier for automated testing | `string`                                                                                                                                                             | `undefined`    |
+| Property    | Attribute   | Description                                     | Type                                                                                                                                                                 | Default        |
+| ----------- | ----------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| `open`      | `open`      | Whether the menu is open                        | `boolean`                                                                                                                                                            | `false`        |
+| `placement` | `placement` | Placement relative to anchor element            | `"bottom" \| "bottom-end" \| "bottom-start" \| "left" \| "left-end" \| "left-start" \| "right" \| "right-end" \| "right-start" \| "top" \| "top-end" \| "top-start"` | `'bottom-end'` |
+| `testId`    | `test-id`   | Provide unique identifier for automated testing | `string`                                                                                                                                                             | `undefined`    |
 
 
 ## Dependencies
