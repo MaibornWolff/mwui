@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'mw-checkbox',
@@ -8,9 +8,9 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class MwCheckbox {
   /**
-   * Must be provided for automated testing
+   * Provide unique identifier for automated testing
    */
-  @Prop() testId!: string;
+  @Prop() testId: string;
   /**
    * Value of checkbox input
    */
@@ -32,9 +32,17 @@ export class MwCheckbox {
    */
   @Prop() label?: string;
 
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: false,
+  })
+  emitter: EventEmitter;
+
   handleCheck = () => {
     if (!this.disabled) {
       this.checked = !this.checked;
+      this.emitter.emit();
     }
   };
 

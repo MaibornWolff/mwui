@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'mw-switch',
@@ -8,9 +8,9 @@ import { Component, Host, Prop, h } from '@stencil/core';
 export class MwSwitch {
   checkbox: HTMLInputElement;
   /**
-   * Must be provided for automated testing
+   * Provide unique identifier for automated testing
    */
-  @Prop() testId!: string;
+  @Prop() testId: string;
   /**
    * Visually and functionally disable switch
    */
@@ -32,11 +32,19 @@ export class MwSwitch {
    */
   @Prop({ mutable: true }) checked: boolean = false;
 
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: false,
+  })
+  emitter: EventEmitter;
+
   toggleSwitch(event: Event) {
     (event.target as HTMLInputElement).blur();
     // @ts-ignore
     (event.path[1] as HTMLInputElement).blur();
     this.checked = this.checkbox.checked;
+    this.emitter.emit(event);
   }
 
   hasLabel: boolean;

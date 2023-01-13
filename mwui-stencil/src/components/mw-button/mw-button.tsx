@@ -258,9 +258,9 @@ export type Target = '_blank' | '_self' | '_parent' | '_top';
 export class MWButton {
   @Element() hostElement: HTMLStencilElement;
   /**
-   * Must be provided for automated testing
+   * Provide unique identifier for automated testing
    */
-  @Prop() testId!: string;
+  @Prop() testId: string;
   /**
    * Visually and functionally disable button
    */

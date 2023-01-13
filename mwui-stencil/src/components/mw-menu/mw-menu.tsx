@@ -8,9 +8,9 @@ import { PopoverPlacement } from '../mw-popover/mw-popover';
 })
 export class MwMenu {
   /**
-   * Must be provided for automated testing
+   * Provide unique identifier for automated testing
    */
-  @Prop() testId!: string;
+  @Prop() testId: string;
   /**
    * Placement relative to anchor element
    */

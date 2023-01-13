@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-13T13:15:22",
+  "timestamp": "2023-01-13T13:21:28",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -249,7 +249,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Must be provided for automated testing",
+          "docs": "Provide unique identifier for automated testing",
           "docsTags": [],
           "values": [
             {
@@ -355,7 +355,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Must be provided for automated testing",
+          "docs": "Provide unique identifier for automated testing",
           "docsTags": [],
           "values": [
             {
@@ -877,7 +877,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Must be provided for automated testing",
+          "docs": "Provide unique identifier for automated testing",
           "docsTags": [],
           "values": [
             {
@@ -1001,7 +1001,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Must be provided for automated testing",
+          "docs": "Provide unique identifier for automated testing",
           "docsTags": [],
           "values": [
             {
@@ -1332,7 +1332,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Must be provided for automated testing",
+          "docs": "Provide unique identifier for automated testing",
           "docsTags": [],
           "values": [
             {
@@ -1470,7 +1470,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Must be provided for automated testing",
+          "docs": "Provide unique identifier for automated testing",
           "docsTags": [],
           "values": [
             {
@@ -1635,7 +1635,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Must be provided for automated testing",
+          "docs": "Provide unique identifier for automated testing",
           "docsTags": [],
           "values": [
             {
@@ -1758,7 +1758,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Must be provided for automated testing",
+          "docs": "Provide unique identifier for automated testing",
           "docsTags": [],
           "values": [
             {
@@ -1770,7 +1770,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "emitter",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],

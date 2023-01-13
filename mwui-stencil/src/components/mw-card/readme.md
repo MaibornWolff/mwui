@@ -11,7 +11,7 @@
 | --------------------- | ---------- | -------------------------------------- | --------- | ----------- |
 | `elevated`            | `elevated` | Use box-shadow for elevation style     | `boolean` | `false`     |
 | `outlined`            | `outlined` | Display outline                        | `boolean` | `false`     |
-| `testId` _(required)_ | `test-id`  | Must be provided for automated testing | `string`  | `undefined` |
+| `testId` _(required)_ | `test-id`  | Provide unique identifier for automated testing | `string`  | `undefined` |
 
 
 ## Events

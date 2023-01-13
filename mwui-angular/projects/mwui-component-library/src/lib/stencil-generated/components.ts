@@ -393,7 +393,13 @@ export class MwPopover {
 }
 
 
-export declare interface MwSwitch extends Components.MwSwitch {}
+export declare interface MwSwitch extends Components.MwSwitch {
+  /**
+   *  
+   */
+  emitter: EventEmitter<CustomEvent<any>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -410,6 +416,7 @@ export class MwSwitch {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['emitter']);
   }
 }
 

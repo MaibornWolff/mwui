@@ -13,7 +13,7 @@
 | `disabled`            | `disabled` | Whether input is disabled              | `boolean` | `false`     |
 | `label`               | `label`    | Label to be displayed                  | `string`  | `undefined` |
 | `name`                | `name`     | Name of checkbox input                 | `string`  | `undefined` |
-| `testId` _(required)_ | `test-id`  | Must be provided for automated testing | `string`  | `undefined` |
+| `testId` _(required)_ | `test-id`  | Provide unique identifier for automated testing | `string`  | `undefined` |
 | `value`               | `value`    | Value of checkbox input                | `string`  | `undefined` |
 
 

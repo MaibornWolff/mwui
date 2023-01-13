@@ -15,9 +15,9 @@ export class MwCard {
   clickEmitter: EventEmitter;
 
   /**
-   * Must be provided for automated testing
+   * Provide unique identifier for automated testing
    */
-  @Prop() testId!: string;
+  @Prop() testId: string;
   /**
    * Display outline
    */

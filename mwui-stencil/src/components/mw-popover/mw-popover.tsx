@@ -26,9 +26,9 @@ export type PopoverPlacement =
 export class MwPopover {
   @Element() hostElement: HTMLStencilElement;
   /**
-   * Must be provided for automated testing
+   * Provide unique identifier for automated testing
    */
-  @Prop() testId!: string;
+  @Prop() testId: string;
   /**
    * Whether the popover is visible
    */

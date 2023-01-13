@@ -8,7 +8,7 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 })
 export class MwTabs {
   @Element() host: HTMLStencilElement;
-  @Prop() testId!: string;
+  @Prop() testId: string;
   /**
    * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
    */

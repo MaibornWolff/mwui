@@ -7,9 +7,9 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 export class MwMenuList {
   /**
-   * Must be provided for automated testing
+   * Provide unique identifier for automated testing
    */
-  @Prop() testId!: string;
+  @Prop() testId: string;
 
   render() {
     return (

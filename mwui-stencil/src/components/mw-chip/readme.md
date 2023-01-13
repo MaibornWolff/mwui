@@ -13,7 +13,7 @@
 | `icon`                | `icon`       | Name identifier of icon to be displayed in chip                    | `string`  | `undefined` |
 | `selected`            | `selected`   | Selection state that changes onToggle. Can be set as mutable prop. | `boolean` | `false`     |
 | `showClose`           | `show-close` | Flag wether to show close icon or not                              | `boolean` | `false`     |
-| `testId` _(required)_ | `test-id`    | Must be provided for automated testing                             | `string`  | `undefined` |
+| `testId` _(required)_ | `test-id`    | Provide unique identifier for automated testing                             | `string`  | `undefined` |
 
 
 ## Events

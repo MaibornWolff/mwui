@@ -55,7 +55,7 @@ export namespace Components {
          */
         "target"?: Target;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
         "testId": string;
         /**
@@ -73,7 +73,7 @@ export namespace Components {
          */
         "outlined"?: boolean;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
         "testId": string;
     }
@@ -162,7 +162,7 @@ export namespace Components {
          */
         "name"?: string;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
         "testId": string;
         /**
@@ -188,7 +188,7 @@ export namespace Components {
          */
         "showClose"?: boolean;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
         "testId": string;
     }
@@ -228,7 +228,7 @@ export namespace Components {
          */
         "placement": PopoverPlacement;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
         "testId": string;
     }
@@ -252,7 +252,7 @@ export namespace Components {
     }
     interface MwMenuList {
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
         "testId": string;
     }
@@ -278,7 +278,7 @@ export namespace Components {
          */
         "placement": PopoverPlacement;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
         "testId": string;
     }
@@ -304,7 +304,7 @@ export namespace Components {
          */
         "onText"?: string;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
         "testId": string;
     }
@@ -372,6 +372,10 @@ export interface MwCardCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMwCardElement;
 }
+export interface MwCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMwCheckboxElement;
+}
 export interface MwChipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMwChipElement;
@@ -379,6 +383,10 @@ export interface MwChipCustomEvent<T> extends CustomEvent<T> {
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMwMenuItemElement;
+}
+export interface MwSwitchCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLMwSwitchElement;
 }
 export interface MwTextfieldCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -584,9 +592,9 @@ declare namespace LocalJSX {
          */
         "target"?: Target;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
-        "testId": string;
+        "testId"?: string;
         /**
           * Button variants
          */
@@ -603,9 +611,9 @@ declare namespace LocalJSX {
          */
         "outlined"?: boolean;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
-        "testId": string;
+        "testId"?: string;
     }
     interface MwCardBody {
     }
@@ -691,10 +699,11 @@ declare namespace LocalJSX {
           * Name of checkbox input
          */
         "name"?: string;
+        "onEmitter"?: (event: MwCheckboxCustomEvent<any>) => void;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
-        "testId": string;
+        "testId"?: string;
         /**
           * Value of checkbox input
          */
@@ -709,14 +718,7 @@ declare namespace LocalJSX {
           * Name identifier of icon to be displayed in chip
          */
         "icon"?: string;
-        /**
-          * 'close' event is fired when the close icon is clicked.
-         */
-        "onClose"?: (event: MwChipCustomEvent<any>) => void;
-        /**
-          * 'toggle' event is fired when the chip is clicked. Current selection state is emitted.
-         */
-        "onToggle"?: (event: MwChipCustomEvent<boolean>) => void;
+        "onEmitter"?: (event: MwChipCustomEvent<any>) => void;
         /**
           * Selection state that changes onToggle. Can be set as mutable prop.
          */
@@ -726,9 +728,9 @@ declare namespace LocalJSX {
          */
         "showClose"?: boolean;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
-        "testId": string;
+        "testId"?: string;
     }
     interface MwDivider {
         /**
@@ -766,9 +768,9 @@ declare namespace LocalJSX {
          */
         "placement"?: PopoverPlacement;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
-        "testId": string;
+        "testId"?: string;
     }
     interface MwMenuItem {
         /**
@@ -791,9 +793,9 @@ declare namespace LocalJSX {
     }
     interface MwMenuList {
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
-        "testId": string;
+        "testId"?: string;
     }
     interface MwPopover {
         /**
@@ -817,9 +819,9 @@ declare namespace LocalJSX {
          */
         "placement"?: PopoverPlacement;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
-        "testId": string;
+        "testId"?: string;
     }
     interface MwSwitch {
         /**
@@ -838,14 +840,15 @@ declare namespace LocalJSX {
           * Label to be shown when switch state is unchecked. Overrides label prop
          */
         "offText"?: string;
+        "onEmitter"?: (event: MwSwitchCustomEvent<any>) => void;
         /**
           * Label to be shown when switch state is checked. Overrides label prop
          */
         "onText"?: string;
         /**
-          * Must be provided for automated testing
+          * Provide unique identifier for automated testing
          */
-        "testId": string;
+        "testId"?: string;
     }
     interface MwTab {
         "disabled"?: boolean;
@@ -858,7 +861,7 @@ declare namespace LocalJSX {
           * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
          */
         "selected"?: number | null;
-        "testId": string;
+        "testId"?: string;
     }
     interface MwTextfield {
         /**

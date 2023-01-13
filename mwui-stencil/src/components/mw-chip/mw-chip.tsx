@@ -8,9 +8,9 @@ import classNames from 'classnames';
 })
 export class MwChip {
   /**
-   * Must be provided for automated testing
+   * Provide unique identifier for automated testing
    */
-  @Prop() testId!: string;
+  @Prop() testId: string;
   /**
    * Name identifier of icon to be displayed in chip
    */
@@ -27,31 +27,25 @@ export class MwChip {
    * Selection state that changes onToggle. Can be set as mutable prop.
    */
   @Prop({ reflect: true, mutable: true }) selected: boolean = false;
-  /**
-   * 'close' event is fired when the close icon is clicked.
-   */
+
   @Event({
-    eventName: 'close',
     bubbles: true,
     cancelable: false,
     composed: false,
   })
-  closeEmitter: EventEmitter;
-  /**
-   * 'toggle' event is fired when the chip is clicked. Current selection state is emitted.
-   */
-  @Event({ eventName: 'toggle', bubbles: true, composed: false, cancelable: false }) toggle: EventEmitter<boolean>;
+  emitter: EventEmitter;
+
 
   handleClose = (event: Event) => {
     event.stopPropagation();
     if (!this.disabled) {
-      this.closeEmitter.emit();
+      this.emitter.emit(event);
     }
   };
 
-  handleClick = () => {
+  handleClick = (event: Event) => {
     this.selected = !this.selected;
-    this.toggle.emit(this.selected);
+    this.emitter.emit(event);
   };
 
   render() {

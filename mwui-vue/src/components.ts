@@ -148,7 +148,8 @@ export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>('mw-switch',
   'label',
   'onText',
   'offText',
-  'checked'
+  'checked',
+  'emitter'
 ]);
 
 
