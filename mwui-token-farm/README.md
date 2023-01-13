@@ -1,4 +1,8 @@
-# MWUI - Token Farm
+[![npm](https://img.shields.io/npm/v/@maibornwolff/mwui-token-farm?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-token-farm)
+
+# The Liberation Machine
+
+## MWUI - Token Farm
 
 The Token Farm houses the exported tokens from the Figma design file and converts them into variables for our Stencil component library.
 
@@ -19,7 +23,7 @@ The [update-tokens.yml](https://github.com/MaibornWolff/mwui/blob/f1e251d73e552d
 To use the exported tokens, add the following line to a component:
 
 ```TypeScript
-import { tokenName } from '../../../token-farm/dist/js/global';
+import { tokenName } from '../../../mwui-token-farm/dist/js/global';
 ```
 
 You can then reference the tokens using Emotion, a CSS-in-JS package.

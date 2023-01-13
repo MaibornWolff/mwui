@@ -1,19 +1,14 @@
-[![npm](https://img.shields.io/npm/v/mwui-vue?color=blue)](https://www.npmjs.com/package/mwui-vue)
+[![npm](https://img.shields.io/npm/v/@maibornwolff/mwui-vue?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-vue)
 
-# The Liberation Machine - Vue
+# The Liberation Machine
+## MWUI - Vue Integration
 
-## Publish package
-
-1. Build your core stencil package.
-2. Run build on this package.
-3. Publish.
-
-## Use in Vue
+### Get started
 
 Import the library plugin in the `main.js` file:
 
 ```JavaScript
-import { MwuiComponents } from 'mwui-vue';
+import { MwuiComponents } from '@maibornwolff/mwui-vue';
 
 createApp(App).use(MwuiComponents).mount('#app');
 ```
@@ -25,17 +20,17 @@ You can then use your components within vue:
 </template>
 
 <script>
-import { MwuiButton } from 'mwui-vue';
+import { MwButton } from '@maibornwolff/mwui-vue';
 
 export default {
   name: 'HelloWorld',
   components: {
-    MwuiButton
+    MwButton
   }
 }
 ```
 
-## Known Issues
+### Known Issues
 
 Vue will throw a deprecation error if `slots` are used. This is due to `eslint` misidentifying the slots as outdated Vue 2
 syntax.

@@ -1,6 +1,8 @@
-# The Liberation Machine - Angular
+# The Liberation Machine
 
-WIP
+## MWUI - Angular Integration
+
+Work in Progress
 
 ### Required fixes
 

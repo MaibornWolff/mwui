@@ -1,15 +1,12 @@
-[![npm](https://img.shields.io/npm/v/mwui-react?color=blue)](https://www.npmjs.com/package/mwui-react)
+[![npm](https://img.shields.io/npm/v/@maibornwolff/mwui-react?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-react)
 
-# The Liberation Machine - React
+# The Liberation Machine
 
-## Publish package
+## MWUI - React Integration
 
-1. Build your core stencil package.
-2. Run build on this package.
-3. Publish.
 
 ## Use in React
 
 ```JavaScript
-import { MWButton } from 'mwui-react';
+import { MWButton } from '@maibornwolff/mwui-react';
 ```

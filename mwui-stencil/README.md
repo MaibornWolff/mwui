@@ -1,11 +1,13 @@
-[![npm](https://img.shields.io/npm/v/mwui-stencil?color=blue)](https://www.npmjs.com/package/mwui-stencil)
+[![npm](https://img.shields.io/npm/v/@maibornwolff/mwui-stencil?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-stencil)
 
-# MWUI - Stencil
+# The Liberation Machine
 
-`mwui-stencil` houses the component library of the MWUI and is built using [StencilJs](https://stenciljs.com/).
+## MWUI - Stencil
+
+`mwui-stencil` houses the Web Component library of the MWUI and is built using [StencilJs](https://stenciljs.com/).
 Stencil provides WebComponents as well as framework-specific integrations to leverage usage of WebComponents in React, Vue and Angular.
 
-### Creation
+### Add new components
 
 To create new components, run:
 
@@ -14,7 +16,6 @@ npm run generate
 ```
 
 Alternatively you can manually create components by adding them to `src/components`.
-
 Custom Element names are written in kebab-case, prefixed with `mw-` (e.g. `mw-button`).
 
 ### Structure
