@@ -1,6 +1,6 @@
 {
   "name": "@maibornwolff/mwui-vue",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Vue specific wrapper for mwui",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "tsc": "tsc -p ."
   },
   "dependencies": {
-    "@maibornwolff/mwui-stencil": "^0.1.2"
+    "@maibornwolff/mwui-stencil": "^0.1.3"
   },
   "devDependencies": {
     "vue": "^3.2.37"
