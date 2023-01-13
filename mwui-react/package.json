@@ -1,7 +1,7 @@
 {
   "name": "@maibornwolff/mwui-react",
   "sideEffects": false,
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "React specific wrapper for mwui",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf dist",
     "compile": "npm run tsc",
-    "tsc": "tsc --skipLibCheck -p .",
+    "tsc": "tsc -p .",
     "rollup": "rollup -c"
   },
   "main": "./dist/index.js",
