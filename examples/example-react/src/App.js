@@ -1,4 +1,4 @@
-import { MwuiButton } from 'mwui-react';
+import { MwButton } from '@maibornwolff/mwui-react';
 
 function App() {
   return (
@@ -10,10 +10,10 @@ function App() {
         rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
       </p>
       <div className="flex justify-end">
-        <MwuiButton className="mr-2" secondary>
+        <MwButton className="mr-2" variant="outline">
           CANCEL
-        </MwuiButton>
-        <MwuiButton>SUBMIT</MwuiButton>
+        </MwButton>
+        <MwButton>SUBMIT</MwButton>
       </div>
     </div>
   );

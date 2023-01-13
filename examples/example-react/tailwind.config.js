@@ -1,4 +1,4 @@
-const core = require('mwui-token-farm/input/MW_core.json');
+const core = require('@maibornwolff/mwui-token-farm/input/MW_core.json');
 const filterTokensByType = (type, tokens) => {
   const entries = Object.entries(tokens);
   const res = entries.reduce((acc, cur) => {
