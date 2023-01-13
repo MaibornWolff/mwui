@@ -2,7 +2,7 @@
 /* tslint:disable */
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
-import { defineCustomElements } from '@maibornwoff/mwui-stencil/loader';
+import { defineCustomElements } from '@maibornwolff/mwui-stencil/loader';
 defineCustomElements();
 export const MwAvatar = /*@__PURE__*/ createReactComponent('mw-avatar');
 export const MwButton = /*@__PURE__*/ createReactComponent('mw-button');
