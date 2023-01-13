@@ -105,7 +105,8 @@ export const MwSwitch = defineContainer('mw-switch', undefined, [
     'label',
     'onText',
     'offText',
-    'checked'
+    'checked',
+    'emitter'
 ]);
 export const MwTab = defineContainer('mw-tab', undefined, [
     'selected',
