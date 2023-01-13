@@ -1,7 +1,7 @@
 {
   "name": "@maibornwolff/mwui-react",
   "sideEffects": false,
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React specific wrapper for mwui",
   "repository": {
     "type": "git",
@@ -33,7 +33,7 @@
     "typescript": "^3.3.4000"
   },
   "dependencies": {
-    "@maibornwolff/mwui-stencil": "^0.1.1"
+    "@maibornwolff/mwui-stencil": "^0.1.2"
   },
   "peerDependencies": {
     "react": "^17.0.2",
