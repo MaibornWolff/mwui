@@ -3,9 +3,10 @@
 [![npm](https://img.shields.io/npm/v/@maibornwolff/mwui-stencil?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-stencil)
 [![Storybook](https://raw.githubusercontent.com/storybookjs/brand/master/badge/badge-storybook.svg?sanitize=true)](https://maibornwolff.github.io/mwui)
 
-# MWUI - Component Library
+# The Liberation Machine
+## MWUI - Component Library
 
-A web component library as part of the MW Design System which uses Figma's token plugin to create easily modifiable design systems.
+A web component library as part of the MW Design System project **The Liberation Machine** which uses Figma's token plugin to create easily modifiable design systems.
 
 ## Related Docs
 
