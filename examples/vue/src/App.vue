@@ -1,15 +1,18 @@
 <script>
-// import { MwButton } from "@maibornwolff/mwui-vue";
+import { MwButton, MwCard, MwCardBody } from '@maibornwolff/mwui-vue';
 
 export default {
   components: {
-    // MwButton,
+    MwButton,
+    MwCard,
+    MwCardBody
   },
 };
 </script>
 
 <template>
   <div id="app">
-    <!-- <MwButton label="Button"></MwButton> -->
+    <mw-button test-id="asdf" label="Button"></mw-button>
+    <mw-card><mw-card-body>Card Body</mw-card-body></mw-card>
   </div>
 </template>

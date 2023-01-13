@@ -93,9 +93,16 @@ defineCustomElements(window);
 
 ```bash
 npm i @maibornwolff/mwui-react
+npm i @maibornwolff/mwui-stencil
 ```
 
 2. Import and use as a React-like component.
+
+Import global styles
+
+```bash
+import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
+```
 
 ```javascript
 import { MWButton } from '@maibornwolff/mwui-react';
@@ -107,12 +114,15 @@ import { MWButton } from '@maibornwolff/mwui-react';
 
 ```bash
 npm i @maibornwolff/mwui-vue
+npm i @maibornwolff/mwui-stencil
 ```
 
-2. Import the library plugin in the `main.js` file:
+2. Import the library plugin and global styles in the `main.js` file:
 
 ```javascript
 import { MWComponents } from '@maibornwolff/mwui-vue';
+import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
+
 createApp(App).use(MWComponents).mount('#app');
 ```
 

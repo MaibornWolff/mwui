@@ -7,11 +7,18 @@
 
 Import the library plugin in the `main.js` file:
 
+```bash
+npm i @maibornwolff/mwui-stencil
+npm i @maibornwolff/mwui-vue
+```
+
 ```JavaScript
 import { MwuiComponents } from '@maibornwolff/mwui-vue';
+import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
 
 createApp(App).use(MwuiComponents).mount('#app');
 ```
+
 You can then use your components within vue:
 
 ```Vue
