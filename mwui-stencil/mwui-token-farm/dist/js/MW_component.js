@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 16 Jan 2023 11:10:11 GMT
+ * Generated on Mon, 16 Jan 2023 13:30:07 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -103,6 +103,8 @@ export const mwComponentSizeAvatarsIconMd = "24px";
 export const mwComponentSizeAvatarsIconLg = "32px";
 export const mwComponentSizeAvatarsIconXl = "48px";
 export const mwComponentSizeHeaderHeight = "72px";
+export const mwComponentSizeModalDefaultW = "800px";
+export const mwComponentSizeModalSmallW = "480px";
 export const mwComponentControlsColorFgDefault = "#ffffff";
 export const mwComponentControlsColorFgDisabled = "#EEF1F3";
 export const mwComponentControlsColorFgOff = "#001418";
@@ -328,6 +330,7 @@ export const mwComponentCardPaddingComponentsXDefault = "24px";
 export const mwComponentCardPaddingComponentsYDefault = "24px";
 export const mwComponentCardPaddingFooterTDefault = "24px";
 export const mwComponentCardPaddingBDefault = "24px";
+export const mwComponentModalPaddingBDefault = "24px";
 export const mwComponentModalBgDefault = "#FAFAFA";
 export const mwComponentModalBorderRadius = 8;
 export const mwComponentModalShadowDefault0 = "{";
@@ -360,6 +363,9 @@ export const mwComponentModalPaddingComponentsXDefault = "24px";
 export const mwComponentModalPaddingComponentsYDefault = "24px";
 export const mwComponentModalPaddingFooterTDefault = "24px";
 export const mwComponentModalHeaderGapWithin = "24px";
+export const mwComponentModalBackdrop = "#44555b4d";
+export const mwComponentModalMarginT = "72px";
+export const mwComponentModalMarginX = "24px";
 export const mwComponentTabsFgSelected = "#ed2985";
 export const mwComponentTabsFgDefault = "#44555b";
 export const mwComponentTabsFgDisabled = "#95a0a4";

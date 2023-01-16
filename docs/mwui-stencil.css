@@ -103,6 +103,8 @@
   --mw-component-size-avatars-icon-lg: 32px;
   --mw-component-size-avatars-icon-xl: 48px;
   --mw-component-size-header-height: 72px;
+  --mw-component-size-modal-default-w: 800px;
+  --mw-component-size-modal-small-w: 480px;
   --mw-component-controls-color-fg-default: #ffffff;
   --mw-component-controls-color-fg-disabled: #EEF1F3;
   --mw-component-controls-color-fg-off: #001418;
@@ -328,6 +330,7 @@
   --mw-component-card-padding-components-y-default: 24px;
   --mw-component-card-padding-footer-t-default: 24px;
   --mw-component-card-padding-b-default: 24px;
+  --mw-component-modal-padding-b-default: 24px;
   --mw-component-modal-bg-default: #FAFAFA;
   --mw-component-modal-border-radius: 8px;
   --mw-component-modal-shadow-default-0: {;
@@ -360,6 +363,9 @@
   --mw-component-modal-padding-components-y-default: 24px;
   --mw-component-modal-padding-footer-t-default: 24px;
   --mw-component-modal-header-gap-within: 24px;
+  --mw-component-modal-backdrop: #44555b4d;
+  --mw-component-modal-margin-t: 72px;
+  --mw-component-modal-margin-x: 24px;
   --mw-component-tabs-fg-selected: #ed2985;
   --mw-component-tabs-fg-default: #44555b;
   --mw-component-tabs-fg-disabled: #95a0a4;

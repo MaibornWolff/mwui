@@ -491,6 +491,16 @@
             "value": 72,
             "type": "sizing"
           }
+        },
+        "modal": {
+          "defaultW": {
+            "value": 800,
+            "type": "sizing"
+          },
+          "smallW": {
+            "value": 480,
+            "type": "sizing"
+          }
         }
       },
       "controls": {
@@ -1546,6 +1556,12 @@
         }
       },
       "modal": {
+        "paddingB": {
+          "default": {
+            "value": 24,
+            "type": "spacing"
+          }
+        },
         "bg": {
           "default": {
             "value": "#FAFAFA",
@@ -1695,6 +1711,18 @@
             "value": 24,
             "type": "spacing"
           }
+        },
+        "backdrop": {
+          "value": "#44555b4d",
+          "type": "color"
+        },
+        "marginT": {
+          "value": 72,
+          "type": "spacing"
+        },
+        "marginX": {
+          "value": 24,
+          "type": "spacing"
         }
       },
       "tabs": {
