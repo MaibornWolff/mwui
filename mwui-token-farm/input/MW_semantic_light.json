@@ -1713,7 +1713,7 @@
           }
         },
         "backdrop": {
-          "value": "#44555b4d",
+          "value": "#44555b",
           "type": "color"
         },
         "marginT": {
@@ -2917,6 +2917,18 @@
         "xl": {
           "value": "1px+1px+1px+1px+1px",
           "type": "borderWidth"
+        }
+      }
+    }
+  },
+  "$mw": {
+    "component": {
+      "opacity": {
+        "modal": {
+          "backdrop": {
+            "value": 0.4,
+            "type": "opacity"
+          }
         }
       }
     }

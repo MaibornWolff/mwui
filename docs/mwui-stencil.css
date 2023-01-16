@@ -363,7 +363,7 @@
   --mw-component-modal-padding-components-y-default: 24px;
   --mw-component-modal-padding-footer-t-default: 24px;
   --mw-component-modal-header-gap-within: 24px;
-  --mw-component-modal-backdrop: #44555b4d;
+  --mw-component-modal-backdrop: #44555b;
   --mw-component-modal-margin-t: 72px;
   --mw-component-modal-margin-x: 24px;
   --mw-component-tabs-fg-selected: #ed2985;
@@ -629,6 +629,7 @@
   --mw-core-border-width-md: 3px;
   --mw-core-border-width-lg: 4px;
   --mw-core-border-width-xl: 5px;
+  --mw-component-opacity-modal-backdrop: 0.4px;
   --shadows-blur-20: 3px;
   --shadows-blur-40: 4px;
   --shadows-blur-60: 8px;

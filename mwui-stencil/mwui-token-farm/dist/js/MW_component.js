@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 16 Jan 2023 13:30:07 GMT
+ * Generated on Mon, 16 Jan 2023 13:37:47 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -363,7 +363,7 @@ export const mwComponentModalPaddingComponentsXDefault = "24px";
 export const mwComponentModalPaddingComponentsYDefault = "24px";
 export const mwComponentModalPaddingFooterTDefault = "24px";
 export const mwComponentModalHeaderGapWithin = "24px";
-export const mwComponentModalBackdrop = "#44555b4d";
+export const mwComponentModalBackdrop = "#44555b";
 export const mwComponentModalMarginT = "72px";
 export const mwComponentModalMarginX = "24px";
 export const mwComponentTabsFgSelected = "#ed2985";
@@ -629,6 +629,7 @@ export const mwCoreBorderWidthSm = 1;
 export const mwCoreBorderWidthMd = 1;
 export const mwCoreBorderWidthLg = 1;
 export const mwCoreBorderWidthXl = 1;
+export const mwComponentOpacityModalBackdrop = 0.4;
 export const shadowsBlur20 = 3;
 export const shadowsBlur40 = 4;
 export const shadowsBlur60 = 8;
