@@ -130,6 +130,13 @@
       <mw-checkbox test-id="checkbox-3" value="cucumbers" name="food" disabled label="Gurken"></mw-checkbox>
       <mw-checkbox test-id="checkbox-4" value="organes" name="food" checked disabled label="Orangen"></mw-checkbox>
     </div>
+    <h3>Radio Button</h3>
+    <div style="display: flex; gap: 16px">
+      <mw-radio-button checked name="transport">Car</mw-radio-button>
+      <mw-radio-button name="transport">Train</mw-radio-button>
+      <mw-radio-button disabled name="transport">Airplane</mw-radio-button>
+      <mw-radio-button checked disabled>Bicycle</mw-radio-button>
+    </div>
   </section>
   <section>
     <br />
@@ -398,10 +405,6 @@
       </mw-tabs>
     </div>
   </section>
-  <h2>Radio Button</h2>
-  <mw-radio-button checked name="transport">Car</mw-radio-button>
-  <mw-radio-button name="transport">Train</mw-radio-button>
-  <mw-radio-button disabled name="transport">Airplane</mw-radio-button>
 </body>
 <script>
   const cards = document.getElementsByTagName('mw-card');
