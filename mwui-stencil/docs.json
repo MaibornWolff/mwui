@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-16T16:48:46",
+  "timestamp": "2023-01-16T17:02:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -1667,6 +1667,7 @@
       "filePath": "./src/components/mw-radio-button/mw-radio-button.tsx",
       "encapsulation": "none",
       "tag": "mw-radio-button",
+      "readme": "# mw-radio-button\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
