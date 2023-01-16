@@ -142,6 +142,15 @@ export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>('mw-popove
 ]);
 
 
+export const MwRadioButton = /*@__PURE__*/ defineContainer<JSX.MwRadioButton>('mw-radio-button', undefined, [
+  'disabled',
+  'checked',
+  'value',
+  'name',
+  'testId'
+]);
+
+
 export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>('mw-switch', undefined, [
   'testId',
   'disabled',

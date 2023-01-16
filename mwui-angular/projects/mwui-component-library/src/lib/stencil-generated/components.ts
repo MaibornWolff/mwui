@@ -396,6 +396,27 @@ export class MwPopover {
 }
 
 
+export declare interface MwRadioButton extends Components.MwRadioButton {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['checked', 'disabled', 'name', 'testId', 'value']
+})
+@Component({
+  selector: 'mw-radio-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['checked', 'disabled', 'name', 'testId', 'value']
+})
+export class MwRadioButton {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MwSwitch extends Components.MwSwitch {
   /**
    *  
