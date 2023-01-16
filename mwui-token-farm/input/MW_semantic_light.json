@@ -1689,6 +1689,12 @@
               "type": "spacing"
             }
           }
+        },
+        "header": {
+          "gapWithin": {
+            "value": 24,
+            "type": "spacing"
+          }
         }
       },
       "tabs": {
