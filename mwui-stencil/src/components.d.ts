@@ -282,6 +282,28 @@ export namespace Components {
          */
         "testId": string;
     }
+    interface MwRadioButton {
+        /**
+          * Whether the radio button is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Visually and functionally radio button
+         */
+        "disabled"?: boolean;
+        /**
+          * Analog to HTML 'name' attribute used to group radios for unique selection
+         */
+        "name": string;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId": string;
+        /**
+          * Value of the radio button
+         */
+        "value": string;
+    }
     interface MwSwitch {
         /**
           * Switch state
@@ -495,6 +517,12 @@ declare global {
         prototype: HTMLMwPopoverElement;
         new (): HTMLMwPopoverElement;
     };
+    interface HTMLMwRadioButtonElement extends Components.MwRadioButton, HTMLStencilElement {
+    }
+    var HTMLMwRadioButtonElement: {
+        prototype: HTMLMwRadioButtonElement;
+        new (): HTMLMwRadioButtonElement;
+    };
     interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {
     }
     var HTMLMwSwitchElement: {
@@ -537,6 +565,7 @@ declare global {
         "mw-menu-item": HTMLMwMenuItemElement;
         "mw-menu-list": HTMLMwMenuListElement;
         "mw-popover": HTMLMwPopoverElement;
+        "mw-radio-button": HTMLMwRadioButtonElement;
         "mw-switch": HTMLMwSwitchElement;
         "mw-tab": HTMLMwTabElement;
         "mw-tabs": HTMLMwTabsElement;
@@ -823,6 +852,28 @@ declare namespace LocalJSX {
          */
         "testId"?: string;
     }
+    interface MwRadioButton {
+        /**
+          * Whether the radio button is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Visually and functionally radio button
+         */
+        "disabled"?: boolean;
+        /**
+          * Analog to HTML 'name' attribute used to group radios for unique selection
+         */
+        "name"?: string;
+        /**
+          * Must be provided for automated testing
+         */
+        "testId"?: string;
+        /**
+          * Value of the radio button
+         */
+        "value"?: string;
+    }
     interface MwSwitch {
         /**
           * Switch state
@@ -924,6 +975,7 @@ declare namespace LocalJSX {
         "mw-menu-item": MwMenuItem;
         "mw-menu-list": MwMenuList;
         "mw-popover": MwPopover;
+        "mw-radio-button": MwRadioButton;
         "mw-switch": MwSwitch;
         "mw-tab": MwTab;
         "mw-tabs": MwTabs;
@@ -951,6 +1003,7 @@ declare module "@stencil/core" {
             "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
             "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
             "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
+            "mw-radio-button": LocalJSX.MwRadioButton & JSXBase.HTMLAttributes<HTMLMwRadioButtonElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
             "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
             "mw-tabs": LocalJSX.MwTabs & JSXBase.HTMLAttributes<HTMLMwTabsElement>;

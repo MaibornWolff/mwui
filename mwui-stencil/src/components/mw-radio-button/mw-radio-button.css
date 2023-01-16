@@ -1,0 +1,102 @@
+.mw-radio-button-container {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  padding-top: var(--mw-component-controls-with-label-padding-y);
+  padding-bottom: var(--mw-component-controls-with-label-padding-y);
+  padding-right: var(--mw-component-controls-with-label-padding-r);
+  padding-left: var(--mw-component-controls-with-label-padding-l);
+  gap: var(--mw-component-controls-with-label-gap);
+  color: var(--mw-component-controls-color-label-default);
+  font-size: var(--mw-semantic-font-font-size-body-regular);
+  line-height: var(--mw-semantic-font-line-height-body-regular);
+  font-family: var(--mw-core-font-font-families-body);
+  font-weight: var(--mw-core-font-weight-body-regular);
+}
+
+/* Hide the browser's default radio button */
+.mw-radio-button-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.mw-radio-button {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+  border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
+  border-radius: var(--border-radius-standard-circle);
+}
+
+/* Checked */
+.mw-radio-button-container input:checked ~ .mw-radio-button {
+  border-width: var(--mw-component-checkbox-selected-border-width-default);
+  background-color: var(--mw-component-controls-color-bg-selected);
+}
+
+.mw-radio-button-container input:checked ~ .mw-radio-button:after {
+  content: '';
+  border-radius: var(--border-radius-standard-circle);
+  height: 8px;
+  width: 8px;
+  background-color: var(--mw-component-controls-color-fg-default);
+}
+
+/* Hover States */
+/* Checked, Hover */
+.mw-radio-button-container:hover input:checked ~ .mw-radio-button {
+  background-color: var(--mw-component-controls-color-bg-hover);
+}
+
+/* Unchecked, Hover */
+.mw-radio-button-container:hover input ~ .mw-radio-button {
+  background-color: var(--mw-component-controls-color-bg-hover);
+}
+
+/* Pressed States */
+/* Unchecked, Pressed */
+.mw-radio-button-container:active input ~ .mw-radio-button {
+  background-color: var(--mw-component-controls-color-bg-pressed);
+}
+
+/* Checked, Pressed */
+.mw-radio-button-container:active input:checked ~ .mw-radio-button {
+  background-color: var(--mw-component-controls-color-bg-pressed);
+}
+
+/* Disabled States */
+/* Disabled, Unchecked */
+.mw-radio-button-container input:disabled ~ .mw-radio-button {
+  border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-disabled);
+  background-color: var(--mw-component-controls-color-bg-unselected);
+}
+
+.mw-radio-button-container:has(input:disabled) {
+  cursor: default;
+  color: var(--mw-component-controls-color-label-disabled);
+}
+
+/* Disabled, Checked */
+.mw-radio-button-container input:disabled:checked ~ .mw-radio-button {
+  background-color: var(--mw-component-controls-color-bg-disabled);
+  border-width: var(--mw-component-checkbox-selected-border-width-default);
+}
+
+.mw-radio-button-container input:disabled:checked ~ .mw-radio-button:after {
+  background-color: var(--mw-component-controls-color-fg-disabled);
+}
+
+/* Focus State */
+.mw-radio-button-container input:focus ~ .mw-radio-button {
+  border: var(--mw-component-checkbox-selected-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
+}
