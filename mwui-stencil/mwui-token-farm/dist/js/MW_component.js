@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Fri, 13 Jan 2023 15:43:51 GMT
+ * Generated on Mon, 16 Jan 2023 10:59:20 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -328,6 +328,37 @@ export const mwComponentCardPaddingComponentsXDefault = "24px";
 export const mwComponentCardPaddingComponentsYDefault = "24px";
 export const mwComponentCardPaddingFooterTDefault = "24px";
 export const mwComponentCardPaddingBDefault = "24px";
+export const mwComponentModalBgDefault = "#FAFAFA";
+export const mwComponentModalBorderRadius = 8;
+export const mwComponentModalShadowDefault0 = "{";
+export const mwComponentModalShadowDefault1 = "e";
+export const mwComponentModalShadowDefault2 = "l";
+export const mwComponentModalShadowDefault3 = "e";
+export const mwComponentModalShadowDefault4 = "v";
+export const mwComponentModalShadowDefault5 = "a";
+export const mwComponentModalShadowDefault6 = "t";
+export const mwComponentModalShadowDefault7 = "i";
+export const mwComponentModalShadowDefault8 = "o";
+export const mwComponentModalShadowDefault9 = "n";
+export const mwComponentModalShadowDefault10 = ".";
+export const mwComponentModalShadowDefault11 = 2;
+export const mwComponentModalShadowDefault12 = 4;
+export const mwComponentModalShadowDefault13 = "d";
+export const mwComponentModalShadowDefault14 = "p";
+export const mwComponentModalShadowDefault15 = "}";
+export const mwComponentModalTitleFontFamily = "Poppins";
+export const mwComponentModalTitleFontWeight = "Regular";
+export const mwComponentModalTitleLineHeight = 32;
+export const mwComponentModalTitleFontSize = 24;
+export const mwComponentModalDescriptionFontFamily = "Poppins";
+export const mwComponentModalDescriptionFontWeight = "Regular";
+export const mwComponentModalDescriptionLineHeight = 24;
+export const mwComponentModalDescriptionFontSize = 16;
+export const mwComponentModalFgDefault = "#001418";
+export const mwComponentModalFgMuted = "#44555b";
+export const mwComponentModalPaddingComponentsXDefault = "24px";
+export const mwComponentModalPaddingComponentsYDefault = "24px";
+export const mwComponentModalPaddingFooterTDefault = "24px";
 export const mwComponentTabsFgSelected = "#ed2985";
 export const mwComponentTabsFgDefault = "#44555b";
 export const mwComponentTabsFgDisabled = "#95a0a4";

@@ -1545,6 +1545,152 @@
           }
         }
       },
+      "modal": {
+        "bg": {
+          "default": {
+            "value": "#FAFAFA",
+            "type": "color"
+          }
+        },
+        "borderRadius": {
+          "value": "8px",
+          "type": "borderRadius"
+        },
+        "shadow": {
+          "default": {
+            "0": {
+              "value": "{",
+              "type": "0"
+            },
+            "1": {
+              "value": "e",
+              "type": "1"
+            },
+            "2": {
+              "value": "l",
+              "type": "2"
+            },
+            "3": {
+              "value": "e",
+              "type": "3"
+            },
+            "4": {
+              "value": "v",
+              "type": "4"
+            },
+            "5": {
+              "value": "a",
+              "type": "5"
+            },
+            "6": {
+              "value": "t",
+              "type": "6"
+            },
+            "7": {
+              "value": "i",
+              "type": "7"
+            },
+            "8": {
+              "value": "o",
+              "type": "8"
+            },
+            "9": {
+              "value": "n",
+              "type": "9"
+            },
+            "10": {
+              "value": ".",
+              "type": "10"
+            },
+            "11": {
+              "value": 2,
+              "type": "11"
+            },
+            "12": {
+              "value": 4,
+              "type": "12"
+            },
+            "13": {
+              "value": "d",
+              "type": "13"
+            },
+            "14": {
+              "value": "p",
+              "type": "14"
+            },
+            "15": {
+              "value": "}",
+              "type": "15"
+            }
+          }
+        },
+        "title": {
+          "fontFamily": {
+            "value": "Poppins",
+            "type": "fontFamily"
+          },
+          "fontWeight": {
+            "value": "Regular",
+            "type": "fontWeight"
+          },
+          "lineHeight": {
+            "value": 32,
+            "type": "lineHeight"
+          },
+          "fontSize": {
+            "value": 24,
+            "type": "fontSize"
+          }
+        },
+        "description": {
+          "fontFamily": {
+            "value": "Poppins",
+            "type": "fontFamily"
+          },
+          "fontWeight": {
+            "value": "Regular",
+            "type": "fontWeight"
+          },
+          "lineHeight": {
+            "value": 24,
+            "type": "lineHeight"
+          },
+          "fontSize": {
+            "value": 16,
+            "type": "fontSize"
+          }
+        },
+        "fg": {
+          "default": {
+            "value": "#001418",
+            "type": "color"
+          },
+          "muted": {
+            "value": "#44555b",
+            "type": "color"
+          }
+        },
+        "padding": {
+          "componentsX": {
+            "default": {
+              "value": 24,
+              "type": "spacing"
+            }
+          },
+          "componentsY": {
+            "default": {
+              "value": 24,
+              "type": "spacing"
+            }
+          },
+          "footerT": {
+            "default": {
+              "value": 24,
+              "type": "spacing"
+            }
+          }
+        }
+      },
       "tabs": {
         "fg": {
           "selected": {
