@@ -1,6 +1,6 @@
 {
   "name": "@maibornwolff/mwui-angular",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Angular specific wrapper for mwui",
   "repository": {
     "type": "git",

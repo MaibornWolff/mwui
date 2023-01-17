@@ -1,6 +1,6 @@
 {
   "name": "@maibornwolff/mwui-token-farm",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Transforms figma design tokens to common config files serving different styling frameworks",
   "main": "src/index.ts",
   "module": "dist/tailwind.config.js",
