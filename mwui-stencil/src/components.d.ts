@@ -200,9 +200,13 @@ export namespace Components {
     }
     interface MwIcon {
         /**
-          * Overwrite fill color
+          * Icon color
          */
-        "fill"?: string;
+        "color"?: string;
+        /**
+          * Use filled styles for icons
+         */
+        "fill"?: boolean;
         /**
           * The icon name to be rendered
          */
@@ -769,9 +773,13 @@ declare namespace LocalJSX {
     }
     interface MwIcon {
         /**
-          * Overwrite fill color
+          * Icon color
          */
-        "fill"?: string;
+        "color"?: string;
+        /**
+          * Use filled styles for icons
+         */
+        "fill"?: boolean;
         /**
           * The icon name to be rendered
          */

@@ -1,21 +1,14 @@
-import { Build, Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
-import { fetchIcon } from './utils';
+import { Component, Element, h, Prop } from '@stencil/core';
 import { Size } from '../mw-avatar/mw-avatar';
-import {
-  mwComponentSizeAvatarsIconLg,
-  mwComponentSizeAvatarsIconMd,
-  mwComponentSizeAvatarsIconSm,
-  mwComponentSizeAvatarsIconXs,
-} from '../../../../mwui-token-farm/dist/js/MW_component';
 
-const getDimensionForSize = (size: Size) =>
+const getOpticalSize = (size: Size) =>
   Number(
     {
-      'large': mwComponentSizeAvatarsIconLg,
-      'medium': mwComponentSizeAvatarsIconMd,
-      'small': mwComponentSizeAvatarsIconSm,
-      'x-small': mwComponentSizeAvatarsIconXs,
-    }[size].replace('px', ''),
+      'large': 48,
+      'medium': 40,
+      'small': 24,
+      'x-small': 20,
+    }[size],
   );
 
 @Component({
@@ -33,96 +26,36 @@ export class LibraryNameIcon {
   /**
    * Size variant
    */
-  @Prop() size: Size = 'medium';
+  @Prop() size: Size = 'small';
   /**
-   * Overwrite fill color
+   * Use filled styles for icons
    */
-  @Prop() fill?: string = 'currentColor';
+  @Prop() fill?: boolean = false;
+  /**
+   * Icon color
+   */
+  @Prop() color?: string;
   /**
    * Overwrite stroke color
    */
   @Prop() stroke?: string = 'none';
 
-  @State() private pathData: any[];
-  @State() private visible = false;
-  @State() private baseDimension = getDimensionForSize('medium');
-  private intersectionObserver: IntersectionObserver;
-  private dimension: number;
-  private scale: number;
-
-  connectedCallback(): void {
-    this.waitUntilVisible(() => {
-      this.visible = true;
-      this.loadIconPathData();
-    });
-  }
-
-  disconnectedCallback(): void {
-    if (this.intersectionObserver) {
-      this.intersectionObserver.disconnect();
-      this.intersectionObserver = null;
-    }
-  }
-
-  async componentWillLoad(): Promise<void> {
-    this.loadIconPathData();
-    this.dimension = getDimensionForSize(this.size);
-    this.scale = this.dimension / this.baseDimension;
-  }
-
   render() {
     return (
-      <Host style={{ height: `${this.dimension}px` }}>
-        <svg
-          style={{ fill: this.fill, stroke: this.stroke }}
-          xmlns="http://www.w3.org/2000/svg"
-          height={this.dimension}
-          width={this.dimension}
-          viewBox={`0 0 ${this.dimension} ${this.dimension}`}
-        >
-          {this.pathData?.map(({ attributes }) => (
-            <path
-              style={{ transform: `scale(${this.scale})` }}
-              d={attributes.d}
-              fill-rule={attributes['fill-rule']}
-              clip-rule={attributes['clip-rules']}
-              stroke-width={attributes['stroke-width']}
-            />
-          ))}
-        </svg>
-      </Host>
+      <span
+        style={{
+          'fontSize': `${getOpticalSize(this.size)}px`,
+          'color': this.color,
+          'font-variation-settings': `
+      'FILL' ${this.fill ? 1 : 0},
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' ${getOpticalSize(this.size)}`,
+        }}
+        class="material-symbols-outlined"
+      >
+        {this.icon}
+      </span>
     );
-  }
-
-  @Watch('icon') private async loadIconPathData(): Promise<void> {
-    const { icon, visible } = this;
-
-    if (!Build.isBrowser || !icon || !visible) {
-      return;
-    }
-
-    this.pathData = await fetchIcon({ icon });
-  }
-
-  private waitUntilVisible(callback: () => void): void {
-    if (!Build.isBrowser || typeof window === 'undefined' || !(window as any).IntersectionObserver) {
-      callback();
-      return;
-    }
-
-    this.intersectionObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.intersectionObserver.disconnect();
-            this.intersectionObserver = null;
-            callback();
-          }
-        });
-      },
-      { rootMargin: '50px' },
-    );
-
-    this.intersectionObserver.observe(this.el);
   }
 }
