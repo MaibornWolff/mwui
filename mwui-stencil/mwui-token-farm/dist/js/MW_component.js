@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 17 Jan 2023 09:53:28 GMT
+ * Generated on Tue, 17 Jan 2023 10:28:26 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -394,6 +394,7 @@ export const mwComponentLogInMarginXy = "64px";
 export const mwComponentLogInContentGapWithin = "16px";
 export const mwComponentLogInSignUpGapWithin = "4px";
 export const mwComponentLogInBgDefault = "#ffffff";
+export const mwComponentSliderActive = "#ed2985";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";

@@ -1864,6 +1864,12 @@
             "type": "color"
           }
         }
+      },
+      "slider": {
+        "active": {
+          "value": "#ed2985",
+          "type": "color"
+        }
       }
     },
     "semantic": {
