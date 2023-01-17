@@ -6,6 +6,7 @@ import { vueOutputTarget as vue } from '@stencil/vue-output-target';
 export const config: Config = {
   namespace: 'mwui-stencil',
   globalStyle: 'src/global/global.css',
+  preamble: 'Built with Stencil\nCopyright (c) Maibornwolff GmbH.',
   extras: {
     experimentalImportInjection: true,
   },
@@ -27,9 +28,23 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        {
+          src: '**/*.{jpg,png,svg,svg.json}',
+          dest: 'dist/components/assets',
+          warn: true,
+        },
+      ],
     },
     {
       type: 'dist-custom-elements',
+      copy: [
+        {
+          src: '**/*.{jpg,png,svg,svg.json}',
+          dest: 'dist/components/assets',
+          warn: true,
+        },
+      ],
     },
     {
       type: 'docs-readme',
