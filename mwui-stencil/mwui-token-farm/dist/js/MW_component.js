@@ -4,7 +4,7 @@
  */
 /**
  * Do not edit directly
- * Generated on Tue, 17 Jan 2023 14:05:47 GMT
+ * Generated on Tue, 17 Jan 2023 14:58:10 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -91,11 +91,12 @@ export const mwComponentSizeToggleSwitchDefaultH = "32px";
 export const mwComponentSizeCheckboxRadiobuttonDefault = "24px";
 export const mwComponentSizeTextFieldMinW = "120px";
 export const mwComponentSizeTextFieldLabelHorizontalWidth = "120px";
+export const mwComponentSizeSliderLabelHorizontalWidth = "120px";
+export const mwComponentSizeSliderHandle = "20px";
+export const mwComponentSizeSliderTrackH = "4px";
 export const mwComponentSizeChipsIcons = "20px";
 export const mwComponentSizeChipsMinW = "64px";
 export const mwComponentSizeChipsHeight = "32px";
-export const mwComponentSizeSliderHandle = "20px";
-export const mwComponentSizeSliderTrackH = "4px";
 export const mwComponentSizeTabsDefaultH = "48px";
 export const mwComponentSizeTabsWithIconH = "64px";
 export const mwComponentSizeMenuItemDefaultH = "56px";
@@ -174,7 +175,7 @@ export const mwComponentTextFieldPaddingLabelVerticalX = "16px";
 export const mwComponentTextFieldPaddingLabelHorizontal = "0px";
 export const mwComponentTextFieldFocused = 1;
 export const mwComponentSliderWithLabelGapWithinY = "8px";
-export const mwComponentSliderPaddingLabelVerticalX = "0px";
+export const mwComponentSliderPaddingLabelX = "0px";
 export const mwComponentSliderHandleHoverGapBetween = "4px";
 export const mwComponentSliderLabelFontFamily = "Poppins";
 export const mwComponentSliderLabelFontWeight = "Regular";

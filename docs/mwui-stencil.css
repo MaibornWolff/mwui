@@ -87,11 +87,12 @@
   --mw-component-size-checkbox-radiobutton-default: 24px;
   --mw-component-size-text-field-min-w: 120px;
   --mw-component-size-text-field-label-horizontal-width: 120px;
+  --mw-component-size-slider-label-horizontal-width: 120px;
+  --mw-component-size-slider-handle: 20px;
+  --mw-component-size-slider-track-h: 4px;
   --mw-component-size-chips-icons: 20px;
   --mw-component-size-chips-min-w: 64px;
   --mw-component-size-chips-height: 32px;
-  --mw-component-size-slider-handle: 20px;
-  --mw-component-size-slider-track-h: 4px;
   --mw-component-size-tabs-default-h: 48px;
   --mw-component-size-tabs-with-icon-h: 64px;
   --mw-component-size-menu-item-default-h: 56px;
@@ -170,7 +171,7 @@
   --mw-component-text-field-padding-label-horizontal: 0px;
   --mw-component-text-field-focused: 2px;
   --mw-component-slider-with-label-gap-within-y: 8px;
-  --mw-component-slider-padding-label-vertical-x: 0px;
+  --mw-component-slider-padding-label-x: 0px;
   --mw-component-slider-handle-hover-gap-between: 4px;
   --mw-component-slider-label-font-family: Poppins;
   --mw-component-slider-label-font-weight: 400;

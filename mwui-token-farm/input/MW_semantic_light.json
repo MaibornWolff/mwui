@@ -416,6 +416,24 @@
             }
           }
         },
+        "slider": {
+          "label": {
+            "horizontal": {
+              "width": {
+                "value": 120,
+                "type": "sizing"
+              }
+            }
+          },
+          "handle": {
+            "value": 20,
+            "type": "sizing"
+          },
+          "trackH": {
+            "value": 4,
+            "type": "sizing"
+          }
+        },
         "chips": {
           "icons": {
             "value": 20,
@@ -427,16 +445,6 @@
           },
           "height": {
             "value": 32,
-            "type": "sizing"
-          }
-        },
-        "slider": {
-          "handle": {
-            "value": 20,
-            "type": "sizing"
-          },
-          "trackH": {
-            "value": 4,
             "type": "sizing"
           }
         },
@@ -817,7 +825,7 @@
       },
       "slider": {
         "padding": {
-          "labelVerticalX": {
+          "labelX": {
             "value": 0,
             "type": "spacing"
           }
