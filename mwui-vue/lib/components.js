@@ -99,6 +99,13 @@ export const MwPopover = defineContainer('mw-popover', undefined, [
     'noPadding',
     'name'
 ]);
+export const MwRadioButton = defineContainer('mw-radio-button', undefined, [
+    'disabled',
+    'checked',
+    'value',
+    'name',
+    'testId'
+]);
 export const MwSwitch = defineContainer('mw-switch', undefined, [
     'testId',
     'disabled',
