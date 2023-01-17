@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 17 Jan 2023 09:02:52 GMT
+ * Generated on Tue, 17 Jan 2023 09:53:28 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -386,6 +386,14 @@ export const mwComponentHeaderTitleFontFamily = "Poppins";
 export const mwComponentHeaderTitleFontWeight = "Regular";
 export const mwComponentHeaderTitleLineHeight = 48;
 export const mwComponentHeaderTitleFontSize = 24;
+export const mwComponentLogInTitleFontFamily = "Poppins";
+export const mwComponentLogInTitleFontWeight = "SemiBold";
+export const mwComponentLogInTitleFontSize = 40;
+export const mwComponentLogInTitleLineHeight = 60;
+export const mwComponentLogInMarginXy = "64px";
+export const mwComponentLogInContentGapWithin = "16px";
+export const mwComponentLogInSignUpGapWithin = "4px";
+export const mwComponentLogInBgDefault = "#ffffff";
 export const mwSemanticColorBorderDisabled = "#79868b";
 export const mwSemanticColorBorderDefault = "#001418";
 export const mwSemanticColorBorderSubtle = "#B1BABE";

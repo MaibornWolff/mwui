@@ -386,6 +386,14 @@
   --mw-component-header-title-font-weight: 400;
   --mw-component-header-title-line-height: 48px;
   --mw-component-header-title-font-size: 24px;
+  --mw-component-log-in-title-font-family: Poppins;
+  --mw-component-log-in-title-font-weight: 600;
+  --mw-component-log-in-title-font-size: 40px;
+  --mw-component-log-in-title-line-height: 60px;
+  --mw-component-log-in-margin-xy: 64px;
+  --mw-component-log-in-content-gap-within: 16px;
+  --mw-component-log-in-sign-up-gap-within: 4px;
+  --mw-component-log-in-bg-default: #ffffff;
   --mw-semantic-color-border-disabled: #79868b;
   --mw-semantic-color-border-default: #001418;
   --mw-semantic-color-border-subtle: #B1BABE;

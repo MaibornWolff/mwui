@@ -1822,6 +1822,48 @@
             "type": "fontSize"
           }
         }
+      },
+      "logIn": {
+        "title": {
+          "fontFamily": {
+            "value": "Poppins",
+            "type": "fontFamily"
+          },
+          "fontWeight": {
+            "value": "SemiBold",
+            "type": "fontWeight"
+          },
+          "fontSize": {
+            "value": 40,
+            "type": "fontSize"
+          },
+          "lineHeight": {
+            "value": 60,
+            "type": "lineHeight"
+          }
+        },
+        "marginXY": {
+          "value": 64,
+          "type": "spacing"
+        },
+        "content": {
+          "gapWithin": {
+            "value": 16,
+            "type": "spacing"
+          }
+        },
+        "signUp": {
+          "gapWithin": {
+            "value": 4,
+            "type": "spacing"
+          }
+        },
+        "bg": {
+          "default": {
+            "value": "#ffffff",
+            "type": "color"
+          }
+        }
       }
     },
     "semantic": {
