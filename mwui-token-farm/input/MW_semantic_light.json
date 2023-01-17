@@ -430,6 +430,12 @@
             "type": "sizing"
           }
         },
+        "slider": {
+          "handle": {
+            "value": 20,
+            "type": "sizing"
+          }
+        },
         "tabs": {
           "defaultH": {
             "value": 48,
@@ -1784,6 +1790,24 @@
         }
       },
       "slider": {
+        "label": {
+          "fontFamily": {
+            "value": "Poppins",
+            "type": "fontFamily"
+          },
+          "fontWeight": {
+            "value": "Regular",
+            "type": "fontWeight"
+          },
+          "lineHeight": {
+            "value": 16,
+            "type": "lineHeight"
+          },
+          "fontSize": {
+            "value": 12,
+            "type": "fontSize"
+          }
+        },
         "border": {
           "focused": {
             "value": "[object Object]",
@@ -1812,6 +1836,10 @@
         },
         "defaultInactive": {
           "value": "#F9E2EE",
+          "type": "color"
+        },
+        "fg": {
+          "value": "#ffffff",
           "type": "color"
         }
       },
@@ -2222,6 +2250,10 @@
           "label": {
             "sm": {
               "value": 14,
+              "type": "fontSizes"
+            },
+            "xs": {
+              "value": 12,
               "type": "fontSizes"
             },
             "md": {

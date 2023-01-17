@@ -90,6 +90,7 @@
   --mw-component-size-chips-icons: 20px;
   --mw-component-size-chips-min-w: 64px;
   --mw-component-size-chips-height: 32px;
+  --mw-component-size-slider-handle: 20px;
   --mw-component-size-tabs-default-h: 48px;
   --mw-component-size-tabs-with-icon-h: 64px;
   --mw-component-size-menu-item-default-h: 56px;
@@ -378,6 +379,10 @@
   --mw-component-tabs-padding-x: 24px;
   --mw-component-tabs-gap-within: 4px;
   --mw-component-tabs-border-focused: [object Object];
+  --mw-component-slider-label-font-family: Poppins;
+  --mw-component-slider-label-font-weight: 400;
+  --mw-component-slider-label-line-height: 16px;
+  --mw-component-slider-label-font-size: 12px;
   --mw-component-slider-border-focused: [object Object];
   --mw-component-slider-default-active: #ed2985;
   --mw-component-slider-hover: #c42177;
@@ -385,6 +390,7 @@
   --mw-component-slider-focus: #c42177;
   --mw-component-slider-disabled-inactive: #CFD6D8;
   --mw-component-slider-default-inactive: #F9E2EE;
+  --mw-component-slider-fg: #ffffff;
   --mw-component-header-padding-x: 24px;
   --mw-component-header-gap-within: 12px;
   --mw-component-header-bg-default: #1d184b;
@@ -467,6 +473,7 @@
   --mw-semantic-font-font-size-h2-regular: 64px;
   --mw-semantic-font-font-size-subtitle-regular: 24px;
   --mw-semantic-font-font-size-label-sm: 14px;
+  --mw-semantic-font-font-size-label-xs: 12px;
   --mw-semantic-font-font-size-label-md: 16px;
   --mw-semantic-font-font-size-label-lg: 20px;
   --mw-semantic-font-font-size-label-xl: 24px;

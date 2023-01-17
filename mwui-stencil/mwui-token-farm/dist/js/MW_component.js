@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 17 Jan 2023 10:40:38 GMT
+ * Generated on Tue, 17 Jan 2023 10:59:04 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -90,6 +90,7 @@ export const mwComponentSizeTextFieldLabelHorizontalWidth = "120px";
 export const mwComponentSizeChipsIcons = "20px";
 export const mwComponentSizeChipsMinW = "64px";
 export const mwComponentSizeChipsHeight = "32px";
+export const mwComponentSizeSliderHandle = "20px";
 export const mwComponentSizeTabsDefaultH = "48px";
 export const mwComponentSizeTabsWithIconH = "64px";
 export const mwComponentSizeMenuItemDefaultH = "56px";
@@ -378,6 +379,10 @@ export const mwComponentTabsBgHover = "#EEF1F3";
 export const mwComponentTabsPaddingX = "24px";
 export const mwComponentTabsGapWithin = "4px";
 export const mwComponentTabsBorderFocused = "[object Object]";
+export const mwComponentSliderLabelFontFamily = "Poppins";
+export const mwComponentSliderLabelFontWeight = "Regular";
+export const mwComponentSliderLabelLineHeight = 16;
+export const mwComponentSliderLabelFontSize = 12;
 export const mwComponentSliderBorderFocused = "[object Object]";
 export const mwComponentSliderDefaultActive = "#ed2985";
 export const mwComponentSliderHover = "#c42177";
@@ -385,6 +390,7 @@ export const mwComponentSliderDisabled = "#95a0a4";
 export const mwComponentSliderFocus = "#c42177";
 export const mwComponentSliderDisabledInactive = "#CFD6D8";
 export const mwComponentSliderDefaultInactive = "#F9E2EE";
+export const mwComponentSliderFg = "#ffffff";
 export const mwComponentHeaderPaddingX = "24px";
 export const mwComponentHeaderGapWithin = "12px";
 export const mwComponentHeaderBgDefault = "#1d184b";
@@ -467,6 +473,7 @@ export const mwSemanticFontFontSizeH3Regular = "56px";
 export const mwSemanticFontFontSizeH2Regular = "64px";
 export const mwSemanticFontFontSizeSubtitleRegular = "24px";
 export const mwSemanticFontFontSizeLabelSm = "14px";
+export const mwSemanticFontFontSizeLabelXs = "12px";
 export const mwSemanticFontFontSizeLabelMd = "16px";
 export const mwSemanticFontFontSizeLabelLg = "20px";
 export const mwSemanticFontFontSizeLabelXl = "24px";
