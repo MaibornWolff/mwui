@@ -1,4 +1,7 @@
-
+/*!
+ * Built with Stencil
+ * Copyright (c) Maibornwolff GmbH.
+ */
 (function() {
   function checkSupport() {
   if (!document.body) {
