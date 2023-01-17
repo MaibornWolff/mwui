@@ -378,6 +378,13 @@
   --mw-component-tabs-padding-x: 24px;
   --mw-component-tabs-gap-within: 4px;
   --mw-component-tabs-border-focused: [object Object];
+  --mw-component-slider-border-focused: [object Object];
+  --mw-component-slider-default-active: #ed2985;
+  --mw-component-slider-hover: #c42177;
+  --mw-component-slider-disabled: #95a0a4;
+  --mw-component-slider-focus: #c42177;
+  --mw-component-slider-disabled-inactive: #CFD6D8;
+  --mw-component-slider-default-inactive: #F9E2EE;
   --mw-component-header-padding-x: 24px;
   --mw-component-header-gap-within: 12px;
   --mw-component-header-bg-default: #1d184b;
@@ -394,7 +401,6 @@
   --mw-component-log-in-content-gap-within: 16px;
   --mw-component-log-in-sign-up-gap-within: 4px;
   --mw-component-log-in-bg-default: #ffffff;
-  --mw-component-slider-active: #ed2985;
   --mw-semantic-color-border-disabled: #79868b;
   --mw-semantic-color-border-default: #001418;
   --mw-semantic-color-border-subtle: #B1BABE;
