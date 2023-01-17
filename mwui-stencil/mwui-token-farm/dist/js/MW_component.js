@@ -4,7 +4,7 @@
  */
 /**
  * Do not edit directly
- * Generated on Tue, 17 Jan 2023 13:41:33 GMT
+ * Generated on Tue, 17 Jan 2023 14:05:47 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -173,6 +173,23 @@ export const mwComponentTextFieldPaddingHelperTextL = "16px";
 export const mwComponentTextFieldPaddingLabelVerticalX = "16px";
 export const mwComponentTextFieldPaddingLabelHorizontal = "0px";
 export const mwComponentTextFieldFocused = 1;
+export const mwComponentSliderWithLabelGapWithinY = "8px";
+export const mwComponentSliderPaddingLabelVerticalX = "0px";
+export const mwComponentSliderHandleHoverGapBetween = "4px";
+export const mwComponentSliderLabelFontFamily = "Poppins";
+export const mwComponentSliderLabelFontWeight = "Regular";
+export const mwComponentSliderLabelLineHeight = 16;
+export const mwComponentSliderLabelFontSize = 12;
+export const mwComponentSliderBorderFocused = "[object Object]";
+export const mwComponentSliderDefaultActive = "#ed2985";
+export const mwComponentSliderHover = "#c42177";
+export const mwComponentSliderDisabled = "#95a0a4";
+export const mwComponentSliderFocus = "#c42177";
+export const mwComponentSliderDisabledInactive = "#CFD6D8";
+export const mwComponentSliderDefaultInactive = "#F9E2EE";
+export const mwComponentSliderFg = "#ffffff";
+export const mwComponentSliderPressed = "#991766";
+export const mwComponentSliderIconsDefault = "#44555b";
 export const mwComponentMenuItemTitleFontFamily = "Poppins";
 export const mwComponentMenuItemTitleFontWeight = "Regular";
 export const mwComponentMenuItemTitleLineHeight = 24;
@@ -194,20 +211,6 @@ export const mwComponentMenuItemFgPressed = "#991766";
 export const mwComponentMenuItemBgDefault = "#ffffff";
 export const mwComponentMenuItemBorderFocused = "#001418";
 export const mwComponentMenuItemGapBetween = "0px";
-export const mwComponentSliderHandleHoverGapBetween = "4px";
-export const mwComponentSliderLabelFontFamily = "Poppins";
-export const mwComponentSliderLabelFontWeight = "Regular";
-export const mwComponentSliderLabelLineHeight = 16;
-export const mwComponentSliderLabelFontSize = 12;
-export const mwComponentSliderBorderFocused = "[object Object]";
-export const mwComponentSliderDefaultActive = "#ed2985";
-export const mwComponentSliderHover = "#c42177";
-export const mwComponentSliderDisabled = "#95a0a4";
-export const mwComponentSliderFocus = "#c42177";
-export const mwComponentSliderDisabledInactive = "#CFD6D8";
-export const mwComponentSliderDefaultInactive = "#F9E2EE";
-export const mwComponentSliderFg = "#ffffff";
-export const mwComponentSliderPressed = "#991766";
 export const mwComponentListItemTitleFontFamily = "Poppins";
 export const mwComponentListItemTitleFontWeight = "Regular";
 export const mwComponentListItemTitleLineHeight = 24;
