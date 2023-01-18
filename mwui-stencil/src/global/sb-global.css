@@ -1,11 +1,11 @@
 #mwui-logo {
   animation: fadeIn 1s;
   transition: all 0.5s ease;
-  opacity: 0.2;
+  opacity: 1;
 }
 
 #mwui-logo img {
-  filter: sepia(100%) hue-rotate(300deg) saturate(400%)
+  /* filter: sepia(100%) hue-rotate(300deg) saturate(400%); */
 }
 
 @keyframes fadeIn {
@@ -13,6 +13,6 @@
     opacity: 0;
   }
   100% {
-    opacity: 0.2;
+    opacity: 1;
   }
 }
