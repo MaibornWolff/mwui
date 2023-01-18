@@ -42,7 +42,5 @@ Color.args = {
   color: '#ff00ff',
 };
 
-const GalleryTemplate = args => '<mw-icon-gallery></mw-icon-gallery>';
+const GalleryTemplate = () => '<mw-icon-gallery></mw-icon-gallery>';
 export const IconGallery = GalleryTemplate.bind({});
-
-IconGallery.args = {};
