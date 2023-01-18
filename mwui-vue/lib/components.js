@@ -73,7 +73,8 @@ export const MwIcon = defineContainer('mw-icon', undefined, [
     'icon',
     'size',
     'fill',
-    'stroke'
+    'color',
+    'weight'
 ]);
 export const MwIconGallery = defineContainer('mw-icon-gallery', undefined);
 export const MwMenu = defineContainer('mw-menu', undefined, [
