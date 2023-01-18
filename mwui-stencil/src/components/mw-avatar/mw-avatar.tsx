@@ -1,6 +1,6 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 
-export type Size = 'large' | 'medium' | 'small' | 'x-small';
+export type Size = 'x-large' | 'large' | 'medium' | 'small' | 'x-small';
 
 @Component({
   tag: 'mw-avatar',

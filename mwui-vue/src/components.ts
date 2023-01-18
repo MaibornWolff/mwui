@@ -104,7 +104,8 @@ export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>('mw-icon', undef
   'icon',
   'size',
   'fill',
-  'stroke'
+  'color',
+  'weight'
 ]);
 
 

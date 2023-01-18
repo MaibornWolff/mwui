@@ -1,20 +1,26 @@
 import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import '../../global/global.css';
 
 # Icons
+
+The `mw-icon` component is a wrapper for [Material Symbols](https://developers.google.com/fonts/docs/material_symbols) made available via webfonts. Material Symbols bring variable font styles (fill, weight, grade, and optical size).
+Those font styles can be configured with the `mw-icon` props and come with default values.
+
+Available icons can be found in the MWUI internal [Icon Gallery](#available-icons). We use the same names as the Material Font does. However you might want to reference to this Storybooks docs about available icons and options as the underlying Icon Library might be swapped if necessary.
 
 <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'space-between' }}>
   <div style={{ width: '50%' }}>
     <p>
-      The <code>mw-icon</code> component displays an icon in different sizes large, medium, small and x-small.
+      The <code>mw-icon</code> component displays an icon in different sizes x-large, large, medium, small and x-small.
     </p>
 
   </div>
   <div style={{ width: '40%' }}>
     <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'start' }}>
-      <mw-icon icon="placeholder" size="x-small"></mw-icon>
-      <mw-icon icon="placeholder" size="small"></mw-icon>
-      <mw-icon icon="placeholder" size="medium"></mw-icon>
-      <mw-icon icon="placeholder" size="large"></mw-icon>
+      <mw-icon icon="favorite" size="x-small"></mw-icon>
+      <mw-icon icon="favorite" size="small"></mw-icon>
+      <mw-icon icon="favorite" size="medium"></mw-icon>
+      <mw-icon icon="favorite" size="large"></mw-icon>
     </div>
   </div>
 </div>
@@ -23,8 +29,25 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
   <Story id="components-icon--default" />
 </Canvas>
 
+## Variable Font Style
+
+As we use [Material Symbols](https://developers.google.com/fonts/docs/material_symbols), this icon font has variable styles that can be adjusted: **fill, weight, grade, and optical size**. The icon component leverages the usage and combines font-size and optical size. The **font-size**, however, can always be set individually using CSS.
+
+> For most cases the default values provided by `mw-icon` should fit.
+
+If there is a need to make use of the variable styles, just provide the props needed as described below. Find more information about the usage at Material Symbols guide: [font axes/variable styles](https://developers.google.com/fonts/docs/material_symbols).
+
+<Canvas>
+  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'start' }}>
+    <mw-icon icon="favorite" fill size="large"></mw-icon>
+    <mw-icon icon="favorite" weight="700" size="large"></mw-icon>
+    <mw-icon icon="favorite" weight="100" size="large"></mw-icon>
+    <mw-icon icon="favorite" size="large"></mw-icon>
+  </div>
+</Canvas>
+
 <ArgsTable of="mw-icon" />
 
-### Available Icons
+## Available Icons
 
 <mw-icon-gallery></mw-icon-gallery>

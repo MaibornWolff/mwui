@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-17T13:41:49",
+  "timestamp": "2023-01-18T10:23:02",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -49,7 +49,7 @@
         },
         {
           "name": "size",
-          "type": "\"large\" | \"medium\" | \"small\" | \"x-small\"",
+          "type": "\"large\" | \"medium\" | \"small\" | \"x-large\" | \"x-small\"",
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
@@ -67,6 +67,10 @@
             },
             {
               "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "x-large",
               "type": "string"
             },
             {
@@ -382,15 +386,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-icon-gallery"
-      ],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "mw-icon-gallery": [
-          "mw-card"
-        ]
-      }
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
@@ -407,15 +405,9 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-icon-gallery"
-      ],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "mw-icon-gallery": [
-          "mw-card-body"
-        ]
-      }
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
@@ -1095,17 +1087,33 @@
       "usage": {},
       "props": [
         {
-          "name": "fill",
+          "name": "color",
           "type": "string",
           "mutable": false,
-          "attr": "fill",
+          "attr": "color",
           "reflectToAttr": false,
-          "docs": "Overwrite fill color",
+          "docs": "Icon color",
           "docsTags": [],
-          "default": "'currentColor'",
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "fill",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "fill",
+          "reflectToAttr": false,
+          "docs": "Fill gives you the ability to modify the default icon style. A single icon can render both unfilled and filled states.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": true,
@@ -1130,13 +1138,13 @@
         },
         {
           "name": "size",
-          "type": "\"large\" | \"medium\" | \"small\" | \"x-small\"",
+          "type": "\"large\" | \"medium\" | \"small\" | \"x-large\" | \"x-small\"",
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "Size variant",
+          "docs": "(Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.",
           "docsTags": [],
-          "default": "'medium'",
+          "default": "'small'",
           "values": [
             {
               "value": "large",
@@ -1151,6 +1159,10 @@
               "type": "string"
             },
             {
+              "value": "x-large",
+              "type": "string"
+            },
+            {
               "value": "x-small",
               "type": "string"
             }
@@ -1159,20 +1171,20 @@
           "required": false
         },
         {
-          "name": "stroke",
-          "type": "string",
+          "name": "weight",
+          "type": "number",
           "mutable": false,
-          "attr": "stroke",
+          "attr": "weight",
           "reflectToAttr": false,
-          "docs": "Overwrite stroke color",
+          "docs": "Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.",
           "docsTags": [],
-          "default": "'none'",
+          "default": "400",
           "values": [
             {
-              "type": "string"
+              "type": "number"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         }
       ],
@@ -1227,15 +1239,13 @@
       "dependencies": [
         "mw-textfield",
         "mw-icon",
-        "mw-card",
-        "mw-card-body"
+        "mw-switch"
       ],
       "dependencyGraph": {
         "mw-icon-gallery": [
           "mw-textfield",
           "mw-icon",
-          "mw-card",
-          "mw-card-body"
+          "mw-switch"
         ]
       }
     },
@@ -1886,9 +1896,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "mw-icon-gallery"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-icon-gallery": [
+          "mw-switch"
+        ]
+      }
     },
     {
       "filePath": "./src/components/mw-tab/mw-tab.tsx",

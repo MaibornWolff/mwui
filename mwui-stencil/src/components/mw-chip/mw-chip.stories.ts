@@ -16,7 +16,7 @@ const DefaultTemplate = args => `
 export const Default = DefaultTemplate.bind({});
 Default.args = {
   testId: 'chip',
-  icon: 'placeholder',
+  icon: 'favorite',
 };
 
 const SelectedTemplate = args => `
@@ -26,7 +26,7 @@ const SelectedTemplate = args => `
 export const Selected = SelectedTemplate.bind({});
 Selected.args = {
   testId: 'chip',
-  icon: 'placeholder',
+  icon: 'favorite',
   selected: true,
 };
 

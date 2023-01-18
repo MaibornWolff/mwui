@@ -3,3 +3,7 @@
 :host {
   display: flex;
 }
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+}
