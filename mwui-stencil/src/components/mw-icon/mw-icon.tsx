@@ -1,6 +1,6 @@
-import { Build, Component, Element, h, Host, Prop, State, Watch } from '@stencil/core';
-import { fetchIcon } from './utils';
+import { Component, Element, h, Prop } from '@stencil/core';
 import { Size } from '../mw-avatar/mw-avatar';
+import { mwComponentSizeAvatarsIconXl } from '../../../../mwui-token-farm/dist/js/MW_core';
 import {
   mwComponentSizeAvatarsIconLg,
   mwComponentSizeAvatarsIconMd,
@@ -8,15 +8,25 @@ import {
   mwComponentSizeAvatarsIconXs,
 } from '../../../../mwui-token-farm/dist/js/MW_component';
 
-const getDimensionForSize = (size: Size) =>
+const getOpticalSize = (size: Size) =>
   Number(
     {
-      'large': mwComponentSizeAvatarsIconLg,
-      'medium': mwComponentSizeAvatarsIconMd,
-      'small': mwComponentSizeAvatarsIconSm,
-      'x-small': mwComponentSizeAvatarsIconXs,
-    }[size].replace('px', ''),
+      'x-large': 48,
+      'large': 48,
+      'medium': 40,
+      'small': 24,
+      'x-small': 20,
+    }[size],
   );
+
+const getFontSize = (size: Size) =>
+  ({
+    'x-large': mwComponentSizeAvatarsIconXl,
+    'large': mwComponentSizeAvatarsIconLg,
+    'medium': mwComponentSizeAvatarsIconMd,
+    'small': mwComponentSizeAvatarsIconSm,
+    'x-small': mwComponentSizeAvatarsIconXs,
+  }[size]);
 
 @Component({
   assetsDirs: ['./assets'],
@@ -24,105 +34,45 @@ const getDimensionForSize = (size: Size) =>
   styleUrl: 'mw-icon.css',
   shadow: true,
 })
-export class LibraryNameIcon {
+export class MwIcon {
   @Element() el: HTMLElement;
   /**
    * The icon name to be rendered
    */
   @Prop() icon: string = null;
   /**
-   * Size variant
+   * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
    */
-  @Prop() size: Size = 'medium';
+  @Prop() size: Size = 'small';
   /**
-   * Overwrite fill color
+   * Fill gives you the ability to modify the default icon style. A single icon can render both unfilled and filled states.
    */
-  @Prop() fill?: string = 'currentColor';
+  @Prop() fill?: boolean = false;
   /**
-   * Overwrite stroke color
+   * Icon color
    */
-  @Prop() stroke?: string = 'none';
-
-  @State() private pathData: any[];
-  @State() private visible = false;
-  @State() private baseDimension = getDimensionForSize('medium');
-  private intersectionObserver: IntersectionObserver;
-  private dimension: number;
-  private scale: number;
-
-  connectedCallback(): void {
-    this.waitUntilVisible(() => {
-      this.visible = true;
-      this.loadIconPathData();
-    });
-  }
-
-  disconnectedCallback(): void {
-    if (this.intersectionObserver) {
-      this.intersectionObserver.disconnect();
-      this.intersectionObserver = null;
-    }
-  }
-
-  async componentWillLoad(): Promise<void> {
-    this.loadIconPathData();
-    this.dimension = getDimensionForSize(this.size);
-    this.scale = this.dimension / this.baseDimension;
-  }
+  @Prop() color?: string;
+  /**
+   * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
+   */
+  @Prop() weight: number = 400;
 
   render() {
     return (
-      <Host style={{ height: `${this.dimension}px` }}>
-        <svg
-          style={{ fill: this.fill, stroke: this.stroke }}
-          xmlns="http://www.w3.org/2000/svg"
-          height={this.dimension}
-          width={this.dimension}
-          viewBox={`0 0 ${this.dimension} ${this.dimension}`}
-        >
-          {this.pathData?.map(({ attributes }) => (
-            <path
-              style={{ transform: `scale(${this.scale})` }}
-              d={attributes.d}
-              fill-rule={attributes['fill-rule']}
-              clip-rule={attributes['clip-rules']}
-              stroke-width={attributes['stroke-width']}
-            />
-          ))}
-        </svg>
-      </Host>
+      <span
+        style={{
+          'fontSize': getFontSize(this.size),
+          'color': this.color,
+          'font-variation-settings': `
+      'FILL' ${this.fill ? 1 : 0},
+      'wght' ${this.weight},
+      'GRAD' 0,
+      'opsz' ${getOpticalSize(this.size)}`,
+        }}
+        class="material-symbols-outlined"
+      >
+        {this.icon}
+      </span>
     );
-  }
-
-  @Watch('icon') private async loadIconPathData(): Promise<void> {
-    const { icon, visible } = this;
-
-    if (!Build.isBrowser || !icon || !visible) {
-      return;
-    }
-
-    this.pathData = await fetchIcon({ icon });
-  }
-
-  private waitUntilVisible(callback: () => void): void {
-    if (!Build.isBrowser || typeof window === 'undefined' || !(window as any).IntersectionObserver) {
-      callback();
-      return;
-    }
-
-    this.intersectionObserver = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            this.intersectionObserver.disconnect();
-            this.intersectionObserver = null;
-            callback();
-          }
-        });
-      },
-      { rootMargin: '50px' },
-    );
-
-    this.intersectionObserver.observe(this.el);
   }
 }

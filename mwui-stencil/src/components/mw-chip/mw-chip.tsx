@@ -35,7 +35,6 @@ export class MwChip {
   })
   emitter: EventEmitter;
 
-
   handleClose = (event: Event) => {
     event.stopPropagation();
     if (!this.disabled) {
@@ -60,7 +59,7 @@ export class MwChip {
           onClick={this.handleClick}
           test-id={this.testId}
         >
-          {!!this.icon && <mw-icon icon={this.icon} size="medium"></mw-icon>}
+          {!!this.icon && <mw-icon icon={this.icon} size="small"></mw-icon>}
           <slot></slot>
           {this.showClose && (
             <span onClick={this.handleClose}>

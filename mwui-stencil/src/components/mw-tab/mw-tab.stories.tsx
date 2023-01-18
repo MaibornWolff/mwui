@@ -21,7 +21,7 @@ const Template = args => `
 export const IconLabelEnabled = Template.bind({});
 IconLabelEnabled.args = {
   selected: false,
-  icon: 'placeholder',
+  icon: 'favorite',
   label: 'TAB',
   disabled: false,
 };
@@ -29,7 +29,7 @@ IconLabelEnabled.args = {
 export const IconLabelEnabledSelected = Template.bind({});
 IconLabelEnabledSelected.args = {
   selected: true,
-  icon: 'placeholder',
+  icon: 'favorite',
   label: 'TAB',
   disabled: false,
 };
@@ -37,7 +37,7 @@ IconLabelEnabledSelected.args = {
 export const IconLabelDisabled = Template.bind({});
 IconLabelDisabled.args = {
   selected: false,
-  icon: 'placeholder',
+  icon: 'favorite',
   label: 'TAB',
   disabled: true,
 };
@@ -45,7 +45,7 @@ IconLabelDisabled.args = {
 export const IconEnabled = Template.bind({});
 IconEnabled.args = {
   selected: false,
-  icon: 'placeholder',
+  icon: 'favorite',
   label: '',
   disabled: true,
 };

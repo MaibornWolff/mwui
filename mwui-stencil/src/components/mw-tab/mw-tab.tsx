@@ -14,7 +14,7 @@ export class MwTab {
     return (
       <Host>
         <button disabled={this.disabled} class={`mw-tab ${this.icon && this.label ? 'label-with-icon' : ''} ${this.selected ? 'selected' : ''}`}>
-          {this.icon && <mw-icon icon={this.icon} size="medium"></mw-icon>}
+          {this.icon && <mw-icon icon={this.icon} size="small"></mw-icon>}
           {this.label}
         </button>
       </Host>

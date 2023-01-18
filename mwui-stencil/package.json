@@ -19,13 +19,12 @@
     "loader/"
   ],
   "scripts": {
-    "build": "npm run load-icons && stencil build --docs --docs-json docs.json",
+    "build": "stencil build --docs --docs-json docs.json",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
-    "load-icons": "node ./load-icons.js",
     "build-storybook": "build-storybook public -o ../docs -s www/build"
   },
   "dependencies": {

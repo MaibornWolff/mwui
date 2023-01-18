@@ -200,21 +200,25 @@ export namespace Components {
     }
     interface MwIcon {
         /**
-          * Overwrite fill color
+          * Icon color
          */
-        "fill"?: string;
+        "color"?: string;
+        /**
+          * Fill gives you the ability to modify the default icon style. A single icon can render both unfilled and filled states.
+         */
+        "fill"?: boolean;
         /**
           * The icon name to be rendered
          */
         "icon": string;
         /**
-          * Size variant
+          * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
          */
         "size": Size1;
         /**
-          * Overwrite stroke color
+          * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
          */
-        "stroke"?: string;
+        "weight": number;
     }
     interface MwIconGallery {
     }
@@ -769,21 +773,25 @@ declare namespace LocalJSX {
     }
     interface MwIcon {
         /**
-          * Overwrite fill color
+          * Icon color
          */
-        "fill"?: string;
+        "color"?: string;
+        /**
+          * Fill gives you the ability to modify the default icon style. A single icon can render both unfilled and filled states.
+         */
+        "fill"?: boolean;
         /**
           * The icon name to be rendered
          */
         "icon"?: string;
         /**
-          * Size variant
+          * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
          */
         "size"?: Size1;
         /**
-          * Overwrite stroke color
+          * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
          */
-        "stroke"?: string;
+        "weight"?: number;
     }
     interface MwIconGallery {
     }
