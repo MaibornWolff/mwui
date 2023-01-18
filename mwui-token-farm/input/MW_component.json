@@ -589,28 +589,26 @@
             "value": 0,
             "type": "spacing"
           }
+        },
+        "borderWidth": {
+          "selected": {
+            "value": 0,
+            "type": "borderWidth"
+          },
+          "focused": {
+            "value": "1px+1px",
+            "type": "borderWidth"
+          },
+          "unselected": {
+            "value": "1px+1px",
+            "type": "borderWidth"
+          }
         }
       },
       "checkbox": {
         "borderRadius": {
           "value": "2px",
           "type": "borderRadius"
-        },
-        "selected": {
-          "borderWidth": {
-            "default": {
-              "value": 0,
-              "type": "borderWidth"
-            },
-            "focused": {
-              "value": "1px+1px",
-              "type": "borderWidth"
-            },
-            "unselected": {
-              "value": "1px+1px",
-              "type": "borderWidth"
-            }
-          }
         }
       },
       "controlsWithLabel": {

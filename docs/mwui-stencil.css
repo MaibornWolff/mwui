@@ -123,10 +123,10 @@
   --mw-component-controls-color-label-default: #001418;
   --mw-component-controls-color-label-disabled: #95a0a4;
   --mw-component-controls-padding-all: 0px;
+  --mw-component-controls-border-width-selected: 0px;
+  --mw-component-controls-border-width-focused: 2px;
+  --mw-component-controls-border-width-unselected: 2px;
   --mw-component-checkbox-border-radius: 2px;
-  --mw-component-checkbox-selected-border-width-default: 0px;
-  --mw-component-checkbox-selected-border-width-focused: 2px;
-  --mw-component-checkbox-selected-border-width-unselected: 2px;
   --mw-component-controls-with-label-gap: 12px;
   --mw-component-controls-with-label-padding-y: 12px;
   --mw-component-controls-with-label-padding-l: 0px;
