@@ -8,7 +8,7 @@ export default {
 const Template = () => `
 <div style="display: flex; justify-content: center">
   <div style="text-align: center">
-    <h1>Hello World</h1>
+    <h1>Hello World 01</h1>
     <mw-button label="BUTTON" />
   </div>
 </div>
