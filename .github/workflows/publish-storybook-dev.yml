@@ -35,7 +35,7 @@ jobs:
 
       - name: Push files to target
         run: |
-          yes | cp -rf docs/* docs
+          cp -rf docs/* docs
           git add .
           git commit -m $GITHUB_SHA
           git push
