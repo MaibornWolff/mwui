@@ -26,7 +26,9 @@ jobs:
           path: 'build'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          cd build
+          npm ci
 
       - name: Transform Figma Tokens & Style Dictionary
         run: npm run build-tokens
@@ -48,6 +50,7 @@ jobs:
 
       - name: Push files to target
         run: |
+          cd ..
           cp -rf build/docs/* deploy
           git add .
           git commit -m $GITHUB_SHA
