@@ -302,6 +302,10 @@ export namespace Components {
          */
         "disabled"?: boolean;
         /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
           * Analog to HTML 'name' attribute used to group radios for unique selection
          */
         "name": string;
@@ -888,6 +892,10 @@ declare namespace LocalJSX {
           * Visually and functionally disbale radio button
          */
         "disabled"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
         /**
           * Analog to HTML 'name' attribute used to group radios for unique selection
          */

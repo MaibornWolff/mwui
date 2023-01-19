@@ -28,13 +28,17 @@ export class MwRadio {
    * Should be provided for automated testing
    */
   @Prop() testId: string;
+  /**
+   * Label to be displayed
+   */
+  @Prop() label?: string;
 
   render() {
     return (
       <label test-id={this.testId} class="mw-radio-container">
         <input id="radio-input" type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} />
         <span class="mw-radio"></span>
-        <slot></slot>
+        <span class="mw-radio-label">{this.label}</span>
       </label>
     );
   }
