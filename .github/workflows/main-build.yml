@@ -53,6 +53,7 @@ jobs:
       - name: Push files to target
         run: |
           cp -rf build/docs/* deploy
+          cd deploy
           git add .
           git commit -m $GITHUB_SHA
           git push
