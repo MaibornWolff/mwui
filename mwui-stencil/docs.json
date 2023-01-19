@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-19T10:35:19",
+  "timestamp": "2023-01-19T11:33:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -10,7 +10,7 @@
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-avatar",
-      "readme": "# mw-avatar\r\n\r\n\r\n\r",
+      "readme": "# mw-avatar\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -121,16 +121,20 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-icon"],
+      "dependencies": [
+        "mw-icon"
+      ],
       "dependencyGraph": {
-        "mw-avatar": ["mw-icon"]
+        "mw-avatar": [
+          "mw-icon"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-button/mw-button.tsx",
       "encapsulation": "none",
       "tag": "mw-button",
-      "readme": "# mw-button\r\n\r\n\r\n\r",
+      "readme": "# mw-button\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -310,7 +314,7 @@
       "filePath": "./src/components/mw-card/mw-card.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card",
-      "readme": "# mw-card\r\n\r\n\r\n\r",
+      "readme": "# mw-card\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -390,7 +394,7 @@
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-body",
-      "readme": "# mw-card-body\r\n\r\n\r\n\r",
+      "readme": "# mw-card-body\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -409,7 +413,7 @@
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-footer",
-      "readme": "# mw-card-footer\r\n\r\n\r\n\r",
+      "readme": "# mw-card-footer\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -616,7 +620,7 @@
       "filePath": "./src/components/mw-card-header/mw-card-header.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-header",
-      "readme": "# mw-card-header\r\n\r\n\r\n\r",
+      "readme": "# mw-card-header\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -668,7 +672,7 @@
       "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-image",
-      "readme": "# mw-card-image\r\n\r\n\r\n\r",
+      "readme": "# mw-card-image\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -720,7 +724,7 @@
       "filePath": "./src/components/mw-card-title/mw-card-title.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-title",
-      "readme": "# mw-card-title\r\n\r\n\r\n\r",
+      "readme": "# mw-card-title\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -788,7 +792,7 @@
       "filePath": "./src/components/mw-checkbox/mw-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "mw-checkbox",
-      "readme": "# mw-checkbox\r\n\r\n\r\n\r",
+      "readme": "# mw-checkbox\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -909,16 +913,20 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-icon"],
+      "dependencies": [
+        "mw-icon"
+      ],
       "dependencyGraph": {
-        "mw-checkbox": ["mw-icon"]
+        "mw-checkbox": [
+          "mw-icon"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-chip/mw-chip.tsx",
       "encapsulation": "shadow",
       "tag": "mw-chip",
-      "readme": "# mw-chip\r\n\r\n\r\n\r",
+      "readme": "# mw-chip\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1023,16 +1031,20 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-icon"],
+      "dependencies": [
+        "mw-icon"
+      ],
       "dependencyGraph": {
-        "mw-chip": ["mw-icon"]
+        "mw-chip": [
+          "mw-icon"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-divider/mw-divider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-divider",
-      "readme": "# mw-divider\r\n\r\n\r\n\r",
+      "readme": "# mw-divider\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1069,7 +1081,7 @@
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon",
-      "readme": "# mw-icon\r\n\r\n\r\n\r",
+      "readme": "# mw-icon\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1182,21 +1194,37 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-tab"],
+      "dependents": [
+        "mw-avatar",
+        "mw-checkbox",
+        "mw-chip",
+        "mw-icon-gallery",
+        "mw-tab"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-avatar": ["mw-icon"],
-        "mw-checkbox": ["mw-icon"],
-        "mw-chip": ["mw-icon"],
-        "mw-icon-gallery": ["mw-icon"],
-        "mw-tab": ["mw-icon"]
+        "mw-avatar": [
+          "mw-icon"
+        ],
+        "mw-checkbox": [
+          "mw-icon"
+        ],
+        "mw-chip": [
+          "mw-icon"
+        ],
+        "mw-icon-gallery": [
+          "mw-icon"
+        ],
+        "mw-tab": [
+          "mw-icon"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon-gallery",
-      "readme": "# mw-icon-gallery\r\n\r\n\r\n\r",
+      "readme": "# mw-icon-gallery\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1208,15 +1236,24 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-textfield", "mw-icon", "mw-switch"],
+      "dependencies": [
+        "mw-textfield",
+        "mw-icon",
+        "mw-switch"
+      ],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"]
+        "mw-icon-gallery": [
+          "mw-textfield",
+          "mw-icon",
+          "mw-switch"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-link/mw-link.tsx",
       "encapsulation": "shadow",
       "tag": "mw-link",
+      "readme": "# mw-link\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1252,7 +1289,7 @@
       "filePath": "./src/components/mw-menu/mw-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu",
-      "readme": "# mw-menu\r\n\r\n\r\n\r",
+      "readme": "# mw-menu\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1360,16 +1397,20 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-popover"],
+      "dependencies": [
+        "mw-popover"
+      ],
       "dependencyGraph": {
-        "mw-menu": ["mw-popover"]
+        "mw-menu": [
+          "mw-popover"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-menu-item/mw-menu-item.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-item",
-      "readme": "# mw-menu-item\r\n\r\n\r\n\r",
+      "readme": "# mw-menu-item\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1465,7 +1506,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
-      "readme": "# mw-menu-list\r\n\r\n\r\n\r",
+      "readme": "# mw-menu-list\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1501,7 +1542,7 @@
       "filePath": "./src/components/mw-popover/mw-popover.tsx",
       "encapsulation": "shadow",
       "tag": "mw-popover",
-      "readme": "# mw-popover\r\n\r\n\r\n\r",
+      "readme": "# mw-popover\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1658,17 +1699,21 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-menu"],
+      "dependents": [
+        "mw-menu"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-menu": ["mw-popover"]
+        "mw-menu": [
+          "mw-popover"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-radio/mw-radio.tsx",
       "encapsulation": "none",
-      "tag": "mw-radio-button",
-      "readme": "# mw-radio-button\r\n\r\n\r\n\r",
+      "tag": "mw-radio",
+      "readme": "# mw-radio\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1768,7 +1813,7 @@
       "filePath": "./src/components/mw-switch/mw-switch.tsx",
       "encapsulation": "shadow",
       "tag": "mw-switch",
-      "readme": "# mw-switch\r\n\r\n\r\n\r",
+      "readme": "# mw-switch\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1887,17 +1932,21 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-icon-gallery"],
+      "dependents": [
+        "mw-icon-gallery"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-switch"]
+        "mw-icon-gallery": [
+          "mw-switch"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-tab/mw-tab.tsx",
       "encapsulation": "shadow",
       "tag": "mw-tab",
-      "readme": "# mw-tab\r\n\r\n\r\n\r",
+      "readme": "# mw-tab\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1973,18 +2022,26 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-tabs"],
-      "dependencies": ["mw-icon"],
+      "dependents": [
+        "mw-tabs"
+      ],
+      "dependencies": [
+        "mw-icon"
+      ],
       "dependencyGraph": {
-        "mw-tab": ["mw-icon"],
-        "mw-tabs": ["mw-tab"]
+        "mw-tab": [
+          "mw-icon"
+        ],
+        "mw-tabs": [
+          "mw-tab"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-tabs/mw-tabs.tsx",
       "encapsulation": "shadow",
       "tag": "mw-tabs",
-      "readme": "# mw-tabs\r\n\r\n\r\n\r",
+      "readme": "# mw-tabs\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2030,17 +2087,23 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-tab"],
+      "dependencies": [
+        "mw-tab"
+      ],
       "dependencyGraph": {
-        "mw-tabs": ["mw-tab"],
-        "mw-tab": ["mw-icon"]
+        "mw-tabs": [
+          "mw-tab"
+        ],
+        "mw-tab": [
+          "mw-icon"
+        ]
       }
     },
     {
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
       "encapsulation": "shadow",
       "tag": "mw-textfield",
-      "readme": "# mw-textfield\r\n\r\n\r\n\r",
+      "readme": "# mw-textfield\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2230,10 +2293,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-icon-gallery"],
+      "dependents": [
+        "mw-icon-gallery"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-textfield"]
+        "mw-icon-gallery": [
+          "mw-textfield"
+        ]
       }
     }
   ]
