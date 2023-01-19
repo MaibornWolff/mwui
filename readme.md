@@ -29,10 +29,6 @@ You can find all relevant build steps in the [GitHub Workflow](./.github/workflo
 
 ---
 
-## Publishing and usage in frameworks
-
-_NOT YET PUBLISHED_
-
 ### 0. Versioning
 
 Prior to publishing every update needs to be versioned based on these guidelines:
