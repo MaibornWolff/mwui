@@ -1,7 +1,9 @@
-name: Update Tokens and Build WebComponents
+# builds tokens, stencil and storybook. Will be published via pages in mwui-dev repository
+name: Release - Update Tokens and Build WebComponents
 on:
   push:
-    branches: [main]
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
 permissions:
   contents: write
 jobs:
@@ -18,9 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # - name: Run tests
-      #  run: npm run test
-
       - name: Transform Figma Tokens & Style Dictionary
         run: npm run build-tokens
 
@@ -30,6 +29,7 @@ jobs:
       - name: Generate Storybook
         run: npm run build-storybook
 
+      # Committing the build will trigger the Pages Action for release build of SB
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: ${{ github.event.head_commit.message }}
