@@ -222,6 +222,12 @@ export namespace Components {
     }
     interface MwIconGallery {
     }
+    interface MwLink {
+        /**
+          * URL to where the link should lead
+         */
+        "href": string;
+    }
     interface MwMenu {
         /**
           * Whether the menu is open
@@ -497,6 +503,12 @@ declare global {
         prototype: HTMLMwIconGalleryElement;
         new (): HTMLMwIconGalleryElement;
     };
+    interface HTMLMwLinkElement extends Components.MwLink, HTMLStencilElement {
+    }
+    var HTMLMwLinkElement: {
+        prototype: HTMLMwLinkElement;
+        new (): HTMLMwLinkElement;
+    };
     interface HTMLMwMenuElement extends Components.MwMenu, HTMLStencilElement {
     }
     var HTMLMwMenuElement: {
@@ -565,6 +577,7 @@ declare global {
         "mw-divider": HTMLMwDividerElement;
         "mw-icon": HTMLMwIconElement;
         "mw-icon-gallery": HTMLMwIconGalleryElement;
+        "mw-link": HTMLMwLinkElement;
         "mw-menu": HTMLMwMenuElement;
         "mw-menu-item": HTMLMwMenuItemElement;
         "mw-menu-list": HTMLMwMenuListElement;
@@ -795,6 +808,12 @@ declare namespace LocalJSX {
     }
     interface MwIconGallery {
     }
+    interface MwLink {
+        /**
+          * URL to where the link should lead
+         */
+        "href": string;
+    }
     interface MwMenu {
         /**
           * Whether the menu is open
@@ -979,6 +998,7 @@ declare namespace LocalJSX {
         "mw-divider": MwDivider;
         "mw-icon": MwIcon;
         "mw-icon-gallery": MwIconGallery;
+        "mw-link": MwLink;
         "mw-menu": MwMenu;
         "mw-menu-item": MwMenuItem;
         "mw-menu-list": MwMenuList;
@@ -1007,6 +1027,7 @@ declare module "@stencil/core" {
             "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
             "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
             "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
+            "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
             "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
             "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
             "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;

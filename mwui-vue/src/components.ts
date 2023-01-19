@@ -112,6 +112,11 @@ export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>('mw-icon', undef
 export const MwIconGallery = /*@__PURE__*/ defineContainer<JSX.MwIconGallery>('mw-icon-gallery', undefined);
 
 
+export const MwLink = /*@__PURE__*/ defineContainer<JSX.MwLink>('mw-link', undefined, [
+  'href'
+]);
+
+
 export const MwMenu = /*@__PURE__*/ defineContainer<JSX.MwMenu>('mw-menu', undefined, [
   'testId',
   'placement',

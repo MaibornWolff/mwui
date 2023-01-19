@@ -31,7 +31,7 @@ export class MwAvatar {
 
 export declare interface MwButton extends Components.MwButton {
   /**
-   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. 
+   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
    */
   clickEmitter: EventEmitter<CustomEvent<any>>;
 
@@ -59,7 +59,7 @@ export class MwButton {
 
 export declare interface MwCard extends Components.MwCard {
   /**
-   *  
+   *
    */
   clickEmitter: EventEmitter<CustomEvent<any>>;
 
@@ -190,7 +190,7 @@ export class MwCardTitle {
 
 export declare interface MwCheckbox extends Components.MwCheckbox {
   /**
-   *  
+   *
    */
   emitter: EventEmitter<CustomEvent<any>>;
 
@@ -218,7 +218,7 @@ export class MwCheckbox {
 
 export declare interface MwChip extends Components.MwChip {
   /**
-   *  
+   *
    */
   emitter: EventEmitter<CustomEvent<any>>;
 
@@ -305,6 +305,27 @@ export class MwIconGallery {
 }
 
 
+export declare interface MwLink extends Components.MwLink {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['href']
+})
+@Component({
+  selector: 'mw-link',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['href']
+})
+export class MwLink {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface MwMenu extends Components.MwMenu {}
 
 @ProxyCmp({
@@ -328,7 +349,7 @@ export class MwMenu {
 
 export declare interface MwMenuItem extends Components.MwMenuItem {
   /**
-   *  
+   *
    */
   clickEmitter: EventEmitter<CustomEvent<any>>;
 
@@ -419,7 +440,7 @@ export class MwRadio {
 
 export declare interface MwSwitch extends Components.MwSwitch {
   /**
-   *  
+   *
    */
   emitter: EventEmitter<CustomEvent<any>>;
 
@@ -489,7 +510,7 @@ export class MwTabs {
 
 export declare interface MwTextfield extends Components.MwTextfield {
   /**
-   *  
+   *
    */
   valueChanged: EventEmitter<CustomEvent<string>>;
 
