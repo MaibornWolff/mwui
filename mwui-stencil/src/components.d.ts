@@ -292,7 +292,7 @@ export namespace Components {
          */
         "checked"?: boolean;
         /**
-          * Visually and functionally radio button
+          * Visually and functionally disbale radio button
          */
         "disabled"?: boolean;
         /**
@@ -300,7 +300,7 @@ export namespace Components {
          */
         "name": string;
         /**
-          * Must be provided for automated testing
+          * Should be provided for automated testing
          */
         "testId": string;
         /**
@@ -866,7 +866,7 @@ declare namespace LocalJSX {
          */
         "checked"?: boolean;
         /**
-          * Visually and functionally radio button
+          * Visually and functionally disbale radio button
          */
         "disabled"?: boolean;
         /**
@@ -874,7 +874,7 @@ declare namespace LocalJSX {
          */
         "name"?: string;
         /**
-          * Must be provided for automated testing
+          * Should be provided for automated testing
          */
         "testId"?: string;
         /**

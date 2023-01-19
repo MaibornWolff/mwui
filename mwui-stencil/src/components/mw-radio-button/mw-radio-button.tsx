@@ -9,13 +9,13 @@ import { HTMLStencilElement } from '@stencil/core/internal';
 export class MwRadioButton {
   @Element() hostElement: HTMLStencilElement;
   /**
-   * Visually and functionally radio button
+   * Visually and functionally disbale radio button
    */
   @Prop() disabled?: boolean;
   /**
    * Whether the radio button is checked
    */
-  @Prop({ mutable: true }) checked?: boolean;
+  @Prop({ mutable: true, reflect: true }) checked?: boolean;
   /**
    * Value of the radio button
    */
@@ -25,14 +25,14 @@ export class MwRadioButton {
    */
   @Prop() name: string;
   /**
-   * Must be provided for automated testing
+   * Should be provided for automated testing
    */
   @Prop() testId: string;
 
   render() {
     return (
-      <label class="mw-radio-button-container">
-        <input id="radio-input" type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} test-id={this.testId} />
+      <label test-id={this.testId} class="mw-radio-button-container">
+        <input id="radio-input" type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} />
         <span class="mw-radio-button"></span>
         <slot></slot>
       </label>
