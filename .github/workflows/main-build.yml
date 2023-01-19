@@ -22,6 +22,8 @@ jobs:
 
       - name: Checkout Repo
         uses: actions/checkout@v3
+        with:
+          path: 'build'
 
       - name: Install dependencies
         run: npm ci
@@ -41,11 +43,12 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: maibornwolff/mwui-dev
+          path: 'deploy'
           token: ${{ secrets.PAT }}
 
       - name: Push files to target
         run: |
-          cp -rf docs/* ./
+          cp -rf build/docs/* deploy
           git add .
           git commit -m $GITHUB_SHA
           git push
