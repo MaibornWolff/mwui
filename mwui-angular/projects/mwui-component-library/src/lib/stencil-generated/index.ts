@@ -19,7 +19,7 @@ export const DIRECTIVES = [
   d.MwMenuItem,
   d.MwMenuList,
   d.MwPopover,
-  d.MwRadioButton,
+  d.MwRadio,
   d.MwSwitch,
   d.MwTab,
   d.MwTabs,
