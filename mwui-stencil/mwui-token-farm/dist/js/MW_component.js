@@ -4,7 +4,7 @@
  */
 /**
  * Do not edit directly
- * Generated on Thu, 19 Jan 2023 07:28:51 GMT
+ * Generated on Thu, 19 Jan 2023 08:01:12 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
