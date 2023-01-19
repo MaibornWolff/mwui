@@ -1,0 +1,16 @@
+.mw-link {
+  font-family: var(--mw-component-link-typo-font-family);
+  font-size: var(--mw-component-link-typo-font-size);
+  font-weight: var(--mw-component-link-typo-font-weight);
+  color: var(--mw-component-link-color-fg-default);
+  text-decoration: var(--mw-component-link-typo-text-decoration);
+}
+.mw-link:hover {
+  color: var(--mw-component-link-color-fg-hover);
+}
+.mw-link:focus {
+  color: var(--mw-component-link-color-fg-focused);
+}
+.mw-link:active {
+  color: var(--mw-component-link-color-fg-pressed);
+}
