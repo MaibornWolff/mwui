@@ -1,4 +1,4 @@
-.mw-radio-button-container {
+.mw-radio-container {
   display: flex;
   position: relative;
   cursor: pointer;
@@ -16,7 +16,7 @@
 }
 
 /* Hide the browser's default radio button */
-.mw-radio-button-container input {
+.mw-radio-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -25,7 +25,7 @@
 }
 
 /* Create a custom radio button */
-.mw-radio-button {
+.mw-radio {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -39,12 +39,12 @@
 }
 
 /* Checked */
-.mw-radio-button-container input:checked ~ .mw-radio-button {
+.mw-radio-container input:checked ~ .mw-radio {
   border-width: var(--mw-component-controls-border-width-selected);
   background-color: var(--mw-component-controls-color-bg-selected);
 }
 
-.mw-radio-button-container input:checked ~ .mw-radio-button:after {
+.mw-radio-container input:checked ~ .mw-radio:after {
   content: '';
   border-radius: var(--border-radius-standard-circle);
   height: 8px;
@@ -54,53 +54,53 @@
 
 /* Hover States */
 /* Checked, Hover */
-.mw-radio-button-container:hover input:checked ~ .mw-radio-button {
+.mw-radio-container:hover input:checked ~ .mw-radio {
   background-color: var(--mw-component-controls-color-bg-hover);
 }
 
 /* Unchecked, Hover */
-.mw-radio-button-container:hover input ~ .mw-radio-button {
+.mw-radio-container:hover input ~ .mw-radio {
   background-color: var(--mw-component-controls-color-bg-hover);
 }
 
 /* Pressed States */
 /* Unchecked, Pressed */
-.mw-radio-button-container:active input ~ .mw-radio-button {
+.mw-radio-container:active input ~ .mw-radio {
   background-color: var(--mw-component-controls-color-bg-pressed);
 }
 
 /* Checked, Pressed */
-.mw-radio-button-container:active input:checked ~ .mw-radio-button {
+.mw-radio-container:active input:checked ~ .mw-radio {
   background-color: var(--mw-component-controls-color-bg-pressed);
 }
 
 /* Disabled States */
 /* Disabled, Unchecked */
-.mw-radio-button-container input:disabled ~ .mw-radio-button {
+.mw-radio-container input:disabled ~ .mw-radio {
   border: var(--mw-component-controls-border-width-unselected) solid var(--mw-component-controls-color-outline-disabled);
   background-color: var(--mw-component-controls-color-bg-unselected);
 }
 
-.mw-radio-button-container:has(input:disabled) {
+.mw-radio-container:has(input:disabled) {
   cursor: default;
   color: var(--mw-component-controls-color-label-disabled);
 }
 
 /* Disabled, Checked */
-.mw-radio-button-container input:disabled:checked ~ .mw-radio-button {
+.mw-radio-container input:disabled:checked ~ .mw-radio {
   background-color: var(--mw-component-controls-color-bg-disabled);
   border-width: var(--mw-component-controls-border-width-selected);
 }
 
-.mw-radio-button-container input:disabled:checked ~ .mw-radio-button:after {
+.mw-radio-container input:disabled:checked ~ .mw-radio:after {
   background-color: var(--mw-component-controls-color-fg-disabled);
 }
 
 /* Focus State */
-.mw-radio-button-container input:focus ~ .mw-radio-button {
+.mw-radio-container input:focus ~ .mw-radio {
   border: var(--mw-component-controls-border-width-focused) solid var(--mw-component-controls-color-outline-default);
 }
 
-.mw-radio-button-container input:focus:checked ~ .mw-radio-button {
+.mw-radio-container input:focus:checked ~ .mw-radio {
   background-color: var(--mw-component-controls-color-bg-focused);
 }

@@ -2,11 +2,11 @@ import { Component, Element, h, Prop } from '@stencil/core';
 import { HTMLStencilElement } from '@stencil/core/internal';
 
 @Component({
-  tag: 'mw-radio-button',
-  styleUrl: 'mw-radio-button.css',
+  tag: 'mw-radio',
+  styleUrl: 'mw-radio.css',
   shadow: false,
 })
-export class MwRadioButton {
+export class MwRadio {
   @Element() hostElement: HTMLStencilElement;
   /**
    * Visually and functionally disbale radio button
@@ -31,9 +31,9 @@ export class MwRadioButton {
 
   render() {
     return (
-      <label test-id={this.testId} class="mw-radio-button-container">
+      <label test-id={this.testId} class="mw-radio-container">
         <input id="radio-input" type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} />
-        <span class="mw-radio-button"></span>
+        <span class="mw-radio"></span>
         <slot></slot>
       </label>
     );

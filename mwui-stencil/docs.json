@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-19T10:15:10",
+  "timestamp": "2023-01-19T11:27:44",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -1674,10 +1674,10 @@
       }
     },
     {
-      "filePath": "./src/components/mw-radio-button/mw-radio-button.tsx",
+      "filePath": "./src/components/mw-radio/mw-radio.tsx",
       "encapsulation": "none",
-      "tag": "mw-radio-button",
-      "readme": "# mw-radio-button\n\n\n",
+      "tag": "mw-radio",
+      "readme": "# mw-radio\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1687,7 +1687,7 @@
           "type": "boolean",
           "mutable": true,
           "attr": "checked",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "Whether the radio button is checked",
           "docsTags": [],
           "values": [
@@ -1704,7 +1704,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "Visually and functionally radio button",
+          "docs": "Visually and functionally disbale radio button",
           "docsTags": [],
           "values": [
             {
@@ -1736,7 +1736,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Must be provided for automated testing",
+          "docs": "Should be provided for automated testing",
           "docsTags": [],
           "values": [
             {

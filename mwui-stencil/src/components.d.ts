@@ -286,7 +286,7 @@ export namespace Components {
          */
         "testId": string;
     }
-    interface MwRadioButton {
+    interface MwRadio {
         /**
           * Whether the radio button is checked
          */
@@ -521,11 +521,11 @@ declare global {
         prototype: HTMLMwPopoverElement;
         new (): HTMLMwPopoverElement;
     };
-    interface HTMLMwRadioButtonElement extends Components.MwRadioButton, HTMLStencilElement {
+    interface HTMLMwRadioElement extends Components.MwRadio, HTMLStencilElement {
     }
-    var HTMLMwRadioButtonElement: {
-        prototype: HTMLMwRadioButtonElement;
-        new (): HTMLMwRadioButtonElement;
+    var HTMLMwRadioElement: {
+        prototype: HTMLMwRadioElement;
+        new (): HTMLMwRadioElement;
     };
     interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {
     }
@@ -569,7 +569,7 @@ declare global {
         "mw-menu-item": HTMLMwMenuItemElement;
         "mw-menu-list": HTMLMwMenuListElement;
         "mw-popover": HTMLMwPopoverElement;
-        "mw-radio-button": HTMLMwRadioButtonElement;
+        "mw-radio": HTMLMwRadioElement;
         "mw-switch": HTMLMwSwitchElement;
         "mw-tab": HTMLMwTabElement;
         "mw-tabs": HTMLMwTabsElement;
@@ -860,7 +860,7 @@ declare namespace LocalJSX {
          */
         "testId"?: string;
     }
-    interface MwRadioButton {
+    interface MwRadio {
         /**
           * Whether the radio button is checked
          */
@@ -983,7 +983,7 @@ declare namespace LocalJSX {
         "mw-menu-item": MwMenuItem;
         "mw-menu-list": MwMenuList;
         "mw-popover": MwPopover;
-        "mw-radio-button": MwRadioButton;
+        "mw-radio": MwRadio;
         "mw-switch": MwSwitch;
         "mw-tab": MwTab;
         "mw-tabs": MwTabs;
@@ -1011,7 +1011,7 @@ declare module "@stencil/core" {
             "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
             "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
             "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
-            "mw-radio-button": LocalJSX.MwRadioButton & JSXBase.HTMLAttributes<HTMLMwRadioButtonElement>;
+            "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
             "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
             "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
             "mw-tabs": LocalJSX.MwTabs & JSXBase.HTMLAttributes<HTMLMwTabsElement>;
