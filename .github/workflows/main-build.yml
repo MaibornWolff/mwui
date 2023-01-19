@@ -26,24 +26,20 @@ jobs:
           path: 'build'
 
       - name: Install dependencies
-        run: |
-          cd build
-          npm ci
+        working-directory: ./build
+        run: npm ci
 
       - name: Transform Figma Tokens & Style Dictionary
-        run: |
-          cd build
-          npm run build-tokens
+        working-directory: ./build
+        run: npm run build-tokens
 
       - name: Build Stencil
-        run: |
-          cd build
-          npm run build-stencil
+        working-directory: ./build
+        run:  npm run build-stencil
 
       - name: Generate Storybook
-        run: |
-          cd build
-          npm run build-storybook
+        working-directory: ./build
+        run: npm run build-storybook
 
       # do not persist build (done in release action)
       # checkout and push storybook build to mwui-dev
