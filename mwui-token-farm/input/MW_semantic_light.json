@@ -396,10 +396,28 @@
             "type": "sizing"
           }
         },
-        "checkbox-radiobutton": {
-          "default": {
-            "value": 24,
-            "type": "sizing"
+        "controls": {
+          "checkbox-radiobutton": {
+            "container": {
+              "value": 24,
+              "type": "sizing"
+            }
+          },
+          "radiobutton": {
+            "outline": {
+              "value": 20,
+              "type": "sizing"
+            },
+            "fill": {
+              "value": 8,
+              "type": "sizing"
+            }
+          },
+          "checkbox": {
+            "box": {
+              "value": 20,
+              "type": "sizing"
+            }
           }
         },
         "textField": {

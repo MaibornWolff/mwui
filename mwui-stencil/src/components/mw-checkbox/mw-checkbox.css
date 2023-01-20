@@ -19,8 +19,8 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  width: var(--mw-component-size-checkbox-radiobutton-default);
-  height: var(--mw-component-size-checkbox-radiobutton-default);
+  width: var(--mw-component-size-controls-checkbox-radiobutton-container);
+  height: var(--mw-component-size-controls-checkbox-radiobutton-container);
   border-radius: var(--mw-component-checkbox-border-radius);
   display: flex;
   justify-content: center;
@@ -82,6 +82,7 @@ input:focus + .mw-checkbox.selected.enabled {
 }
 /* Selected */
 .mw-checkmark.selected {
+  height: var(--mw-component-size-controls-checkbox-radiobutton-container);
   display: unset;
 }
 
