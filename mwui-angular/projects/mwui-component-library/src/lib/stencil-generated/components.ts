@@ -421,13 +421,13 @@ export declare interface MwRadio extends Components.MwRadio {}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['checked', 'disabled', 'name', 'testId', 'value']
+  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
 })
 @Component({
   selector: 'mw-radio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'name', 'testId', 'value']
+  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
 })
 export class MwRadio {
   protected el: HTMLElement;

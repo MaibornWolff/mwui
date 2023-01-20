@@ -4,7 +4,7 @@
  */
 /**
  * Do not edit directly
- * Generated on Thu, 19 Jan 2023 09:30:16 GMT
+ * Generated on Fri, 20 Jan 2023 14:00:16 GMT
  */
 export const mwComponentButtonFilledColorBgDefault = "#ed2985";
 export const mwComponentButtonFilledColorBgHover = "#c42177";
@@ -88,7 +88,10 @@ export const mwComponentSizeButtonIconLg = "32px";
 export const mwComponentSizeButtonIconXl = "48px";
 export const mwComponentSizeToggleSwitchDefaultW = "52px";
 export const mwComponentSizeToggleSwitchDefaultH = "32px";
-export const mwComponentSizeCheckboxRadiobuttonDefault = "24px";
+export const mwComponentSizeControlsCheckboxRadiobuttonContainer = "24px";
+export const mwComponentSizeControlsRadiobuttonOutline = "20px";
+export const mwComponentSizeControlsRadiobuttonFill = "8px";
+export const mwComponentSizeControlsCheckboxBox = "20px";
 export const mwComponentSizeTextFieldMinW = "120px";
 export const mwComponentSizeTextFieldLabelHorizontalWidth = "120px";
 export const mwComponentSizeSliderLabelHorizontalWidth = "120px";

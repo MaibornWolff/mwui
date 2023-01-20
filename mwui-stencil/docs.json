@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-19T11:33:42",
+  "timestamp": "2023-01-20T14:00:34",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.21.0",
@@ -1745,6 +1745,22 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": true,

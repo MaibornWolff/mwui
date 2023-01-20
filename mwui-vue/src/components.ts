@@ -153,7 +153,8 @@ export const MwRadio = /*@__PURE__*/ defineContainer<JSX.MwRadio>('mw-radio', un
   'checked',
   'value',
   'name',
-  'testId'
+  'testId',
+  'label'
 ]);
 
 
