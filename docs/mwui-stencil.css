@@ -85,7 +85,10 @@
   --mw-component-size-button-icon-xl: 48px;
   --mw-component-size-toggle-switch-default-w: 52px;
   --mw-component-size-toggle-switch-default-h: 32px;
-  --mw-component-size-checkbox-radiobutton-default: 24px;
+  --mw-component-size-controls-checkbox-radiobutton-container: 24px;
+  --mw-component-size-controls-radiobutton-outline: 20px;
+  --mw-component-size-controls-radiobutton-fill: 8px;
+  --mw-component-size-controls-checkbox-box: 20px;
   --mw-component-size-text-field-min-w: 120px;
   --mw-component-size-text-field-label-horizontal-width: 120px;
   --mw-component-size-slider-label-horizontal-width: 120px;
