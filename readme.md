@@ -11,14 +11,14 @@
 A web component library as part of the MW Design System project <strong>The Liberation Machine</strong>. Using Figma Token Studio plugin, we create modifiable Design Systems connected to a ready-to-use Web Component Library.
 
 
-### Storybook
+## Storybook
 
 | Environment | URL                                     | Description                                                                                    |
 | ----------- | --------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | Dev         | https://maibornwolff.github.io/mwui-dev | Reflects the current state of the main branch and updates automatically with changes in Figma. |
 | Prod        | https://maibornwolff.github.io/mwui     | Reflects the state released on [npm](https://www.npmjs.com/search?q=%40maibornwolff%2Fmwui).   |
 
-### The Design System Pipeline
+## The Design System Pipeline
 
 All the Components are developed based on the mwui Design System in Figma. We use `Design Tokens` to version and synchronize design decisions between the Design and the WebComponents.
 
@@ -26,9 +26,7 @@ The [Token-Farm](mwui-token-farm/README.md) module transforms any changes in the
 
 ![TLM Workflow - Design System Pipeline](tlm_overview.png 'TLM Workflow')
 
-You can find all relevant build steps in the [GitHub Workflow](./.github/workflows/update-tokens.yml).
-
-### Related Docs
+## Related Docs
 
 - [Token-Farm](mwui-token-farm/README.md)
 - [Stencil Library](mwui-stencil/README.md)
@@ -37,7 +35,7 @@ You can find all relevant build steps in the [GitHub Workflow](./.github/workflo
 - [Angular Library](mwui-angular/README.md)
 - [Setup Figma Token Plugin](token-plugin.md)
 
-#### Build & publish Web Component Library
+### Build & publish Web Component Library
 
 To convert the component library into an NPM package, run:
 
@@ -52,7 +50,7 @@ npm run version:{major | minor | patch}
 npm publish --access public
 ```
 
-#### Build & publish framework-specific Web Component Integrations
+### Build & publish framework-specific Web Component Integrations
 
 Perform step 1) and update version of `mwui` in `mwui-react`.
 
@@ -70,7 +68,7 @@ Then, publish to NPM by running:
 npm publish --access public
 ```
 
-#### Usage in React, Vue and Angular
+### Usage in React, Vue and Angular
 
 To leverage the usage of our WebComponents we provide framework-specific wrappers for React, Vue and Angular. You can install and use the mwui Components accordingly:
 
@@ -85,7 +83,7 @@ npm install @maibornwolff/mwui-stencil
 
 For more info on the individual wrappers, check out the [React](mwui-react/README.md), [Vue](mwui-vue/README.md) or [Angular](mwui-angular/README.md) documentation.
 
-#### Use as Web Components
+### Use as Web Components
 
 To install the library within the chosen framework, run:
 
@@ -100,7 +98,7 @@ import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
 defineCustomElements(window);
 ```
 
-#### Styling
+### Styling
 
 To ensure CSS variables are available, import the global stylesheet in you Application root.
 
