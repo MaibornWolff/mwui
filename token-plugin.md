@@ -1,6 +1,8 @@
-# The Liberation Machine - Setup Figma Token Plugin
+# The Liberation Machine - Setup Figma Tokens Studio
 
-The component library uses Figma design tokens to style the components based on a Figma file.
+The component library uses Design Tokens connected via [Figma Tokens Studio](https://docs.tokens.studio/) to style the components based on a Figma file.
+
+![Tokens Studio](https://docs.tokens.studio/header.png)
 
 ## Get started
 
@@ -14,9 +16,10 @@ Download the plugin from [here](https://www.figma.com/community/plugin/843461159
 
 Generate the access token and paste it into the plugin settings. _Do not share this token with anybody!_
 
+
 **Repository:** MaibornWolff/mwui
 
-**Default Branch:** develop
+**Default Branch:** main
 
 **File Path:** mwui-token-farm/input/tokens.json
 
@@ -24,9 +27,12 @@ After saving the settings you can pull the tokens from GitHub using the button i
 
 ## Pushing to GitHub
 
-After making changes to the Figma file (while using design tokens) you can push said changes to GitHub using the plugin.
+After making changes to the Figma file (while using Design Tokens) you can push said changes to GitHub using the plugin.
 
-Click on the 'Push to GitHub' button in the bottom left corner. Make the sure that 'develop' is the selected branch. You have to enter a short message for every commit you push to GitHub. These messages should look like this:
+> **Note**
+> You can also push your changes to some other branch. It won't trigger automatic token transformation and storybook build though.
+
+Click on the 'Push to GitHub' button in the bottom left corner. You have to enter a short message for every commit you push to GitHub. These messages should look like this:
 
 ```
 figma-plugin: change border-radius of buttons to none
