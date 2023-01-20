@@ -3,12 +3,31 @@
 [![npm](https://img.shields.io/npm/v/@maibornwolff/mwui-stencil?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-stencil)
 [![Storybook](https://raw.githubusercontent.com/storybookjs/brand/master/badge/badge-storybook.svg?sanitize=true)](https://maibornwolff.github.io/mwui)
 
-# The Liberation Machine
-## MWUI - Component Library
+<div style="text-align: center; width: 66%; margin: 0 auto; font-family: Poppins; margin-bottom: 100px">
+  <img src="./mwui_logo.svg" alt="mwui logo">
+  <h1 style="margin-top: 0.5em; margin-bottom: 0">The Liberation Machine</h1>
+  <h2 style="margin-top: 0.1em">Web Component Library</h2>
+  A web component library as part of the MW Design System project <strong>The Liberation Machine</strong>. Using Figma Token Studio plugin, we create modifiable Design Systems connected to a ready-to-use Web Component Library.
+</div>
 
-A web component library as part of the MW Design System project **The Liberation Machine** which uses Figma's token plugin to create easily modifiable design systems.
+### Storybook
 
-## Related Docs
+| Environment | URL                                     | Description                                                                                    |
+| ----------- | --------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Dev         | https://maibornwolff.github.io/mwui-dev | Reflects the current state of the main branch and updates automatically with changes in Figma. |
+| Prod        | https://maibornwolff.github.io/mwui     | Reflects the state released on [npm](https://www.npmjs.com/search?q=%40maibornwolff%2Fmwui).   |
+
+### The Design System Pipeline
+
+All the Components are developed based on the mwui Design System in Figma. We use `Design Tokens` to version and synchronize design decisions between the Design and the WebComponents.
+
+The [Token-Farm](mwui-token-farm/README.md) module transforms any changes in the Design Tokens into Style Dictionary outputs which are linked to the respective Web Component.
+
+![TLM Workflow - Design System Pipeline](tlm_overview.png 'TLM Workflow')
+
+You can find all relevant build steps in the [GitHub Workflow](./.github/workflows/update-tokens.yml).
+
+### Related Docs
 
 - [Token-Farm](mwui-token-farm/README.md)
 - [Stencil Library](mwui-stencil/README.md)
@@ -17,53 +36,7 @@ A web component library as part of the MW Design System project **The Liberation
 - [Angular Library](mwui-angular/README.md)
 - [Setup Figma Token Plugin](token-plugin.md)
 
----
-
-## The Design System Pipeline
-
-All the Components are developed based on the mwui Design System in Figma. We use `Design Tokens` to version and synchronize design decisions between the Design and the WebComponents.
-
-The [Token-Farm](mwui-token-farm/README.md) module transforms any changes in the Design Tokens into Style Dictionary outputs which are linked to the respective WebComponent.
-
-You can find all relevant build steps in the [GitHub Workflow](./.github/workflows/update-tokens.yml).
-
----
-
-### 0. Versioning
-
-Prior to publishing every update needs to be versioned based on these guidelines:
-
-<table>
-<thead>
-  <tr>
-    <th colspan="4">Versioning Guide</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td><b>Type</b></td>
-    <td><b>major</b></td>
-    <td><b>minor</b></td>
-    <td><b>patch</b></td>
-  </tr>
-  <tr>
-    <td><b>Example</b></td>
-    <td><b>2</b>.0.0</td>
-    <td>1.<b>2</b>.0</td>
-    <td>1.0.<b>2</b></td>
-  </tr>
-  <tr>
-    <td><b>Rule</b></td>
-    <td>Breaking changes, such as fundamental reworks of existing components.</td>
-    <td>Larger changes, such as the addition of new components or props</td>
-    <td>Minor adjustments, like bug fixes or style adjustments</td>
-  </tr>
-</tbody>
-</table>
-
-All mwui packages need to be on the same version, meaning if `mwui-stencil`'s version increases the versions of `mwui-react`, `mwui-vue` and `mwui-angular` need to be updated as well.
-
-### 1. Publish WebComponent Library
+#### Build & publish Web Component Library
 
 To convert the component library into an NPM package, run:
 
@@ -75,10 +48,10 @@ Then, publish to NPM by running:
 
 ```bash
 npm run version:{major | minor | patch}
-npm publish
+npm publish --access public
 ```
 
-### 2. Publish framework-specific WebComponent Libraries
+#### Build & publish framework-specific Web Component Integrations
 
 Perform step 1) and update version of `mwui` in `mwui-react`.
 
@@ -93,29 +66,30 @@ Then, publish to NPM by running:
 
 ```bash
 # in framework-specific directory, e.g. mwui-react
-npm publish
+npm publish --access public
 ```
 
-### Usage in React, Vue and Angular
+#### Usage in React, Vue and Angular
 
 To leverage the usage of our WebComponents we provide framework-specific wrappers for React, Vue and Angular. You can install and use the mwui Components accordingly:
 
 ```bash
-npm i @maibornwolff/mwui-react # in React
+npm install @maibornwolff/mwui-react # in React
+npm install @maibornwolff/mwui-vue # in Vue
+npm install @maibornwolff/mwui-angular # in Angular
 
-npm i @maibornwolff/mwui-vue # in Vue
-
-npm i @maibornwolff/mwui-angular # in Angular
+# you might also need the core package to have access to global stylings, see [React](mwui-react/README.md) for more information.
+npm install @maibornwolff/mwui-stencil
 ```
 
 For more info on the individual wrappers, check out the [React](mwui-react/README.md), [Vue](mwui-vue/README.md) or [Angular](mwui-angular/README.md) documentation.
 
-### Alternative: Import pure WebComponents
+#### Use as Web Components
 
 To install the library within the chosen framework, run:
 
 ```bash
-npm i @maibornwolff/mwui-stencil
+npm install @maibornwolff/mwui-stencil
 ```
 
 Include the following in the `main.js` (e.g. Angular, Vue) or `index.js` (e.g. React):
@@ -125,4 +99,12 @@ import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
 defineCustomElements(window);
 ```
 
-All available components should now be usable within the framework.
+#### Styling
+
+To ensure CSS variables are available, import the global stylesheet in you Application root.
+
+```javascript
+import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
+```
+
+The CSS variables are used within the Web Components and you can also refer to them styling your own layout and elements.
