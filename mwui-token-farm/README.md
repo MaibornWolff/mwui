@@ -1,10 +1,10 @@
+<img src="https://img.freepik.com/vektoren-kostenlos/herbstlandschaft-mit-scheunenfeld_107791-12992.jpg?w=2000&t=st=1674222809~exp=1674223409~hmac=1fc9f2995095acce97c16a35c10f402076d5ef45daf5f498916507f86b1b6090" alt="token-farm" align="center" height="200" >
+
+# The Liberation Machine - Token Farm
+
 [![npm](https://img.shields.io/npm/v/@maibornwolff/mwui-token-farm?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-token-farm)
 
-# The Liberation Machine
-
-## MWUI - Token Farm
-
-The Token Farm houses the exported tokens from the Figma design file and converts them into variables for our Stencil component library.
+The Token Farm houses the exported tokens from the Figma design file and converts them into variables for our Stencil component library. It's based on [token-transformer](https://www.npmjs.com/package/token-transformer) package and [Style Dictionary](https://github.com/amzn/style-dictionary).
 
 ## Structure
 
@@ -16,7 +16,7 @@ The Token Farm can be configured to output various different file types, such as
 
 ## Workflow
 
-The [update-tokens.yml](https://github.com/MaibornWolff/mwui/blob/f1e251d73e552d90f0c734b5e58b180c5bd5f96d/.github/workflows/update-tokens.yml) workflow executes the Token Farm script whenever a commit is pushed to the `main` branch. Afterwards the Stencil component library is rebuilt with the new tokens and the Storybook is updated.
+The [main-build.yml](https://github.com/MaibornWolff/mwui/blob/f1e251d73e552d90f0c734b5e58b180c5bd5f96d/.github/workflows/main-build.yml) workflow executes the Token Farm script whenever a commit is pushed to the `main` branch. Afterwards the Stencil component library is rebuilt with the new tokens and the Storybook is updated.
 
 ## Using the tokens in the Stencil Library
 
