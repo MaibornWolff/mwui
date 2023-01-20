@@ -17,6 +17,7 @@ export const MwChip = /*@__PURE__*/ createReactComponent('mw-chip');
 export const MwDivider = /*@__PURE__*/ createReactComponent('mw-divider');
 export const MwIcon = /*@__PURE__*/ createReactComponent('mw-icon');
 export const MwIconGallery = /*@__PURE__*/ createReactComponent('mw-icon-gallery');
+export const MwLink = /*@__PURE__*/ createReactComponent('mw-link');
 export const MwMenu = /*@__PURE__*/ createReactComponent('mw-menu');
 export const MwMenuItem = /*@__PURE__*/ createReactComponent('mw-menu-item');
 export const MwMenuList = /*@__PURE__*/ createReactComponent('mw-menu-list');

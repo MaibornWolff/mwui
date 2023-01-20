@@ -1,6 +1,6 @@
 {
   "name": "@maibornwolff/mwui-token-farm",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Transforms figma design tokens to common config files serving different styling frameworks",
   "main": "src/index.ts",
   "module": "dist/tailwind.config.js",
@@ -33,7 +33,7 @@
     "lodash.template": "^4.5.0",
     "postcss-cli": "^9.1.0",
     "style-dictionary": "^3.7.0",
-    "@maibornwolff/mwui-stencil": "^0.1.10",
+    "@maibornwolff/mwui-stencil": "^0.1.11",
     "token-transformer": "^0.0.22",
     "ts-node": "^10.9.1"
   }
