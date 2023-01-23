@@ -1,5 +1,6 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
+  "extends": "../tsconfig.json",
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
@@ -21,12 +22,7 @@
     "lib": [
       "es2020",
       "dom"
-    ],
-    "paths": {
-      "mwui-component-library": [
-        "dist/mwui-component-library"
-      ]
-    }
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
