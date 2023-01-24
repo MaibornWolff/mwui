@@ -1,16 +1,28 @@
 # The Liberation Machine
 
+[![npm](https://img.shields.io/npm/v/@maibornwolff/mwui-angular?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-angular)
+
+# The Liberation Machine
+
 ## MWUI - Angular Integration
-
-Work in Progress
-
-### Required fixes
 
 #### Angular
 
-To enable support for web components in Angular, add the following to the `@NgModule` in `app.module.ts`:
+To use the component library import `MwuiComponentLibraryModule` in `app.module.ts`:
 
 ```TypeScript
-schemas: [CUSTOM_ELEMENTS_SCHEMA];
+  import { MwuiComponentLibraryModule } from "@maibornwolff/mwui-angular/dist/mwui-component-library"
+  
+  @NgModule({
+    declarations: [
+      AppComponent,
+    ],
+    imports: [
+      CommonModule,
+      MwuiComponentLibraryModule,
+    ],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
 ```
 
