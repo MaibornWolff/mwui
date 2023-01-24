@@ -1,5 +1,9 @@
 # The Liberation Machine
 
+[![npm](https://img.shields.io/npm/v/@maibornwolff/mwui-angular?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-angular)
+
+# The Liberation Machine
+
 ## MWUI - Angular Integration
 
 #### Angular
