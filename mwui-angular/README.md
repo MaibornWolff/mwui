@@ -8,7 +8,7 @@
 
 #### Angular
 
-To use the Design-System import `MwuiComponentLibraryModule` in `app.module.ts`:
+To use the component library import `MwuiComponentLibraryModule` in `app.module.ts`:
 
 ```TypeScript
   import { MwuiComponentLibraryModule } from "@maibornwolff/mwui-angular/dist/mwui-component-library"
