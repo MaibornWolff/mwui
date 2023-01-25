@@ -64,10 +64,10 @@ export class MwIcon {
           'fontSize': getFontSize(this.size),
           'color': this.color,
           'font-variation-settings': `
-      'FILL' ${this.fill ? 1 : 0},
-      'wght' ${this.weight},
-      'GRAD' 0,
-      'opsz' ${getOpticalSize(this.size)}`,
+          'FILL' ${this.fill ? 1 : 0},
+          'wght' ${this.weight},
+          'GRAD' 0,
+          'opsz' ${getOpticalSize(this.size)}`,
         }}
         class="material-symbols-outlined"
       >

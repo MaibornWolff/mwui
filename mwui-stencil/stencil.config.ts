@@ -10,6 +10,10 @@ export const config: Config = {
   extras: {
     experimentalImportInjection: true,
   },
+  testing: {
+    coverageDirectory: "./reports",
+    coverageReporters: ["html", "text"],
+  },
   outputTargets: [
     react({
       componentCorePackage: '@maibornwolff/mwui-stencil',
