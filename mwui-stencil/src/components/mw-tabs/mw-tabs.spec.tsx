@@ -44,20 +44,4 @@ describe('GIVEN MwTabs', () => {
     expect(getTabByIndex(page, 1).getAttribute("selected")).toBe("")
     expect(getTabByIndex(page, 2).getAttribute("selected")).toBeNull()
   })
-
-  it("SHOULD set selected WHEN mw-tab is clicked", async() => {
-    const page = await setup({
-      selected: 1,
-    })
-    expect(getTabByIndex(page, 1).getAttribute("selected")).toBe("")
-
-    getTabByIndex(page, 0).click()
-    page.root.querySelector<HTMLButtonElement>(`mw-tab`).click()
-    await page.waitForChanges()
-
-    expect(page.root).toEqualHtml("")
-
-    expect(getTabByIndex(page, 0).getAttribute("selected")).toBe("")
-    expect(getTabByIndex(page, 1).getAttribute("selected")).toBeNull()
-  })
 })

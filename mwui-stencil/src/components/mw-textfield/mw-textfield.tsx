@@ -69,7 +69,6 @@ export class MwTextfield {
   };
 
   private onFocus = () => {
-    console.log('onfocus');
     this.inputElement.focus();
     this.focused = true;
   };
