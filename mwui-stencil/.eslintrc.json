@@ -1,0 +1,79 @@
+{
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "extends": ["plugin:@stencil-community/recommended", "eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "unused-imports", "prefer-arrow"],
+  "root": true,
+  "rules": {
+    "@stencil-community/strict-boolean-conditions": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/semi": ["error", "always"],
+    "@stencil-community/required-jsdoc": "error",
+    "@stencil-community/decorators-style": ["error", { "prop": "inline", "method": "multiline" }],
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["error", "double", { "allowTemplateLiterals": true }],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "enumMember",
+        "format": ["UPPER_CASE", "PascalCase"],
+        "filter": {
+          "regex": "^(Rel_)|^(Ops_)|^(Per_)|^(Exp_)",
+          "match": false
+        }
+      }
+    ],
+    "prefer-arrow/prefer-arrow-functions": [
+      "error",
+      {
+        "allowStandaloneDeclarations": true,
+        "singleReturnOnly": true
+      }
+    ],
+    "arrow-body-style": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-underscore-dangle": "off",
+    "no-unused-expressions": "off",
+    "@typescript-eslint/no-unused-expressions": [
+      "error",
+      {
+        "allowTernary": true
+      }
+    ],
+    "comma-dangle": ["error", "always-multiline"],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": ["warn", { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-useless-constructor": "error",
+    "@typescript-eslint/explicit-function-return-type": [
+      "warn",
+      {
+        "allowedNames": ["render"]
+      }
+    ],
+    "@typescript-eslint/explicit-member-accessibility": [
+      "error",
+      {
+        "accessibility": "no-public",
+        "overrides": {
+          "accessors": "no-public",
+          "constructors": "no-public",
+          "methods": "no-public",
+          "properties": "off",
+          "parameterProperties": "explicit"
+        }
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 180,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreComments": true
+      }
+    ]
+  }
+}

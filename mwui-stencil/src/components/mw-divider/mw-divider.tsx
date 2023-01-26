@@ -1,8 +1,8 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from "@stencil/core";
 
 @Component({
-  tag: 'mw-divider',
-  styleUrl: 'mw-divider.css',
+  tag: "mw-divider",
+  styleUrl: "mw-divider.css",
   shadow: true,
 })
 export class MwDivider {
@@ -12,6 +12,6 @@ export class MwDivider {
   @Prop() inset?: boolean = false;
 
   render() {
-    return <div class={`mw-divider ${this.inset && 'inset'}`}></div>;
+    return <div class={`mw-divider ${this.inset && "inset"}`}></div>;
   }
 }

@@ -1,14 +1,9 @@
-import { Component, Element, h, Prop } from '@stencil/core';
-import { mwComponentSizeAvatarsIconXl } from '@mwui-token-farm/MW_core';
-import {
-  mwComponentSizeAvatarsIconLg,
-  mwComponentSizeAvatarsIconMd,
-  mwComponentSizeAvatarsIconSm,
-  mwComponentSizeAvatarsIconXs,
-} from '@mwui-token-farm/MW_component';
-import { Size, SizeEnum } from "../../shared/models/enums/size.enum"
+import { Component, Element, h, Prop } from "@stencil/core";
+import { mwComponentSizeAvatarsIconXl } from "@mwui-token-farm/MW_core";
+import { mwComponentSizeAvatarsIconLg, mwComponentSizeAvatarsIconMd, mwComponentSizeAvatarsIconSm, mwComponentSizeAvatarsIconXs } from "@mwui-token-farm/MW_component";
+import { Size, SizeEnum } from "../../shared/models/enums/size.enum";
 
-const getOpticalSize = (size: Size) =>
+const getOpticalSize = (size: Size): number =>
   Number(
     {
       [SizeEnum.X_LARGE]: 48,
@@ -19,7 +14,7 @@ const getOpticalSize = (size: Size) =>
     }[size],
   );
 
-const getFontSize = (size: Size) =>
+const getFontSize = (size: Size): string =>
   ({
     [SizeEnum.X_LARGE]: mwComponentSizeAvatarsIconXl,
     [SizeEnum.LARGE]: mwComponentSizeAvatarsIconLg,
@@ -29,13 +24,13 @@ const getFontSize = (size: Size) =>
   }[size]);
 
 @Component({
-  assetsDirs: ['./assets'],
-  tag: 'mw-icon',
-  styleUrl: 'mw-icon.css',
+  assetsDirs: ["./assets"],
+  tag: "mw-icon",
+  styleUrl: "mw-icon.css",
   shadow: true,
 })
 export class MwIcon {
-  @Element() el: HTMLElement;
+  @Element() el: HTMLMwIconElement;
   /**
    * The icon name to be rendered
    */
@@ -55,15 +50,15 @@ export class MwIcon {
   /**
    * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
    */
-  @Prop() weight: number = 400;
+  @Prop() weight = 400;
 
   render() {
     return (
       <span
         style={{
-          'fontSize': getFontSize(this.size),
-          'color': this.color,
-          'font-variation-settings': `
+          "fontSize": getFontSize(this.size),
+          "color": this.color,
+          "font-variation-settings": `
           'FILL' ${this.fill ? 1 : 0},
           'wght' ${this.weight},
           'GRAD' 0,

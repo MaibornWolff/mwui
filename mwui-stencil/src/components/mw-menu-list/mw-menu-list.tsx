@@ -1,8 +1,8 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+import { Component, Host, Prop, h } from "@stencil/core";
 
 @Component({
-  tag: 'mw-menu-list',
-  styleUrl: 'mw-menu-list.css',
+  tag: "mw-menu-list",
+  styleUrl: "mw-menu-list.css",
   shadow: true,
 })
 export class MwMenuList {

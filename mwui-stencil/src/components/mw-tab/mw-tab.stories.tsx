@@ -1,16 +1,14 @@
-import '../../global/global.css';
+import "../../global/global.css";
 // @ts-ignore
-import docs from './mw-tab.docs.mdx';
+import docs from "./mw-tab.docs.mdx";
 
 export default {
-  title: 'Components/Tab',
-  component: 'mw-tab',
+  title: "Components/Tab",
+  component: "mw-tab",
   parameters: {
     docs: { page: docs },
   },
 };
-
-
 
 const TemplateWithIcon = args => `
 <mw-tab
@@ -30,38 +28,38 @@ const Template = args => `
 export const IconLabelEnabled = TemplateWithIcon.bind({});
 IconLabelEnabled.args = {
   selected: false,
-  icon: 'home',
-  label: 'TAB',
+  icon: "home",
+  label: "TAB",
   disabled: false,
 };
 
 export const IconLabelEnabledSelected = TemplateWithIcon.bind({});
 IconLabelEnabledSelected.args = {
   selected: true,
-  icon: 'home',
-  label: 'TAB',
+  icon: "home",
+  label: "TAB",
   disabled: false,
 };
 
 export const IconLabelDisabled = TemplateWithIcon.bind({});
 IconLabelDisabled.args = {
   selected: false,
-  icon: 'home',
-  label: 'TAB',
+  icon: "home",
+  label: "TAB",
   disabled: true,
 };
 
 export const IconEnabled = TemplateWithIcon.bind({});
 IconEnabled.args = {
   selected: false,
-  icon: 'home',
-  label: '',
+  icon: "home",
+  label: "",
   disabled: false,
 };
 
 export const LabelEnabled = Template.bind({});
 LabelEnabled.args = {
   selected: false,
-  label: 'TAB',
+  label: "TAB",
   disabled: false,
 };

@@ -1,9 +1,9 @@
-import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
-import classNames from 'classnames';
+import { Component, Event, EventEmitter, Host, Prop, h } from "@stencil/core";
+import classNames from "classnames";
 
 @Component({
-  tag: 'mw-chip',
-  styleUrl: 'mw-chip.css',
+  tag: "mw-chip",
+  styleUrl: "mw-chip.css",
   shadow: true,
 })
 export class MwChip {
@@ -26,8 +26,11 @@ export class MwChip {
   /**
    * Selection state that changes onToggle. Can be set as mutable prop.
    */
-  @Prop({ reflect: true, mutable: true }) selected: boolean = false;
+  @Prop({ reflect: true, mutable: true }) selected = false;
 
+  /**
+   * MwChip emits an event when chip is clicked or chip is closed
+   */
   @Event({
     bubbles: true,
     cancelable: false,
@@ -35,14 +38,14 @@ export class MwChip {
   })
   emitter: EventEmitter;
 
-  handleClose = (event: Event) => {
+  private handleClose = (event: Event): void => {
     event.stopPropagation();
     if (!this.disabled) {
       this.emitter.emit(event);
     }
   };
 
-  handleClick = (event: Event) => {
+  private handleClick = (event: Event): void => {
     this.selected = !this.selected;
     this.emitter.emit(event);
   };
@@ -52,7 +55,7 @@ export class MwChip {
       <Host>
         <div
           tabindex="0"
-          class={classNames('chip', {
+          class={classNames("chip", {
             selected: this.selected,
             disabled: this.disabled,
           })}

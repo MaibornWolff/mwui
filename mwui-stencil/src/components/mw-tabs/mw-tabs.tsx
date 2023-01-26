@@ -1,13 +1,15 @@
-import { Component, h, Element, Prop, State } from '@stencil/core';
-import { HTMLStencilElement } from '@stencil/core/internal';
+import { Component, h, Element, Prop, State } from "@stencil/core";
 
 @Component({
-  tag: 'mw-tabs',
-  styleUrl: 'mw-tabs.css',
+  tag: "mw-tabs",
+  styleUrl: "mw-tabs.css",
   shadow: true,
 })
 export class MwTabs {
-  @Element() host: HTMLStencilElement;
+  @Element() host: HTMLMwTabsElement;
+  /**
+   * Test Id
+   */
   @Prop() testId: string;
   /**
    * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
@@ -15,15 +17,15 @@ export class MwTabs {
   @Prop({ mutable: true, reflect: true }) selected: number | null = null;
   @State() tabs = [];
 
-  componentWillRender() {
+  componentWillRender(): void {
     this.tabs = [];
-    for (let i: number = 0; i < this.host.children.length; i++) {
-      this.host.children[i].setAttribute('index', i.toString());
+    for (let i = 0; i < this.host.children.length; i++) {
+      this.host.children[i].setAttribute("index", i.toString());
       if (i === this.selected) {
-        this.host.children[i].setAttribute('selected', '');
+        this.host.children[i].setAttribute("selected", "");
         this.tabs.push(this.host.children[i]);
       } else {
-        this.host.children[i].removeAttribute('selected');
+        this.host.children[i].removeAttribute("selected");
         this.tabs.push(this.host.children[i]);
       }
     }

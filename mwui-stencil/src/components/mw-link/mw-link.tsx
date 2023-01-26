@@ -1,8 +1,8 @@
-import {Component, h, Prop} from '@stencil/core';
+import { Component, h, Prop } from "@stencil/core";
 
 @Component({
-  tag: 'mw-link',
-  styleUrl: 'mw-link.css',
+  tag: "mw-link",
+  styleUrl: "mw-link.css",
   shadow: true,
 })
 export class MwLink {

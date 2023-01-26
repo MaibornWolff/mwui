@@ -1,15 +1,8 @@
-import { Component, Element, Event, EventEmitter, h, Prop } from '@stencil/core';
-import { HTMLStencilElement } from '@stencil/core/internal';
-import {
-  filledButtonStyles, flexStyles,
-  ghostButtonStyles, iconButtonStyles,
-  iconEndStyles,
-  iconStartStyles,
-  outlineButtonStyles,
-} from "./mw-button.styles"
-import { ButtonSize, ButtonSizeEnum } from "./models/enums/button-size.enum"
-import { ButtonVariant, ButtonVariantEnum } from "./models/enums/button-variant.enum"
-import { Target, TargetEnum } from "./models/enums/button-target.enum"
+import { Component, Element, Event, EventEmitter, h, Prop } from "@stencil/core";
+import { filledButtonStyles, flexStyles, ghostButtonStyles, iconButtonStyles, iconEndStyles, iconStartStyles, outlineButtonStyles } from "./mw-button.styles";
+import { ButtonSize, ButtonSizeEnum } from "./models/enums/button-size.enum";
+import { ButtonVariant, ButtonVariantEnum } from "./models/enums/button-variant.enum";
+import { Target, TargetEnum } from "./models/enums/button-target.enum";
 
 const getButtonVariantStyles = (variant: ButtonVariant) =>
   ({
@@ -19,11 +12,11 @@ const getButtonVariantStyles = (variant: ButtonVariant) =>
   }[variant]);
 
 @Component({
-  tag: 'mw-button',
+  tag: "mw-button",
   shadow: false,
 })
 export class MWButton {
-  @Element() hostElement: HTMLStencilElement;
+  @Element() hostElement: HTMLMwButtonElement;
   /**
    * Provide unique identifier for automated testing
    */
@@ -52,6 +45,7 @@ export class MWButton {
    * If using href the target prop can be provided
    */
   @Prop() target?: Target = TargetEnum.SELF;
+
   /**
    * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
    */
@@ -62,23 +56,25 @@ export class MWButton {
   })
   clickEmitter: EventEmitter;
 
-  hasIconStartSlot: boolean;
-  hasIconEndSlot: boolean;
-  hasIcon: boolean;
-  hasLabel: boolean;
+  private hasIconStartSlot: boolean;
+  private hasIconEndSlot: boolean;
+  private hasIcon: boolean;
+  private hasLabel: boolean;
 
-  componentWillLoad() {
-    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
-    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
+  componentWillLoad(): void {
+    this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
+    this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
     this.hasIcon = this.hasIconStartSlot || this.hasIconEndSlot;
     this.hasLabel = !!this.label;
   }
 
-  handleClick = (event: PointerEvent & { path: Array<unknown> }) => {
-    if (this.disabled) { return }
+  private handleClick = (event: PointerEvent & { path: Array<unknown> }): void => {
+    if (this.disabled) {
+      return;
+    }
 
     (event.target as HTMLButtonElement).blur();
-    if(event.path && Array.isArray(event.path)) {
+    if (event.path && Array.isArray(event.path)) {
       (event.path[1] as HTMLButtonElement).blur();
     }
     this.clickEmitter.emit();
@@ -89,13 +85,13 @@ export class MWButton {
       return (
         <a href={this.href} target={this.target} class={`${this.variant} ${getButtonVariantStyles(this.variant)} ${this.size}`} test-id={this.testId}>
           {this.hasIconStartSlot && (
-            <span class={`mw-button-icon-start ${this.size} ${this.hasLabel ? iconStartStyles : ''}`}>
+            <span class={`mw-button-icon-start ${this.size} ${this.hasLabel ? iconStartStyles : ""}`}>
               <slot name="icon-start"></slot>
             </span>
           )}
           <span>{this.label}</span>
           {this.hasIconEndSlot && (
-            <span class={`mw-button-icon-end ${this.size} ${this.hasLabel ? iconEndStyles : ''}`}>
+            <span class={`mw-button-icon-end ${this.size} ${this.hasLabel ? iconEndStyles : ""}`}>
               <slot name="icon-end"></slot>
             </span>
           )}
@@ -111,13 +107,13 @@ export class MWButton {
         type="button"
       >
         {this.hasIconStartSlot && (
-          <span class={`mw-button-icon-start ${this.size} ${this.hasLabel ? iconStartStyles : ''}`}>
+          <span class={`mw-button-icon-start ${this.size} ${this.hasLabel ? iconStartStyles : ""}`}>
             <slot name="icon-start"></slot>
           </span>
         )}
         <span>{this.label}</span>
         {this.hasIconEndSlot && (
-          <span class={`mw-button-icon-end ${this.size} ${this.hasLabel ? iconEndStyles : ''}`}>
+          <span class={`mw-button-icon-end ${this.size} ${this.hasLabel ? iconEndStyles : ""}`}>
             <slot name="icon-end"></slot>
           </span>
         )}

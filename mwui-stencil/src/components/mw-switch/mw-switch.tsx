@@ -1,12 +1,12 @@
-import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, h } from "@stencil/core";
 
 @Component({
-  tag: 'mw-switch',
-  styleUrl: 'mw-switch.css',
+  tag: "mw-switch",
+  styleUrl: "mw-switch.css",
   shadow: true,
 })
 export class MwSwitch {
-  checkbox: HTMLInputElement;
+  private checkbox: HTMLInputElement;
   /**
    * Provide unique identifier for automated testing
    */
@@ -30,8 +30,11 @@ export class MwSwitch {
   /**
    * Switch state
    */
-  @Prop({ mutable: true }) checked: boolean = false;
+  @Prop({ mutable: true }) checked = false;
 
+  /**
+   * MwSwitch emits an event when switch checked state changes
+   */
   @Event({
     bubbles: true,
     cancelable: false,
@@ -39,18 +42,17 @@ export class MwSwitch {
   })
   emitter: EventEmitter;
 
-  toggleSwitch(event: Event) {
+  private toggleSwitch(event: Event & { path: unknown[] }): void {
     (event.target as HTMLInputElement).blur();
-    // @ts-ignore
     (event.path[1] as HTMLInputElement).blur();
     this.checked = this.checkbox.checked;
     this.emitter.emit(event);
   }
 
-  hasLabel: boolean;
-  hasOnOffLabel: boolean;
+  private hasLabel: boolean;
+  private hasOnOffLabel: boolean;
 
-  componentWillLoad() {
+  componentWillLoad(): void {
     this.hasLabel = !!this.label;
     this.hasOnOffLabel = !!this.onText && !!this.offText;
   }

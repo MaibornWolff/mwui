@@ -1,20 +1,22 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h, Element } from '@stencil/core';
-import classnames from 'classnames';
-import { HTMLStencilElement } from '@stencil/core/internal';
+import { Component, Event, EventEmitter, Host, Prop, State, h, Element } from "@stencil/core";
+import classnames from "classnames";
 
 @Component({
-  tag: 'mw-textfield',
-  styleUrl: 'mw-textfield.css',
+  tag: "mw-textfield",
+  styleUrl: "mw-textfield.css",
   shadow: true,
 })
 export class MwTextfield {
-  @Element() hostElement: HTMLStencilElement;
+  @Element() hostElement: HTMLMwTextfieldElement;
 
+  /**
+   * MwTextfield emits an event when textfield value changes
+   */
   @Event({ bubbles: true, composed: false }) valueChanged: EventEmitter<string>;
   /**
    * HTML Input type
    */
-  @Prop() type?: string = 'text';
+  @Prop() type?: string = "text";
   /**
    * input field value
    */
@@ -52,28 +54,28 @@ export class MwTextfield {
    */
   @Prop() disabled?: boolean = false;
 
-  @State() focused: boolean = false;
+  @State() focused = false;
 
   private inputElement: HTMLInputElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
 
-  componentWillLoad() {
-    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
-    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
+  componentWillLoad(): void {
+    this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
+    this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
   }
 
-  private onValueChange = (event: Event) => {
+  private onValueChange = (event: Event): void => {
     this.value = (event.target as HTMLInputElement).value;
     this.valueChanged.emit(this.value);
   };
 
-  private onFocus = () => {
+  private onFocus = (): void => {
     this.inputElement.focus();
     this.focused = true;
   };
 
-  private onBlur = () => {
+  private onBlur = (): void => {
     this.focused = false;
   };
 
@@ -82,25 +84,25 @@ export class MwTextfield {
       <Host>
         <div class="wrapper">
           <div
-            class={classnames('textfield', {
-              'inline': this.inline,
-              'has-error': this.hasError,
-              'disabled': this.disabled,
+            class={classnames("textfield", {
+              "inline": this.inline,
+              "has-error": this.hasError,
+              "disabled": this.disabled,
             })}
           >
             <label htmlFor={this.name} class="label">
               {this.label}
               {this.required && <span class="required">*</span>}
             </label>
-            <div onClick={this.onFocus} class={classnames('input', { 'has-error': this.hasError, 'disabled': this.disabled })}>
-              <span class={classnames({ 'icon-start': this.hasIconStartSlot, 'focused': this.focused, 'has-error': this.hasError })}>
+            <div onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+              <span class={classnames({ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError })}>
                 <slot name="icon-start"></slot>
               </span>
               <input
                 ref={el => (this.inputElement = el as HTMLInputElement)}
                 placeholder={this.placeholder}
                 class={classnames({
-                  'has-error': this.hasError,
+                  "has-error": this.hasError,
                 })}
                 onFocus={this.onFocus}
                 onBlur={this.onBlur}
@@ -111,14 +113,14 @@ export class MwTextfield {
                 value={this.value}
                 disabled={this.disabled}
               />
-              <span class={classnames({ 'icon-end': this.hasIconEndSlot, 'focused': this.focused, 'has-error': this.hasError })}>
+              <span class={classnames({ "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError })}>
                 <slot name="icon-end"></slot>
               </span>
             </div>
             {this.helperText && !this.inline && (
               <span
-                class={classnames('helper-text', {
-                  'has-error': this.hasError,
+                class={classnames("helper-text", {
+                  "has-error": this.hasError,
                 })}
               >
                 {this.helperText}
@@ -127,8 +129,8 @@ export class MwTextfield {
           </div>
           {this.helperText && this.inline && (
             <span
-              class={classnames('helper-text', {
-                'has-error': this.hasError,
+              class={classnames("helper-text", {
+                "has-error": this.hasError,
               })}
             >
               {this.helperText}

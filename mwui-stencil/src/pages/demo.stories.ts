@@ -1,11 +1,11 @@
-import '../global/global.css';
-import '../../../mwui-token-farm/dist/css/MW_core.css';
+import "../global/global.css";
+import "../../../mwui-token-farm/dist/css/MW_core.css";
 
 export default {
-  title: 'Pages/Demo',
+  title: "Pages/Demo",
 };
 
-const Template = () => `
+const Template = (): string => `
 <div style="display: flex; justify-content: center">
   <div style="text-align: center">
     <h1>Hello World 01</h1>

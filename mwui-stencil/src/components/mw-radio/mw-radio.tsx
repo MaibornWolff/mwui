@@ -1,13 +1,12 @@
-import { Component, Element, h, Prop } from '@stencil/core';
-import { HTMLStencilElement } from '@stencil/core/internal';
+import { Component, Element, h, Prop } from "@stencil/core";
 
 @Component({
-  tag: 'mw-radio',
-  styleUrl: 'mw-radio.css',
+  tag: "mw-radio",
+  styleUrl: "mw-radio.css",
   shadow: false,
 })
 export class MwRadio {
-  @Element() hostElement: HTMLStencilElement;
+  @Element() hostElement: HTMLMwRadioElement;
   /**
    * Visually and functionally disbale radio button
    */
@@ -15,7 +14,7 @@ export class MwRadio {
   /**
    * Whether the radio button is checked
    */
-  @Prop({ mutable: true, reflect: true }) checked?: boolean;
+  @Prop({ mutable: false, reflect: true }) checked?: boolean;
   /**
    * Value of the radio button
    */

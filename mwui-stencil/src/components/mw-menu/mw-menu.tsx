@@ -1,9 +1,9 @@
-import { Component, Host, Prop, h } from '@stencil/core';
-import { PopoverPlacement } from '../mw-popover/mw-popover';
+import { Component, Host, Prop, h } from "@stencil/core";
+import { PopoverPlacement } from "../mw-popover/mw-popover";
 
 @Component({
-  tag: 'mw-menu',
-  styleUrl: 'mw-menu.css',
+  tag: "mw-menu",
+  styleUrl: "mw-menu.css",
   shadow: true,
 })
 export class MwMenu {
@@ -14,11 +14,11 @@ export class MwMenu {
   /**
    * Placement relative to anchor element
    */
-  @Prop() placement: PopoverPlacement = 'bottom-end';
+  @Prop() placement: PopoverPlacement = "bottom-end";
   /**
    * Whether the menu is open
    */
-  @Prop({ mutable: true, reflect: true }) open: boolean = false;
+  @Prop({ mutable: false, reflect: true }) open = false;
 
   render() {
     return (

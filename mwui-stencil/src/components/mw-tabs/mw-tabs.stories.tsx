@@ -1,10 +1,10 @@
-import '../../global/global.css';
+import "../../global/global.css";
 // @ts-ignore
-import docs from './mw-tabs.docs.mdx';
+import docs from "./mw-tabs.docs.mdx";
 
 export default {
-  title: 'Components/Tabs',
-  component: 'mw-tabs',
+  title: "Components/Tabs",
+  component: "mw-tabs",
   parameters: {
     docs: { page: docs },
   },
@@ -22,5 +22,5 @@ const Template = args => `
 export const Default = Template.bind({});
 Default.args = {
   selected: 0,
-  testId: "tabs"
+  testId: "tabs",
 };

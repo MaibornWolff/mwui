@@ -1,45 +1,47 @@
 {
-  "name": "@maibornwolff/mwui",
-  "version": "0.1.11",
-  "description": "Component Library using Figma's design tokens",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/MaibornWolff/mwui.git"
-  },
-  "workspaces": [
-    "mwui-token-farm",
-    "mwui-react",
-    "mwui-stencil",
-    "mwui-vue",
-    "mwui-angular"
-  ],
-  "scripts": {
-    "start": "npm run start --workspace=mwui-stencil",
-    "storybook": "npm run storybook --workspace=mwui-stencil",
-    "test": "npm run test --workspace=mwui-stencil",
-    "test:spec": "npm run test:spec --workspace=mwui-stencil",
-    "build-tokens": "npm run build --workspace=mwui-token-farm",
-    "build-stencil": "npm run build --workspace=mwui-stencil",
-    "build-storybook": "npm run build-storybook --workspace=mwui-stencil",
-    "version:patch": "./scripts/bump-version.sh patch",
-    "version:minor": "./scripts/bump-version.sh minor",
-    "version:major": "./scripts/bump-version.sh major"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.18.10",
-    "@fullhuman/postcss-purgecss": "^5.0.0",
-    "@types/estree": "^1.0.0",
-    "@types/node": "^18.7.13",
-    "autoprefixer": "^9.8.8",
-    "eslint": "^8.22.0",
-    "jest": "^27.4.5",
-    "jest-cli": "^27.4.5",
-    "parcel-bundler": "^1.12.5",
-    "postcss": "^7.0.39",
-    "postcss-import": "^15.0.0",
-    "prettier": "^2.7.1",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
-    "typescript": "^4.8.2"
-  },
-  "license": "MIT"
+    "name": "@maibornwolff/mwui",
+    "version": "0.1.11",
+    "description": "Component Library using Figma's design tokens",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MaibornWolff/mwui.git"
+    },
+    "workspaces": [
+        "mwui-token-farm",
+        "mwui-react",
+        "mwui-stencil",
+        "mwui-vue",
+        "mwui-angular"
+    ],
+    "scripts": {
+        "start": "npm run start --workspace=mwui-stencil",
+        "storybook": "npm run storybook --workspace=mwui-stencil",
+        "test": "npm run test --workspace=mwui-stencil",
+        "test:spec": "npm run test:spec --workspace=mwui-stencil",
+        "lint": "npm run lint --workspace=mwui-stencil",
+        "build-tokens": "npm run build --workspace=mwui-token-farm",
+        "build-stencil": "npm run build --workspace=mwui-stencil",
+        "build-storybook": "npm run build-storybook --workspace=mwui-stencil",
+        "version:patch": "./scripts/bump-version.sh patch",
+        "version:minor": "./scripts/bump-version.sh minor",
+        "version:major": "./scripts/bump-version.sh major",
+        "prepare": "husky install"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.18.10",
+        "@fullhuman/postcss-purgecss": "^5.0.0",
+        "@types/estree": "^1.0.0",
+        "@types/node": "^18.7.13",
+        "autoprefixer": "^9.8.8",
+        "eslint": "^8.22.0",
+        "jest": "^27.4.5",
+        "jest-cli": "^27.4.5",
+        "parcel-bundler": "^1.12.5",
+        "postcss": "^7.0.39",
+        "postcss-import": "^15.0.0",
+        "prettier": "^2.7.1",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+        "typescript": "^4.8.2"
+    },
+    "license": "MIT"
 }

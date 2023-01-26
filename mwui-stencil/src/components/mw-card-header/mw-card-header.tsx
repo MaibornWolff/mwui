@@ -1,12 +1,18 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+import { Component, Host, Prop, h } from "@stencil/core";
 
 @Component({
-  tag: 'mw-card-header',
-  styleUrl: 'mw-card-header.css',
+  tag: "mw-card-header",
+  styleUrl: "mw-card-header.css",
   shadow: true,
 })
 export class MwCardHeader {
+  /**
+   * Header to be displayed in mw-card-header
+   */
   @Prop() header: string;
+  /**
+   * Subheader to be displayed in mw-card-header
+   */
   @Prop() subheader: string;
 
   render() {
