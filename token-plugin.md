@@ -10,7 +10,7 @@ Download the plugin from [here](https://www.figma.com/community/plugin/843461159
 
 **Your Name:** First and last name.
 
-**Personal access token:** The plugin requires a token which is connected to your GitHub account (An account is required to use the plugin). You can create a token within the GitHub settings under Settings > Personal access tokens > Generate new token. Give the token a name and set its expiration date to 'No expiration'. The following boxes have to be checked for the plugin to work:
+**Personal access token:** The plugin requires a token which is connected to your GitHub account (An account is required to use the plugin). You can create a token within the GitHub settings under Settings > Developer Settings > Tokens (classic) > Generate new token. Give the token a name and set its expiration date to 'No expiration'. The following boxes have to be checked for the plugin to work:
 
 ![image](https://user-images.githubusercontent.com/85286401/185928119-59c2ce2b-cc80-44a0-b629-70c38c184600.png)
 
