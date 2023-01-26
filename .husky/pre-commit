@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run format:quick -- --workspace=mwui-stencil && npx lint-staged -r -- --workspace=mwui-stencil
+npm run format:quick --workspace=mwui-stencil && npx lint-staged -r -- --workspace=mwui-stencil
