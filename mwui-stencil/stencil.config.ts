@@ -10,6 +10,13 @@ export const config: Config = {
   extras: {
     experimentalImportInjection: true,
   },
+  testing: {
+    coverageDirectory: "./reports",
+    coverageReporters: ["html", "text"],
+    moduleNameMapper: {
+      '@mwui-token-farm/(.*)$': '<rootDir>/mwui-token-farm/dist/js/$1'
+    }
+  },
   outputTargets: [
     react({
       componentCorePackage: '@maibornwolff/mwui-stencil',

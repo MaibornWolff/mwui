@@ -1,31 +1,31 @@
 import { Component, Element, h, Prop } from '@stencil/core';
-import { Size } from '../mw-avatar/mw-avatar';
-import { mwComponentSizeAvatarsIconXl } from '../../../../mwui-token-farm/dist/js/MW_core';
+import { mwComponentSizeAvatarsIconXl } from '@mwui-token-farm/MW_core';
 import {
   mwComponentSizeAvatarsIconLg,
   mwComponentSizeAvatarsIconMd,
   mwComponentSizeAvatarsIconSm,
   mwComponentSizeAvatarsIconXs,
-} from '../../../../mwui-token-farm/dist/js/MW_component';
+} from '@mwui-token-farm/MW_component';
+import { Size, SizeEnum } from "../../shared/models/enums/size.enum"
 
 const getOpticalSize = (size: Size) =>
   Number(
     {
-      'x-large': 48,
-      'large': 48,
-      'medium': 40,
-      'small': 24,
-      'x-small': 20,
+      [SizeEnum.X_LARGE]: 48,
+      [SizeEnum.LARGE]: 48,
+      [SizeEnum.MEDIUM]: 40,
+      [SizeEnum.SMALL]: 24,
+      [SizeEnum.X_SMALL]: 20,
     }[size],
   );
 
 const getFontSize = (size: Size) =>
   ({
-    'x-large': mwComponentSizeAvatarsIconXl,
-    'large': mwComponentSizeAvatarsIconLg,
-    'medium': mwComponentSizeAvatarsIconMd,
-    'small': mwComponentSizeAvatarsIconSm,
-    'x-small': mwComponentSizeAvatarsIconXs,
+    [SizeEnum.X_LARGE]: mwComponentSizeAvatarsIconXl,
+    [SizeEnum.LARGE]: mwComponentSizeAvatarsIconLg,
+    [SizeEnum.MEDIUM]: mwComponentSizeAvatarsIconMd,
+    [SizeEnum.SMALL]: mwComponentSizeAvatarsIconSm,
+    [SizeEnum.X_SMALL]: mwComponentSizeAvatarsIconXs,
   }[size]);
 
 @Component({
@@ -43,7 +43,7 @@ export class MwIcon {
   /**
    * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
    */
-  @Prop() size: Size = 'small';
+  @Prop() size: Size = SizeEnum.SMALL;
   /**
    * Fill gives you the ability to modify the default icon style. A single icon can render both unfilled and filled states.
    */
@@ -64,12 +64,12 @@ export class MwIcon {
           'fontSize': getFontSize(this.size),
           'color': this.color,
           'font-variation-settings': `
-      'FILL' ${this.fill ? 1 : 0},
-      'wght' ${this.weight},
-      'GRAD' 0,
-      'opsz' ${getOpticalSize(this.size)}`,
+          'FILL' ${this.fill ? 1 : 0},
+          'wght' ${this.weight},
+          'GRAD' 0,
+          'opsz' ${getOpticalSize(this.size)}`,
         }}
-        class="material-symbols-outlined"
+        class={`material-symbols-outlined ${this.size}`}
       >
         {this.icon}
       </span>

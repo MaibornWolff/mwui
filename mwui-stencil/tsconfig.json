@@ -12,7 +12,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "react",
-    "jsxFactory": "h"
+    "jsxFactory": "h",
+    "paths": {
+      "@mwui-token-farm/*": ["./mwui-token-farm/dist/js/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules"]

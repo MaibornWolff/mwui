@@ -1,6 +1,5 @@
 import { Component, Host, Prop, h } from '@stencil/core';
-
-export type Size = 'x-large' | 'large' | 'medium' | 'small' | 'x-small';
+import { Size, SizeEnum } from "../../shared/models/enums/size.enum"
 
 @Component({
   tag: 'mw-avatar',
@@ -27,7 +26,7 @@ export class MwAvatar {
   /**
    * Size variant
    */
-  @Prop() size?: Size = 'medium';
+  @Prop() size?: Size = SizeEnum.MEDIUM;
 
   render() {
     return (

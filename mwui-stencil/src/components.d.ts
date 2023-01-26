@@ -5,9 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Size } from "./components/mw-avatar/mw-avatar";
+import { Size } from "./shared/models/enums/size.enum";
 import { ButtonSize, ButtonVariant, Target } from "./components/mw-button/mw-button";
-import { Size as Size1 } from "./components/mw-avatar/mw-avatar";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
@@ -214,7 +213,7 @@ export namespace Components {
         /**
           * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
          */
-        "size": Size1;
+        "size": Size;
         /**
           * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
          */
@@ -804,7 +803,7 @@ declare namespace LocalJSX {
         /**
           * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
          */
-        "size"?: Size1;
+        "size"?: Size;
         /**
           * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
          */
