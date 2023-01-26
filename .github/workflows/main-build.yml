@@ -33,6 +33,10 @@ jobs:
         working-directory: ./build
         run: npm run build-tokens
 
+      - name: Run Stencil unit tests
+        working-directory: ./build
+        run: npm run test:spec
+
       - name: Build Stencil
         working-directory: ./build
         run:  npm run build-stencil
