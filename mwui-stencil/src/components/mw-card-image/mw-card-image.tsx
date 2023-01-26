@@ -1,14 +1,13 @@
-import { Component, Element, Host, Prop, h } from '@stencil/core';
-import { HTMLStencilElement } from '@stencil/core/internal';
-import classnames from 'classnames';
+import { Component, Element, Host, Prop, h } from "@stencil/core";
+import classnames from "classnames";
 
 @Component({
-  tag: 'mw-card-image',
-  styleUrl: 'mw-card-image.css',
+  tag: "mw-card-image",
+  styleUrl: "mw-card-image.css",
   shadow: true,
 })
 export class MwCardImage {
-  @Element() hostElement: HTMLStencilElement;
+  @Element() hostElement: HTMLMwCardImageElement;
   // TODO: support more img props, srcset...
   /**
    * Image source
@@ -33,7 +32,7 @@ export class MwCardImage {
   render() {
     return (
       <Host>
-        <div class={classnames('card-image', { top: this.isFirstChild, bottom: this.isLastChild, single: this.isOnlyChild })}>
+        <div class={classnames("card-image", { top: this.isFirstChild, bottom: this.isLastChild, single: this.isOnlyChild })}>
           <img src={this.src} alt={this.alt} />
         </div>
       </Host>

@@ -1,8 +1,8 @@
-import '../global/global.css';
-import '../../../mwui-token-farm/dist/css/MW_core.css';
+import "../global/global.css";
+import "../../../mwui-token-farm/dist/css/MW_core.css";
 
 export default {
-  title: 'Pages/Demo',
+  title: "Pages/Demo",
 };
 
 const Template = () => `

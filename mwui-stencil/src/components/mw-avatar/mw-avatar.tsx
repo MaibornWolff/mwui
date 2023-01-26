@@ -1,9 +1,9 @@
-import { Component, Host, Prop, h } from '@stencil/core';
-import { Size, SizeEnum } from "../../shared/models/enums/size.enum"
+import { Component, Host, Prop, h } from "@stencil/core";
+import { Size, SizeEnum } from "../../shared/models/enums/size.enum";
 
 @Component({
-  tag: 'mw-avatar',
-  styleUrl: 'mw-avatar.css',
+  tag: "mw-avatar",
+  styleUrl: "mw-avatar.css",
   shadow: true,
 })
 export class MwAvatar {

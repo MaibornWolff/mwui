@@ -1,9 +1,9 @@
-import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
 
 @Component({
-  tag: 'mw-checkbox',
-  styleUrl: 'mw-checkbox.css',
-  assetsDirs: ['./../assets'],
+  tag: "mw-checkbox",
+  styleUrl: "mw-checkbox.css",
+  assetsDirs: ["./../assets"],
   shadow: true,
 })
 export class MwCheckbox {
@@ -14,7 +14,7 @@ export class MwCheckbox {
   /**
    * Value of checkbox input
    */
-  @Prop({ mutable: true, reflect: true }) value?: string;
+  @Prop({ mutable: false, reflect: true }) value?: string;
   /**
    * Name of checkbox input
    */
@@ -32,6 +32,9 @@ export class MwCheckbox {
    */
   @Prop() label?: string;
 
+  /**
+   * MwCheckbox emits an event when checkbox checked state is changed
+   */
   @Event({
     bubbles: true,
     cancelable: false,
@@ -39,7 +42,7 @@ export class MwCheckbox {
   })
   emitter: EventEmitter;
 
-  handleCheck = () => {
+  private handleCheck = (): void => {
     if (!this.disabled) {
       this.checked = !this.checked;
       this.emitter.emit();
@@ -50,9 +53,9 @@ export class MwCheckbox {
     return (
       <div test-id={this.testId} class="mw-checkbox-container" onClick={this.handleCheck}>
         <input type="checkbox" checked={this.checked} value={this.value} name={this.name} />
-        <span class={`mw-checkbox ${this.checked ? 'selected' : 'unselected'} ${this.disabled ? 'disabled' : 'enabled'}`}>
+        <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
           <mw-icon
-            class={`mw-checkmark ${this.checked ? 'selected' : 'unselected'}`}
+            class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`}
             color={`var(--mw-component-controls-color-fg-default)`}
             icon="check"
             weight={600}

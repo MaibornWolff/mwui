@@ -1,9 +1,9 @@
-import { Component, Host, State, h, Prop } from "@stencil/core"
-import { icons } from '../../../icon-names';
+import { Component, Host, State, h, Prop } from "@stencil/core";
+import { icons } from "../../../icon-names";
 
 @Component({
-  tag: 'mw-icon-gallery',
-  styleUrl: 'mw-icon-gallery.css',
+  tag: "mw-icon-gallery",
+  styleUrl: "mw-icon-gallery.css",
   shadow: true,
 })
 export class MwIconGallery {
@@ -13,31 +13,31 @@ export class MwIconGallery {
   @Prop() icons: string[] = icons;
 
   @State() filteredIcons: string[] = [];
-  @State() fill: boolean = false;
-  @State() weight: number = 400;
+  @State() fill = false;
+  @State() weight = 400;
 
-  componentWillLoad() {
+  componentWillLoad(): void {
     this.filteredIcons = this.icons;
     this.weight = 400;
   }
 
-  private onInput = event => {
+  private onInput = (event: Event & { target: { value: string } }): void => {
     const filterTerm = event.target.value.toLowerCase();
     this.filteredIcons = this.icons.filter(icon => icon.toLowerCase().includes(filterTerm));
   };
 
-  private copyIconName = (name: string) => {
+  private copyIconName = (name: string): void => {
     navigator.clipboard
       .writeText(name)
       .then(() => console.info(`Copied icon name "${name}"`))
-      .catch(e => console.error('Failed to copy icon name', e));
+      .catch(e => console.error("Failed to copy icon name", e));
   };
 
-  private onToggleFill = () => {
+  private onToggleFill = (): void => {
     this.fill = !this.fill;
   };
 
-  private onWeightChange = (event: any) => {
+  private onWeightChange = (event: Event & { target: { value: number } }): void => {
     this.weight = event.target.value;
   };
 
@@ -63,7 +63,7 @@ export class MwIconGallery {
             <div class={`gallery-item-container ${iconName}`} onClick={() => this.copyIconName(iconName)}>
               <div class="gallery-item">
                 <mw-icon fill={this.fill} icon={iconName} weight={this.weight} size="large"></mw-icon>
-                <p class="gallery-item-text">{iconName.split('_').join(' ')}</p>
+                <p class="gallery-item-text">{iconName.split("_").join(" ")}</p>
               </div>
             </div>
           ))}

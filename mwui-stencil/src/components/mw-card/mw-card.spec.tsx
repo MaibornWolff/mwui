@@ -1,29 +1,29 @@
-import { h } from "@stencil/core"
-import { newSpecPage } from "@stencil/core/testing"
-import { MwCard } from "./mw-card"
+import { h } from "@stencil/core";
+import { newSpecPage } from "@stencil/core/testing";
+import { MwCard } from "./mw-card";
 
-describe('GIVEN MwCard', () => {
-  const setup = async (text: string = "", { outlined, elevated }: Pick<MwCard, 'outlined' | 'elevated'> = {
-    outlined: false,
-    elevated: false,
-  }) => {
+describe("GIVEN MwCard", () => {
+  const setup = async (
+    text = "",
+    { outlined, elevated }: Pick<MwCard, "outlined" | "elevated"> = {
+      outlined: false,
+      elevated: false,
+    },
+  ) => {
     return await newSpecPage({
       components: [MwCard],
       template: () => (
-        <mw-card
-          outlined={outlined}
-          elevated={elevated}
-        >
+        <mw-card outlined={outlined} elevated={elevated}>
           ${text}
         </mw-card>
       ),
     });
-  }
+  };
 
-  it("SHOULD render MwCard", async() => {
-    const page = await setup()
-    expect(page.root).toBeTruthy()
-  })
+  it("SHOULD render MwCard", async () => {
+    const page = await setup();
+    expect(page.root).toBeTruthy();
+  });
 
   describe("SHOULD add classes based on properties", () => {
     const testCases = [
@@ -50,32 +50,30 @@ describe('GIVEN MwCard', () => {
         },
         message: "SHOULD have classes elevated & outlined WHEN both are true",
         result: ["elevated", "outlined"],
-      }
-    ]
+      },
+    ];
 
     testCases.forEach(testCase => {
-      it(testCase.message, async() => {
-        const page = await setup("", testCase.input)
-        expect(page.root.shadowRoot.querySelector(".card")).toHaveClasses(testCase.result)
-      })
-    })
-  })
+      it(testCase.message, async () => {
+        const page = await setup("", testCase.input);
+        expect(page.root.shadowRoot.querySelector(".card")).toHaveClasses(testCase.result);
+      });
+    });
+  });
 
   it("SHOULD emit click WHEN clicked", async () => {
-    const page = await setup()
-    const clickMock = page.rootInstance.clickEmitter.emit = jest.fn()
+    const page = await setup();
+    const clickMock = (page.rootInstance.clickEmitter.emit = jest.fn());
 
-    page.root.shadowRoot
-      .querySelector<HTMLButtonElement>(".card")
-      .click();
+    page.root.shadowRoot.querySelector<HTMLButtonElement>(".card").click();
 
     expect(clickMock).toHaveBeenCalled();
   });
 
   it("SHOULD render content in slot WHEN content is provided", async () => {
-    const text = "this text should be in slot"
-    const page = await setup(text)
+    const text = "this text should be in slot";
+    const page = await setup(text);
     const component = page.root;
     expect(component.innerHTML).toContain(text);
   });
-})
+});

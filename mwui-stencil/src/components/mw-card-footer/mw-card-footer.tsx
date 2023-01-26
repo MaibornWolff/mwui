@@ -1,9 +1,9 @@
-import { Component, Host, Prop, h } from '@stencil/core';
-import classnames from 'classnames';
+import { Component, Host, Prop, h } from "@stencil/core";
+import classnames from "classnames";
 
 @Component({
-  tag: 'mw-card-footer',
-  styleUrl: 'mw-card-footer.css',
+  tag: "mw-card-footer",
+  styleUrl: "mw-card-footer.css",
   shadow: true,
 })
 export class MwCardFooter {
@@ -56,17 +56,17 @@ export class MwCardFooter {
     return (
       <Host>
         <div
-          class={classnames('card-footer', {
-            'justify-center': this.justifyCenter,
-            'justify-start': this.justifyStart,
-            'justify-flex-start': this.justifyFlexStart,
-            'justify-flex-end': this.justifyFlexEnd,
-            'justify-normal': this.justifyNormal,
-            'justify-left': this.justifyLeft,
-            'justify-right': this.justifyRight,
-            'justify-space-around': this.justifySpaceAround,
-            'justify-space-evenly': this.justifySpaceEvenly,
-            'justify-space-between': this.justifySpaceBetween,
+          class={classnames("card-footer", {
+            "justify-center": this.justifyCenter,
+            "justify-start": this.justifyStart,
+            "justify-flex-start": this.justifyFlexStart,
+            "justify-flex-end": this.justifyFlexEnd,
+            "justify-normal": this.justifyNormal,
+            "justify-left": this.justifyLeft,
+            "justify-right": this.justifyRight,
+            "justify-space-around": this.justifySpaceAround,
+            "justify-space-evenly": this.justifySpaceEvenly,
+            "justify-space-between": this.justifySpaceBetween,
           })}
         >
           <slot></slot>
