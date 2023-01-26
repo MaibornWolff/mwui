@@ -1,21 +1,24 @@
 /* tslint:disable */
 /* auto-generated angular directive proxies */
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
-
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import { Components } from '@maibornwolff/mwui-stencil';
 
 
+
+
+export declare interface MwAvatar extends Components.MwAvatar {}
+
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['alt', 'icon', 'size', 'src', 'testId']
 })
 @Component({
   selector: 'mw-avatar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['alt', 'icon', 'size', 'src', 'testId'],
+  inputs: ['alt', 'icon', 'size', 'src', 'testId']
 })
 export class MwAvatar {
   protected el: HTMLElement;
@@ -26,18 +29,23 @@ export class MwAvatar {
 }
 
 
-export declare interface MwAvatar extends Components.MwAvatar {}
+export declare interface MwButton extends Components.MwButton {
+  /**
+   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. 
+   */
+  clickEmitter: EventEmitter<CustomEvent<any>>;
 
+}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['disabled', 'href', 'label', 'size', 'target', 'testId', 'variant']
 })
 @Component({
   selector: 'mw-button',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'href', 'label', 'size', 'target', 'testId', 'variant'],
+  inputs: ['disabled', 'href', 'label', 'size', 'target', 'testId', 'variant']
 })
 export class MwButton {
   protected el: HTMLElement;
@@ -49,23 +57,23 @@ export class MwButton {
 }
 
 
-export declare interface MwButton extends Components.MwButton {
+export declare interface MwCard extends Components.MwCard {
   /**
-   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
+   *  
    */
   clickEmitter: EventEmitter<CustomEvent<any>>;
+
 }
 
-
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['elevated', 'outlined', 'testId']
 })
 @Component({
   selector: 'mw-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['elevated', 'outlined', 'testId'],
+  inputs: ['elevated', 'outlined', 'testId']
 })
 export class MwCard {
   protected el: HTMLElement;
@@ -77,20 +85,15 @@ export class MwCard {
 }
 
 
-export declare interface MwCard extends Components.MwCard {
-
-  clickEmitter: EventEmitter<CustomEvent<any>>;
-}
-
+export declare interface MwCardBody extends Components.MwCardBody {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined
 })
 @Component({
   selector: 'mw-card-body',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: [],
+  template: '<ng-content></ng-content>'
 })
 export class MwCardBody {
   protected el: HTMLElement;
@@ -101,18 +104,17 @@ export class MwCardBody {
 }
 
 
-export declare interface MwCardBody extends Components.MwCardBody {}
-
+export declare interface MwCardFooter extends Components.MwCardFooter {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['justifyCenter', 'justifyEnd', 'justifyFlexEnd', 'justifyFlexStart', 'justifyLeft', 'justifyNormal', 'justifyRight', 'justifySpaceAround', 'justifySpaceBetween', 'justifySpaceEvenly', 'justifyStart']
 })
 @Component({
   selector: 'mw-card-footer',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['justifyCenter', 'justifyEnd', 'justifyFlexEnd', 'justifyFlexStart', 'justifyLeft', 'justifyNormal', 'justifyRight', 'justifySpaceAround', 'justifySpaceBetween', 'justifySpaceEvenly', 'justifyStart'],
+  inputs: ['justifyCenter', 'justifyEnd', 'justifyFlexEnd', 'justifyFlexStart', 'justifyLeft', 'justifyNormal', 'justifyRight', 'justifySpaceAround', 'justifySpaceBetween', 'justifySpaceEvenly', 'justifyStart']
 })
 export class MwCardFooter {
   protected el: HTMLElement;
@@ -123,18 +125,17 @@ export class MwCardFooter {
 }
 
 
-export declare interface MwCardFooter extends Components.MwCardFooter {}
-
+export declare interface MwCardHeader extends Components.MwCardHeader {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['header', 'subheader']
 })
 @Component({
   selector: 'mw-card-header',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['header', 'subheader'],
+  inputs: ['header', 'subheader']
 })
 export class MwCardHeader {
   protected el: HTMLElement;
@@ -145,18 +146,17 @@ export class MwCardHeader {
 }
 
 
-export declare interface MwCardHeader extends Components.MwCardHeader {}
-
+export declare interface MwCardImage extends Components.MwCardImage {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['alt', 'src']
 })
 @Component({
   selector: 'mw-card-image',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['alt', 'src'],
+  inputs: ['alt', 'src']
 })
 export class MwCardImage {
   protected el: HTMLElement;
@@ -167,18 +167,17 @@ export class MwCardImage {
 }
 
 
-export declare interface MwCardImage extends Components.MwCardImage {}
-
+export declare interface MwCardTitle extends Components.MwCardTitle {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['metadata', 'subtitle', 'title']
 })
 @Component({
   selector: 'mw-card-title',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['metadata', 'subtitle', 'title'],
+  inputs: ['metadata', 'subtitle', 'title']
 })
 export class MwCardTitle {
   protected el: HTMLElement;
@@ -189,18 +188,23 @@ export class MwCardTitle {
 }
 
 
-export declare interface MwCardTitle extends Components.MwCardTitle {}
+export declare interface MwCheckbox extends Components.MwCheckbox {
+  /**
+   *  
+   */
+  emitter: EventEmitter<CustomEvent<any>>;
 
+}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
 })
 @Component({
   selector: 'mw-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value'],
+  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
 })
 export class MwCheckbox {
   protected el: HTMLElement;
@@ -212,21 +216,23 @@ export class MwCheckbox {
 }
 
 
-export declare interface MwCheckbox extends Components.MwCheckbox {
-
+export declare interface MwChip extends Components.MwChip {
+  /**
+   *  
+   */
   emitter: EventEmitter<CustomEvent<any>>;
+
 }
 
-
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['disabled', 'icon', 'selected', 'showClose', 'testId']
 })
 @Component({
   selector: 'mw-chip',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'icon', 'selected', 'showClose', 'testId'],
+  inputs: ['disabled', 'icon', 'selected', 'showClose', 'testId']
 })
 export class MwChip {
   protected el: HTMLElement;
@@ -238,21 +244,17 @@ export class MwChip {
 }
 
 
-export declare interface MwChip extends Components.MwChip {
-
-  emitter: EventEmitter<CustomEvent<any>>;
-}
-
+export declare interface MwDivider extends Components.MwDivider {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['inset']
 })
 @Component({
   selector: 'mw-divider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['inset'],
+  inputs: ['inset']
 })
 export class MwDivider {
   protected el: HTMLElement;
@@ -263,18 +265,17 @@ export class MwDivider {
 }
 
 
-export declare interface MwDivider extends Components.MwDivider {}
-
+export declare interface MwIcon extends Components.MwIcon {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['color', 'fill', 'icon', 'size', 'weight']
 })
 @Component({
   selector: 'mw-icon',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['color', 'fill', 'icon', 'size', 'weight'],
+  inputs: ['color', 'fill', 'icon', 'size', 'weight']
 })
 export class MwIcon {
   protected el: HTMLElement;
@@ -285,17 +286,15 @@ export class MwIcon {
 }
 
 
-export declare interface MwIcon extends Components.MwIcon {}
-
+export declare interface MwIconGallery extends Components.MwIconGallery {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined
 })
 @Component({
   selector: 'mw-icon-gallery',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: [],
+  template: '<ng-content></ng-content>'
 })
 export class MwIconGallery {
   protected el: HTMLElement;
@@ -306,18 +305,17 @@ export class MwIconGallery {
 }
 
 
-export declare interface MwIconGallery extends Components.MwIconGallery {}
-
+export declare interface MwLink extends Components.MwLink {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['href']
 })
 @Component({
   selector: 'mw-link',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['href'],
+  inputs: ['href']
 })
 export class MwLink {
   protected el: HTMLElement;
@@ -328,18 +326,17 @@ export class MwLink {
 }
 
 
-export declare interface MwLink extends Components.MwLink {}
-
+export declare interface MwMenu extends Components.MwMenu {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['open', 'placement', 'testId']
 })
 @Component({
   selector: 'mw-menu',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['open', 'placement', 'testId'],
+  inputs: ['open', 'placement', 'testId']
 })
 export class MwMenu {
   protected el: HTMLElement;
@@ -350,18 +347,23 @@ export class MwMenu {
 }
 
 
-export declare interface MwMenu extends Components.MwMenu {}
+export declare interface MwMenuItem extends Components.MwMenuItem {
+  /**
+   *  
+   */
+  clickEmitter: EventEmitter<CustomEvent<any>>;
 
+}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['disabled', 'selected', 'subtitle', 'title']
 })
 @Component({
   selector: 'mw-menu-item',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'selected', 'subtitle', 'title'],
+  inputs: ['disabled', 'selected', 'subtitle', 'title']
 })
 export class MwMenuItem {
   protected el: HTMLElement;
@@ -373,21 +375,17 @@ export class MwMenuItem {
 }
 
 
-export declare interface MwMenuItem extends Components.MwMenuItem {
-
-  clickEmitter: EventEmitter<CustomEvent<any>>;
-}
-
+export declare interface MwMenuList extends Components.MwMenuList {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['testId']
 })
 @Component({
   selector: 'mw-menu-list',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['testId'],
+  inputs: ['testId']
 })
 export class MwMenuList {
   protected el: HTMLElement;
@@ -398,18 +396,17 @@ export class MwMenuList {
 }
 
 
-export declare interface MwMenuList extends Components.MwMenuList {}
-
+export declare interface MwPopover extends Components.MwPopover {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['dismissable', 'name', 'noPadding', 'open', 'placement', 'testId']
 })
 @Component({
   selector: 'mw-popover',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['dismissable', 'name', 'noPadding', 'open', 'placement', 'testId'],
+  inputs: ['dismissable', 'name', 'noPadding', 'open', 'placement', 'testId']
 })
 export class MwPopover {
   protected el: HTMLElement;
@@ -420,18 +417,17 @@ export class MwPopover {
 }
 
 
-export declare interface MwPopover extends Components.MwPopover {}
-
+export declare interface MwRadio extends Components.MwRadio {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
 })
 @Component({
   selector: 'mw-radio',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value'],
+  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
 })
 export class MwRadio {
   protected el: HTMLElement;
@@ -442,18 +438,23 @@ export class MwRadio {
 }
 
 
-export declare interface MwRadio extends Components.MwRadio {}
+export declare interface MwSwitch extends Components.MwSwitch {
+  /**
+   *  
+   */
+  emitter: EventEmitter<CustomEvent<any>>;
 
+}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['checked', 'disabled', 'label', 'offText', 'onText', 'testId']
 })
 @Component({
   selector: 'mw-switch',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['checked', 'disabled', 'label', 'offText', 'onText', 'testId'],
+  inputs: ['checked', 'disabled', 'label', 'offText', 'onText', 'testId']
 })
 export class MwSwitch {
   protected el: HTMLElement;
@@ -465,21 +466,17 @@ export class MwSwitch {
 }
 
 
-export declare interface MwSwitch extends Components.MwSwitch {
-
-  emitter: EventEmitter<CustomEvent<any>>;
-}
-
+export declare interface MwTab extends Components.MwTab {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['disabled', 'icon', 'label', 'selected']
 })
 @Component({
   selector: 'mw-tab',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'icon', 'label', 'selected'],
+  inputs: ['disabled', 'icon', 'label', 'selected']
 })
 export class MwTab {
   protected el: HTMLElement;
@@ -490,18 +487,17 @@ export class MwTab {
 }
 
 
-export declare interface MwTab extends Components.MwTab {}
-
+export declare interface MwTabs extends Components.MwTabs {}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['selected', 'testId']
 })
 @Component({
   selector: 'mw-tabs',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['selected', 'testId'],
+  inputs: ['selected', 'testId']
 })
 export class MwTabs {
   protected el: HTMLElement;
@@ -512,18 +508,23 @@ export class MwTabs {
 }
 
 
-export declare interface MwTabs extends Components.MwTabs {}
+export declare interface MwTextfield extends Components.MwTextfield {
+  /**
+   *  
+   */
+  valueChanged: EventEmitter<CustomEvent<string>>;
 
+}
 
 @ProxyCmp({
+  defineCustomElementFn: undefined,
   inputs: ['disabled', 'hasError', 'helperText', 'inline', 'label', 'name', 'placeholder', 'required', 'type', 'value']
 })
 @Component({
   selector: 'mw-textfield',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'hasError', 'helperText', 'inline', 'label', 'name', 'placeholder', 'required', 'type', 'value'],
+  inputs: ['disabled', 'hasError', 'helperText', 'inline', 'label', 'name', 'placeholder', 'required', 'type', 'value']
 })
 export class MwTextfield {
   protected el: HTMLElement;
@@ -533,11 +534,3 @@ export class MwTextfield {
     proxyOutputs(this, this.el, ['valueChanged']);
   }
 }
-
-
-export declare interface MwTextfield extends Components.MwTextfield {
-
-  valueChanged: EventEmitter<CustomEvent<string>>;
-}
-
-

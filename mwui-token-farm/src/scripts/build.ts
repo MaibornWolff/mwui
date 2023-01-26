@@ -38,7 +38,8 @@ const getStyleDictionaryConfig = (theme: string) => {
           },
         ],
       },
-      js: {
+      ts: {
+        transformGroup: "js",
         transforms: jsTransforms,
         buildPath: 'dist/js/',
         files: [
@@ -46,7 +47,15 @@ const getStyleDictionaryConfig = (theme: string) => {
             destination: `${theme}.js`,
             format: 'javascript/es6',
           },
-        ],
+          {
+            destination: `${theme}.ts`,
+            format: 'javascript/es6',
+          },
+          {
+            destination: `${theme}.d.ts`,
+            format: "typescript/es6-declarations"
+          }
+        ]
       },
     },
   };

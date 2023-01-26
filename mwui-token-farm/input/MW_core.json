@@ -1882,6 +1882,10 @@
           "hover": {
             "value": "#EEF1F3",
             "type": "color"
+          },
+          "pressed": {
+            "value": "#CFD6D8",
+            "type": "color"
           }
         },
         "paddingX": {

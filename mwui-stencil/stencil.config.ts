@@ -13,6 +13,9 @@ export const config: Config = {
   testing: {
     coverageDirectory: "./reports",
     coverageReporters: ["html", "text"],
+    moduleNameMapper: {
+      '@mwui-token-farm/(.*)$': '<rootDir>/mwui-token-farm/dist/js/$1'
+    }
   },
   outputTargets: [
     react({

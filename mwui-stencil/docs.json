@@ -1,8 +1,8 @@
 {
-  "timestamp": "2023-01-20T14:08:34",
+  "timestamp": "2023-01-26T08:56:30",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.21.0",
+    "version": "2.22.2",
     "typescriptVersion": "4.9.4"
   },
   "components": [
@@ -55,7 +55,7 @@
           "reflectToAttr": false,
           "docs": "Size variant",
           "docsTags": [],
-          "default": "'medium'",
+          "default": "SizeEnum.MEDIUM",
           "values": [
             {
               "value": "large",
@@ -1144,7 +1144,7 @@
           "reflectToAttr": false,
           "docs": "This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.",
           "docsTags": [],
-          "default": "'small'",
+          "default": "SizeEnum.SMALL",
           "values": [
             {
               "value": "large",

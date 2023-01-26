@@ -1,10 +1,11 @@
 import { h } from "@stencil/core";
 import { newSpecPage } from '@stencil/core/testing';
-import { AvatarSizeEnum, MwAvatar } from "./mw-avatar";
+import { MwAvatar } from "./mw-avatar";
+import { SizeEnum } from "../../shared/models/enums/size.enum"
 
 describe('GIVEN MwAvatar', () => {
   const setup = async({ src, icon, alt, size }: Pick<MwAvatar, 'src' | 'icon' | 'alt' | 'size'> = {
-    size: AvatarSizeEnum.MEDIUM,
+    size: SizeEnum.MEDIUM,
   }) => {
     return await newSpecPage({
       components: [MwAvatar],
@@ -38,7 +39,7 @@ describe('GIVEN MwAvatar', () => {
 
   it('SHOULD render an image WHEN src value is passed', async() => {
     const page = await setup({
-      size: AvatarSizeEnum.MEDIUM,
+      size: SizeEnum.MEDIUM,
       src: "example.com",
       alt: "alt-text"
     })
@@ -51,7 +52,7 @@ describe('GIVEN MwAvatar', () => {
 
   it('SHOULD use first letter of alt WHEN no src or icon value is passed', async() => {
     const page = await setup({
-      size: AvatarSizeEnum.MEDIUM,
+      size: SizeEnum.MEDIUM,
       alt: "alt-text",
     })
     const fallback = page.root.shadowRoot.querySelector(".fallback")
