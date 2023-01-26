@@ -1,63 +1,67 @@
 # builds tokens, stencil and storybook. Will be published via pages in mwui-dev repository
 name: Dev - Update Tokens and Build WebComponents
 on:
-  push:
-    branches: [main]
+    push:
+        branches: [main]
 permissions:
-  contents: write
+    contents: write
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    environment:
-      name: dev
-    steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+    build:
+        runs-on: ubuntu-latest
+        environment:
+            name: dev
+        steps:
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
 
-      # https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
-      - name: Set GitHub Actions as Commit Author
-        run: |
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
+            # https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
+            - name: Set GitHub Actions as Commit Author
+              run: |
+                  git config --global user.name github-actions
+                  git config --global user.email github-actions@github.com
 
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-        with:
-          path: 'build'
+            - name: Checkout Repo
+              uses: actions/checkout@v3
+              with:
+                  path: "build"
 
-      - name: Install dependencies
-        working-directory: ./build
-        run: npm ci
+            - name: Install dependencies
+              working-directory: ./build
+              run: npm ci
 
-      - name: Transform Figma Tokens & Style Dictionary
-        working-directory: ./build
-        run: npm run build-tokens
+            - name: Transform Figma Tokens & Style Dictionary
+              working-directory: ./build
+              run: npm run build-tokens
 
-      - name: Run Stencil unit tests
-        working-directory: ./build
-        run: npm run test:spec
+            - name: Run lint on Stencil components
+              working-directory: ./build
+              run: npm run lint
 
-      - name: Build Stencil
-        working-directory: ./build
-        run:  npm run build-stencil
+            - name: Run Stencil unit tests
+              working-directory: ./build
+              run: npm run test:spec
 
-      - name: Generate Storybook
-        working-directory: ./build
-        run: npm run build-storybook
+            - name: Build Stencil
+              working-directory: ./build
+              run: npm run build-stencil
 
-      # do not persist build (done in release action)
-      # checkout and push storybook build to mwui-dev
-      - name: Checkout Dev Target
-        uses: actions/checkout@v3
-        with:
-          repository: maibornwolff/mwui-dev
-          path: 'deploy'
-          token: ${{ secrets.PAT }}
+            - name: Generate Storybook
+              working-directory: ./build
+              run: npm run build-storybook
 
-      - name: Push files to target
-        run: |
-          cp -rf build/docs/* deploy
-          cd deploy
-          git add .
-          git commit -m $GITHUB_SHA
-          git push
+            # do not persist build (done in release action)
+            # checkout and push storybook build to mwui-dev
+            - name: Checkout Dev Target
+              uses: actions/checkout@v3
+              with:
+                  repository: maibornwolff/mwui-dev
+                  path: "deploy"
+                  token: ${{ secrets.PAT }}
+
+            - name: Push files to target
+              run: |
+                  cp -rf build/docs/* deploy
+                  cd deploy
+                  git add .
+                  git commit -m $GITHUB_SHA
+                  git push
