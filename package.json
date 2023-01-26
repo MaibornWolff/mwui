@@ -18,6 +18,7 @@
         "storybook": "npm run storybook --workspace=mwui-stencil",
         "test": "npm run test --workspace=mwui-stencil",
         "test:spec": "npm run test:spec --workspace=mwui-stencil",
+        "lint": "npm run lint --workspace=mwui-stencil",
         "build-tokens": "npm run build --workspace=mwui-token-farm",
         "build-stencil": "npm run build --workspace=mwui-stencil",
         "build-storybook": "npm run build-storybook --workspace=mwui-stencil",

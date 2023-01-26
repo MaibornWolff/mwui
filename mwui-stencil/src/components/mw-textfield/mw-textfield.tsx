@@ -61,8 +61,8 @@ export class MwTextfield {
   private hasIconEndSlot: boolean;
 
   componentWillLoad(): void {
-    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
-    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
+    this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
+    this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
   }
 
   private onValueChange = (event: Event): void => {

@@ -5,7 +5,7 @@ export default {
   title: "Pages/Demo",
 };
 
-const Template = () => `
+const Template = (): string => `
 <div style="display: flex; justify-content: center">
   <div style="text-align: center">
     <h1>Hello World 01</h1>

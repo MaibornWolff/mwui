@@ -62,8 +62,8 @@ export class MWButton {
   private hasLabel: boolean;
 
   componentWillLoad(): void {
-    this.hasIconStartSlot = !!this.hostElement.querySelector('[slot="icon-start"]');
-    this.hasIconEndSlot = !!this.hostElement.querySelector('[slot="icon-end"]');
+    this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
+    this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
     this.hasIcon = this.hasIconStartSlot || this.hasIconEndSlot;
     this.hasLabel = !!this.label;
   }
