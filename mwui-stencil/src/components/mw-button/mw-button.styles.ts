@@ -1,4 +1,4 @@
-import { css } from "@emotion/css"
+import { css } from "@emotion/css";
 import {
   letterSpacingButtons,
   mwComponentButtonBorderRadiusDefault,
@@ -32,9 +32,13 @@ import {
   mwComponentButtonLabelXlFontFamily,
   mwComponentButtonLabelXlFontSize,
   mwComponentButtonLabelXlFontWeight,
-  mwComponentButtonLabelXlLineHeight, mwComponentButtonLgGapBetween, mwComponentButtonLgPaddingIcon,
+  mwComponentButtonLabelXlLineHeight,
+  mwComponentButtonLgGapBetween,
+  mwComponentButtonLgPaddingIcon,
   mwComponentButtonLgPaddingX,
-  mwComponentButtonLgPaddingY, mwComponentButtonMdGapBetween, mwComponentButtonMdPaddingIcon,
+  mwComponentButtonLgPaddingY,
+  mwComponentButtonMdGapBetween,
+  mwComponentButtonMdPaddingIcon,
   mwComponentButtonMdPaddingX,
   mwComponentButtonMdPaddingY,
   mwComponentButtonOutlineGhostColorBgDefault,
@@ -47,18 +51,22 @@ import {
   mwComponentButtonOutlineGhostColorFgDisabled,
   mwComponentButtonOutlineGhostColorFgFocused,
   mwComponentButtonOutlineGhostColorFgHover,
-  mwComponentButtonOutlineGhostColorFgPressed, mwComponentButtonSmGapBetween, mwComponentButtonSmPaddingIcon,
+  mwComponentButtonOutlineGhostColorFgPressed,
+  mwComponentButtonSmGapBetween,
+  mwComponentButtonSmPaddingIcon,
   mwComponentButtonSmPaddingX,
-  mwComponentButtonSmPaddingY, mwComponentButtonXlGapBetween, mwComponentButtonXlPaddingIcon,
+  mwComponentButtonSmPaddingY,
+  mwComponentButtonXlGapBetween,
+  mwComponentButtonXlPaddingIcon,
   mwComponentButtonXlPaddingX,
   mwComponentButtonXlPaddingY,
   mwComponentSizeButtonFilledOutlineMinW,
-} from "@mwui-token-farm/MW_component"
-import { getFontWeightValue } from "../../utils/utils"
+} from "@mwui-token-farm/MW_component";
+import { getFontWeightValue } from "../../utils/utils";
 
 // figma exports percentage value instead of em
 // workaround to convert it to float
-const letterSpacing = Number(letterSpacingButtons.replace('%', '').trim()) / 100;
+const letterSpacing = Number(letterSpacingButtons.replace("%", "").trim()) / 100;
 
 export const base = css`
   appearance: none;

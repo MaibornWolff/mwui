@@ -26,6 +26,7 @@
     "test:spec:coverage": "stencil test --spec --coverage",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "lint": "eslint src/**/*{.ts,.tsx}",
+    "format": "pretty-quick",
     "format:quick": "pretty-quick --staged",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
