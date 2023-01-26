@@ -69,7 +69,7 @@ export class MwIcon {
           'GRAD' 0,
           'opsz' ${getOpticalSize(this.size)}`,
         }}
-        class="material-symbols-outlined"
+        class={`material-symbols-outlined ${this.size}`}
       >
         {this.icon}
       </span>
