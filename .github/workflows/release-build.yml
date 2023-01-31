@@ -38,5 +38,7 @@ jobs:
             # Committing the build will trigger the Pages Action for release build of SB
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
+                  # FIXME: find a better way to deal with protected main branch
+                  push_options: --force
                   commit_message: ${{ github.event.head_commit.message }}
                   branch: main
