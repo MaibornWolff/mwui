@@ -1,21 +1,15 @@
-import { create } from '@storybook/theming';
-import logo from './public/mwui_logo.svg';
-import '../src/global/global.css';
+import { create } from "@storybook/theming";
+import logo from "./public/mw_logo.png";
+import "../src/global/global.css";
 
-import {
-  mwCoreColorPurple900,
-  mwCoreColorPink500,
-  mwCoreFontFontFamiliesBody,
-  mwCoreColorNeutral100,
-  borderRadiusStandardMd,
-} from '../../mwui-token-farm/dist/js/MW_core';
+import { mwCoreColorPurple900, mwCoreColorPink500, mwCoreFontFontFamiliesBody, mwCoreColorNeutral100, borderRadiusStandardMd } from "../../mwui-token-farm/dist/js/MW_core";
 
 export default create({
-  base: 'light',
-  brandTitle: 'MWUI',
+  base: "light",
+  brandTitle: "MWUI",
   // brandUrl: "https://example.com",
-  brandImage: logo,
-  brandTarget: '_self',
+  // brandImage: logo,
+  brandTarget: "_self",
 
   colorPink: mwCoreColorPink500,
   colorPurple: mwCoreColorPurple900,
@@ -35,7 +29,7 @@ export default create({
   // textInverseColor: 'black',
 
   // Toolbar default and active colors
-  barTextColor: 'white',
+  barTextColor: "white",
   //barSelectedColor: mwCoreColorPink500,
   barBg: mwCoreColorPurple900,
 });
