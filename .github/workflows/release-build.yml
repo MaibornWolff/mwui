@@ -23,7 +23,7 @@ jobs:
             - name: Transform Figma Tokens & Style Dictionary
               run: npm run build-tokens
 
-            # fix pipeline
+            # TODO: fix pipeline
             # - name: Run lint on Stencil components
             #   working-directory: ./build
             #   run: npm run lint
