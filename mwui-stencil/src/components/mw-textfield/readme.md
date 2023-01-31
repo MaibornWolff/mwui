@@ -1,9 +1,6 @@
 # mw-textfield
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -17,30 +14,29 @@
 | `name`        | `name`        | input field name                                                                             | `string`           | `undefined` |
 | `placeholder` | `placeholder` | Placeholder to be displayed                                                                  | `string`           | `undefined` |
 | `required`    | `required`    | Mark input as required                                                                       | `boolean`          | `false`     |
-| `type`        | `type`        | HTML Input type                                                                              | `string`           | `'text'`    |
+| `type`        | `type`        | HTML Input type                                                                              | `string`           | `"text"`    |
 | `value`       | `value`       | input field value                                                                            | `number \| string` | `undefined` |
-
 
 ## Events
 
-| Event          | Description | Type                  |
-| -------------- | ----------- | --------------------- |
-| `valueChanged` |             | `CustomEvent<string>` |
-
+| Event          | Description                                             | Type                  |
+| -------------- | ------------------------------------------------------- | --------------------- |
+| `valueChanged` | MwTextfield emits an event when textfield value changes | `CustomEvent<string>` |
 
 ## Dependencies
 
 ### Used by
 
- - [mw-icon-gallery](../mw-icon-gallery)
+- [mw-icon-gallery](../mw-icon-gallery)
 
 ### Graph
+
 ```mermaid
 graph TD;
   mw-icon-gallery --> mw-textfield
   style mw-textfield fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
-----------------------------------------------
+---
 
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

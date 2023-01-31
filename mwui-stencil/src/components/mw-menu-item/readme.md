@@ -1,9 +1,6 @@
 # mw-menu-item
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -14,14 +11,12 @@
 | `subtitle` | `subtitle` | Menu item subtitle | `string`  | `undefined` |
 | `title`    | `title`    | Menu item title    | `string`  | `undefined` |
 
-
 ## Events
 
-| Event          | Description | Type               |
-| -------------- | ----------- | ------------------ |
-| `clickEmitter` |             | `CustomEvent<any>` |
+| Event          | Description                                | Type               |
+| -------------- | ------------------------------------------ | ------------------ |
+| `clickEmitter` | MwMenuItem emits an event when its clicked | `CustomEvent<any>` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_
