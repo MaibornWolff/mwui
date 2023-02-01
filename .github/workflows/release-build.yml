@@ -11,6 +11,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+              with:
+                  token: ${{ secrets.PAT }}
             - uses: actions/setup-node@v3
               with:
                   node-version: 16
@@ -38,6 +40,5 @@ jobs:
             # Committing the build will trigger the Pages Action for release build of SB
             - uses: stefanzweifel/git-auto-commit-action@v4
               with:
-                  token: ${{ secrets.PAT }}
                   commit_message: ${{ github.event.head_commit.message }}
                   branch: main
