@@ -315,13 +315,13 @@ export declare interface MwLink extends Components.MwLink {}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["href"],
+    inputs: ["href", "target", "underline"],
 })
 @Component({
     selector: "mw-link",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["href"],
+    inputs: ["href", "target", "underline"],
 })
 export class MwLink {
     protected el: HTMLElement;

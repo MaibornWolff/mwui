@@ -246,6 +246,14 @@ export namespace Components {
      * URL to where the link should lead
      */
     href: string;
+    /**
+     * Target Prop for HTML 'a' tag
+     */
+    target?: Target;
+    /**
+     * Dictates whether link has an underline
+     */
+    underline?: boolean;
   }
   interface MwMenu {
     /**
@@ -855,6 +863,14 @@ declare namespace LocalJSX {
      * URL to where the link should lead
      */
     href: string;
+    /**
+     * Target Prop for HTML 'a' tag
+     */
+    target?: Target;
+    /**
+     * Dictates whether link has an underline
+     */
+    underline?: boolean;
   }
   interface MwMenu {
     /**

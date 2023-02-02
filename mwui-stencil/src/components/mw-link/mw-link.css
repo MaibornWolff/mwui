@@ -3,6 +3,9 @@
   font-size: var(--mw-component-link-typo-font-size);
   font-weight: var(--mw-component-link-typo-font-weight);
   color: var(--mw-component-link-color-fg-default);
+  text-decoration: none;
+}
+.mw-link.underline {
   text-decoration: var(--mw-component-link-typo-text-decoration);
 }
 .mw-link:hover {
