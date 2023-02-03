@@ -4,11 +4,11 @@
 
 ## Properties
 
-| Property            | Attribute   | Description                       | Type      | Default     |
-| ------------------- | ----------- | --------------------------------- | --------- | ----------- |
-| `href` _(required)_ | `href`      | URL to where the link should lead | `string`  | `undefined` |
-| `target`            | `target`    |                                   | `string`  | `undefined` |
-| `underline`         | `underline` |                                   | `boolean` | `true`      |
+| Property            | Attribute   | Description                            | Type                                         | Default           |
+| ------------------- | ----------- | -------------------------------------- | -------------------------------------------- | ----------------- |
+| `href` _(required)_ | `href`      | URL to where the link should lead      | `string`                                     | `undefined`       |
+| `target`            | `target`    | Target Prop for HTML 'a' tag           | `"_blank" \| "_parent" \| "_self" \| "_top"` | `TargetEnum.SELF` |
+| `underline`         | `underline` | Dictates whether link has an underline | `boolean`                                    | `true`            |
 
 ---
 

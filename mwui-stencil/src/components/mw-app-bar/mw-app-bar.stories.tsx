@@ -23,7 +23,7 @@ const AppBarWithSearch = args => `
 
 export const WithSearch = AppBarWithSearch.bind({});
 WithSearch.args = {
-  position: "relative",
+  position: "fixed",
 };
 
 const AppBarWithMenu = args => `
@@ -35,5 +35,5 @@ const AppBarWithMenu = args => `
 
 export const WithMenu = AppBarWithMenu.bind({});
 WithMenu.args = {
-  position: "relative",
+  position: "fixed",
 };

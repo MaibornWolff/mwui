@@ -1,11 +1,60 @@
 {
-  "timestamp": "2023-02-02T13:59:16",
+  "timestamp": "2023-02-03T11:20:13",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
     "typescriptVersion": "4.9.4"
   },
   "components": [
+    {
+      "filePath": "./src/components/mw-app-bar/mw-app-bar.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-app-bar",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "position",
+          "type": "\"absolute\" | \"fixed\" | \"relative\" | \"sticky\"",
+          "mutable": false,
+          "attr": "position",
+          "reflectToAttr": false,
+          "docs": "Position of App Bar within viewport",
+          "docsTags": [],
+          "default": "\"relative\"",
+          "values": [
+            {
+              "value": "absolute",
+              "type": "string"
+            },
+            {
+              "value": "fixed",
+              "type": "string"
+            },
+            {
+              "value": "relative",
+              "type": "string"
+            },
+            {
+              "value": "sticky",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
     {
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
@@ -130,7 +179,7 @@
       "filePath": "./src/components/mw-button/mw-button.tsx",
       "encapsulation": "none",
       "tag": "mw-button",
-      "readme": "# mw-button\r\n\r",
+      "readme": "# mw-button\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -310,7 +359,7 @@
       "filePath": "./src/components/mw-card/mw-card.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card",
-      "readme": "# mw-card\r\n\r",
+      "readme": "# mw-card\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -616,7 +665,7 @@
       "filePath": "./src/components/mw-card-header/mw-card-header.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-header",
-      "readme": "# mw-card-header\r\n\r",
+      "readme": "# mw-card-header\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -720,7 +769,7 @@
       "filePath": "./src/components/mw-card-title/mw-card-title.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-title",
-      "readme": "# mw-card-title\r\n\r",
+      "readme": "# mw-card-title\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -788,7 +837,7 @@
       "filePath": "./src/components/mw-checkbox/mw-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "mw-checkbox",
-      "readme": "# mw-checkbox\r\n\r",
+      "readme": "# mw-checkbox\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -918,7 +967,7 @@
       "filePath": "./src/components/mw-chip/mw-chip.tsx",
       "encapsulation": "shadow",
       "tag": "mw-chip",
-      "readme": "# mw-chip\r\n\r",
+      "readme": "# mw-chip\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1196,7 +1245,7 @@
       "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon-gallery",
-      "readme": "# mw-icon-gallery\r\n\r",
+      "readme": "# mw-icon-gallery\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1234,7 +1283,7 @@
       "filePath": "./src/components/mw-link/mw-link.tsx",
       "encapsulation": "shadow",
       "tag": "mw-link",
-      "readme": "# mw-link\n\n\n",
+      "readme": "# mw-link\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1257,14 +1306,28 @@
         },
         {
           "name": "target",
-          "type": "string",
+          "type": "\"_blank\" | \"_parent\" | \"_self\" | \"_top\"",
           "mutable": false,
           "attr": "target",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Target Prop for HTML 'a' tag",
           "docsTags": [],
+          "default": "TargetEnum.SELF",
           "values": [
             {
+              "value": "_blank",
+              "type": "string"
+            },
+            {
+              "value": "_parent",
+              "type": "string"
+            },
+            {
+              "value": "_self",
+              "type": "string"
+            },
+            {
+              "value": "_top",
               "type": "string"
             }
           ],
@@ -1277,7 +1340,7 @@
           "mutable": false,
           "attr": "underline",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Dictates whether link has an underline",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -1303,7 +1366,7 @@
       "filePath": "./src/components/mw-menu/mw-menu.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu",
-      "readme": "# mw-menu\r\n\r",
+      "readme": "# mw-menu\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1420,7 +1483,7 @@
       "filePath": "./src/components/mw-menu-item/mw-menu-item.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-item",
-      "readme": "# mw-menu-item\r\n\r",
+      "readme": "# mw-menu-item\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1552,7 +1615,7 @@
       "filePath": "./src/components/mw-popover/mw-popover.tsx",
       "encapsulation": "shadow",
       "tag": "mw-popover",
-      "readme": "# mw-popover\r\n\r",
+      "readme": "# mw-popover\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1835,7 +1898,7 @@
       "filePath": "./src/components/mw-switch/mw-switch.tsx",
       "encapsulation": "shadow",
       "tag": "mw-switch",
-      "readme": "# mw-switch\r\n\r",
+      "readme": "# mw-switch\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1964,7 +2027,7 @@
       "filePath": "./src/components/mw-tab/mw-tab.tsx",
       "encapsulation": "shadow",
       "tag": "mw-tab",
-      "readme": "# mw-tab\r\n\r",
+      "readme": "# mw-tab\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2051,7 +2114,7 @@
       "filePath": "./src/components/mw-tabs/mw-tabs.tsx",
       "encapsulation": "shadow",
       "tag": "mw-tabs",
-      "readme": "# mw-tabs\r\n\r",
+      "readme": "# mw-tabs\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2107,7 +2170,7 @@
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
       "encapsulation": "shadow",
       "tag": "mw-textfield",
-      "readme": "# mw-textfield\r\n\r",
+      "readme": "# mw-textfield\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
