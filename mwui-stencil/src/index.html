@@ -18,6 +18,7 @@
   </head>
 
   <body style="padding-bottom: 20vh">
+    <h1>Components</h1>
     <section>
       <h2>Button</h2>
       <h3>Filled</h3>
@@ -397,6 +398,22 @@
           <mw-tab icon="settings"></mw-tab>
         </mw-tabs>
       </div>
+    </section>
+    <br />
+    <hr />
+    <h1>Molecules</h1>
+    <section>
+      <h2>App Bar</h2>
+      <mw-app-bar position="relative">
+        <mw-icon slot="start" icon="menu" size="medium"></mw-icon>
+        <h3 slot="start">Product Name</h3>
+        <div slot="end" style="width: 250px">
+          <mw-textfield type="text" placeholder="Search things..." has-error="false">
+            <mw-icon slot="icon-start" icon="search"></mw-icon>
+          </mw-textfield>
+        </div>
+        <mw-avatar slot="end" src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>
+      </mw-app-bar>
     </section>
   </body>
   <script>

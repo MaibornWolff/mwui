@@ -1,5 +1,6 @@
 :host {
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
 .wrapper {
@@ -14,7 +15,8 @@
   color: var(--mw-component-text-field-fg-default);
 }
 
-.textfield.disabled, .textfield.disabled input {
+.textfield.disabled,
+.textfield.disabled input {
   color: var(--mw-component-text-field-fg-disabled);
 }
 
@@ -85,8 +87,8 @@ label {
   margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
 }
 
-.input input {
- border: none;
+.input input  {
+  border: none;
   padding: 0;
   width: 100%;
   background: transparent;
@@ -96,7 +98,8 @@ label {
   line-height: var(--mw-component-text-field-text-line-height);
 }
 
-.input input:focus-visible, .input input:focus {
+.input input:focus-visible,
+.input input:focus {
   outline: none;
   border: none;
   box-shadow: none;

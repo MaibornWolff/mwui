@@ -1,0 +1,47 @@
+:host {
+  display: block;
+}
+.mw-app-bar {
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--mw-component-size-header-height);
+  background: var(--mw-component-header-bg-default);
+  color: var(--mw-component-header-fg-default);
+  padding: 0 var(--mw-component-header-padding-x);
+}
+.mw-app-bar.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.mw-app-bar.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.mw-app-bar.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+slot {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  gap: var(--mw-component-header-gap-within);
+}
+
+slot[name="start"] {
+  justify-content: start;
+}
+slot[name="center"] {
+  justify-content: center;
+}
+slot[name="end"] {
+  justify-content: end;
+}

@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AppBarPosition } from "./components/mw-app-bar/mw-app-bar";
 import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
@@ -12,6 +13,12 @@ import { Target } from "./components/mw-button/models/enums/button-target.enum";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
+  interface MwAppBar {
+    /**
+     * Position of App Bar within viewport
+     */
+    position?: AppBarPosition;
+  }
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -471,6 +478,11 @@ export interface MwTextfieldCustomEvent<T> extends CustomEvent<T> {
   target: HTMLMwTextfieldElement;
 }
 declare global {
+  interface HTMLMwAppBarElement extends Components.MwAppBar, HTMLStencilElement {}
+  var HTMLMwAppBarElement: {
+    prototype: HTMLMwAppBarElement;
+    new (): HTMLMwAppBarElement;
+  };
   interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {}
   var HTMLMwAvatarElement: {
     prototype: HTMLMwAvatarElement;
@@ -587,6 +599,7 @@ declare global {
     new (): HTMLMwTextfieldElement;
   };
   interface HTMLElementTagNameMap {
+    "mw-app-bar": HTMLMwAppBarElement;
     "mw-avatar": HTMLMwAvatarElement;
     "mw-button": HTMLMwButtonElement;
     "mw-card": HTMLMwCardElement;
@@ -613,6 +626,12 @@ declare global {
   }
 }
 declare namespace LocalJSX {
+  interface MwAppBar {
+    /**
+     * Position of App Bar within viewport
+     */
+    position?: AppBarPosition;
+  }
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -1071,6 +1090,7 @@ declare namespace LocalJSX {
     value?: string | number;
   }
   interface IntrinsicElements {
+    "mw-app-bar": MwAppBar;
     "mw-avatar": MwAvatar;
     "mw-button": MwButton;
     "mw-card": MwCard;
@@ -1100,6 +1120,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      "mw-app-bar": LocalJSX.MwAppBar & JSXBase.HTMLAttributes<HTMLMwAppBarElement>;
       "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
       "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
       "mw-card": LocalJSX.MwCard & JSXBase.HTMLAttributes<HTMLMwCardElement>;
