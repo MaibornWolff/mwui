@@ -352,6 +352,56 @@ export namespace Components {
      */
     value: string;
   }
+  interface MwSlider {
+    /**
+     * Disable range input
+     */
+    disabled?: boolean;
+    /**
+     * Icon to be displayed to right of the slider
+     */
+    endIcon?: string;
+    /**
+     * input helper-text
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizonally
+     */
+    inline?: boolean;
+    /**
+     * input label
+     */
+    label?: string;
+    /**
+     * max range value
+     */
+    max: number;
+    /**
+     * min range value
+     */
+    min: number;
+    /**
+     * Name of range input
+     */
+    name: string;
+    /**
+     * Icon to be displayed to left of the slider
+     */
+    startIcon?: string;
+    /**
+     * step for range value
+     */
+    step: number;
+    /**
+     * Provide unique identifier for automated testing
+     */
+    testId: string;
+    /**
+     * value of range input
+     */
+    value: number;
+  }
   interface MwSwitch {
     /**
      * Switch state
@@ -578,6 +628,11 @@ declare global {
     prototype: HTMLMwRadioElement;
     new (): HTMLMwRadioElement;
   };
+  interface HTMLMwSliderElement extends Components.MwSlider, HTMLStencilElement {}
+  var HTMLMwSliderElement: {
+    prototype: HTMLMwSliderElement;
+    new (): HTMLMwSliderElement;
+  };
   interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {}
   var HTMLMwSwitchElement: {
     prototype: HTMLMwSwitchElement;
@@ -619,6 +674,7 @@ declare global {
     "mw-menu-list": HTMLMwMenuListElement;
     "mw-popover": HTMLMwPopoverElement;
     "mw-radio": HTMLMwRadioElement;
+    "mw-slider": HTMLMwSliderElement;
     "mw-switch": HTMLMwSwitchElement;
     "mw-tab": HTMLMwTabElement;
     "mw-tabs": HTMLMwTabsElement;
@@ -985,6 +1041,56 @@ declare namespace LocalJSX {
      */
     value?: string;
   }
+  interface MwSlider {
+    /**
+     * Disable range input
+     */
+    disabled?: boolean;
+    /**
+     * Icon to be displayed to right of the slider
+     */
+    endIcon?: string;
+    /**
+     * input helper-text
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizonally
+     */
+    inline?: boolean;
+    /**
+     * input label
+     */
+    label?: string;
+    /**
+     * max range value
+     */
+    max?: number;
+    /**
+     * min range value
+     */
+    min?: number;
+    /**
+     * Name of range input
+     */
+    name?: string;
+    /**
+     * Icon to be displayed to left of the slider
+     */
+    startIcon?: string;
+    /**
+     * step for range value
+     */
+    step?: number;
+    /**
+     * Provide unique identifier for automated testing
+     */
+    testId?: string;
+    /**
+     * value of range input
+     */
+    value?: number;
+  }
   interface MwSwitch {
     /**
      * Switch state
@@ -1110,6 +1216,7 @@ declare namespace LocalJSX {
     "mw-menu-list": MwMenuList;
     "mw-popover": MwPopover;
     "mw-radio": MwRadio;
+    "mw-slider": MwSlider;
     "mw-switch": MwSwitch;
     "mw-tab": MwTab;
     "mw-tabs": MwTabs;
@@ -1140,6 +1247,7 @@ declare module "@stencil/core" {
       "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
       "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
       "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
+      "mw-slider": LocalJSX.MwSlider & JSXBase.HTMLAttributes<HTMLMwSliderElement>;
       "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
       "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
       "mw-tabs": LocalJSX.MwTabs & JSXBase.HTMLAttributes<HTMLMwTabsElement>;
