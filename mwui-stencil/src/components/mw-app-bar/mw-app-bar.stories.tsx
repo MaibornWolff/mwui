@@ -1,8 +1,13 @@
 import "../../global/global.css";
+// @ts-ignore
+import docs from "./mw-app-bar.docs.mdx";
 
 export default {
   title: "Molecules/AppBar",
   component: "mw-app-bar",
+  parameters: {
+    docs: { page: docs },
+  },
 };
 
 const AppBarWithSearch = args => `
