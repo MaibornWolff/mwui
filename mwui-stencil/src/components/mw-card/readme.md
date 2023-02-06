@@ -1,9 +1,6 @@
 # mw-card
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -13,14 +10,12 @@
 | `outlined` | `outlined` | Display outline                                 | `boolean` | `false`     |
 | `testId`   | `test-id`  | Provide unique identifier for automated testing | `string`  | `undefined` |
 
-
 ## Events
 
-| Event          | Description | Type               |
-| -------------- | ----------- | ------------------ |
-| `clickEmitter` |             | `CustomEvent<any>` |
+| Event          | Description                           | Type               |
+| -------------- | ------------------------------------- | ------------------ |
+| `clickEmitter` | Emits an event when MwCard is clicked | `CustomEvent<any>` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

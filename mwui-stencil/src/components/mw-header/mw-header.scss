@@ -1,0 +1,32 @@
+.mw-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--mw-component-header-gap-within) var(--mw-component-header-padding-x);
+  background: var(--mw-component-header-bg-default);
+  color: var(--mw-component-header-fg-default);
+  box-sizing: border-box;
+
+  .mw-header-group {
+    display: flex;
+    align-items: center;
+
+    div[slot] {
+      display: flex;
+      align-items: center;
+
+      &:empty {
+        display: none;
+      }
+
+      &[slot="header-group-start"] > *,
+      &[slot="header-group-center"] > * {
+        margin-right: var(--mw-component-header-gap-within);
+      }
+
+      &[slot="header-group-end"] > * {
+        margin-left: var(--mw-component-header-gap-within);
+      }
+    }
+  }
+}

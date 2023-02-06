@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-01-26T08:56:30",
+  "timestamp": "2023-01-27T10:40:41",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -121,13 +121,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-icon"
-      ],
+      "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-avatar": [
-          "mw-icon"
-        ]
+        "mw-avatar": ["mw-icon"]
       }
     },
     {
@@ -195,7 +191,7 @@
           "reflectToAttr": false,
           "docs": "Button size",
           "docsTags": [],
-          "default": "'medium'",
+          "default": "ButtonSizeEnum.MEDIUM",
           "values": [
             {
               "value": "large",
@@ -225,7 +221,7 @@
           "reflectToAttr": false,
           "docs": "If using href the target prop can be provided",
           "docsTags": [],
-          "default": "'_self'",
+          "default": "TargetEnum.SELF",
           "values": [
             {
               "value": "_blank",
@@ -271,7 +267,7 @@
           "reflectToAttr": false,
           "docs": "Button variants",
           "docsTags": [],
-          "default": "'filled'",
+          "default": "ButtonVariantEnum.FILLED",
           "values": [
             {
               "value": "filled",
@@ -378,7 +374,7 @@
           "bubbles": true,
           "cancelable": false,
           "composed": false,
-          "docs": "",
+          "docs": "Emits an event when MwCard is clicked",
           "docsTags": []
         }
       ],
@@ -631,7 +627,7 @@
           "mutable": false,
           "attr": "header",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Header to be displayed in mw-card-header",
           "docsTags": [],
           "values": [
             {
@@ -647,7 +643,7 @@
           "mutable": false,
           "attr": "subheader",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Subheader to be displayed in mw-card-header",
           "docsTags": [],
           "values": [
             {
@@ -735,7 +731,7 @@
           "mutable": false,
           "attr": "metadata",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Metadata to be displayed in mw-card-title",
           "docsTags": [],
           "values": [
             {
@@ -751,7 +747,7 @@
           "mutable": false,
           "attr": "subtitle",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Subtitle to be displayed in mw-card-title",
           "docsTags": [],
           "values": [
             {
@@ -767,7 +763,7 @@
           "mutable": false,
           "attr": "title",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Title to be displayed in mw-card-title",
           "docsTags": [],
           "values": [
             {
@@ -882,7 +878,7 @@
         {
           "name": "value",
           "type": "string",
-          "mutable": true,
+          "mutable": false,
           "attr": "value",
           "reflectToAttr": true,
           "docs": "Value of checkbox input",
@@ -904,7 +900,7 @@
           "bubbles": true,
           "cancelable": false,
           "composed": false,
-          "docs": "",
+          "docs": "MwCheckbox emits an event when checkbox checked state is changed",
           "docsTags": []
         }
       ],
@@ -913,13 +909,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-icon"
-      ],
+      "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-checkbox": [
-          "mw-icon"
-        ]
+        "mw-checkbox": ["mw-icon"]
       }
     },
     {
@@ -1022,7 +1014,7 @@
           "bubbles": true,
           "cancelable": false,
           "composed": false,
-          "docs": "",
+          "docs": "MwChip emits an event when chip is clicked or chip is closed",
           "docsTags": []
         }
       ],
@@ -1031,13 +1023,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-icon"
-      ],
+      "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-chip": [
-          "mw-icon"
-        ]
+        "mw-chip": ["mw-icon"]
       }
     },
     {
@@ -1067,6 +1055,65 @@
           "required": false
         }
       ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-header/mw-header.tsx",
+      "encapsulation": "none",
+      "tag": "mw-header",
+      "readme": "# mw-header\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "ariaRole",
+          "type": "AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR",
+          "mutable": false,
+          "attr": "aria-role",
+          "reflectToAttr": false,
+          "docs": "*\nset the role of the header",
+          "docsTags": [],
+          "default": "AriaRolesEnum.NAVIGATION",
+          "values": [
+            {
+              "type": "AriaRolesEnum.NAVIGATION"
+            },
+            {
+              "type": "AriaRolesEnum.TOOLBAR"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-header-title/mw-header-title.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-header-title",
+      "readme": "# mw-header-title\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -1194,30 +1241,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-avatar",
-        "mw-checkbox",
-        "mw-chip",
-        "mw-icon-gallery",
-        "mw-tab"
-      ],
+      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-tab"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-avatar": [
-          "mw-icon"
-        ],
-        "mw-checkbox": [
-          "mw-icon"
-        ],
-        "mw-chip": [
-          "mw-icon"
-        ],
-        "mw-icon-gallery": [
-          "mw-icon"
-        ],
-        "mw-tab": [
-          "mw-icon"
-        ]
+        "mw-avatar": ["mw-icon"],
+        "mw-checkbox": ["mw-icon"],
+        "mw-chip": ["mw-icon"],
+        "mw-icon-gallery": ["mw-icon"],
+        "mw-tab": ["mw-icon"]
       }
     },
     {
@@ -1228,7 +1259,24 @@
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "icons",
+          "type": "string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "The icons that should be rendered",
+          "docsTags": [],
+          "default": "icons",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -1236,17 +1284,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-textfield",
-        "mw-icon",
-        "mw-switch"
-      ],
+      "dependencies": ["mw-textfield", "mw-icon", "mw-switch"],
       "dependencyGraph": {
-        "mw-icon-gallery": [
-          "mw-textfield",
-          "mw-icon",
-          "mw-switch"
-        ]
+        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"]
       }
     },
     {
@@ -1297,7 +1337,7 @@
         {
           "name": "open",
           "type": "boolean",
-          "mutable": true,
+          "mutable": false,
           "attr": "open",
           "reflectToAttr": true,
           "docs": "Whether the menu is open",
@@ -1319,7 +1359,7 @@
           "reflectToAttr": false,
           "docs": "Placement relative to anchor element",
           "docsTags": [],
-          "default": "'bottom-end'",
+          "default": "\"bottom-end\"",
           "values": [
             {
               "value": "bottom",
@@ -1397,13 +1437,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-popover"
-      ],
+      "dependencies": ["mw-popover"],
       "dependencyGraph": {
-        "mw-menu": [
-          "mw-popover"
-        ]
+        "mw-menu": ["mw-popover"]
       }
     },
     {
@@ -1435,7 +1471,7 @@
         {
           "name": "selected",
           "type": "boolean",
-          "mutable": true,
+          "mutable": false,
           "attr": "selected",
           "reflectToAttr": true,
           "docs": "Selected state",
@@ -1490,7 +1526,7 @@
           "bubbles": true,
           "cancelable": false,
           "composed": false,
-          "docs": "",
+          "docs": "MwMenuItem emits an event when its clicked",
           "docsTags": []
         }
       ],
@@ -1572,7 +1608,7 @@
           "reflectToAttr": false,
           "docs": "Name used internally to reference anchor and content elements",
           "docsTags": [],
-          "default": "'tooltip'",
+          "default": "\"tooltip\"",
           "values": [
             {
               "type": "string"
@@ -1622,7 +1658,7 @@
           "reflectToAttr": false,
           "docs": "Placement relative to anchor element",
           "docsTags": [],
-          "default": "'bottom'",
+          "default": "\"bottom\"",
           "values": [
             {
               "value": "bottom",
@@ -1699,14 +1735,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-menu"
-      ],
+      "dependents": ["mw-menu"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-menu": [
-          "mw-popover"
-        ]
+        "mw-menu": ["mw-popover"]
       }
     },
     {
@@ -1721,7 +1753,7 @@
         {
           "name": "checked",
           "type": "boolean",
-          "mutable": true,
+          "mutable": false,
           "attr": "checked",
           "reflectToAttr": true,
           "docs": "Whether the radio button is checked",
@@ -1940,7 +1972,7 @@
           "bubbles": true,
           "cancelable": false,
           "composed": false,
-          "docs": "",
+          "docs": "MwSwitch emits an event when switch checked state changes",
           "docsTags": []
         }
       ],
@@ -1948,14 +1980,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-icon-gallery"
-      ],
+      "dependents": ["mw-icon-gallery"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-icon-gallery": [
-          "mw-switch"
-        ]
+        "mw-icon-gallery": ["mw-switch"]
       }
     },
     {
@@ -1973,7 +2001,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Dictates if the tab is disabled",
           "docsTags": [],
           "values": [
             {
@@ -1989,7 +2017,7 @@
           "mutable": false,
           "attr": "icon",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Icon to be displayed",
           "docsTags": [],
           "values": [
             {
@@ -2005,7 +2033,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Label to be displayed",
           "docsTags": [],
           "values": [
             {
@@ -2021,7 +2049,7 @@
           "mutable": false,
           "attr": "selected",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Dictates if tab has selected state",
           "docsTags": [],
           "values": [
             {
@@ -2038,19 +2066,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-tabs"
-      ],
-      "dependencies": [
-        "mw-icon"
-      ],
+      "dependents": ["mw-tabs"],
+      "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-tab": [
-          "mw-icon"
-        ],
-        "mw-tabs": [
-          "mw-tab"
-        ]
+        "mw-tab": ["mw-icon"],
+        "mw-tabs": ["mw-tab"]
       }
     },
     {
@@ -2085,7 +2105,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Test Id",
           "docsTags": [],
           "values": [
             {
@@ -2103,16 +2123,10 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-tab"
-      ],
+      "dependencies": ["mw-tab"],
       "dependencyGraph": {
-        "mw-tabs": [
-          "mw-tab"
-        ],
-        "mw-tab": [
-          "mw-icon"
-        ]
+        "mw-tabs": ["mw-tab"],
+        "mw-tab": ["mw-icon"]
       }
     },
     {
@@ -2264,7 +2278,7 @@
           "reflectToAttr": false,
           "docs": "HTML Input type",
           "docsTags": [],
-          "default": "'text'",
+          "default": "\"text\"",
           "values": [
             {
               "type": "string"
@@ -2301,7 +2315,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": false,
-          "docs": "",
+          "docs": "MwTextfield emits an event when textfield value changes",
           "docsTags": []
         }
       ],
@@ -2309,14 +2323,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-icon-gallery"
-      ],
+      "dependents": ["mw-icon-gallery"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-icon-gallery": [
-          "mw-textfield"
-        ]
+        "mw-icon-gallery": ["mw-textfield"]
       }
     }
   ]

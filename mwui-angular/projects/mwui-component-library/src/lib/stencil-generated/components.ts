@@ -1,536 +1,568 @@
 /* tslint:disable */
 /* auto-generated angular directive proxies */
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
-import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from "@angular/core";
+import { ProxyCmp, proxyOutputs } from "./angular-component-lib/utils";
 
-import { Components } from '@maibornwolff/mwui-stencil';
-
-
-
+import { Components } from "@maibornwolff/mwui-stencil";
 
 export declare interface MwAvatar extends Components.MwAvatar {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['alt', 'icon', 'size', 'src', 'testId']
+    defineCustomElementFn: undefined,
+    inputs: ["alt", "icon", "size", "src", "testId"],
 })
 @Component({
-  selector: 'mw-avatar',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['alt', 'icon', 'size', 'src', 'testId']
+    selector: "mw-avatar",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["alt", "icon", "size", "src", "testId"],
 })
 export class MwAvatar {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwButton extends Components.MwButton {
-  /**
-   * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. 
-   */
-  clickEmitter: EventEmitter<CustomEvent<any>>;
-
+    /**
+     * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
+     */
+    clickEmitter: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['disabled', 'href', 'label', 'size', 'target', 'testId', 'variant']
+    defineCustomElementFn: undefined,
+    inputs: ["disabled", "href", "label", "size", "target", "testId", "variant"],
 })
 @Component({
-  selector: 'mw-button',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'href', 'label', 'size', 'target', 'testId', 'variant']
+    selector: "mw-button",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["disabled", "href", "label", "size", "target", "testId", "variant"],
 })
 export class MwButton {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['clickEmitter']);
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["clickEmitter"]);
+    }
 }
 
-
 export declare interface MwCard extends Components.MwCard {
-  /**
-   *  
-   */
-  clickEmitter: EventEmitter<CustomEvent<any>>;
-
+    /**
+     * Emits an event when MwCard is clicked
+     */
+    clickEmitter: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['elevated', 'outlined', 'testId']
+    defineCustomElementFn: undefined,
+    inputs: ["elevated", "outlined", "testId"],
 })
 @Component({
-  selector: 'mw-card',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['elevated', 'outlined', 'testId']
+    selector: "mw-card",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["elevated", "outlined", "testId"],
 })
 export class MwCard {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['clickEmitter']);
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["clickEmitter"]);
+    }
 }
-
 
 export declare interface MwCardBody extends Components.MwCardBody {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
+    defineCustomElementFn: undefined,
 })
 @Component({
-  selector: 'mw-card-body',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+    selector: "mw-card-body",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
 })
 export class MwCardBody {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwCardFooter extends Components.MwCardFooter {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['justifyCenter', 'justifyEnd', 'justifyFlexEnd', 'justifyFlexStart', 'justifyLeft', 'justifyNormal', 'justifyRight', 'justifySpaceAround', 'justifySpaceBetween', 'justifySpaceEvenly', 'justifyStart']
+    defineCustomElementFn: undefined,
+    inputs: [
+        "justifyCenter",
+        "justifyEnd",
+        "justifyFlexEnd",
+        "justifyFlexStart",
+        "justifyLeft",
+        "justifyNormal",
+        "justifyRight",
+        "justifySpaceAround",
+        "justifySpaceBetween",
+        "justifySpaceEvenly",
+        "justifyStart",
+    ],
 })
 @Component({
-  selector: 'mw-card-footer',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['justifyCenter', 'justifyEnd', 'justifyFlexEnd', 'justifyFlexStart', 'justifyLeft', 'justifyNormal', 'justifyRight', 'justifySpaceAround', 'justifySpaceBetween', 'justifySpaceEvenly', 'justifyStart']
+    selector: "mw-card-footer",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: [
+        "justifyCenter",
+        "justifyEnd",
+        "justifyFlexEnd",
+        "justifyFlexStart",
+        "justifyLeft",
+        "justifyNormal",
+        "justifyRight",
+        "justifySpaceAround",
+        "justifySpaceBetween",
+        "justifySpaceEvenly",
+        "justifyStart",
+    ],
 })
 export class MwCardFooter {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwCardHeader extends Components.MwCardHeader {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['header', 'subheader']
+    defineCustomElementFn: undefined,
+    inputs: ["header", "subheader"],
 })
 @Component({
-  selector: 'mw-card-header',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['header', 'subheader']
+    selector: "mw-card-header",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["header", "subheader"],
 })
 export class MwCardHeader {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwCardImage extends Components.MwCardImage {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['alt', 'src']
+    defineCustomElementFn: undefined,
+    inputs: ["alt", "src"],
 })
 @Component({
-  selector: 'mw-card-image',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['alt', 'src']
+    selector: "mw-card-image",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["alt", "src"],
 })
 export class MwCardImage {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwCardTitle extends Components.MwCardTitle {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['metadata', 'subtitle', 'title']
+    defineCustomElementFn: undefined,
+    inputs: ["metadata", "subtitle", "title"],
 })
 @Component({
-  selector: 'mw-card-title',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['metadata', 'subtitle', 'title']
+    selector: "mw-card-title",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["metadata", "subtitle", "title"],
 })
 export class MwCardTitle {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwCheckbox extends Components.MwCheckbox {
-  /**
-   *  
-   */
-  emitter: EventEmitter<CustomEvent<any>>;
-
+    /**
+     * MwCheckbox emits an event when checkbox checked state is changed
+     */
+    emitter: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
+    defineCustomElementFn: undefined,
+    inputs: ["checked", "disabled", "label", "name", "testId", "value"],
 })
 @Component({
-  selector: 'mw-checkbox',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
+    selector: "mw-checkbox",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["checked", "disabled", "label", "name", "testId", "value"],
 })
 export class MwCheckbox {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['emitter']);
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["emitter"]);
+    }
 }
 
-
 export declare interface MwChip extends Components.MwChip {
-  /**
-   *  
-   */
-  emitter: EventEmitter<CustomEvent<any>>;
-
+    /**
+     * MwChip emits an event when chip is clicked or chip is closed
+     */
+    emitter: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['disabled', 'icon', 'selected', 'showClose', 'testId']
+    defineCustomElementFn: undefined,
+    inputs: ["disabled", "icon", "selected", "showClose", "testId"],
 })
 @Component({
-  selector: 'mw-chip',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'icon', 'selected', 'showClose', 'testId']
+    selector: "mw-chip",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["disabled", "icon", "selected", "showClose", "testId"],
 })
 export class MwChip {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['emitter']);
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["emitter"]);
+    }
 }
-
 
 export declare interface MwDivider extends Components.MwDivider {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['inset']
+    defineCustomElementFn: undefined,
+    inputs: ["inset"],
 })
 @Component({
-  selector: 'mw-divider',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['inset']
+    selector: "mw-divider",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["inset"],
 })
 export class MwDivider {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
 
+export declare interface MwHeader extends Components.MwHeader {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["ariaRole"],
+})
+@Component({
+    selector: "mw-header",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["ariaRole"],
+})
+export class MwHeader {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwHeaderTitle extends Components.MwHeaderTitle {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+})
+@Component({
+    selector: "mw-header-title",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+})
+export class MwHeaderTitle {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
 
 export declare interface MwIcon extends Components.MwIcon {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['color', 'fill', 'icon', 'size', 'weight']
+    defineCustomElementFn: undefined,
+    inputs: ["color", "fill", "icon", "size", "weight"],
 })
 @Component({
-  selector: 'mw-icon',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['color', 'fill', 'icon', 'size', 'weight']
+    selector: "mw-icon",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["color", "fill", "icon", "size", "weight"],
 })
 export class MwIcon {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwIconGallery extends Components.MwIconGallery {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined
+    defineCustomElementFn: undefined,
+    inputs: ["icons"],
 })
 @Component({
-  selector: 'mw-icon-gallery',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>'
+    selector: "mw-icon-gallery",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["icons"],
 })
 export class MwIconGallery {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwLink extends Components.MwLink {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['href']
+    defineCustomElementFn: undefined,
+    inputs: ["href"],
 })
 @Component({
-  selector: 'mw-link',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['href']
+    selector: "mw-link",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["href"],
 })
 export class MwLink {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwMenu extends Components.MwMenu {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['open', 'placement', 'testId']
+    defineCustomElementFn: undefined,
+    inputs: ["open", "placement", "testId"],
 })
 @Component({
-  selector: 'mw-menu',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['open', 'placement', 'testId']
+    selector: "mw-menu",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["open", "placement", "testId"],
 })
 export class MwMenu {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
 
-
 export declare interface MwMenuItem extends Components.MwMenuItem {
-  /**
-   *  
-   */
-  clickEmitter: EventEmitter<CustomEvent<any>>;
-
+    /**
+     * MwMenuItem emits an event when its clicked
+     */
+    clickEmitter: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['disabled', 'selected', 'subtitle', 'title']
+    defineCustomElementFn: undefined,
+    inputs: ["disabled", "selected", "subtitle", "title"],
 })
 @Component({
-  selector: 'mw-menu-item',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'selected', 'subtitle', 'title']
+    selector: "mw-menu-item",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["disabled", "selected", "subtitle", "title"],
 })
 export class MwMenuItem {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['clickEmitter']);
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["clickEmitter"]);
+    }
 }
-
 
 export declare interface MwMenuList extends Components.MwMenuList {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['testId']
+    defineCustomElementFn: undefined,
+    inputs: ["testId"],
 })
 @Component({
-  selector: 'mw-menu-list',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['testId']
+    selector: "mw-menu-list",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["testId"],
 })
 export class MwMenuList {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwPopover extends Components.MwPopover {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['dismissable', 'name', 'noPadding', 'open', 'placement', 'testId']
+    defineCustomElementFn: undefined,
+    inputs: ["dismissable", "name", "noPadding", "open", "placement", "testId"],
 })
 @Component({
-  selector: 'mw-popover',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['dismissable', 'name', 'noPadding', 'open', 'placement', 'testId']
+    selector: "mw-popover",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["dismissable", "name", "noPadding", "open", "placement", "testId"],
 })
 export class MwPopover {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwRadio extends Components.MwRadio {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
+    defineCustomElementFn: undefined,
+    inputs: ["checked", "disabled", "label", "name", "testId", "value"],
 })
 @Component({
-  selector: 'mw-radio',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'label', 'name', 'testId', 'value']
+    selector: "mw-radio",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["checked", "disabled", "label", "name", "testId", "value"],
 })
 export class MwRadio {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
 
-
 export declare interface MwSwitch extends Components.MwSwitch {
-  /**
-   *  
-   */
-  emitter: EventEmitter<CustomEvent<any>>;
-
+    /**
+     * MwSwitch emits an event when switch checked state changes
+     */
+    emitter: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['checked', 'disabled', 'label', 'offText', 'onText', 'testId']
+    defineCustomElementFn: undefined,
+    inputs: ["checked", "disabled", "label", "offText", "onText", "testId"],
 })
 @Component({
-  selector: 'mw-switch',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['checked', 'disabled', 'label', 'offText', 'onText', 'testId']
+    selector: "mw-switch",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["checked", "disabled", "label", "offText", "onText", "testId"],
 })
 export class MwSwitch {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['emitter']);
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["emitter"]);
+    }
 }
-
 
 export declare interface MwTab extends Components.MwTab {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['disabled', 'icon', 'label', 'selected']
+    defineCustomElementFn: undefined,
+    inputs: ["disabled", "icon", "label", "selected"],
 })
 @Component({
-  selector: 'mw-tab',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'icon', 'label', 'selected']
+    selector: "mw-tab",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["disabled", "icon", "label", "selected"],
 })
 export class MwTab {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
-
 
 export declare interface MwTabs extends Components.MwTabs {}
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['selected', 'testId']
+    defineCustomElementFn: undefined,
+    inputs: ["selected", "testId"],
 })
 @Component({
-  selector: 'mw-tabs',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['selected', 'testId']
+    selector: "mw-tabs",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["selected", "testId"],
 })
 export class MwTabs {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
 }
 
-
 export declare interface MwTextfield extends Components.MwTextfield {
-  /**
-   *  
-   */
-  valueChanged: EventEmitter<CustomEvent<string>>;
-
+    /**
+     * MwTextfield emits an event when textfield value changes
+     */
+    valueChanged: EventEmitter<CustomEvent<string>>;
 }
 
 @ProxyCmp({
-  defineCustomElementFn: undefined,
-  inputs: ['disabled', 'hasError', 'helperText', 'inline', 'label', 'name', 'placeholder', 'required', 'type', 'value']
+    defineCustomElementFn: undefined,
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "type", "value"],
 })
 @Component({
-  selector: 'mw-textfield',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: '<ng-content></ng-content>',
-  inputs: ['disabled', 'hasError', 'helperText', 'inline', 'label', 'name', 'placeholder', 'required', 'type', 'value']
+    selector: "mw-textfield",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "type", "value"],
 })
 export class MwTextfield {
-  protected el: HTMLElement;
-  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-    c.detach();
-    this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['valueChanged']);
-  }
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["valueChanged"]);
+    }
 }
