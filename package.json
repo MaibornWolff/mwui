@@ -1,6 +1,6 @@
 {
     "name": "@maibornwolff/mwui",
-    "version": "0.1.11",
+    "version": "0.1.12",
     "description": "Component Library using Figma's design tokens",
     "repository": {
         "type": "git",

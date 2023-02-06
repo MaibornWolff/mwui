@@ -1,6 +1,7 @@
 import * as d from "./components";
 
 export const DIRECTIVES = [
+    d.MwAppBar,
     d.MwAvatar,
     d.MwButton,
     d.MwCard,

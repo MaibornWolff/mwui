@@ -8,6 +8,7 @@ import type { JSX } from "@maibornwolff/mwui-stencil";
 import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
 
 defineCustomElements();
+export const MwAppBar = /*@__PURE__*/ createReactComponent<JSX.MwAppBar, HTMLMwAppBarElement>("mw-app-bar");
 export const MwAvatar = /*@__PURE__*/ createReactComponent<JSX.MwAvatar, HTMLMwAvatarElement>("mw-avatar");
 export const MwButton = /*@__PURE__*/ createReactComponent<JSX.MwButton, HTMLMwButtonElement>("mw-button");
 export const MwCard = /*@__PURE__*/ createReactComponent<JSX.MwCard, HTMLMwCardElement>("mw-card");

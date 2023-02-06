@@ -5,6 +5,26 @@ import { ProxyCmp, proxyOutputs } from "./angular-component-lib/utils";
 
 import { Components } from "@maibornwolff/mwui-stencil";
 
+export declare interface MwAppBar extends Components.MwAppBar {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["position"],
+})
+@Component({
+    selector: "mw-app-bar",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["position"],
+})
+export class MwAppBar {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
 export declare interface MwAvatar extends Components.MwAvatar {}
 
 @ProxyCmp({
@@ -353,13 +373,13 @@ export declare interface MwLink extends Components.MwLink {}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["href"],
+    inputs: ["href", "target", "underline"],
 })
 @Component({
     selector: "mw-link",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["href"],
+    inputs: ["href", "target", "underline"],
 })
 export class MwLink {
     protected el: HTMLElement;

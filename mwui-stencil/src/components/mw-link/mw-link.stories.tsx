@@ -11,10 +11,17 @@ export default {
 };
 
 const Template = args => `
-<mw-link href=${args.href}>${args.slot}</mw-link>
+<mw-link href=${args.href} target="${args.target}" underline="${args.underline}">${args.slot}</mw-link>
 `;
 export const Default = Template.bind({});
 Default.args = {
-  href: "#",
+  href: "https://maibornwolff.de",
+  slot: "This is a link",
+};
+
+export const NoUnderline = Template.bind({});
+NoUnderline.args = {
+  href: "https://maibornwolff.de",
+  underline: false,
   slot: "This is a link",
 };

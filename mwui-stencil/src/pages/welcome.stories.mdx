@@ -1,17 +1,13 @@
-import '../global/global.css';
-import '../global/sb-global.css';
-import '../../../mwui-token-farm/dist/css/MW_core.css';
-import { Meta } from '@storybook/addon-docs';
-import logo from '../../.storybook/public/mwui_logo.svg';
+import "../global/global.css";
+import "../global/sb-global.css";
+import "../../../mwui-token-farm/dist/css/MW_core.css";
+import { Meta } from "@storybook/addon-docs";
+import logo from "../../.storybook/public/mw_logo.png";
 
 <Meta title="Welcome" />
 
 <section style={{ minHeight: '100vh'}}>
-<div id="mwui-logo" >
-  <img src={logo} width="400" style={{ position: 'absolute', right: 'calc(50% - 200px)', top: '10vh' }} />
-</div>
-
-<h1 style={{ fontSize: '3em', marginTop: '25vh', marginBottom: '20px' }}>Welcome 👋</h1>
+<h1 style={{ fontSize: '3em', marginTop: '10vh', marginBottom: '20px' }}>Welcome 👋</h1>
 
 ### Get started with the MaibornWolff Design System
 
@@ -21,7 +17,7 @@ Figma Designs.
 
 There are several ways to include the MWUI components in a project. Build with Stenciljs, all components can be used as **Web Components**. Framwork-specific integrations make it easier to use the Web Components.
 
-<div style={{ display: 'flex', flexWrap: 'wrap', gap: 'var(--mw-component-chips-gap-between-x)' }}>
+<div style={{ display: "flex", flexWrap: "wrap", gap: "var(--mw-component-chips-gap-between-x)" }}>
   <mw-chip selected="true" icon="check">
     Web Components
   </mw-chip>
@@ -36,28 +32,28 @@ There are several ways to include the MWUI components in a project. Build with S
 
 The components seen in Storybook are pure Web Components and therefore not bound to custom events.
 
-<h3 style={{ fontSize: '2em', textAlign: 'center', marginTop: '100px', marginBottom: '50px' }}>Learn more about...</h3>
-<div style={{ marginBottom: '50px', display: 'grid', gridAutoColumns: 'minmax(0, 1fr)', gridAutoFlow: 'column', gap: '20px' }}>
-  <mw-card style={{ display: 'contents' }} elevated>
+<h3 style={{ fontSize: "2em", textAlign: "center", marginTop: "100px", marginBottom: "50px" }}>Learn more about...</h3>
+<div style={{ marginBottom: "50px", display: "grid", gridAutoColumns: "minmax(0, 1fr)", gridAutoFlow: "column", gap: "20px" }}>
+  <mw-card style={{ display: "contents" }} elevated>
     <mw-card-title title="Design Tokens"></mw-card-title>
     <mw-card-body>Learn more about Design Tokens, how we use and manage them and what the potentials are.</mw-card-body>
     <mw-card-footer justify-center>
       <mw-button href="#" variant="outline" label="Coming soon"></mw-button>
     </mw-card-footer>
   </mw-card>
-  <mw-card style={{ display: 'contents' }} elevated>
+  <mw-card style={{ display: "contents" }} elevated>
     <mw-card-title title="Figma and Web Components"></mw-card-title>
     <mw-card-footer justify-center>
       <mw-button href="#" variant="outline" label="Coming soon"></mw-button>
     </mw-card-footer>
   </mw-card>
-  <mw-card style={{ display: 'contents' }} elevated>
+  <mw-card style={{ display: "contents" }} elevated>
     <mw-card-title title="How to contribute"></mw-card-title>
     <mw-card-footer justify-center>
       <mw-button href="mailto:martin.prinz@maibornwolff.de" label="Get in contact"></mw-button>
     </mw-card-footer>
   </mw-card>
-  <mw-card style={{ display: 'contents' }} elevated>
+  <mw-card style={{ display: "contents" }} elevated>
     <mw-card-title title="Blog"></mw-card-title>
     <mw-card-footer justify-center>
       <mw-button href="#" label="Coming soon" variant="outline"></mw-button>
@@ -83,7 +79,7 @@ npm i @maibornwolff/mwui-stencil
 2. Include the following in the `main.js` (e.g. Angular, Vue) or `index.js` (e.g. React):
 
 ```javascript
-import { defineCustomElements } from '@maibornwolff/mwui-stencil/loader';
+import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
 defineCustomElements(window);
 ```
 
@@ -105,7 +101,7 @@ import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
 ```
 
 ```javascript
-import { MWButton } from '@maibornwolff/mwui-react';
+import { MWButton } from "@maibornwolff/mwui-react";
 ```
 
 ### Vue
@@ -120,10 +116,10 @@ npm i @maibornwolff/mwui-stencil
 2. Import the library plugin and global styles in the `main.js` file:
 
 ```javascript
-import { MwuiComponents } from '@maibornwolff/mwui-vue';
-import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
+import { MwuiComponents } from "@maibornwolff/mwui-vue";
+import "@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css";
 
-createApp(App).use(MwuiComponents).mount('#app');
+createApp(App).use(MwuiComponents).mount("#app");
 ```
 
 3. You can then use your components within vue:

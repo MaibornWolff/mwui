@@ -11,6 +11,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+              with:
+                  token: ${{ secrets.PAT }}
             - uses: actions/setup-node@v3
               with:
                   node-version: 16
@@ -24,11 +26,9 @@ jobs:
               run: npm run build-tokens
 
             - name: Run lint on Stencil components
-              working-directory: ./build
               run: npm run lint
 
             - name: Run Stencil unit tests
-              working-directory: ./build
               run: npm run test:spec
 
             - name: Build Stencil
