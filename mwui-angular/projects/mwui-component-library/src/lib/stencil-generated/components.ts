@@ -495,6 +495,26 @@ export class MwRadio {
     }
 }
 
+export declare interface MwSlider extends Components.MwSlider {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["disabled", "endIcon", "helperText", "inline", "label", "max", "min", "name", "startIcon", "step", "testId", "value"],
+})
+@Component({
+    selector: "mw-slider",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["disabled", "endIcon", "helperText", "inline", "label", "max", "min", "name", "startIcon", "step", "testId", "value"],
+})
+export class MwSlider {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
 export declare interface MwSwitch extends Components.MwSwitch {
     /**
      * MwSwitch emits an event when switch checked state changes

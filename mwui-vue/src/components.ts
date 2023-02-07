@@ -61,6 +61,21 @@ export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popove
 
 export const MwRadio = /*@__PURE__*/ defineContainer<JSX.MwRadio>("mw-radio", undefined, ["disabled", "checked", "value", "name", "testId", "label"]);
 
+export const MwSlider = /*@__PURE__*/ defineContainer<JSX.MwSlider>("mw-slider", undefined, [
+    "testId",
+    "name",
+    "label",
+    "helperText",
+    "startIcon",
+    "endIcon",
+    "min",
+    "max",
+    "step",
+    "value",
+    "inline",
+    "disabled",
+]);
+
 export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>("mw-switch", undefined, ["testId", "disabled", "label", "onText", "offText", "checked", "emitter"]);
 
 export const MwTab = /*@__PURE__*/ defineContainer<JSX.MwTab>("mw-tab", undefined, ["selected", "icon", "label", "disabled"]);
