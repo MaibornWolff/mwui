@@ -9,15 +9,33 @@ export declare interface MwAppBar extends Components.MwAppBar {}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["position"],
+    inputs: ["ariaRole", "position"],
 })
 @Component({
     selector: "mw-app-bar",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["position"],
+    inputs: ["ariaRole", "position"],
 })
 export class MwAppBar {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwAppBarTitle extends Components.MwAppBarTitle {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+})
+@Component({
+    selector: "mw-app-bar-title",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+})
+export class MwAppBarTitle {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
@@ -462,42 +480,6 @@ export class MwModal {
     }
 }
 
-export declare interface MwModalFooter extends Components.MwModalFooter {}
-
-@ProxyCmp({
-    defineCustomElementFn: undefined,
-})
-@Component({
-    selector: "mw-modal-footer",
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    template: "<ng-content></ng-content>",
-})
-export class MwModalFooter {
-    protected el: HTMLElement;
-    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-        c.detach();
-        this.el = r.nativeElement;
-    }
-}
-
-export declare interface MwModalHeader extends Components.MwModalHeader {}
-
-@ProxyCmp({
-    defineCustomElementFn: undefined,
-})
-@Component({
-    selector: "mw-modal-header",
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    template: "<ng-content></ng-content>",
-})
-export class MwModalHeader {
-    protected el: HTMLElement;
-    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-        c.detach();
-        this.el = r.nativeElement;
-    }
-}
-
 export declare interface MwPopover extends Components.MwPopover {}
 
 @ProxyCmp({
@@ -531,6 +513,26 @@ export declare interface MwRadio extends Components.MwRadio {}
     inputs: ["checked", "disabled", "label", "name", "testId", "value"],
 })
 export class MwRadio {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwSlider extends Components.MwSlider {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["disabled", "endIcon", "helperText", "inline", "label", "max", "min", "name", "startIcon", "step", "testId", "value"],
+})
+@Component({
+    selector: "mw-slider",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["disabled", "endIcon", "helperText", "inline", "label", "max", "min", "name", "startIcon", "step", "testId", "value"],
+})
+export class MwSlider {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();

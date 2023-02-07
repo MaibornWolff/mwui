@@ -5,7 +5,9 @@ import { defineContainer } from "./vue-component-lib/utils";
 
 import type { JSX } from "@maibornwolff/mwui-stencil";
 
-export const MwAppBar = /*@__PURE__*/ defineContainer<JSX.MwAppBar>("mw-app-bar", undefined, ["position"]);
+export const MwAppBar = /*@__PURE__*/ defineContainer<JSX.MwAppBar>("mw-app-bar", undefined, ["ariaRole", "position"]);
+
+export const MwAppBarTitle = /*@__PURE__*/ defineContainer<JSX.MwAppBarTitle>("mw-app-bar-title", undefined);
 
 export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>("mw-avatar", undefined, ["testId", "src", "icon", "alt", "size"]);
 
@@ -57,13 +59,24 @@ export const MwMenuList = /*@__PURE__*/ defineContainer<JSX.MwMenuList>("mw-menu
 
 export const MwModal = /*@__PURE__*/ defineContainer<JSX.MwModal>("mw-modal", undefined, ["component", "trigger"]);
 
-export const MwModalFooter = /*@__PURE__*/ defineContainer<JSX.MwModalFooter>("mw-modal-footer", undefined);
-
-export const MwModalHeader = /*@__PURE__*/ defineContainer<JSX.MwModalHeader>("mw-modal-header", undefined);
-
 export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popover", undefined, ["testId", "open", "placement", "dismissable", "noPadding", "name"]);
 
 export const MwRadio = /*@__PURE__*/ defineContainer<JSX.MwRadio>("mw-radio", undefined, ["disabled", "checked", "value", "name", "testId", "label"]);
+
+export const MwSlider = /*@__PURE__*/ defineContainer<JSX.MwSlider>("mw-slider", undefined, [
+    "testId",
+    "name",
+    "label",
+    "helperText",
+    "startIcon",
+    "endIcon",
+    "min",
+    "max",
+    "step",
+    "value",
+    "inline",
+    "disabled",
+]);
 
 export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>("mw-switch", undefined, ["testId", "disabled", "label", "onText", "offText", "checked", "emitter"]);
 

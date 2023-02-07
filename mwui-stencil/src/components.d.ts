@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AriaRolesEnum } from "./shared/models/enums/aria-roles.enum";
 import { AppBarPosition } from "./components/mw-app-bar/mw-app-bar";
 import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
@@ -16,10 +17,15 @@ import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/m
 export namespace Components {
   interface MwAppBar {
     /**
+     * Set the role of the header
+     */
+    ariaRole?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
+    /**
      * Position of App Bar within viewport
      */
     position?: AppBarPosition;
   }
+  interface MwAppBarTitle {}
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -308,8 +314,6 @@ export namespace Components {
     present: () => Promise<void>;
     trigger: string | undefined;
   }
-  interface MwModalFooter {}
-  interface MwModalHeader {}
   interface MwPopover {
     /**
      * If set to true, the popover can be closed by clicking outside
@@ -361,6 +365,56 @@ export namespace Components {
      * Value of the radio button
      */
     value: string;
+  }
+  interface MwSlider {
+    /**
+     * Disable range input
+     */
+    disabled?: boolean;
+    /**
+     * Icon to be displayed to right of the slider
+     */
+    endIcon?: string;
+    /**
+     * input helper-text
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizonally
+     */
+    inline?: boolean;
+    /**
+     * input label
+     */
+    label?: string;
+    /**
+     * max range value
+     */
+    max: number;
+    /**
+     * min range value
+     */
+    min: number;
+    /**
+     * Name of range input
+     */
+    name: string;
+    /**
+     * Icon to be displayed to left of the slider
+     */
+    startIcon?: string;
+    /**
+     * step for range value
+     */
+    step: number;
+    /**
+     * Provide unique identifier for automated testing
+     */
+    testId: string;
+    /**
+     * value of range input
+     */
+    value: number;
   }
   interface MwSwitch {
     /**
@@ -497,6 +551,11 @@ declare global {
     prototype: HTMLMwAppBarElement;
     new (): HTMLMwAppBarElement;
   };
+  interface HTMLMwAppBarTitleElement extends Components.MwAppBarTitle, HTMLStencilElement {}
+  var HTMLMwAppBarTitleElement: {
+    prototype: HTMLMwAppBarTitleElement;
+    new (): HTMLMwAppBarTitleElement;
+  };
   interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {}
   var HTMLMwAvatarElement: {
     prototype: HTMLMwAvatarElement;
@@ -592,16 +651,6 @@ declare global {
     prototype: HTMLMwModalElement;
     new (): HTMLMwModalElement;
   };
-  interface HTMLMwModalFooterElement extends Components.MwModalFooter, HTMLStencilElement {}
-  var HTMLMwModalFooterElement: {
-    prototype: HTMLMwModalFooterElement;
-    new (): HTMLMwModalFooterElement;
-  };
-  interface HTMLMwModalHeaderElement extends Components.MwModalHeader, HTMLStencilElement {}
-  var HTMLMwModalHeaderElement: {
-    prototype: HTMLMwModalHeaderElement;
-    new (): HTMLMwModalHeaderElement;
-  };
   interface HTMLMwPopoverElement extends Components.MwPopover, HTMLStencilElement {}
   var HTMLMwPopoverElement: {
     prototype: HTMLMwPopoverElement;
@@ -611,6 +660,11 @@ declare global {
   var HTMLMwRadioElement: {
     prototype: HTMLMwRadioElement;
     new (): HTMLMwRadioElement;
+  };
+  interface HTMLMwSliderElement extends Components.MwSlider, HTMLStencilElement {}
+  var HTMLMwSliderElement: {
+    prototype: HTMLMwSliderElement;
+    new (): HTMLMwSliderElement;
   };
   interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {}
   var HTMLMwSwitchElement: {
@@ -634,6 +688,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     "mw-app-bar": HTMLMwAppBarElement;
+    "mw-app-bar-title": HTMLMwAppBarTitleElement;
     "mw-avatar": HTMLMwAvatarElement;
     "mw-backdrop": HTMLMwBackdropElement;
     "mw-button": HTMLMwButtonElement;
@@ -653,10 +708,9 @@ declare global {
     "mw-menu-item": HTMLMwMenuItemElement;
     "mw-menu-list": HTMLMwMenuListElement;
     "mw-modal": HTMLMwModalElement;
-    "mw-modal-footer": HTMLMwModalFooterElement;
-    "mw-modal-header": HTMLMwModalHeaderElement;
     "mw-popover": HTMLMwPopoverElement;
     "mw-radio": HTMLMwRadioElement;
+    "mw-slider": HTMLMwSliderElement;
     "mw-switch": HTMLMwSwitchElement;
     "mw-tab": HTMLMwTabElement;
     "mw-tabs": HTMLMwTabsElement;
@@ -666,10 +720,15 @@ declare global {
 declare namespace LocalJSX {
   interface MwAppBar {
     /**
+     * Set the role of the header
+     */
+    ariaRole?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
+    /**
      * Position of App Bar within viewport
      */
     position?: AppBarPosition;
   }
+  interface MwAppBarTitle {}
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -978,8 +1037,6 @@ declare namespace LocalJSX {
     component?: ComponentRef;
     trigger?: string | undefined;
   }
-  interface MwModalFooter {}
-  interface MwModalHeader {}
   interface MwPopover {
     /**
      * If set to true, the popover can be closed by clicking outside
@@ -1031,6 +1088,56 @@ declare namespace LocalJSX {
      * Value of the radio button
      */
     value?: string;
+  }
+  interface MwSlider {
+    /**
+     * Disable range input
+     */
+    disabled?: boolean;
+    /**
+     * Icon to be displayed to right of the slider
+     */
+    endIcon?: string;
+    /**
+     * input helper-text
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizonally
+     */
+    inline?: boolean;
+    /**
+     * input label
+     */
+    label?: string;
+    /**
+     * max range value
+     */
+    max?: number;
+    /**
+     * min range value
+     */
+    min?: number;
+    /**
+     * Name of range input
+     */
+    name?: string;
+    /**
+     * Icon to be displayed to left of the slider
+     */
+    startIcon?: string;
+    /**
+     * step for range value
+     */
+    step?: number;
+    /**
+     * Provide unique identifier for automated testing
+     */
+    testId?: string;
+    /**
+     * value of range input
+     */
+    value?: number;
   }
   interface MwSwitch {
     /**
@@ -1138,6 +1245,7 @@ declare namespace LocalJSX {
   }
   interface IntrinsicElements {
     "mw-app-bar": MwAppBar;
+    "mw-app-bar-title": MwAppBarTitle;
     "mw-avatar": MwAvatar;
     "mw-backdrop": MwBackdrop;
     "mw-button": MwButton;
@@ -1157,10 +1265,9 @@ declare namespace LocalJSX {
     "mw-menu-item": MwMenuItem;
     "mw-menu-list": MwMenuList;
     "mw-modal": MwModal;
-    "mw-modal-footer": MwModalFooter;
-    "mw-modal-header": MwModalHeader;
     "mw-popover": MwPopover;
     "mw-radio": MwRadio;
+    "mw-slider": MwSlider;
     "mw-switch": MwSwitch;
     "mw-tab": MwTab;
     "mw-tabs": MwTabs;
@@ -1172,6 +1279,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       "mw-app-bar": LocalJSX.MwAppBar & JSXBase.HTMLAttributes<HTMLMwAppBarElement>;
+      "mw-app-bar-title": LocalJSX.MwAppBarTitle & JSXBase.HTMLAttributes<HTMLMwAppBarTitleElement>;
       "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
       "mw-backdrop": LocalJSX.MwBackdrop & JSXBase.HTMLAttributes<HTMLMwBackdropElement>;
       "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
@@ -1191,10 +1299,9 @@ declare module "@stencil/core" {
       "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
       "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
       "mw-modal": LocalJSX.MwModal & JSXBase.HTMLAttributes<HTMLMwModalElement>;
-      "mw-modal-footer": LocalJSX.MwModalFooter & JSXBase.HTMLAttributes<HTMLMwModalFooterElement>;
-      "mw-modal-header": LocalJSX.MwModalHeader & JSXBase.HTMLAttributes<HTMLMwModalHeaderElement>;
       "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
       "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
+      "mw-slider": LocalJSX.MwSlider & JSXBase.HTMLAttributes<HTMLMwSliderElement>;
       "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
       "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
       "mw-tabs": LocalJSX.MwTabs & JSXBase.HTMLAttributes<HTMLMwTabsElement>;
