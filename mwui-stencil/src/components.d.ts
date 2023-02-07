@@ -226,12 +226,6 @@ export namespace Components {
      */
     inset?: boolean;
   }
-  interface MwHeader {
-    /**
-     * * set the role of the header
-     */
-    ariaRole: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
-  }
   interface MwIcon {
     /**
      * Icon color
@@ -605,11 +599,6 @@ declare global {
     prototype: HTMLMwDividerElement;
     new (): HTMLMwDividerElement;
   };
-  interface HTMLMwHeaderElement extends Components.MwHeader, HTMLStencilElement {}
-  var HTMLMwHeaderElement: {
-    prototype: HTMLMwHeaderElement;
-    new (): HTMLMwHeaderElement;
-  };
   interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {}
   var HTMLMwIconElement: {
     prototype: HTMLMwIconElement;
@@ -689,7 +678,6 @@ declare global {
     "mw-checkbox": HTMLMwCheckboxElement;
     "mw-chip": HTMLMwChipElement;
     "mw-divider": HTMLMwDividerElement;
-    "mw-header": HTMLMwHeaderElement;
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-link": HTMLMwLinkElement;
@@ -933,12 +921,6 @@ declare namespace LocalJSX {
      * Whether the divider is a middle-inset
      */
     inset?: boolean;
-  }
-  interface MwHeader {
-    /**
-     * * set the role of the header
-     */
-    ariaRole?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
   }
   interface MwIcon {
     /**
@@ -1244,7 +1226,6 @@ declare namespace LocalJSX {
     "mw-checkbox": MwCheckbox;
     "mw-chip": MwChip;
     "mw-divider": MwDivider;
-    "mw-header": MwHeader;
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
     "mw-link": MwLink;
@@ -1277,7 +1258,6 @@ declare module "@stencil/core" {
       "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
       "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
-      "mw-header": LocalJSX.MwHeader & JSXBase.HTMLAttributes<HTMLMwHeaderElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;

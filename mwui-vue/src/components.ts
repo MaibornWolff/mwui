@@ -43,8 +43,6 @@ export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>("mw-chip", undef
 
 export const MwDivider = /*@__PURE__*/ defineContainer<JSX.MwDivider>("mw-divider", undefined, ["inset"]);
 
-export const MwHeader = /*@__PURE__*/ defineContainer<JSX.MwHeader>("mw-header", undefined, ["ariaRole"]);
-
 export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>("mw-icon", undefined, ["icon", "size", "fill", "color", "weight"]);
 
 export const MwIconGallery = /*@__PURE__*/ defineContainer<JSX.MwIconGallery>("mw-icon-gallery", undefined, ["icons"]);

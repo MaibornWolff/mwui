@@ -309,26 +309,6 @@ export class MwDivider {
     }
 }
 
-export declare interface MwHeader extends Components.MwHeader {}
-
-@ProxyCmp({
-    defineCustomElementFn: undefined,
-    inputs: ["ariaRole"],
-})
-@Component({
-    selector: "mw-header",
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    template: "<ng-content></ng-content>",
-    inputs: ["ariaRole"],
-})
-export class MwHeader {
-    protected el: HTMLElement;
-    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-        c.detach();
-        this.el = r.nativeElement;
-    }
-}
-
 export declare interface MwIcon extends Components.MwIcon {}
 
 @ProxyCmp({

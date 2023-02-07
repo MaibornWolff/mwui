@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-07T12:09:36",
+  "timestamp": "2023-02-07T12:14:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -1141,46 +1141,6 @@
             }
           ],
           "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/mw-header/mw-header.tsx",
-      "encapsulation": "none",
-      "tag": "mw-header",
-      "readme": "# mw-header\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "ariaRole",
-          "type": "AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR",
-          "mutable": false,
-          "attr": "aria-role",
-          "reflectToAttr": false,
-          "docs": "*\r\nset the role of the header",
-          "docsTags": [],
-          "default": "AriaRolesEnum.NAVIGATION",
-          "values": [
-            {
-              "type": "AriaRolesEnum.NAVIGATION"
-            },
-            {
-              "type": "AriaRolesEnum.TOOLBAR"
-            }
-          ],
-          "optional": false,
           "required": false
         }
       ],
