@@ -3,6 +3,7 @@ import * as d from "./components";
 export const DIRECTIVES = [
     d.MwAppBar,
     d.MwAvatar,
+    d.MwBackdrop,
     d.MwButton,
     d.MwCard,
     d.MwCardBody,
@@ -19,6 +20,9 @@ export const DIRECTIVES = [
     d.MwMenu,
     d.MwMenuItem,
     d.MwMenuList,
+    d.MwModal,
+    d.MwModalFooter,
+    d.MwModalHeader,
     d.MwPopover,
     d.MwRadio,
     d.MwSwitch,

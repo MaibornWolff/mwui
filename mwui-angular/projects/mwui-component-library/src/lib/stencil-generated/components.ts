@@ -45,6 +45,30 @@ export class MwAvatar {
     }
 }
 
+export declare interface MwBackdrop extends Components.MwBackdrop {
+    /**
+     *
+     */
+    ionBackdropTap: EventEmitter<CustomEvent<void>>;
+}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+})
+@Component({
+    selector: "mw-backdrop",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+})
+export class MwBackdrop {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["ionBackdropTap"]);
+    }
+}
+
 export declare interface MwButton extends Components.MwButton {
     /**
      * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
@@ -410,6 +434,63 @@ export declare interface MwMenuList extends Components.MwMenuList {}
     inputs: ["testId"],
 })
 export class MwMenuList {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwModal extends Components.MwModal {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["component", "trigger"],
+    methods: ["present", "dismiss"],
+})
+@Component({
+    selector: "mw-modal",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["component", "trigger"],
+})
+export class MwModal {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwModalFooter extends Components.MwModalFooter {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+})
+@Component({
+    selector: "mw-modal-footer",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+})
+export class MwModalFooter {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwModalHeader extends Components.MwModalHeader {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+})
+@Component({
+    selector: "mw-modal-header",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+})
+export class MwModalHeader {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();

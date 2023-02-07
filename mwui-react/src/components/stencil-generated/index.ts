@@ -10,6 +10,7 @@ import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
 defineCustomElements();
 export const MwAppBar = /*@__PURE__*/ createReactComponent<JSX.MwAppBar, HTMLMwAppBarElement>("mw-app-bar");
 export const MwAvatar = /*@__PURE__*/ createReactComponent<JSX.MwAvatar, HTMLMwAvatarElement>("mw-avatar");
+export const MwBackdrop = /*@__PURE__*/ createReactComponent<JSX.MwBackdrop, HTMLMwBackdropElement>("mw-backdrop");
 export const MwButton = /*@__PURE__*/ createReactComponent<JSX.MwButton, HTMLMwButtonElement>("mw-button");
 export const MwCard = /*@__PURE__*/ createReactComponent<JSX.MwCard, HTMLMwCardElement>("mw-card");
 export const MwCardBody = /*@__PURE__*/ createReactComponent<JSX.MwCardBody, HTMLMwCardBodyElement>("mw-card-body");
@@ -26,6 +27,9 @@ export const MwLink = /*@__PURE__*/ createReactComponent<JSX.MwLink, HTMLMwLinkE
 export const MwMenu = /*@__PURE__*/ createReactComponent<JSX.MwMenu, HTMLMwMenuElement>("mw-menu");
 export const MwMenuItem = /*@__PURE__*/ createReactComponent<JSX.MwMenuItem, HTMLMwMenuItemElement>("mw-menu-item");
 export const MwMenuList = /*@__PURE__*/ createReactComponent<JSX.MwMenuList, HTMLMwMenuListElement>("mw-menu-list");
+export const MwModal = /*@__PURE__*/ createReactComponent<JSX.MwModal, HTMLMwModalElement>("mw-modal");
+export const MwModalFooter = /*@__PURE__*/ createReactComponent<JSX.MwModalFooter, HTMLMwModalFooterElement>("mw-modal-footer");
+export const MwModalHeader = /*@__PURE__*/ createReactComponent<JSX.MwModalHeader, HTMLMwModalHeaderElement>("mw-modal-header");
 export const MwPopover = /*@__PURE__*/ createReactComponent<JSX.MwPopover, HTMLMwPopoverElement>("mw-popover");
 export const MwRadio = /*@__PURE__*/ createReactComponent<JSX.MwRadio, HTMLMwRadioElement>("mw-radio");
 export const MwSwitch = /*@__PURE__*/ createReactComponent<JSX.MwSwitch, HTMLMwSwitchElement>("mw-switch");
