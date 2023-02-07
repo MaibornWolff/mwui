@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  contain: strict;
+}
+
+:host(.overlay-hidden) {
+  display: none;
+}
+
+.modal-wrapper {
+  z-index: 1;
+  background: var(--mw-component-modal-bg-default);
+  border-radius: var(--mw-component-modal-border-radius);
+}

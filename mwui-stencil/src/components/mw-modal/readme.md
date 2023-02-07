@@ -1,0 +1,48 @@
+# mw-modal
+
+<!-- Auto Generated Below -->
+
+## Properties
+
+| Property    | Attribute | Description | Type           | Default     |
+| ----------- | --------- | ----------- | -------------- | ----------- |
+| `component` | --        |             | `ComponentRef` | `undefined` |
+| `trigger`   | `trigger` |             | `string`       | `undefined` |
+
+## Methods
+
+### `dismiss() => Promise<void>`
+
+#### Returns
+
+Type: `Promise<void>`
+
+### `present() => Promise<void>`
+
+#### Returns
+
+Type: `Promise<void>`
+
+## Shadow Parts
+
+| Part         | Description |
+| ------------ | ----------- |
+| `"backdrop"` |             |
+
+## Dependencies
+
+### Depends on
+
+- [mw-backdrop](../mw-backdrop)
+
+### Graph
+
+```mermaid
+graph TD;
+  mw-modal --> mw-backdrop
+  style mw-modal fill:#f9f,stroke:#333,stroke-width:4px
+```
+
+---
+
+_Built with [StencilJS](https://stenciljs.com/)_

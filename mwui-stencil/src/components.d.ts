@@ -11,6 +11,7 @@ import { ButtonVariant } from "./components/mw-button/models/enums/button-varian
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
+import { ComponentRef } from "@stencil/core/internal";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
   interface MwAppBar {
@@ -41,6 +42,7 @@ export namespace Components {
      */
     testId?: string;
   }
+  interface MwBackdrop {}
   interface MwButton {
     /**
      * Visually and functionally disable button
@@ -300,6 +302,14 @@ export namespace Components {
      */
     testId: string;
   }
+  interface MwModal {
+    component?: ComponentRef;
+    dismiss: () => Promise<void>;
+    present: () => Promise<void>;
+    trigger: string | undefined;
+  }
+  interface MwModalFooter {}
+  interface MwModalHeader {}
   interface MwPopover {
     /**
      * If set to true, the popover can be closed by clicking outside
@@ -449,6 +459,10 @@ export namespace Components {
     value?: string | number;
   }
 }
+export interface MwBackdropCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwBackdropElement;
+}
 export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwButtonElement;
@@ -487,6 +501,11 @@ declare global {
   var HTMLMwAvatarElement: {
     prototype: HTMLMwAvatarElement;
     new (): HTMLMwAvatarElement;
+  };
+  interface HTMLMwBackdropElement extends Components.MwBackdrop, HTMLStencilElement {}
+  var HTMLMwBackdropElement: {
+    prototype: HTMLMwBackdropElement;
+    new (): HTMLMwBackdropElement;
   };
   interface HTMLMwButtonElement extends Components.MwButton, HTMLStencilElement {}
   var HTMLMwButtonElement: {
@@ -568,6 +587,21 @@ declare global {
     prototype: HTMLMwMenuListElement;
     new (): HTMLMwMenuListElement;
   };
+  interface HTMLMwModalElement extends Components.MwModal, HTMLStencilElement {}
+  var HTMLMwModalElement: {
+    prototype: HTMLMwModalElement;
+    new (): HTMLMwModalElement;
+  };
+  interface HTMLMwModalFooterElement extends Components.MwModalFooter, HTMLStencilElement {}
+  var HTMLMwModalFooterElement: {
+    prototype: HTMLMwModalFooterElement;
+    new (): HTMLMwModalFooterElement;
+  };
+  interface HTMLMwModalHeaderElement extends Components.MwModalHeader, HTMLStencilElement {}
+  var HTMLMwModalHeaderElement: {
+    prototype: HTMLMwModalHeaderElement;
+    new (): HTMLMwModalHeaderElement;
+  };
   interface HTMLMwPopoverElement extends Components.MwPopover, HTMLStencilElement {}
   var HTMLMwPopoverElement: {
     prototype: HTMLMwPopoverElement;
@@ -601,6 +635,7 @@ declare global {
   interface HTMLElementTagNameMap {
     "mw-app-bar": HTMLMwAppBarElement;
     "mw-avatar": HTMLMwAvatarElement;
+    "mw-backdrop": HTMLMwBackdropElement;
     "mw-button": HTMLMwButtonElement;
     "mw-card": HTMLMwCardElement;
     "mw-card-body": HTMLMwCardBodyElement;
@@ -617,6 +652,9 @@ declare global {
     "mw-menu": HTMLMwMenuElement;
     "mw-menu-item": HTMLMwMenuItemElement;
     "mw-menu-list": HTMLMwMenuListElement;
+    "mw-modal": HTMLMwModalElement;
+    "mw-modal-footer": HTMLMwModalFooterElement;
+    "mw-modal-header": HTMLMwModalHeaderElement;
     "mw-popover": HTMLMwPopoverElement;
     "mw-radio": HTMLMwRadioElement;
     "mw-switch": HTMLMwSwitchElement;
@@ -653,6 +691,9 @@ declare namespace LocalJSX {
      * Test Id
      */
     testId?: string;
+  }
+  interface MwBackdrop {
+    onIonBackdropTap?: (event: MwBackdropCustomEvent<void>) => void;
   }
   interface MwButton {
     /**
@@ -933,6 +974,12 @@ declare namespace LocalJSX {
      */
     testId?: string;
   }
+  interface MwModal {
+    component?: ComponentRef;
+    trigger?: string | undefined;
+  }
+  interface MwModalFooter {}
+  interface MwModalHeader {}
   interface MwPopover {
     /**
      * If set to true, the popover can be closed by clicking outside
@@ -1092,6 +1139,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     "mw-app-bar": MwAppBar;
     "mw-avatar": MwAvatar;
+    "mw-backdrop": MwBackdrop;
     "mw-button": MwButton;
     "mw-card": MwCard;
     "mw-card-body": MwCardBody;
@@ -1108,6 +1156,9 @@ declare namespace LocalJSX {
     "mw-menu": MwMenu;
     "mw-menu-item": MwMenuItem;
     "mw-menu-list": MwMenuList;
+    "mw-modal": MwModal;
+    "mw-modal-footer": MwModalFooter;
+    "mw-modal-header": MwModalHeader;
     "mw-popover": MwPopover;
     "mw-radio": MwRadio;
     "mw-switch": MwSwitch;
@@ -1122,6 +1173,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       "mw-app-bar": LocalJSX.MwAppBar & JSXBase.HTMLAttributes<HTMLMwAppBarElement>;
       "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
+      "mw-backdrop": LocalJSX.MwBackdrop & JSXBase.HTMLAttributes<HTMLMwBackdropElement>;
       "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
       "mw-card": LocalJSX.MwCard & JSXBase.HTMLAttributes<HTMLMwCardElement>;
       "mw-card-body": LocalJSX.MwCardBody & JSXBase.HTMLAttributes<HTMLMwCardBodyElement>;
@@ -1138,6 +1190,9 @@ declare module "@stencil/core" {
       "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
       "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
       "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
+      "mw-modal": LocalJSX.MwModal & JSXBase.HTMLAttributes<HTMLMwModalElement>;
+      "mw-modal-footer": LocalJSX.MwModalFooter & JSXBase.HTMLAttributes<HTMLMwModalFooterElement>;
+      "mw-modal-header": LocalJSX.MwModalHeader & JSXBase.HTMLAttributes<HTMLMwModalHeaderElement>;
       "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
       "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
       "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;

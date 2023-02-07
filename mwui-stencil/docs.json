@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-03T11:20:13",
+  "timestamp": "2023-02-07T14:14:30",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -10,6 +10,7 @@
       "filePath": "./src/components/mw-app-bar/mw-app-bar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-app-bar",
+      "readme": "# mw-app-bar\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -59,7 +60,7 @@
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-avatar",
-      "readme": "# mw-avatar\r\n\r\n\r\n\r",
+      "readme": "# mw-avatar\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -173,6 +174,43 @@
       "dependencies": ["mw-icon"],
       "dependencyGraph": {
         "mw-avatar": ["mw-icon"]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-backdrop/mw-backdrop.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-backdrop",
+      "readme": "# mw-backdrop\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [
+        {
+          "event": "ionBackdropTap",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "click",
+          "capture": true,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": ["mw-modal"],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-modal": ["mw-backdrop"]
       }
     },
     {
@@ -439,7 +477,7 @@
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-body",
-      "readme": "# mw-card-body\r\n\r\n\r\n\r",
+      "readme": "# mw-card-body\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -458,7 +496,7 @@
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-footer",
-      "readme": "# mw-card-footer\r\n\r\n\r\n\r",
+      "readme": "# mw-card-footer\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -717,7 +755,7 @@
       "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-image",
-      "readme": "# mw-card-image\r\n\r\n\r\n\r",
+      "readme": "# mw-card-image\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1081,7 +1119,7 @@
       "filePath": "./src/components/mw-divider/mw-divider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-divider",
-      "readme": "# mw-divider\r\n\r\n\r\n\r",
+      "readme": "# mw-divider\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1118,7 +1156,7 @@
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon",
-      "readme": "# mw-icon\r\n\r\n\r\n\r",
+      "readme": "# mw-icon\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1579,7 +1617,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
-      "readme": "# mw-menu-list\r\n\r\n\r\n\r",
+      "readme": "# mw-menu-list\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1601,6 +1639,125 @@
           "required": false
         }
       ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-modal/mw-modal.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-modal",
+      "readme": "# mw-modal\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "component",
+          "type": "ComponentRef",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "ComponentRef"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "trigger",
+          "type": "string",
+          "mutable": false,
+          "attr": "trigger",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "dismiss",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "dismiss() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "present",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "present() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "backdrop",
+          "docs": ""
+        }
+      ],
+      "dependents": [],
+      "dependencies": ["mw-backdrop"],
+      "dependencyGraph": {
+        "mw-modal": ["mw-backdrop"]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-modal-footer/mw-modal-footer.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-modal-footer",
+      "readme": "# mw-modal-footer\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-modal-header/mw-modal-header.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-modal-header",
+      "readme": "# mw-modal-header\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
       "methods": [],
       "events": [],
       "listeners": [],
@@ -1782,7 +1939,7 @@
       "filePath": "./src/components/mw-radio/mw-radio.tsx",
       "encapsulation": "none",
       "tag": "mw-radio",
-      "readme": "# mw-radio\r\n\r",
+      "readme": "# mw-radio\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
