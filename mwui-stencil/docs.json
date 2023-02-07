@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-06T08:51:48",
+  "timestamp": "2023-02-07T12:09:36",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -15,6 +15,26 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "ariaRole",
+          "type": "AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR",
+          "mutable": false,
+          "attr": "aria-role",
+          "reflectToAttr": false,
+          "docs": "Set the role of the header",
+          "docsTags": [],
+          "default": "AriaRolesEnum.NAVIGATION",
+          "values": [
+            {
+              "type": "AriaRolesEnum.NAVIGATION"
+            },
+            {
+              "type": "AriaRolesEnum.TOOLBAR"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
         {
           "name": "position",
           "type": "\"absolute\" | \"fixed\" | \"relative\" | \"sticky\"",
@@ -57,10 +77,29 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/mw-app-bar-title/mw-app-bar-title.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-app-bar-title",
+      "readme": "# mw-header-title\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-avatar",
-      "readme": "# mw-avatar\n\n\n",
+      "readme": "# mw-avatar\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -440,7 +479,7 @@
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-body",
-      "readme": "# mw-card-body\n\n\n",
+      "readme": "# mw-card-body\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -459,7 +498,7 @@
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-footer",
-      "readme": "# mw-card-footer\n\n\n",
+      "readme": "# mw-card-footer\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -718,7 +757,7 @@
       "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-image",
-      "readme": "# mw-card-image\n\n\n",
+      "readme": "# mw-card-image\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1082,7 +1121,7 @@
       "filePath": "./src/components/mw-divider/mw-divider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-divider",
-      "readme": "# mw-divider\n\n\n",
+      "readme": "# mw-divider\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1130,7 +1169,7 @@
           "mutable": false,
           "attr": "aria-role",
           "reflectToAttr": false,
-          "docs": "*\nset the role of the header",
+          "docs": "*\r\nset the role of the header",
           "docsTags": [],
           "default": "AriaRolesEnum.NAVIGATION",
           "values": [
@@ -1156,29 +1195,10 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/mw-header-title/mw-header-title.tsx",
-      "encapsulation": "shadow",
-      "tag": "mw-header-title",
-      "readme": "# mw-header-title\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon",
-      "readme": "# mw-icon\n\n\n",
+      "readme": "# mw-icon\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1291,13 +1311,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-tab"],
+      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-slider", "mw-tab"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-avatar": ["mw-icon"],
         "mw-checkbox": ["mw-icon"],
         "mw-chip": ["mw-icon"],
         "mw-icon-gallery": ["mw-icon"],
+        "mw-slider": ["mw-icon"],
         "mw-tab": ["mw-icon"]
       }
     },
@@ -1639,7 +1660,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
-      "readme": "# mw-menu-list\n\n\n",
+      "readme": "# mw-menu-list\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1842,7 +1863,7 @@
       "filePath": "./src/components/mw-radio/mw-radio.tsx",
       "encapsulation": "none",
       "tag": "mw-radio",
-      "readme": "# mw-radio\n",
+      "readme": "# mw-radio\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1953,6 +1974,226 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-slider/mw-slider.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-slider",
+      "readme": "# mw-slider\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disable range input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "endIcon",
+          "type": "string",
+          "mutable": false,
+          "attr": "end-icon",
+          "reflectToAttr": false,
+          "docs": "Icon to be displayed to right of the slider",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": false,
+          "docs": "input helper-text",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Display label and input horizonally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "input label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "max range value",
+          "docsTags": [],
+          "default": "100",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "min range value",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Name of range input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "startIcon",
+          "type": "string",
+          "mutable": false,
+          "attr": "start-icon",
+          "reflectToAttr": false,
+          "docs": "Icon to be displayed to left of the slider",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": false,
+          "docs": "step for range value",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "testId",
+          "type": "string",
+          "mutable": false,
+          "attr": "test-id",
+          "reflectToAttr": false,
+          "docs": "Provide unique identifier for automated testing",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "value of range input",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mw-icon"],
+      "dependencyGraph": {
+        "mw-slider": ["mw-icon"]
+      }
     },
     {
       "filePath": "./src/components/mw-switch/mw-switch.tsx",

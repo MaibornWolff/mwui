@@ -1,16 +1,16 @@
 import { newSpecPage } from "@stencil/core/testing";
-import { MwHeaderTitle } from "./mw-header-title";
+import { MwAppBarTitle } from "./mw-app-bar-title";
 import { h } from "@stencil/core";
 
-describe("GIVEN MwHeaderTitle", () => {
-  const setup = async (header: string = "header-text") => {
+describe("GIVEN MwAppBarTitle", () => {
+  const setup = async (header = "header-text") => {
     return await newSpecPage({
-      components: [MwHeaderTitle],
-      template: () => <mw-header-title>{header}</mw-header-title>,
+      components: [MwAppBarTitle],
+      template: () => <mw-app-bar-title>{header}</mw-app-bar-title>,
     });
   };
 
-  it("SHOULD render MwHeaderTitle", async () => {
+  it("SHOULD render MwAppBarTitle", async () => {
     const page = await setup();
     expect(page.root).toBeTruthy();
   });

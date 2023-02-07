@@ -5,21 +5,26 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { AriaRolesEnum } from "./shared/models/enums/aria-roles.enum";
 import { AppBarPosition } from "./components/mw-app-bar/mw-app-bar";
 import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
-import { AriaRolesEnum } from "./shared/models/enums/aria-roles.enum";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
   interface MwAppBar {
     /**
+     * Set the role of the header
+     */
+    ariaRole?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
+    /**
      * Position of App Bar within viewport
      */
     position?: AppBarPosition;
   }
+  interface MwAppBarTitle {}
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -227,7 +232,6 @@ export namespace Components {
      */
     ariaRole: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
   }
-  interface MwHeaderTitle {}
   interface MwIcon {
     /**
      * Icon color
@@ -541,6 +545,11 @@ declare global {
     prototype: HTMLMwAppBarElement;
     new (): HTMLMwAppBarElement;
   };
+  interface HTMLMwAppBarTitleElement extends Components.MwAppBarTitle, HTMLStencilElement {}
+  var HTMLMwAppBarTitleElement: {
+    prototype: HTMLMwAppBarTitleElement;
+    new (): HTMLMwAppBarTitleElement;
+  };
   interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {}
   var HTMLMwAvatarElement: {
     prototype: HTMLMwAvatarElement;
@@ -600,11 +609,6 @@ declare global {
   var HTMLMwHeaderElement: {
     prototype: HTMLMwHeaderElement;
     new (): HTMLMwHeaderElement;
-  };
-  interface HTMLMwHeaderTitleElement extends Components.MwHeaderTitle, HTMLStencilElement {}
-  var HTMLMwHeaderTitleElement: {
-    prototype: HTMLMwHeaderTitleElement;
-    new (): HTMLMwHeaderTitleElement;
   };
   interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {}
   var HTMLMwIconElement: {
@@ -673,6 +677,7 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     "mw-app-bar": HTMLMwAppBarElement;
+    "mw-app-bar-title": HTMLMwAppBarTitleElement;
     "mw-avatar": HTMLMwAvatarElement;
     "mw-button": HTMLMwButtonElement;
     "mw-card": HTMLMwCardElement;
@@ -685,7 +690,6 @@ declare global {
     "mw-chip": HTMLMwChipElement;
     "mw-divider": HTMLMwDividerElement;
     "mw-header": HTMLMwHeaderElement;
-    "mw-header-title": HTMLMwHeaderTitleElement;
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-link": HTMLMwLinkElement;
@@ -704,10 +708,15 @@ declare global {
 declare namespace LocalJSX {
   interface MwAppBar {
     /**
+     * Set the role of the header
+     */
+    ariaRole?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
+    /**
      * Position of App Bar within viewport
      */
     position?: AppBarPosition;
   }
+  interface MwAppBarTitle {}
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -931,7 +940,6 @@ declare namespace LocalJSX {
      */
     ariaRole?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
   }
-  interface MwHeaderTitle {}
   interface MwIcon {
     /**
      * Icon color
@@ -1224,6 +1232,7 @@ declare namespace LocalJSX {
   }
   interface IntrinsicElements {
     "mw-app-bar": MwAppBar;
+    "mw-app-bar-title": MwAppBarTitle;
     "mw-avatar": MwAvatar;
     "mw-button": MwButton;
     "mw-card": MwCard;
@@ -1236,7 +1245,6 @@ declare namespace LocalJSX {
     "mw-chip": MwChip;
     "mw-divider": MwDivider;
     "mw-header": MwHeader;
-    "mw-header-title": MwHeaderTitle;
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
     "mw-link": MwLink;
@@ -1257,6 +1265,7 @@ declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
       "mw-app-bar": LocalJSX.MwAppBar & JSXBase.HTMLAttributes<HTMLMwAppBarElement>;
+      "mw-app-bar-title": LocalJSX.MwAppBarTitle & JSXBase.HTMLAttributes<HTMLMwAppBarTitleElement>;
       "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
       "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
       "mw-card": LocalJSX.MwCard & JSXBase.HTMLAttributes<HTMLMwCardElement>;
@@ -1269,7 +1278,6 @@ declare module "@stencil/core" {
       "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
       "mw-header": LocalJSX.MwHeader & JSXBase.HTMLAttributes<HTMLMwHeaderElement>;
-      "mw-header-title": LocalJSX.MwHeaderTitle & JSXBase.HTMLAttributes<HTMLMwHeaderTitleElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;

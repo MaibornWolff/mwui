@@ -9,6 +9,7 @@ import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
 
 defineCustomElements();
 export const MwAppBar = /*@__PURE__*/ createReactComponent<JSX.MwAppBar, HTMLMwAppBarElement>("mw-app-bar");
+export const MwAppBarTitle = /*@__PURE__*/ createReactComponent<JSX.MwAppBarTitle, HTMLMwAppBarTitleElement>("mw-app-bar-title");
 export const MwAvatar = /*@__PURE__*/ createReactComponent<JSX.MwAvatar, HTMLMwAvatarElement>("mw-avatar");
 export const MwButton = /*@__PURE__*/ createReactComponent<JSX.MwButton, HTMLMwButtonElement>("mw-button");
 export const MwCard = /*@__PURE__*/ createReactComponent<JSX.MwCard, HTMLMwCardElement>("mw-card");
@@ -21,7 +22,6 @@ export const MwCheckbox = /*@__PURE__*/ createReactComponent<JSX.MwCheckbox, HTM
 export const MwChip = /*@__PURE__*/ createReactComponent<JSX.MwChip, HTMLMwChipElement>("mw-chip");
 export const MwDivider = /*@__PURE__*/ createReactComponent<JSX.MwDivider, HTMLMwDividerElement>("mw-divider");
 export const MwHeader = /*@__PURE__*/ createReactComponent<JSX.MwHeader, HTMLMwHeaderElement>("mw-header");
-export const MwHeaderTitle = /*@__PURE__*/ createReactComponent<JSX.MwHeaderTitle, HTMLMwHeaderTitleElement>("mw-header-title");
 export const MwIcon = /*@__PURE__*/ createReactComponent<JSX.MwIcon, HTMLMwIconElement>("mw-icon");
 export const MwIconGallery = /*@__PURE__*/ createReactComponent<JSX.MwIconGallery, HTMLMwIconGalleryElement>("mw-icon-gallery");
 export const MwLink = /*@__PURE__*/ createReactComponent<JSX.MwLink, HTMLMwLinkElement>("mw-link");
