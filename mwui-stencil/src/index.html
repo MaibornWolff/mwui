@@ -426,6 +426,27 @@
         <mw-avatar slot="end" src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>
       </mw-app-bar>
     </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Dropdown</h2>
+      <mw-dropdown label="Dropdown" placeholder="Select option...">
+        <mw-menu-item title="Disabled Item" disabled></mw-menu-item>
+        <mw-menu-item title="List Item Loooong" subtitle="Subtitle"> </mw-menu-item>
+        <mw-divider></mw-divider>
+        <mw-menu-item title="Disabled Item" disabled> </mw-menu-item>
+        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle"> </mw-menu-item>
+        <mw-menu-item title="List Item" subtitle="Subtitle"> </mw-menu-item>
+      </mw-dropdown>
+      <mw-dropdown label="Dropdown" placeholder="Select option..." inline="true">
+        <mw-menu-item title="Disabled Item" disabled></mw-menu-item>
+        <mw-menu-item title="List Item Loooong" subtitle="Subtitle"> </mw-menu-item>
+        <mw-divider></mw-divider>
+        <mw-menu-item title="Disabled Item" disabled> </mw-menu-item>
+        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle"> </mw-menu-item>
+        <mw-menu-item title="List Item" subtitle="Subtitle"> </mw-menu-item>
+      </mw-dropdown>
+    </section>
   </body>
   <script>
     const cards = document.getElementsByTagName("mw-card");

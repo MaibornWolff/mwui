@@ -220,6 +220,38 @@ export namespace Components {
      */
     inset?: boolean;
   }
+  interface MwDropdown {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Display label and input horizonally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    maxWidth?: string;
+    /**
+     * input field name
+     */
+    name: string;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    type?: string;
+    /**
+     * input field value
+     */
+    value?: string | number;
+  }
   interface MwIcon {
     /**
      * Icon color
@@ -588,6 +620,11 @@ declare global {
     prototype: HTMLMwDividerElement;
     new (): HTMLMwDividerElement;
   };
+  interface HTMLMwDropdownElement extends Components.MwDropdown, HTMLStencilElement {}
+  var HTMLMwDropdownElement: {
+    prototype: HTMLMwDropdownElement;
+    new (): HTMLMwDropdownElement;
+  };
   interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {}
   var HTMLMwIconElement: {
     prototype: HTMLMwIconElement;
@@ -666,6 +703,7 @@ declare global {
     "mw-checkbox": HTMLMwCheckboxElement;
     "mw-chip": HTMLMwChipElement;
     "mw-divider": HTMLMwDividerElement;
+    "mw-dropdown": HTMLMwDropdownElement;
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-link": HTMLMwLinkElement;
@@ -904,6 +942,38 @@ declare namespace LocalJSX {
      * Whether the divider is a middle-inset
      */
     inset?: boolean;
+  }
+  interface MwDropdown {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Display label and input horizonally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    maxWidth?: string;
+    /**
+     * input field name
+     */
+    name?: string;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    type?: string;
+    /**
+     * input field value
+     */
+    value?: string | number;
   }
   interface MwIcon {
     /**
@@ -1208,6 +1278,7 @@ declare namespace LocalJSX {
     "mw-checkbox": MwCheckbox;
     "mw-chip": MwChip;
     "mw-divider": MwDivider;
+    "mw-dropdown": MwDropdown;
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
     "mw-link": MwLink;
@@ -1239,6 +1310,7 @@ declare module "@stencil/core" {
       "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
       "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
+      "mw-dropdown": LocalJSX.MwDropdown & JSXBase.HTMLAttributes<HTMLMwDropdownElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
