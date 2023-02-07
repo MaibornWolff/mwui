@@ -17,6 +17,7 @@
 }
 
 .mw-slider-input-wrapper {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -24,8 +25,55 @@
   gap: 12px;
 }
 
+.mw-slider-input {
+  width: 100%;
+}
+
+.mw-slider:not(.disabled):hover #mw-slider-range-value {
+  opacity: 1;
+}
+
+#mw-slider-range-value {
+  --size: 28px;
+
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+  z-index: 9999;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  top: calc(-1 * (var(--size) + 4px + var(--mw-component-slider-handle-hover-gap-between)));
+  width: var(--size);
+  height: var(--size);
+  background: var(--mw-component-slider-focus);
+  color: var(--mw-component-slider-fg);
+  transform: translateX(calc(-0.5 * var(--size)));
+  font-family: var(--mw-component-text-field-label-font-family);
+  font-weight: var(--mw-component-text-field-label-font-weight);
+  font-size: var(--mw-component-text-field-label-font-size);
+  line-height: var(--mw-component-text-field-label-line-height);
+}
+
+#mw-slider-range-value:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid var(--mw-component-slider-focus);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: 24px;
+  left: 4px;
+}
+
 .mw-slider-input-wrapper mw-icon {
   color: var(--mw-component-slider-icons-default);
+}
+
+.mw-slider-input-wrapper.disabled mw-icon {
+  color: var(--mw-component-slider-disabled);
 }
 
 input[type="range"] {
@@ -91,6 +139,16 @@ input[type="range"]::-webkit-slider-thumb {
     var(--clip-edges) 100%,
     var(--clip-further) var(--clip-further)
   );
+}
+
+input[type="range"]:focus {
+  outline: none;
+  border: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  /* replace with component tokens once token-transformer supports expanding border tokens (object) */
+  border: var(--mw-core-border-width-sm) solid var(--mw-semantic-color-border-default);
 }
 
 input[type="range"]:hover::-webkit-slider-thumb {
@@ -184,8 +242,13 @@ input[type="range"]:disabled::-moz-range-progress {
   padding-right: var(--mw-component-slider-padding-label-x);
 }
 
+.mw-slider.disabled .mw-slider-label {
+  color: var(--mw-component-slider-disabled);
+}
+
 .mw-slider-helper {
   align-self: flex-end;
+  color: var(--mw-component-text-field-fg-helper-text);
   font-family: var(--mw-component-text-field-label-font-family);
   font-weight: var(--mw-component-text-field-label-font-weight);
   font-size: var(--mw-component-text-field-label-font-size);
