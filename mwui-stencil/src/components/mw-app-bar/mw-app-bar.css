@@ -29,19 +29,19 @@
   top: 0;
   left: 0;
 }
-slot {
+::slotted(*) {
   display: flex;
   flex-flow: row;
   align-items: center;
   gap: var(--mw-component-header-gap-within);
 }
 
-slot[name="start"] {
+slot[name="start"]::slotted(*) {
   justify-content: start;
 }
-slot[name="center"] {
+slot[name="center"]::slotted(*) {
   justify-content: center;
 }
-slot[name="end"] {
+slot[name="end"]::slotted(*) {
   justify-content: end;
 }
