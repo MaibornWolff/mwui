@@ -167,7 +167,6 @@ export class MwModal {
         >
           <mw-backdrop class="mw-modal__backdrop" part="backdrop" backdropDismiss={this.backdropDismiss} />
           <div class="mw-modal__wrapper" part="content">
-            {this.backdropDismiss + ""}
             <slot></slot>
           </div>
         </div>
