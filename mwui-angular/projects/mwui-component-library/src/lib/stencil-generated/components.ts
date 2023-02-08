@@ -65,7 +65,7 @@ export class MwAvatar {
 
 export declare interface MwBackdrop extends Components.MwBackdrop {
     /**
-     *
+     * Event after backdrop was clicked
      */
     backdropClick: EventEmitter<CustomEvent<void>>;
 }
@@ -465,14 +465,14 @@ export declare interface MwModal extends Components.MwModal {}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["backdropDismiss", "component", "dismissTrigger", "trigger"],
+    inputs: ["backdropDismiss", "dismissTrigger", "trigger"],
     methods: ["present", "dismiss"],
 })
 @Component({
     selector: "mw-modal",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["backdropDismiss", "component", "dismissTrigger", "trigger"],
+    inputs: ["backdropDismiss", "dismissTrigger", "trigger"],
 })
 export class MwModal {
     protected el: HTMLElement;

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-08T13:15:59",
+  "timestamp": "2023-02-08T13:55:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -230,7 +230,7 @@
           "mutable": false,
           "attr": "backdrop-dismiss",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "determines wether the backdrop will be dismissed by click",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -250,7 +250,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "Event after backdrop was clicked",
           "docsTags": []
         }
       ],
@@ -1722,7 +1722,7 @@
           "mutable": false,
           "attr": "backdrop-dismiss",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Determines wether or not backdrop should dismiss modal",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -1734,27 +1734,12 @@
           "required": false
         },
         {
-          "name": "component",
-          "type": "ComponentRef",
-          "mutable": false,
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "ComponentRef"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "dismissTrigger",
           "type": "string",
           "mutable": false,
           "attr": "dismiss-trigger",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "id used to dismiss the modal",
           "docsTags": [],
           "values": [
             {
@@ -1770,7 +1755,7 @@
           "mutable": false,
           "attr": "trigger",
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "id used to present the modal",
           "docsTags": [],
           "values": [
             {
@@ -1813,6 +1798,10 @@
         {
           "name": "backdrop",
           "docs": ""
+        },
+        {
+          "name": "content",
+          "docs": ""
         }
       ],
       "dependents": [],
@@ -1825,7 +1814,7 @@
       "filePath": "./src/components/mw-modal-footer/mw-modal-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-modal-footer",
-      "readme": "# mw-modal-footer\n\n\n",
+      "readme": "# mw-modal-footer\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1844,7 +1833,7 @@
       "filePath": "./src/components/mw-modal-title/mw-modal-title.tsx",
       "encapsulation": "shadow",
       "tag": "mw-modal-title",
-      "readme": "# mw-modal-title\n\n\n",
+      "readme": "# mw-modal-title\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

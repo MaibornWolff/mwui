@@ -4,15 +4,15 @@
 
 ## Properties
 
-| Property          | Attribute          | Description | Type      | Default |
-| ----------------- | ------------------ | ----------- | --------- | ------- |
-| `backdropDismiss` | `backdrop-dismiss` |             | `boolean` | `true`  |
+| Property          | Attribute          | Description                                               | Type      | Default |
+| ----------------- | ------------------ | --------------------------------------------------------- | --------- | ------- |
+| `backdropDismiss` | `backdrop-dismiss` | determines wether the backdrop will be dismissed by click | `boolean` | `true`  |
 
 ## Events
 
-| Event           | Description | Type                |
-| --------------- | ----------- | ------------------- |
-| `backdropClick` |             | `CustomEvent<void>` |
+| Event           | Description                      | Type                |
+| --------------- | -------------------------------- | ------------------- |
+| `backdropClick` | Event after backdrop was clicked | `CustomEvent<void>` |
 
 ## Dependencies
 

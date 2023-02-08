@@ -4,12 +4,11 @@
 
 ## Properties
 
-| Property          | Attribute          | Description | Type           | Default     |
-| ----------------- | ------------------ | ----------- | -------------- | ----------- |
-| `backdropDismiss` | `backdrop-dismiss` |             | `boolean`      | `true`      |
-| `component`       | --                 |             | `ComponentRef` | `undefined` |
-| `dismissTrigger`  | `dismiss-trigger`  |             | `string`       | `undefined` |
-| `trigger`         | `trigger`          |             | `string`       | `undefined` |
+| Property          | Attribute          | Description                                            | Type      | Default     |
+| ----------------- | ------------------ | ------------------------------------------------------ | --------- | ----------- |
+| `backdropDismiss` | `backdrop-dismiss` | Determines wether or not backdrop should dismiss modal | `boolean` | `true`      |
+| `dismissTrigger`  | `dismiss-trigger`  | id used to dismiss the modal                           | `string`  | `undefined` |
+| `trigger`         | `trigger`          | id used to present the modal                           | `string`  | `undefined` |
 
 ## Methods
 
@@ -34,6 +33,7 @@ Type: `Promise<void>`
 | Part         | Description |
 | ------------ | ----------- |
 | `"backdrop"` |             |
+| `"content"`  |             |
 
 ## Dependencies
 

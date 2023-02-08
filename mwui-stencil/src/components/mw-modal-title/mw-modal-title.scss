@@ -1,10 +1,12 @@
 :host {
   display: block;
   padding-bottom: var(--mw-component-modal-padding-b-default);
+  margin-top: calc(-1 * var(--mw-component-modal-padding-components-y-default));
 
   .mw-modal-title {
     display: flex;
     align-items: center;
+    gap: var(--mw-component-header-gap-within);
 
     .spacefiller {
       flex: 1 1 auto;

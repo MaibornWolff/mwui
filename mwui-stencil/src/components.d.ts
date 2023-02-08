@@ -12,7 +12,6 @@ import { ButtonVariant } from "./components/mw-button/models/enums/button-varian
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
-import { ComponentRef } from "@stencil/core/internal";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
   interface MwAppBar {
@@ -49,6 +48,9 @@ export namespace Components {
     testId?: string;
   }
   interface MwBackdrop {
+    /**
+     * determines wether the backdrop will be dismissed by click
+     */
     backdropDismiss: boolean;
   }
   interface MwButton {
@@ -311,17 +313,25 @@ export namespace Components {
     testId: string;
   }
   interface MwModal {
+    /**
+     * Determines wether or not backdrop should dismiss modal
+     */
     backdropDismiss: boolean;
-    component?: ComponentRef;
     /**
      * Method to dismiss the modal
      */
     dismiss: () => Promise<void>;
+    /**
+     * id used to dismiss the modal
+     */
     dismissTrigger: string | undefined;
     /**
      * Method to present the modal
      */
     present: () => Promise<void>;
+    /**
+     * id used to present the modal
+     */
     trigger: string | undefined;
   }
   interface MwModalFooter {}
@@ -789,7 +799,13 @@ declare namespace LocalJSX {
     testId?: string;
   }
   interface MwBackdrop {
+    /**
+     * determines wether the backdrop will be dismissed by click
+     */
     backdropDismiss?: boolean;
+    /**
+     * Event after backdrop was clicked
+     */
     onBackdropClick?: (event: MwBackdropCustomEvent<void>) => void;
   }
   interface MwButton {
@@ -1072,9 +1088,17 @@ declare namespace LocalJSX {
     testId?: string;
   }
   interface MwModal {
+    /**
+     * Determines wether or not backdrop should dismiss modal
+     */
     backdropDismiss?: boolean;
-    component?: ComponentRef;
+    /**
+     * id used to dismiss the modal
+     */
     dismissTrigger?: string | undefined;
+    /**
+     * id used to present the modal
+     */
     trigger?: string | undefined;
   }
   interface MwModalFooter {}

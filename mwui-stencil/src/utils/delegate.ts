@@ -5,7 +5,6 @@ export const attachComponent = async (delegate: any | undefined, container: HTML
 };
 
 export const detachComponent = (delegate: any | undefined, element: HTMLElement | undefined) => {
-  console.log(element, delegate);
   if (element) {
     if (delegate) {
       const container = element.parentElement;
@@ -29,7 +28,6 @@ export const CoreDelegate = () => {
       el.classList.add("mw-modal-host");
 
       el.append(...BaseComponent.children);
-      console.log(BaseComponent.children);
       BaseComponent.appendChild(el);
     }
 

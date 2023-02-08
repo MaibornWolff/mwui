@@ -1,5 +1,4 @@
 import { Component, Host, h, Prop, Element, Watch, Method, State } from "@stencil/core";
-import { ComponentRef } from "@stencil/core/internal";
 import { attachComponent, CoreDelegate, detachComponent } from "../../utils/delegate";
 
 @Component({
@@ -8,26 +7,34 @@ import { attachComponent, CoreDelegate, detachComponent } from "../../utils/dele
   shadow: true,
 })
 export class MwModal {
-  private destroyTriggerInteraction?: () => void;
-  private destroyDismissTriggerInteraction?: () => void;
   private modalContentElement?: HTMLElement;
   private delegate = CoreDelegate();
-  private animationDuration = 500;
+  private animationDuration = 300;
+  private destroyTriggerInteraction?: () => void;
+  private destroyDismissTriggerInteraction?: () => void;
 
   @State() private dismissAnimationRunning = false;
   @State() private overlayHidden = true;
 
   @Element() private el!: HTMLMwModalElement;
 
+  /**
+   * Determines wether or not backdrop should dismiss modal
+   */
   @Prop() backdropDismiss = true;
-  @Prop() component?: ComponentRef;
 
+  /**
+   * id used to present the modal
+   */
   @Prop() trigger: string | undefined;
   @Watch("trigger")
   onTriggerChange(): void {
     this.configureTriggerInteraction();
   }
 
+  /**
+   * id used to dismiss the modal
+   */
   @Prop() dismissTrigger: string | undefined;
   @Watch("trigger")
   onDismissTriggerChange(): void {
@@ -39,7 +46,7 @@ export class MwModal {
     this.configureDismissTriggerInteraction();
   }
 
-  private configureTriggerInteraction = () => {
+  private configureTriggerInteraction = (): void => {
     const { trigger, el, destroyTriggerInteraction } = this;
 
     if (destroyTriggerInteraction) {
@@ -50,9 +57,7 @@ export class MwModal {
       return;
     }
 
-    const triggerEl = trigger !== undefined ? document.getElementById(trigger) : null;
-
-    const configureTriggerInteraction = (triggerElement: HTMLElement, modalEl: HTMLMwModalElement) => {
+    const configureTriggerInteraction = (triggerElement: HTMLElement, modalEl: HTMLMwModalElement): (() => void) => {
       const openModal = (): void => {
         modalEl.present();
       };
@@ -64,7 +69,7 @@ export class MwModal {
       };
     };
 
-    this.destroyTriggerInteraction = configureTriggerInteraction(triggerEl, el);
+    this.destroyTriggerInteraction = configureTriggerInteraction(this.getTriggerElement(trigger), el);
   };
 
   private configureDismissTriggerInteraction = () => {
@@ -78,22 +83,24 @@ export class MwModal {
       return;
     }
 
-    const triggerEl = dismissTrigger !== undefined ? document.getElementById(dismissTrigger) : null;
-
-    const configureDismissTriggerInteraction = (triggerElement: HTMLElement, modalEl: HTMLMwModalElement) => {
+    const configureDismissTriggerInteraction = (triggerElement: HTMLElement, modalEl: HTMLMwModalElement): (() => void) => {
       const dismissModal = (): void => {
         modalEl.dismiss();
       };
 
       triggerElement.addEventListener("click", dismissModal);
 
-      return () => {
+      return (): void => {
         triggerElement.removeEventListener("click", dismissModal);
       };
     };
 
-    this.destroyDismissTriggerInteraction = configureDismissTriggerInteraction(triggerEl, el);
+    this.destroyDismissTriggerInteraction = configureDismissTriggerInteraction(this.getTriggerElement(dismissTrigger), el);
   };
+
+  private getTriggerElement(triggerId: string): HTMLElement | null {
+    return triggerId ? document.getElementById(triggerId) : null;
+  }
 
   private runPresentAnimation(): Promise<void> {
     this.overlayHidden = false;
@@ -159,7 +166,8 @@ export class MwModal {
           }}
         >
           <mw-backdrop class="mw-modal__backdrop" part="backdrop" backdropDismiss={this.backdropDismiss} />
-          <div class="mw-modal__wrapper">
+          <div class="mw-modal__wrapper" part="content">
+            {this.backdropDismiss + ""}
             <slot></slot>
           </div>
         </div>

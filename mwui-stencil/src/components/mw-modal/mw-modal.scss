@@ -7,6 +7,8 @@
 }
 
 .mw-modal {
+  $animation-duration: 0.33s;
+
   display: flex;
   justify-content: center;
   align-items: start;
@@ -17,21 +19,21 @@
   height: 100vh;
   box-sizing: border-box;
   contain: strict;
-  animation: bgBlurIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation: bgBlurIn $animation-duration cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 
   &.dismiss-animation {
-    animation: bgBlurOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: bgBlurOut $animation-duration cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 
     .mw-modal__backdrop {
-      animation: fadeOut 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation: fadeOut $animation-duration cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
 
     .mw-modal__wrapper {
-      animation: scaleDown 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+      animation: scaleDown $animation-duration cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
     }
   }
   &__backdrop {
-    animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: fadeIn $animation-duration cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   }
 
   &__wrapper {
@@ -42,7 +44,8 @@
     background: var(--mw-component-modal-bg-default);
     border-radius: var(--mw-component-modal-border-radius);
     padding: var(--mw-component-modal-padding-components-x-default) var(--mw-component-modal-padding-components-x-default);
-    animation: scaleUp 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation: scaleUp $animation-duration cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12); // TODO: fix variables
   }
 }
 

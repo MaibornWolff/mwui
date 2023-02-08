@@ -57,7 +57,7 @@ export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu
 
 export const MwMenuList = /*@__PURE__*/ defineContainer<JSX.MwMenuList>("mw-menu-list", undefined, ["testId"]);
 
-export const MwModal = /*@__PURE__*/ defineContainer<JSX.MwModal>("mw-modal", undefined, ["backdropDismiss", "component", "trigger", "dismissTrigger"]);
+export const MwModal = /*@__PURE__*/ defineContainer<JSX.MwModal>("mw-modal", undefined, ["backdropDismiss", "trigger", "dismissTrigger"]);
 
 export const MwModalFooter = /*@__PURE__*/ defineContainer<JSX.MwModalFooter>("mw-modal-footer", undefined);
 

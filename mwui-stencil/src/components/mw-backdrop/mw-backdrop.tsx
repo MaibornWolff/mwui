@@ -6,8 +6,14 @@ import { Component, Host, h, EventEmitter, Event, Listen, Prop } from "@stencil/
   shadow: true,
 })
 export class MwBackdrop {
+  /**
+   * determines wether the backdrop will be dismissed by click
+   */
   @Prop() backdropDismiss = true;
 
+  /**
+   * Event after backdrop was clicked
+   */
   @Event() backdropClick!: EventEmitter<void>;
 
   @Listen("click", { passive: false, capture: true })
