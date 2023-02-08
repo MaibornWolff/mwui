@@ -226,6 +226,14 @@ export namespace Components {
      */
     disabled?: boolean;
     /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
      * Display label and input horizonally
      */
     inline?: boolean;
@@ -233,7 +241,6 @@ export namespace Components {
      * Label to be displayed
      */
     label?: string;
-    maxWidth?: string;
     /**
      * input field name
      */
@@ -246,6 +253,9 @@ export namespace Components {
      * Mark input as required
      */
     required?: boolean;
+    /**
+     * HTML Input type
+     */
     type?: string;
     /**
      * input field value
@@ -518,6 +528,10 @@ export namespace Components {
      */
     placeholder?: string;
     /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
+    /**
      * Mark input as required
      */
     required?: boolean;
@@ -546,6 +560,10 @@ export interface MwCheckboxCustomEvent<T> extends CustomEvent<T> {
 export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
+}
+export interface MwDropdownCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwDropdownElement;
 }
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
@@ -949,6 +967,14 @@ declare namespace LocalJSX {
      */
     disabled?: boolean;
     /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
      * Display label and input horizonally
      */
     inline?: boolean;
@@ -956,11 +982,14 @@ declare namespace LocalJSX {
      * Label to be displayed
      */
     label?: string;
-    maxWidth?: string;
     /**
      * input field name
      */
     name?: string;
+    /**
+     * MwTextfield emits an event when textfield value changes
+     */
+    onValueChanged?: (event: MwDropdownCustomEvent<string>) => void;
     /**
      * Placeholder to be displayed
      */
@@ -969,6 +998,9 @@ declare namespace LocalJSX {
      * Mark input as required
      */
     required?: boolean;
+    /**
+     * HTML Input type
+     */
     type?: string;
     /**
      * input field value
@@ -1252,6 +1284,10 @@ declare namespace LocalJSX {
      * Placeholder to be displayed
      */
     placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
     /**
      * Mark input as required
      */

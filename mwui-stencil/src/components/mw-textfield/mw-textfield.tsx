@@ -53,16 +53,22 @@ export class MwTextfield {
    * Visually and functionally disabled input
    */
   @Prop() disabled?: boolean = false;
+  /**
+   * Whether user can't type in input field
+   */
+  @Prop() readOnly?: boolean = false;
 
   @State() focused = false;
 
   private inputElement: HTMLInputElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
+  private hasDropDownMenu: boolean;
 
   componentWillLoad(): void {
     this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
     this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
+    this.hasDropDownMenu = !!this.hostElement.querySelector("[slot='dropdown-menu']");
   }
 
   private onValueChange = (event: Event): void => {
@@ -94,28 +100,47 @@ export class MwTextfield {
               {this.label}
               {this.required && <span class="required">*</span>}
             </label>
-            <div onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
-              <span class={classnames({ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError })}>
-                <slot name="icon-start"></slot>
-              </span>
-              <input
-                ref={el => (this.inputElement = el as HTMLInputElement)}
-                placeholder={this.placeholder}
-                class={classnames({
-                  "has-error": this.hasError,
-                })}
-                onFocus={this.onFocus}
-                onBlur={this.onBlur}
-                onInput={this.onValueChange}
-                onChange={this.onValueChange}
-                type={this.type}
-                name={this.name}
-                value={this.value}
-                disabled={this.disabled}
-              />
-              <span class={classnames({ "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError })}>
-                <slot name="icon-end"></slot>
-              </span>
+            <div>
+              <div onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+                <span class={classnames({ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError })}>
+                  <slot name="icon-start"></slot>
+                </span>
+                <input
+                  ref={el => (this.inputElement = el as HTMLInputElement)}
+                  placeholder={this.placeholder}
+                  class={classnames({
+                    "has-error": this.hasError,
+                  })}
+                  onFocus={this.onFocus}
+                  onBlur={this.onBlur}
+                  onInput={this.onValueChange}
+                  onChange={this.onValueChange}
+                  type={this.type}
+                  name={this.name}
+                  value={this.value}
+                  disabled={this.disabled}
+                  readOnly={this.readOnly}
+                />
+                <span class={classnames({ "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError })}>
+                  <slot name="icon-end"></slot>
+                </span>
+                {this.hasDropDownMenu && (
+                  <span
+                    class={classnames({
+                      "icon-end": this.hasDropDownMenu,
+                      "focused": this.focused,
+                      "has-error": this.hasError,
+                    })}
+                  >
+                    <mw-icon icon={this.focused ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
+                  </span>
+                )}
+              </div>
+              <div class={classnames({ "dropdown-menu-wrapper": this.hasDropDownMenu })}>
+                <div class={`dropdown-menu ${this.focused && "menu-focused"}`}>
+                  <slot name="dropdown-menu"></slot>
+                </div>
+              </div>
             </div>
             {this.helperText && !this.inline && (
               <span

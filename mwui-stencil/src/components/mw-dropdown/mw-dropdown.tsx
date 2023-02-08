@@ -1,4 +1,5 @@
-import { Component, Host, h, Prop } from "@stencil/core";
+import { Component, Host, h, Prop, State, Event, EventEmitter } from "@stencil/core";
+import classnames from "classnames";
 
 @Component({
   tag: "mw-dropdown",
@@ -6,6 +7,13 @@ import { Component, Host, h, Prop } from "@stencil/core";
   shadow: true,
 })
 export class MwDropdown {
+  /**
+   * MwTextfield emits an event when textfield value changes
+   */
+  @Event({ bubbles: true, composed: false }) valueChanged: EventEmitter<string>;
+  /**
+   * HTML Input type
+   */
   @Prop() type?: string = "text";
   /**
    * input field value
@@ -24,6 +32,14 @@ export class MwDropdown {
    */
   @Prop() placeholder?: string;
   /**
+   * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+   */
+  @Prop({ reflect: true }) helperText?: string;
+  /**
+   * Use to display input and helper-text in error state
+   */
+  @Prop() hasError?: boolean = false;
+  /**
    * Display label and input horizonally
    */
   @Prop() inline?: boolean = false;
@@ -35,22 +51,87 @@ export class MwDropdown {
    * Visually and functionally disabled input
    */
   @Prop() disabled?: boolean = false;
-  @Prop() maxWidth?: string;
+
+  @State() focused = false;
+
+  private inputElement: HTMLInputElement;
+
+  private onValueChange = (event: Event): void => {
+    this.value = (event.target as HTMLInputElement).value;
+    this.valueChanged.emit(this.value);
+  };
+
+  private onFocus = (): void => {
+    this.inputElement.focus();
+    this.focused = true;
+  };
+
+  private onBlur = (): void => {
+    this.focused = false;
+  };
 
   render() {
     return (
-      <Host style={{ "max-width": this.maxWidth ? this.maxWidth : "auto" }}>
-        <mw-textfield
-          type={this.type}
-          name={this.name}
-          label={this.label}
-          placeholder={this.placeholder}
-          inline={this.inline}
-          required={this.required}
-          disabled={this.disabled}
-        ></mw-textfield>
-        <div class="mw-dropdown-menu">
-          <slot></slot>
+      <Host>
+        <div class="wrapper">
+          <div
+            class={classnames("textfield", {
+              "inline": this.inline,
+              "has-error": this.hasError,
+              "disabled": this.disabled,
+            })}
+          >
+            <label htmlFor={this.name} class="label">
+              {this.label}
+              {this.required && <span class="required">*</span>}
+            </label>
+            <div>
+              <div onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+                <input
+                  ref={el => (this.inputElement = el as HTMLInputElement)}
+                  placeholder={this.placeholder}
+                  class={classnames({
+                    "has-error": this.hasError,
+                  })}
+                  readOnly
+                  onFocus={this.onFocus}
+                  onBlur={this.onBlur}
+                  onInput={this.onValueChange}
+                  onChange={this.onValueChange}
+                  type={this.type}
+                  name={this.name}
+                  value={this.value}
+                  disabled={this.disabled}
+                />
+                <span class={classnames("icon", { "focused": this.focused, "has-error": this.hasError })}>
+                  <mw-icon icon={this.focused ? "keyboard_arrow_up" : "keyboard_arrow_down"} weight={500}></mw-icon>
+                </span>
+              </div>
+              <div class="dropdown-menu-wrapper">
+                <div class={`dropdown-menu ${this.focused && "menu-focused"}`}>
+                  <slot></slot>
+                </div>
+              </div>
+            </div>
+            {this.helperText && !this.inline && (
+              <span
+                class={classnames("helper-text", {
+                  "has-error": this.hasError,
+                })}
+              >
+                {this.helperText}
+              </span>
+            )}
+          </div>
+          {this.helperText && this.inline && (
+            <span
+              class={classnames("helper-text", {
+                "has-error": this.hasError,
+              })}
+            >
+              {this.helperText}
+            </span>
+          )}
         </div>
       </Host>
     );
