@@ -313,9 +313,31 @@ export namespace Components {
   interface MwModal {
     backdropDismiss: boolean;
     component?: ComponentRef;
+    /**
+     * Method to dismiss the modal
+     */
     dismiss: () => Promise<void>;
+    dismissTrigger: string | undefined;
+    /**
+     * Method to present the modal
+     */
     present: () => Promise<void>;
     trigger: string | undefined;
+  }
+  interface MwModalFooter {}
+  interface MwModalTitle {
+    /**
+     * Description that should be displayed
+     */
+    description: string | undefined;
+    /**
+     * Title that should be displayed
+     */
+    headline: string | undefined;
+    /**
+     * Dismiss icon that should be displayed
+     */
+    icon: string | undefined;
   }
   interface MwPopover {
     /**
@@ -654,6 +676,16 @@ declare global {
     prototype: HTMLMwModalElement;
     new (): HTMLMwModalElement;
   };
+  interface HTMLMwModalFooterElement extends Components.MwModalFooter, HTMLStencilElement {}
+  var HTMLMwModalFooterElement: {
+    prototype: HTMLMwModalFooterElement;
+    new (): HTMLMwModalFooterElement;
+  };
+  interface HTMLMwModalTitleElement extends Components.MwModalTitle, HTMLStencilElement {}
+  var HTMLMwModalTitleElement: {
+    prototype: HTMLMwModalTitleElement;
+    new (): HTMLMwModalTitleElement;
+  };
   interface HTMLMwPopoverElement extends Components.MwPopover, HTMLStencilElement {}
   var HTMLMwPopoverElement: {
     prototype: HTMLMwPopoverElement;
@@ -711,6 +743,8 @@ declare global {
     "mw-menu-item": HTMLMwMenuItemElement;
     "mw-menu-list": HTMLMwMenuListElement;
     "mw-modal": HTMLMwModalElement;
+    "mw-modal-footer": HTMLMwModalFooterElement;
+    "mw-modal-title": HTMLMwModalTitleElement;
     "mw-popover": HTMLMwPopoverElement;
     "mw-radio": HTMLMwRadioElement;
     "mw-slider": HTMLMwSliderElement;
@@ -1040,7 +1074,23 @@ declare namespace LocalJSX {
   interface MwModal {
     backdropDismiss?: boolean;
     component?: ComponentRef;
+    dismissTrigger?: string | undefined;
     trigger?: string | undefined;
+  }
+  interface MwModalFooter {}
+  interface MwModalTitle {
+    /**
+     * Description that should be displayed
+     */
+    description?: string | undefined;
+    /**
+     * Title that should be displayed
+     */
+    headline?: string | undefined;
+    /**
+     * Dismiss icon that should be displayed
+     */
+    icon?: string | undefined;
   }
   interface MwPopover {
     /**
@@ -1270,6 +1320,8 @@ declare namespace LocalJSX {
     "mw-menu-item": MwMenuItem;
     "mw-menu-list": MwMenuList;
     "mw-modal": MwModal;
+    "mw-modal-footer": MwModalFooter;
+    "mw-modal-title": MwModalTitle;
     "mw-popover": MwPopover;
     "mw-radio": MwRadio;
     "mw-slider": MwSlider;
@@ -1304,6 +1356,8 @@ declare module "@stencil/core" {
       "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
       "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
       "mw-modal": LocalJSX.MwModal & JSXBase.HTMLAttributes<HTMLMwModalElement>;
+      "mw-modal-footer": LocalJSX.MwModalFooter & JSXBase.HTMLAttributes<HTMLMwModalFooterElement>;
+      "mw-modal-title": LocalJSX.MwModalTitle & JSXBase.HTMLAttributes<HTMLMwModalTitleElement>;
       "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
       "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
       "mw-slider": LocalJSX.MwSlider & JSXBase.HTMLAttributes<HTMLMwSliderElement>;

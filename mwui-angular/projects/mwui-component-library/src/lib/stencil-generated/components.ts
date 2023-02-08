@@ -465,16 +465,54 @@ export declare interface MwModal extends Components.MwModal {}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["backdropDismiss", "component", "trigger"],
+    inputs: ["backdropDismiss", "component", "dismissTrigger", "trigger"],
     methods: ["present", "dismiss"],
 })
 @Component({
     selector: "mw-modal",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["backdropDismiss", "component", "trigger"],
+    inputs: ["backdropDismiss", "component", "dismissTrigger", "trigger"],
 })
 export class MwModal {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwModalFooter extends Components.MwModalFooter {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+})
+@Component({
+    selector: "mw-modal-footer",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+})
+export class MwModalFooter {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwModalTitle extends Components.MwModalTitle {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["description", "headline", "icon"],
+})
+@Component({
+    selector: "mw-modal-title",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["description", "headline", "icon"],
+})
+export class MwModalTitle {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();

@@ -8,17 +8,22 @@
 | ----------------- | ------------------ | ----------- | -------------- | ----------- |
 | `backdropDismiss` | `backdrop-dismiss` |             | `boolean`      | `true`      |
 | `component`       | --                 |             | `ComponentRef` | `undefined` |
+| `dismissTrigger`  | `dismiss-trigger`  |             | `string`       | `undefined` |
 | `trigger`         | `trigger`          |             | `string`       | `undefined` |
 
 ## Methods
 
 ### `dismiss() => Promise<void>`
 
+Method to dismiss the modal
+
 #### Returns
 
 Type: `Promise<void>`
 
 ### `present() => Promise<void>`
+
+Method to present the modal
 
 #### Returns
 

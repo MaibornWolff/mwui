@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-08T09:20:17",
+  "timestamp": "2023-02-08T13:15:59",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -1749,6 +1749,22 @@
           "required": false
         },
         {
+          "name": "dismissTrigger",
+          "type": "string",
+          "mutable": false,
+          "attr": "dismiss-trigger",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "trigger",
           "type": "string",
           "mutable": false,
@@ -1774,7 +1790,7 @@
           },
           "signature": "dismiss() => Promise<void>",
           "parameters": [],
-          "docs": "",
+          "docs": "Method to dismiss the modal",
           "docsTags": []
         },
         {
@@ -1785,7 +1801,7 @@
           },
           "signature": "present() => Promise<void>",
           "parameters": [],
-          "docs": "",
+          "docs": "Method to present the modal",
           "docsTags": []
         }
       ],
@@ -1804,6 +1820,93 @@
       "dependencyGraph": {
         "mw-modal": ["mw-backdrop"]
       }
+    },
+    {
+      "filePath": "./src/components/mw-modal-footer/mw-modal-footer.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-modal-footer",
+      "readme": "# mw-modal-footer\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-modal-title/mw-modal-title.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-modal-title",
+      "readme": "# mw-modal-title\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "description",
+          "type": "string",
+          "mutable": false,
+          "attr": "description",
+          "reflectToAttr": false,
+          "docs": "Description that should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "headline",
+          "type": "string",
+          "mutable": false,
+          "attr": "headline",
+          "reflectToAttr": false,
+          "docs": "Title that should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": false,
+          "docs": "Dismiss icon that should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-popover/mw-popover.tsx",

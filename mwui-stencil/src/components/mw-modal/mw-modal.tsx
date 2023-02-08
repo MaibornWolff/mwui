@@ -1,16 +1,21 @@
-import { Component, Host, h, Prop, Element, Watch, Method } from "@stencil/core";
+import { Component, Host, h, Prop, Element, Watch, Method, State } from "@stencil/core";
 import { ComponentRef } from "@stencil/core/internal";
 import { attachComponent, CoreDelegate, detachComponent } from "../../utils/delegate";
 
 @Component({
   tag: "mw-modal",
-  styleUrl: "mw-modal.css",
+  styleUrl: "mw-modal.scss",
   shadow: true,
 })
 export class MwModal {
   private destroyTriggerInteraction?: () => void;
+  private destroyDismissTriggerInteraction?: () => void;
   private modalContentElement?: HTMLElement;
   private delegate = CoreDelegate();
+  private animationDuration = 500;
+
+  @State() private dismissAnimationRunning = false;
+  @State() private overlayHidden = true;
 
   @Element() private el!: HTMLMwModalElement;
 
@@ -23,8 +28,15 @@ export class MwModal {
     this.configureTriggerInteraction();
   }
 
+  @Prop() dismissTrigger: string | undefined;
+  @Watch("trigger")
+  onDismissTriggerChange(): void {
+    this.configureDismissTriggerInteraction();
+  }
+
   connectedCallback(): void {
     this.configureTriggerInteraction();
+    this.configureDismissTriggerInteraction();
   }
 
   private configureTriggerInteraction = () => {
@@ -55,21 +67,79 @@ export class MwModal {
     this.destroyTriggerInteraction = configureTriggerInteraction(triggerEl, el);
   };
 
+  private configureDismissTriggerInteraction = () => {
+    const { dismissTrigger, el, destroyDismissTriggerInteraction } = this;
+
+    if (destroyDismissTriggerInteraction) {
+      destroyDismissTriggerInteraction();
+    }
+
+    if (!dismissTrigger) {
+      return;
+    }
+
+    const triggerEl = dismissTrigger !== undefined ? document.getElementById(dismissTrigger) : null;
+
+    const configureDismissTriggerInteraction = (triggerElement: HTMLElement, modalEl: HTMLMwModalElement) => {
+      const dismissModal = (): void => {
+        modalEl.dismiss();
+      };
+
+      triggerElement.addEventListener("click", dismissModal);
+
+      return () => {
+        triggerElement.removeEventListener("click", dismissModal);
+      };
+    };
+
+    this.destroyDismissTriggerInteraction = configureDismissTriggerInteraction(triggerEl, el);
+  };
+
+  private runPresentAnimation(): Promise<void> {
+    this.overlayHidden = false;
+
+    return new Promise(resolve =>
+      setTimeout(() => {
+        resolve();
+      }, this.animationDuration),
+    );
+  }
+
+  private runDismissAnimation(): Promise<void> {
+    this.dismissAnimationRunning = true;
+
+    return new Promise(resolve =>
+      setTimeout(() => {
+        this.overlayHidden = true;
+        this.dismissAnimationRunning = false;
+        resolve();
+      }, this.animationDuration),
+    );
+  }
+
+  /**
+   * Method to present the modal
+   */
   @Method()
   async present(): Promise<void> {
     const { delegate, el } = this;
-    el.classList.remove("overlay-hidden");
+
     this.modalContentElement = await attachComponent(delegate, el);
+    await this.runPresentAnimation();
   }
 
+  /**
+   * Method to dismiss the modal
+   */
   @Method()
   async dismiss(): Promise<void> {
-    const { delegate, el } = this;
-    el.classList.add("overlay-hidden");
+    const { delegate } = this;
+
+    await this.runDismissAnimation();
     await detachComponent(delegate, this.modalContentElement);
   }
 
-  private onBackdropClick = (): void => {
+  private handleDismiss = (): void => {
     this.dismiss();
   };
 
@@ -77,13 +147,21 @@ export class MwModal {
     return (
       <Host
         class={{
-          "overlay-hidden": true,
+          "overlay-hidden": this.overlayHidden,
         }}
-        onBackdropClick={this.onBackdropClick}
+        onBackdropClick={this.handleDismiss}
+        onIconClick={this.handleDismiss}
       >
-        <mw-backdrop part="backdrop" backdropDismiss={this.backdropDismiss} />
-        <div class="modal-wrapper">
-          <slot></slot>
+        <div
+          class={{
+            "mw-modal": true,
+            "dismiss-animation": this.dismissAnimationRunning,
+          }}
+        >
+          <mw-backdrop class="mw-modal__backdrop" part="backdrop" backdropDismiss={this.backdropDismiss} />
+          <div class="mw-modal__wrapper">
+            <slot></slot>
+          </div>
         </div>
       </Host>
     );

@@ -57,7 +57,11 @@ export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu
 
 export const MwMenuList = /*@__PURE__*/ defineContainer<JSX.MwMenuList>("mw-menu-list", undefined, ["testId"]);
 
-export const MwModal = /*@__PURE__*/ defineContainer<JSX.MwModal>("mw-modal", undefined, ["backdropDismiss", "component", "trigger"]);
+export const MwModal = /*@__PURE__*/ defineContainer<JSX.MwModal>("mw-modal", undefined, ["backdropDismiss", "component", "trigger", "dismissTrigger"]);
+
+export const MwModalFooter = /*@__PURE__*/ defineContainer<JSX.MwModalFooter>("mw-modal-footer", undefined);
+
+export const MwModalTitle = /*@__PURE__*/ defineContainer<JSX.MwModalTitle>("mw-modal-title", undefined, ["icon", "headline", "description"]);
 
 export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popover", undefined, ["testId", "open", "placement", "dismissable", "noPadding", "name"]);
 
