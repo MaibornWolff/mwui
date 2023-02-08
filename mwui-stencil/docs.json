@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-07T14:21:52",
+  "timestamp": "2023-02-08T09:17:52",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -223,11 +223,29 @@
       "docs": "",
       "docsTags": [],
       "usage": {},
-      "props": [],
+      "props": [
+        {
+          "name": "backdropDismiss",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "backdrop-dismiss",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
       "methods": [],
       "events": [
         {
-          "event": "ionBackdropTap",
+          "event": "backdropClick",
           "detail": "void",
           "bubbles": true,
           "cancelable": true,
@@ -1698,6 +1716,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "backdropDismiss",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "backdrop-dismiss",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "component",
           "type": "ComponentRef",

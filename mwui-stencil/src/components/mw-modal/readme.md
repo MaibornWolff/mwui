@@ -4,10 +4,11 @@
 
 ## Properties
 
-| Property    | Attribute | Description | Type           | Default     |
-| ----------- | --------- | ----------- | -------------- | ----------- |
-| `component` | --        |             | `ComponentRef` | `undefined` |
-| `trigger`   | `trigger` |             | `string`       | `undefined` |
+| Property          | Attribute          | Description | Type           | Default     |
+| ----------------- | ------------------ | ----------- | -------------- | ----------- |
+| `backdropDismiss` | `backdrop-dismiss` |             | `boolean`      | `true`      |
+| `component`       | --                 |             | `ComponentRef` | `undefined` |
+| `trigger`         | `trigger`          |             | `string`       | `undefined` |
 
 ## Methods
 

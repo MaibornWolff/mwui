@@ -9,14 +9,34 @@
   height: 100vh;
   box-sizing: border-box;
   contain: strict;
+  animation: fade-in 5s;
 }
 
 :host(.overlay-hidden) {
   display: none;
+  animation: fade-out 5s;
 }
 
 .modal-wrapper {
   z-index: 1;
   background: var(--mw-component-modal-bg-default);
   border-radius: var(--mw-component-modal-border-radius);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

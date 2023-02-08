@@ -1,4 +1,4 @@
-import { Component, Host, h, EventEmitter, Event, Listen } from "@stencil/core";
+import { Component, Host, h, EventEmitter, Event, Listen, Prop } from "@stencil/core";
 
 @Component({
   tag: "mw-backdrop",
@@ -6,17 +6,24 @@ import { Component, Host, h, EventEmitter, Event, Listen } from "@stencil/core";
   shadow: true,
 })
 export class MwBackdrop {
-  @Event() ionBackdropTap!: EventEmitter<void>;
+  @Prop() backdropDismiss = true;
+
+  @Event() backdropClick!: EventEmitter<void>;
 
   @Listen("click", { passive: false, capture: true })
-  protected onMouseDown(ev: TouchEvent) {
-    this.emitTap(ev);
+  protected onMouseDown(ev: TouchEvent): void {
+    this.emitClick(ev);
   }
 
-  private emitTap(ev: Event) {
+  private emitClick(ev: Event): void {
     ev.preventDefault();
     ev.stopPropagation();
-    this.ionBackdropTap.emit();
+
+    if (!this.backdropDismiss) {
+      return;
+    }
+
+    this.backdropClick.emit();
   }
 
   render() {

@@ -67,23 +67,25 @@ export declare interface MwBackdrop extends Components.MwBackdrop {
     /**
      *
      */
-    ionBackdropTap: EventEmitter<CustomEvent<void>>;
+    backdropClick: EventEmitter<CustomEvent<void>>;
 }
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
+    inputs: ["backdropDismiss"],
 })
 @Component({
     selector: "mw-backdrop",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
+    inputs: ["backdropDismiss"],
 })
 export class MwBackdrop {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["ionBackdropTap"]);
+        proxyOutputs(this, this.el, ["backdropClick"]);
     }
 }
 
@@ -463,14 +465,14 @@ export declare interface MwModal extends Components.MwModal {}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["component", "trigger"],
+    inputs: ["backdropDismiss", "component", "trigger"],
     methods: ["present", "dismiss"],
 })
 @Component({
     selector: "mw-modal",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["component", "trigger"],
+    inputs: ["backdropDismiss", "component", "trigger"],
 })
 export class MwModal {
     protected el: HTMLElement;

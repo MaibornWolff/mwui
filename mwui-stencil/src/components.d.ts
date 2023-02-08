@@ -48,7 +48,9 @@ export namespace Components {
      */
     testId?: string;
   }
-  interface MwBackdrop {}
+  interface MwBackdrop {
+    backdropDismiss: boolean;
+  }
   interface MwButton {
     /**
      * Visually and functionally disable button
@@ -309,6 +311,7 @@ export namespace Components {
     testId: string;
   }
   interface MwModal {
+    backdropDismiss: boolean;
     component?: ComponentRef;
     dismiss: () => Promise<void>;
     present: () => Promise<void>;
@@ -752,7 +755,8 @@ declare namespace LocalJSX {
     testId?: string;
   }
   interface MwBackdrop {
-    onIonBackdropTap?: (event: MwBackdropCustomEvent<void>) => void;
+    backdropDismiss?: boolean;
+    onBackdropClick?: (event: MwBackdropCustomEvent<void>) => void;
   }
   interface MwButton {
     /**
@@ -1034,6 +1038,7 @@ declare namespace LocalJSX {
     testId?: string;
   }
   interface MwModal {
+    backdropDismiss?: boolean;
     component?: ComponentRef;
     trigger?: string | undefined;
   }

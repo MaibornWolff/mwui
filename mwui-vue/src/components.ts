@@ -11,7 +11,7 @@ export const MwAppBarTitle = /*@__PURE__*/ defineContainer<JSX.MwAppBarTitle>("m
 
 export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>("mw-avatar", undefined, ["testId", "src", "icon", "alt", "size"]);
 
-export const MwBackdrop = /*@__PURE__*/ defineContainer<JSX.MwBackdrop>("mw-backdrop", undefined, ["ionBackdropTap"]);
+export const MwBackdrop = /*@__PURE__*/ defineContainer<JSX.MwBackdrop>("mw-backdrop", undefined, ["backdropDismiss", "backdropClick"]);
 
 export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>("mw-button", undefined, ["testId", "disabled", "label", "variant", "size", "href", "target", "clickEmitter"]);
 
@@ -57,7 +57,7 @@ export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu
 
 export const MwMenuList = /*@__PURE__*/ defineContainer<JSX.MwMenuList>("mw-menu-list", undefined, ["testId"]);
 
-export const MwModal = /*@__PURE__*/ defineContainer<JSX.MwModal>("mw-modal", undefined, ["component", "trigger"]);
+export const MwModal = /*@__PURE__*/ defineContainer<JSX.MwModal>("mw-modal", undefined, ["backdropDismiss", "component", "trigger"]);
 
 export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popover", undefined, ["testId", "open", "placement", "dismissable", "noPadding", "name"]);
 

@@ -12,16 +12,18 @@ export class MwModal {
   private modalContentElement?: HTMLElement;
   private delegate = CoreDelegate();
 
-  @Element() private el!: any;
+  @Element() private el!: HTMLMwModalElement;
+
+  @Prop() backdropDismiss = true;
   @Prop() component?: ComponentRef;
 
   @Prop() trigger: string | undefined;
   @Watch("trigger")
-  onTriggerChange() {
+  onTriggerChange(): void {
     this.configureTriggerInteraction();
   }
 
-  connectedCallback() {
+  connectedCallback(): void {
     this.configureTriggerInteraction();
   }
 
@@ -38,8 +40,8 @@ export class MwModal {
 
     const triggerEl = trigger !== undefined ? document.getElementById(trigger) : null;
 
-    const configureTriggerInteraction = (triggerElement: HTMLElement, modalEl: MwModal) => {
-      const openModal = () => {
+    const configureTriggerInteraction = (triggerElement: HTMLElement, modalEl: HTMLMwModalElement) => {
+      const openModal = (): void => {
         modalEl.present();
       };
 
@@ -54,24 +56,21 @@ export class MwModal {
   };
 
   @Method()
-  async present() {
-    const { delegate } = this;
-    this.modalContentElement = await attachComponent(delegate, this.el).then(el => {
-      el.classList.remove("overlay-hidden");
-
-      return el;
-    });
+  async present(): Promise<void> {
+    const { delegate, el } = this;
+    el.classList.remove("overlay-hidden");
+    this.modalContentElement = await attachComponent(delegate, el);
   }
 
   @Method()
   async dismiss(): Promise<void> {
-    const { delegate } = this;
-
+    const { delegate, el } = this;
+    el.classList.add("overlay-hidden");
     await detachComponent(delegate, this.modalContentElement);
   }
 
-  private onBackdropTap = () => {
-    this.dismiss().then(() => this.el.classList.add("overlay-hidden"));
+  private onBackdropClick = (): void => {
+    this.dismiss();
   };
 
   render() {
@@ -80,9 +79,9 @@ export class MwModal {
         class={{
           "overlay-hidden": true,
         }}
-        onIonBackdropTap={this.onBackdropTap}
+        onBackdropClick={this.onBackdropClick}
       >
-        <mw-backdrop part="backdrop" />
+        <mw-backdrop part="backdrop" backdropDismiss={this.backdropDismiss} />
         <div class="modal-wrapper">
           <slot></slot>
         </div>

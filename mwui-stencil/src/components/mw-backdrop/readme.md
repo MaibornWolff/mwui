@@ -2,11 +2,17 @@
 
 <!-- Auto Generated Below -->
 
+## Properties
+
+| Property          | Attribute          | Description | Type      | Default |
+| ----------------- | ------------------ | ----------- | --------- | ------- |
+| `backdropDismiss` | `backdrop-dismiss` |             | `boolean` | `true`  |
+
 ## Events
 
-| Event            | Description | Type                |
-| ---------------- | ----------- | ------------------- |
-| `ionBackdropTap` |             | `CustomEvent<void>` |
+| Event           | Description | Type                |
+| --------------- | ----------- | ------------------- |
+| `backdropClick` |             | `CustomEvent<void>` |
 
 ## Dependencies
 
