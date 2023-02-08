@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-07T12:14:39",
+  "timestamp": "2023-02-08T14:01:52",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -10,7 +10,7 @@
       "filePath": "./src/components/mw-app-bar/mw-app-bar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-app-bar",
-      "readme": "# mw-app-bar\n",
+      "readme": "# mw-app-bar\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -80,7 +80,7 @@
       "filePath": "./src/components/mw-app-bar-title/mw-app-bar-title.tsx",
       "encapsulation": "shadow",
       "tag": "mw-app-bar-title",
-      "readme": "# mw-header-title\n",
+      "readme": "# mw-header-title\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1939,7 +1939,7 @@
       "filePath": "./src/components/mw-slider/mw-slider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-slider",
-      "readme": "# mw-slider\n",
+      "readme": "# mw-slider\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
