@@ -330,6 +330,7 @@ const Template = (): string => `
         ></div>
         <div
           style="
+          display: none;
             height: 680px;
             background: linear-gradient(
                 27.04deg,
