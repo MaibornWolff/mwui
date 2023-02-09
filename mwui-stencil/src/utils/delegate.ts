@@ -24,9 +24,9 @@ export const CoreDelegate = () => {
 
     const root = BaseComponent.firstElementChild as HTMLElement;
 
-    if (!root.classList.contains("mw-modal-host")) {
+    if (!root.classList.contains("mw-teleport-container")) {
       const el = BaseComponent.ownerDocument?.createElement("div");
-      el.classList.add("mw-modal-host");
+      el.classList.add("mw-teleport-container");
 
       el.append(...Array.from(BaseComponent.children));
       BaseComponent.appendChild(el);
