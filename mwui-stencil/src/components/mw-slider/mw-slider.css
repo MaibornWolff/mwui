@@ -147,7 +147,7 @@ input[type="range"]:focus {
 }
 
 input[type="range"]:focus::-webkit-slider-thumb {
-  /* replace with component tokens once token-transformer supports expanding border tokens (object) */
+  /* replace with component tokens once token-transformer supports expanding borders.scss tokens (object) */
   border: var(--mw-core-border-width-sm) solid var(--mw-semantic-color-border-default);
 }
 

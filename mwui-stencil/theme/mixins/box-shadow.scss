@@ -1,0 +1,11 @@
+@mixin box-shadow($name, $elevation: 0) {
+  $top: var(#{$name} + "-" + #{$elevation} + "-y");
+  $left: var(#{$name} + "-" + #{$elevation} + "-x");
+  $blur: var(#{$name} + "-" + #{$elevation} + "-blur");
+  $spread: var(#{$name} + "-" + #{$elevation} + "-spread");
+  $color: var(#{$name} + "-" + #{$elevation} + "-color");
+
+  -webkit-box-shadow: $top $left $blur $spread $color;
+  -moz-box-shadow: $top $left $blur $spread $color;
+  box-shadow: $top $left $blur $spread $color;
+}

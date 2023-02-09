@@ -32,7 +32,7 @@
   border-bottom: var(--mw-component-divider-border-width-default) solid var(--mw-component-tabs-fg-selected);
 }
 .mw-tab:active {
-  /* TODO: --mw-component-border-focused muss in mehrere Tokens aufgeteilt werden */
+  /* TODO: --mw-component-borders.scss-focused muss in mehrere Tokens aufgeteilt werden */
 }
 .mw-tab:disabled {
   cursor: unset;
