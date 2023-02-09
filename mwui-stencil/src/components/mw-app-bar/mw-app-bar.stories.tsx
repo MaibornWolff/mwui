@@ -23,9 +23,7 @@ const DefaultTemplate = args => `
 </mw-app-bar>`;
 
 export const Default = DefaultTemplate.bind({});
-Default.args = {
-  position: "fixed",
-};
+Default.args = {};
 
 const CenterTemplate = args => `
 <mw-app-bar position="${args.position}">
@@ -41,9 +39,7 @@ const CenterTemplate = args => `
 </mw-app-bar>`;
 
 export const Center = CenterTemplate.bind({});
-Center.args = {
-  position: "fixed",
-};
+Center.args = {};
 
 const SearchTemplate = args => `
 <mw-app-bar position="${args.position}">
@@ -61,6 +57,4 @@ const SearchTemplate = args => `
 </mw-app-bar>`;
 
 export const Search = SearchTemplate.bind({});
-Search.args = {
-  position: "fixed",
-};
+Search.args = {};

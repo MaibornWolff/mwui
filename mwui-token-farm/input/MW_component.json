@@ -2199,16 +2199,20 @@
                         "value": "#FCBAB7",
                         "type": "color"
                     },
+                    "default": {
+                        "value": "#cb2400",
+                        "type": "color"
+                    },
                     "intense": {
                         "value": "#E51B00",
                         "type": "color"
                     },
-                    "fg": {
-                        "value": "#9f1b00",
+                    "muted": {
+                        "value": "#FF4433",
                         "type": "color"
                     },
-                    "muted": {
-                        "value": "#cb2400",
+                    "fg": {
+                        "value": "#9f1b00",
                         "type": "color"
                     },
                     "subtle": {
@@ -2223,6 +2227,10 @@
                 "warning": {
                     "bg": {
                         "value": "#FAE39E",
+                        "type": "color"
+                    },
+                    "default": {
+                        "value": "#FFC533",
                         "type": "color"
                     },
                     "intense": {
@@ -2251,8 +2259,12 @@
                         "value": "#97E0FC",
                         "type": "color"
                     },
-                    "intense": {
+                    "default": {
                         "value": "#0bd2ff",
+                        "type": "color"
+                    },
+                    "intense": {
+                        "value": "#02beed",
                         "type": "color"
                     },
                     "fg": {
@@ -2277,8 +2289,12 @@
                         "value": "#74FB86",
                         "type": "color"
                     },
-                    "intense": {
+                    "default": {
                         "value": "#3cfa50",
+                        "type": "color"
+                    },
+                    "intense": {
+                        "value": "#03d303",
                         "type": "color"
                     },
                     "fg": {
@@ -2286,7 +2302,7 @@
                         "type": "color"
                     },
                     "muted": {
-                        "value": "#03d303",
+                        "value": "#15b300",
                         "type": "color"
                     },
                     "subtle": {
@@ -3464,6 +3480,14 @@
             "gradient": {
                 "pbg": {
                     "value": "linear-gradient(90deg, #ed2985 0%, #0bd2ff 50%, #3cfa50 100%)",
+                    "type": "color"
+                },
+                "gbp": {
+                    "value": "linear-gradient(90deg, #3cfa50 0%, #0bd2ff 48.01%, #ed2985 100%)",
+                    "type": "color"
+                },
+                "darkBlue": {
+                    "value": "linear-gradient(180deg, #170099 0%, #1d184b 55%)",
                     "type": "color"
                 }
             }
