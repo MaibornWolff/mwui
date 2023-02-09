@@ -53,16 +53,19 @@ export class MwCheckbox {
     return (
       <div test-id={this.testId} class="mw-checkbox-container" onClick={this.handleCheck}>
         <input type="checkbox" checked={this.checked} value={this.value} name={this.name} />
-        <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
-          <mw-icon
-            class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`}
-            color={`var(--mw-component-controls-color-fg-default)`}
-            icon="check"
-            weight={600}
-            size="medium"
-          ></mw-icon>
+        <span class="mw-checkbox-outer">
+          <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
+            <mw-icon
+              class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`}
+              color={`var(--mw-component-controls-color-fg-default)`}
+              icon="check"
+              weight={600}
+              size="small"
+            ></mw-icon>
+          </span>
         </span>
-        <span class="mw-checkbox-label">{this.label}</span>
+
+        <san class="mw-checkbox-label">{this.label}</san>
       </div>
     );
   }
