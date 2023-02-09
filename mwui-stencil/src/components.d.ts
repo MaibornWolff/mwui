@@ -324,7 +324,7 @@ export namespace Components {
     /**
      * id used to dismiss the modal
      */
-    dismissTrigger: string | undefined;
+    dismissTrigger?: string | undefined;
     /**
      * Method to present the modal
      */
@@ -332,22 +332,18 @@ export namespace Components {
     /**
      * id used to present the modal
      */
-    trigger: string | undefined;
+    trigger?: string | undefined;
   }
   interface MwModalFooter {}
   interface MwModalTitle {
     /**
      * Description that should be displayed
      */
-    description: string | undefined;
+    description?: string | undefined;
     /**
      * Title that should be displayed
      */
     headline: string | undefined;
-    /**
-     * Dismiss icon that should be displayed
-     */
-    icon: string | undefined;
   }
   interface MwPopover {
     /**
@@ -1111,10 +1107,6 @@ declare namespace LocalJSX {
      * Title that should be displayed
      */
     headline?: string | undefined;
-    /**
-     * Dismiss icon that should be displayed
-     */
-    icon?: string | undefined;
   }
   interface MwPopover {
     /**

@@ -1,18 +1,39 @@
 import { newSpecPage } from "@stencil/core/testing";
 import { MwBackdrop } from "./mw-backdrop";
+import { h } from "@stencil/core";
 
-describe("mw-backdrop", () => {
-  it("renders", async () => {
-    const page = await newSpecPage({
+describe("GIVEN MwBackdrop", () => {
+  const setup = async (
+    { backdropDismiss }: Pick<MwBackdrop, "backdropDismiss"> = {
+      backdropDismiss: true,
+    },
+  ) => {
+    return await newSpecPage({
       components: [MwBackdrop],
-      html: `<mw-backdrop></mw-backdrop>`,
+      template: () => <mw-backdrop backdropDismiss={backdropDismiss}></mw-backdrop>,
     });
-    expect(page.root).toEqualHtml(`
-      <mw-backdrop>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </mw-backdrop>
-    `);
+  };
+
+  it("SHOULD render MwBackdrop", async () => {
+    const page = await setup();
+    expect(page.root).toBeTruthy();
+  });
+
+  it("SHOULD emit a click event WHEN backdropDismiss is true", async () => {
+    const page = await setup();
+    const clickMock = (page.rootInstance.backdropClick.emit = jest.fn());
+
+    page.root.click();
+    expect(clickMock).toHaveBeenCalled();
+  });
+
+  it("SHOULD not emit a click event WHEN backdropDismiss is true", async () => {
+    const page = await setup({
+      backdropDismiss: false,
+    });
+    const clickMock = (page.rootInstance.backdropClick.emit = jest.fn());
+
+    page.root.click();
+    expect(clickMock).not.toHaveBeenCalled();
   });
 });

@@ -26,7 +26,7 @@ export class MwModal {
   /**
    * id used to present the modal
    */
-  @Prop() trigger: string | undefined;
+  @Prop() trigger?: string | undefined;
   @Watch("trigger")
   onTriggerChange(): void {
     this.configureTriggerInteraction();
@@ -35,7 +35,7 @@ export class MwModal {
   /**
    * id used to dismiss the modal
    */
-  @Prop() dismissTrigger: string | undefined;
+  @Prop() dismissTrigger?: string | undefined;
   @Watch("trigger")
   onDismissTriggerChange(): void {
     this.configureDismissTriggerInteraction();
@@ -48,7 +48,6 @@ export class MwModal {
 
   private configureTriggerInteraction = (): void => {
     const { trigger, el, destroyTriggerInteraction } = this;
-
     if (destroyTriggerInteraction) {
       destroyTriggerInteraction();
     }

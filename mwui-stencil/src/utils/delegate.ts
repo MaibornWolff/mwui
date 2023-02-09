@@ -16,18 +16,19 @@ export const detachComponent = (delegate: any | undefined, element: HTMLElement 
 };
 
 export const CoreDelegate = () => {
-  let BaseComponent: any;
-  let Reference: any;
+  let BaseComponent: HTMLElement;
+  let Reference: Comment;
 
   const attachViewToDom = async (parentElement: HTMLElement) => {
     BaseComponent = parentElement;
 
-    const root = BaseComponent.children[0] as HTMLElement;
+    const root = BaseComponent.firstElementChild as HTMLElement;
+
     if (!root.classList.contains("mw-modal-host")) {
       const el = BaseComponent.ownerDocument?.createElement("div");
       el.classList.add("mw-modal-host");
 
-      el.append(...BaseComponent.children);
+      el.append(...Array.from(BaseComponent.children));
       BaseComponent.appendChild(el);
     }
 

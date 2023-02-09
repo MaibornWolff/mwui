@@ -504,13 +504,13 @@ export declare interface MwModalTitle extends Components.MwModalTitle {}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["description", "headline", "icon"],
+    inputs: ["description", "headline"],
 })
 @Component({
     selector: "mw-modal-title",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["description", "headline", "icon"],
+    inputs: ["description", "headline"],
 })
 export class MwModalTitle {
     protected el: HTMLElement;

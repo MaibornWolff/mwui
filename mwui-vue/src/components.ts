@@ -61,7 +61,7 @@ export const MwModal = /*@__PURE__*/ defineContainer<JSX.MwModal>("mw-modal", un
 
 export const MwModalFooter = /*@__PURE__*/ defineContainer<JSX.MwModalFooter>("mw-modal-footer", undefined);
 
-export const MwModalTitle = /*@__PURE__*/ defineContainer<JSX.MwModalTitle>("mw-modal-title", undefined, ["icon", "headline", "description"]);
+export const MwModalTitle = /*@__PURE__*/ defineContainer<JSX.MwModalTitle>("mw-modal-title", undefined, ["headline", "description"]);
 
 export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popover", undefined, ["testId", "open", "placement", "dismissable", "noPadding", "name"]);
 

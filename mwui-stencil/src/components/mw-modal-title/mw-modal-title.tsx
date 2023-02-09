@@ -7,11 +7,6 @@ import { Component, Host, h, Prop } from "@stencil/core";
 })
 export class MwModalTitle {
   /**
-   * Dismiss icon that should be displayed
-   */
-  @Prop() public icon: string | undefined;
-
-  /**
    * Title that should be displayed
    */
   @Prop() public headline: string | undefined;
@@ -19,7 +14,7 @@ export class MwModalTitle {
   /**
    * Description that should be displayed
    */
-  @Prop() public description: string | undefined;
+  @Prop() public description?: string | undefined;
 
   render() {
     return (
