@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-09T13:42:58",
+  "timestamp": "2023-02-09T15:09:50",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -99,7 +99,7 @@
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-avatar",
-      "readme": "# mw-avatar\n\n\n",
+      "readme": "# mw-avatar\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -479,7 +479,7 @@
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-body",
-      "readme": "# mw-card-body\n\n\n",
+      "readme": "# mw-card-body\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -498,7 +498,7 @@
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-footer",
-      "readme": "# mw-card-footer\n\n\n",
+      "readme": "# mw-card-footer\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -757,7 +757,7 @@
       "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-image",
-      "readme": "# mw-card-image\n\n\n",
+      "readme": "# mw-card-image\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1121,7 +1121,7 @@
       "filePath": "./src/components/mw-divider/mw-divider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-divider",
-      "readme": "# mw-divider\n\n\n",
+      "readme": "# mw-divider\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1153,6 +1153,180 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-dropdown/mw-dropdown.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-dropdown",
+      "readme": "# mw-dropdown\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disabled input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Use to display input and helper-text in error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": true,
+          "docs": "HelperText to be displayed. Can be used as hint or error text when combined with `has-error`",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Display label and input horizonally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "input field name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Mark input as required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "input field value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mw-textfield"],
+      "dependencyGraph": {
+        "mw-dropdown": ["mw-textfield"],
+        "mw-textfield": ["mw-icon", "mw-menu-list"]
+      }
     },
     {
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
@@ -1271,7 +1445,7 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-slider", "mw-tab"],
+      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-slider", "mw-tab", "mw-textfield"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-avatar": ["mw-icon"],
@@ -1279,7 +1453,8 @@
         "mw-chip": ["mw-icon"],
         "mw-icon-gallery": ["mw-icon"],
         "mw-slider": ["mw-icon"],
-        "mw-tab": ["mw-icon"]
+        "mw-tab": ["mw-icon"],
+        "mw-textfield": ["mw-icon"]
       }
     },
     {
@@ -1317,7 +1492,8 @@
       "dependents": [],
       "dependencies": ["mw-textfield", "mw-icon", "mw-switch"],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"]
+        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"],
+        "mw-textfield": ["mw-icon", "mw-menu-list"]
       }
     },
     {
@@ -1620,7 +1796,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
-      "readme": "# mw-menu-list\n\n\n",
+      "readme": "# mw-menu-list\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1648,9 +1824,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-textfield"],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-textfield": ["mw-menu-list"]
+      }
     },
     {
       "filePath": "./src/components/mw-popover/mw-popover.tsx",
@@ -1823,7 +2001,7 @@
       "filePath": "./src/components/mw-radio/mw-radio.tsx",
       "encapsulation": "none",
       "tag": "mw-radio",
-      "readme": "# mw-radio\n",
+      "readme": "# mw-radio\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2552,6 +2730,23 @@
           "required": false
         },
         {
+          "name": "readOnly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "read-only",
+          "reflectToAttr": false,
+          "docs": "Whether user can't type in input field",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "required",
           "type": "boolean",
           "mutable": false,
@@ -2621,9 +2816,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-icon-gallery"],
-      "dependencies": [],
+      "dependents": ["mw-dropdown", "mw-icon-gallery"],
+      "dependencies": ["mw-icon", "mw-menu-list"],
       "dependencyGraph": {
+        "mw-textfield": ["mw-icon", "mw-menu-list"],
+        "mw-dropdown": ["mw-textfield"],
         "mw-icon-gallery": ["mw-textfield"]
       }
     }
