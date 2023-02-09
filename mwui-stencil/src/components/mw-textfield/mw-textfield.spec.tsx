@@ -117,9 +117,11 @@ describe("GIVEN MwTabs", () => {
   });
 
   it("SHOULD display a * WHEN required is true", async () => {
+    const label = "some-label";
     const page = await setup({
       name: "",
       required: true,
+      label,
     });
     expect(page.root.shadowRoot.querySelector(".label").innerHTML).toContain("*");
   });

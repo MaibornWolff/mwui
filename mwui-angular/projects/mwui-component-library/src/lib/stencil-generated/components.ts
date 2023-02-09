@@ -9,15 +9,33 @@ export declare interface MwAppBar extends Components.MwAppBar {}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["position"],
+    inputs: ["ariaRole", "position"],
 })
 @Component({
     selector: "mw-app-bar",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["position"],
+    inputs: ["ariaRole", "position"],
 })
 export class MwAppBar {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwAppBarTitle extends Components.MwAppBarTitle {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+})
+@Component({
+    selector: "mw-app-bar-title",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+})
+export class MwAppBarTitle {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();

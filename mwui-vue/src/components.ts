@@ -5,7 +5,9 @@ import { defineContainer } from "./vue-component-lib/utils";
 
 import type { JSX } from "@maibornwolff/mwui-stencil";
 
-export const MwAppBar = /*@__PURE__*/ defineContainer<JSX.MwAppBar>("mw-app-bar", undefined, ["position"]);
+export const MwAppBar = /*@__PURE__*/ defineContainer<JSX.MwAppBar>("mw-app-bar", undefined, ["ariaRole", "position"]);
+
+export const MwAppBarTitle = /*@__PURE__*/ defineContainer<JSX.MwAppBarTitle>("mw-app-bar-title", undefined);
 
 export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>("mw-avatar", undefined, ["testId", "src", "icon", "alt", "size"]);
 

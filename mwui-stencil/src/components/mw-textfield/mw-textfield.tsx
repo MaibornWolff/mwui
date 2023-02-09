@@ -96,10 +96,12 @@ export class MwTextfield {
               "disabled": this.disabled,
             })}
           >
-            <label htmlFor={this.name} class="label">
-              {this.label}
-              {this.required && <span class="required">*</span>}
-            </label>
+            {!!this.label && (
+              <label htmlFor={this.name} class="label">
+                {this.label}
+                {this.required && <span class="required">*</span>}
+              </label>
+            )}
             <div>
               <div onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
                 <span class={classnames({ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError })}>

@@ -4,9 +4,10 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                         | Type                                              | Default      |
-| ---------- | ---------- | ----------------------------------- | ------------------------------------------------- | ------------ |
-| `position` | `position` | Position of App Bar within viewport | `"absolute" \| "fixed" \| "relative" \| "sticky"` | `"relative"` |
+| Property   | Attribute   | Description                         | Type                                                | Default                    |
+| ---------- | ----------- | ----------------------------------- | --------------------------------------------------- | -------------------------- |
+| `ariaRole` | `aria-role` | Set the role of the header          | `AriaRolesEnum.NAVIGATION \| AriaRolesEnum.TOOLBAR` | `AriaRolesEnum.NAVIGATION` |
+| `position` | `position`  | Position of App Bar within viewport | `"absolute" \| "fixed" \| "relative" \| "sticky"`   | `"relative"`               |
 
 ---
 

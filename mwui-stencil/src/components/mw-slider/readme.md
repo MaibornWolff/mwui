@@ -17,7 +17,7 @@
 | `startIcon`  | `start-icon`  | Icon to be displayed to left of the slider      | `string`  | `undefined` |
 | `step`       | `step`        | step for range value                            | `number`  | `1`         |
 | `testId`     | `test-id`     | Provide unique identifier for automated testing | `string`  | `undefined` |
-| `value`      | `value`       | value of range input                            | `number`  | `undefined` |
+| `value`      | `value`       | value of range input                            | `number`  | `0`         |
 
 ## Dependencies
 
