@@ -10,7 +10,7 @@
     },
     "scripts": {
         "start": "npm run build-tw && http-server -p 8080",
-        "transform:core": "npx token-transformer input/tokens.json input/MW_core.json MW_core,MW_semantic_light,MW_component --expandComposition=true --expandTypography=true --expandShadow=true",
+        "transform:core": "npx token-transformer input/tokens.json input/MW_core.json MW_core,MW_semantic_light,MW_component --expandComposition=true --expandTypography=true --expandShadow=true --resolveReferences=true",
         "transform:semantic": "npx token-transformer input/tokens.json input/MW_semantic_light.json MW_core,MW_semantic_light,MW_component --expandComposition=true --expandTypography=true --expandShadow=true",
         "transform:component": "npx token-transformer input/tokens.json input/MW_component.json MW_core,MW_semantic_light,MW_component --expandComposition=true --expandTypography=true --expandShadow=true",
         "transform": "npm run transform:core && npm run transform:semantic && npm run transform:component",
@@ -22,19 +22,19 @@
     "license": "ISC",
     "devDependencies": {
         "autoprefixer": "^10.4.0",
+        "mathjs": "^11.5.0",
         "postcss": "^8.3.11",
         "postcss-import": "^14.0.2",
         "rollup": "^2.75.3",
         "rollup-plugin-scss": "^3.0.0",
-        "sass": "^1.52.1",
-        "mathjs": "^11.5.0"
+        "sass": "^1.52.1"
     },
     "dependencies": {
+        "@maibornwolff/mwui-stencil": "^0.1.12",
         "lodash.template": "^4.5.0",
         "postcss-cli": "^9.1.0",
         "style-dictionary": "^3.7.0",
-        "@maibornwolff/mwui-stencil": "^0.1.12",
-        "token-transformer": "^0.0.22",
+        "token-transformer": "^0.0.29",
         "ts-node": "^10.9.1"
     }
 }
