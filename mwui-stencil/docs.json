@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-08T14:01:52",
+  "timestamp": "2023-02-09T13:54:04",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -10,7 +10,7 @@
       "filePath": "./src/components/mw-app-bar/mw-app-bar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-app-bar",
-      "readme": "# mw-app-bar\r\n\r",
+      "readme": "# mw-app-bar\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -80,7 +80,7 @@
       "filePath": "./src/components/mw-app-bar-title/mw-app-bar-title.tsx",
       "encapsulation": "shadow",
       "tag": "mw-app-bar-title",
-      "readme": "# mw-header-title\r\n\r",
+      "readme": "# mw-header-title\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1155,6 +1155,179 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/mw-dropdown/mw-dropdown.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-dropdown",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disabled input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Use to display input and helper-text in error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": true,
+          "docs": "HelperText to be displayed. Can be used as hint or error text when combined with `has-error`",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Display label and input horizonally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "input field name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Mark input as required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "input field value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mw-textfield"],
+      "dependencyGraph": {
+        "mw-dropdown": ["mw-textfield"],
+        "mw-textfield": ["mw-icon", "mw-menu-list"]
+      }
+    },
+    {
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon",
@@ -1271,7 +1444,7 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-slider", "mw-tab"],
+      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-slider", "mw-tab", "mw-textfield"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-avatar": ["mw-icon"],
@@ -1279,7 +1452,8 @@
         "mw-chip": ["mw-icon"],
         "mw-icon-gallery": ["mw-icon"],
         "mw-slider": ["mw-icon"],
-        "mw-tab": ["mw-icon"]
+        "mw-tab": ["mw-icon"],
+        "mw-textfield": ["mw-icon"]
       }
     },
     {
@@ -1317,7 +1491,8 @@
       "dependents": [],
       "dependencies": ["mw-textfield", "mw-icon", "mw-switch"],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"]
+        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"],
+        "mw-textfield": ["mw-icon", "mw-menu-list"]
       }
     },
     {
@@ -1648,9 +1823,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-textfield"],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-textfield": ["mw-menu-list"]
+      }
     },
     {
       "filePath": "./src/components/mw-popover/mw-popover.tsx",
@@ -1939,7 +2116,7 @@
       "filePath": "./src/components/mw-slider/mw-slider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-slider",
-      "readme": "# mw-slider\r\n\r",
+      "readme": "# mw-slider\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2552,6 +2729,23 @@
           "required": false
         },
         {
+          "name": "readOnly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "read-only",
+          "reflectToAttr": false,
+          "docs": "Whether user can't type in input field",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "required",
           "type": "boolean",
           "mutable": false,
@@ -2621,9 +2815,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-icon-gallery"],
-      "dependencies": [],
+      "dependents": ["mw-dropdown", "mw-icon-gallery"],
+      "dependencies": ["mw-icon", "mw-menu-list"],
       "dependencyGraph": {
+        "mw-textfield": ["mw-icon", "mw-menu-list"],
+        "mw-dropdown": ["mw-textfield"],
         "mw-icon-gallery": ["mw-textfield"]
       }
     }

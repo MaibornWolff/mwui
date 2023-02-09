@@ -43,6 +43,18 @@ export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>("mw-chip", undef
 
 export const MwDivider = /*@__PURE__*/ defineContainer<JSX.MwDivider>("mw-divider", undefined, ["inset"]);
 
+export const MwDropdown = /*@__PURE__*/ defineContainer<JSX.MwDropdown>("mw-dropdown", undefined, [
+    "value",
+    "name",
+    "label",
+    "placeholder",
+    "helperText",
+    "hasError",
+    "inline",
+    "required",
+    "disabled",
+]);
+
 export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>("mw-icon", undefined, ["icon", "size", "fill", "color", "weight"]);
 
 export const MwIconGallery = /*@__PURE__*/ defineContainer<JSX.MwIconGallery>("mw-icon-gallery", undefined, ["icons"]);
@@ -91,5 +103,6 @@ export const MwTextfield = /*@__PURE__*/ defineContainer<JSX.MwTextfield>("mw-te
     "inline",
     "required",
     "disabled",
+    "readOnly",
     "valueChanged",
 ]);

@@ -140,7 +140,7 @@ export class MwTextfield {
                 )}
               </div>
               {this.hasDropDownMenu && (
-                <div class={classnames({ "dropdown-menu-wrapper": this.hasDropDownMenu })}>
+                <div class="dropdown-menu-wrapper">
                   <div class={`dropdown-menu ${this.focused && "menu-focused"}`}>
                     <mw-menu-list>
                       <slot name="dropdown-menu"></slot>

@@ -22,6 +22,7 @@
 - [mw-icon-gallery](../mw-icon-gallery)
 - [mw-slider](../mw-slider)
 - [mw-tab](../mw-tab)
+- [mw-textfield](../mw-textfield)
 
 ### Graph
 
@@ -33,6 +34,7 @@ graph TD;
   mw-icon-gallery --> mw-icon
   mw-slider --> mw-icon
   mw-tab --> mw-icon
+  mw-textfield --> mw-icon
   style mw-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -61,6 +61,7 @@ export class MwDropdown {
           <div slot="dropdown-menu">
             <slot></slot>
           </div>
+          <input disabled />
         </mw-textfield>
       </Host>
     );

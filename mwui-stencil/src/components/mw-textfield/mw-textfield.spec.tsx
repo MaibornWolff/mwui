@@ -2,7 +2,7 @@ import { newSpecPage } from "@stencil/core/testing";
 import { h } from "@stencil/core";
 import { MwTextfield } from "./mw-textfield";
 
-describe("GIVEN MwTabs", () => {
+describe("GIVEN MwTextfield", () => {
   const setup = async (
     {
       type,
@@ -15,7 +15,8 @@ describe("GIVEN MwTabs", () => {
       inline,
       required,
       disabled,
-    }: Pick<MwTextfield, "type" | "value" | "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled"> = {
+      readOnly,
+    }: Pick<MwTextfield, "type" | "value" | "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled" | "readOnly"> = {
       name: "",
     },
     slottedContent = "",
@@ -34,6 +35,7 @@ describe("GIVEN MwTabs", () => {
           inline={inline}
           required={required}
           disabled={disabled}
+          readOnly={readOnly}
         >
           {slottedContent}
         </mw-textfield>
@@ -136,6 +138,24 @@ describe("GIVEN MwTabs", () => {
     expect(page.root.shadowRoot.querySelector(".label").innerHTML).not.toContain("*");
   });
 
+  it("SHOULD set disabled WHEN disabled is passed", async () => {
+    const disabled = true;
+    const page = await setup({
+      name: "",
+      disabled,
+    });
+    expect(page.root.shadowRoot.querySelector("input").getAttribute("disabled")).toBe("");
+  });
+
+  it("SHOULD set readOnly WHEN readOnly is passed", async () => {
+    const readOnly = true;
+    const page = await setup({
+      name: "",
+      readOnly,
+    });
+    expect(page.root.shadowRoot.querySelector("input").getAttribute("readOnly")).toBe("");
+  });
+
   it("SHOULD set class icon-start WHEN hasIconStartSlot is true", async () => {
     const page = await newSpecPage({
       components: [MwTextfield],
@@ -162,5 +182,18 @@ describe("GIVEN MwTabs", () => {
 
     expect(page.root.shadowRoot.querySelector(".icon-end")).toBeTruthy();
     expect(page.root.shadowRoot.querySelector(".icon-start")).toBeNull();
+  });
+
+  it("SHOULD set class dropdown-menu-wrapper WHEN hasDropDownMenu is true", async () => {
+    const page = await newSpecPage({
+      components: [MwTextfield],
+      template: () => (
+        <mw-textfield name="name">
+          <span slot="dropdown-menu">asdf</span>
+        </mw-textfield>
+      ),
+    });
+
+    expect(page.root.shadowRoot.querySelector(".dropdown-menu-wrapper")).toBeTruthy();
   });
 });

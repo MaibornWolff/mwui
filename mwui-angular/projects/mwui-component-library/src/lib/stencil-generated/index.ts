@@ -14,6 +14,7 @@ export const DIRECTIVES = [
     d.MwCheckbox,
     d.MwChip,
     d.MwDivider,
+    d.MwDropdown,
     d.MwIcon,
     d.MwIconGallery,
     d.MwLink,

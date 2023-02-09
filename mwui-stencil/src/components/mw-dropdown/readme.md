@@ -1,4 +1,4 @@
-# mw-textfield
+# mw-dropdown
 
 <!-- Auto Generated Below -->
 
@@ -13,38 +13,23 @@
 | `label`       | `label`       | Label to be displayed                                                                        | `string`           | `undefined` |
 | `name`        | `name`        | input field name                                                                             | `string`           | `undefined` |
 | `placeholder` | `placeholder` | Placeholder to be displayed                                                                  | `string`           | `undefined` |
-| `readOnly`    | `read-only`   | Whether user can't type in input field                                                       | `boolean`          | `false`     |
 | `required`    | `required`    | Mark input as required                                                                       | `boolean`          | `false`     |
-| `type`        | `type`        | HTML Input type                                                                              | `string`           | `"text"`    |
 | `value`       | `value`       | input field value                                                                            | `number \| string` | `undefined` |
-
-## Events
-
-| Event          | Description                                             | Type                  |
-| -------------- | ------------------------------------------------------- | --------------------- |
-| `valueChanged` | MwTextfield emits an event when textfield value changes | `CustomEvent<string>` |
 
 ## Dependencies
 
-### Used by
-
-- [mw-dropdown](../mw-dropdown)
-- [mw-icon-gallery](../mw-icon-gallery)
-
 ### Depends on
 
-- [mw-icon](../mw-icon)
-- [mw-menu-list](../mw-menu-list)
+- [mw-textfield](../mw-textfield)
 
 ### Graph
 
 ```mermaid
 graph TD;
+  mw-dropdown --> mw-textfield
   mw-textfield --> mw-icon
   mw-textfield --> mw-menu-list
-  mw-dropdown --> mw-textfield
-  mw-icon-gallery --> mw-textfield
-  style mw-textfield fill:#f9f,stroke:#333,stroke-width:4px
+  style mw-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ---

@@ -309,6 +309,26 @@ export class MwDivider {
     }
 }
 
+export declare interface MwDropdown extends Components.MwDropdown {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value"],
+})
+@Component({
+    selector: "mw-dropdown",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value"],
+})
+export class MwDropdown {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
 export declare interface MwIcon extends Components.MwIcon {}
 
 @ProxyCmp({
@@ -570,13 +590,13 @@ export declare interface MwTextfield extends Components.MwTextfield {
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "type", "value"],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
 })
 @Component({
     selector: "mw-textfield",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "type", "value"],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
 })
 export class MwTextfield {
     protected el: HTMLElement;
