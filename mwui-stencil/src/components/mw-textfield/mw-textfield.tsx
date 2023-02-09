@@ -94,6 +94,7 @@ export class MwTextfield {
               "inline": this.inline,
               "has-error": this.hasError,
               "disabled": this.disabled,
+              "read-only": this.readOnly,
             })}
           >
             {!!this.label && (
@@ -138,11 +139,15 @@ export class MwTextfield {
                   </span>
                 )}
               </div>
-              <div class={classnames({ "dropdown-menu-wrapper": this.hasDropDownMenu })}>
-                <div class={`dropdown-menu ${this.focused && "menu-focused"}`}>
-                  <slot name="dropdown-menu"></slot>
+              {this.hasDropDownMenu && (
+                <div class={classnames({ "dropdown-menu-wrapper": this.hasDropDownMenu })}>
+                  <div class={`dropdown-menu ${this.focused && "menu-focused"}`}>
+                    <mw-menu-list>
+                      <slot name="dropdown-menu"></slot>
+                    </mw-menu-list>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             {this.helperText && !this.inline && (
               <span

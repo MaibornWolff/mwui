@@ -260,10 +260,6 @@ export namespace Components {
      */
     required?: boolean;
     /**
-     * HTML Input type
-     */
-    type?: string;
-    /**
      * input field value
      */
     value?: string | number;
@@ -566,10 +562,6 @@ export interface MwCheckboxCustomEvent<T> extends CustomEvent<T> {
 export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
-}
-export interface MwDropdownCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwDropdownElement;
 }
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
@@ -1004,10 +996,6 @@ declare namespace LocalJSX {
      */
     name?: string;
     /**
-     * MwTextfield emits an event when textfield value changes
-     */
-    onValueChanged?: (event: MwDropdownCustomEvent<string>) => void;
-    /**
      * Placeholder to be displayed
      */
     placeholder?: string;
@@ -1015,10 +1003,6 @@ declare namespace LocalJSX {
      * Mark input as required
      */
     required?: boolean;
-    /**
-     * HTML Input type
-     */
-    type?: string;
     /**
      * input field value
      */
