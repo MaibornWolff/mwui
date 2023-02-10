@@ -38,9 +38,16 @@ The [Token-Farm](mwui-token-farm/README.md) module transforms any changes in the
 
 > **Note**
 >
-> Adding a new Web Component should always be discussed with the Design Team to have the right Tokens and Designs in place.
+> Adding a new Web Component should always be discussed with the Design Team to have the right Tokens and Designs in place. We prefer component-specific tokens over semantic or core tokens. Missing tokens are discussed with Design Team.
 
 We use [Github Projects](https://github.com/orgs/MaibornWolff/projects/4/views/1) to organize tasks and issues linked to this Repository.
+
+Follow this checklist to comply with our definition of done.
+
+-   [x] components are tested
+-   [x] components are represented in Storybook
+-   [x] components are documented (e.g. storybook mdx doc)
+-   [x] components are reviewed together with design team
 
 ### Documentation
 
@@ -50,13 +57,15 @@ To further improve automated component docs, make sure to correctly type `Proper
 
 ### Build & Release Libraries
 
-[![@maibornwolff/mwui-stencil](https://img.shields.io/npm/v/@maibornwolff/mwui-stencil?color=green)](https://www.npmjs.com/package/@maibornwolff/mwui-stencil)
-[![@maibornwolff/mwui-token-farm](https://img.shields.io/npm/v/@maibornwolff/mwui-token-farm?color=green)](https://www.npmjs.com/package/@maibornwolff/mwui-token-farm)
-[![@maibornwolff/mwui-react](https://img.shields.io/npm/v/@maibornwolff/mwui-react?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-react)
-[![@maibornwolff/mwui-vue](https://img.shields.io/npm/v/@maibornwolff/mwui-vue?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-vue)
-[![@maibornwolff/mwui-angular](https://img.shields.io/npm/v/@maibornwolff/mwui-angular?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-angular)
-
 We maintain several packages, including the core (mwui-stencil), token transformation and framework specific component libraries. Learn more about the [build and release process](./release.md).
+
+| Package                      | Status                                                                                                                                                                  |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| @maiborwolff/mwui-stencil    | [![@maibornwolff/mwui-stencil](https://img.shields.io/npm/v/@maibornwolff/mwui-stencil?color=green)](https://www.npmjs.com/package/@maibornwolff/mwui-stencil)          |
+| @maiborwolff/mwui-token-farm | [![@maibornwolff/mwui-token-farm](https://img.shields.io/npm/v/@maibornwolff/mwui-token-farm?color=green)](https://www.npmjs.com/package/@maibornwolff/mwui-token-farm) |
+| @maibornwolff/mwui-react     | [![@maibornwolff/mwui-react](https://img.shields.io/npm/v/@maibornwolff/mwui-react?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-react)                 |
+| @maibornwolff/mwui-vue       | [![@maibornwolff/mwui-vue](https://img.shields.io/npm/v/@maibornwolff/mwui-vue?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-vue)                       |
+| @maibornwolff/mwui-angular   | [![@maibornwolff/mwui-angular](https://img.shields.io/npm/v/@maibornwolff/mwui-angular?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-angular)           |
 
 ### Usage in React, Vue and Angular
 
