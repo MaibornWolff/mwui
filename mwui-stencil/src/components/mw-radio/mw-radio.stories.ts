@@ -1,10 +1,9 @@
-import '../../global/global.css';
-// @ts-ignore
-import docs from './mw-radio.docs.mdx';
+import "../../global/global.css";
+import docs from "./mw-radio.docs.mdx";
 
 export default {
-  title: 'Components/Radio',
-  component: 'mw-radio',
+  title: "Components/Radio",
+  component: "mw-radio",
   parameters: {
     docs: { page: docs },
   },
@@ -22,40 +21,40 @@ const Template = args => `
 
 export const EnabledUnchecked = Template.bind({});
 EnabledUnchecked.args = {
-  testId: 'some-radio-id',
-  value: 'some-value',
-  name: 'some-name',
+  testId: "some-radio-id",
+  value: "some-value",
+  name: "some-name",
   checked: false,
   disabled: false,
-  label: 'RADIO',
+  label: "RADIO",
 };
 
 export const EnabledChecked = Template.bind({});
 EnabledChecked.args = {
-  testId: 'some-radio-id',
-  value: 'some-value',
-  name: 'some-name',
+  testId: "some-radio-id",
+  value: "some-value",
+  name: "some-name",
   checked: true,
   disabled: false,
-  label: 'RADIO',
+  label: "RADIO",
 };
 
 export const DisabledUnchecked = Template.bind({});
 DisabledUnchecked.args = {
-  testId: 'some-radio-id',
-  value: 'some-value',
-  name: 'some-name',
+  testId: "some-radio-id",
+  value: "some-value",
+  name: "some-name",
   checked: false,
   disabled: true,
-  label: 'RADIO',
+  label: "RADIO",
 };
 
 export const DisabledChecked = Template.bind({});
 DisabledChecked.args = {
-  testId: 'some-radio-id',
-  value: 'some-value',
-  name: 'some-name',
+  testId: "some-radio-id",
+  value: "some-value",
+  name: "some-name",
   checked: true,
   disabled: true,
-  label: 'RADIO',
+  label: "RADIO",
 };

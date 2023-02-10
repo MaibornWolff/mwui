@@ -1,10 +1,9 @@
-import '../../global/global.css';
-// @ts-ignore
-import docs from '../mw-menu/mw-menu.docs.mdx';
+import "../../global/global.css";
+import docs from "../mw-menu/mw-menu.docs.mdx";
 
 export default {
-  title: 'Components/MenuItem',
-  component: 'mw-menu-item',
+  title: "Components/MenuItem",
+  component: "mw-menu-item",
   parameters: {
     docs: { page: docs },
   },
@@ -15,8 +14,8 @@ const DefaultTemplate = args => `
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  title: 'Title',
-  subtitle: 'Subtitle',
+  title: "Title",
+  subtitle: "Subtitle",
   disabled: false,
   selected: false,
 };
