@@ -14,13 +14,16 @@
   display: flex;
   justify-content: center;
   align-items: start;
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
   contain: strict;
+  z-index: 999999;
 
   &.dismiss-animation {
     .mw-modal__backdrop {
@@ -46,6 +49,14 @@
     border-radius: var(--mw-component-modal-border-radius);
     padding: var(--mw-component-modal-padding-components-x-default) var(--mw-component-modal-padding-components-x-default);
     animation: scaleUp $animation-duration cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+    &--default {
+      max-width: var(--mw-component-size-modal-default-w);
+    }
+
+    &--small {
+      max-width: var(--mw-component-size-modal-small-w);
+    }
   }
 }
 

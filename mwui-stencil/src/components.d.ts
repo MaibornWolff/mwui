@@ -12,6 +12,7 @@ import { ButtonVariant } from "./components/mw-button/models/enums/button-varian
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
+import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
   interface MwAppBar {
@@ -326,9 +327,17 @@ export namespace Components {
      */
     dismissTrigger?: string | undefined;
     /**
+     * Modal can be opened closed with this input property
+     */
+    isOpen: boolean;
+    /**
      * Method to present the modal
      */
     present: () => Promise<void>;
+    /**
+     * Determines the max size that the modal takes horizontally
+     */
+    size: ModalSize;
     /**
      * id used to present the modal
      */
@@ -1092,6 +1101,14 @@ declare namespace LocalJSX {
      * id used to dismiss the modal
      */
     dismissTrigger?: string | undefined;
+    /**
+     * Modal can be opened closed with this input property
+     */
+    isOpen?: boolean;
+    /**
+     * Determines the max size that the modal takes horizontally
+     */
+    size?: ModalSize;
     /**
      * id used to present the modal
      */

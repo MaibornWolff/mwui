@@ -4,11 +4,13 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                                            | Type      | Default     |
-| ----------------- | ------------------ | ------------------------------------------------------ | --------- | ----------- |
-| `backdropDismiss` | `backdrop-dismiss` | Determines wether or not backdrop should dismiss modal | `boolean` | `true`      |
-| `dismissTrigger`  | `dismiss-trigger`  | id used to dismiss the modal                           | `string`  | `undefined` |
-| `trigger`         | `trigger`          | id used to present the modal                           | `string`  | `undefined` |
+| Property          | Attribute          | Description                                               | Type                   | Default                 |
+| ----------------- | ------------------ | --------------------------------------------------------- | ---------------------- | ----------------------- |
+| `backdropDismiss` | `backdrop-dismiss` | Determines wether or not backdrop should dismiss modal    | `boolean`              | `true`                  |
+| `dismissTrigger`  | `dismiss-trigger`  | id used to dismiss the modal                              | `string`               | `undefined`             |
+| `isOpen`          | `is-open`          | Modal can be opened closed with this input property       | `boolean`              | `false`                 |
+| `size`            | `size`             | Determines the max size that the modal takes horizontally | `"default" \| "small"` | `ModalSizeEnum.DEFAULT` |
+| `trigger`         | `trigger`          | id used to present the modal                              | `string`               | `undefined`             |
 
 ## Methods
 

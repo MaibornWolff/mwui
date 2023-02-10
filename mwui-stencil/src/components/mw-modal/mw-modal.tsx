@@ -1,5 +1,6 @@
-import { Component, Host, h, Prop, Element, Watch, Method, State } from "@stencil/core";
+import { Component, Element, h, Host, Method, Prop, State, Watch } from "@stencil/core";
 import { attachComponent, CoreDelegate, detachComponent } from "../../utils/delegate";
+import { ModalSize, ModalSizeEnum } from "./models/enums/modal-size.enum";
 
 @Component({
   tag: "mw-modal",
@@ -15,6 +16,7 @@ export class MwModal {
 
   @State() private dismissAnimationRunning = false;
   @State() private overlayHidden = true;
+  @State() private modalIsOpen = false;
 
   @Element() private el!: HTMLMwModalElement;
 
@@ -22,6 +24,11 @@ export class MwModal {
    * Determines wether or not backdrop should dismiss modal
    */
   @Prop() backdropDismiss = true;
+
+  /**
+   * Determines the max size that the modal takes horizontally
+   */
+  @Prop() size: ModalSize = ModalSizeEnum.DEFAULT;
 
   /**
    * id used to present the modal
@@ -41,9 +48,40 @@ export class MwModal {
     this.configureDismissTriggerInteraction();
   }
 
+  /**
+   * Modal can be opened closed with this input property
+   */
+  @Prop() isOpen = false;
+  @Watch("isOpen")
+  onIsOpenChange(newValue: boolean, oldValue: boolean): void {
+    if (newValue === true && oldValue === false) {
+      this.present();
+    } else if (newValue === false && oldValue === true) {
+      this.dismiss();
+    }
+  }
+
+  componentDidLoad(): void {
+    if (this.isOpen === true) {
+      this.present();
+    }
+  }
+
   connectedCallback(): void {
     this.configureTriggerInteraction();
     this.configureDismissTriggerInteraction();
+  }
+
+  disconnectedCallback(): void {
+    const { destroyTriggerInteraction, destroyDismissTriggerInteraction } = this;
+
+    if (destroyTriggerInteraction) {
+      destroyTriggerInteraction();
+    }
+
+    if (destroyDismissTriggerInteraction) {
+      destroyDismissTriggerInteraction();
+    }
   }
 
   private configureTriggerInteraction = (): void => {
@@ -129,9 +167,13 @@ export class MwModal {
   @Method()
   async present(): Promise<void> {
     const { delegate, el } = this;
+    if (this.modalIsOpen) {
+      return;
+    }
 
     this.modalContentElement = await attachComponent(delegate, el);
     await this.runPresentAnimation();
+    this.modalIsOpen = true;
   }
 
   /**
@@ -141,8 +183,13 @@ export class MwModal {
   async dismiss(): Promise<void> {
     const { delegate } = this;
 
+    if (!this.modalIsOpen) {
+      return;
+    }
+
     await this.runDismissAnimation();
     await detachComponent(delegate, this.modalContentElement);
+    this.modalIsOpen = false;
   }
 
   private handleDismiss = (): void => {
@@ -165,7 +212,7 @@ export class MwModal {
           }}
         >
           <mw-backdrop class="mw-modal__backdrop" part="backdrop" backdropDismiss={this.backdropDismiss} />
-          <div class="mw-modal__wrapper" part="content">
+          <div class={`mw-modal__wrapper mw-modal__wrapper--${this.size}`} part="content">
             <slot></slot>
           </div>
         </div>

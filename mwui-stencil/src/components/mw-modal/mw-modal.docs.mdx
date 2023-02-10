@@ -1,0 +1,91 @@
+import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+
+# Modal
+
+<div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "space-between" }}>
+  <div style={{ width: "50%" }}>
+    <p>
+      The <code>mw-modal</code> component provides a host element to display content as a modal popup.
+    </p>
+    <ul>
+      <li>
+        <a href="#modal-title">mw-modal-title</a>
+      </li>
+      <li>
+        <a href="#modal-footer">mw-modal-footer</a>
+      </li>
+    </ul>
+  </div>
+  <div style={{ width: "40%" }}>
+    <Story id="molecules-modal--notification-modal" />
+  </div>
+</div>
+
+```jsx
+  <mw-button
+      id="open-modal"
+      label="Open Modal"
+  ></mw-button>
+  <mw-modal
+    trigger="open-modal" // id of the trigger element that opens the modal
+    dismiss-trigger="close-icon" // id of the trigger element that dismisses the modal
+    backdrop-dismiss="false"
+    size="default"
+  >
+      <mw-modal-title headline="{headline}" description="{description}">
+          <mw-icon icon="close" id="close-icon" size="medium" slot="icon"></mw-icon>
+      </mw-modal-title>
+
+      <div>
+          all of the modal content
+      </div>
+      <mw-modal-footer>
+          <span slot="end">
+            <mw-button label="Action 1" variant="ghost"></mw-button>
+            <mw-button label="Action 2"></mw-button>
+          </span>
+      </mw-modal-footer>
+  </mw-modal>
+```
+
+<ArgsTable of="mw-modal" />
+
+### Modal Title
+
+<Canvas withSource="open">
+  <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
+    <Story id="molecules-modal--modal-title" />
+  </div>
+</Canvas>
+
+```jsx
+<mw-modal trigger="open-modal" dismiss-trigger="close-icon">
+  <mw-modal-title headline="{headline}" description="{description}">
+    <mw-icon icon="close" id="close-icon" size="medium" slot="icon"></mw-icon>
+  </mw-modal-title>
+</mw-modal>
+```
+
+<ArgsTable of="mw-modal-title" />
+
+### Modal Footer
+
+<Canvas withSource="open">
+  <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
+    <Story id="molecules-modal--modal-footer" />
+  </div>
+</Canvas>
+
+```jsx
+<mw-modal trigger="open-modal" dismiss-trigger="close-icon">
+  <mw-modal-title headline="{headline}" description="{description}">
+    <mw-icon icon="close" id="close-icon" size="medium" slot="icon"></mw-icon>
+  </mw-modal-title>
+  <mw-modal-footer>
+    <span slot="start">
+      <mw-button label="Action 1"></mw-button>
+      <mw-button label="Action 2" variant="ghost"></mw-button>
+    </span>
+  </mw-modal-footer>
+</mw-modal>
+```

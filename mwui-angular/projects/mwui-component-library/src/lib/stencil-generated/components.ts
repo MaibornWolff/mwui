@@ -465,14 +465,14 @@ export declare interface MwModal extends Components.MwModal {}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["backdropDismiss", "dismissTrigger", "trigger"],
+    inputs: ["backdropDismiss", "dismissTrigger", "isOpen", "size", "trigger"],
     methods: ["present", "dismiss"],
 })
 @Component({
     selector: "mw-modal",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["backdropDismiss", "dismissTrigger", "trigger"],
+    inputs: ["backdropDismiss", "dismissTrigger", "isOpen", "size", "trigger"],
 })
 export class MwModal {
     protected el: HTMLElement;
