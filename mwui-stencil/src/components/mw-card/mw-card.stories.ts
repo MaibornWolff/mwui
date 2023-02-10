@@ -1,10 +1,9 @@
-import '../../global/global.css';
-// @ts-ignore
-import docs from './mw-card.docs.mdx';
+import "../../global/global.css";
+import docs from "./mw-card.docs.mdx";
 
 export default {
-  title: 'Components/Card',
-  component: 'mw-card',
+  title: "Components/Card",
+  component: "mw-card",
   parameters: {
     docs: { page: docs },
   },
@@ -17,7 +16,7 @@ const BodyTemplate = args => `
 
 export const CardBody = BodyTemplate.bind({});
 CardBody.args = {
-  testId: 'card',
+  testId: "card",
   elevated: true,
   outlined: false,
 };
@@ -32,7 +31,7 @@ const HeaderTemplate = args => `
 
 export const CardHeader = HeaderTemplate.bind({});
 CardHeader.args = {
-  testId: 'card',
+  testId: "card",
   elevated: false,
   outlined: true,
 };
@@ -45,7 +44,7 @@ const TitleTemplate = args => `
 
 export const CardTitle = TitleTemplate.bind({});
 CardTitle.args = {
-  testId: 'card',
+  testId: "card",
   elevated: true,
   outlined: false,
 };
@@ -62,7 +61,7 @@ const FooterTemplate = args => `
 
 export const CardFooter = FooterTemplate.bind({});
 CardFooter.args = {
-  testId: 'card',
+  testId: "card",
   elevated: true,
   outlined: false,
 };
@@ -79,10 +78,10 @@ const ImageTopTemplate = args => `
 
 export const CardImageTop = ImageTopTemplate.bind({});
 CardImageTop.args = {
-  testId: 'card',
+  testId: "card",
   elevated: true,
   outlined: false,
-  src: 'https://placedog.net/250/150?r',
+  src: "https://placedog.net/250/150?r",
 };
 
 const ImageBottomTemplate = args => `
@@ -93,10 +92,10 @@ const ImageBottomTemplate = args => `
 
 export const CardImageBottom = ImageBottomTemplate.bind({});
 CardImageBottom.args = {
-  testId: 'card',
+  testId: "card",
   elevated: true,
   outlined: false,
-  src: 'https://placedog.net/250/150?r',
+  src: "https://placedog.net/250/150?r",
 };
 
 const ImageSingleTemplate = args => `
@@ -106,10 +105,10 @@ const ImageSingleTemplate = args => `
 
 export const CardImageSingle = ImageSingleTemplate.bind({});
 CardImageSingle.args = {
-  testId: 'card',
+  testId: "card",
   elevated: true,
   outlined: false,
-  src: 'https://placedog.net/250/150?r',
+  src: "https://placedog.net/250/150?r",
 };
 
 const FullTemplate = args => `
@@ -126,8 +125,8 @@ const FullTemplate = args => `
 
 export const CardFull = FullTemplate.bind({});
 CardFull.args = {
-  testId: 'card',
+  testId: "card",
   elevated: true,
   outlined: false,
-  src: 'https://placedog.net/250/150?r',
+  src: "https://placedog.net/250/150?r",
 };

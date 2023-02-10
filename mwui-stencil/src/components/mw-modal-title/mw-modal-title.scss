@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  padding-bottom: var(--mw-component-modal-padding-b-default);
+  margin-top: calc(-1 * var(--mw-component-modal-padding-components-y-default));
+
+  .mw-modal-title {
+    display: flex;
+    align-items: center;
+    gap: var(--mw-component-header-gap-within);
+
+    .spacefiller {
+      flex: 1 1 auto;
+    }
+
+    &__headline {
+      font-family: var(--mw-component-modal-title-font-family);
+      font-weight: var(--mw-component-modal-title-font-weight);
+      line-height: var(--mw-component-modal-title-line-height);
+      font-size: var(--mw-component-modal-title-font-size);
+    }
+
+    &__description {
+      font-family: var(--mw-component-modal-description-font-family);
+      font-weight: var(--mw-component-modal-description-font-weight);
+      line-height: var(--mw-component-modal-description-line-height);
+      font-size: var(--mw-component-modal-description-font-size);
+    }
+
+    slot[name="icon"] {
+      cursor: pointer;
+    }
+  }
+}
