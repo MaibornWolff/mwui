@@ -26,6 +26,7 @@ export namespace Components {
     position?: AppBarPosition;
   }
   interface MwAppBarTitle {}
+  interface MwAutocomplete {}
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -544,7 +545,7 @@ export namespace Components {
      */
     selected: number | null;
     /**
-     * Test Id
+     * Test ID
      */
     testId: string;
   }
@@ -569,6 +570,10 @@ export namespace Components {
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Allows users to enter multiple enters into textfield. Only functional if `dropdown-menu` slot is given.
+     */
+    multiple?: boolean;
     /**
      * input field name
      */
@@ -637,6 +642,11 @@ declare global {
   var HTMLMwAppBarTitleElement: {
     prototype: HTMLMwAppBarTitleElement;
     new (): HTMLMwAppBarTitleElement;
+  };
+  interface HTMLMwAutocompleteElement extends Components.MwAutocomplete, HTMLStencilElement {}
+  var HTMLMwAutocompleteElement: {
+    prototype: HTMLMwAutocompleteElement;
+    new (): HTMLMwAutocompleteElement;
   };
   interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {}
   var HTMLMwAvatarElement: {
@@ -786,6 +796,7 @@ declare global {
   interface HTMLElementTagNameMap {
     "mw-app-bar": HTMLMwAppBarElement;
     "mw-app-bar-title": HTMLMwAppBarTitleElement;
+    "mw-autocomplete": HTMLMwAutocompleteElement;
     "mw-avatar": HTMLMwAvatarElement;
     "mw-backdrop": HTMLMwBackdropElement;
     "mw-button": HTMLMwButtonElement;
@@ -829,6 +840,7 @@ declare namespace LocalJSX {
     position?: AppBarPosition;
   }
   interface MwAppBarTitle {}
+  interface MwAutocomplete {}
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -1367,7 +1379,7 @@ declare namespace LocalJSX {
      */
     selected?: number | null;
     /**
-     * Test Id
+     * Test ID
      */
     testId?: string;
   }
@@ -1392,6 +1404,10 @@ declare namespace LocalJSX {
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Allows users to enter multiple enters into textfield. Only functional if `dropdown-menu` slot is given.
+     */
+    multiple?: boolean;
     /**
      * input field name
      */
@@ -1424,6 +1440,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     "mw-app-bar": MwAppBar;
     "mw-app-bar-title": MwAppBarTitle;
+    "mw-autocomplete": MwAutocomplete;
     "mw-avatar": MwAvatar;
     "mw-backdrop": MwBackdrop;
     "mw-button": MwButton;
@@ -1461,6 +1478,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       "mw-app-bar": LocalJSX.MwAppBar & JSXBase.HTMLAttributes<HTMLMwAppBarElement>;
       "mw-app-bar-title": LocalJSX.MwAppBarTitle & JSXBase.HTMLAttributes<HTMLMwAppBarTitleElement>;
+      "mw-autocomplete": LocalJSX.MwAutocomplete & JSXBase.HTMLAttributes<HTMLMwAutocompleteElement>;
       "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
       "mw-backdrop": LocalJSX.MwBackdrop & JSXBase.HTMLAttributes<HTMLMwBackdropElement>;
       "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;

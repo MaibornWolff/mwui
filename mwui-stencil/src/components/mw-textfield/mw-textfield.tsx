@@ -57,6 +57,10 @@ export class MwTextfield {
    * Whether user can't type in input field
    */
   @Prop() readOnly?: boolean = false;
+  /**
+   * Allows users to enter multiple enters into textfield. Only functional if `dropdown-menu` slot is given.
+   */
+  @Prop() multiple?: boolean = false;
 
   @State() focused = false;
 
@@ -108,22 +112,25 @@ export class MwTextfield {
                 <span class={classnames({ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError })}>
                   <slot name="icon-start"></slot>
                 </span>
-                <input
-                  ref={el => (this.inputElement = el as HTMLInputElement)}
-                  placeholder={this.placeholder}
-                  class={classnames({
-                    "has-error": this.hasError,
-                  })}
-                  onFocus={this.onFocus}
-                  onBlur={this.onBlur}
-                  onInput={this.onValueChange}
-                  onChange={this.onValueChange}
-                  type={this.type}
-                  name={this.name}
-                  value={this.value}
-                  disabled={this.disabled}
-                  readOnly={this.readOnly}
-                />
+                <div class="input-options">
+                  <slot name="multiple"></slot>
+                  <input
+                    ref={el => (this.inputElement = el as HTMLInputElement)}
+                    placeholder={this.placeholder}
+                    class={classnames({
+                      "has-error": this.hasError,
+                    })}
+                    onFocus={this.onFocus}
+                    onBlur={this.onBlur}
+                    onInput={this.onValueChange}
+                    onChange={this.onValueChange}
+                    type={this.type}
+                    name={this.name}
+                    value={this.value}
+                    disabled={this.disabled}
+                    readOnly={this.readOnly}
+                  />
+                </div>
                 <span class={classnames({ "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError })}>
                   <slot name="icon-end"></slot>
                 </span>

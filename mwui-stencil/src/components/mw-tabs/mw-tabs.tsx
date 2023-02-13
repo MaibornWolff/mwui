@@ -8,7 +8,7 @@ import { Component, h, Element, Prop, State } from "@stencil/core";
 export class MwTabs {
   @Element() host: HTMLMwTabsElement;
   /**
-   * Test Id
+   * Test ID
    */
   @Prop() testId: string;
   /**

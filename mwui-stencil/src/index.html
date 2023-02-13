@@ -434,20 +434,33 @@
       <br />
       <hr />
       <h2>Dropdown</h2>
-      <mw-dropdown label="Dropdown" placeholder="Select option" helper-text="Helper Text" has-error="true">
-        <mw-menu-item title="List Item Loooong" subtitle="Subtitle"> </mw-menu-item>
-        <mw-menu-item title="Disabled Item" disabled> </mw-menu-item>
-        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle"> </mw-menu-item>
-        <mw-menu-item title="List Item" subtitle="Subtitle"> </mw-menu-item>
-      </mw-dropdown>
-      <mw-dropdown label="Dropdown" placeholder="Select option" inline="true">
-        <mw-menu-item title="Disabled Item" disabled></mw-menu-item>
-        <mw-menu-item title="List Item Loooong" subtitle="Subtitle"> </mw-menu-item>
-        <mw-divider></mw-divider>
-        <mw-menu-item title="Disabled Item" disabled> </mw-menu-item>
-        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle"> </mw-menu-item>
-        <mw-menu-item title="List Item" subtitle="Subtitle"> </mw-menu-item>
-      </mw-dropdown>
+      <div style="max-width: 500px">
+        <mw-dropdown label="Dropdown" placeholder="Select option" helper-text="Helper Text" has-error="true">
+          <mw-menu-item title="List Item Loooong" subtitle="Subtitle"> </mw-menu-item>
+          <mw-menu-item title="Disabled Item" disabled> </mw-menu-item>
+          <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle"> </mw-menu-item>
+          <mw-menu-item title="List Item" subtitle="Subtitle"> </mw-menu-item>
+        </mw-dropdown>
+        <mw-dropdown label="Dropdown" placeholder="Select option" inline="true">
+          <mw-menu-item title="Disabled Item" disabled></mw-menu-item>
+          <mw-menu-item title="List Item Loooong" subtitle="Subtitle"> </mw-menu-item>
+          <mw-divider></mw-divider>
+          <mw-menu-item title="Disabled Item" disabled> </mw-menu-item>
+          <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle"> </mw-menu-item>
+          <mw-menu-item title="List Item" subtitle="Subtitle"> </mw-menu-item>
+        </mw-dropdown>
+      </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Autocomplete</h2>
+      <mw-autocomplete>
+        <mw-menu-item selected="true" title="Item 1"> </mw-menu-item>
+        <mw-menu-item selected="true" title="Item 2"> </mw-menu-item>
+        <mw-menu-item title="Item 3"> </mw-menu-item>
+        <mw-menu-item title="Item 4"> </mw-menu-item>
+      </mw-autocomplete>
     </section>
   </body>
   <script>

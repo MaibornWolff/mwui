@@ -24,7 +24,6 @@ export class MwMenuItem {
    * Selected state
    */
   @Prop({ mutable: false, reflect: true }) selected?: boolean = false;
-
   /**
    * MwMenuItem emits an event when its clicked
    */

@@ -75,7 +75,16 @@ label {
 .input .icon {
   color: var(--mw-component-text-field-fg-icon-default);
 }
-
+.input-options {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--mw-component-text-field-gap-horizontal-gap-within);
+}
+.input input {
+  min-width: 150px;
+  width: 100%;
+  flex: 1;
+}
 .focused {
   color: var(--mw-component-text-field-fg-icon-focused);
 }
