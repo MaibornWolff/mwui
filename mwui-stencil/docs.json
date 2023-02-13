@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-13T08:37:05",
+  "timestamp": "2023-02-13T14:27:13",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -271,7 +271,7 @@
       }
     },
     {
-      "filePath": "./src/components/mw-button/mw-button.tsx",
+      "filePath": "./src/components/mw-button/mw-button.component.tsx",
       "encapsulation": "shadow",
       "tag": "mw-button",
       "readme": "# mw-button\n",
@@ -1468,7 +1468,7 @@
       "filePath": "./src/components/mw-login/mw-login.tsx",
       "encapsulation": "shadow",
       "tag": "mw-login",
-      "readme": "# mw-login\n\n\n",
+      "readme": "# mw-login\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

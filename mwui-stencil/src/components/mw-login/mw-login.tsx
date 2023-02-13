@@ -3,7 +3,7 @@ import { LoginLayout, LoginLayoutEnum } from "./models/enums/login-layout.enum";
 
 @Component({
   tag: "mw-login",
-  styleUrl: "mw-login.scss",
+  styleUrl: "./mw-login.scss",
   shadow: true,
 })
 export class MwLogin {
