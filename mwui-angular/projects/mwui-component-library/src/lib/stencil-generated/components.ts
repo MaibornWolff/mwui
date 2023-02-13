@@ -395,6 +395,26 @@ export class MwLink {
     }
 }
 
+export declare interface MwLogin extends Components.MwLogin {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["backgroundImage", "headline", "layout", "logo", "showForgotPasswordButton", "showSignUpPrompt"],
+})
+@Component({
+    selector: "mw-login",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["backgroundImage", "headline", "layout", "logo", "showForgotPasswordButton", "showSignUpPrompt"],
+})
+export class MwLogin {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
 export declare interface MwMenu extends Components.MwMenu {}
 
 @ProxyCmp({
