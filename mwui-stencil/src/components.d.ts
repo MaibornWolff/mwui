@@ -12,6 +12,7 @@ import { ButtonVariant } from "./components/mw-button/models/enums/button-varian
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
+import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
   interface MwAppBar {
@@ -46,6 +47,12 @@ export namespace Components {
      * Test Id
      */
     testId?: string;
+  }
+  interface MwBackdrop {
+    /**
+     * determines wether the backdrop will be dismissed by click
+     */
+    backdropDismiss: boolean;
   }
   interface MwButton {
     /**
@@ -344,6 +351,47 @@ export namespace Components {
      */
     testId: string;
   }
+  interface MwModal {
+    /**
+     * Determines wether or not backdrop should dismiss modal
+     */
+    backdropDismiss: boolean;
+    /**
+     * Method to dismiss the modal
+     */
+    dismiss: () => Promise<void>;
+    /**
+     * id used to dismiss the modal
+     */
+    dismissTrigger?: string | undefined;
+    /**
+     * Modal can be opened closed with this input property
+     */
+    isOpen: boolean;
+    /**
+     * Method to present the modal
+     */
+    present: () => Promise<void>;
+    /**
+     * Determines the max size that the modal takes horizontally
+     */
+    size: ModalSize;
+    /**
+     * id used to present the modal
+     */
+    trigger?: string | undefined;
+  }
+  interface MwModalFooter {}
+  interface MwModalTitle {
+    /**
+     * Description that should be displayed
+     */
+    description?: string | undefined;
+    /**
+     * Title that should be displayed
+     */
+    headline: string | undefined;
+  }
   interface MwPopover {
     /**
      * If set to true, the popover can be closed by clicking outside
@@ -547,6 +595,10 @@ export namespace Components {
     value?: string | number;
   }
 }
+export interface MwBackdropCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwBackdropElement;
+}
 export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwButtonElement;
@@ -590,6 +642,11 @@ declare global {
   var HTMLMwAvatarElement: {
     prototype: HTMLMwAvatarElement;
     new (): HTMLMwAvatarElement;
+  };
+  interface HTMLMwBackdropElement extends Components.MwBackdrop, HTMLStencilElement {}
+  var HTMLMwBackdropElement: {
+    prototype: HTMLMwBackdropElement;
+    new (): HTMLMwBackdropElement;
   };
   interface HTMLMwButtonElement extends Components.MwButton, HTMLStencilElement {}
   var HTMLMwButtonElement: {
@@ -676,6 +733,21 @@ declare global {
     prototype: HTMLMwMenuListElement;
     new (): HTMLMwMenuListElement;
   };
+  interface HTMLMwModalElement extends Components.MwModal, HTMLStencilElement {}
+  var HTMLMwModalElement: {
+    prototype: HTMLMwModalElement;
+    new (): HTMLMwModalElement;
+  };
+  interface HTMLMwModalFooterElement extends Components.MwModalFooter, HTMLStencilElement {}
+  var HTMLMwModalFooterElement: {
+    prototype: HTMLMwModalFooterElement;
+    new (): HTMLMwModalFooterElement;
+  };
+  interface HTMLMwModalTitleElement extends Components.MwModalTitle, HTMLStencilElement {}
+  var HTMLMwModalTitleElement: {
+    prototype: HTMLMwModalTitleElement;
+    new (): HTMLMwModalTitleElement;
+  };
   interface HTMLMwPopoverElement extends Components.MwPopover, HTMLStencilElement {}
   var HTMLMwPopoverElement: {
     prototype: HTMLMwPopoverElement;
@@ -715,6 +787,7 @@ declare global {
     "mw-app-bar": HTMLMwAppBarElement;
     "mw-app-bar-title": HTMLMwAppBarTitleElement;
     "mw-avatar": HTMLMwAvatarElement;
+    "mw-backdrop": HTMLMwBackdropElement;
     "mw-button": HTMLMwButtonElement;
     "mw-card": HTMLMwCardElement;
     "mw-card-body": HTMLMwCardBodyElement;
@@ -732,6 +805,9 @@ declare global {
     "mw-menu": HTMLMwMenuElement;
     "mw-menu-item": HTMLMwMenuItemElement;
     "mw-menu-list": HTMLMwMenuListElement;
+    "mw-modal": HTMLMwModalElement;
+    "mw-modal-footer": HTMLMwModalFooterElement;
+    "mw-modal-title": HTMLMwModalTitleElement;
     "mw-popover": HTMLMwPopoverElement;
     "mw-radio": HTMLMwRadioElement;
     "mw-slider": HTMLMwSliderElement;
@@ -774,6 +850,16 @@ declare namespace LocalJSX {
      * Test Id
      */
     testId?: string;
+  }
+  interface MwBackdrop {
+    /**
+     * determines wether the backdrop will be dismissed by click
+     */
+    backdropDismiss?: boolean;
+    /**
+     * Event after backdrop was clicked
+     */
+    onBackdropClick?: (event: MwBackdropCustomEvent<void>) => void;
   }
   interface MwButton {
     /**
@@ -1092,6 +1178,39 @@ declare namespace LocalJSX {
      */
     testId?: string;
   }
+  interface MwModal {
+    /**
+     * Determines wether or not backdrop should dismiss modal
+     */
+    backdropDismiss?: boolean;
+    /**
+     * id used to dismiss the modal
+     */
+    dismissTrigger?: string | undefined;
+    /**
+     * Modal can be opened closed with this input property
+     */
+    isOpen?: boolean;
+    /**
+     * Determines the max size that the modal takes horizontally
+     */
+    size?: ModalSize;
+    /**
+     * id used to present the modal
+     */
+    trigger?: string | undefined;
+  }
+  interface MwModalFooter {}
+  interface MwModalTitle {
+    /**
+     * Description that should be displayed
+     */
+    description?: string | undefined;
+    /**
+     * Title that should be displayed
+     */
+    headline?: string | undefined;
+  }
   interface MwPopover {
     /**
      * If set to true, the popover can be closed by clicking outside
@@ -1306,6 +1425,7 @@ declare namespace LocalJSX {
     "mw-app-bar": MwAppBar;
     "mw-app-bar-title": MwAppBarTitle;
     "mw-avatar": MwAvatar;
+    "mw-backdrop": MwBackdrop;
     "mw-button": MwButton;
     "mw-card": MwCard;
     "mw-card-body": MwCardBody;
@@ -1323,6 +1443,9 @@ declare namespace LocalJSX {
     "mw-menu": MwMenu;
     "mw-menu-item": MwMenuItem;
     "mw-menu-list": MwMenuList;
+    "mw-modal": MwModal;
+    "mw-modal-footer": MwModalFooter;
+    "mw-modal-title": MwModalTitle;
     "mw-popover": MwPopover;
     "mw-radio": MwRadio;
     "mw-slider": MwSlider;
@@ -1339,6 +1462,7 @@ declare module "@stencil/core" {
       "mw-app-bar": LocalJSX.MwAppBar & JSXBase.HTMLAttributes<HTMLMwAppBarElement>;
       "mw-app-bar-title": LocalJSX.MwAppBarTitle & JSXBase.HTMLAttributes<HTMLMwAppBarTitleElement>;
       "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
+      "mw-backdrop": LocalJSX.MwBackdrop & JSXBase.HTMLAttributes<HTMLMwBackdropElement>;
       "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
       "mw-card": LocalJSX.MwCard & JSXBase.HTMLAttributes<HTMLMwCardElement>;
       "mw-card-body": LocalJSX.MwCardBody & JSXBase.HTMLAttributes<HTMLMwCardBodyElement>;
@@ -1356,6 +1480,9 @@ declare module "@stencil/core" {
       "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
       "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
       "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
+      "mw-modal": LocalJSX.MwModal & JSXBase.HTMLAttributes<HTMLMwModalElement>;
+      "mw-modal-footer": LocalJSX.MwModalFooter & JSXBase.HTMLAttributes<HTMLMwModalFooterElement>;
+      "mw-modal-title": LocalJSX.MwModalTitle & JSXBase.HTMLAttributes<HTMLMwModalTitleElement>;
       "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
       "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
       "mw-slider": LocalJSX.MwSlider & JSXBase.HTMLAttributes<HTMLMwSliderElement>;

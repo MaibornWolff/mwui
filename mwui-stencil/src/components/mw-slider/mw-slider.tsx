@@ -2,7 +2,7 @@ import { Component, Element, Host, Prop, h } from "@stencil/core";
 
 @Component({
   tag: "mw-slider",
-  styleUrl: "mw-slider.css",
+  styleUrl: "mw-slider.scss",
   shadow: true,
 })
 export class MwSlider {

@@ -1,10 +1,9 @@
-import '../../global/global.css';
-// @ts-ignore
-import docs from './mw-menu-list.docs.mdx';
+import "../../global/global.css";
+import docs from "./mw-menu-list.docs.mdx";
 
 export default {
-  title: 'Components/MenuList',
-  component: 'mw-menu-list',
+  title: "Components/MenuList",
+  component: "mw-menu-list",
   parameters: {
     docs: { page: docs },
   },
@@ -20,5 +19,5 @@ const DefaultTemplate = args => `
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  testId: 'Menu List',
+  testId: "Menu List",
 };

@@ -1,10 +1,9 @@
-import '../../global/global.css';
-// @ts-ignore
-import docs from './mw-divider.docs.mdx';
+import "../../global/global.css";
+import docs from "./mw-divider.docs.mdx";
 
 export default {
-  title: 'Components/Divider',
-  component: 'mw-divider',
+  title: "Components/Divider",
+  component: "mw-divider",
   parameters: {
     docs: { page: docs },
   },

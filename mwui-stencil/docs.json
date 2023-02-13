@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-09T15:09:50",
+  "timestamp": "2023-02-13T10:27:59",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -213,6 +213,61 @@
       "dependencies": ["mw-icon"],
       "dependencyGraph": {
         "mw-avatar": ["mw-icon"]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-backdrop/mw-backdrop.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-backdrop",
+      "readme": "# mw-backdrop\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "backdropDismiss",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "backdrop-dismiss",
+          "reflectToAttr": false,
+          "docs": "determines wether the backdrop will be dismissed by click",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "backdropClick",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event after backdrop was clicked",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "click",
+          "capture": true,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": ["mw-modal"],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-modal": ["mw-backdrop"]
       }
     },
     {
@@ -1158,7 +1213,7 @@
       "filePath": "./src/components/mw-dropdown/mw-dropdown.tsx",
       "encapsulation": "shadow",
       "tag": "mw-dropdown",
-      "readme": "# mw-dropdown\n",
+      "readme": "# mw-dropdown\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1332,7 +1387,7 @@
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon",
-      "readme": "# mw-icon\n",
+      "readme": "# mw-icon\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1461,7 +1516,7 @@
       "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon-gallery",
-      "readme": "# mw-icon-gallery\n",
+      "readme": "# mw-icon-gallery\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1796,7 +1851,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
-      "readme": "# mw-menu-list\n",
+      "readme": "# mw-menu-list\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1829,6 +1884,219 @@
       "dependencyGraph": {
         "mw-textfield": ["mw-menu-list"]
       }
+    },
+    {
+      "filePath": "./src/components/mw-modal/mw-modal.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-modal",
+      "readme": "# mw-modal\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "backdropDismiss",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "backdrop-dismiss",
+          "reflectToAttr": false,
+          "docs": "Determines wether or not backdrop should dismiss modal",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "dismissTrigger",
+          "type": "string",
+          "mutable": false,
+          "attr": "dismiss-trigger",
+          "reflectToAttr": false,
+          "docs": "id used to dismiss the modal",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "isOpen",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "is-open",
+          "reflectToAttr": false,
+          "docs": "Modal can be opened closed with this input property",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"default\" | \"small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Determines the max size that the modal takes horizontally",
+          "docsTags": [],
+          "default": "ModalSizeEnum.DEFAULT",
+          "values": [
+            {
+              "value": "default",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "trigger",
+          "type": "string",
+          "mutable": false,
+          "attr": "trigger",
+          "reflectToAttr": false,
+          "docs": "id used to present the modal",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "dismiss",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "dismiss() => Promise<void>",
+          "parameters": [],
+          "docs": "Method to dismiss the modal",
+          "docsTags": []
+        },
+        {
+          "name": "present",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "present() => Promise<void>",
+          "parameters": [],
+          "docs": "Method to present the modal",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "backdrop",
+          "docs": ""
+        },
+        {
+          "name": "content",
+          "docs": ""
+        }
+      ],
+      "dependents": [],
+      "dependencies": ["mw-backdrop"],
+      "dependencyGraph": {
+        "mw-modal": ["mw-backdrop"]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-modal-footer/mw-modal-footer.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-modal-footer",
+      "readme": "# mw-modal-footer\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-modal-title/mw-modal-title.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-modal-title",
+      "readme": "# mw-modal-title\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "description",
+          "type": "string",
+          "mutable": false,
+          "attr": "description",
+          "reflectToAttr": false,
+          "docs": "Description that should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "headline",
+          "type": "string",
+          "mutable": false,
+          "attr": "headline",
+          "reflectToAttr": false,
+          "docs": "Title that should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-popover/mw-popover.tsx",
@@ -2609,7 +2877,7 @@
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
       "encapsulation": "shadow",
       "tag": "mw-textfield",
-      "readme": "# mw-textfield\n",
+      "readme": "# mw-textfield\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
