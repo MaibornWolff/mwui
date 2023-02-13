@@ -20,7 +20,7 @@ export class MwChip {
    */
   @Prop({ reflect: true }) disabled?: boolean;
   /**
-   * Flag wether to show close icon or not
+   * Flag whether to show close icon or not
    */
   @Prop() showClose?: boolean = false;
   /**

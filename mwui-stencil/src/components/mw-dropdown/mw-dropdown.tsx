@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from "@stencil/core";
+import { Component, Host, h, Prop, Element, State, Listen } from "@stencil/core";
 
 @Component({
   tag: "mw-dropdown",
@@ -6,6 +6,7 @@ import { Component, Host, h, Prop } from "@stencil/core";
   shadow: true,
 })
 export class MwDropdown {
+  @Element() host: HTMLMwDropdownElement;
   /**
    * input field value
    */
@@ -42,7 +43,12 @@ export class MwDropdown {
    * Visually and functionally disabled input
    */
   @Prop() disabled?: boolean = false;
+  @State() options = [];
 
+  @Listen("clickEmitter")
+  clickEmitterHandler(event): void {
+    this.value = event.target.getAttribute("value");
+  }
   render() {
     return (
       <Host>
@@ -61,7 +67,6 @@ export class MwDropdown {
           <div slot="dropdown-menu">
             <slot></slot>
           </div>
-          <input disabled />
         </mw-textfield>
       </Host>
     );

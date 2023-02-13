@@ -50,7 +50,7 @@ export namespace Components {
   }
   interface MwBackdrop {
     /**
-     * determines wether the backdrop will be dismissed by click
+     * determines whether the backdrop will be dismissed by click
      */
     backdropDismiss: boolean;
   }
@@ -219,7 +219,7 @@ export namespace Components {
      */
     selected: boolean;
     /**
-     * Flag wether to show close icon or not
+     * Flag whether to show close icon or not
      */
     showClose?: boolean;
     /**
@@ -344,6 +344,10 @@ export namespace Components {
      * Menu item title
      */
     title: string;
+    /**
+     * Value of item
+     */
+    value?: string;
   }
   interface MwMenuList {
     /**
@@ -853,7 +857,7 @@ declare namespace LocalJSX {
   }
   interface MwBackdrop {
     /**
-     * determines wether the backdrop will be dismissed by click
+     * determines whether the backdrop will be dismissed by click
      */
     backdropDismiss?: boolean;
     /**
@@ -1042,7 +1046,7 @@ declare namespace LocalJSX {
      */
     selected?: boolean;
     /**
-     * Flag wether to show close icon or not
+     * Flag whether to show close icon or not
      */
     showClose?: boolean;
     /**
@@ -1171,6 +1175,10 @@ declare namespace LocalJSX {
      * Menu item title
      */
     title?: string;
+    /**
+     * Value of item
+     */
+    value?: string;
   }
   interface MwMenuList {
     /**

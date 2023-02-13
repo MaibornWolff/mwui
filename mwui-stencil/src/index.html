@@ -434,20 +434,24 @@
       <br />
       <hr />
       <h2>Dropdown</h2>
-      <mw-dropdown label="Dropdown" placeholder="Select option" helper-text="Helper Text" has-error="true">
-        <mw-menu-item title="List Item Loooong" subtitle="Subtitle"> </mw-menu-item>
-        <mw-menu-item title="Disabled Item" disabled> </mw-menu-item>
-        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle"> </mw-menu-item>
-        <mw-menu-item title="List Item" subtitle="Subtitle"> </mw-menu-item>
-      </mw-dropdown>
-      <mw-dropdown label="Dropdown" placeholder="Select option" inline="true">
-        <mw-menu-item title="Disabled Item" disabled></mw-menu-item>
-        <mw-menu-item title="List Item Loooong" subtitle="Subtitle"> </mw-menu-item>
-        <mw-divider></mw-divider>
-        <mw-menu-item title="Disabled Item" disabled> </mw-menu-item>
-        <mw-menu-item title="List Item Third" subtitle="Some very long Subtitle"> </mw-menu-item>
-        <mw-menu-item title="List Item" subtitle="Subtitle"> </mw-menu-item>
-      </mw-dropdown>
+      <div style="display: flex; flex-flow: row">
+        <mw-dropdown label="Dropdown" placeholder="Select option" inline="true">
+          <mw-menu-item value="item-1" title="List Item 1" disabled></mw-menu-item>
+          <mw-menu-item value="item-2" title="List Item 2" subtitle="Subtitle"> </mw-menu-item>
+          <mw-divider></mw-divider>
+          <mw-menu-item value="item-3" title="List Item 3"> </mw-menu-item>
+          <mw-menu-item value="item-4" title="List Item 4" subtitle="Some very long Subtitle"> </mw-menu-item>
+          <mw-menu-item value="item-5" title="List Item 5" subtitle="Subtitle"> </mw-menu-item>
+        </mw-dropdown>
+        <mw-dropdown label="Dropdown" placeholder="Select option" inline="true">
+          <mw-menu-item value="item-1" title="List Item 1" disabled></mw-menu-item>
+          <mw-menu-item value="item-2" title="List Item 2" subtitle="Subtitle"> </mw-menu-item>
+          <mw-divider></mw-divider>
+          <mw-menu-item value="item-3" title="List Item 3"> </mw-menu-item>
+          <mw-menu-item value="item-4" title="List Item 4" subtitle="Some very long Subtitle"> </mw-menu-item>
+          <mw-menu-item value="item-5" title="List Item 5" subtitle="Subtitle"> </mw-menu-item>
+        </mw-dropdown>
+      </div>
     </section>
   </body>
   <script>

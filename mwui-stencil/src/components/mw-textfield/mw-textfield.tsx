@@ -59,7 +59,7 @@ export class MwTextfield {
   @Prop() readOnly?: boolean = false;
 
   @State() focused = false;
-
+  @State() isDropdownOpen = false;
   private inputElement: HTMLInputElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
@@ -78,11 +78,16 @@ export class MwTextfield {
 
   private onFocus = (): void => {
     this.inputElement.focus();
+    this.isDropdownOpen = true;
     this.focused = true;
   };
 
   private onBlur = (): void => {
     this.focused = false;
+  };
+
+  private onDropdownClick = (): void => {
+    this.isDropdownOpen = false;
   };
 
   render() {
@@ -141,7 +146,7 @@ export class MwTextfield {
               </div>
               {this.hasDropDownMenu && (
                 <div class="dropdown-menu-wrapper">
-                  <div class={`dropdown-menu ${this.focused && "menu-focused"}`}>
+                  <div class={`dropdown-menu ${this.isDropdownOpen && "menu-focused"}`} onClick={this.onDropdownClick}>
                     <mw-menu-list>
                       <slot name="dropdown-menu"></slot>
                     </mw-menu-list>

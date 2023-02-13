@@ -147,3 +147,10 @@ label {
   top: 0;
   box-sizing: border-box;
 }
+.dropdown-menu-backdrop {
+  position: absolute;
+  background: black;
+  z-index: 998;
+  width: 100vw;
+  height: 100vh;
+}
