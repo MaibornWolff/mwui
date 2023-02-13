@@ -1,15 +1,15 @@
 import { newSpecPage } from "@stencil/core/testing";
 import { h } from "@stencil/core";
-import { MWButton } from "./mw-button";
+import { MwButton } from "./mw-button.component";
 import { SpecPage } from "@stencil/core/internal";
 import { ButtonSizeEnum } from "./models/enums/button-size.enum";
 import { ButtonVariantEnum } from "./models/enums/button-variant.enum";
 import { TargetEnum } from "./models/enums/button-target.enum";
 
 describe("GIVEN MwButton", () => {
-  const setup = async ({ disabled, label, variant, size, href, target }: Pick<MWButton, "disabled" | "label" | "variant" | "size" | "href" | "target"> = {}) => {
+  const setup = async ({ disabled, label, variant, size, href, target }: Pick<MwButton, "disabled" | "label" | "variant" | "size" | "href" | "target"> = {}) => {
     return await newSpecPage({
-      components: [MWButton],
+      components: [MwButton],
       template: () => (
         <mw-button disabled={disabled} label={label} variant={variant} size={size} href={href} target={target}>
           <div slot="icon-start"></div>
@@ -21,7 +21,7 @@ describe("GIVEN MwButton", () => {
 
   describe("GIVEN regular Button", () => {
     const getButton = (page: SpecPage) => {
-      return page.root.querySelector<HTMLButtonElement>("button[type=button]");
+      return page.root.shadowRoot.querySelector<HTMLButtonElement>("button[type=button].mw-button");
     };
 
     it("SHOULD render MwButton", async () => {
@@ -63,7 +63,7 @@ describe("GIVEN MwButton", () => {
 
     it("SHOULD not have icons slots WHEN none are passed", async () => {
       const page = await newSpecPage({
-        components: [MWButton],
+        components: [MwButton],
         template: () => <mw-button></mw-button>,
       });
 
@@ -77,10 +77,11 @@ describe("GIVEN MwButton", () => {
         it(`SHOULD have class ${size}`, async () => {
           const page = await setup({
             size,
+            label: "some-label",
           });
-          expect(getButton(page)).toHaveClass(size);
-          expect(getButton(page).querySelector(".mw-button-icon-start")).toHaveClass(size);
-          expect(getButton(page).querySelector(".mw-button-icon-end")).toHaveClass(size);
+          expect(getButton(page)).toHaveClass(`mw-button--${size}`);
+          expect(getButton(page).querySelector(".mw-button-icon-start")).toHaveClass(`mw-button-icon-start--${size}`);
+          expect(getButton(page).querySelector(".mw-button-icon-end")).toHaveClass(`mw-button-icon-end--${size}`);
         });
       });
     });
@@ -92,7 +93,7 @@ describe("GIVEN MwButton", () => {
           const page = await setup({
             variant,
           });
-          expect(getButton(page)).toHaveClass(variant);
+          expect(getButton(page)).toHaveClass(`mw-button--${variant}`);
         });
       });
     });
@@ -102,7 +103,7 @@ describe("GIVEN MwButton", () => {
     const href = "example.com";
 
     const getButton = (page: SpecPage) => {
-      return page.root.querySelector(`a`);
+      return page.root.shadowRoot.querySelector(`a.mw-button`);
     };
 
     it("SHOULD render a href button", async () => {
@@ -114,7 +115,7 @@ describe("GIVEN MwButton", () => {
 
     it("SHOULD not have icons slots WHEN none are passed", async () => {
       const page = await newSpecPage({
-        components: [MWButton],
+        components: [MwButton],
         template: () => <mw-button href={href}></mw-button>,
       });
 
@@ -129,10 +130,11 @@ describe("GIVEN MwButton", () => {
           const page = await setup({
             size,
             href,
+            label: "some-label",
           });
-          expect(getButton(page)).toHaveClass(size);
-          expect(getButton(page).querySelector(".mw-button-icon-start")).toHaveClass(size);
-          expect(getButton(page).querySelector(".mw-button-icon-end")).toHaveClass(size);
+          expect(getButton(page)).toHaveClass(`mw-button--${size}`);
+          expect(getButton(page).querySelector(".mw-button-icon-start")).toHaveClass(`mw-button-icon-start--${size}`);
+          expect(getButton(page).querySelector(".mw-button-icon-end")).toHaveClass(`mw-button-icon-end--${size}`);
         });
       });
     });
@@ -145,7 +147,8 @@ describe("GIVEN MwButton", () => {
             variant,
             href,
           });
-          expect(getButton(page)).toHaveClass(variant);
+
+          expect(getButton(page)).toHaveClass(`mw-button--${variant}`);
         });
       });
     });

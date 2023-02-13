@@ -1,7 +1,7 @@
 import { newSpecPage } from "@stencil/core/testing";
 import { MwModalFooter } from "./mw-modal-footer";
 import { h } from "@stencil/core";
-import { MWButton } from "../mw-button/mw-button";
+import { MwButton } from "../mw-button/mw-button.component";
 
 describe("GIVEN MwModalFooter", () => {
   const setup = async () => {
@@ -19,7 +19,7 @@ describe("GIVEN MwModalFooter", () => {
   it("SHOULD render contents in slot WHEN provided", async () => {
     const buttonLabel = "some action";
     const page = await newSpecPage({
-      components: [MwModalFooter, MWButton],
+      components: [MwModalFooter, MwButton],
       template: () => (
         <mw-modal-footer>
           <mw-button label={buttonLabel}></mw-button>
@@ -28,6 +28,6 @@ describe("GIVEN MwModalFooter", () => {
     });
 
     expect(page.root.querySelector("mw-button")).not.toBeNull();
-    expect(page.root.querySelector("mw-button").innerHTML).toContain(buttonLabel);
+    expect(page.root.querySelector("mw-button").shadowRoot.innerHTML).toContain(buttonLabel);
   });
 });
