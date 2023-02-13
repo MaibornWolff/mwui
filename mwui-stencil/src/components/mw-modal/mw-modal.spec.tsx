@@ -1,7 +1,7 @@
 import { newSpecPage } from "@stencil/core/testing";
 import { MwModal } from "./mw-modal";
 import { h } from "@stencil/core";
-import { MWButton } from "../mw-button/mw-button";
+import { MwButton } from "../mw-button/mw-button.component";
 
 describe("GIVEN MwModal", () => {
   const setup = async (
@@ -10,7 +10,7 @@ describe("GIVEN MwModal", () => {
     },
   ) => {
     return await newSpecPage({
-      components: [MwModal, MWButton],
+      components: [MwModal, MwButton],
       template: () => (
         <div>
           <mw-button id="open-modal"></mw-button>
