@@ -45,7 +45,6 @@ export class MwLogin {
   render() {
     return (
       <Host>
-        <mw-button label="Log In"></mw-button>
         <div class={`mw-login mw-login--${this.layout}`}>
           {this.backgroundImage && this.layout !== LoginLayoutEnum.CENTER && (
             <div class={`mw-login-background mw-login-background--${this.layout}`}>

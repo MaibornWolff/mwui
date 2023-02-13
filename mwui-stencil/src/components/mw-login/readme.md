@@ -17,21 +17,21 @@
 
 ### Depends on
 
-- [mw-button](../mw-button)
 - [mw-textfield](../mw-textfield)
 - [mw-icon](../mw-icon)
 - [mw-checkbox](../mw-checkbox)
 - [mw-link](../mw-link)
+- [mw-button](../mw-button)
 
 ### Graph
 
 ```mermaid
 graph TD;
-  mw-login --> mw-button
   mw-login --> mw-textfield
   mw-login --> mw-icon
   mw-login --> mw-checkbox
   mw-login --> mw-link
+  mw-login --> mw-button
   mw-checkbox --> mw-icon
   style mw-login fill:#f9f,stroke:#333,stroke-width:4px
 ```

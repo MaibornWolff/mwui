@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-13T14:27:13",
+  "timestamp": "2023-02-13T14:29:56",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -1589,9 +1589,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-button", "mw-textfield", "mw-icon", "mw-checkbox", "mw-link"],
+      "dependencies": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
       "dependencyGraph": {
-        "mw-login": ["mw-button", "mw-textfield", "mw-icon", "mw-checkbox", "mw-link"],
+        "mw-login": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
         "mw-checkbox": ["mw-icon"]
       }
     },
