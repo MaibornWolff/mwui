@@ -406,6 +406,12 @@ export namespace Components {
      */
     value: string;
   }
+  interface MwRadioGroup {
+    /**
+     * current value of the radio-group
+     */
+    value?: unknown | null;
+  }
   interface MwSlider {
     /**
      * Disable range input
@@ -711,6 +717,11 @@ declare global {
     prototype: HTMLMwRadioElement;
     new (): HTMLMwRadioElement;
   };
+  interface HTMLMwRadioGroupElement extends Components.MwRadioGroup, HTMLStencilElement {}
+  var HTMLMwRadioGroupElement: {
+    prototype: HTMLMwRadioGroupElement;
+    new (): HTMLMwRadioGroupElement;
+  };
   interface HTMLMwSliderElement extends Components.MwSlider, HTMLStencilElement {}
   var HTMLMwSliderElement: {
     prototype: HTMLMwSliderElement;
@@ -762,6 +773,7 @@ declare global {
     "mw-modal-title": HTMLMwModalTitleElement;
     "mw-popover": HTMLMwPopoverElement;
     "mw-radio": HTMLMwRadioElement;
+    "mw-radio-group": HTMLMwRadioGroupElement;
     "mw-slider": HTMLMwSliderElement;
     "mw-switch": HTMLMwSwitchElement;
     "mw-tab": HTMLMwTabElement;
@@ -1177,6 +1189,12 @@ declare namespace LocalJSX {
      */
     value?: string;
   }
+  interface MwRadioGroup {
+    /**
+     * current value of the radio-group
+     */
+    value?: unknown | null;
+  }
   interface MwSlider {
     /**
      * Disable range input
@@ -1357,6 +1375,7 @@ declare namespace LocalJSX {
     "mw-modal-title": MwModalTitle;
     "mw-popover": MwPopover;
     "mw-radio": MwRadio;
+    "mw-radio-group": MwRadioGroup;
     "mw-slider": MwSlider;
     "mw-switch": MwSwitch;
     "mw-tab": MwTab;
@@ -1393,6 +1412,7 @@ declare module "@stencil/core" {
       "mw-modal-title": LocalJSX.MwModalTitle & JSXBase.HTMLAttributes<HTMLMwModalTitleElement>;
       "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
       "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
+      "mw-radio-group": LocalJSX.MwRadioGroup & JSXBase.HTMLAttributes<HTMLMwRadioGroupElement>;
       "mw-slider": LocalJSX.MwSlider & JSXBase.HTMLAttributes<HTMLMwSliderElement>;
       "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
       "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;

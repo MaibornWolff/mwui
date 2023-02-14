@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-14T08:14:50",
+  "timestamp": "2023-02-14T13:52:54",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -2190,6 +2190,41 @@
             }
           ],
           "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-radio-group/mw-radio-group.tsx",
+      "encapsulation": "none",
+      "tag": "mw-radio-group",
+      "readme": "# mw-radio-group\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "value",
+          "type": "unknown",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "current value of the radio-group",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "unknown"
+            }
+          ],
+          "optional": true,
           "required": false
         }
       ],

@@ -2,7 +2,7 @@ import { Component, Element, h, Prop } from "@stencil/core";
 
 @Component({
   tag: "mw-radio",
-  styleUrl: "mw-radio.css",
+  styleUrl: "mw-radio.scss",
   shadow: false,
 })
 export class MwRadio {
