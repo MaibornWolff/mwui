@@ -270,6 +270,10 @@ export namespace Components {
      * input field value
      */
     value?: string | number;
+    /**
+     * label of selected input value
+     */
+    valueLabel?: string | number;
   }
   interface MwIcon {
     /**
@@ -397,6 +401,10 @@ export namespace Components {
     headline: string | undefined;
   }
   interface MwPopover {
+    /**
+     * Closes Popover when user clicks on it
+     */
+    closeOnClick?: boolean;
     /**
      * If set to true, the popover can be closed by clicking outside
      */
@@ -619,9 +627,17 @@ export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
 }
+export interface MwDropdownCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwDropdownElement;
+}
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwMenuItemElement;
+}
+export interface MwPopoverCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwPopoverElement;
 }
 export interface MwSwitchCustomEvent<T> extends CustomEvent<T> {
   detail: T;
@@ -1086,6 +1102,10 @@ declare namespace LocalJSX {
      */
     name?: string;
     /**
+     * MwDropdown emits an event when value changes
+     */
+    onValueChanged?: (event: MwDropdownCustomEvent<string>) => void;
+    /**
      * Placeholder to be displayed
      */
     placeholder?: string;
@@ -1097,6 +1117,10 @@ declare namespace LocalJSX {
      * input field value
      */
     value?: string | number;
+    /**
+     * label of selected input value
+     */
+    valueLabel?: string | number;
   }
   interface MwIcon {
     /**
@@ -1221,6 +1245,10 @@ declare namespace LocalJSX {
   }
   interface MwPopover {
     /**
+     * Closes Popover when user clicks on it
+     */
+    closeOnClick?: boolean;
+    /**
      * If set to true, the popover can be closed by clicking outside
      */
     dismissable?: boolean;
@@ -1232,6 +1260,10 @@ declare namespace LocalJSX {
      * disable default padding
      */
     noPadding?: boolean;
+    /**
+     * MwPopover emits an event when the value of the open prop changes
+     */
+    onOpenEmitter?: (event: MwPopoverCustomEvent<any>) => void;
     /**
      * Whether the popover is visible
      */

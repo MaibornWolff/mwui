@@ -1,9 +1,15 @@
 :host {
   display: block;
 }
-
+.mw-popover {
+  position: relative;
+}
 .mw-popover-content {
   /* visually hide element and make it not take any space */
+  min-width: 180px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 12px;
   visibility: hidden;
   position: absolute;
   /* TODO: token */
@@ -17,6 +23,7 @@
 
 .mw-popover-content.no-padding {
   padding: 0;
+  margin: 0;
 }
 
 .mw-popover-content.open {

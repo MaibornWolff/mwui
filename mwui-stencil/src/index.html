@@ -436,20 +436,14 @@
       <h2>Dropdown</h2>
       <div style="display: flex; flex-flow: row">
         <mw-dropdown label="Dropdown" placeholder="Select option" inline="true">
-          <mw-menu-item value="item-1" title="List Item 1" disabled></mw-menu-item>
-          <mw-menu-item value="item-2" title="List Item 2" subtitle="Subtitle"> </mw-menu-item>
-          <mw-divider></mw-divider>
-          <mw-menu-item value="item-3" title="List Item 3"> </mw-menu-item>
-          <mw-menu-item value="item-4" title="List Item 4" subtitle="Some very long Subtitle"> </mw-menu-item>
-          <mw-menu-item value="item-5" title="List Item 5" subtitle="Subtitle"> </mw-menu-item>
-        </mw-dropdown>
-        <mw-dropdown label="Dropdown" placeholder="Select option" inline="true">
-          <mw-menu-item value="item-1" title="List Item 1" disabled></mw-menu-item>
-          <mw-menu-item value="item-2" title="List Item 2" subtitle="Subtitle"> </mw-menu-item>
-          <mw-divider></mw-divider>
-          <mw-menu-item value="item-3" title="List Item 3"> </mw-menu-item>
-          <mw-menu-item value="item-4" title="List Item 4" subtitle="Some very long Subtitle"> </mw-menu-item>
-          <mw-menu-item value="item-5" title="List Item 5" subtitle="Subtitle"> </mw-menu-item>
+          <div slot="dropdown-menu">
+            <mw-menu-item value="item-1" title="List Item 1" disabled></mw-menu-item>
+            <mw-menu-item value="item-2" title="List Item 2" subtitle="Subtitle"> </mw-menu-item>
+            <mw-divider></mw-divider>
+            <mw-menu-item value="item-3" title="List Item 3"> </mw-menu-item>
+            <mw-menu-item value="item-4" title="List Item 4" subtitle="Some very long Subtitle"> </mw-menu-item>
+            <mw-menu-item value="item-5" title="List Item 5" subtitle="Subtitle"> </mw-menu-item>
+          </div>
         </mw-dropdown>
       </div>
     </section>

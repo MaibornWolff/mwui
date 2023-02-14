@@ -59,7 +59,6 @@ export class MwTextfield {
   @Prop() readOnly?: boolean = false;
 
   @State() focused = false;
-  @State() isDropdownOpen = false;
   private inputElement: HTMLInputElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
@@ -78,16 +77,11 @@ export class MwTextfield {
 
   private onFocus = (): void => {
     this.inputElement.focus();
-    this.isDropdownOpen = true;
     this.focused = true;
   };
 
   private onBlur = (): void => {
     this.focused = false;
-  };
-
-  private onDropdownClick = (): void => {
-    this.isDropdownOpen = false;
   };
 
   render() {
@@ -108,9 +102,66 @@ export class MwTextfield {
                 {this.required && <span class="required">*</span>}
               </label>
             )}
-            <div>
-              <div onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
-                <span class={classnames({ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError })}>
+            {this.hasDropDownMenu ? (
+              <mw-popover>
+                <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+                  <span
+                    class={classnames({
+                      "icon-start": this.hasIconStartSlot,
+                      "focused": this.focused,
+                      "has-error": this.hasError,
+                    })}
+                  >
+                    <slot name="icon-start"></slot>
+                  </span>
+                  <input
+                    ref={el => (this.inputElement = el as HTMLInputElement)}
+                    placeholder={this.placeholder}
+                    class={classnames({
+                      "has-error": this.hasError,
+                    })}
+                    onFocus={this.onFocus}
+                    onBlur={this.onBlur}
+                    onInput={this.onValueChange}
+                    onChange={this.onValueChange}
+                    type={this.type}
+                    name={this.name}
+                    value={this.value}
+                    disabled={this.disabled}
+                    readOnly={this.readOnly}
+                  />
+                  <span
+                    class={classnames({
+                      "icon-end": this.hasIconEndSlot,
+                      "focused": this.focused,
+                      "has-error": this.hasError,
+                    })}
+                  >
+                    <slot name="icon-end"></slot>
+                  </span>
+                  <span
+                    class={classnames({
+                      "icon-end": this.hasDropDownMenu,
+                      "focused": this.focused,
+                      "has-error": this.hasError,
+                    })}
+                  >
+                    <mw-icon icon={this.focused ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
+                  </span>
+                </div>
+                <div slot="content">
+                  <slot name="dropdown-menu"></slot>
+                </div>
+              </mw-popover>
+            ) : (
+              <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+                <span
+                  class={classnames({
+                    "icon-start": this.hasIconStartSlot,
+                    "focused": this.focused,
+                    "has-error": this.hasError,
+                  })}
+                >
                   <slot name="icon-start"></slot>
                 </span>
                 <input
@@ -129,31 +180,17 @@ export class MwTextfield {
                   disabled={this.disabled}
                   readOnly={this.readOnly}
                 />
-                <span class={classnames({ "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError })}>
+                <span
+                  class={classnames({
+                    "icon-end": this.hasIconEndSlot,
+                    "focused": this.focused,
+                    "has-error": this.hasError,
+                  })}
+                >
                   <slot name="icon-end"></slot>
                 </span>
-                {this.hasDropDownMenu && (
-                  <span
-                    class={classnames({
-                      "icon-end": this.hasDropDownMenu,
-                      "focused": this.focused,
-                      "has-error": this.hasError,
-                    })}
-                  >
-                    <mw-icon icon={this.focused ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
-                  </span>
-                )}
               </div>
-              {this.hasDropDownMenu && (
-                <div class="dropdown-menu-wrapper">
-                  <div class={`dropdown-menu ${this.isDropdownOpen && "menu-focused"}`} onClick={this.onDropdownClick}>
-                    <mw-menu-list>
-                      <slot name="dropdown-menu"></slot>
-                    </mw-menu-list>
-                  </div>
-                </div>
-              )}
-            </div>
+            )}
             {this.helperText && !this.inline && (
               <span
                 class={classnames("helper-text", {

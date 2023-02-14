@@ -131,26 +131,3 @@ label {
 .required {
   color: var(--mw-component-text-field-fg-error);
 }
-
-.dropdown-menu.menu-focused {
-  visibility: visible;
-  z-index: 999;
-}
-.dropdown-menu-wrapper {
-  position: relative;
-}
-.dropdown-menu {
-  /* visually hide element and make it not take any space */
-  visibility: hidden;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  box-sizing: border-box;
-}
-.dropdown-menu-backdrop {
-  position: absolute;
-  background: black;
-  z-index: 998;
-  width: 100vw;
-  height: 100vh;
-}
