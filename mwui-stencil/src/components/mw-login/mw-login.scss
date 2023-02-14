@@ -1,5 +1,6 @@
 :host {
   display: block;
+  overflow: hidden;
 }
 
 .mw-login {
@@ -43,7 +44,8 @@
     height: 100%;
     gap: var(--mw-component-log-in-content-gap-within);
     background: var(--mw-component-log-in-bg-default);
-    margin: 0 var(--mw-component-log-in-margin-xy);
+    padding: 0 var(--mw-component-log-in-margin-xy);
+    overflow-y: auto;
 
     &--start {
       grid-area: start;
@@ -63,7 +65,12 @@
       width: 100%;
     }
 
-    &__logo {
+    ::part(button) {
+      width: 100%;
+    }
+
+    #password::part(icon-end) {
+      cursor: pointer;
     }
 
     &__headline {

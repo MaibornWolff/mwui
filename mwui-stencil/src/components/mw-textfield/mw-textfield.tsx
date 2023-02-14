@@ -97,7 +97,7 @@ export class MwTextfield {
               </label>
             )}
             <div onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
-              <span class={classnames({ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError })}>
+              <span class={classnames({ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError })} part="icon-start">
                 <slot name="icon-start"></slot>
               </span>
               <input
@@ -115,7 +115,7 @@ export class MwTextfield {
                 value={this.value}
                 disabled={this.disabled}
               />
-              <span class={classnames({ "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError })}>
+              <span class={classnames({ "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError })} part="icon-end">
                 <slot name="icon-end"></slot>
               </span>
             </div>

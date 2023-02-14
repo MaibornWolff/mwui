@@ -78,6 +78,7 @@ export class MwButton {
       return (
         <Host>
           <a
+            part="button"
             href={this.href}
             target={this.target}
             class={{
@@ -116,6 +117,7 @@ export class MwButton {
     return (
       <Host>
         <button
+          part="button"
           disabled={this.disabled}
           onClick={this.handleClick}
           class={{

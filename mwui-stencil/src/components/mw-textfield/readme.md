@@ -23,6 +23,13 @@
 | -------------- | ------------------------------------------------------- | --------------------- |
 | `valueChanged` | MwTextfield emits an event when textfield value changes | `CustomEvent<string>` |
 
+## Shadow Parts
+
+| Part           | Description |
+| -------------- | ----------- |
+| `"icon-end"`   |             |
+| `"icon-start"` |             |
+
 ## Dependencies
 
 ### Used by

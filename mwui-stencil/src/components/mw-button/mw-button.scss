@@ -32,12 +32,6 @@
   }
 }
 
-@mixin button-variants {
-  @include button-filled;
-  @include button-outlined;
-  @include button-ghost;
-}
-
 @mixin button-filled {
   &--filled {
     border: var(--mw-component-button-border-width-filled-default);
@@ -179,6 +173,12 @@
   &--x-large {
     margin-left: var(--mw-component-button-xl-gap-between);
   }
+}
+
+@mixin button-variants {
+  @include button-filled;
+  @include button-outlined;
+  @include button-ghost;
 }
 
 .mw-button {

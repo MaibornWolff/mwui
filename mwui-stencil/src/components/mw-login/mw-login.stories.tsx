@@ -15,20 +15,44 @@ const Template = args => `
       layout="${args.layout}"
       background-image="${args.backgroundImage}"
       logo="${args.logo}"
-      show-forgot-password-button="${args.showForgotPasswordButton}"
-      show-sign-up-prompt="${args.showSignUpPrompt}"
+      show-forgot-password="${args.forgotPasswordHref}"
+      show-sign-up="${args.signUpHref}"
     ></mw-login>
 `;
-export const Default = Template.bind({});
-Default.args = {
+export const MwLogin = Template.bind({});
+MwLogin.args = {
   headline: "Log in to your account",
   layout: LoginLayoutEnum.CENTER,
   backgroundImage,
   logo,
-  showForgotPasswordButton: true,
-  showSignupPrompt: true,
+  forgotPasswordHref: "url-to-password-reset",
+  signUpHref: "url-to-sign-up",
 };
 
-Default.parameters = {
+MwLogin.parameters = {
+  layout: "fullscreen",
+};
+
+const LoginTemplateWithImage = args => `
+    <mw-login
+      headline="${args.headline}"
+      layout="${args.layout}"
+      background-image="${args.backgroundImage}"
+      logo="${args.logo}"
+      forgot-password-href="${args.forgotPasswordHref}"
+      sign-up-href="${args.signUpHref}"
+    ></mw-login>
+`;
+export const MwLoginWithImage = LoginTemplateWithImage.bind({});
+MwLoginWithImage.args = {
+  headline: "Log in to your account",
+  layout: LoginLayoutEnum.END,
+  backgroundImage,
+  logo,
+  forgotPasswordHref: "url-to-password-reset",
+  signUpHref: "url-to-sign-up",
+};
+
+MwLoginWithImage.parameters = {
   layout: "fullscreen",
 };

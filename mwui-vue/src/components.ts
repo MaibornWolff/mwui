@@ -56,8 +56,9 @@ export const MwLogin = /*@__PURE__*/ defineContainer<JSX.MwLogin>("mw-login", un
     "layout",
     "backgroundImage",
     "logo",
-    "showForgotPasswordButton",
-    "showSignUpPrompt",
+    "signUpHref",
+    "forgotPasswordHref",
+    "submit",
 ]);
 
 export const MwMenu = /*@__PURE__*/ defineContainer<JSX.MwMenu>("mw-menu", undefined, ["testId", "placement", "open"]);

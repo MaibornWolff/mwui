@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, State } from "@stencil/core";
+import { Component, Event, EventEmitter, h, Host, Prop, State } from "@stencil/core";
 import { LoginLayout, LoginLayoutEnum } from "./models/enums/login-layout.enum";
 
 @Component({
@@ -7,7 +7,7 @@ import { LoginLayout, LoginLayoutEnum } from "./models/enums/login-layout.enum";
   shadow: true,
 })
 export class MwLogin {
-  @State() passwordType: "password" | "text" = "text";
+  @State() passwordType: "password" | "text" = "password";
 
   /**
    * Headline text
@@ -29,17 +29,36 @@ export class MwLogin {
   @Prop() logo?: string | undefined;
 
   /**
-   * Wether or not the forgot password button should be displayed
-   */
-  @Prop() showForgotPasswordButton = true;
-
-  /**
    * Wether or not the signUp prompt should be displayed
    */
-  @Prop() showSignUpPrompt = true;
+  @Prop() signUpHref?: string;
+
+  /**
+   * Wether or not the forgot password button should be displayed
+   */
+  @Prop() forgotPasswordHref?: string;
+
+  /**
+   * Event emitted after login button was clicked
+   */
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: false,
+  })
+  submit: EventEmitter<void>;
+
+  constructor() {
+    this.togglePasswordType = this.togglePasswordType.bind(this);
+    this.submitLoginForm = this.submitLoginForm.bind(this);
+  }
 
   private togglePasswordType(): void {
     this.passwordType = this.passwordType === "text" ? "password" : "text";
+  }
+
+  private submitLoginForm(): void {
+    this.submit.emit();
   }
 
   render() {
@@ -63,23 +82,24 @@ export class MwLogin {
               <mw-textfield id="email" type="email" label="Email address" required={true}>
                 <mw-icon icon="mail" slot="icon-end"></mw-icon>
               </mw-textfield>
+
               <mw-textfield id="password" type={this.passwordType} label="Password" required={true} helper-text="min. 7 characters, 1 upper case, 1 lower case">
-                <mw-icon icon="remove_red_eye" slot="icon-end" onClick={this.togglePasswordType}></mw-icon>
+                <mw-icon icon={this.passwordType === "text" ? "visibility_off" : "visibility"} slot="icon-end" onClick={this.togglePasswordType}></mw-icon>
               </mw-textfield>
             </form>
 
             <div class="mw-login-container__user-actions">
               <mw-checkbox label="Remember me"></mw-checkbox>
               <span class="spacefiller"></span>
-              {this.showForgotPasswordButton && <mw-link href="">Forgot your password?</mw-link>}
+              {this.forgotPasswordHref && <mw-link href={this.forgotPasswordHref}>Forgot your password?</mw-link>}
             </div>
 
-            <mw-button label="Log In"></mw-button>
+            <mw-button label="Log In" onClick={this.submitLoginForm} id="submit"></mw-button>
 
-            {this.showSignUpPrompt && (
+            {this.signUpHref && (
               <div class="mw-login-container__sign-up">
                 Dont't have an account?{" "}
-                <mw-link href="" underline={true}>
+                <mw-link href={this.signUpHref} underline={true}>
                   Sign up
                 </mw-link>
               </div>

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-13T14:36:45",
+  "timestamp": "2023-02-14T09:50:48",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -445,7 +445,12 @@
       "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
+      "parts": [
+        {
+          "name": "button",
+          "docs": ""
+        }
+      ],
       "dependents": ["mw-login"],
       "dependencies": [],
       "dependencyGraph": {
@@ -1490,6 +1495,22 @@
           "required": false
         },
         {
+          "name": "forgotPasswordHref",
+          "type": "string",
+          "mutable": false,
+          "attr": "forgot-password-href",
+          "reflectToAttr": false,
+          "docs": "Wether or not the forgot password button should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "headline",
           "type": "string",
           "mutable": false,
@@ -1548,42 +1569,34 @@
           "required": false
         },
         {
-          "name": "showForgotPasswordButton",
-          "type": "boolean",
+          "name": "signUpHref",
+          "type": "string",
           "mutable": false,
-          "attr": "show-forgot-password-button",
-          "reflectToAttr": false,
-          "docs": "Wether or not the forgot password button should be displayed",
-          "docsTags": [],
-          "default": "true",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "showSignUpPrompt",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "show-sign-up-prompt",
+          "attr": "sign-up-href",
           "reflectToAttr": false,
           "docs": "Wether or not the signUp prompt should be displayed",
           "docsTags": [],
-          "default": "true",
           "values": [
             {
-              "type": "boolean"
+              "type": "string"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "submit",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "Event emitted after login button was clicked",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -3025,7 +3038,16 @@
       "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
+      "parts": [
+        {
+          "name": "icon-end",
+          "docs": ""
+        },
+        {
+          "name": "icon-start",
+          "docs": ""
+        }
+      ],
       "dependents": ["mw-icon-gallery", "mw-login"],
       "dependencies": [],
       "dependencyGraph": {

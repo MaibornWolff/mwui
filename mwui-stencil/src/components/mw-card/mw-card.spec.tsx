@@ -65,7 +65,7 @@ describe("GIVEN MwCard", () => {
     const page = await setup();
     const clickMock = (page.rootInstance.clickEmitter.emit = jest.fn());
 
-    page.root.shadowRoot.querySelector<HTMLButtonElement>(".card").click();
+    page.root.shadowRoot.querySelector<HTMLMwCardElement>(".card").click();
 
     expect(clickMock).toHaveBeenCalled();
   });

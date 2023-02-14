@@ -282,6 +282,10 @@ export namespace Components {
      */
     backgroundImage?: string | undefined;
     /**
+     * Wether or not the forgot password button should be displayed
+     */
+    forgotPasswordHref?: string;
+    /**
      * Headline text
      */
     headline?: string | undefined;
@@ -294,13 +298,9 @@ export namespace Components {
      */
     logo?: string | undefined;
     /**
-     * Wether or not the forgot password button should be displayed
-     */
-    showForgotPasswordButton: boolean;
-    /**
      * Wether or not the signUp prompt should be displayed
      */
-    showSignUpPrompt: boolean;
+    signUpHref?: string;
   }
   interface MwMenu {
     /**
@@ -599,6 +599,10 @@ export interface MwCheckboxCustomEvent<T> extends CustomEvent<T> {
 export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
+}
+export interface MwLoginCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwLoginElement;
 }
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
@@ -1089,6 +1093,10 @@ declare namespace LocalJSX {
      */
     backgroundImage?: string | undefined;
     /**
+     * Wether or not the forgot password button should be displayed
+     */
+    forgotPasswordHref?: string;
+    /**
      * Headline text
      */
     headline?: string | undefined;
@@ -1101,13 +1109,13 @@ declare namespace LocalJSX {
      */
     logo?: string | undefined;
     /**
-     * Wether or not the forgot password button should be displayed
+     * Event emitted after login button was clicked
      */
-    showForgotPasswordButton?: boolean;
+    onSubmit?: (event: MwLoginCustomEvent<void>) => void;
     /**
      * Wether or not the signUp prompt should be displayed
      */
-    showSignUpPrompt?: boolean;
+    signUpHref?: string;
   }
   interface MwMenu {
     /**
