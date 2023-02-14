@@ -18,11 +18,7 @@ export const config: Config = {
       "@mwui-token-farm/(.*)$": "<rootDir>/mwui-token-farm/dist/js/$1",
     },
   },
-  plugins: [
-    sass({
-      injectGlobalPaths: ["theme/functions/strings.scss"],
-    }),
-  ],
+  plugins: [sass()],
   outputTargets: [
     react({
       componentCorePackage: "@maibornwolff/mwui-stencil",
