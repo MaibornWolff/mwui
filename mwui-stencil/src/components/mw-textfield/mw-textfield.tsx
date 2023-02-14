@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h, Element } from "@stencil/core";
+import { Component, Event, EventEmitter, Host, Prop, State, h, Element, Listen } from "@stencil/core";
 import classnames from "classnames";
 
 @Component({
@@ -59,6 +59,18 @@ export class MwTextfield {
   @Prop() readOnly?: boolean = false;
 
   @State() focused = false;
+
+  @Listen("clickEmitter")
+  clickEmitterHandler(event): void {
+    this.value = event.target.getAttribute("value");
+  }
+
+  @Listen("openEmitter")
+  stateEmitterHandler(event): void {
+    console.log("listen", event);
+  }
+
+  private isDropdownOpen: boolean;
   private inputElement: HTMLInputElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
@@ -146,7 +158,7 @@ export class MwTextfield {
                       "has-error": this.hasError,
                     })}
                   >
-                    <mw-icon icon={this.focused ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
+                    <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
                   </span>
                 </div>
                 <div slot="content">

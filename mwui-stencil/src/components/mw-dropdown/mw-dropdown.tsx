@@ -61,7 +61,6 @@ export class MwDropdown {
   @Listen("openEmitter")
   stateEmitterHandler(event): void {
     console.log("listen", event);
-    this.isDropdownOpen = event;
   }
 
   private isDropdownOpen: boolean;
