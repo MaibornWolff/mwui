@@ -19,6 +19,7 @@
 - [mw-avatar](../mw-avatar)
 - [mw-checkbox](../mw-checkbox)
 - [mw-chip](../mw-chip)
+- [mw-dropdown](../mw-dropdown)
 - [mw-icon-gallery](../mw-icon-gallery)
 - [mw-slider](../mw-slider)
 - [mw-tab](../mw-tab)
@@ -31,6 +32,7 @@ graph TD;
   mw-avatar --> mw-icon
   mw-checkbox --> mw-icon
   mw-chip --> mw-icon
+  mw-dropdown --> mw-icon
   mw-icon-gallery --> mw-icon
   mw-slider --> mw-icon
   mw-tab --> mw-icon

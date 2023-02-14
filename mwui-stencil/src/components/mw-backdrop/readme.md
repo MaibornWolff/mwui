@@ -4,9 +4,9 @@
 
 ## Properties
 
-| Property          | Attribute          | Description                                               | Type      | Default |
-| ----------------- | ------------------ | --------------------------------------------------------- | --------- | ------- |
-| `backdropDismiss` | `backdrop-dismiss` | determines wether the backdrop will be dismissed by click | `boolean` | `true`  |
+| Property          | Attribute          | Description                                                | Type      | Default |
+| ----------------- | ------------------ | ---------------------------------------------------------- | --------- | ------- |
+| `backdropDismiss` | `backdrop-dismiss` | determines whether the backdrop will be dismissed by click | `boolean` | `true`  |
 
 ## Events
 

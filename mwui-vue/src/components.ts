@@ -47,6 +47,7 @@ export const MwDivider = /*@__PURE__*/ defineContainer<JSX.MwDivider>("mw-divide
 
 export const MwDropdown = /*@__PURE__*/ defineContainer<JSX.MwDropdown>("mw-dropdown", undefined, [
     "value",
+    "valueLabel",
     "name",
     "label",
     "placeholder",
@@ -55,6 +56,7 @@ export const MwDropdown = /*@__PURE__*/ defineContainer<JSX.MwDropdown>("mw-drop
     "inline",
     "required",
     "disabled",
+    "valueChanged",
 ]);
 
 export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>("mw-icon", undefined, ["icon", "size", "fill", "color", "weight"]);
@@ -65,7 +67,7 @@ export const MwLink = /*@__PURE__*/ defineContainer<JSX.MwLink>("mw-link", undef
 
 export const MwMenu = /*@__PURE__*/ defineContainer<JSX.MwMenu>("mw-menu", undefined, ["testId", "placement", "open"]);
 
-export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu-item", undefined, ["title", "subtitle", "disabled", "selected", "clickEmitter"]);
+export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu-item", undefined, ["title", "subtitle", "disabled", "selected", "value", "clickEmitter"]);
 
 export const MwMenuList = /*@__PURE__*/ defineContainer<JSX.MwMenuList>("mw-menu-list", undefined, ["testId"]);
 
@@ -75,7 +77,16 @@ export const MwModalFooter = /*@__PURE__*/ defineContainer<JSX.MwModalFooter>("m
 
 export const MwModalTitle = /*@__PURE__*/ defineContainer<JSX.MwModalTitle>("mw-modal-title", undefined, ["headline", "description"]);
 
-export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popover", undefined, ["testId", "open", "placement", "dismissable", "noPadding", "name"]);
+export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popover", undefined, [
+    "testId",
+    "open",
+    "placement",
+    "dismissable",
+    "closeOnClick",
+    "noPadding",
+    "name",
+    "openEmitter",
+]);
 
 export const MwRadio = /*@__PURE__*/ defineContainer<JSX.MwRadio>("mw-radio", undefined, ["disabled", "checked", "value", "name", "testId", "label"]);
 

@@ -28,21 +28,19 @@
 
 ### Used by
 
-- [mw-dropdown](../mw-dropdown)
 - [mw-icon-gallery](../mw-icon-gallery)
 
 ### Depends on
 
+- [mw-popover](../mw-popover)
 - [mw-icon](../mw-icon)
-- [mw-menu-list](../mw-menu-list)
 
 ### Graph
 
 ```mermaid
 graph TD;
+  mw-textfield --> mw-popover
   mw-textfield --> mw-icon
-  mw-textfield --> mw-menu-list
-  mw-dropdown --> mw-textfield
   mw-icon-gallery --> mw-textfield
   style mw-textfield fill:#f9f,stroke:#333,stroke-width:4px
 ```

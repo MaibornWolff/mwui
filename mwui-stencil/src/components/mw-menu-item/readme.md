@@ -10,6 +10,7 @@
 | `selected` | `selected` | Selected state     | `boolean` | `false`     |
 | `subtitle` | `subtitle` | Menu item subtitle | `string`  | `undefined` |
 | `title`    | `title`    | Menu item title    | `string`  | `undefined` |
+| `value`    | `value`    | Value of item      | `string`  | `undefined` |
 
 ## Events
 
