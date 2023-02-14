@@ -40,7 +40,6 @@ export class MwMenuItem {
 
   private handleClick = (event: PointerEvent & { path: unknown[] }): void => {
     (event.target as HTMLButtonElement).blur();
-    (event.path[1] as HTMLButtonElement).blur();
     if (!this.disabled) this.clickEmitter.emit(event);
   };
 

@@ -58,20 +58,41 @@ export class MwTextfield {
    */
   @Prop() readOnly?: boolean = false;
   /**
-   * Allows users to enter multiple enters into textfield. Only functional if `dropdown-menu` slot is given.
+   * Allows users to enter multiple values into textfield
    */
   @Prop() multiple?: boolean = false;
-
+  /**
+   * Amount of allowed `multipleValues`
+   */
+  @Prop() multipleMaximum?: number;
+  /**
+   * Values, when `multiple` is true
+   */
+  @Prop({ reflect: true, mutable: true }) multipleValues?: Array<string | number> = [];
   @State() focused = false;
-
   @Listen("clickEmitter")
   clickEmitterHandler(event): void {
-    this.value = event.target.getAttribute("value");
+    const emittedValue = event.target.getAttribute("value");
+    if (this.multiple) {
+      this.addMultiValue(emittedValue, true);
+    } else {
+      this.value = emittedValue;
+    }
   }
 
   @Listen("openEmitter")
   stateEmitterHandler(event): void {
     console.log("listen", event);
+  }
+
+  @Listen("closeEmitter")
+  closeEmitterHandler(event): void {
+    console.log("listen", event);
+  }
+
+  @Listen("keydown")
+  handleEnterPress(event: KeyboardEvent): void {
+    if (this.multiple && this.focused && event.key === "Enter") this.addMultiValue(this.inputElement.value);
   }
 
   private isDropdownOpen: boolean;
@@ -87,8 +108,10 @@ export class MwTextfield {
   }
 
   private onValueChange = (event: Event): void => {
-    this.value = (event.target as HTMLInputElement).value;
-    this.valueChanged.emit(this.value);
+    if (!this.multiple) {
+      this.value = (event.target as HTMLInputElement).value;
+      this.valueChanged.emit(this.value);
+    }
   };
 
   private onFocus = (): void => {
@@ -98,12 +121,24 @@ export class MwTextfield {
 
   private onBlur = (): void => {
     this.focused = false;
+    this.addMultiValue(this.inputElement.value);
+  };
+
+  private addMultiValue = (value: string | number, option = false): void => {
+    if (this.multiple) {
+      if ((option || this.inputElement.value.trim().length > 0) && !this.multipleValues.includes(value)) {
+        if (!this.multipleMaximum || this.multipleValues.length <= this.multipleMaximum) {
+          this.multipleValues = [...this.multipleValues, value];
+        }
+      }
+      this.inputElement.value = "";
+    }
   };
 
   render() {
     return (
       <Host>
-        <div class="wrapper">
+        <div tabindex="0" class="wrapper">
           <div
             class={classnames("textfield", {
               "inline": this.inline,
@@ -119,7 +154,7 @@ export class MwTextfield {
               </label>
             )}
             {this.hasDropDownMenu ? (
-              <mw-popover>
+              <mw-popover noPadding={true} closeOnClick={true} open={false}>
                 <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
                   <span
                     class={classnames({
@@ -131,7 +166,11 @@ export class MwTextfield {
                     <slot name="icon-start"></slot>
                   </span>
                   <div class="input-options">
-                    <slot name="multiple"></slot>
+                    {this.multipleValues.map((value, key) => (
+                      <mw-chip key={key} showClose={true}>
+                        {value}
+                      </mw-chip>
+                    ))}
 
                     <input
                       ref={el => (this.inputElement = el as HTMLInputElement)}
@@ -184,22 +223,30 @@ export class MwTextfield {
                 >
                   <slot name="icon-start"></slot>
                 </span>
-                <input
-                  ref={el => (this.inputElement = el as HTMLInputElement)}
-                  placeholder={this.placeholder}
-                  class={classnames({
-                    "has-error": this.hasError,
-                  })}
-                  onFocus={this.onFocus}
-                  onBlur={this.onBlur}
-                  onInput={this.onValueChange}
-                  onChange={this.onValueChange}
-                  type={this.type}
-                  name={this.name}
-                  value={this.value}
-                  disabled={this.disabled}
-                  readOnly={this.readOnly}
-                />
+                <div class="input-options">
+                  {this.multipleValues.map((value, key) => (
+                    <mw-chip key={key} showClose={true}>
+                      {value}
+                    </mw-chip>
+                  ))}
+                  <input
+                    ref={el => (this.inputElement = el as HTMLInputElement)}
+                    placeholder={this.placeholder}
+                    class={classnames({
+                      "has-error": this.hasError,
+                    })}
+                    onFocus={this.onFocus}
+                    onBlur={this.onBlur}
+                    onInput={this.onValueChange}
+                    onChange={this.onValueChange}
+                    type={this.type}
+                    name={this.name}
+                    value={this.value}
+                    disabled={this.disabled}
+                    readOnly={this.readOnly}
+                  />
+                </div>
+
                 <span
                   class={classnames({
                     "icon-end": this.hasIconEndSlot,

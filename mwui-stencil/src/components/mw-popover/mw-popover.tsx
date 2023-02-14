@@ -66,7 +66,7 @@ export class MwPopover {
   private anchorRef!: HTMLElement;
 
   @Watch("open")
-  onOpenChange(event: Event): void {
+  handleOpen(event: Event): void {
     console.log("emit", event);
     this.openEmitter.emit(event);
   }

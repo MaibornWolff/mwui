@@ -583,9 +583,17 @@ export namespace Components {
      */
     label?: string;
     /**
-     * Allows users to enter multiple enters into textfield. Only functional if `dropdown-menu` slot is given.
+     * Allows users to enter multiple values into textfield
      */
     multiple?: boolean;
+    /**
+     * Amount of allowed `multipleValues`
+     */
+    multipleMaximum?: number;
+    /**
+     * Values, when `multiple` is true
+     */
+    multipleValues?: Array<string | number>;
     /**
      * input field name
      */
@@ -1445,9 +1453,17 @@ declare namespace LocalJSX {
      */
     label?: string;
     /**
-     * Allows users to enter multiple enters into textfield. Only functional if `dropdown-menu` slot is given.
+     * Allows users to enter multiple values into textfield
      */
     multiple?: boolean;
+    /**
+     * Amount of allowed `multipleValues`
+     */
+    multipleMaximum?: number;
+    /**
+     * Values, when `multiple` is true
+     */
+    multipleValues?: Array<string | number>;
     /**
      * input field name
      */
