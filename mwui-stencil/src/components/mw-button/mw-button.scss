@@ -1,0 +1,212 @@
+@mixin button-sizes {
+  &--small {
+    font-weight: var(--mw-component-button-label-sm-font-weight);
+    padding: var(--mw-component-button-sm-padding-y) var(--mw-component-button-sm-padding-x);
+    font-family: var(--mw-component-button-label-sm-font-family);
+    line-height: var(--mw-component-button-label-sm-line-height);
+    font-size: var(--mw-component-button-label-sm-font-size);
+  }
+
+  &--medium {
+    font-weight: var(--mw-component-button-label-md-font-weight);
+    padding: var(--mw-component-button-md-padding-y) var(--mw-component-button-md-padding-x);
+    font-family: var(--mw-component-button-label-md-font-family);
+    line-height: var(--mw-component-button-label-md-line-height);
+    font-size: var(--mw-component-button-label-md-font-size);
+  }
+
+  &--large {
+    font-weight: var(--mw-component-button-label-lg-font-weight);
+    padding: var(--mw-component-button-lg-padding-y) var(--mw-component-button-lg-padding-x);
+    font-family: var(--mw-component-button-label-lg-font-family);
+    line-height: var(--mw-component-button-label-lg-line-height);
+    font-size: var(--mw-component-button-label-lg-font-size);
+  }
+
+  &--x-large {
+    font-weight: var(--mw-component-button-label-xl-font-weight);
+    padding: var(--mw-component-button-xl-padding-y) var(--mw-component-button-xl-padding-x);
+    font-family: var(--mw-component-button-label-xl-font-family);
+    line-height: var(--mw-component-button-label-xl-line-height);
+    font-size: var(--mw-component-button-label-xl-font-size);
+  }
+}
+
+@mixin button-filled {
+  &--filled {
+    border: var(--mw-component-button-border-width-filled-default);
+    color: var(--mw-component-button-filled-color-fg-default);
+    background-color: var(--mw-component-button-filled-color-bg-default);
+
+    &:hover {
+      background-color: var(--mw-component-button-filled-color-bg-hover);
+      color: var(--mw-component-button-filled-color-fg-hover);
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 var(--mw-component-button-border-width-filled-focused) var(--mw-component-button-filled-color-outline-focused);
+      background-color: var(--mw-component-button-filled-color-bg-focused);
+      color: var(--mw-component-button-filled-color-fg-focused);
+    }
+
+    &:active {
+      background-color: var(--mw-component-button-filled-color-bg-pressed);
+      color: var(--mw-component-button-filled-color-fg-pressed);
+    }
+
+    &:disabled {
+      background-color: var(--mw-component-button-filled-color-bg-disabled);
+      color: var(--mw-component-button-filled-color-fg-disabled);
+    }
+  }
+}
+
+@mixin button-outlined {
+  &--outline {
+    border: 0;
+    box-shadow: inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-default);
+    color: var(--mw-component-button-outline-ghost-color-fg-default);
+    background-color: var(--mw-component-button-outline-ghost-color-bg-default);
+
+    &:hover {
+      box-shadow: inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-hover);
+      color: var(--mw-component-button-outline-ghost-color-fg-hover);
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-focused);
+      color: var(--mw-component-button-outline-ghost-color-fg-focused);
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-pressed);
+      color: var(--mw-component-button-outline-ghost-color-fg-pressed);
+    }
+
+    &:disabled {
+      box-shadow: inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-disabled);
+      color: var(--mw-component-button-outline-ghost-color-fg-disabled);
+    }
+  }
+}
+
+@mixin button-ghost {
+  &--ghost {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: var(--mw-component-button-outline-ghost-color-fg-default);
+    background-color: var(--mw-component-button-outline-ghost-color-bg-default);
+
+    &:hover {
+      color: var(--mw-component-button-outline-ghost-color-fg-hover);
+    }
+
+    &:focus {
+      box-shadow: inset 0 0 0 var(--mw-component-button-border-width-outline-focused) var(--mw-component-button-outline-ghost-color-border-focused);
+      color: var(--mw-component-button-outline-ghost-color-fg-focused);
+    }
+
+    &:active {
+      box-shadow: none;
+      color: var(--mw-component-button-outline-ghost-color-fg-pressed);
+    }
+
+    &:disabled {
+      box-shadow: none;
+      color: var(--mw-component-button-outline-ghost-color-fg-disabled);
+    }
+  }
+}
+
+@mixin icon-button-styles {
+  min-width: 0;
+
+  &--small {
+    padding: var(--mw-component-button-sm-padding-icon);
+  }
+
+  &--medium {
+    padding: var(--mw-component-button-md-padding-icon);
+  }
+
+  &--large {
+    padding: var(--mw-component-button-lg-padding-icon);
+  }
+
+  &--x-large {
+    padding: var(--mw-component-button-xl-padding-icon);
+  }
+}
+
+@mixin icon-start-styles {
+  &--small {
+    margin-right: var(--mw-component-button-sm-gap-between);
+  }
+
+  &--medium {
+    margin-right: var(--mw-component-button-md-gap-between);
+  }
+
+  &--large {
+    margin-right: var(--mw-component-button-lg-gap-between);
+  }
+
+  &--x-large {
+    margin-right: var(--mw-component-button-xl-gap-between);
+  }
+}
+
+@mixin icon-end-styles {
+  &--small {
+    margin-left: var(--mw-component-button-sm-gap-between);
+  }
+
+  &--medium {
+    margin-left: var(--mw-component-button-md-gap-between);
+  }
+
+  &--large {
+    margin-left: var(--mw-component-button-lg-gap-between);
+  }
+
+  &--x-large {
+    margin-left: var(--mw-component-button-xl-gap-between);
+  }
+}
+
+@mixin button-variants {
+  @include button-filled;
+  @include button-outlined;
+  @include button-ghost;
+}
+
+.mw-button {
+  @include button-sizes;
+  @include button-variants;
+
+  &--icon-only {
+    @include icon-button-styles;
+  }
+
+  &--flex {
+    display: flex;
+    align-items: center;
+  }
+
+  appearance: none;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: var(--mw-component-button-border-radius-default);
+  min-width: var(--mw-component-size-button-filled-outline-min-w);
+  letter-spacing: var(--mw-core-letter-spacing-buttons);
+
+  .mw-button-icon-start {
+    @include icon-start-styles;
+  }
+
+  .mw-button-icon-end {
+    @include icon-end-styles;
+  }
+}
