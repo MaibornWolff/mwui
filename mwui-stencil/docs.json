@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-13T10:27:59",
+  "timestamp": "2023-02-14T12:47:28",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -219,7 +219,7 @@
       "filePath": "./src/components/mw-backdrop/mw-backdrop.tsx",
       "encapsulation": "shadow",
       "tag": "mw-backdrop",
-      "readme": "# mw-backdrop\r\n\r",
+      "readme": "# mw-backdrop\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -230,7 +230,7 @@
           "mutable": false,
           "attr": "backdrop-dismiss",
           "reflectToAttr": false,
-          "docs": "determines wether the backdrop will be dismissed by click",
+          "docs": "determines whether the backdrop will be dismissed by click",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -271,8 +271,8 @@
       }
     },
     {
-      "filePath": "./src/components/mw-button/mw-button.tsx",
-      "encapsulation": "none",
+      "filePath": "./src/components/mw-button/mw-button.component.tsx",
+      "encapsulation": "shadow",
       "tag": "mw-button",
       "readme": "# mw-button\n",
       "docs": "",
@@ -1122,7 +1122,7 @@
           "mutable": false,
           "attr": "show-close",
           "reflectToAttr": false,
-          "docs": "Flag wether to show close icon or not",
+          "docs": "Flag whether to show close icon or not",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1213,7 +1213,7 @@
       "filePath": "./src/components/mw-dropdown/mw-dropdown.tsx",
       "encapsulation": "shadow",
       "tag": "mw-dropdown",
-      "readme": "# mw-dropdown\r\n\r",
+      "readme": "# mw-dropdown\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1325,6 +1325,7 @@
           "reflectToAttr": false,
           "docs": "Placeholder to be displayed",
           "docsTags": [],
+          "default": "\"Placeholder\"",
           "values": [
             {
               "type": "string"
@@ -1368,26 +1369,65 @@
           ],
           "optional": true,
           "required": false
+        },
+        {
+          "name": "valueLabel",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value-label",
+          "reflectToAttr": true,
+          "docs": "label of selected input value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
-      "events": [],
-      "listeners": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": false,
+          "docs": "MwDropdown emits an event when value changes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "clickEmitter",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "openEmitter",
+          "capture": false,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-textfield"],
+      "dependencies": ["mw-popover", "mw-icon"],
       "dependencyGraph": {
-        "mw-dropdown": ["mw-textfield"],
-        "mw-textfield": ["mw-icon", "mw-menu-list"]
+        "mw-dropdown": ["mw-popover", "mw-icon"]
       }
     },
     {
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon",
-      "readme": "# mw-icon\r\n\r",
+      "readme": "# mw-icon\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1500,12 +1540,13 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-slider", "mw-tab", "mw-textfield"],
+      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-dropdown", "mw-icon-gallery", "mw-slider", "mw-tab", "mw-textfield"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-avatar": ["mw-icon"],
         "mw-checkbox": ["mw-icon"],
         "mw-chip": ["mw-icon"],
+        "mw-dropdown": ["mw-icon"],
         "mw-icon-gallery": ["mw-icon"],
         "mw-slider": ["mw-icon"],
         "mw-tab": ["mw-icon"],
@@ -1516,7 +1557,7 @@
       "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon-gallery",
-      "readme": "# mw-icon-gallery\r\n\r",
+      "readme": "# mw-icon-gallery\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1548,7 +1589,7 @@
       "dependencies": ["mw-textfield", "mw-icon", "mw-switch"],
       "dependencyGraph": {
         "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"],
-        "mw-textfield": ["mw-icon", "mw-menu-list"]
+        "mw-textfield": ["mw-popover", "mw-icon"]
       }
     },
     {
@@ -1825,6 +1866,22 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "Value of item",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
@@ -1851,7 +1908,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
-      "readme": "# mw-menu-list\r\n\r",
+      "readme": "# mw-menu-list\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1879,17 +1936,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-textfield"],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "mw-textfield": ["mw-menu-list"]
-      }
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-modal/mw-modal.tsx",
       "encapsulation": "shadow",
       "tag": "mw-modal",
-      "readme": "# mw-modal\r\n\r",
+      "readme": "# mw-modal\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2031,7 +2086,7 @@
       "filePath": "./src/components/mw-modal-footer/mw-modal-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-modal-footer",
-      "readme": "# mw-modal-footer\r\n\r",
+      "readme": "# mw-modal-footer\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2050,7 +2105,7 @@
       "filePath": "./src/components/mw-modal-title/mw-modal-title.tsx",
       "encapsulation": "shadow",
       "tag": "mw-modal-title",
-      "readme": "# mw-modal-title\r\n\r",
+      "readme": "# mw-modal-title\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2107,6 +2162,23 @@
       "docsTags": [],
       "usage": {},
       "props": [
+        {
+          "name": "closeOnClick",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "close-on-click",
+          "reflectToAttr": false,
+          "docs": "Closes Popover when user clicks on it",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
         {
           "name": "dismissable",
           "type": "boolean",
@@ -2254,15 +2326,27 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "openEmitter",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "MwPopover emits an event when the value of the open prop changes",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-menu"],
+      "dependents": ["mw-dropdown", "mw-menu", "mw-textfield"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-menu": ["mw-popover"]
+        "mw-dropdown": ["mw-popover"],
+        "mw-menu": ["mw-popover"],
+        "mw-textfield": ["mw-popover"]
       }
     },
     {
@@ -2877,7 +2961,7 @@
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
       "encapsulation": "shadow",
       "tag": "mw-textfield",
-      "readme": "# mw-textfield\r\n\r",
+      "readme": "# mw-textfield\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3084,11 +3168,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-dropdown", "mw-icon-gallery"],
-      "dependencies": ["mw-icon", "mw-menu-list"],
+      "dependents": ["mw-icon-gallery"],
+      "dependencies": ["mw-popover", "mw-icon"],
       "dependencyGraph": {
-        "mw-textfield": ["mw-icon", "mw-menu-list"],
-        "mw-dropdown": ["mw-textfield"],
+        "mw-textfield": ["mw-popover", "mw-icon"],
         "mw-icon-gallery": ["mw-textfield"]
       }
     }

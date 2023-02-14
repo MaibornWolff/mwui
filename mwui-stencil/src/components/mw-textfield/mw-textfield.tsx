@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h, Element } from "@stencil/core";
+import { Component, Event, EventEmitter, Host, Prop, State, h, Element, Listen } from "@stencil/core";
 import classnames from "classnames";
 
 @Component({
@@ -64,6 +64,17 @@ export class MwTextfield {
 
   @State() focused = false;
 
+  @Listen("clickEmitter")
+  clickEmitterHandler(event): void {
+    this.value = event.target.getAttribute("value");
+  }
+
+  @Listen("openEmitter")
+  stateEmitterHandler(event): void {
+    console.log("listen", event);
+  }
+
+  private isDropdownOpen: boolean;
   private inputElement: HTMLInputElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
@@ -107,34 +118,47 @@ export class MwTextfield {
                 {this.required && <span class="required">*</span>}
               </label>
             )}
-            <div>
-              <div onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
-                <span class={classnames({ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError })}>
-                  <slot name="icon-start"></slot>
-                </span>
-                <div class="input-options">
-                  <slot name="multiple"></slot>
-                  <input
-                    ref={el => (this.inputElement = el as HTMLInputElement)}
-                    placeholder={this.placeholder}
+            {this.hasDropDownMenu ? (
+              <mw-popover>
+                <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+                  <span
                     class={classnames({
+                      "icon-start": this.hasIconStartSlot,
+                      "focused": this.focused,
                       "has-error": this.hasError,
                     })}
-                    onFocus={this.onFocus}
-                    onBlur={this.onBlur}
-                    onInput={this.onValueChange}
-                    onChange={this.onValueChange}
-                    type={this.type}
-                    name={this.name}
-                    value={this.value}
-                    disabled={this.disabled}
-                    readOnly={this.readOnly}
-                  />
-                </div>
-                <span class={classnames({ "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError })}>
-                  <slot name="icon-end"></slot>
-                </span>
-                {this.hasDropDownMenu && (
+                  >
+                    <slot name="icon-start"></slot>
+                  </span>
+                  <div class="input-options">
+                    <slot name="multiple"></slot>
+
+                    <input
+                      ref={el => (this.inputElement = el as HTMLInputElement)}
+                      placeholder={this.placeholder}
+                      class={classnames({
+                        "has-error": this.hasError,
+                      })}
+                      onFocus={this.onFocus}
+                      onBlur={this.onBlur}
+                      onInput={this.onValueChange}
+                      onChange={this.onValueChange}
+                      type={this.type}
+                      name={this.name}
+                      value={this.value}
+                      disabled={this.disabled}
+                      readOnly={this.readOnly}
+                    />
+                  </div>
+                  <span
+                    class={classnames({
+                      "icon-end": this.hasIconEndSlot,
+                      "focused": this.focused,
+                      "has-error": this.hasError,
+                    })}
+                  >
+                    <slot name="icon-end"></slot>
+                  </span>
                   <span
                     class={classnames({
                       "icon-end": this.hasDropDownMenu,
@@ -142,20 +166,51 @@ export class MwTextfield {
                       "has-error": this.hasError,
                     })}
                   >
-                    <mw-icon icon={this.focused ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
+                    <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
                   </span>
-                )}
-              </div>
-              {this.hasDropDownMenu && (
-                <div class="dropdown-menu-wrapper">
-                  <div class={`dropdown-menu ${this.focused && "menu-focused"}`}>
-                    <mw-menu-list>
-                      <slot name="dropdown-menu"></slot>
-                    </mw-menu-list>
-                  </div>
                 </div>
-              )}
-            </div>
+                <div slot="content">
+                  <slot name="dropdown-menu"></slot>
+                </div>
+              </mw-popover>
+            ) : (
+              <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+                <span
+                  class={classnames({
+                    "icon-start": this.hasIconStartSlot,
+                    "focused": this.focused,
+                    "has-error": this.hasError,
+                  })}
+                >
+                  <slot name="icon-start"></slot>
+                </span>
+                <input
+                  ref={el => (this.inputElement = el as HTMLInputElement)}
+                  placeholder={this.placeholder}
+                  class={classnames({
+                    "has-error": this.hasError,
+                  })}
+                  onFocus={this.onFocus}
+                  onBlur={this.onBlur}
+                  onInput={this.onValueChange}
+                  onChange={this.onValueChange}
+                  type={this.type}
+                  name={this.name}
+                  value={this.value}
+                  disabled={this.disabled}
+                  readOnly={this.readOnly}
+                />
+                <span
+                  class={classnames({
+                    "icon-end": this.hasIconEndSlot,
+                    "focused": this.focused,
+                    "has-error": this.hasError,
+                  })}
+                >
+                  <slot name="icon-end"></slot>
+                </span>
+              </div>
+            )}
             {this.helperText && !this.inline && (
               <span
                 class={classnames("helper-text", {

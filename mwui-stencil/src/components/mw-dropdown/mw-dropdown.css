@@ -8,15 +8,15 @@
   flex-direction: column;
 }
 
-.textfield {
+.dropdown {
   display: flex;
   flex-direction: column;
   min-width: var(--mw-component-size-text-field-min-width);
   color: var(--mw-component-text-field-fg-default);
 }
 
-.textfield.disabled,
-.textfield.disabled input {
+.dropdown.disabled,
+.dropdown.disabled input {
   color: var(--mw-component-text-field-fg-disabled);
 }
 
@@ -28,18 +28,18 @@ label {
   line-height: var(--mw-component-text-field-label-line-height);
 }
 
-.textfield.inline {
+.dropdown.inline {
   flex-direction: row;
   display: inline-flex;
   align-items: center;
 }
 
-.textfield.inline .input {
+.dropdown.inline .input {
   width: max-content;
   min-width: var(--mw-component-size-text-field-min-width);
 }
 
-.textfield.inline label {
+.dropdown.inline label {
   width: var(--mw-component-size-text-field-label-horizontal-width);
   padding: var(--mw-component-text-field-padding-text-field-label-horizontal);
 }
@@ -48,6 +48,7 @@ label {
   position: relative;
   display: flex;
   align-items: center;
+  cursor: pointer;
   /* TODO: missing token */
   border-radius: var(--border-radius-standard-md);
   padding: var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);
@@ -88,7 +89,8 @@ label {
   margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
 }
 
-.input input  {
+.input button {
+  cursor: pointer;
   border: none;
   padding: 0;
   width: 100%;
@@ -99,14 +101,14 @@ label {
   line-height: var(--mw-component-text-field-text-line-height);
 }
 
-.input input:focus-visible,
-.input input:focus {
+.input button:focus-visible,
+.input button:focus {
   outline: none;
   border: none;
   box-shadow: none;
 }
 
-.input input::placeholder {
+.input button.placeholder {
   color: var(--mw-component-text-field-fg-placeholder);
 }
 
@@ -126,27 +128,4 @@ label {
 
 .required {
   color: var(--mw-component-text-field-fg-error);
-}
-
-.dropdown-menu.menu-focused {
-  visibility: visible;
-  z-index: 999;
-}
-.dropdown-menu-wrapper {
-  position: relative;
-}
-.dropdown-menu {
-  /* visually hide element and make it not take any space */
-  visibility: hidden;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  /* TODO: token */
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-  /* TODO: token*/
-  padding: 12px;
-  background: var(--mw-component-menu-item-bg-default);
-  border-radius: var(--mw-component-menu-item-border-radius);
-  border-width: var(--mw-component-menu-item-border-width-default);
-  box-sizing: border-box;
 }

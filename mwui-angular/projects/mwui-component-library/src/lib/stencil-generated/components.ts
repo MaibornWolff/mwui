@@ -335,23 +335,29 @@ export class MwDivider {
     }
 }
 
-export declare interface MwDropdown extends Components.MwDropdown {}
+export declare interface MwDropdown extends Components.MwDropdown {
+    /**
+     * MwDropdown emits an event when value changes
+     */
+    valueChanged: EventEmitter<CustomEvent<string>>;
+}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value"],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value", "valueLabel"],
 })
 @Component({
     selector: "mw-dropdown",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value"],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value", "valueLabel"],
 })
 export class MwDropdown {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["valueChanged"]);
     }
 }
 
@@ -444,13 +450,13 @@ export declare interface MwMenuItem extends Components.MwMenuItem {
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["disabled", "selected", "subtitle", "title"],
+    inputs: ["disabled", "selected", "subtitle", "title", "value"],
 })
 @Component({
     selector: "mw-menu-item",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["disabled", "selected", "subtitle", "title"],
+    inputs: ["disabled", "selected", "subtitle", "title", "value"],
 })
 export class MwMenuItem {
     protected el: HTMLElement;
@@ -540,23 +546,29 @@ export class MwModalTitle {
     }
 }
 
-export declare interface MwPopover extends Components.MwPopover {}
+export declare interface MwPopover extends Components.MwPopover {
+    /**
+     * MwPopover emits an event when the value of the open prop changes
+     */
+    openEmitter: EventEmitter<CustomEvent<any>>;
+}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["dismissable", "name", "noPadding", "open", "placement", "testId"],
+    inputs: ["closeOnClick", "dismissable", "name", "noPadding", "open", "placement", "testId"],
 })
 @Component({
     selector: "mw-popover",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["dismissable", "name", "noPadding", "open", "placement", "testId"],
+    inputs: ["closeOnClick", "dismissable", "name", "noPadding", "open", "placement", "testId"],
 })
 export class MwPopover {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["openEmitter"]);
     }
 }
 

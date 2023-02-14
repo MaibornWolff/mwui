@@ -1,4 +1,5 @@
-import { Component, Host, h, Prop } from "@stencil/core";
+import { Component, Host, h, Prop, Element, State, Listen, Event, EventEmitter } from "@stencil/core";
+import classnames from "classnames";
 
 @Component({
   tag: "mw-dropdown",
@@ -6,10 +7,19 @@ import { Component, Host, h, Prop } from "@stencil/core";
   shadow: true,
 })
 export class MwDropdown {
+  @Element() host: HTMLMwDropdownElement;
+  /**
+   * MwDropdown emits an event when value changes
+   */
+  @Event({ bubbles: true, composed: false }) valueChanged: EventEmitter<string>;
   /**
    * input field value
    */
   @Prop({ reflect: true, mutable: true }) value?: string | number;
+  /**
+   * label of selected input value
+   */
+  @Prop({ reflect: true, mutable: true }) valueLabel?: string | number;
   /**
    * input field name
    */
@@ -21,7 +31,7 @@ export class MwDropdown {
   /**
    * Placeholder to be displayed
    */
-  @Prop() placeholder?: string;
+  @Prop() placeholder?: string = "Placeholder";
   /**
    * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
    */
@@ -42,27 +52,131 @@ export class MwDropdown {
    * Visually and functionally disabled input
    */
   @Prop() disabled?: boolean = false;
+  @State() focused = false;
+  @Listen("clickEmitter")
+  clickEmitterHandler(event): void {
+    this.value = event.target.getAttribute("value");
+    this.valueLabel = event.target.getAttribute("title");
+  }
+  @Listen("openEmitter")
+  stateEmitterHandler(event): void {
+    console.log("listen", event);
+  }
+
+  private isDropdownOpen: boolean;
+  private buttonElement: HTMLButtonElement;
+  private hasIconStartSlot: boolean;
+  private hasIconEndSlot: boolean;
+  private hasDropDownMenu: boolean;
+
+  componentWillLoad(): void {
+    this.hasIconStartSlot = !!this.host.querySelector("[slot='icon-start']");
+    this.hasIconEndSlot = !!this.host.querySelector("[slot='icon-end']");
+    this.hasDropDownMenu = !!this.host.querySelector("[slot='dropdown-menu']");
+  }
+
+  private onValueChange = (event: Event): void => {
+    this.value = (event.target as HTMLButtonElement).value;
+    this.valueChanged.emit(this.value);
+  };
+
+  private onFocus = (): void => {
+    this.buttonElement.focus();
+    this.focused = true;
+  };
+
+  private onBlur = (): void => {
+    this.focused = false;
+  };
 
   render() {
     return (
       <Host>
-        <mw-textfield
-          label={this.label}
-          name={this.name}
-          value={this.value}
-          placeholder={this.placeholder}
-          helperText={this.helperText}
-          hasError={this.hasError}
-          inline={this.inline}
-          required={this.required}
-          disabled={this.disabled}
-          readOnly={true}
-        >
-          <div slot="dropdown-menu">
-            <slot></slot>
+        <div class="wrapper">
+          <div
+            class={classnames("dropdown", {
+              "inline": this.inline,
+              "has-error": this.hasError,
+              "disabled": this.disabled,
+            })}
+          >
+            {!!this.label && (
+              <label htmlFor={this.name} class="label">
+                {this.label}
+                {this.required && <span class="required">*</span>}
+              </label>
+            )}
+            <mw-popover noPadding={true} closeOnClick={true} open={false}>
+              <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+                <span
+                  class={classnames({
+                    "icon-start": this.hasIconStartSlot,
+                    "focused": this.focused,
+                    "has-error": this.hasError,
+                  })}
+                >
+                  <slot name="icon-start"></slot>
+                </span>
+                <button
+                  class={classnames("button", {
+                    "has-error": this.hasError,
+                    "placeholder": !this.valueLabel,
+                  })}
+                  ref={el => (this.buttonElement = el as HTMLButtonElement)}
+                  name={this.name}
+                  value={this.value}
+                  disabled={this.disabled}
+                  onChange={this.onValueChange}
+                  onFocus={this.onFocus}
+                  onBlur={this.onBlur}
+                >
+                  {this.valueLabel ? this.valueLabel : this.placeholder}
+                </button>
+                <span
+                  class={classnames({
+                    "icon-end": this.hasIconEndSlot,
+                    "focused": this.focused,
+                    "has-error": this.hasError,
+                  })}
+                >
+                  <slot name="icon-end"></slot>
+                </span>
+                {this.hasDropDownMenu && (
+                  <span
+                    class={classnames({
+                      "icon-end": this.hasDropDownMenu,
+                      "focused": this.focused,
+                      "has-error": this.hasError,
+                    })}
+                  >
+                    <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
+                  </span>
+                )}
+              </div>
+              <div slot="content">
+                <slot name="dropdown-menu"></slot>
+              </div>
+            </mw-popover>
+            {this.helperText && !this.inline && (
+              <span
+                class={classnames("helper-text", {
+                  "has-error": this.hasError,
+                })}
+              >
+                {this.helperText}
+              </span>
+            )}
           </div>
-          <input disabled />
-        </mw-textfield>
+          {this.helperText && this.inline && (
+            <span
+              class={classnames("helper-text", {
+                "has-error": this.hasError,
+              })}
+            >
+              {this.helperText}
+            </span>
+          )}
+        </div>
       </Host>
     );
   }

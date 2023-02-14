@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h, Element } from "@stencil/core";
+import { Component, Host, Prop, h, Element, Event, EventEmitter, Watch } from "@stencil/core";
 import { createPopper } from "@popperjs/core";
 import classnames from "classnames";
 import { ClickOutside } from "stencil-click-outside";
@@ -41,6 +41,10 @@ export class MwPopover {
    */
   @Prop() dismissable?: boolean = false;
   /**
+   * Closes Popover when user clicks on it
+   */
+  @Prop() closeOnClick?: boolean = false;
+  /**
    * disable default padding
    */
   @Prop() noPadding?: boolean = false;
@@ -48,9 +52,24 @@ export class MwPopover {
    * Name used internally to reference anchor and content elements
    */
   @Prop() name?: string = "tooltip";
+  /**
+   * MwPopover emits an event when the value of the open prop changes
+   */
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: false,
+  })
+  openEmitter: EventEmitter;
 
   private contentRef!: HTMLElement;
   private anchorRef!: HTMLElement;
+
+  @Watch("open")
+  onOpenChange(event: Event): void {
+    console.log("emit", event);
+    this.openEmitter.emit(event);
+  }
 
   @ClickOutside()
   toggleIfOpen(): void {
@@ -67,7 +86,12 @@ export class MwPopover {
       placement: this.placement,
     });
   };
-
+  private closePopoverOnClick = (event: Event) => {
+    if (this.closeOnClick) {
+      event.preventDefault();
+      this.open = !this.open;
+    }
+  };
   render() {
     return (
       <Host>
@@ -88,6 +112,7 @@ export class MwPopover {
             ref={el => {
               this.contentRef = el as HTMLElement;
             }}
+            onClick={this.closePopoverOnClick}
           >
             <slot name="content"></slot>
           </div>
