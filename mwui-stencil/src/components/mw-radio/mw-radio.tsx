@@ -1,4 +1,4 @@
-import { Component, Element as ElementDecorator, h, Host, Prop } from "@stencil/core";
+import { Component, Element, h, Host, Prop } from "@stencil/core";
 let radioIds = 0;
 
 @Component({
@@ -9,7 +9,7 @@ let radioIds = 0;
 export class MwRadio {
   private radioId = `radio-input-${radioIds++}`;
 
-  @ElementDecorator() hostElement: HTMLMwRadioElement | null;
+  @Element() hostElement: HTMLMwRadioElement;
   /**
    * Visually and functionally disbale radio button
    */
