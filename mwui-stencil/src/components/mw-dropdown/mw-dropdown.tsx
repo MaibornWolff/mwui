@@ -1,5 +1,4 @@
 import { Component, Host, h, Prop, Element, State, Listen, Event, EventEmitter } from "@stencil/core";
-import classnames from "classnames";
 
 @Component({
   tag: "mw-dropdown",
@@ -93,13 +92,7 @@ export class MwDropdown {
     return (
       <Host>
         <div class="wrapper">
-          <div
-            class={classnames("dropdown", {
-              "inline": this.inline,
-              "has-error": this.hasError,
-              "disabled": this.disabled,
-            })}
-          >
+          <div class={{ "dropdown": true, "inline": this.inline, "has-error": this.hasError, "disabled": this.disabled }}>
             {!!this.label && (
               <label htmlFor={this.name} class="label">
                 {this.label}
@@ -107,21 +100,18 @@ export class MwDropdown {
               </label>
             )}
             <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen}>
-              <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+              <div slot="anchor" onClick={this.onFocus} class={{ "input": true, "has-error": this.hasError, "disabled": this.disabled }}>
                 <span
-                  class={classnames({
+                  class={{
                     "icon-start": this.hasIconStartSlot,
                     "focused": this.focused,
                     "has-error": this.hasError,
-                  })}
+                  }}
                 >
                   <slot name="icon-start"></slot>
                 </span>
                 <button
-                  class={classnames("button", {
-                    "has-error": this.hasError,
-                    "placeholder": !this.valueLabel,
-                  })}
+                  class={{ "button": true, "has-error": this.hasError, "placeholder": !this.valueLabel }}
                   ref={el => (this.buttonElement = el as HTMLButtonElement)}
                   name={this.name}
                   value={this.value}
@@ -133,21 +123,21 @@ export class MwDropdown {
                   {this.valueLabel ? this.valueLabel : this.placeholder}
                 </button>
                 <span
-                  class={classnames({
+                  class={{
                     "icon-end": this.hasIconEndSlot,
                     "focused": this.focused,
                     "has-error": this.hasError,
-                  })}
+                  }}
                 >
                   <slot name="icon-end"></slot>
                 </span>
                 {this.hasDropDownMenu && (
                   <span
-                    class={classnames({
+                    class={{
                       "icon-end": this.hasDropDownMenu,
                       "focused": this.focused,
                       "has-error": this.hasError,
-                    })}
+                    }}
                   >
                     <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
                   </span>
@@ -157,25 +147,9 @@ export class MwDropdown {
                 <slot name="dropdown-menu"></slot>
               </div>
             </mw-popover>
-            {this.helperText && !this.inline && (
-              <span
-                class={classnames("helper-text", {
-                  "has-error": this.hasError,
-                })}
-              >
-                {this.helperText}
-              </span>
-            )}
+            {this.helperText && !this.inline && <span class={{ "helper-text": true, "has-error": this.hasError }}>{this.helperText}</span>}
           </div>
-          {this.helperText && this.inline && (
-            <span
-              class={classnames("helper-text", {
-                "has-error": this.hasError,
-              })}
-            >
-              {this.helperText}
-            </span>
-          )}
+          {this.helperText && this.inline && <span class={{ "helper-text": true, "has-error": this.hasError }}>{this.helperText}</span>}
         </div>
       </Host>
     );
