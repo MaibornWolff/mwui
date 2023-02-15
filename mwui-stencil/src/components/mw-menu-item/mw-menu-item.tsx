@@ -1,5 +1,4 @@
 import { Component, Event, EventEmitter, Host, Prop, h } from "@stencil/core";
-import classNames from "classnames";
 
 @Component({
   tag: "mw-menu-item",
@@ -44,7 +43,7 @@ export class MwMenuItem {
   render() {
     return (
       <Host>
-        <div onClick={this.handleClick} tabindex="0" class={classNames("mw-menu-item", { disabled: this.disabled, selected: this.selected })}>
+        <div onClick={this.handleClick} tabindex="0" class={{ "mw-menu-item": true, "disabled": this.disabled, "selected": this.selected }}>
           {!!this.title && <div class="mw-menu-item-title">{this.title}</div>}
           {!!this.subtitle && <div class="mw-menu-item-subtitle">{this.subtitle}</div>}
         </div>
