@@ -70,6 +70,7 @@ export class MwTextfield {
    */
   @Prop({ reflect: true, mutable: true }) multipleValues?: Array<string | number> = [];
   @State() focused = false;
+  @State() isDropdownOpen = false;
   @Listen("clickEmitter")
   clickEmitterHandler(event): void {
     const emittedValue = event.target.getAttribute("value");
@@ -82,12 +83,15 @@ export class MwTextfield {
 
   @Listen("openEmitter")
   stateEmitterHandler(event): void {
-    console.log("listen", event);
+    this.isDropdownOpen = event.detail;
   }
 
-  @Listen("closeEmitter")
+  @Listen("emitter")
   closeEmitterHandler(event): void {
-    console.log("listen", event);
+    const multiValuesCopy = this.multipleValues;
+    const indexToRemove = multiValuesCopy.indexOf(event.detail);
+    multiValuesCopy.splice(indexToRemove, 1);
+    this.multipleValues = [...multiValuesCopy];
   }
 
   @Listen("keydown")
@@ -95,7 +99,6 @@ export class MwTextfield {
     if (this.multiple && this.focused && event.key === "Enter") this.addMultiValue(this.inputElement.value);
   }
 
-  private isDropdownOpen: boolean;
   private inputElement: HTMLInputElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
@@ -154,7 +157,7 @@ export class MwTextfield {
               </label>
             )}
             {this.hasDropDownMenu ? (
-              <mw-popover noPadding={true} closeOnClick={true} open={false}>
+              <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen}>
                 <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
                   <span
                     class={classnames({
@@ -167,7 +170,7 @@ export class MwTextfield {
                   </span>
                   <div class="input-options">
                     {this.multipleValues.map((value, key) => (
-                      <mw-chip key={key} showClose={true}>
+                      <mw-chip key={key} showClose={true} value={value}>
                         {value}
                       </mw-chip>
                     ))}

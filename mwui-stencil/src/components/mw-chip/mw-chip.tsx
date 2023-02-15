@@ -24,6 +24,10 @@ export class MwChip {
    */
   @Prop() showClose?: boolean = false;
   /**
+   * Value of chip
+   */
+  @Prop() value?: string | number;
+  /**
    * Selection state that changes onToggle. Can be set as mutable prop.
    */
   @Prop({ reflect: true, mutable: true }) selected = false;
@@ -34,14 +38,14 @@ export class MwChip {
   @Event({
     bubbles: true,
     cancelable: false,
-    composed: false,
+    composed: true,
   })
   emitter: EventEmitter;
 
   private handleClose = (event: Event): void => {
     event.stopPropagation();
     if (!this.disabled) {
-      this.emitter.emit(event);
+      this.emitter.emit(this.value);
     }
   };
 

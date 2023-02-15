@@ -227,6 +227,10 @@ export namespace Components {
      * Provide unique identifier for automated testing
      */
     testId: string;
+    /**
+     * Value of chip
+     */
+    value?: string | number;
   }
   interface MwDivider {
     /**
@@ -1105,6 +1109,10 @@ declare namespace LocalJSX {
      * Provide unique identifier for automated testing
      */
     testId?: string;
+    /**
+     * Value of chip
+     */
+    value?: string | number;
   }
   interface MwDivider {
     /**
