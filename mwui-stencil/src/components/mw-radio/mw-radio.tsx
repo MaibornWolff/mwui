@@ -6,7 +6,7 @@ import { Component, Element, h, Prop } from "@stencil/core";
   shadow: false,
 })
 export class MwRadio {
-  @Element() hostElement: HTMLMwRadioElement;
+  @Element() hostElement: HTMLMwRadioElement | null;
   /**
    * Visually and functionally disbale radio button
    */
@@ -32,13 +32,58 @@ export class MwRadio {
    */
   @Prop() label?: string;
 
+  constructor() {
+    this.onClick = this.onClick.bind(this);
+  }
+
+  private radioGroup: HTMLMwRadioGroupElement | null;
+
+  get radioGroupValue(): any {
+    const { radioGroup } = this;
+
+    // for some reason the initial value here is defined but "undefined"
+    return radioGroup?.value || radioGroup.getAttribute("value");
+  }
+
+  connectedCallback(): void {
+    const radioGroup = (this.radioGroup = this.hostElement.closest("mw-radio-group"));
+    if (radioGroup) {
+      this.setSelection();
+      radioGroup.addEventListener("radioChange", this.setSelection);
+    }
+  }
+
+  disconnectedCallback(): void {
+    const { radioGroup } = this;
+
+    if (radioGroup) {
+      radioGroup.removeEventListener("radioChange", this.setSelection);
+      this.radioGroup = null;
+    }
+  }
+
+  private setSelection = () => {
+    const { radioGroup, radioGroupValue, value } = this;
+
+    if (radioGroup) {
+      this.checked = radioGroupValue === value;
+    }
+  };
+
+  private onClick(event: Event): void {
+    event.preventDefault();
+    this.checked = !this.checked;
+  }
+
   render() {
     return (
-      <label test-id={this.testId} class="mw-radio-container">
+      <div test-id={this.testId} class="mw-radio-container" onClick={this.onClick} aria-checked={`${this.checked}`} aria-hidden={this.disabled ? "true" : null} role="radio">
         <input id="radio-input" type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} />
         <span class="mw-radio"></span>
-        <span class="mw-radio-label">{this.label}</span>
-      </label>
+        <label class="mw-radio-label" htmlFor="radio-input">
+          {this.label} {this.checked}
+        </label>
+      </div>
     );
   }
 }

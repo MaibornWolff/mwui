@@ -560,6 +560,32 @@ export class MwRadio {
     }
 }
 
+export declare interface MwRadioGroup extends Components.MwRadioGroup {
+    /**
+     * Event emitted when radioGroup value changes (after radio selection)
+     */
+    radioChange: EventEmitter<CustomEvent<any>>;
+}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["value"],
+})
+@Component({
+    selector: "mw-radio-group",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["value"],
+})
+export class MwRadioGroup {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["radioChange"]);
+    }
+}
+
 export declare interface MwSlider extends Components.MwSlider {}
 
 @ProxyCmp({

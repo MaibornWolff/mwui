@@ -1,4 +1,4 @@
-import { Component, h, Element, Host, Prop, Watch } from "@stencil/core";
+import { Component, h, Element, Host, Prop, Watch, EventEmitter, Event } from "@stencil/core";
 
 @Component({
   tag: "mw-radio-group",
@@ -8,34 +8,38 @@ export class MwRadioGroup {
   @Element() host: HTMLMwRadioGroupElement;
 
   /**
+   * Event emitted when radioGroup value changes (after radio selection)
+   */
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: false,
+  })
+  radioChange: EventEmitter;
+  /**
    * current value of the radio-group
    */
   @Prop({ mutable: true }) value?: unknown | null;
   @Watch("value")
   valueChanged(value: unknown | undefined): void {
-    // this.setRadioTabindex(value);
-    console.log("VALUE CHANGED", value);
-    // this.ionChange.emit({ value });
+    this.radioChange.emit({ value });
   }
 
   get radios(): HTMLMwRadioElement[] {
     return Array.from(this.host.querySelectorAll("mw-radio"));
   }
 
-  private onClick = (): void => {
-    return;
-    //console.log("CLICK");
-    //ev.preventDefault();
-    //
-    //const selectedRadio = ev.target && (ev.target as HTMLElement).closest("mw-radio");
-    //console.log(selectedRadio);
-    //if (selectedRadio) {
-    //  const currentValue = this.value;
-    //  const newValue = selectedRadio.value;
-    //  if (newValue !== currentValue) {
-    //    this.value = newValue;
-    //  }
-    //}
+  private onClick = (event: Event): void => {
+    event.preventDefault();
+    const selectedRadio = event.target && (event.target as HTMLElement).closest("mw-radio");
+
+    if (selectedRadio) {
+      const currentValue = this.value;
+      const newValue = selectedRadio.value;
+      if (newValue !== currentValue) {
+        this.value = newValue;
+      }
+    }
   };
 
   render() {

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-14T13:52:54",
+  "timestamp": "2023-02-14T15:29:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -2229,7 +2229,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "radioChange",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "Event emitted when radioGroup value changes (after radio selection)",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],

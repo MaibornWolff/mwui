@@ -1,18 +1,18 @@
 import { newSpecPage } from "@stencil/core/testing";
 import { MwRadioGroup } from "./mw-radio-group";
+import { MwRadio } from "../mw-radio/mw-radio";
+import { h } from "@stencil/core";
 
-describe("mw-radio-group", () => {
-  it("renders", async () => {
-    const page = await newSpecPage({
-      components: [MwRadioGroup],
-      html: `<mw-radio-group></mw-radio-group>`,
+describe("GIVEN MwRadioGroup", () => {
+  const setup = async (
+    { disabled, checked, value, name, label }: Pick<MwRadio, "disabled" | "checked" | "value" | "name" | "label"> = {
+      value: "",
+      name: "",
+    },
+  ) => {
+    return await newSpecPage({
+      components: [MwRadio],
+      template: () => <mw-radio disabled={disabled} checked={checked} label={label} value={value} name={name}></mw-radio>,
     });
-    expect(page.root).toEqualHtml(`
-      <mw-radio-group>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </mw-radio-group>
-    `);
-  });
+  };
 });

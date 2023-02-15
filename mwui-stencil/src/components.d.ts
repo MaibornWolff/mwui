@@ -583,6 +583,10 @@ export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwMenuItemElement;
 }
+export interface MwRadioGroupCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwRadioGroupElement;
+}
 export interface MwSwitchCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwSwitchElement;
@@ -1190,6 +1194,10 @@ declare namespace LocalJSX {
     value?: string;
   }
   interface MwRadioGroup {
+    /**
+     * Event emitted when radioGroup value changes (after radio selection)
+     */
+    onRadioChange?: (event: MwRadioGroupCustomEvent<any>) => void;
     /**
      * current value of the radio-group
      */
