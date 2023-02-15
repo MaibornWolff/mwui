@@ -1,4 +1,5 @@
-import { Component, Element, h, Prop } from "@stencil/core";
+import { Component, Element, h, Host, Prop } from "@stencil/core";
+let radioIds = 0;
 
 @Component({
   tag: "mw-radio",
@@ -6,6 +7,8 @@ import { Component, Element, h, Prop } from "@stencil/core";
   shadow: false,
 })
 export class MwRadio {
+  private radioId = `radio-input-${radioIds++}`;
+
   @Element() hostElement: HTMLMwRadioElement | null;
   /**
    * Visually and functionally disbale radio button
@@ -14,7 +17,7 @@ export class MwRadio {
   /**
    * Whether the radio button is checked
    */
-  @Prop({ mutable: false, reflect: true }) checked?: boolean;
+  @Prop({ mutable: true, reflect: true }) checked?: boolean = false;
   /**
    * Value of the radio button
    */
@@ -77,13 +80,13 @@ export class MwRadio {
 
   render() {
     return (
-      <div test-id={this.testId} class="mw-radio-container" onClick={this.onClick} aria-checked={`${this.checked}`} aria-hidden={this.disabled ? "true" : null} role="radio">
-        <input id="radio-input" type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} />
+      <Host test-id={this.testId} class="mw-radio-container" onClick={this.onClick} aria-checked={`${this.checked}`} aria-hidden={this.disabled ? "true" : null} role="radio">
+        <input id={this.radioId} type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} />
         <span class="mw-radio"></span>
-        <label class="mw-radio-label" htmlFor="radio-input">
-          {this.label} {this.checked}
+        <label class="mw-radio-label" htmlFor={this.radioId}>
+          {this.label}
         </label>
-      </div>
+      </Host>
     );
   }
 }

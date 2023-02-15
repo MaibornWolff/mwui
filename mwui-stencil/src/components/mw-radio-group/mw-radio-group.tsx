@@ -15,13 +15,13 @@ export class MwRadioGroup {
     cancelable: false,
     composed: false,
   })
-  radioChange: EventEmitter;
+  radioChange: EventEmitter<{ value?: string | number }>;
   /**
    * current value of the radio-group
    */
-  @Prop({ mutable: true }) value?: unknown | null;
+  @Prop({ mutable: true }) value?: string | number;
   @Watch("value")
-  valueChanged(value: unknown | undefined): void {
+  valueChanged(value?: string | number): void {
     this.radioChange.emit({ value });
   }
 

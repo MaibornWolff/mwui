@@ -564,7 +564,7 @@ export declare interface MwRadioGroup extends Components.MwRadioGroup {
     /**
      * Event emitted when radioGroup value changes (after radio selection)
      */
-    radioChange: EventEmitter<CustomEvent<any>>;
+    radioChange: EventEmitter<CustomEvent<{ value?: string | number }>>;
 }
 
 @ProxyCmp({

@@ -4,15 +4,15 @@
 
 ## Properties
 
-| Property | Attribute | Description                      | Type      | Default     |
-| -------- | --------- | -------------------------------- | --------- | ----------- |
-| `value`  | --        | current value of the radio-group | `unknown` | `undefined` |
+| Property | Attribute | Description                      | Type               | Default     |
+| -------- | --------- | -------------------------------- | ------------------ | ----------- |
+| `value`  | `value`   | current value of the radio-group | `number \| string` | `undefined` |
 
 ## Events
 
-| Event         | Description                                                         | Type               |
-| ------------- | ------------------------------------------------------------------- | ------------------ |
-| `radioChange` | Event emitted when radioGroup value changes (after radio selection) | `CustomEvent<any>` |
+| Event         | Description                                                         | Type                                         |
+| ------------- | ------------------------------------------------------------------- | -------------------------------------------- |
+| `radioChange` | Event emitted when radioGroup value changes (after radio selection) | `CustomEvent<{ value?: string \| number; }>` |
 
 ---
 

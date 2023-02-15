@@ -410,7 +410,7 @@ export namespace Components {
     /**
      * current value of the radio-group
      */
-    value?: unknown | null;
+    value?: string | number;
   }
   interface MwSlider {
     /**
@@ -1197,11 +1197,11 @@ declare namespace LocalJSX {
     /**
      * Event emitted when radioGroup value changes (after radio selection)
      */
-    onRadioChange?: (event: MwRadioGroupCustomEvent<any>) => void;
+    onRadioChange?: (event: MwRadioGroupCustomEvent<{ value?: string | number }>) => void;
     /**
      * current value of the radio-group
      */
-    value?: unknown | null;
+    value?: string | number;
   }
   interface MwSlider {
     /**
