@@ -58,7 +58,7 @@ export class MwPopover {
   @Event({
     bubbles: true,
     cancelable: false,
-    composed: false,
+    composed: true,
   })
   openEmitter: EventEmitter;
 
@@ -66,9 +66,8 @@ export class MwPopover {
   private anchorRef!: HTMLElement;
 
   @Watch("open")
-  onOpenChange(event: Event): void {
-    console.log("emit", event);
-    this.openEmitter.emit(event);
+  onOpenChange(): void {
+    this.openEmitter.emit(this.open);
   }
 
   @ClickOutside()

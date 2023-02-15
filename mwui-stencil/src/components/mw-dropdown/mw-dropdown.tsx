@@ -53,6 +53,7 @@ export class MwDropdown {
    */
   @Prop() disabled?: boolean = false;
   @State() focused = false;
+  @State() isDropdownOpen = false;
   @Listen("clickEmitter")
   clickEmitterHandler(event): void {
     this.value = event.target.getAttribute("value");
@@ -60,10 +61,9 @@ export class MwDropdown {
   }
   @Listen("openEmitter")
   stateEmitterHandler(event): void {
-    console.log("listen", event);
+    this.isDropdownOpen = event.detail;
   }
 
-  private isDropdownOpen: boolean;
   private buttonElement: HTMLButtonElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
@@ -106,7 +106,7 @@ export class MwDropdown {
                 {this.required && <span class="required">*</span>}
               </label>
             )}
-            <mw-popover noPadding={true} closeOnClick={true} open={false}>
+            <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen}>
               <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
                 <span
                   class={classnames({
