@@ -1,5 +1,4 @@
 import { Component, Event, EventEmitter, Host, Prop, h } from "@stencil/core";
-import classNames from "classnames";
 
 @Component({
   tag: "mw-chip",
@@ -59,10 +58,11 @@ export class MwChip {
       <Host>
         <div
           tabindex="0"
-          class={classNames("chip", {
+          class={{
+            chip: true,
             selected: this.selected,
             disabled: this.disabled,
-          })}
+          }}
           onClick={this.handleClick}
           test-id={this.testId}
         >
