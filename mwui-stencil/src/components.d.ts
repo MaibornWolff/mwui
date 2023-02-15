@@ -261,6 +261,24 @@ export namespace Components {
      */
     icons: string[];
   }
+  interface MwImg {
+    /**
+     * Alt text for the image
+     */
+    alt: string;
+    /**
+     * If the image should be lazy loaded
+     */
+    lazyLoad: boolean;
+    /**
+     * Image source for preload
+     */
+    preloadSrc: string;
+    /**
+     * Image source
+     */
+    src: string;
+  }
   interface MwLink {
     /**
      * URL to where the link should lead
@@ -579,6 +597,10 @@ export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
 }
+export interface MwImgCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwImgElement;
+}
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwMenuItemElement;
@@ -676,6 +698,11 @@ declare global {
     prototype: HTMLMwIconGalleryElement;
     new (): HTMLMwIconGalleryElement;
   };
+  interface HTMLMwImgElement extends Components.MwImg, HTMLStencilElement {}
+  var HTMLMwImgElement: {
+    prototype: HTMLMwImgElement;
+    new (): HTMLMwImgElement;
+  };
   interface HTMLMwLinkElement extends Components.MwLink, HTMLStencilElement {}
   var HTMLMwLinkElement: {
     prototype: HTMLMwLinkElement;
@@ -768,6 +795,7 @@ declare global {
     "mw-divider": HTMLMwDividerElement;
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
+    "mw-img": HTMLMwImgElement;
     "mw-link": HTMLMwLinkElement;
     "mw-menu": HTMLMwMenuElement;
     "mw-menu-item": HTMLMwMenuItemElement;
@@ -1051,6 +1079,32 @@ declare namespace LocalJSX {
      * The icons that should be rendered
      */
     icons?: string[];
+  }
+  interface MwImg {
+    /**
+     * Alt text for the image
+     */
+    alt?: string;
+    /**
+     * If the image should be lazy loaded
+     */
+    lazyLoad?: boolean;
+    /**
+     * Event emitted when image did load
+     */
+    onImgDidLoad?: (event: MwImgCustomEvent<any>) => void;
+    /**
+     * Event emitted when image could not be loaded
+     */
+    onImgLoadError?: (event: MwImgCustomEvent<any>) => void;
+    /**
+     * Image source for preload
+     */
+    preloadSrc?: string;
+    /**
+     * Image source
+     */
+    src?: string;
   }
   interface MwLink {
     /**
@@ -1374,6 +1428,7 @@ declare namespace LocalJSX {
     "mw-divider": MwDivider;
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
+    "mw-img": MwImg;
     "mw-link": MwLink;
     "mw-menu": MwMenu;
     "mw-menu-item": MwMenuItem;
@@ -1411,6 +1466,7 @@ declare module "@stencil/core" {
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
+      "mw-img": LocalJSX.MwImg & JSXBase.HTMLAttributes<HTMLMwImgElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
       "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
       "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;

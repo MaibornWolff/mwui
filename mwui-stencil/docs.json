@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-15T09:56:04",
+  "timestamp": "2023-02-15T14:34:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -1374,6 +1374,115 @@
       "dependencyGraph": {
         "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"]
       }
+    },
+    {
+      "filePath": "./src/components/mw-img/mw-img.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-img",
+      "readme": "# mw-img\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alt",
+          "type": "string",
+          "mutable": false,
+          "attr": "alt",
+          "reflectToAttr": false,
+          "docs": "Alt text for the image",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "lazyLoad",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "lazy-load",
+          "reflectToAttr": false,
+          "docs": "If the image should be lazy loaded",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "preloadSrc",
+          "type": "string",
+          "mutable": false,
+          "attr": "preload-src",
+          "reflectToAttr": false,
+          "docs": "Image source for preload",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "mutable": false,
+          "attr": "src",
+          "reflectToAttr": false,
+          "docs": "Image source",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "imgDidLoad",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": true,
+          "docs": "Event emitted when image did load",
+          "docsTags": []
+        },
+        {
+          "event": "imgLoadError",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": true,
+          "docs": "Event emitted when image could not be loaded",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "image",
+          "docs": ""
+        }
+      ],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-link/mw-link.tsx",
