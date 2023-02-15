@@ -27,6 +27,7 @@ export const DIRECTIVES = [
     d.MwModalTitle,
     d.MwPopover,
     d.MwRadio,
+    d.MwRadioGroup,
     d.MwSlider,
     d.MwSwitch,
     d.MwTab,

@@ -1,0 +1,51 @@
+# runs lint & test, builds tokens, stencil and storybook to assure it works before merge to main.
+name: QA - Update Tokens and Build WebComponents
+on:
+    push:
+        branches-ignore:
+            - main
+permissions:
+    contents: write
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        environment:
+            name: dev
+        steps:
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+
+            # https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
+            - name: Set GitHub Actions as Commit Author
+              run: |
+                  git config --global user.name github-actions
+                  git config --global user.email github-actions@github.com
+
+            - name: Checkout Repo
+              uses: actions/checkout@v3
+              with:
+                  path: "build"
+
+            - name: Install dependencies
+              working-directory: ./build
+              run: npm ci
+
+            - name: Transform Figma Tokens & Style Dictionary
+              working-directory: ./build
+              run: npm run build-tokens
+
+            - name: Run lint on Stencil components
+              working-directory: ./build
+              run: npm run lint
+
+            - name: Run Stencil unit tests
+              working-directory: ./build
+              run: npm run test:spec
+
+            - name: Build Stencil
+              working-directory: ./build
+              run: npm run build-stencil
+
+            - name: Generate Storybook
+              working-directory: ./build
+              run: npm run build-storybook

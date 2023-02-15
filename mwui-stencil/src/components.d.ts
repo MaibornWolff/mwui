@@ -433,6 +433,12 @@ export namespace Components {
      */
     value: string;
   }
+  interface MwRadioGroup {
+    /**
+     * current value of the radio-group
+     */
+    value?: string | number;
+  }
   interface MwSlider {
     /**
      * Disable range input
@@ -608,6 +614,10 @@ export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwMenuItemElement;
 }
+export interface MwRadioGroupCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwRadioGroupElement;
+}
 export interface MwSwitchCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwSwitchElement;
@@ -747,6 +757,11 @@ declare global {
     prototype: HTMLMwRadioElement;
     new (): HTMLMwRadioElement;
   };
+  interface HTMLMwRadioGroupElement extends Components.MwRadioGroup, HTMLStencilElement {}
+  var HTMLMwRadioGroupElement: {
+    prototype: HTMLMwRadioGroupElement;
+    new (): HTMLMwRadioGroupElement;
+  };
   interface HTMLMwSliderElement extends Components.MwSlider, HTMLStencilElement {}
   var HTMLMwSliderElement: {
     prototype: HTMLMwSliderElement;
@@ -799,6 +814,7 @@ declare global {
     "mw-modal-title": HTMLMwModalTitleElement;
     "mw-popover": HTMLMwPopoverElement;
     "mw-radio": HTMLMwRadioElement;
+    "mw-radio-group": HTMLMwRadioGroupElement;
     "mw-slider": HTMLMwSliderElement;
     "mw-switch": HTMLMwSwitchElement;
     "mw-tab": HTMLMwTabElement;
@@ -1244,6 +1260,16 @@ declare namespace LocalJSX {
      */
     value?: string;
   }
+  interface MwRadioGroup {
+    /**
+     * Event emitted when radioGroup value changes (after radio selection)
+     */
+    onRadioChange?: (event: MwRadioGroupCustomEvent<{ value?: string | number }>) => void;
+    /**
+     * current value of the radio-group
+     */
+    value?: string | number;
+  }
   interface MwSlider {
     /**
      * Disable range input
@@ -1425,6 +1451,7 @@ declare namespace LocalJSX {
     "mw-modal-title": MwModalTitle;
     "mw-popover": MwPopover;
     "mw-radio": MwRadio;
+    "mw-radio-group": MwRadioGroup;
     "mw-slider": MwSlider;
     "mw-switch": MwSwitch;
     "mw-tab": MwTab;
@@ -1462,6 +1489,7 @@ declare module "@stencil/core" {
       "mw-modal-title": LocalJSX.MwModalTitle & JSXBase.HTMLAttributes<HTMLMwModalTitleElement>;
       "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
       "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
+      "mw-radio-group": LocalJSX.MwRadioGroup & JSXBase.HTMLAttributes<HTMLMwRadioGroupElement>;
       "mw-slider": LocalJSX.MwSlider & JSXBase.HTMLAttributes<HTMLMwSliderElement>;
       "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
       "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
