@@ -1,5 +1,4 @@
 import { Component, Host, Prop, h, EventEmitter, Event } from "@stencil/core";
-import classnames from "classnames";
 
 @Component({
   tag: "mw-card",
@@ -36,10 +35,11 @@ export class MwCard {
         <div
           onClick={() => this.clickEmitter.emit()}
           test-id={this.testId}
-          class={classnames("card", {
+          class={{
+            card: true,
             outlined: this.outlined,
             elevated: this.elevated,
-          })}
+          }}
         >
           <slot></slot>
         </div>
