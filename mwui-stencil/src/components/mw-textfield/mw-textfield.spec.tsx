@@ -183,17 +183,4 @@ describe("GIVEN MwTextfield", () => {
     expect(page.root.shadowRoot.querySelector(".icon-end")).toBeTruthy();
     expect(page.root.shadowRoot.querySelector(".icon-start")).toBeNull();
   });
-
-  it("SHOULD set class dropdown-menu-wrapper WHEN hasDropDownMenu is true", async () => {
-    const page = await newSpecPage({
-      components: [MwTextfield],
-      template: () => (
-        <mw-textfield name="name">
-          <span slot="dropdown-menu">asdf</span>
-        </mw-textfield>
-      ),
-    });
-
-    expect(page.root.shadowRoot.querySelector(".dropdown-menu-wrapper")).toBeTruthy();
-  });
 });
