@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-14T12:47:28",
+  "timestamp": "2023-02-15T09:56:04",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -99,7 +99,7 @@
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-avatar",
-      "readme": "# mw-avatar\r\n\r\n\r\n\r",
+      "readme": "# mw-avatar\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -230,7 +230,7 @@
           "mutable": false,
           "attr": "backdrop-dismiss",
           "reflectToAttr": false,
-          "docs": "determines whether the backdrop will be dismissed by click",
+          "docs": "determines wether the backdrop will be dismissed by click",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -534,7 +534,7 @@
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-body",
-      "readme": "# mw-card-body\r\n\r\n\r\n\r",
+      "readme": "# mw-card-body\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -553,7 +553,7 @@
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-footer",
-      "readme": "# mw-card-footer\r\n\r\n\r\n\r",
+      "readme": "# mw-card-footer\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -812,7 +812,7 @@
       "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-image",
-      "readme": "# mw-card-image\r\n\r\n\r\n\r",
+      "readme": "# mw-card-image\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1122,7 +1122,7 @@
           "mutable": false,
           "attr": "show-close",
           "reflectToAttr": false,
-          "docs": "Flag whether to show close icon or not",
+          "docs": "Flag wether to show close icon or not",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1176,7 +1176,7 @@
       "filePath": "./src/components/mw-divider/mw-divider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-divider",
-      "readme": "# mw-divider\r\n\r\n\r\n\r",
+      "readme": "# mw-divider\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1208,220 +1208,6 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/mw-dropdown/mw-dropdown.tsx",
-      "encapsulation": "shadow",
-      "tag": "mw-dropdown",
-      "readme": "# mw-dropdown\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "disabled",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "disabled",
-          "reflectToAttr": false,
-          "docs": "Visually and functionally disabled input",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "hasError",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "has-error",
-          "reflectToAttr": false,
-          "docs": "Use to display input and helper-text in error state",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "helperText",
-          "type": "string",
-          "mutable": false,
-          "attr": "helper-text",
-          "reflectToAttr": true,
-          "docs": "HelperText to be displayed. Can be used as hint or error text when combined with `has-error`",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "inline",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "inline",
-          "reflectToAttr": false,
-          "docs": "Display label and input horizonally",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "label",
-          "type": "string",
-          "mutable": false,
-          "attr": "label",
-          "reflectToAttr": true,
-          "docs": "Label to be displayed",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "name",
-          "type": "string",
-          "mutable": false,
-          "attr": "name",
-          "reflectToAttr": false,
-          "docs": "input field name",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "placeholder",
-          "type": "string",
-          "mutable": false,
-          "attr": "placeholder",
-          "reflectToAttr": false,
-          "docs": "Placeholder to be displayed",
-          "docsTags": [],
-          "default": "\"Placeholder\"",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "required",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "required",
-          "reflectToAttr": false,
-          "docs": "Mark input as required",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "value",
-          "type": "number | string",
-          "mutable": true,
-          "attr": "value",
-          "reflectToAttr": true,
-          "docs": "input field value",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            },
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "valueLabel",
-          "type": "number | string",
-          "mutable": true,
-          "attr": "value-label",
-          "reflectToAttr": true,
-          "docs": "label of selected input value",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            },
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [
-        {
-          "event": "valueChanged",
-          "detail": "string",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": false,
-          "docs": "MwDropdown emits an event when value changes",
-          "docsTags": []
-        }
-      ],
-      "listeners": [
-        {
-          "event": "clickEmitter",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "openEmitter",
-          "capture": false,
-          "passive": false
-        }
-      ],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": ["mw-popover", "mw-icon"],
-      "dependencyGraph": {
-        "mw-dropdown": ["mw-popover", "mw-icon"]
-      }
     },
     {
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
@@ -1540,17 +1326,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-dropdown", "mw-icon-gallery", "mw-slider", "mw-tab", "mw-textfield"],
+      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-slider", "mw-tab"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-avatar": ["mw-icon"],
         "mw-checkbox": ["mw-icon"],
         "mw-chip": ["mw-icon"],
-        "mw-dropdown": ["mw-icon"],
         "mw-icon-gallery": ["mw-icon"],
         "mw-slider": ["mw-icon"],
-        "mw-tab": ["mw-icon"],
-        "mw-textfield": ["mw-icon"]
+        "mw-tab": ["mw-icon"]
       }
     },
     {
@@ -1588,8 +1372,7 @@
       "dependents": [],
       "dependencies": ["mw-textfield", "mw-icon", "mw-switch"],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"],
-        "mw-textfield": ["mw-popover", "mw-icon"]
+        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"]
       }
     },
     {
@@ -1866,22 +1649,6 @@
           ],
           "optional": false,
           "required": false
-        },
-        {
-          "name": "value",
-          "type": "string",
-          "mutable": false,
-          "attr": "value",
-          "reflectToAttr": false,
-          "docs": "Value of item",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
         }
       ],
       "methods": [],
@@ -1908,7 +1675,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
-      "readme": "# mw-menu-list\n",
+      "readme": "# mw-menu-list\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2163,23 +1930,6 @@
       "usage": {},
       "props": [
         {
-          "name": "closeOnClick",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "close-on-click",
-          "reflectToAttr": false,
-          "docs": "Closes Popover when user clicks on it",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "dismissable",
           "type": "boolean",
           "mutable": false,
@@ -2326,34 +2076,22 @@
         }
       ],
       "methods": [],
-      "events": [
-        {
-          "event": "openEmitter",
-          "detail": "any",
-          "bubbles": true,
-          "cancelable": false,
-          "composed": false,
-          "docs": "MwPopover emits an event when the value of the open prop changes",
-          "docsTags": []
-        }
-      ],
+      "events": [],
       "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-dropdown", "mw-menu", "mw-textfield"],
+      "dependents": ["mw-menu"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-dropdown": ["mw-popover"],
-        "mw-menu": ["mw-popover"],
-        "mw-textfield": ["mw-popover"]
+        "mw-menu": ["mw-popover"]
       }
     },
     {
       "filePath": "./src/components/mw-radio/mw-radio.tsx",
       "encapsulation": "none",
       "tag": "mw-radio",
-      "readme": "# mw-radio\r\n\r",
+      "readme": "# mw-radio\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2361,11 +2099,12 @@
         {
           "name": "checked",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "checked",
           "reflectToAttr": true,
           "docs": "Whether the radio button is checked",
           "docsTags": [],
+          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -2457,6 +2196,55 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-radio-group/mw-radio-group.tsx",
+      "encapsulation": "none",
+      "tag": "mw-radio-group",
+      "readme": "# mw-radio-group\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "current value of the radio-group",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "radioChange",
+          "detail": "{ value?: string | number; }",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "Event emitted when radioGroup value changes (after radio selection)",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
@@ -3082,23 +2870,6 @@
           "required": false
         },
         {
-          "name": "readOnly",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "read-only",
-          "reflectToAttr": false,
-          "docs": "Whether user can't type in input field",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "required",
           "type": "boolean",
           "mutable": false,
@@ -3169,9 +2940,8 @@
       "slots": [],
       "parts": [],
       "dependents": ["mw-icon-gallery"],
-      "dependencies": ["mw-popover", "mw-icon"],
+      "dependencies": [],
       "dependencyGraph": {
-        "mw-textfield": ["mw-popover", "mw-icon"],
         "mw-icon-gallery": ["mw-textfield"]
       }
     }
