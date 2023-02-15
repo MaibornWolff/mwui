@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-14T08:14:50",
+  "timestamp": "2023-02-15T09:56:04",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -2099,11 +2099,12 @@
         {
           "name": "checked",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "checked",
           "reflectToAttr": true,
           "docs": "Whether the radio button is checked",
           "docsTags": [],
+          "default": "false",
           "values": [
             {
               "type": "boolean"
@@ -2195,6 +2196,55 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-radio-group/mw-radio-group.tsx",
+      "encapsulation": "none",
+      "tag": "mw-radio-group",
+      "readme": "# mw-radio-group\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "current value of the radio-group",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "radioChange",
+          "detail": "{ value?: string | number; }",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "Event emitted when radioGroup value changes (after radio selection)",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],

@@ -33,6 +33,7 @@ export const MwModalFooter = /*@__PURE__*/ createReactComponent<JSX.MwModalFoote
 export const MwModalTitle = /*@__PURE__*/ createReactComponent<JSX.MwModalTitle, HTMLMwModalTitleElement>("mw-modal-title");
 export const MwPopover = /*@__PURE__*/ createReactComponent<JSX.MwPopover, HTMLMwPopoverElement>("mw-popover");
 export const MwRadio = /*@__PURE__*/ createReactComponent<JSX.MwRadio, HTMLMwRadioElement>("mw-radio");
+export const MwRadioGroup = /*@__PURE__*/ createReactComponent<JSX.MwRadioGroup, HTMLMwRadioGroupElement>("mw-radio-group");
 export const MwSlider = /*@__PURE__*/ createReactComponent<JSX.MwSlider, HTMLMwSliderElement>("mw-slider");
 export const MwSwitch = /*@__PURE__*/ createReactComponent<JSX.MwSwitch, HTMLMwSwitchElement>("mw-switch");
 export const MwTab = /*@__PURE__*/ createReactComponent<JSX.MwTab, HTMLMwTabElement>("mw-tab");
