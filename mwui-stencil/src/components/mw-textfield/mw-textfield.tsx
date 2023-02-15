@@ -1,5 +1,4 @@
 import { Component, Event, EventEmitter, Host, Prop, State, h, Element, Listen } from "@stencil/core";
-import classnames from "classnames";
 
 @Component({
   tag: "mw-textfield",
@@ -101,12 +100,12 @@ export class MwTextfield {
       <Host>
         <div class="wrapper">
           <div
-            class={classnames("textfield", {
+            class={{
+              "textfield": true,
               "inline": this.inline,
               "has-error": this.hasError,
               "disabled": this.disabled,
-              "read-only": this.readOnly,
-            })}
+            }}
           >
             {!!this.label && (
               <label htmlFor={this.name} class="label">
@@ -116,22 +115,22 @@ export class MwTextfield {
             )}
             {this.hasDropDownMenu ? (
               <mw-popover>
-                <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+                <div slot="anchor" onClick={this.onFocus} class={{ "input": true, "has-error": this.hasError, "disabled": this.disabled }}>
                   <span
-                    class={classnames({
+                    class={{
                       "icon-start": this.hasIconStartSlot,
                       "focused": this.focused,
                       "has-error": this.hasError,
-                    })}
+                    }}
                   >
                     <slot name="icon-start"></slot>
                   </span>
                   <input
                     ref={el => (this.inputElement = el as HTMLInputElement)}
                     placeholder={this.placeholder}
-                    class={classnames({
+                    class={{
                       "has-error": this.hasError,
-                    })}
+                    }}
                     onFocus={this.onFocus}
                     onBlur={this.onBlur}
                     onInput={this.onValueChange}
@@ -143,20 +142,20 @@ export class MwTextfield {
                     readOnly={this.readOnly}
                   />
                   <span
-                    class={classnames({
+                    class={{
                       "icon-end": this.hasIconEndSlot,
                       "focused": this.focused,
                       "has-error": this.hasError,
-                    })}
+                    }}
                   >
                     <slot name="icon-end"></slot>
                   </span>
                   <span
-                    class={classnames({
+                    class={{
                       "icon-end": this.hasDropDownMenu,
                       "focused": this.focused,
                       "has-error": this.hasError,
-                    })}
+                    }}
                   >
                     <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
                   </span>
@@ -166,22 +165,22 @@ export class MwTextfield {
                 </div>
               </mw-popover>
             ) : (
-              <div slot="anchor" onClick={this.onFocus} class={classnames("input", { "has-error": this.hasError, "disabled": this.disabled })}>
+              <div slot="anchor" onClick={this.onFocus} class={{ "input": true, "has-error": this.hasError, "disabled": this.disabled }}>
                 <span
-                  class={classnames({
+                  class={{
                     "icon-start": this.hasIconStartSlot,
                     "focused": this.focused,
                     "has-error": this.hasError,
-                  })}
+                  }}
                 >
                   <slot name="icon-start"></slot>
                 </span>
                 <input
                   ref={el => (this.inputElement = el as HTMLInputElement)}
                   placeholder={this.placeholder}
-                  class={classnames({
+                  class={{
                     "has-error": this.hasError,
-                  })}
+                  }}
                   onFocus={this.onFocus}
                   onBlur={this.onBlur}
                   onInput={this.onValueChange}
@@ -193,11 +192,11 @@ export class MwTextfield {
                   readOnly={this.readOnly}
                 />
                 <span
-                  class={classnames({
+                  class={{
                     "icon-end": this.hasIconEndSlot,
                     "focused": this.focused,
                     "has-error": this.hasError,
-                  })}
+                  }}
                 >
                   <slot name="icon-end"></slot>
                 </span>
@@ -205,9 +204,10 @@ export class MwTextfield {
             )}
             {this.helperText && !this.inline && (
               <span
-                class={classnames("helper-text", {
+                class={{
+                  "helper-text": true,
                   "has-error": this.hasError,
-                })}
+                }}
               >
                 {this.helperText}
               </span>
@@ -215,9 +215,10 @@ export class MwTextfield {
           </div>
           {this.helperText && this.inline && (
             <span
-              class={classnames("helper-text", {
+              class={{
+                "helper-text": true,
                 "has-error": this.hasError,
-              })}
+              }}
             >
               {this.helperText}
             </span>

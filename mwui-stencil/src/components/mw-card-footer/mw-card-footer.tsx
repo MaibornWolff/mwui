@@ -1,5 +1,4 @@
 import { Component, Host, Prop, h } from "@stencil/core";
-import classnames from "classnames";
 
 @Component({
   tag: "mw-card-footer",
@@ -56,7 +55,8 @@ export class MwCardFooter {
     return (
       <Host>
         <div
-          class={classnames("card-footer", {
+          class={{
+            "card-footer": true,
             "justify-center": this.justifyCenter,
             "justify-start": this.justifyStart,
             "justify-flex-start": this.justifyFlexStart,
@@ -67,7 +67,7 @@ export class MwCardFooter {
             "justify-space-around": this.justifySpaceAround,
             "justify-space-evenly": this.justifySpaceEvenly,
             "justify-space-between": this.justifySpaceBetween,
-          })}
+          }}
         >
           <slot></slot>
         </div>

@@ -1,6 +1,5 @@
 import { Component, Host, Prop, h, Element, Event, EventEmitter, Watch } from "@stencil/core";
 import { createPopper } from "@popperjs/core";
-import classnames from "classnames";
 import { ClickOutside } from "stencil-click-outside";
 
 export type PopoverPlacement =
@@ -107,7 +106,7 @@ export class MwPopover {
           <div
             role="tooltip"
             id={this.name}
-            class={classnames("mw-popover-content", { "open": this.open, "no-padding": this.noPadding })}
+            class={{ "mw-popover-content": true, "open": this.open, "no-padding": this.noPadding }}
             ref={el => {
               this.contentRef = el as HTMLElement;
             }}
