@@ -7,7 +7,7 @@
 | Property   | Attribute  | Description                                                                | Type     | Default     |
 | ---------- | ---------- | -------------------------------------------------------------------------- | -------- | ----------- |
 | `selected` | `selected` | Dictates which tab is pre-selected. Omit if no tab should be pre-selected. | `number` | `null`      |
-| `testId`   | `test-id`  | Test Id                                                                    | `string` | `undefined` |
+| `testId`   | `test-id`  | Test ID                                                                    | `string` | `undefined` |
 
 ## Dependencies
 

@@ -3,6 +3,7 @@ import * as d from "./components";
 export const DIRECTIVES = [
     d.MwAppBar,
     d.MwAppBarTitle,
+    d.MwAutocomplete,
     d.MwAvatar,
     d.MwBackdrop,
     d.MwButton,

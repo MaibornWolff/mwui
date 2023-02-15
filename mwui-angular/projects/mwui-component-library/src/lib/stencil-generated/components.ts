@@ -43,6 +43,24 @@ export class MwAppBarTitle {
     }
 }
 
+export declare interface MwAutocomplete extends Components.MwAutocomplete {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+})
+@Component({
+    selector: "mw-autocomplete",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+})
+export class MwAutocomplete {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
 export declare interface MwAvatar extends Components.MwAvatar {}
 
 @ProxyCmp({
@@ -298,13 +316,13 @@ export declare interface MwChip extends Components.MwChip {
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["disabled", "icon", "selected", "showClose", "testId"],
+    inputs: ["disabled", "icon", "selected", "showClose", "testId", "value"],
 })
 @Component({
     selector: "mw-chip",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["disabled", "icon", "selected", "showClose", "testId"],
+    inputs: ["disabled", "icon", "selected", "showClose", "testId", "value"],
 })
 export class MwChip {
     protected el: HTMLElement;
@@ -713,13 +731,43 @@ export declare interface MwTextfield extends Components.MwTextfield {
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "multiple",
+        "multipleMaximum",
+        "multipleValues",
+        "name",
+        "placeholder",
+        "readOnly",
+        "required",
+        "type",
+        "value",
+    ],
 })
 @Component({
     selector: "mw-textfield",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "multiple",
+        "multipleMaximum",
+        "multipleValues",
+        "name",
+        "placeholder",
+        "readOnly",
+        "required",
+        "type",
+        "value",
+    ],
 })
 export class MwTextfield {
     protected el: HTMLElement;

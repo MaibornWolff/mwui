@@ -10,6 +10,7 @@ import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
 defineCustomElements();
 export const MwAppBar = /*@__PURE__*/ createReactComponent<JSX.MwAppBar, HTMLMwAppBarElement>("mw-app-bar");
 export const MwAppBarTitle = /*@__PURE__*/ createReactComponent<JSX.MwAppBarTitle, HTMLMwAppBarTitleElement>("mw-app-bar-title");
+export const MwAutocomplete = /*@__PURE__*/ createReactComponent<JSX.MwAutocomplete, HTMLMwAutocompleteElement>("mw-autocomplete");
 export const MwAvatar = /*@__PURE__*/ createReactComponent<JSX.MwAvatar, HTMLMwAvatarElement>("mw-avatar");
 export const MwBackdrop = /*@__PURE__*/ createReactComponent<JSX.MwBackdrop, HTMLMwBackdropElement>("mw-backdrop");
 export const MwButton = /*@__PURE__*/ createReactComponent<JSX.MwButton, HTMLMwButtonElement>("mw-button");
