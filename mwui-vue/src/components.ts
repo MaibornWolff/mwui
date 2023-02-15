@@ -90,6 +90,8 @@ export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popove
 
 export const MwRadio = /*@__PURE__*/ defineContainer<JSX.MwRadio>("mw-radio", undefined, ["disabled", "checked", "value", "name", "testId", "label"]);
 
+export const MwRadioGroup = /*@__PURE__*/ defineContainer<JSX.MwRadioGroup>("mw-radio-group", undefined, ["value", "radioChange"]);
+
 export const MwSlider = /*@__PURE__*/ defineContainer<JSX.MwSlider>("mw-slider", undefined, [
     "testId",
     "name",

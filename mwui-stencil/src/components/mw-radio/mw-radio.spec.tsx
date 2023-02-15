@@ -1,6 +1,7 @@
 import { newSpecPage } from "@stencil/core/testing";
 import { h } from "@stencil/core";
 import { MwRadio } from "./mw-radio";
+import { SpecPage } from "@stencil/core/internal";
 
 describe("GIVEN MwRadio", () => {
   const setup = async (
@@ -15,6 +16,10 @@ describe("GIVEN MwRadio", () => {
     });
   };
 
+  const getRadioInput = (page: SpecPage): HTMLInputElement | null => {
+    return page.root.querySelector(`#${page.rootInstance.radioId}`);
+  };
+
   it("SHOULD render MwDivider", async () => {
     const page = await setup();
     expect(page.root).toBeTruthy();
@@ -27,6 +32,7 @@ describe("GIVEN MwRadio", () => {
       name: "",
       label,
     });
+
     expect(page.root.querySelector(".mw-radio-label").innerHTML).toEqual(label);
   });
 
@@ -36,7 +42,7 @@ describe("GIVEN MwRadio", () => {
       value,
       name: "",
     });
-    expect(page.root.querySelector(`#radio-input`).getAttribute("value")).toEqual(value);
+    expect(getRadioInput(page).getAttribute("value")).toEqual(value);
   });
 
   it("SHOULD have name set WHEN name is passed", async () => {
@@ -46,7 +52,7 @@ describe("GIVEN MwRadio", () => {
       value,
       name,
     });
-    expect(page.root.querySelector(`#radio-input`).getAttribute("name")).toEqual(name);
+    expect(getRadioInput(page).getAttribute("name")).toEqual(name);
   });
 
   it("SHOULD not be checked WHEN value is false", async () => {
@@ -56,7 +62,7 @@ describe("GIVEN MwRadio", () => {
       checked: false,
     });
 
-    expect(page.root.querySelector("#radio-input:checked")).toBeNull();
+    expect(getRadioInput(page)).toEqualAttribute("checked", null);
   });
 
   it("SHOULD be checked WHEN value is true", async () => {
@@ -65,6 +71,6 @@ describe("GIVEN MwRadio", () => {
       name: "",
       checked: true,
     });
-    expect(page.root.querySelector<HTMLInputElement>("input[type=radio]:checked")).toBeTruthy();
+    expect(getRadioInput(page)).toEqualAttribute("checked", "");
   });
 });

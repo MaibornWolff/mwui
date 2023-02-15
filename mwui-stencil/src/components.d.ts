@@ -50,7 +50,7 @@ export namespace Components {
   }
   interface MwBackdrop {
     /**
-     * determines whether the backdrop will be dismissed by click
+     * determines wether the backdrop will be dismissed by click
      */
     backdropDismiss: boolean;
   }
@@ -219,7 +219,7 @@ export namespace Components {
      */
     selected: boolean;
     /**
-     * Flag whether to show close icon or not
+     * Flag wether to show close icon or not
      */
     showClose?: boolean;
     /**
@@ -232,48 +232,6 @@ export namespace Components {
      * Whether the divider is a middle-inset
      */
     inset?: boolean;
-  }
-  interface MwDropdown {
-    /**
-     * Visually and functionally disabled input
-     */
-    disabled?: boolean;
-    /**
-     * Use to display input and helper-text in error state
-     */
-    hasError?: boolean;
-    /**
-     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * input field name
-     */
-    name: string;
-    /**
-     * Placeholder to be displayed
-     */
-    placeholder?: string;
-    /**
-     * Mark input as required
-     */
-    required?: boolean;
-    /**
-     * input field value
-     */
-    value?: string | number;
-    /**
-     * label of selected input value
-     */
-    valueLabel?: string | number;
   }
   interface MwIcon {
     /**
@@ -348,10 +306,6 @@ export namespace Components {
      * Menu item title
      */
     title: string;
-    /**
-     * Value of item
-     */
-    value?: string;
   }
   interface MwMenuList {
     /**
@@ -402,10 +356,6 @@ export namespace Components {
   }
   interface MwPopover {
     /**
-     * Closes Popover when user clicks on it
-     */
-    closeOnClick?: boolean;
-    /**
      * If set to true, the popover can be closed by clicking outside
      */
     dismissable?: boolean;
@@ -455,6 +405,12 @@ export namespace Components {
      * Value of the radio button
      */
     value: string;
+  }
+  interface MwRadioGroup {
+    /**
+     * current value of the radio-group
+     */
+    value?: string | number;
   }
   interface MwSlider {
     /**
@@ -590,10 +546,6 @@ export namespace Components {
      */
     placeholder?: string;
     /**
-     * Whether user can't type in input field
-     */
-    readOnly?: boolean;
-    /**
      * Mark input as required
      */
     required?: boolean;
@@ -627,17 +579,13 @@ export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
 }
-export interface MwDropdownCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwDropdownElement;
-}
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwMenuItemElement;
 }
-export interface MwPopoverCustomEvent<T> extends CustomEvent<T> {
+export interface MwRadioGroupCustomEvent<T> extends CustomEvent<T> {
   detail: T;
-  target: HTMLMwPopoverElement;
+  target: HTMLMwRadioGroupElement;
 }
 export interface MwSwitchCustomEvent<T> extends CustomEvent<T> {
   detail: T;
@@ -718,11 +666,6 @@ declare global {
     prototype: HTMLMwDividerElement;
     new (): HTMLMwDividerElement;
   };
-  interface HTMLMwDropdownElement extends Components.MwDropdown, HTMLStencilElement {}
-  var HTMLMwDropdownElement: {
-    prototype: HTMLMwDropdownElement;
-    new (): HTMLMwDropdownElement;
-  };
   interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {}
   var HTMLMwIconElement: {
     prototype: HTMLMwIconElement;
@@ -778,6 +721,11 @@ declare global {
     prototype: HTMLMwRadioElement;
     new (): HTMLMwRadioElement;
   };
+  interface HTMLMwRadioGroupElement extends Components.MwRadioGroup, HTMLStencilElement {}
+  var HTMLMwRadioGroupElement: {
+    prototype: HTMLMwRadioGroupElement;
+    new (): HTMLMwRadioGroupElement;
+  };
   interface HTMLMwSliderElement extends Components.MwSlider, HTMLStencilElement {}
   var HTMLMwSliderElement: {
     prototype: HTMLMwSliderElement;
@@ -818,7 +766,6 @@ declare global {
     "mw-checkbox": HTMLMwCheckboxElement;
     "mw-chip": HTMLMwChipElement;
     "mw-divider": HTMLMwDividerElement;
-    "mw-dropdown": HTMLMwDropdownElement;
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-link": HTMLMwLinkElement;
@@ -830,6 +777,7 @@ declare global {
     "mw-modal-title": HTMLMwModalTitleElement;
     "mw-popover": HTMLMwPopoverElement;
     "mw-radio": HTMLMwRadioElement;
+    "mw-radio-group": HTMLMwRadioGroupElement;
     "mw-slider": HTMLMwSliderElement;
     "mw-switch": HTMLMwSwitchElement;
     "mw-tab": HTMLMwTabElement;
@@ -873,7 +821,7 @@ declare namespace LocalJSX {
   }
   interface MwBackdrop {
     /**
-     * determines whether the backdrop will be dismissed by click
+     * determines wether the backdrop will be dismissed by click
      */
     backdropDismiss?: boolean;
     /**
@@ -1062,7 +1010,7 @@ declare namespace LocalJSX {
      */
     selected?: boolean;
     /**
-     * Flag whether to show close icon or not
+     * Flag wether to show close icon or not
      */
     showClose?: boolean;
     /**
@@ -1075,52 +1023,6 @@ declare namespace LocalJSX {
      * Whether the divider is a middle-inset
      */
     inset?: boolean;
-  }
-  interface MwDropdown {
-    /**
-     * Visually and functionally disabled input
-     */
-    disabled?: boolean;
-    /**
-     * Use to display input and helper-text in error state
-     */
-    hasError?: boolean;
-    /**
-     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * input field name
-     */
-    name?: string;
-    /**
-     * MwDropdown emits an event when value changes
-     */
-    onValueChanged?: (event: MwDropdownCustomEvent<string>) => void;
-    /**
-     * Placeholder to be displayed
-     */
-    placeholder?: string;
-    /**
-     * Mark input as required
-     */
-    required?: boolean;
-    /**
-     * input field value
-     */
-    value?: string | number;
-    /**
-     * label of selected input value
-     */
-    valueLabel?: string | number;
   }
   interface MwIcon {
     /**
@@ -1199,10 +1101,6 @@ declare namespace LocalJSX {
      * Menu item title
      */
     title?: string;
-    /**
-     * Value of item
-     */
-    value?: string;
   }
   interface MwMenuList {
     /**
@@ -1245,10 +1143,6 @@ declare namespace LocalJSX {
   }
   interface MwPopover {
     /**
-     * Closes Popover when user clicks on it
-     */
-    closeOnClick?: boolean;
-    /**
      * If set to true, the popover can be closed by clicking outside
      */
     dismissable?: boolean;
@@ -1260,10 +1154,6 @@ declare namespace LocalJSX {
      * disable default padding
      */
     noPadding?: boolean;
-    /**
-     * MwPopover emits an event when the value of the open prop changes
-     */
-    onOpenEmitter?: (event: MwPopoverCustomEvent<any>) => void;
     /**
      * Whether the popover is visible
      */
@@ -1302,6 +1192,16 @@ declare namespace LocalJSX {
      * Value of the radio button
      */
     value?: string;
+  }
+  interface MwRadioGroup {
+    /**
+     * Event emitted when radioGroup value changes (after radio selection)
+     */
+    onRadioChange?: (event: MwRadioGroupCustomEvent<{ value?: string | number }>) => void;
+    /**
+     * current value of the radio-group
+     */
+    value?: string | number;
   }
   interface MwSlider {
     /**
@@ -1445,10 +1345,6 @@ declare namespace LocalJSX {
      */
     placeholder?: string;
     /**
-     * Whether user can't type in input field
-     */
-    readOnly?: boolean;
-    /**
      * Mark input as required
      */
     required?: boolean;
@@ -1476,7 +1372,6 @@ declare namespace LocalJSX {
     "mw-checkbox": MwCheckbox;
     "mw-chip": MwChip;
     "mw-divider": MwDivider;
-    "mw-dropdown": MwDropdown;
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
     "mw-link": MwLink;
@@ -1488,6 +1383,7 @@ declare namespace LocalJSX {
     "mw-modal-title": MwModalTitle;
     "mw-popover": MwPopover;
     "mw-radio": MwRadio;
+    "mw-radio-group": MwRadioGroup;
     "mw-slider": MwSlider;
     "mw-switch": MwSwitch;
     "mw-tab": MwTab;
@@ -1513,7 +1409,6 @@ declare module "@stencil/core" {
       "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
       "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
-      "mw-dropdown": LocalJSX.MwDropdown & JSXBase.HTMLAttributes<HTMLMwDropdownElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
@@ -1525,6 +1420,7 @@ declare module "@stencil/core" {
       "mw-modal-title": LocalJSX.MwModalTitle & JSXBase.HTMLAttributes<HTMLMwModalTitleElement>;
       "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
       "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
+      "mw-radio-group": LocalJSX.MwRadioGroup & JSXBase.HTMLAttributes<HTMLMwRadioGroupElement>;
       "mw-slider": LocalJSX.MwSlider & JSXBase.HTMLAttributes<HTMLMwSliderElement>;
       "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
       "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
