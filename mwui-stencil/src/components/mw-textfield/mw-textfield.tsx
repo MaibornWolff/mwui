@@ -93,7 +93,7 @@ export class MwTextfield {
     this.multipleValues = [...multiValuesCopy];
   }
 
-  @Listen("keydown")
+  @Listen("keydown", { passive: true })
   handleEnterPress(event: KeyboardEvent): void {
     if (this.multiple && this.focused && event.key === "Enter") this.addMultiValue(this.inputElement.value);
   }
