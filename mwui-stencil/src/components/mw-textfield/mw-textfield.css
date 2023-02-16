@@ -6,6 +6,7 @@
 .wrapper {
   display: inline-flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .textfield {

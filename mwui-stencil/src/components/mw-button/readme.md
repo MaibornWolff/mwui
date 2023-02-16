@@ -20,6 +20,26 @@
 | -------------- | ---------------------------------------------------------------------------------------- | ------------------ |
 | `clickEmitter` | 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. | `CustomEvent<any>` |
 
+## Shadow Parts
+
+| Part       | Description |
+| ---------- | ----------- |
+| `"button"` |             |
+
+## Dependencies
+
+### Used by
+
+- [mw-login](../mw-login)
+
+### Graph
+
+```mermaid
+graph TD;
+  mw-login --> mw-button
+  style mw-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ---
 
 _Built with [StencilJS](https://stenciljs.com/)_

@@ -11,6 +11,7 @@ import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
+import { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
@@ -274,6 +275,32 @@ export namespace Components {
      * Dictates whether link has an underline
      */
     underline?: boolean;
+  }
+  interface MwLogin {
+    /**
+     * URL to the image that should be displayed
+     */
+    backgroundImage?: string | undefined;
+    /**
+     * Wether or not the forgot password button should be displayed
+     */
+    forgotPasswordHref?: string;
+    /**
+     * Headline text
+     */
+    headline?: string | undefined;
+    /**
+     * In which layout the Login component should be displayed
+     */
+    layout: LoginLayout;
+    /**
+     * URL to the image that should be displayed
+     */
+    logo?: string | undefined;
+    /**
+     * Wether or not the signUp prompt should be displayed
+     */
+    signUpHref?: string;
   }
   interface MwMenu {
     /**
@@ -579,6 +606,10 @@ export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
 }
+export interface MwLoginCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwLoginElement;
+}
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwMenuItemElement;
@@ -681,6 +712,11 @@ declare global {
     prototype: HTMLMwLinkElement;
     new (): HTMLMwLinkElement;
   };
+  interface HTMLMwLoginElement extends Components.MwLogin, HTMLStencilElement {}
+  var HTMLMwLoginElement: {
+    prototype: HTMLMwLoginElement;
+    new (): HTMLMwLoginElement;
+  };
   interface HTMLMwMenuElement extends Components.MwMenu, HTMLStencilElement {}
   var HTMLMwMenuElement: {
     prototype: HTMLMwMenuElement;
@@ -769,6 +805,7 @@ declare global {
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-link": HTMLMwLinkElement;
+    "mw-login": HTMLMwLoginElement;
     "mw-menu": HTMLMwMenuElement;
     "mw-menu-item": HTMLMwMenuItemElement;
     "mw-menu-list": HTMLMwMenuListElement;
@@ -1065,6 +1102,36 @@ declare namespace LocalJSX {
      * Dictates whether link has an underline
      */
     underline?: boolean;
+  }
+  interface MwLogin {
+    /**
+     * URL to the image that should be displayed
+     */
+    backgroundImage?: string | undefined;
+    /**
+     * Wether or not the forgot password button should be displayed
+     */
+    forgotPasswordHref?: string;
+    /**
+     * Headline text
+     */
+    headline?: string | undefined;
+    /**
+     * In which layout the Login component should be displayed
+     */
+    layout?: LoginLayout;
+    /**
+     * URL to the image that should be displayed
+     */
+    logo?: string | undefined;
+    /**
+     * Event emitted after login button was clicked
+     */
+    onSubmit?: (event: MwLoginCustomEvent<void>) => void;
+    /**
+     * Wether or not the signUp prompt should be displayed
+     */
+    signUpHref?: string;
   }
   interface MwMenu {
     /**
@@ -1375,6 +1442,7 @@ declare namespace LocalJSX {
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
     "mw-link": MwLink;
+    "mw-login": MwLogin;
     "mw-menu": MwMenu;
     "mw-menu-item": MwMenuItem;
     "mw-menu-list": MwMenuList;
@@ -1412,6 +1480,7 @@ declare module "@stencil/core" {
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
+      "mw-login": LocalJSX.MwLogin & JSXBase.HTMLAttributes<HTMLMwLoginElement>;
       "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
       "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
       "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
