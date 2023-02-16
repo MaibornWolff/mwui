@@ -388,13 +388,13 @@ export declare interface MwImg extends Components.MwImg {
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["alt", "lazyLoad", "preloadSrc", "src"],
+    inputs: ["alt", "fallback", "lazyLoad", "preloadSrc", "src", "srcset"],
 })
 @Component({
     selector: "mw-img",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["alt", "lazyLoad", "preloadSrc", "src"],
+    inputs: ["alt", "fallback", "lazyLoad", "preloadSrc", "src", "srcset"],
 })
 export class MwImg {
     protected el: HTMLElement;

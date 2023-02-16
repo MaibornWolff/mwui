@@ -11,6 +11,7 @@ import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
+import { SrcSetItem } from "./components/mw-img/mw-img";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
@@ -267,6 +268,10 @@ export namespace Components {
      */
     alt: string;
     /**
+     * URL of the image to be displayed when an error on load occurs
+     */
+    fallback: string;
+    /**
      * If the image should be lazy loaded
      */
     lazyLoad: boolean;
@@ -278,6 +283,10 @@ export namespace Components {
      * Image source
      */
     src: string;
+    /**
+     * Different resolutions for different viewport sizes can be passed e.g. "img/vasen-420.webp 420w,       img/vasen-980.webp 980w,       img/vasen-1680.webp 1680w,       img/vasen-2400.webp 2400w"
+     */
+    srcset: string | SrcSetItem[];
   }
   interface MwLink {
     /**
@@ -1086,6 +1095,10 @@ declare namespace LocalJSX {
      */
     alt?: string;
     /**
+     * URL of the image to be displayed when an error on load occurs
+     */
+    fallback?: string;
+    /**
      * If the image should be lazy loaded
      */
     lazyLoad?: boolean;
@@ -1105,6 +1118,10 @@ declare namespace LocalJSX {
      * Image source
      */
     src?: string;
+    /**
+     * Different resolutions for different viewport sizes can be passed e.g. "img/vasen-420.webp 420w,       img/vasen-980.webp 980w,       img/vasen-1680.webp 1680w,       img/vasen-2400.webp 2400w"
+     */
+    srcset?: string | SrcSetItem[];
   }
   interface MwLink {
     /**

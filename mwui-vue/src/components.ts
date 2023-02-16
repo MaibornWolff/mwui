@@ -49,7 +49,7 @@ export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>("mw-icon", undef
 
 export const MwIconGallery = /*@__PURE__*/ defineContainer<JSX.MwIconGallery>("mw-icon-gallery", undefined, ["icons"]);
 
-export const MwImg = /*@__PURE__*/ defineContainer<JSX.MwImg>("mw-img", undefined, ["preloadSrc", "src", "alt", "lazyLoad", "imgDidLoad", "imgLoadError"]);
+export const MwImg = /*@__PURE__*/ defineContainer<JSX.MwImg>("mw-img", undefined, ["preloadSrc", "src", "alt", "lazyLoad", "fallback", "srcset", "imgDidLoad", "imgLoadError"]);
 
 export const MwLink = /*@__PURE__*/ defineContainer<JSX.MwLink>("mw-link", undefined, ["href", "target", "underline"]);
 

@@ -1,4 +1,9 @@
-import { Component, Host, h, Prop, Element, Event, State, EventEmitter } from "@stencil/core";
+import { Component, Host, h, Prop, Element, Event, State, EventEmitter, Watch } from "@stencil/core";
+
+export type SrcSetItem = {
+  size: string;
+  src: string;
+};
 
 @Component({
   tag: "mw-img",
@@ -10,6 +15,7 @@ export class MwImg {
   private imgElement: HTMLImageElement | null;
 
   @State() isLoaded = false;
+  @State() srcSetState?: string;
 
   @Element() el: HTMLMwImgElement;
 
@@ -49,12 +55,50 @@ export class MwImg {
    * If the image should be lazy loaded
    */
   @Prop() lazyLoad = true;
+  /**
+   * URL of the image to be displayed when an error on load occurs
+   */
+  @Prop() fallback: string;
+
+  /**
+   * Different resolutions for different viewport sizes can be passed
+   * e.g. "img/vasen-420.webp 420w,
+   *       img/vasen-980.webp 980w,
+   *       img/vasen-1680.webp 1680w,
+   *       img/vasen-2400.webp 2400w"
+   */
+  @Prop() srcset: string | SrcSetItem[];
+  @Watch("srcset") onSrcSet(srcset: string | SrcSetItem[]): void {
+    /**
+     *
+     */
+    this.setSrcSet(srcset);
+  }
+
+  connectedCallback(): void {
+    if (this.srcset) {
+      this.setSrcSet(this.srcset);
+    }
+  }
 
   componentDidLoad(): void {
     const { imgElement, lazyLoad } = this;
 
     if (imgElement && lazyLoad) {
       this.connectObserver(imgElement);
+    } else {
+      this.setSrc(imgElement);
+    }
+  }
+
+  private setSrcSet(srcSet: string | SrcSetItem[]): void {
+    this.srcSetState = Array.isArray(srcSet) ? srcSet.map(set => `${set.src} ${set.size}`).join(",") : srcSet;
+  }
+
+  private setSrc(imgEl: HTMLImageElement): void {
+    if (imgEl.getAttribute("data-src")) {
+      imgEl.setAttribute("src", imgEl.getAttribute("data-src"));
+      imgEl.removeAttribute("data-src");
     }
   }
 
@@ -74,10 +118,7 @@ export class MwImg {
           this.disconnectObserver();
         }
 
-        if (entry.target.getAttribute("data-src")) {
-          entry.target.setAttribute("src", entry.target.getAttribute("data-src"));
-          entry.target.removeAttribute("data-src");
-        }
+        this.setSrc(entry.target);
       }
     }
   };
@@ -89,14 +130,26 @@ export class MwImg {
 
   private onError(): void {
     this.imgLoadError.emit();
+    if (this.fallback) {
+      this.imgElement.setAttribute("src", this.fallback);
+    }
   }
 
   render() {
-    const { src, alt, preloadSrc, isLoaded, onLoad, onError } = this;
+    const { src, alt, preloadSrc, isLoaded, srcSetState, onLoad, onError } = this;
 
     return (
       <Host class="mw-img">
-        <img decoding="async" data-src={src} alt={alt} part="image" onLoad={onLoad.bind(this)} onError={onError.bind(this)} ref={el => (this.imgElement = el)} />
+        <img
+          decoding="async"
+          data-src={src}
+          alt={alt}
+          part="image"
+          onLoad={onLoad.bind(this)}
+          onError={onError.bind(this)}
+          ref={el => (this.imgElement = el)}
+          srcset={srcSetState}
+        />
         {preloadSrc && !isLoaded && (
           <span>
             <img decoding="sync" src={preloadSrc} alt={alt} id="preload-img" />

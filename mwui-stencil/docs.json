@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-15T14:34:39",
+  "timestamp": "2023-02-16T08:48:18",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -1401,6 +1401,22 @@
           "required": false
         },
         {
+          "name": "fallback",
+          "type": "string",
+          "mutable": false,
+          "attr": "fallback",
+          "reflectToAttr": false,
+          "docs": "URL of the image to be displayed when an error on load occurs",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "lazyLoad",
           "type": "boolean",
           "mutable": false,
@@ -1442,6 +1458,25 @@
           "docs": "Image source",
           "docsTags": [],
           "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "srcset",
+          "type": "SrcSetItem[] | string",
+          "mutable": false,
+          "attr": "srcset",
+          "reflectToAttr": false,
+          "docs": "Different resolutions for different viewport sizes can be passed\ne.g. \"img/vasen-420.webp 420w,\n      img/vasen-980.webp 980w,\n      img/vasen-1680.webp 1680w,\n      img/vasen-2400.webp 2400w\"",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "SrcSetItem[]"
+            },
             {
               "type": "string"
             }

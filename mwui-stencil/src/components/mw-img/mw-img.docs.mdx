@@ -1,0 +1,38 @@
+import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+
+# Image
+
+The MwImage component displays an image like a regular img tag but brings some quality of life improvements.
+
+Images can:
+
+- be lazy loaded when visible in the viewport.
+- have fallback images in case an image URL is not valid
+- can have different resolutions for different viewport sizes
+- can have a preloadImg which will display the low resolution img first then switch to the original src
+
+<ArgsTable of="mw-img" />
+
+### Default
+
+<Canvas>
+  <Story id="components-image--image" />
+</Canvas>
+
+### Image with fallback
+
+<Canvas>
+  <Story id="components-image--image-with-fallback" />
+</Canvas>
+
+### Image with adaptive sizes
+
+<Canvas>
+  <Story id="components-image--image-with-adaptive-sizes" />
+</Canvas>
+
+### Image with preload
+
+<Canvas>
+  <Story id="components-image--image-with-preload" />
+</Canvas>
