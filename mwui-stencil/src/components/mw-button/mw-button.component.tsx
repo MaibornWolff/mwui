@@ -1,21 +1,14 @@
-import { Component, Element, Event, EventEmitter, h, Prop } from "@stencil/core";
-import { filledButtonStyles, flexStyles, ghostButtonStyles, iconButtonStyles, iconEndStyles, iconStartStyles, outlineButtonStyles } from "./mw-button.styles";
+import { Component, Element, Event, EventEmitter, h, Host, Prop } from "@stencil/core";
 import { ButtonSize, ButtonSizeEnum } from "./models/enums/button-size.enum";
 import { ButtonVariant, ButtonVariantEnum } from "./models/enums/button-variant.enum";
 import { Target, TargetEnum } from "./models/enums/button-target.enum";
 
-const getButtonVariantStyles = (variant: ButtonVariant) =>
-  ({
-    [ButtonVariantEnum.FILLED]: filledButtonStyles,
-    [ButtonVariantEnum.OUTLINE]: outlineButtonStyles,
-    [ButtonVariantEnum.GHOST]: ghostButtonStyles,
-  }[variant]);
-
 @Component({
   tag: "mw-button",
-  shadow: false,
+  styleUrl: "./mw-button.scss",
+  shadow: true,
 })
-export class MWButton {
+export class MwButton {
   @Element() hostElement: HTMLMwButtonElement;
   /**
    * Provide unique identifier for automated testing
@@ -83,41 +76,81 @@ export class MWButton {
   render() {
     if (this.href) {
       return (
-        <a href={this.href} target={this.target} class={`${this.variant} ${getButtonVariantStyles(this.variant)} ${this.size}`} test-id={this.testId}>
+        <Host>
+          <a
+            href={this.href}
+            target={this.target}
+            class={{
+              "mw-button": true,
+              "mw-button--flex": this.hasIcon,
+              [`mw-button--${this.variant}`]: true,
+              [`mw-button--${this.size}`]: true,
+            }}
+            test-id={this.testId}
+          >
+            {this.hasIconStartSlot && (
+              <span
+                class={{
+                  "mw-button-icon-start": true,
+                  [`mw-button-icon-start--${this.size}`]: this.hasLabel,
+                }}
+              >
+                <slot name="icon-start"></slot>
+              </span>
+            )}
+            <span>{this.label}</span>
+            {this.hasIconEndSlot && (
+              <span
+                class={{
+                  "mw-button-icon-end": true,
+                  [`mw-button-icon-end--${this.size}`]: this.hasLabel,
+                }}
+              >
+                <slot name="icon-end"></slot>
+              </span>
+            )}
+          </a>
+        </Host>
+      );
+    }
+    return (
+      <Host>
+        <button
+          disabled={this.disabled}
+          onClick={this.handleClick}
+          class={{
+            "mw-button": true,
+            "mw-button--flex": this.hasIcon,
+            "mw-button--icon-only": !this.label,
+            [`mw-button--${this.variant}`]: true,
+            [`mw-button--${this.size}`]: true,
+          }}
+          test-id={this.testId}
+          type="button"
+        >
           {this.hasIconStartSlot && (
-            <span class={`mw-button-icon-start ${this.size} ${this.hasLabel ? iconStartStyles : ""}`}>
+            <span
+              class={{
+                "mw-button-icon-start": true,
+                [`mw-button-icon-start--${this.size}`]: this.hasLabel,
+              }}
+            >
               <slot name="icon-start"></slot>
             </span>
           )}
           <span>{this.label}</span>
           {this.hasIconEndSlot && (
-            <span class={`mw-button-icon-end ${this.size} ${this.hasLabel ? iconEndStyles : ""}`}>
+            <span
+              class={{
+                "mw-button-icon-end": true,
+                [`mw-button-icon-end--${this.size}`]: this.hasLabel,
+              }}
+            >
               <slot name="icon-end"></slot>
             </span>
           )}
-        </a>
-      );
-    }
-    return (
-      <button
-        disabled={this.disabled}
-        onClick={this.handleClick}
-        class={`${this.variant} ${getButtonVariantStyles(this.variant)} ${this.hasIcon && flexStyles} ${!this.hasLabel && iconButtonStyles} ${this.size}`}
-        test-id={this.testId}
-        type="button"
-      >
-        {this.hasIconStartSlot && (
-          <span class={`mw-button-icon-start ${this.size} ${this.hasLabel ? iconStartStyles : ""}`}>
-            <slot name="icon-start"></slot>
-          </span>
-        )}
-        <span>{this.label}</span>
-        {this.hasIconEndSlot && (
-          <span class={`mw-button-icon-end ${this.size} ${this.hasLabel ? iconEndStyles : ""}`}>
-            <slot name="icon-end"></slot>
-          </span>
-        )}
-      </button>
+        </button>
+      </Host>
     );
   }
 }

@@ -1,10 +1,9 @@
-import '../../global/global.css';
-// @ts-ignore
-import docs from './mw-chip.docs.mdx';
+import "../../global/global.css";
+import docs from "./mw-chip.docs.mdx";
 
 export default {
-  title: 'Components/Chip',
-  component: 'mw-chip',
+  title: "Components/Chip",
+  component: "mw-chip",
   parameters: {
     docs: { page: docs },
   },
@@ -15,18 +14,17 @@ const DefaultTemplate = args => `
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  testId: 'chip',
-  icon: 'favorite',
+  testId: "chip",
+  icon: "favorite",
 };
 
 const SelectedTemplate = args => `
 <mw-chip test-id="${args.testId}" selected="${args.selected}">Chip & Chap</mw-chip>`;
 
-
 export const Selected = SelectedTemplate.bind({});
 Selected.args = {
-  testId: 'chip',
-  icon: 'favorite',
+  testId: "chip",
+  icon: "favorite",
   selected: true,
 };
 
@@ -41,9 +39,9 @@ const Template = args => `
 
 export const Icon = Template.bind({});
 Icon.args = {
-  testId: 'chip',
+  testId: "chip",
   showClose: false,
-  icon: 'check',
+  icon: "check",
   disabled: false,
 };
 
@@ -62,7 +60,7 @@ const AvatarTemplate = args => `
 
 export const Avatar = AvatarTemplate.bind({});
 Avatar.args = {
-  testId: 'chip',
+  testId: "chip",
   showClose: false,
   disabled: false,
 };
@@ -78,16 +76,16 @@ const CloseTemplate = args => `
 
 export const Closable = CloseTemplate.bind({});
 Closable.args = {
-  testId: 'chip-closable',
-  icon: 'check',
+  testId: "chip-closable",
+  icon: "check",
   showClose: true,
   disabled: false,
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  testId: 'chip',
-  icon: 'check',
+  testId: "chip",
+  icon: "check",
   showClose: true,
   disabled: true,
 };

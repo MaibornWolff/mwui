@@ -1,5 +1,4 @@
 import "../../global/global.css";
-// @ts-ignore
 import docs from "./mw-app-bar.docs.mdx";
 
 export default {

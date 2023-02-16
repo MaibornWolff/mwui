@@ -1,10 +1,9 @@
-import '../../global/global.css';
-// @ts-ignore
-import docs from './mw-button.docs.mdx';
+import "../../global/global.css";
+import docs from "./mw-button.docs.mdx";
 
 export default {
-  title: 'Components/Button',
-  component: 'mw-button',
+  title: "Components/Button",
+  component: "mw-button",
   parameters: {
     docs: { page: docs },
   },
@@ -22,30 +21,30 @@ const Template = args => `
 
 export const Filled = Template.bind({});
 Filled.args = {
-  testId: 'some-button-id',
-  label: 'BUTTON',
+  testId: "some-button-id",
+  label: "BUTTON",
   onClick: () => {},
   disabled: false,
-  variant: 'filled',
-  size: 'medium',
+  variant: "filled",
+  size: "medium",
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
-  testId: 'button',
-  label: 'BUTTON',
+  testId: "button",
+  label: "BUTTON",
   disabled: false,
-  variant: 'outline',
-  size: 'medium',
+  variant: "outline",
+  size: "medium",
 };
 
 export const Ghost = Template.bind({});
 Ghost.args = {
-  testId: 'button',
-  label: 'BUTTON',
+  testId: "button",
+  label: "BUTTON",
   disabled: false,
-  variant: 'ghost',
-  size: 'medium',
+  variant: "ghost",
+  size: "medium",
 };
 
 const WithIconTemplate = args => `
@@ -56,11 +55,11 @@ const WithIconTemplate = args => `
 
 export const WithIcon = WithIconTemplate.bind({});
 WithIcon.args = {
-  testId: 'button',
-  label: 'BUTTON',
+  testId: "button",
+  label: "BUTTON",
   disabled: false,
-  variant: 'filled',
-  size: 'medium',
+  variant: "filled",
+  size: "medium",
 };
 
 const IconTemplate = args => `
@@ -70,10 +69,10 @@ const IconTemplate = args => `
 
 export const Icon = IconTemplate.bind({});
 Icon.args = {
-  testId: 'button',
+  testId: "button",
   disabled: false,
-  variant: 'filled',
-  size: 'medium',
+  variant: "filled",
+  size: "medium",
 };
 
 const LinkTemplate = args => `
@@ -81,11 +80,11 @@ const LinkTemplate = args => `
 
 export const Link = LinkTemplate.bind({});
 Link.args = {
-  testId: 'button',
-  label: 'LINK BUTTON',
-  href: '#',
-  target: '_self',
+  testId: "button",
+  label: "LINK BUTTON",
+  href: "#",
+  target: "_self",
   disabled: false,
-  variant: 'filled',
-  size: 'medium',
+  variant: "filled",
+  size: "medium",
 };

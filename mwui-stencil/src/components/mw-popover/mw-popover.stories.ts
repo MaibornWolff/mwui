@@ -1,10 +1,9 @@
-import '../../global/global.css';
-// @ts-ignore
-import docs from './mw-popover.docs.mdx';
+import "../../global/global.css";
+import docs from "./mw-popover.docs.mdx";
 
 export default {
-  title: 'Components/Popover',
-  component: 'mw-popover',
+  title: "Components/Popover",
+  component: "mw-popover",
   parameters: {
     docs: { page: docs },
   },
@@ -20,10 +19,10 @@ const DefaultTemplate = args => `
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  testId: 'popover',
-  name: 'tooltip',
+  testId: "popover",
+  name: "tooltip",
   dismissable: false,
-  placement: 'bottom',
+  placement: "bottom",
   open: false,
 };
 
@@ -37,9 +36,9 @@ const DismissableTemplate = args => `
 
 export const Dismissable = DismissableTemplate.bind({});
 Dismissable.args = {
-  testId: 'popover',
-  name: 'tooltip',
+  testId: "popover",
+  name: "tooltip",
   dismissable: true,
-  placement: 'bottom',
+  placement: "bottom",
   open: false,
 };

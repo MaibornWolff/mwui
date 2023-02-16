@@ -3,7 +3,7 @@ import docs from "./mw-modal.docs.mdx";
 import { ModalSizeEnum } from "./models/enums/modal-size.enum";
 
 export default {
-  title: "Molecules/Modal",
+  title: "Components/Modal",
   component: "mw-modal",
   parameters: {
     docs: { page: docs },

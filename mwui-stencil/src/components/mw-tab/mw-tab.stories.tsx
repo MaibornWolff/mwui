@@ -1,5 +1,4 @@
 import "../../global/global.css";
-// @ts-ignore
 import docs from "./mw-tab.docs.mdx";
 
 export default {
