@@ -33,6 +33,7 @@
 
 - [mw-autocomplete](../mw-autocomplete)
 - [mw-icon-gallery](../mw-icon-gallery)
+- [mw-login](../mw-login)
 
 ### Depends on
 
@@ -50,6 +51,7 @@ graph TD;
   mw-chip --> mw-icon
   mw-autocomplete --> mw-textfield
   mw-icon-gallery --> mw-textfield
+  mw-login --> mw-textfield
   style mw-textfield fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

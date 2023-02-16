@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-16T12:01:40",
+  "timestamp": "2023-02-16T14:10:30",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -99,7 +99,7 @@
       "filePath": "./src/components/mw-autocomplete/mw-autocomplete.tsx",
       "encapsulation": "shadow",
       "tag": "mw-autocomplete",
-      "readme": "# mw-autocomplete\r\n\r",
+      "readme": "# mw-autocomplete\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -468,10 +468,17 @@
       "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
-      "dependents": [],
+      "parts": [
+        {
+          "name": "button",
+          "docs": ""
+        }
+      ],
+      "dependents": ["mw-login"],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-login": ["mw-button"]
+      }
     },
     {
       "filePath": "./src/components/mw-card/mw-card.tsx",
@@ -1075,17 +1082,18 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-login"],
       "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-checkbox": ["mw-icon"]
+        "mw-checkbox": ["mw-icon"],
+        "mw-login": ["mw-checkbox"]
       }
     },
     {
       "filePath": "./src/components/mw-chip/mw-chip.tsx",
       "encapsulation": "shadow",
       "tag": "mw-chip",
-      "readme": "# mw-chip\r\n\r",
+      "readme": "# mw-chip\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1592,7 +1600,7 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-dropdown", "mw-icon-gallery", "mw-slider", "mw-tab", "mw-textfield"],
+      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-dropdown", "mw-icon-gallery", "mw-login", "mw-slider", "mw-tab", "mw-textfield"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-avatar": ["mw-icon"],
@@ -1600,6 +1608,7 @@
         "mw-chip": ["mw-icon"],
         "mw-dropdown": ["mw-icon"],
         "mw-icon-gallery": ["mw-icon"],
+        "mw-login": ["mw-icon"],
         "mw-slider": ["mw-icon"],
         "mw-tab": ["mw-icon"],
         "mw-textfield": ["mw-icon"]
@@ -1609,7 +1618,7 @@
       "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon-gallery",
-      "readme": "# mw-icon-gallery\r\n\r",
+      "readme": "# mw-icon-gallery\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1724,9 +1733,152 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-login"],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-login": ["mw-link"]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-login/mw-login.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-login",
+      "readme": "# mw-login\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "backgroundImage",
+          "type": "string",
+          "mutable": false,
+          "attr": "background-image",
+          "reflectToAttr": false,
+          "docs": "URL to the image that should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "forgotPasswordHref",
+          "type": "string",
+          "mutable": false,
+          "attr": "forgot-password-href",
+          "reflectToAttr": false,
+          "docs": "Wether or not the forgot password button should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "headline",
+          "type": "string",
+          "mutable": false,
+          "attr": "headline",
+          "reflectToAttr": false,
+          "docs": "Headline text",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "layout",
+          "type": "\"center\" | \"end\" | \"start\"",
+          "mutable": false,
+          "attr": "layout",
+          "reflectToAttr": false,
+          "docs": "In which layout the Login component should be displayed",
+          "docsTags": [],
+          "default": "LoginLayoutEnum.CENTER",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "logo",
+          "type": "string",
+          "mutable": false,
+          "attr": "logo",
+          "reflectToAttr": false,
+          "docs": "URL to the image that should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "signUpHref",
+          "type": "string",
+          "mutable": false,
+          "attr": "sign-up-href",
+          "reflectToAttr": false,
+          "docs": "Wether or not the signUp prompt should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "submit",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "Event emitted after login button was clicked",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
+      "dependencyGraph": {
+        "mw-login": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
+        "mw-textfield": ["mw-popover", "mw-chip", "mw-icon"],
+        "mw-chip": ["mw-icon"],
+        "mw-checkbox": ["mw-icon"]
+      }
     },
     {
       "filePath": "./src/components/mw-menu/mw-menu.tsx",
@@ -3008,7 +3160,7 @@
       "filePath": "./src/components/mw-tabs/mw-tabs.tsx",
       "encapsulation": "shadow",
       "tag": "mw-tabs",
-      "readme": "# mw-tabs\r\n\r",
+      "readme": "# mw-tabs\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3064,7 +3216,7 @@
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
       "encapsulation": "shadow",
       "tag": "mw-textfield",
-      "readme": "# mw-textfield\r\n\r",
+      "readme": "# mw-textfield\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3344,13 +3496,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-autocomplete", "mw-icon-gallery"],
+      "dependents": ["mw-autocomplete", "mw-icon-gallery", "mw-login"],
       "dependencies": ["mw-popover", "mw-chip", "mw-icon"],
       "dependencyGraph": {
         "mw-textfield": ["mw-popover", "mw-chip", "mw-icon"],
         "mw-chip": ["mw-icon"],
         "mw-autocomplete": ["mw-textfield"],
-        "mw-icon-gallery": ["mw-textfield"]
+        "mw-icon-gallery": ["mw-textfield"],
+        "mw-login": ["mw-textfield"]
       }
     }
   ]

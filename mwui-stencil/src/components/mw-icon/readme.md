@@ -21,6 +21,7 @@
 - [mw-chip](../mw-chip)
 - [mw-dropdown](../mw-dropdown)
 - [mw-icon-gallery](../mw-icon-gallery)
+- [mw-login](../mw-login)
 - [mw-slider](../mw-slider)
 - [mw-tab](../mw-tab)
 - [mw-textfield](../mw-textfield)
@@ -34,6 +35,7 @@ graph TD;
   mw-chip --> mw-icon
   mw-dropdown --> mw-icon
   mw-icon-gallery --> mw-icon
+  mw-login --> mw-icon
   mw-slider --> mw-icon
   mw-tab --> mw-icon
   mw-textfield --> mw-icon

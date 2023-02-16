@@ -48,6 +48,7 @@
     "@pxtrn/storybook-addon-docs-stencil": "^6.4.1",
     "@stencil-community/eslint-plugin": "^0.5.0",
     "@stencil/sass": "^2.0.3",
+    "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.5.10",
