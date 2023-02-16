@@ -1,5 +1,4 @@
 import { Component, Element, Host, Prop, h } from "@stencil/core";
-import classnames from "classnames";
 
 @Component({
   tag: "mw-card-image",
@@ -22,7 +21,7 @@ export class MwCardImage {
   private isLastChild: boolean;
   private isOnlyChild: boolean;
 
-  componentWillLoad() {
+  componentWillLoad(): void {
     const card = this.hostElement.parentNode;
     this.isOnlyChild = card.childElementCount === 1;
     this.isFirstChild = !this.isOnlyChild && this.hostElement.isSameNode(card.firstElementChild);
@@ -32,7 +31,7 @@ export class MwCardImage {
   render() {
     return (
       <Host>
-        <div class={classnames("card-image", { top: this.isFirstChild, bottom: this.isLastChild, single: this.isOnlyChild })}>
+        <div class={{ "card-image": true, "top": this.isFirstChild, "bottom": this.isLastChild, "single": this.isOnlyChild }}>
           <img src={this.src} alt={this.alt} />
         </div>
       </Host>
