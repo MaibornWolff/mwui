@@ -34,7 +34,7 @@ export class MwMenuItem {
     bubbles: true,
     cancelable: false,
     composed: false,
-    eventName: "mw-menu-item-click",
+    eventName: "mwMenuItemClick",
   })
   clickEmitter: EventEmitter;
 

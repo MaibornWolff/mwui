@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-15T11:43:59",
+  "timestamp": "2023-02-16T12:01:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -99,6 +99,7 @@
       "filePath": "./src/components/mw-autocomplete/mw-autocomplete.tsx",
       "encapsulation": "shadow",
       "tag": "mw-autocomplete",
+      "readme": "# mw-autocomplete\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1084,7 +1085,7 @@
       "filePath": "./src/components/mw-chip/mw-chip.tsx",
       "encapsulation": "shadow",
       "tag": "mw-chip",
-      "readme": "# mw-chip\n",
+      "readme": "# mw-chip\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1194,12 +1195,21 @@
       "methods": [],
       "events": [
         {
-          "event": "emitter",
+          "event": "mwChipClick",
           "detail": "any",
           "bubbles": true,
           "cancelable": false,
           "composed": true,
-          "docs": "MwChip emits an event when chip is clicked or chip is closed",
+          "docs": "MwChip emits an event when chip is clicked",
+          "docsTags": []
+        },
+        {
+          "event": "mwChipClose",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": true,
+          "docs": "MwChip emits an event when chip is closed",
           "docsTags": []
         }
       ],
@@ -1446,12 +1456,12 @@
       ],
       "listeners": [
         {
-          "event": "clickEmitter",
+          "event": "mwMenuItemClick",
           "capture": false,
           "passive": false
         },
         {
-          "event": "openEmitter",
+          "event": "mwPopoverOpen",
           "capture": false,
           "passive": false
         }
@@ -1599,7 +1609,7 @@
       "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon-gallery",
-      "readme": "# mw-icon-gallery\n",
+      "readme": "# mw-icon-gallery\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1930,7 +1940,7 @@
       "methods": [],
       "events": [
         {
-          "event": "clickEmitter",
+          "event": "mwMenuItemClick",
           "detail": "any",
           "bubbles": true,
           "cancelable": false,
@@ -2371,7 +2381,7 @@
       "methods": [],
       "events": [
         {
-          "event": "openEmitter",
+          "event": "mwPopoverOpen",
           "detail": "any",
           "bubbles": true,
           "cancelable": false,
@@ -2998,7 +3008,7 @@
       "filePath": "./src/components/mw-tabs/mw-tabs.tsx",
       "encapsulation": "shadow",
       "tag": "mw-tabs",
-      "readme": "# mw-tabs\n",
+      "readme": "# mw-tabs\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3054,7 +3064,7 @@
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
       "encapsulation": "shadow",
       "tag": "mw-textfield",
-      "readme": "# mw-textfield\n",
+      "readme": "# mw-textfield\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3311,24 +3321,24 @@
       ],
       "listeners": [
         {
-          "event": "clickEmitter",
+          "event": "mwMenuItemClick",
           "capture": false,
           "passive": false
         },
         {
-          "event": "openEmitter",
+          "event": "mwPopoverOpen",
           "capture": false,
           "passive": false
         },
         {
-          "event": "emitter",
+          "event": "mwChipClose",
           "capture": false,
           "passive": false
         },
         {
           "event": "keydown",
           "capture": false,
-          "passive": false
+          "passive": true
         }
       ],
       "styles": [],

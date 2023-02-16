@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event          | Description                                | Type               |
-| -------------- | ------------------------------------------ | ------------------ |
-| `clickEmitter` | MwMenuItem emits an event when its clicked | `CustomEvent<any>` |
+| Event             | Description                                | Type               |
+| ----------------- | ------------------------------------------ | ------------------ |
+| `mwMenuItemClick` | MwMenuItem emits an event when its clicked | `CustomEvent<any>` |
 
 ---
 

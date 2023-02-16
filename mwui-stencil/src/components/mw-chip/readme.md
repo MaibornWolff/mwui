@@ -15,9 +15,10 @@
 
 ## Events
 
-| Event     | Description                                                  | Type               |
-| --------- | ------------------------------------------------------------ | ------------------ |
-| `emitter` | MwChip emits an event when chip is clicked or chip is closed | `CustomEvent<any>` |
+| Event         | Description                                | Type               |
+| ------------- | ------------------------------------------ | ------------------ |
+| `mwChipClick` | MwChip emits an event when chip is clicked | `CustomEvent<any>` |
+| `mwChipClose` | MwChip emits an event when chip is closed  | `CustomEvent<any>` |
 
 ## Dependencies
 

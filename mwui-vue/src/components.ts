@@ -43,7 +43,16 @@ export const MwCardTitle = /*@__PURE__*/ defineContainer<JSX.MwCardTitle>("mw-ca
 
 export const MwCheckbox = /*@__PURE__*/ defineContainer<JSX.MwCheckbox>("mw-checkbox", undefined, ["testId", "value", "name", "checked", "disabled", "label", "emitter"]);
 
-export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>("mw-chip", undefined, ["testId", "icon", "disabled", "showClose", "value", "selected", "emitter"]);
+export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>("mw-chip", undefined, [
+    "testId",
+    "icon",
+    "disabled",
+    "showClose",
+    "value",
+    "selected",
+    "mwChipClick",
+    "mwChipClose",
+]);
 
 export const MwDivider = /*@__PURE__*/ defineContainer<JSX.MwDivider>("mw-divider", undefined, ["inset"]);
 
@@ -69,7 +78,7 @@ export const MwLink = /*@__PURE__*/ defineContainer<JSX.MwLink>("mw-link", undef
 
 export const MwMenu = /*@__PURE__*/ defineContainer<JSX.MwMenu>("mw-menu", undefined, ["testId", "placement", "open"]);
 
-export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu-item", undefined, ["title", "subtitle", "disabled", "selected", "value", "clickEmitter"]);
+export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu-item", undefined, ["title", "subtitle", "disabled", "selected", "value", "mwMenuItemClick"]);
 
 export const MwMenuList = /*@__PURE__*/ defineContainer<JSX.MwMenuList>("mw-menu-list", undefined, ["testId"]);
 
@@ -87,7 +96,7 @@ export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popove
     "closeOnClick",
     "noPadding",
     "name",
-    "openEmitter",
+    "mwPopoverOpen",
 ]);
 
 export const MwRadio = /*@__PURE__*/ defineContainer<JSX.MwRadio>("mw-radio", undefined, ["disabled", "checked", "value", "name", "testId", "label"]);

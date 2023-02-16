@@ -58,6 +58,7 @@ export class MwPopover {
     bubbles: true,
     cancelable: false,
     composed: true,
+    eventName: "mwPopoverOpen",
   })
   openEmitter: EventEmitter;
 

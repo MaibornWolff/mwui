@@ -53,12 +53,12 @@ export class MwDropdown {
   @Prop() disabled?: boolean = false;
   @State() focused = false;
   @State() isDropdownOpen = false;
-  @Listen("clickEmitter")
+  @Listen("mwMenuItemClick")
   clickEmitterHandler(event): void {
     this.value = event.target.getAttribute("value");
     this.valueLabel = event.target.getAttribute("title");
   }
-  @Listen("openEmitter")
+  @Listen("mwPopoverOpen")
   stateEmitterHandler(event): void {
     this.isDropdownOpen = event.detail;
   }

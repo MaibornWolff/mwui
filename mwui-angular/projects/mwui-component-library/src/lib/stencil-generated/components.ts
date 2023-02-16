@@ -309,9 +309,13 @@ export class MwCheckbox {
 
 export declare interface MwChip extends Components.MwChip {
     /**
-     * MwChip emits an event when chip is clicked or chip is closed
+     * MwChip emits an event when chip is clicked
      */
-    emitter: EventEmitter<CustomEvent<any>>;
+    mwChipClick: EventEmitter<CustomEvent<any>>;
+    /**
+     * MwChip emits an event when chip is closed
+     */
+    mwChipClose: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
@@ -329,7 +333,7 @@ export class MwChip {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["emitter"]);
+        proxyOutputs(this, this.el, ["mwChipClick", "mwChipClose"]);
     }
 }
 
@@ -463,7 +467,7 @@ export declare interface MwMenuItem extends Components.MwMenuItem {
     /**
      * MwMenuItem emits an event when its clicked
      */
-    clickEmitter: EventEmitter<CustomEvent<any>>;
+    mwMenuItemClick: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
@@ -481,7 +485,7 @@ export class MwMenuItem {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["clickEmitter"]);
+        proxyOutputs(this, this.el, ["mwMenuItemClick"]);
     }
 }
 
@@ -568,7 +572,7 @@ export declare interface MwPopover extends Components.MwPopover {
     /**
      * MwPopover emits an event when the value of the open prop changes
      */
-    openEmitter: EventEmitter<CustomEvent<any>>;
+    mwPopoverOpen: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
@@ -586,7 +590,7 @@ export class MwPopover {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["openEmitter"]);
+        proxyOutputs(this, this.el, ["mwPopoverOpen"]);
     }
 }
 

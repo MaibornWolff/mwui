@@ -70,7 +70,7 @@ export class MwTextfield {
   @Prop({ reflect: true, mutable: true }) multipleValues?: Array<string | number> = [];
   @State() focused = false;
   @State() isDropdownOpen = false;
-  @Listen("mw-menu-item-click")
+  @Listen("mwMenuItemClick")
   clickEmitterHandler(event): void {
     const emittedValue = event.target.getAttribute("value");
     if (this.multiple) {
@@ -79,13 +79,11 @@ export class MwTextfield {
       this.value = emittedValue;
     }
   }
-
-  @Listen("openEmitter")
+  @Listen("mwPopoverOpen")
   stateEmitterHandler(event): void {
     this.isDropdownOpen = event.detail;
   }
-
-  @Listen("mw-chip-close")
+  @Listen("mwChipClose")
   closeEmitterHandler(event): void {
     const multiValuesCopy = this.multipleValues;
     const indexToRemove = multiValuesCopy.indexOf(event.detail);
@@ -93,10 +91,12 @@ export class MwTextfield {
     document.querySelectorAll(`mw-menu-item[value="${event.detail}"]`).forEach(item => item.setAttribute("disabled", "false"));
     this.multipleValues = [...multiValuesCopy];
   }
-
   @Listen("keydown", { passive: true })
   handleEnterPress(event: KeyboardEvent): void {
-    if (this.multiple && this.focused && event.key === "Enter") this.addMultiValue(this.inputElement.value);
+    if (this.multiple && this.focused && event.key === "Enter") {
+      this.addMultiValue(this.inputElement.value);
+      this.isDropdownOpen = false;
+    }
   }
 
   private inputElement: HTMLInputElement;
@@ -115,6 +115,7 @@ export class MwTextfield {
       this.value = (event.target as HTMLInputElement).value;
       this.valueChanged.emit(this.value);
     }
+    this.isDropdownOpen = true;
   };
 
   private onFocus = (): void => {

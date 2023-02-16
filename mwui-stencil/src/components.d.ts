@@ -1088,35 +1088,35 @@ declare namespace LocalJSX {
     /**
      * Visually and functionally disable button
      */
-    "disabled"?: boolean;
+    disabled?: boolean;
     /**
      * Name identifier of icon to be displayed in chip
      */
-    "icon"?: string;
+    icon?: string;
     /**
      * MwChip emits an event when chip is clicked
      */
-    "onMw-chip-click"?: (event: MwChipCustomEvent<any>) => void;
+    onMwChipClick?: (event: MwChipCustomEvent<any>) => void;
     /**
      * MwChip emits an event when chip is closed
      */
-    "onMw-chip-close"?: (event: MwChipCustomEvent<any>) => void;
+    onMwChipClose?: (event: MwChipCustomEvent<any>) => void;
     /**
      * Selection state that changes onToggle. Can be set as mutable prop.
      */
-    "selected"?: boolean;
+    selected?: boolean;
     /**
      * Flag whether to show close icon or not
      */
-    "showClose"?: boolean;
+    showClose?: boolean;
     /**
      * Provide unique identifier for automated testing
      */
-    "testId"?: string;
+    testId?: string;
     /**
      * Value of chip
      */
-    "value"?: string | number;
+    value?: string | number;
   }
   interface MwDivider {
     /**
@@ -1230,27 +1230,27 @@ declare namespace LocalJSX {
     /**
      * Disabled state
      */
-    "disabled"?: boolean;
+    disabled?: boolean;
     /**
      * MwMenuItem emits an event when its clicked
      */
-    "onMw-menu-item-click"?: (event: MwMenuItemCustomEvent<any>) => void;
+    onMwMenuItemClick?: (event: MwMenuItemCustomEvent<any>) => void;
     /**
      * Selected state
      */
-    "selected"?: boolean;
+    selected?: boolean;
     /**
      * Menu item subtitle
      */
-    "subtitle"?: string;
+    subtitle?: string;
     /**
      * Menu item title
      */
-    "title"?: string;
+    title?: string;
     /**
      * Value of item
      */
-    "value"?: string;
+    value?: string;
   }
   interface MwMenuList {
     /**
@@ -1311,7 +1311,7 @@ declare namespace LocalJSX {
     /**
      * MwPopover emits an event when the value of the open prop changes
      */
-    onOpenEmitter?: (event: MwPopoverCustomEvent<any>) => void;
+    onMwPopoverOpen?: (event: MwPopoverCustomEvent<any>) => void;
     /**
      * Whether the popover is visible
      */

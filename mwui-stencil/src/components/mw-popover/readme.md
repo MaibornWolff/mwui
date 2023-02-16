@@ -16,9 +16,9 @@
 
 ## Events
 
-| Event         | Description                                                      | Type               |
-| ------------- | ---------------------------------------------------------------- | ------------------ |
-| `openEmitter` | MwPopover emits an event when the value of the open prop changes | `CustomEvent<any>` |
+| Event           | Description                                                      | Type               |
+| --------------- | ---------------------------------------------------------------- | ------------------ |
+| `mwPopoverOpen` | MwPopover emits an event when the value of the open prop changes | `CustomEvent<any>` |
 
 ## Dependencies
 
