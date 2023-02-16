@@ -70,7 +70,7 @@ export class MwTextfield {
   @Prop({ reflect: true, mutable: true }) multipleValues?: Array<string | number> = [];
   @State() focused = false;
   @State() isDropdownOpen = false;
-  @Listen("clickEmitter")
+  @Listen("mw-menu-item-click")
   clickEmitterHandler(event): void {
     const emittedValue = event.target.getAttribute("value");
     if (this.multiple) {
@@ -85,7 +85,7 @@ export class MwTextfield {
     this.isDropdownOpen = event.detail;
   }
 
-  @Listen("closeEmitter")
+  @Listen("mw-chip-close")
   closeEmitterHandler(event): void {
     const multiValuesCopy = this.multipleValues;
     const indexToRemove = multiValuesCopy.indexOf(event.detail);

@@ -38,6 +38,7 @@ export class MwChip {
     bubbles: true,
     cancelable: false,
     composed: true,
+    eventName: "mw-chip-click",
   })
   clickEmitter: EventEmitter;
   /**
@@ -47,6 +48,7 @@ export class MwChip {
     bubbles: true,
     cancelable: false,
     composed: true,
+    eventName: "mw-chip-close",
   })
   closeEmitter: EventEmitter;
 
