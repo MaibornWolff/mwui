@@ -32,25 +32,34 @@ export class MwChip {
   @Prop({ reflect: true, mutable: true }) selected = false;
 
   /**
-   * MwChip emits an event when chip is clicked or chip is closed
+   * MwChip emits an event when chip is clicked
    */
   @Event({
     bubbles: true,
     cancelable: false,
     composed: true,
   })
-  emitter: EventEmitter;
+  clickEmitter: EventEmitter;
+  /**
+   * MwChip emits an event when chip is closed
+   */
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: true,
+  })
+  closeEmitter: EventEmitter;
 
   private handleClose = (event: Event): void => {
     event.stopPropagation();
     if (!this.disabled) {
-      this.emitter.emit(this.value);
+      this.closeEmitter.emit(this.value);
     }
   };
 
   private handleClick = (event: Event): void => {
     this.selected = !this.selected;
-    this.emitter.emit(event);
+    this.clickEmitter.emit(event);
   };
 
   render() {

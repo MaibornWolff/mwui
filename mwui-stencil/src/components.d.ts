@@ -15,1591 +15,1636 @@ import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
-  interface MwAppBar {
-    /**
-     * Set the role of the header
-     */
-    ariaRole?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
-    /**
-     * Position of App Bar within viewport
-     */
-    position?: AppBarPosition;
-  }
-  interface MwAppBarTitle {}
-  interface MwAutocomplete {}
-  interface MwAvatar {
-    /**
-     * Alt text, first letter used as fallback when no src or icon given
-     */
-    alt?: string;
-    /**
-     * Icon name. Will be ignored if `src` is provided
-     */
-    icon?: string;
-    /**
-     * Size variant
-     */
-    size?: Size;
-    /**
-     * Image source
-     */
-    src?: string;
-    /**
-     * Test Id
-     */
-    testId?: string;
-  }
-  interface MwBackdrop {
-    /**
-     * determines whether the backdrop will be dismissed by click
-     */
-    backdropDismiss: boolean;
-  }
-  interface MwButton {
-    /**
-     * Visually and functionally disable button
-     */
-    disabled?: boolean;
-    /**
-     * If provided the button will act as a link
-     */
-    href?: string;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * Button size
-     */
-    size?: ButtonSize;
-    /**
-     * If using href the target prop can be provided
-     */
-    target?: Target;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId: string;
-    /**
-     * Button variants
-     */
-    variant?: ButtonVariant;
-  }
-  interface MwCard {
-    /**
-     * Use box-shadow for elevation style
-     */
-    elevated?: boolean;
-    /**
-     * Display outline
-     */
-    outlined?: boolean;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId: string;
-  }
-  interface MwCardBody {}
-  interface MwCardFooter {
-    /**
-     * justify-content: center
-     */
-    justifyCenter?: boolean;
-    /**
-     * justify-content: end
-     */
-    justifyEnd?: boolean;
-    /**
-     * justify-content: flex-end
-     */
-    justifyFlexEnd?: boolean;
-    /**
-     * justify-content: flex-start
-     */
-    justifyFlexStart?: boolean;
-    /**
-     * justify-content: left
-     */
-    justifyLeft?: boolean;
-    /**
-     * justify-content: normal
-     */
-    justifyNormal?: boolean;
-    /**
-     * justify-content: right
-     */
-    justifyRight?: boolean;
-    /**
-     * justify-content: space-around
-     */
-    justifySpaceAround?: boolean;
-    /**
-     * justify-content: space-between
-     */
-    justifySpaceBetween?: boolean;
-    /**
-     * justify-content: space-evenly
-     */
-    justifySpaceEvenly?: boolean;
-    /**
-     * justify-content: start
-     */
-    justifyStart?: boolean;
-  }
-  interface MwCardHeader {
-    /**
-     * Header to be displayed in mw-card-header
-     */
-    header: string;
-    /**
-     * Subheader to be displayed in mw-card-header
-     */
-    subheader: string;
-  }
-  interface MwCardImage {
-    /**
-     * Alt text for the image
-     */
-    alt: string;
-    /**
-     * Image source
-     */
-    src: string;
-  }
-  interface MwCardTitle {
-    /**
-     * Metadata to be displayed in mw-card-title
-     */
-    metadata: string;
-    /**
-     * Subtitle to be displayed in mw-card-title
-     */
-    subtitle: string;
-    /**
-     * Title to be displayed in mw-card-title
-     */
-    title: string;
-  }
-  interface MwCheckbox {
-    /**
-     * Whether input is checked
-     */
-    checked?: boolean;
-    /**
-     * Whether input is disabled
-     */
-    disabled?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * Name of checkbox input
-     */
-    name?: string;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId: string;
-    /**
-     * Value of checkbox input
-     */
-    value?: string;
-  }
-  interface MwChip {
-    /**
-     * Visually and functionally disable button
-     */
-    disabled?: boolean;
-    /**
-     * Name identifier of icon to be displayed in chip
-     */
-    icon?: string;
-    /**
-     * Selection state that changes onToggle. Can be set as mutable prop.
-     */
-    selected: boolean;
-    /**
-     * Flag whether to show close icon or not
-     */
-    showClose?: boolean;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId: string;
-    /**
-     * Value of chip
-     */
-    value?: string | number;
-  }
-  interface MwDivider {
-    /**
-     * Whether the divider is a middle-inset
-     */
-    inset?: boolean;
-  }
-  interface MwDropdown {
-    /**
-     * Visually and functionally disabled input
-     */
-    disabled?: boolean;
-    /**
-     * Use to display input and helper-text in error state
-     */
-    hasError?: boolean;
-    /**
-     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * input field name
-     */
-    name: string;
-    /**
-     * Placeholder to be displayed
-     */
-    placeholder?: string;
-    /**
-     * Mark input as required
-     */
-    required?: boolean;
-    /**
-     * input field value
-     */
-    value?: string | number;
-    /**
-     * label of selected input value
-     */
-    valueLabel?: string | number;
-  }
-  interface MwIcon {
-    /**
-     * Icon color
-     */
-    color?: string;
-    /**
-     * Fill gives you the ability to modify the default icon style. A single icon can render both unfilled and filled states.
-     */
-    fill?: boolean;
-    /**
-     * The icon name to be rendered
-     */
-    icon: string;
-    /**
-     * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
-     */
-    size: Size;
-    /**
-     * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
-     */
-    weight: number;
-  }
-  interface MwIconGallery {
-    /**
-     * The icons that should be rendered
-     */
-    icons: string[];
-  }
-  interface MwLink {
-    /**
-     * URL to where the link should lead
-     */
-    href: string;
-    /**
-     * Target Prop for HTML 'a' tag
-     */
-    target?: Target;
-    /**
-     * Dictates whether link has an underline
-     */
-    underline?: boolean;
-  }
-  interface MwMenu {
-    /**
-     * Whether the menu is open
-     */
-    open: boolean;
-    /**
-     * Placement relative to anchor element
-     */
-    placement: PopoverPlacement;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId: string;
-  }
-  interface MwMenuItem {
-    /**
-     * Disabled state
-     */
-    disabled?: boolean;
-    /**
-     * Selected state
-     */
-    selected?: boolean;
-    /**
-     * Menu item subtitle
-     */
-    subtitle?: string;
-    /**
-     * Menu item title
-     */
-    title: string;
-    /**
-     * Value of item
-     */
-    value?: string;
-  }
-  interface MwMenuList {
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId: string;
-  }
-  interface MwModal {
-    /**
-     * Determines wether or not backdrop should dismiss modal
-     */
-    backdropDismiss: boolean;
-    /**
-     * Method to dismiss the modal
-     */
-    dismiss: () => Promise<void>;
-    /**
-     * id used to dismiss the modal
-     */
-    dismissTrigger?: string | undefined;
-    /**
-     * Modal can be opened closed with this input property
-     */
-    isOpen: boolean;
-    /**
-     * Method to present the modal
-     */
-    present: () => Promise<void>;
-    /**
-     * Determines the max size that the modal takes horizontally
-     */
-    size: ModalSize;
-    /**
-     * id used to present the modal
-     */
-    trigger?: string | undefined;
-  }
-  interface MwModalFooter {}
-  interface MwModalTitle {
-    /**
-     * Description that should be displayed
-     */
-    description?: string | undefined;
-    /**
-     * Title that should be displayed
-     */
-    headline: string | undefined;
-  }
-  interface MwPopover {
-    /**
-     * Closes Popover when user clicks on it
-     */
-    closeOnClick?: boolean;
-    /**
-     * If set to true, the popover can be closed by clicking outside
-     */
-    dismissable?: boolean;
-    /**
-     * Name used internally to reference anchor and content elements
-     */
-    name?: string;
-    /**
-     * disable default padding
-     */
-    noPadding?: boolean;
-    /**
-     * Whether the popover is visible
-     */
-    open: boolean;
-    /**
-     * Placement relative to anchor element
-     */
-    placement: PopoverPlacement;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId: string;
-  }
-  interface MwRadio {
-    /**
-     * Whether the radio button is checked
-     */
-    checked?: boolean;
-    /**
-     * Visually and functionally disbale radio button
-     */
-    disabled?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * Analog to HTML 'name' attribute used to group radios for unique selection
-     */
-    name: string;
-    /**
-     * Should be provided for automated testing
-     */
-    testId: string;
-    /**
-     * Value of the radio button
-     */
-    value: string;
-  }
-  interface MwRadioGroup {
-    /**
-     * current value of the radio-group
-     */
-    value?: string | number;
-  }
-  interface MwSlider {
-    /**
-     * Disable range input
-     */
-    disabled?: boolean;
-    /**
-     * Icon to be displayed to right of the slider
-     */
-    endIcon?: string;
-    /**
-     * input helper-text
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
-     * input label
-     */
-    label?: string;
-    /**
-     * max range value
-     */
-    max: number;
-    /**
-     * min range value
-     */
-    min: number;
-    /**
-     * Name of range input
-     */
-    name: string;
-    /**
-     * Icon to be displayed to left of the slider
-     */
-    startIcon?: string;
-    /**
-     * step for range value
-     */
-    step: number;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId: string;
-    /**
-     * value of range input
-     */
-    value: number;
-  }
-  interface MwSwitch {
-    /**
-     * Switch state
-     */
-    checked: boolean;
-    /**
-     * Visually and functionally disable switch
-     */
-    disabled?: boolean;
-    /**
-     * Fixed label to be displayed next to the toggle switch
-     */
-    label?: string;
-    /**
-     * Label to be shown when switch state is unchecked. Overrides label prop
-     */
-    offText?: string;
-    /**
-     * Label to be shown when switch state is checked. Overrides label prop
-     */
-    onText?: string;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId: string;
-  }
-  interface MwTab {
-    /**
-     * Dictates if the tab is disabled
-     */
-    disabled?: boolean;
-    /**
-     * Icon to be displayed
-     */
-    icon?: string;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * Dictates if tab has selected state
-     */
-    selected?: boolean;
-  }
-  interface MwTabs {
-    /**
-     * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
-     */
-    selected: number | null;
-    /**
-     * Test ID
-     */
-    testId: string;
-  }
-  interface MwTextfield {
-    /**
-     * Visually and functionally disabled input
-     */
-    disabled?: boolean;
-    /**
-     * Use to display input and helper-text in error state
-     */
-    hasError?: boolean;
-    /**
-     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * Allows users to enter multiple values into textfield
-     */
-    multiple?: boolean;
-    /**
-     * Amount of allowed `multipleValues`
-     */
-    multipleMaximum?: number;
-    /**
-     * Values, when `multiple` is true
-     */
-    multipleValues?: Array<string | number>;
-    /**
-     * input field name
-     */
-    name: string;
-    /**
-     * Placeholder to be displayed
-     */
-    placeholder?: string;
-    /**
-     * Whether user can't type in input field
-     */
-    readOnly?: boolean;
-    /**
-     * Mark input as required
-     */
-    required?: boolean;
-    /**
-     * HTML Input type
-     */
-    type?: string;
-    /**
-     * input field value
-     */
-    value?: string | number;
-  }
+    interface MwAppBar {
+        /**
+          * Set the role of the header
+         */
+        "ariaRole"?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
+        /**
+          * Position of App Bar within viewport
+         */
+        "position"?: AppBarPosition;
+    }
+    interface MwAppBarTitle {
+    }
+    interface MwAutocomplete {
+    }
+    interface MwAvatar {
+        /**
+          * Alt text, first letter used as fallback when no src or icon given
+         */
+        "alt"?: string;
+        /**
+          * Icon name. Will be ignored if `src` is provided
+         */
+        "icon"?: string;
+        /**
+          * Size variant
+         */
+        "size"?: Size;
+        /**
+          * Image source
+         */
+        "src"?: string;
+        /**
+          * Test Id
+         */
+        "testId"?: string;
+    }
+    interface MwBackdrop {
+        /**
+          * determines whether the backdrop will be dismissed by click
+         */
+        "backdropDismiss": boolean;
+    }
+    interface MwButton {
+        /**
+          * Visually and functionally disable button
+         */
+        "disabled"?: boolean;
+        /**
+          * If provided the button will act as a link
+         */
+        "href"?: string;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Button size
+         */
+        "size"?: ButtonSize;
+        /**
+          * If using href the target prop can be provided
+         */
+        "target"?: Target;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId": string;
+        /**
+          * Button variants
+         */
+        "variant"?: ButtonVariant;
+    }
+    interface MwCard {
+        /**
+          * Use box-shadow for elevation style
+         */
+        "elevated"?: boolean;
+        /**
+          * Display outline
+         */
+        "outlined"?: boolean;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId": string;
+    }
+    interface MwCardBody {
+    }
+    interface MwCardFooter {
+        /**
+          * justify-content: center
+         */
+        "justifyCenter"?: boolean;
+        /**
+          * justify-content: end
+         */
+        "justifyEnd"?: boolean;
+        /**
+          * justify-content: flex-end
+         */
+        "justifyFlexEnd"?: boolean;
+        /**
+          * justify-content: flex-start
+         */
+        "justifyFlexStart"?: boolean;
+        /**
+          * justify-content: left
+         */
+        "justifyLeft"?: boolean;
+        /**
+          * justify-content: normal
+         */
+        "justifyNormal"?: boolean;
+        /**
+          * justify-content: right
+         */
+        "justifyRight"?: boolean;
+        /**
+          * justify-content: space-around
+         */
+        "justifySpaceAround"?: boolean;
+        /**
+          * justify-content: space-between
+         */
+        "justifySpaceBetween"?: boolean;
+        /**
+          * justify-content: space-evenly
+         */
+        "justifySpaceEvenly"?: boolean;
+        /**
+          * justify-content: start
+         */
+        "justifyStart"?: boolean;
+    }
+    interface MwCardHeader {
+        /**
+          * Header to be displayed in mw-card-header
+         */
+        "header": string;
+        /**
+          * Subheader to be displayed in mw-card-header
+         */
+        "subheader": string;
+    }
+    interface MwCardImage {
+        /**
+          * Alt text for the image
+         */
+        "alt": string;
+        /**
+          * Image source
+         */
+        "src": string;
+    }
+    interface MwCardTitle {
+        /**
+          * Metadata to be displayed in mw-card-title
+         */
+        "metadata": string;
+        /**
+          * Subtitle to be displayed in mw-card-title
+         */
+        "subtitle": string;
+        /**
+          * Title to be displayed in mw-card-title
+         */
+        "title": string;
+    }
+    interface MwCheckbox {
+        /**
+          * Whether input is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Whether input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Name of checkbox input
+         */
+        "name"?: string;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId": string;
+        /**
+          * Value of checkbox input
+         */
+        "value"?: string;
+    }
+    interface MwChip {
+        /**
+          * Visually and functionally disable button
+         */
+        "disabled"?: boolean;
+        /**
+          * Name identifier of icon to be displayed in chip
+         */
+        "icon"?: string;
+        /**
+          * Selection state that changes onToggle. Can be set as mutable prop.
+         */
+        "selected": boolean;
+        /**
+          * Flag whether to show close icon or not
+         */
+        "showClose"?: boolean;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId": string;
+        /**
+          * Value of chip
+         */
+        "value"?: string | number;
+    }
+    interface MwDivider {
+        /**
+          * Whether the divider is a middle-inset
+         */
+        "inset"?: boolean;
+    }
+    interface MwDropdown {
+        /**
+          * Visually and functionally disabled input
+         */
+        "disabled"?: boolean;
+        /**
+          * Use to display input and helper-text in error state
+         */
+        "hasError"?: boolean;
+        /**
+          * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+         */
+        "helperText"?: string;
+        /**
+          * Display label and input horizonally
+         */
+        "inline"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * input field name
+         */
+        "name": string;
+        /**
+          * Placeholder to be displayed
+         */
+        "placeholder"?: string;
+        /**
+          * Mark input as required
+         */
+        "required"?: boolean;
+        /**
+          * input field value
+         */
+        "value"?: string | number;
+        /**
+          * label of selected input value
+         */
+        "valueLabel"?: string | number;
+    }
+    interface MwIcon {
+        /**
+          * Icon color
+         */
+        "color"?: string;
+        /**
+          * Fill gives you the ability to modify the default icon style. A single icon can render both unfilled and filled states.
+         */
+        "fill"?: boolean;
+        /**
+          * The icon name to be rendered
+         */
+        "icon": string;
+        /**
+          * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
+         */
+        "size": Size;
+        /**
+          * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
+         */
+        "weight": number;
+    }
+    interface MwIconGallery {
+        /**
+          * The icons that should be rendered
+         */
+        "icons": string[];
+    }
+    interface MwLink {
+        /**
+          * URL to where the link should lead
+         */
+        "href": string;
+        /**
+          * Target Prop for HTML 'a' tag
+         */
+        "target"?: Target;
+        /**
+          * Dictates whether link has an underline
+         */
+        "underline"?: boolean;
+    }
+    interface MwMenu {
+        /**
+          * Whether the menu is open
+         */
+        "open": boolean;
+        /**
+          * Placement relative to anchor element
+         */
+        "placement": PopoverPlacement;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId": string;
+    }
+    interface MwMenuItem {
+        /**
+          * Disabled state
+         */
+        "disabled"?: boolean;
+        /**
+          * Selected state
+         */
+        "selected"?: boolean;
+        /**
+          * Menu item subtitle
+         */
+        "subtitle"?: string;
+        /**
+          * Menu item title
+         */
+        "title": string;
+        /**
+          * Value of item
+         */
+        "value"?: string;
+    }
+    interface MwMenuList {
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId": string;
+    }
+    interface MwModal {
+        /**
+          * Determines wether or not backdrop should dismiss modal
+         */
+        "backdropDismiss": boolean;
+        /**
+          * Method to dismiss the modal
+         */
+        "dismiss": () => Promise<void>;
+        /**
+          * id used to dismiss the modal
+         */
+        "dismissTrigger"?: string | undefined;
+        /**
+          * Modal can be opened closed with this input property
+         */
+        "isOpen": boolean;
+        /**
+          * Method to present the modal
+         */
+        "present": () => Promise<void>;
+        /**
+          * Determines the max size that the modal takes horizontally
+         */
+        "size": ModalSize;
+        /**
+          * id used to present the modal
+         */
+        "trigger"?: string | undefined;
+    }
+    interface MwModalFooter {
+    }
+    interface MwModalTitle {
+        /**
+          * Description that should be displayed
+         */
+        "description"?: string | undefined;
+        /**
+          * Title that should be displayed
+         */
+        "headline": string | undefined;
+    }
+    interface MwPopover {
+        /**
+          * Closes Popover when user clicks on it
+         */
+        "closeOnClick"?: boolean;
+        /**
+          * If set to true, the popover can be closed by clicking outside
+         */
+        "dismissable"?: boolean;
+        /**
+          * Name used internally to reference anchor and content elements
+         */
+        "name"?: string;
+        /**
+          * disable default padding
+         */
+        "noPadding"?: boolean;
+        /**
+          * Whether the popover is visible
+         */
+        "open": boolean;
+        /**
+          * Placement relative to anchor element
+         */
+        "placement": PopoverPlacement;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId": string;
+    }
+    interface MwRadio {
+        /**
+          * Whether the radio button is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Visually and functionally disbale radio button
+         */
+        "disabled"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Analog to HTML 'name' attribute used to group radios for unique selection
+         */
+        "name": string;
+        /**
+          * Should be provided for automated testing
+         */
+        "testId": string;
+        /**
+          * Value of the radio button
+         */
+        "value": string;
+    }
+    interface MwRadioGroup {
+        /**
+          * current value of the radio-group
+         */
+        "value"?: string | number;
+    }
+    interface MwSlider {
+        /**
+          * Disable range input
+         */
+        "disabled"?: boolean;
+        /**
+          * Icon to be displayed to right of the slider
+         */
+        "endIcon"?: string;
+        /**
+          * input helper-text
+         */
+        "helperText"?: string;
+        /**
+          * Display label and input horizonally
+         */
+        "inline"?: boolean;
+        /**
+          * input label
+         */
+        "label"?: string;
+        /**
+          * max range value
+         */
+        "max": number;
+        /**
+          * min range value
+         */
+        "min": number;
+        /**
+          * Name of range input
+         */
+        "name": string;
+        /**
+          * Icon to be displayed to left of the slider
+         */
+        "startIcon"?: string;
+        /**
+          * step for range value
+         */
+        "step": number;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId": string;
+        /**
+          * value of range input
+         */
+        "value": number;
+    }
+    interface MwSwitch {
+        /**
+          * Switch state
+         */
+        "checked": boolean;
+        /**
+          * Visually and functionally disable switch
+         */
+        "disabled"?: boolean;
+        /**
+          * Fixed label to be displayed next to the toggle switch
+         */
+        "label"?: string;
+        /**
+          * Label to be shown when switch state is unchecked. Overrides label prop
+         */
+        "offText"?: string;
+        /**
+          * Label to be shown when switch state is checked. Overrides label prop
+         */
+        "onText"?: string;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId": string;
+    }
+    interface MwTab {
+        /**
+          * Dictates if the tab is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Icon to be displayed
+         */
+        "icon"?: string;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Dictates if tab has selected state
+         */
+        "selected"?: boolean;
+    }
+    interface MwTabs {
+        /**
+          * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
+         */
+        "selected": number | null;
+        /**
+          * Test ID
+         */
+        "testId": string;
+    }
+    interface MwTextfield {
+        /**
+          * Visually and functionally disabled input
+         */
+        "disabled"?: boolean;
+        /**
+          * Use to display input and helper-text in error state
+         */
+        "hasError"?: boolean;
+        /**
+          * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+         */
+        "helperText"?: string;
+        /**
+          * Display label and input horizonally
+         */
+        "inline"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Allows users to enter multiple values into textfield
+         */
+        "multiple"?: boolean;
+        /**
+          * Amount of allowed `multipleValues`
+         */
+        "multipleMaximum"?: number;
+        /**
+          * Values, when `multiple` is true
+         */
+        "multipleValues"?: Array<string | number>;
+        /**
+          * input field name
+         */
+        "name": string;
+        /**
+          * Placeholder to be displayed
+         */
+        "placeholder"?: string;
+        /**
+          * Whether user can't type in input field
+         */
+        "readOnly"?: boolean;
+        /**
+          * Mark input as required
+         */
+        "required"?: boolean;
+        /**
+          * HTML Input type
+         */
+        "type"?: string;
+        /**
+          * input field value
+         */
+        "value"?: string | number;
+    }
 }
 export interface MwBackdropCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwBackdropElement;
+    detail: T;
+    target: HTMLMwBackdropElement;
 }
 export interface MwButtonCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwButtonElement;
+    detail: T;
+    target: HTMLMwButtonElement;
 }
 export interface MwCardCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwCardElement;
+    detail: T;
+    target: HTMLMwCardElement;
 }
 export interface MwCheckboxCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwCheckboxElement;
+    detail: T;
+    target: HTMLMwCheckboxElement;
 }
 export interface MwChipCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwChipElement;
+    detail: T;
+    target: HTMLMwChipElement;
 }
 export interface MwDropdownCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwDropdownElement;
+    detail: T;
+    target: HTMLMwDropdownElement;
 }
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwMenuItemElement;
+    detail: T;
+    target: HTMLMwMenuItemElement;
 }
 export interface MwPopoverCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwPopoverElement;
+    detail: T;
+    target: HTMLMwPopoverElement;
 }
 export interface MwRadioGroupCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwRadioGroupElement;
+    detail: T;
+    target: HTMLMwRadioGroupElement;
 }
 export interface MwSwitchCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwSwitchElement;
+    detail: T;
+    target: HTMLMwSwitchElement;
 }
 export interface MwTextfieldCustomEvent<T> extends CustomEvent<T> {
-  detail: T;
-  target: HTMLMwTextfieldElement;
+    detail: T;
+    target: HTMLMwTextfieldElement;
 }
 declare global {
-  interface HTMLMwAppBarElement extends Components.MwAppBar, HTMLStencilElement {}
-  var HTMLMwAppBarElement: {
-    prototype: HTMLMwAppBarElement;
-    new (): HTMLMwAppBarElement;
-  };
-  interface HTMLMwAppBarTitleElement extends Components.MwAppBarTitle, HTMLStencilElement {}
-  var HTMLMwAppBarTitleElement: {
-    prototype: HTMLMwAppBarTitleElement;
-    new (): HTMLMwAppBarTitleElement;
-  };
-  interface HTMLMwAutocompleteElement extends Components.MwAutocomplete, HTMLStencilElement {}
-  var HTMLMwAutocompleteElement: {
-    prototype: HTMLMwAutocompleteElement;
-    new (): HTMLMwAutocompleteElement;
-  };
-  interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {}
-  var HTMLMwAvatarElement: {
-    prototype: HTMLMwAvatarElement;
-    new (): HTMLMwAvatarElement;
-  };
-  interface HTMLMwBackdropElement extends Components.MwBackdrop, HTMLStencilElement {}
-  var HTMLMwBackdropElement: {
-    prototype: HTMLMwBackdropElement;
-    new (): HTMLMwBackdropElement;
-  };
-  interface HTMLMwButtonElement extends Components.MwButton, HTMLStencilElement {}
-  var HTMLMwButtonElement: {
-    prototype: HTMLMwButtonElement;
-    new (): HTMLMwButtonElement;
-  };
-  interface HTMLMwCardElement extends Components.MwCard, HTMLStencilElement {}
-  var HTMLMwCardElement: {
-    prototype: HTMLMwCardElement;
-    new (): HTMLMwCardElement;
-  };
-  interface HTMLMwCardBodyElement extends Components.MwCardBody, HTMLStencilElement {}
-  var HTMLMwCardBodyElement: {
-    prototype: HTMLMwCardBodyElement;
-    new (): HTMLMwCardBodyElement;
-  };
-  interface HTMLMwCardFooterElement extends Components.MwCardFooter, HTMLStencilElement {}
-  var HTMLMwCardFooterElement: {
-    prototype: HTMLMwCardFooterElement;
-    new (): HTMLMwCardFooterElement;
-  };
-  interface HTMLMwCardHeaderElement extends Components.MwCardHeader, HTMLStencilElement {}
-  var HTMLMwCardHeaderElement: {
-    prototype: HTMLMwCardHeaderElement;
-    new (): HTMLMwCardHeaderElement;
-  };
-  interface HTMLMwCardImageElement extends Components.MwCardImage, HTMLStencilElement {}
-  var HTMLMwCardImageElement: {
-    prototype: HTMLMwCardImageElement;
-    new (): HTMLMwCardImageElement;
-  };
-  interface HTMLMwCardTitleElement extends Components.MwCardTitle, HTMLStencilElement {}
-  var HTMLMwCardTitleElement: {
-    prototype: HTMLMwCardTitleElement;
-    new (): HTMLMwCardTitleElement;
-  };
-  interface HTMLMwCheckboxElement extends Components.MwCheckbox, HTMLStencilElement {}
-  var HTMLMwCheckboxElement: {
-    prototype: HTMLMwCheckboxElement;
-    new (): HTMLMwCheckboxElement;
-  };
-  interface HTMLMwChipElement extends Components.MwChip, HTMLStencilElement {}
-  var HTMLMwChipElement: {
-    prototype: HTMLMwChipElement;
-    new (): HTMLMwChipElement;
-  };
-  interface HTMLMwDividerElement extends Components.MwDivider, HTMLStencilElement {}
-  var HTMLMwDividerElement: {
-    prototype: HTMLMwDividerElement;
-    new (): HTMLMwDividerElement;
-  };
-  interface HTMLMwDropdownElement extends Components.MwDropdown, HTMLStencilElement {}
-  var HTMLMwDropdownElement: {
-    prototype: HTMLMwDropdownElement;
-    new (): HTMLMwDropdownElement;
-  };
-  interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {}
-  var HTMLMwIconElement: {
-    prototype: HTMLMwIconElement;
-    new (): HTMLMwIconElement;
-  };
-  interface HTMLMwIconGalleryElement extends Components.MwIconGallery, HTMLStencilElement {}
-  var HTMLMwIconGalleryElement: {
-    prototype: HTMLMwIconGalleryElement;
-    new (): HTMLMwIconGalleryElement;
-  };
-  interface HTMLMwLinkElement extends Components.MwLink, HTMLStencilElement {}
-  var HTMLMwLinkElement: {
-    prototype: HTMLMwLinkElement;
-    new (): HTMLMwLinkElement;
-  };
-  interface HTMLMwMenuElement extends Components.MwMenu, HTMLStencilElement {}
-  var HTMLMwMenuElement: {
-    prototype: HTMLMwMenuElement;
-    new (): HTMLMwMenuElement;
-  };
-  interface HTMLMwMenuItemElement extends Components.MwMenuItem, HTMLStencilElement {}
-  var HTMLMwMenuItemElement: {
-    prototype: HTMLMwMenuItemElement;
-    new (): HTMLMwMenuItemElement;
-  };
-  interface HTMLMwMenuListElement extends Components.MwMenuList, HTMLStencilElement {}
-  var HTMLMwMenuListElement: {
-    prototype: HTMLMwMenuListElement;
-    new (): HTMLMwMenuListElement;
-  };
-  interface HTMLMwModalElement extends Components.MwModal, HTMLStencilElement {}
-  var HTMLMwModalElement: {
-    prototype: HTMLMwModalElement;
-    new (): HTMLMwModalElement;
-  };
-  interface HTMLMwModalFooterElement extends Components.MwModalFooter, HTMLStencilElement {}
-  var HTMLMwModalFooterElement: {
-    prototype: HTMLMwModalFooterElement;
-    new (): HTMLMwModalFooterElement;
-  };
-  interface HTMLMwModalTitleElement extends Components.MwModalTitle, HTMLStencilElement {}
-  var HTMLMwModalTitleElement: {
-    prototype: HTMLMwModalTitleElement;
-    new (): HTMLMwModalTitleElement;
-  };
-  interface HTMLMwPopoverElement extends Components.MwPopover, HTMLStencilElement {}
-  var HTMLMwPopoverElement: {
-    prototype: HTMLMwPopoverElement;
-    new (): HTMLMwPopoverElement;
-  };
-  interface HTMLMwRadioElement extends Components.MwRadio, HTMLStencilElement {}
-  var HTMLMwRadioElement: {
-    prototype: HTMLMwRadioElement;
-    new (): HTMLMwRadioElement;
-  };
-  interface HTMLMwRadioGroupElement extends Components.MwRadioGroup, HTMLStencilElement {}
-  var HTMLMwRadioGroupElement: {
-    prototype: HTMLMwRadioGroupElement;
-    new (): HTMLMwRadioGroupElement;
-  };
-  interface HTMLMwSliderElement extends Components.MwSlider, HTMLStencilElement {}
-  var HTMLMwSliderElement: {
-    prototype: HTMLMwSliderElement;
-    new (): HTMLMwSliderElement;
-  };
-  interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {}
-  var HTMLMwSwitchElement: {
-    prototype: HTMLMwSwitchElement;
-    new (): HTMLMwSwitchElement;
-  };
-  interface HTMLMwTabElement extends Components.MwTab, HTMLStencilElement {}
-  var HTMLMwTabElement: {
-    prototype: HTMLMwTabElement;
-    new (): HTMLMwTabElement;
-  };
-  interface HTMLMwTabsElement extends Components.MwTabs, HTMLStencilElement {}
-  var HTMLMwTabsElement: {
-    prototype: HTMLMwTabsElement;
-    new (): HTMLMwTabsElement;
-  };
-  interface HTMLMwTextfieldElement extends Components.MwTextfield, HTMLStencilElement {}
-  var HTMLMwTextfieldElement: {
-    prototype: HTMLMwTextfieldElement;
-    new (): HTMLMwTextfieldElement;
-  };
-  interface HTMLElementTagNameMap {
-    "mw-app-bar": HTMLMwAppBarElement;
-    "mw-app-bar-title": HTMLMwAppBarTitleElement;
-    "mw-autocomplete": HTMLMwAutocompleteElement;
-    "mw-avatar": HTMLMwAvatarElement;
-    "mw-backdrop": HTMLMwBackdropElement;
-    "mw-button": HTMLMwButtonElement;
-    "mw-card": HTMLMwCardElement;
-    "mw-card-body": HTMLMwCardBodyElement;
-    "mw-card-footer": HTMLMwCardFooterElement;
-    "mw-card-header": HTMLMwCardHeaderElement;
-    "mw-card-image": HTMLMwCardImageElement;
-    "mw-card-title": HTMLMwCardTitleElement;
-    "mw-checkbox": HTMLMwCheckboxElement;
-    "mw-chip": HTMLMwChipElement;
-    "mw-divider": HTMLMwDividerElement;
-    "mw-dropdown": HTMLMwDropdownElement;
-    "mw-icon": HTMLMwIconElement;
-    "mw-icon-gallery": HTMLMwIconGalleryElement;
-    "mw-link": HTMLMwLinkElement;
-    "mw-menu": HTMLMwMenuElement;
-    "mw-menu-item": HTMLMwMenuItemElement;
-    "mw-menu-list": HTMLMwMenuListElement;
-    "mw-modal": HTMLMwModalElement;
-    "mw-modal-footer": HTMLMwModalFooterElement;
-    "mw-modal-title": HTMLMwModalTitleElement;
-    "mw-popover": HTMLMwPopoverElement;
-    "mw-radio": HTMLMwRadioElement;
-    "mw-radio-group": HTMLMwRadioGroupElement;
-    "mw-slider": HTMLMwSliderElement;
-    "mw-switch": HTMLMwSwitchElement;
-    "mw-tab": HTMLMwTabElement;
-    "mw-tabs": HTMLMwTabsElement;
-    "mw-textfield": HTMLMwTextfieldElement;
-  }
+    interface HTMLMwAppBarElement extends Components.MwAppBar, HTMLStencilElement {
+    }
+    var HTMLMwAppBarElement: {
+        prototype: HTMLMwAppBarElement;
+        new (): HTMLMwAppBarElement;
+    };
+    interface HTMLMwAppBarTitleElement extends Components.MwAppBarTitle, HTMLStencilElement {
+    }
+    var HTMLMwAppBarTitleElement: {
+        prototype: HTMLMwAppBarTitleElement;
+        new (): HTMLMwAppBarTitleElement;
+    };
+    interface HTMLMwAutocompleteElement extends Components.MwAutocomplete, HTMLStencilElement {
+    }
+    var HTMLMwAutocompleteElement: {
+        prototype: HTMLMwAutocompleteElement;
+        new (): HTMLMwAutocompleteElement;
+    };
+    interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {
+    }
+    var HTMLMwAvatarElement: {
+        prototype: HTMLMwAvatarElement;
+        new (): HTMLMwAvatarElement;
+    };
+    interface HTMLMwBackdropElement extends Components.MwBackdrop, HTMLStencilElement {
+    }
+    var HTMLMwBackdropElement: {
+        prototype: HTMLMwBackdropElement;
+        new (): HTMLMwBackdropElement;
+    };
+    interface HTMLMwButtonElement extends Components.MwButton, HTMLStencilElement {
+    }
+    var HTMLMwButtonElement: {
+        prototype: HTMLMwButtonElement;
+        new (): HTMLMwButtonElement;
+    };
+    interface HTMLMwCardElement extends Components.MwCard, HTMLStencilElement {
+    }
+    var HTMLMwCardElement: {
+        prototype: HTMLMwCardElement;
+        new (): HTMLMwCardElement;
+    };
+    interface HTMLMwCardBodyElement extends Components.MwCardBody, HTMLStencilElement {
+    }
+    var HTMLMwCardBodyElement: {
+        prototype: HTMLMwCardBodyElement;
+        new (): HTMLMwCardBodyElement;
+    };
+    interface HTMLMwCardFooterElement extends Components.MwCardFooter, HTMLStencilElement {
+    }
+    var HTMLMwCardFooterElement: {
+        prototype: HTMLMwCardFooterElement;
+        new (): HTMLMwCardFooterElement;
+    };
+    interface HTMLMwCardHeaderElement extends Components.MwCardHeader, HTMLStencilElement {
+    }
+    var HTMLMwCardHeaderElement: {
+        prototype: HTMLMwCardHeaderElement;
+        new (): HTMLMwCardHeaderElement;
+    };
+    interface HTMLMwCardImageElement extends Components.MwCardImage, HTMLStencilElement {
+    }
+    var HTMLMwCardImageElement: {
+        prototype: HTMLMwCardImageElement;
+        new (): HTMLMwCardImageElement;
+    };
+    interface HTMLMwCardTitleElement extends Components.MwCardTitle, HTMLStencilElement {
+    }
+    var HTMLMwCardTitleElement: {
+        prototype: HTMLMwCardTitleElement;
+        new (): HTMLMwCardTitleElement;
+    };
+    interface HTMLMwCheckboxElement extends Components.MwCheckbox, HTMLStencilElement {
+    }
+    var HTMLMwCheckboxElement: {
+        prototype: HTMLMwCheckboxElement;
+        new (): HTMLMwCheckboxElement;
+    };
+    interface HTMLMwChipElement extends Components.MwChip, HTMLStencilElement {
+    }
+    var HTMLMwChipElement: {
+        prototype: HTMLMwChipElement;
+        new (): HTMLMwChipElement;
+    };
+    interface HTMLMwDividerElement extends Components.MwDivider, HTMLStencilElement {
+    }
+    var HTMLMwDividerElement: {
+        prototype: HTMLMwDividerElement;
+        new (): HTMLMwDividerElement;
+    };
+    interface HTMLMwDropdownElement extends Components.MwDropdown, HTMLStencilElement {
+    }
+    var HTMLMwDropdownElement: {
+        prototype: HTMLMwDropdownElement;
+        new (): HTMLMwDropdownElement;
+    };
+    interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {
+    }
+    var HTMLMwIconElement: {
+        prototype: HTMLMwIconElement;
+        new (): HTMLMwIconElement;
+    };
+    interface HTMLMwIconGalleryElement extends Components.MwIconGallery, HTMLStencilElement {
+    }
+    var HTMLMwIconGalleryElement: {
+        prototype: HTMLMwIconGalleryElement;
+        new (): HTMLMwIconGalleryElement;
+    };
+    interface HTMLMwLinkElement extends Components.MwLink, HTMLStencilElement {
+    }
+    var HTMLMwLinkElement: {
+        prototype: HTMLMwLinkElement;
+        new (): HTMLMwLinkElement;
+    };
+    interface HTMLMwMenuElement extends Components.MwMenu, HTMLStencilElement {
+    }
+    var HTMLMwMenuElement: {
+        prototype: HTMLMwMenuElement;
+        new (): HTMLMwMenuElement;
+    };
+    interface HTMLMwMenuItemElement extends Components.MwMenuItem, HTMLStencilElement {
+    }
+    var HTMLMwMenuItemElement: {
+        prototype: HTMLMwMenuItemElement;
+        new (): HTMLMwMenuItemElement;
+    };
+    interface HTMLMwMenuListElement extends Components.MwMenuList, HTMLStencilElement {
+    }
+    var HTMLMwMenuListElement: {
+        prototype: HTMLMwMenuListElement;
+        new (): HTMLMwMenuListElement;
+    };
+    interface HTMLMwModalElement extends Components.MwModal, HTMLStencilElement {
+    }
+    var HTMLMwModalElement: {
+        prototype: HTMLMwModalElement;
+        new (): HTMLMwModalElement;
+    };
+    interface HTMLMwModalFooterElement extends Components.MwModalFooter, HTMLStencilElement {
+    }
+    var HTMLMwModalFooterElement: {
+        prototype: HTMLMwModalFooterElement;
+        new (): HTMLMwModalFooterElement;
+    };
+    interface HTMLMwModalTitleElement extends Components.MwModalTitle, HTMLStencilElement {
+    }
+    var HTMLMwModalTitleElement: {
+        prototype: HTMLMwModalTitleElement;
+        new (): HTMLMwModalTitleElement;
+    };
+    interface HTMLMwPopoverElement extends Components.MwPopover, HTMLStencilElement {
+    }
+    var HTMLMwPopoverElement: {
+        prototype: HTMLMwPopoverElement;
+        new (): HTMLMwPopoverElement;
+    };
+    interface HTMLMwRadioElement extends Components.MwRadio, HTMLStencilElement {
+    }
+    var HTMLMwRadioElement: {
+        prototype: HTMLMwRadioElement;
+        new (): HTMLMwRadioElement;
+    };
+    interface HTMLMwRadioGroupElement extends Components.MwRadioGroup, HTMLStencilElement {
+    }
+    var HTMLMwRadioGroupElement: {
+        prototype: HTMLMwRadioGroupElement;
+        new (): HTMLMwRadioGroupElement;
+    };
+    interface HTMLMwSliderElement extends Components.MwSlider, HTMLStencilElement {
+    }
+    var HTMLMwSliderElement: {
+        prototype: HTMLMwSliderElement;
+        new (): HTMLMwSliderElement;
+    };
+    interface HTMLMwSwitchElement extends Components.MwSwitch, HTMLStencilElement {
+    }
+    var HTMLMwSwitchElement: {
+        prototype: HTMLMwSwitchElement;
+        new (): HTMLMwSwitchElement;
+    };
+    interface HTMLMwTabElement extends Components.MwTab, HTMLStencilElement {
+    }
+    var HTMLMwTabElement: {
+        prototype: HTMLMwTabElement;
+        new (): HTMLMwTabElement;
+    };
+    interface HTMLMwTabsElement extends Components.MwTabs, HTMLStencilElement {
+    }
+    var HTMLMwTabsElement: {
+        prototype: HTMLMwTabsElement;
+        new (): HTMLMwTabsElement;
+    };
+    interface HTMLMwTextfieldElement extends Components.MwTextfield, HTMLStencilElement {
+    }
+    var HTMLMwTextfieldElement: {
+        prototype: HTMLMwTextfieldElement;
+        new (): HTMLMwTextfieldElement;
+    };
+    interface HTMLElementTagNameMap {
+        "mw-app-bar": HTMLMwAppBarElement;
+        "mw-app-bar-title": HTMLMwAppBarTitleElement;
+        "mw-autocomplete": HTMLMwAutocompleteElement;
+        "mw-avatar": HTMLMwAvatarElement;
+        "mw-backdrop": HTMLMwBackdropElement;
+        "mw-button": HTMLMwButtonElement;
+        "mw-card": HTMLMwCardElement;
+        "mw-card-body": HTMLMwCardBodyElement;
+        "mw-card-footer": HTMLMwCardFooterElement;
+        "mw-card-header": HTMLMwCardHeaderElement;
+        "mw-card-image": HTMLMwCardImageElement;
+        "mw-card-title": HTMLMwCardTitleElement;
+        "mw-checkbox": HTMLMwCheckboxElement;
+        "mw-chip": HTMLMwChipElement;
+        "mw-divider": HTMLMwDividerElement;
+        "mw-dropdown": HTMLMwDropdownElement;
+        "mw-icon": HTMLMwIconElement;
+        "mw-icon-gallery": HTMLMwIconGalleryElement;
+        "mw-link": HTMLMwLinkElement;
+        "mw-menu": HTMLMwMenuElement;
+        "mw-menu-item": HTMLMwMenuItemElement;
+        "mw-menu-list": HTMLMwMenuListElement;
+        "mw-modal": HTMLMwModalElement;
+        "mw-modal-footer": HTMLMwModalFooterElement;
+        "mw-modal-title": HTMLMwModalTitleElement;
+        "mw-popover": HTMLMwPopoverElement;
+        "mw-radio": HTMLMwRadioElement;
+        "mw-radio-group": HTMLMwRadioGroupElement;
+        "mw-slider": HTMLMwSliderElement;
+        "mw-switch": HTMLMwSwitchElement;
+        "mw-tab": HTMLMwTabElement;
+        "mw-tabs": HTMLMwTabsElement;
+        "mw-textfield": HTMLMwTextfieldElement;
+    }
 }
 declare namespace LocalJSX {
-  interface MwAppBar {
-    /**
-     * Set the role of the header
-     */
-    ariaRole?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
-    /**
-     * Position of App Bar within viewport
-     */
-    position?: AppBarPosition;
-  }
-  interface MwAppBarTitle {}
-  interface MwAutocomplete {}
-  interface MwAvatar {
-    /**
-     * Alt text, first letter used as fallback when no src or icon given
-     */
-    alt?: string;
-    /**
-     * Icon name. Will be ignored if `src` is provided
-     */
-    icon?: string;
-    /**
-     * Size variant
-     */
-    size?: Size;
-    /**
-     * Image source
-     */
-    src?: string;
-    /**
-     * Test Id
-     */
-    testId?: string;
-  }
-  interface MwBackdrop {
-    /**
-     * determines whether the backdrop will be dismissed by click
-     */
-    backdropDismiss?: boolean;
-    /**
-     * Event after backdrop was clicked
-     */
-    onBackdropClick?: (event: MwBackdropCustomEvent<void>) => void;
-  }
-  interface MwButton {
-    /**
-     * Visually and functionally disable button
-     */
-    disabled?: boolean;
-    /**
-     * If provided the button will act as a link
-     */
-    href?: string;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
-     */
-    onClickEmitter?: (event: MwButtonCustomEvent<any>) => void;
-    /**
-     * Button size
-     */
-    size?: ButtonSize;
-    /**
-     * If using href the target prop can be provided
-     */
-    target?: Target;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId?: string;
-    /**
-     * Button variants
-     */
-    variant?: ButtonVariant;
-  }
-  interface MwCard {
-    /**
-     * Use box-shadow for elevation style
-     */
-    elevated?: boolean;
-    /**
-     * Emits an event when MwCard is clicked
-     */
-    onClickEmitter?: (event: MwCardCustomEvent<any>) => void;
-    /**
-     * Display outline
-     */
-    outlined?: boolean;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId?: string;
-  }
-  interface MwCardBody {}
-  interface MwCardFooter {
-    /**
-     * justify-content: center
-     */
-    justifyCenter?: boolean;
-    /**
-     * justify-content: end
-     */
-    justifyEnd?: boolean;
-    /**
-     * justify-content: flex-end
-     */
-    justifyFlexEnd?: boolean;
-    /**
-     * justify-content: flex-start
-     */
-    justifyFlexStart?: boolean;
-    /**
-     * justify-content: left
-     */
-    justifyLeft?: boolean;
-    /**
-     * justify-content: normal
-     */
-    justifyNormal?: boolean;
-    /**
-     * justify-content: right
-     */
-    justifyRight?: boolean;
-    /**
-     * justify-content: space-around
-     */
-    justifySpaceAround?: boolean;
-    /**
-     * justify-content: space-between
-     */
-    justifySpaceBetween?: boolean;
-    /**
-     * justify-content: space-evenly
-     */
-    justifySpaceEvenly?: boolean;
-    /**
-     * justify-content: start
-     */
-    justifyStart?: boolean;
-  }
-  interface MwCardHeader {
-    /**
-     * Header to be displayed in mw-card-header
-     */
-    header?: string;
-    /**
-     * Subheader to be displayed in mw-card-header
-     */
-    subheader?: string;
-  }
-  interface MwCardImage {
-    /**
-     * Alt text for the image
-     */
-    alt?: string;
-    /**
-     * Image source
-     */
-    src?: string;
-  }
-  interface MwCardTitle {
-    /**
-     * Metadata to be displayed in mw-card-title
-     */
-    metadata?: string;
-    /**
-     * Subtitle to be displayed in mw-card-title
-     */
-    subtitle?: string;
-    /**
-     * Title to be displayed in mw-card-title
-     */
-    title?: string;
-  }
-  interface MwCheckbox {
-    /**
-     * Whether input is checked
-     */
-    checked?: boolean;
-    /**
-     * Whether input is disabled
-     */
-    disabled?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * Name of checkbox input
-     */
-    name?: string;
-    /**
-     * MwCheckbox emits an event when checkbox checked state is changed
-     */
-    onEmitter?: (event: MwCheckboxCustomEvent<any>) => void;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId?: string;
-    /**
-     * Value of checkbox input
-     */
-    value?: string;
-  }
-  interface MwChip {
-    /**
-     * Visually and functionally disable button
-     */
-    disabled?: boolean;
-    /**
-     * Name identifier of icon to be displayed in chip
-     */
-    icon?: string;
-    /**
-     * MwChip emits an event when chip is clicked or chip is closed
-     */
-    onEmitter?: (event: MwChipCustomEvent<any>) => void;
-    /**
-     * Selection state that changes onToggle. Can be set as mutable prop.
-     */
-    selected?: boolean;
-    /**
-     * Flag whether to show close icon or not
-     */
-    showClose?: boolean;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId?: string;
-    /**
-     * Value of chip
-     */
-    value?: string | number;
-  }
-  interface MwDivider {
-    /**
-     * Whether the divider is a middle-inset
-     */
-    inset?: boolean;
-  }
-  interface MwDropdown {
-    /**
-     * Visually and functionally disabled input
-     */
-    disabled?: boolean;
-    /**
-     * Use to display input and helper-text in error state
-     */
-    hasError?: boolean;
-    /**
-     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * input field name
-     */
-    name?: string;
-    /**
-     * MwDropdown emits an event when value changes
-     */
-    onValueChanged?: (event: MwDropdownCustomEvent<string>) => void;
-    /**
-     * Placeholder to be displayed
-     */
-    placeholder?: string;
-    /**
-     * Mark input as required
-     */
-    required?: boolean;
-    /**
-     * input field value
-     */
-    value?: string | number;
-    /**
-     * label of selected input value
-     */
-    valueLabel?: string | number;
-  }
-  interface MwIcon {
-    /**
-     * Icon color
-     */
-    color?: string;
-    /**
-     * Fill gives you the ability to modify the default icon style. A single icon can render both unfilled and filled states.
-     */
-    fill?: boolean;
-    /**
-     * The icon name to be rendered
-     */
-    icon?: string;
-    /**
-     * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
-     */
-    size?: Size;
-    /**
-     * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
-     */
-    weight?: number;
-  }
-  interface MwIconGallery {
-    /**
-     * The icons that should be rendered
-     */
-    icons?: string[];
-  }
-  interface MwLink {
-    /**
-     * URL to where the link should lead
-     */
-    href: string;
-    /**
-     * Target Prop for HTML 'a' tag
-     */
-    target?: Target;
-    /**
-     * Dictates whether link has an underline
-     */
-    underline?: boolean;
-  }
-  interface MwMenu {
-    /**
-     * Whether the menu is open
-     */
-    open?: boolean;
-    /**
-     * Placement relative to anchor element
-     */
-    placement?: PopoverPlacement;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId?: string;
-  }
-  interface MwMenuItem {
-    /**
-     * Disabled state
-     */
-    disabled?: boolean;
-    /**
-     * MwMenuItem emits an event when its clicked
-     */
-    onClickEmitter?: (event: MwMenuItemCustomEvent<any>) => void;
-    /**
-     * Selected state
-     */
-    selected?: boolean;
-    /**
-     * Menu item subtitle
-     */
-    subtitle?: string;
-    /**
-     * Menu item title
-     */
-    title?: string;
-    /**
-     * Value of item
-     */
-    value?: string;
-  }
-  interface MwMenuList {
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId?: string;
-  }
-  interface MwModal {
-    /**
-     * Determines wether or not backdrop should dismiss modal
-     */
-    backdropDismiss?: boolean;
-    /**
-     * id used to dismiss the modal
-     */
-    dismissTrigger?: string | undefined;
-    /**
-     * Modal can be opened closed with this input property
-     */
-    isOpen?: boolean;
-    /**
-     * Determines the max size that the modal takes horizontally
-     */
-    size?: ModalSize;
-    /**
-     * id used to present the modal
-     */
-    trigger?: string | undefined;
-  }
-  interface MwModalFooter {}
-  interface MwModalTitle {
-    /**
-     * Description that should be displayed
-     */
-    description?: string | undefined;
-    /**
-     * Title that should be displayed
-     */
-    headline?: string | undefined;
-  }
-  interface MwPopover {
-    /**
-     * Closes Popover when user clicks on it
-     */
-    closeOnClick?: boolean;
-    /**
-     * If set to true, the popover can be closed by clicking outside
-     */
-    dismissable?: boolean;
-    /**
-     * Name used internally to reference anchor and content elements
-     */
-    name?: string;
-    /**
-     * disable default padding
-     */
-    noPadding?: boolean;
-    /**
-     * MwPopover emits an event when the value of the open prop changes
-     */
-    onOpenEmitter?: (event: MwPopoverCustomEvent<any>) => void;
-    /**
-     * Whether the popover is visible
-     */
-    open?: boolean;
-    /**
-     * Placement relative to anchor element
-     */
-    placement?: PopoverPlacement;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId?: string;
-  }
-  interface MwRadio {
-    /**
-     * Whether the radio button is checked
-     */
-    checked?: boolean;
-    /**
-     * Visually and functionally disbale radio button
-     */
-    disabled?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * Analog to HTML 'name' attribute used to group radios for unique selection
-     */
-    name?: string;
-    /**
-     * Should be provided for automated testing
-     */
-    testId?: string;
-    /**
-     * Value of the radio button
-     */
-    value?: string;
-  }
-  interface MwRadioGroup {
-    /**
-     * Event emitted when radioGroup value changes (after radio selection)
-     */
-    onRadioChange?: (event: MwRadioGroupCustomEvent<{ value?: string | number }>) => void;
-    /**
-     * current value of the radio-group
-     */
-    value?: string | number;
-  }
-  interface MwSlider {
-    /**
-     * Disable range input
-     */
-    disabled?: boolean;
-    /**
-     * Icon to be displayed to right of the slider
-     */
-    endIcon?: string;
-    /**
-     * input helper-text
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
-     * input label
-     */
-    label?: string;
-    /**
-     * max range value
-     */
-    max?: number;
-    /**
-     * min range value
-     */
-    min?: number;
-    /**
-     * Name of range input
-     */
-    name?: string;
-    /**
-     * Icon to be displayed to left of the slider
-     */
-    startIcon?: string;
-    /**
-     * step for range value
-     */
-    step?: number;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId?: string;
-    /**
-     * value of range input
-     */
-    value?: number;
-  }
-  interface MwSwitch {
-    /**
-     * Switch state
-     */
-    checked?: boolean;
-    /**
-     * Visually and functionally disable switch
-     */
-    disabled?: boolean;
-    /**
-     * Fixed label to be displayed next to the toggle switch
-     */
-    label?: string;
-    /**
-     * Label to be shown when switch state is unchecked. Overrides label prop
-     */
-    offText?: string;
-    /**
-     * MwSwitch emits an event when switch checked state changes
-     */
-    onEmitter?: (event: MwSwitchCustomEvent<any>) => void;
-    /**
-     * Label to be shown when switch state is checked. Overrides label prop
-     */
-    onText?: string;
-    /**
-     * Provide unique identifier for automated testing
-     */
-    testId?: string;
-  }
-  interface MwTab {
-    /**
-     * Dictates if the tab is disabled
-     */
-    disabled?: boolean;
-    /**
-     * Icon to be displayed
-     */
-    icon?: string;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * Dictates if tab has selected state
-     */
-    selected?: boolean;
-  }
-  interface MwTabs {
-    /**
-     * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
-     */
-    selected?: number | null;
-    /**
-     * Test ID
-     */
-    testId?: string;
-  }
-  interface MwTextfield {
-    /**
-     * Visually and functionally disabled input
-     */
-    disabled?: boolean;
-    /**
-     * Use to display input and helper-text in error state
-     */
-    hasError?: boolean;
-    /**
-     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
-     * Label to be displayed
-     */
-    label?: string;
-    /**
-     * Allows users to enter multiple values into textfield
-     */
-    multiple?: boolean;
-    /**
-     * Amount of allowed `multipleValues`
-     */
-    multipleMaximum?: number;
-    /**
-     * Values, when `multiple` is true
-     */
-    multipleValues?: Array<string | number>;
-    /**
-     * input field name
-     */
-    name?: string;
-    /**
-     * MwTextfield emits an event when textfield value changes
-     */
-    onValueChanged?: (event: MwTextfieldCustomEvent<string>) => void;
-    /**
-     * Placeholder to be displayed
-     */
-    placeholder?: string;
-    /**
-     * Whether user can't type in input field
-     */
-    readOnly?: boolean;
-    /**
-     * Mark input as required
-     */
-    required?: boolean;
-    /**
-     * HTML Input type
-     */
-    type?: string;
-    /**
-     * input field value
-     */
-    value?: string | number;
-  }
-  interface IntrinsicElements {
-    "mw-app-bar": MwAppBar;
-    "mw-app-bar-title": MwAppBarTitle;
-    "mw-autocomplete": MwAutocomplete;
-    "mw-avatar": MwAvatar;
-    "mw-backdrop": MwBackdrop;
-    "mw-button": MwButton;
-    "mw-card": MwCard;
-    "mw-card-body": MwCardBody;
-    "mw-card-footer": MwCardFooter;
-    "mw-card-header": MwCardHeader;
-    "mw-card-image": MwCardImage;
-    "mw-card-title": MwCardTitle;
-    "mw-checkbox": MwCheckbox;
-    "mw-chip": MwChip;
-    "mw-divider": MwDivider;
-    "mw-dropdown": MwDropdown;
-    "mw-icon": MwIcon;
-    "mw-icon-gallery": MwIconGallery;
-    "mw-link": MwLink;
-    "mw-menu": MwMenu;
-    "mw-menu-item": MwMenuItem;
-    "mw-menu-list": MwMenuList;
-    "mw-modal": MwModal;
-    "mw-modal-footer": MwModalFooter;
-    "mw-modal-title": MwModalTitle;
-    "mw-popover": MwPopover;
-    "mw-radio": MwRadio;
-    "mw-radio-group": MwRadioGroup;
-    "mw-slider": MwSlider;
-    "mw-switch": MwSwitch;
-    "mw-tab": MwTab;
-    "mw-tabs": MwTabs;
-    "mw-textfield": MwTextfield;
-  }
+    interface MwAppBar {
+        /**
+          * Set the role of the header
+         */
+        "ariaRole"?: AriaRolesEnum.NAVIGATION | AriaRolesEnum.TOOLBAR;
+        /**
+          * Position of App Bar within viewport
+         */
+        "position"?: AppBarPosition;
+    }
+    interface MwAppBarTitle {
+    }
+    interface MwAutocomplete {
+    }
+    interface MwAvatar {
+        /**
+          * Alt text, first letter used as fallback when no src or icon given
+         */
+        "alt"?: string;
+        /**
+          * Icon name. Will be ignored if `src` is provided
+         */
+        "icon"?: string;
+        /**
+          * Size variant
+         */
+        "size"?: Size;
+        /**
+          * Image source
+         */
+        "src"?: string;
+        /**
+          * Test Id
+         */
+        "testId"?: string;
+    }
+    interface MwBackdrop {
+        /**
+          * determines whether the backdrop will be dismissed by click
+         */
+        "backdropDismiss"?: boolean;
+        /**
+          * Event after backdrop was clicked
+         */
+        "onBackdropClick"?: (event: MwBackdropCustomEvent<void>) => void;
+    }
+    interface MwButton {
+        /**
+          * Visually and functionally disable button
+         */
+        "disabled"?: boolean;
+        /**
+          * If provided the button will act as a link
+         */
+        "href"?: string;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * 'onClick' event is fired when clicking the button, unless it is used with a `href` prop.
+         */
+        "onClickEmitter"?: (event: MwButtonCustomEvent<any>) => void;
+        /**
+          * Button size
+         */
+        "size"?: ButtonSize;
+        /**
+          * If using href the target prop can be provided
+         */
+        "target"?: Target;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId"?: string;
+        /**
+          * Button variants
+         */
+        "variant"?: ButtonVariant;
+    }
+    interface MwCard {
+        /**
+          * Use box-shadow for elevation style
+         */
+        "elevated"?: boolean;
+        /**
+          * Emits an event when MwCard is clicked
+         */
+        "onClickEmitter"?: (event: MwCardCustomEvent<any>) => void;
+        /**
+          * Display outline
+         */
+        "outlined"?: boolean;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId"?: string;
+    }
+    interface MwCardBody {
+    }
+    interface MwCardFooter {
+        /**
+          * justify-content: center
+         */
+        "justifyCenter"?: boolean;
+        /**
+          * justify-content: end
+         */
+        "justifyEnd"?: boolean;
+        /**
+          * justify-content: flex-end
+         */
+        "justifyFlexEnd"?: boolean;
+        /**
+          * justify-content: flex-start
+         */
+        "justifyFlexStart"?: boolean;
+        /**
+          * justify-content: left
+         */
+        "justifyLeft"?: boolean;
+        /**
+          * justify-content: normal
+         */
+        "justifyNormal"?: boolean;
+        /**
+          * justify-content: right
+         */
+        "justifyRight"?: boolean;
+        /**
+          * justify-content: space-around
+         */
+        "justifySpaceAround"?: boolean;
+        /**
+          * justify-content: space-between
+         */
+        "justifySpaceBetween"?: boolean;
+        /**
+          * justify-content: space-evenly
+         */
+        "justifySpaceEvenly"?: boolean;
+        /**
+          * justify-content: start
+         */
+        "justifyStart"?: boolean;
+    }
+    interface MwCardHeader {
+        /**
+          * Header to be displayed in mw-card-header
+         */
+        "header"?: string;
+        /**
+          * Subheader to be displayed in mw-card-header
+         */
+        "subheader"?: string;
+    }
+    interface MwCardImage {
+        /**
+          * Alt text for the image
+         */
+        "alt"?: string;
+        /**
+          * Image source
+         */
+        "src"?: string;
+    }
+    interface MwCardTitle {
+        /**
+          * Metadata to be displayed in mw-card-title
+         */
+        "metadata"?: string;
+        /**
+          * Subtitle to be displayed in mw-card-title
+         */
+        "subtitle"?: string;
+        /**
+          * Title to be displayed in mw-card-title
+         */
+        "title"?: string;
+    }
+    interface MwCheckbox {
+        /**
+          * Whether input is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Whether input is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Name of checkbox input
+         */
+        "name"?: string;
+        /**
+          * MwCheckbox emits an event when checkbox checked state is changed
+         */
+        "onEmitter"?: (event: MwCheckboxCustomEvent<any>) => void;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId"?: string;
+        /**
+          * Value of checkbox input
+         */
+        "value"?: string;
+    }
+    interface MwChip {
+        /**
+          * Visually and functionally disable button
+         */
+        "disabled"?: boolean;
+        /**
+          * Name identifier of icon to be displayed in chip
+         */
+        "icon"?: string;
+        /**
+          * MwChip emits an event when chip is clicked
+         */
+        "onClickEmitter"?: (event: MwChipCustomEvent<any>) => void;
+        /**
+          * MwChip emits an event when chip is closed
+         */
+        "onCloseEmitter"?: (event: MwChipCustomEvent<any>) => void;
+        /**
+          * Selection state that changes onToggle. Can be set as mutable prop.
+         */
+        "selected"?: boolean;
+        /**
+          * Flag whether to show close icon or not
+         */
+        "showClose"?: boolean;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId"?: string;
+        /**
+          * Value of chip
+         */
+        "value"?: string | number;
+    }
+    interface MwDivider {
+        /**
+          * Whether the divider is a middle-inset
+         */
+        "inset"?: boolean;
+    }
+    interface MwDropdown {
+        /**
+          * Visually and functionally disabled input
+         */
+        "disabled"?: boolean;
+        /**
+          * Use to display input and helper-text in error state
+         */
+        "hasError"?: boolean;
+        /**
+          * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+         */
+        "helperText"?: string;
+        /**
+          * Display label and input horizonally
+         */
+        "inline"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * input field name
+         */
+        "name"?: string;
+        /**
+          * MwDropdown emits an event when value changes
+         */
+        "onValueChanged"?: (event: MwDropdownCustomEvent<string>) => void;
+        /**
+          * Placeholder to be displayed
+         */
+        "placeholder"?: string;
+        /**
+          * Mark input as required
+         */
+        "required"?: boolean;
+        /**
+          * input field value
+         */
+        "value"?: string | number;
+        /**
+          * label of selected input value
+         */
+        "valueLabel"?: string | number;
+    }
+    interface MwIcon {
+        /**
+          * Icon color
+         */
+        "color"?: string;
+        /**
+          * Fill gives you the ability to modify the default icon style. A single icon can render both unfilled and filled states.
+         */
+        "fill"?: boolean;
+        /**
+          * The icon name to be rendered
+         */
+        "icon"?: string;
+        /**
+          * This controls both optical size and font-size. Font-size can be set independently in styles. (Optical) size for the image to look the same at different sizes, the stroke weight (thickness) changes as the icon size scales. Optical size offers a way to automatically adjust the stroke weight when you increase or decrease the symbol size.
+         */
+        "size"?: Size;
+        /**
+          * Weight defines the symbol’s stroke weight, with a range of weights between thin (100) and bold (700). Weight can also affect the overall size of the symbol.
+         */
+        "weight"?: number;
+    }
+    interface MwIconGallery {
+        /**
+          * The icons that should be rendered
+         */
+        "icons"?: string[];
+    }
+    interface MwLink {
+        /**
+          * URL to where the link should lead
+         */
+        "href": string;
+        /**
+          * Target Prop for HTML 'a' tag
+         */
+        "target"?: Target;
+        /**
+          * Dictates whether link has an underline
+         */
+        "underline"?: boolean;
+    }
+    interface MwMenu {
+        /**
+          * Whether the menu is open
+         */
+        "open"?: boolean;
+        /**
+          * Placement relative to anchor element
+         */
+        "placement"?: PopoverPlacement;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId"?: string;
+    }
+    interface MwMenuItem {
+        /**
+          * Disabled state
+         */
+        "disabled"?: boolean;
+        /**
+          * MwMenuItem emits an event when its clicked
+         */
+        "onClickEmitter"?: (event: MwMenuItemCustomEvent<any>) => void;
+        /**
+          * Selected state
+         */
+        "selected"?: boolean;
+        /**
+          * Menu item subtitle
+         */
+        "subtitle"?: string;
+        /**
+          * Menu item title
+         */
+        "title"?: string;
+        /**
+          * Value of item
+         */
+        "value"?: string;
+    }
+    interface MwMenuList {
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId"?: string;
+    }
+    interface MwModal {
+        /**
+          * Determines wether or not backdrop should dismiss modal
+         */
+        "backdropDismiss"?: boolean;
+        /**
+          * id used to dismiss the modal
+         */
+        "dismissTrigger"?: string | undefined;
+        /**
+          * Modal can be opened closed with this input property
+         */
+        "isOpen"?: boolean;
+        /**
+          * Determines the max size that the modal takes horizontally
+         */
+        "size"?: ModalSize;
+        /**
+          * id used to present the modal
+         */
+        "trigger"?: string | undefined;
+    }
+    interface MwModalFooter {
+    }
+    interface MwModalTitle {
+        /**
+          * Description that should be displayed
+         */
+        "description"?: string | undefined;
+        /**
+          * Title that should be displayed
+         */
+        "headline"?: string | undefined;
+    }
+    interface MwPopover {
+        /**
+          * Closes Popover when user clicks on it
+         */
+        "closeOnClick"?: boolean;
+        /**
+          * If set to true, the popover can be closed by clicking outside
+         */
+        "dismissable"?: boolean;
+        /**
+          * Name used internally to reference anchor and content elements
+         */
+        "name"?: string;
+        /**
+          * disable default padding
+         */
+        "noPadding"?: boolean;
+        /**
+          * MwPopover emits an event when the value of the open prop changes
+         */
+        "onOpenEmitter"?: (event: MwPopoverCustomEvent<any>) => void;
+        /**
+          * Whether the popover is visible
+         */
+        "open"?: boolean;
+        /**
+          * Placement relative to anchor element
+         */
+        "placement"?: PopoverPlacement;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId"?: string;
+    }
+    interface MwRadio {
+        /**
+          * Whether the radio button is checked
+         */
+        "checked"?: boolean;
+        /**
+          * Visually and functionally disbale radio button
+         */
+        "disabled"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Analog to HTML 'name' attribute used to group radios for unique selection
+         */
+        "name"?: string;
+        /**
+          * Should be provided for automated testing
+         */
+        "testId"?: string;
+        /**
+          * Value of the radio button
+         */
+        "value"?: string;
+    }
+    interface MwRadioGroup {
+        /**
+          * Event emitted when radioGroup value changes (after radio selection)
+         */
+        "onRadioChange"?: (event: MwRadioGroupCustomEvent<{ value?: string | number }>) => void;
+        /**
+          * current value of the radio-group
+         */
+        "value"?: string | number;
+    }
+    interface MwSlider {
+        /**
+          * Disable range input
+         */
+        "disabled"?: boolean;
+        /**
+          * Icon to be displayed to right of the slider
+         */
+        "endIcon"?: string;
+        /**
+          * input helper-text
+         */
+        "helperText"?: string;
+        /**
+          * Display label and input horizonally
+         */
+        "inline"?: boolean;
+        /**
+          * input label
+         */
+        "label"?: string;
+        /**
+          * max range value
+         */
+        "max"?: number;
+        /**
+          * min range value
+         */
+        "min"?: number;
+        /**
+          * Name of range input
+         */
+        "name"?: string;
+        /**
+          * Icon to be displayed to left of the slider
+         */
+        "startIcon"?: string;
+        /**
+          * step for range value
+         */
+        "step"?: number;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId"?: string;
+        /**
+          * value of range input
+         */
+        "value"?: number;
+    }
+    interface MwSwitch {
+        /**
+          * Switch state
+         */
+        "checked"?: boolean;
+        /**
+          * Visually and functionally disable switch
+         */
+        "disabled"?: boolean;
+        /**
+          * Fixed label to be displayed next to the toggle switch
+         */
+        "label"?: string;
+        /**
+          * Label to be shown when switch state is unchecked. Overrides label prop
+         */
+        "offText"?: string;
+        /**
+          * MwSwitch emits an event when switch checked state changes
+         */
+        "onEmitter"?: (event: MwSwitchCustomEvent<any>) => void;
+        /**
+          * Label to be shown when switch state is checked. Overrides label prop
+         */
+        "onText"?: string;
+        /**
+          * Provide unique identifier for automated testing
+         */
+        "testId"?: string;
+    }
+    interface MwTab {
+        /**
+          * Dictates if the tab is disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * Icon to be displayed
+         */
+        "icon"?: string;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Dictates if tab has selected state
+         */
+        "selected"?: boolean;
+    }
+    interface MwTabs {
+        /**
+          * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
+         */
+        "selected"?: number | null;
+        /**
+          * Test ID
+         */
+        "testId"?: string;
+    }
+    interface MwTextfield {
+        /**
+          * Visually and functionally disabled input
+         */
+        "disabled"?: boolean;
+        /**
+          * Use to display input and helper-text in error state
+         */
+        "hasError"?: boolean;
+        /**
+          * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+         */
+        "helperText"?: string;
+        /**
+          * Display label and input horizonally
+         */
+        "inline"?: boolean;
+        /**
+          * Label to be displayed
+         */
+        "label"?: string;
+        /**
+          * Allows users to enter multiple values into textfield
+         */
+        "multiple"?: boolean;
+        /**
+          * Amount of allowed `multipleValues`
+         */
+        "multipleMaximum"?: number;
+        /**
+          * Values, when `multiple` is true
+         */
+        "multipleValues"?: Array<string | number>;
+        /**
+          * input field name
+         */
+        "name"?: string;
+        /**
+          * MwTextfield emits an event when textfield value changes
+         */
+        "onValueChanged"?: (event: MwTextfieldCustomEvent<string>) => void;
+        /**
+          * Placeholder to be displayed
+         */
+        "placeholder"?: string;
+        /**
+          * Whether user can't type in input field
+         */
+        "readOnly"?: boolean;
+        /**
+          * Mark input as required
+         */
+        "required"?: boolean;
+        /**
+          * HTML Input type
+         */
+        "type"?: string;
+        /**
+          * input field value
+         */
+        "value"?: string | number;
+    }
+    interface IntrinsicElements {
+        "mw-app-bar": MwAppBar;
+        "mw-app-bar-title": MwAppBarTitle;
+        "mw-autocomplete": MwAutocomplete;
+        "mw-avatar": MwAvatar;
+        "mw-backdrop": MwBackdrop;
+        "mw-button": MwButton;
+        "mw-card": MwCard;
+        "mw-card-body": MwCardBody;
+        "mw-card-footer": MwCardFooter;
+        "mw-card-header": MwCardHeader;
+        "mw-card-image": MwCardImage;
+        "mw-card-title": MwCardTitle;
+        "mw-checkbox": MwCheckbox;
+        "mw-chip": MwChip;
+        "mw-divider": MwDivider;
+        "mw-dropdown": MwDropdown;
+        "mw-icon": MwIcon;
+        "mw-icon-gallery": MwIconGallery;
+        "mw-link": MwLink;
+        "mw-menu": MwMenu;
+        "mw-menu-item": MwMenuItem;
+        "mw-menu-list": MwMenuList;
+        "mw-modal": MwModal;
+        "mw-modal-footer": MwModalFooter;
+        "mw-modal-title": MwModalTitle;
+        "mw-popover": MwPopover;
+        "mw-radio": MwRadio;
+        "mw-radio-group": MwRadioGroup;
+        "mw-slider": MwSlider;
+        "mw-switch": MwSwitch;
+        "mw-tab": MwTab;
+        "mw-tabs": MwTabs;
+        "mw-textfield": MwTextfield;
+    }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
-  export namespace JSX {
-    interface IntrinsicElements {
-      "mw-app-bar": LocalJSX.MwAppBar & JSXBase.HTMLAttributes<HTMLMwAppBarElement>;
-      "mw-app-bar-title": LocalJSX.MwAppBarTitle & JSXBase.HTMLAttributes<HTMLMwAppBarTitleElement>;
-      "mw-autocomplete": LocalJSX.MwAutocomplete & JSXBase.HTMLAttributes<HTMLMwAutocompleteElement>;
-      "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
-      "mw-backdrop": LocalJSX.MwBackdrop & JSXBase.HTMLAttributes<HTMLMwBackdropElement>;
-      "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
-      "mw-card": LocalJSX.MwCard & JSXBase.HTMLAttributes<HTMLMwCardElement>;
-      "mw-card-body": LocalJSX.MwCardBody & JSXBase.HTMLAttributes<HTMLMwCardBodyElement>;
-      "mw-card-footer": LocalJSX.MwCardFooter & JSXBase.HTMLAttributes<HTMLMwCardFooterElement>;
-      "mw-card-header": LocalJSX.MwCardHeader & JSXBase.HTMLAttributes<HTMLMwCardHeaderElement>;
-      "mw-card-image": LocalJSX.MwCardImage & JSXBase.HTMLAttributes<HTMLMwCardImageElement>;
-      "mw-card-title": LocalJSX.MwCardTitle & JSXBase.HTMLAttributes<HTMLMwCardTitleElement>;
-      "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
-      "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
-      "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
-      "mw-dropdown": LocalJSX.MwDropdown & JSXBase.HTMLAttributes<HTMLMwDropdownElement>;
-      "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
-      "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
-      "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
-      "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
-      "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
-      "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
-      "mw-modal": LocalJSX.MwModal & JSXBase.HTMLAttributes<HTMLMwModalElement>;
-      "mw-modal-footer": LocalJSX.MwModalFooter & JSXBase.HTMLAttributes<HTMLMwModalFooterElement>;
-      "mw-modal-title": LocalJSX.MwModalTitle & JSXBase.HTMLAttributes<HTMLMwModalTitleElement>;
-      "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
-      "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
-      "mw-radio-group": LocalJSX.MwRadioGroup & JSXBase.HTMLAttributes<HTMLMwRadioGroupElement>;
-      "mw-slider": LocalJSX.MwSlider & JSXBase.HTMLAttributes<HTMLMwSliderElement>;
-      "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
-      "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
-      "mw-tabs": LocalJSX.MwTabs & JSXBase.HTMLAttributes<HTMLMwTabsElement>;
-      "mw-textfield": LocalJSX.MwTextfield & JSXBase.HTMLAttributes<HTMLMwTextfieldElement>;
+    export namespace JSX {
+        interface IntrinsicElements {
+            "mw-app-bar": LocalJSX.MwAppBar & JSXBase.HTMLAttributes<HTMLMwAppBarElement>;
+            "mw-app-bar-title": LocalJSX.MwAppBarTitle & JSXBase.HTMLAttributes<HTMLMwAppBarTitleElement>;
+            "mw-autocomplete": LocalJSX.MwAutocomplete & JSXBase.HTMLAttributes<HTMLMwAutocompleteElement>;
+            "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
+            "mw-backdrop": LocalJSX.MwBackdrop & JSXBase.HTMLAttributes<HTMLMwBackdropElement>;
+            "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
+            "mw-card": LocalJSX.MwCard & JSXBase.HTMLAttributes<HTMLMwCardElement>;
+            "mw-card-body": LocalJSX.MwCardBody & JSXBase.HTMLAttributes<HTMLMwCardBodyElement>;
+            "mw-card-footer": LocalJSX.MwCardFooter & JSXBase.HTMLAttributes<HTMLMwCardFooterElement>;
+            "mw-card-header": LocalJSX.MwCardHeader & JSXBase.HTMLAttributes<HTMLMwCardHeaderElement>;
+            "mw-card-image": LocalJSX.MwCardImage & JSXBase.HTMLAttributes<HTMLMwCardImageElement>;
+            "mw-card-title": LocalJSX.MwCardTitle & JSXBase.HTMLAttributes<HTMLMwCardTitleElement>;
+            "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
+            "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
+            "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
+            "mw-dropdown": LocalJSX.MwDropdown & JSXBase.HTMLAttributes<HTMLMwDropdownElement>;
+            "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
+            "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
+            "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
+            "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
+            "mw-menu-item": LocalJSX.MwMenuItem & JSXBase.HTMLAttributes<HTMLMwMenuItemElement>;
+            "mw-menu-list": LocalJSX.MwMenuList & JSXBase.HTMLAttributes<HTMLMwMenuListElement>;
+            "mw-modal": LocalJSX.MwModal & JSXBase.HTMLAttributes<HTMLMwModalElement>;
+            "mw-modal-footer": LocalJSX.MwModalFooter & JSXBase.HTMLAttributes<HTMLMwModalFooterElement>;
+            "mw-modal-title": LocalJSX.MwModalTitle & JSXBase.HTMLAttributes<HTMLMwModalTitleElement>;
+            "mw-popover": LocalJSX.MwPopover & JSXBase.HTMLAttributes<HTMLMwPopoverElement>;
+            "mw-radio": LocalJSX.MwRadio & JSXBase.HTMLAttributes<HTMLMwRadioElement>;
+            "mw-radio-group": LocalJSX.MwRadioGroup & JSXBase.HTMLAttributes<HTMLMwRadioGroupElement>;
+            "mw-slider": LocalJSX.MwSlider & JSXBase.HTMLAttributes<HTMLMwSliderElement>;
+            "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
+            "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
+            "mw-tabs": LocalJSX.MwTabs & JSXBase.HTMLAttributes<HTMLMwTabsElement>;
+            "mw-textfield": LocalJSX.MwTextfield & JSXBase.HTMLAttributes<HTMLMwTextfieldElement>;
+        }
     }
-  }
 }

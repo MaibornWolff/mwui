@@ -74,7 +74,7 @@ export class MwTextfield {
   clickEmitterHandler(event): void {
     const emittedValue = event.target.getAttribute("value");
     if (this.multiple) {
-      this.addMultiValue(emittedValue, true);
+      this.addMultiValue(emittedValue);
     } else {
       this.value = emittedValue;
     }
@@ -85,11 +85,12 @@ export class MwTextfield {
     this.isDropdownOpen = event.detail;
   }
 
-  @Listen("emitter")
+  @Listen("closeEmitter")
   closeEmitterHandler(event): void {
     const multiValuesCopy = this.multipleValues;
     const indexToRemove = multiValuesCopy.indexOf(event.detail);
     multiValuesCopy.splice(indexToRemove, 1);
+    document.querySelectorAll(`mw-menu-item[value="${event.detail}"]`).forEach(item => item.setAttribute("disabled", "false"));
     this.multipleValues = [...multiValuesCopy];
   }
 
@@ -126,11 +127,12 @@ export class MwTextfield {
     this.addMultiValue(this.inputElement.value);
   };
 
-  private addMultiValue = (value: string | number, option = false): void => {
+  private addMultiValue = (value: string): void => {
     if (this.multiple) {
-      if ((option || this.inputElement.value.trim().length > 0) && !this.multipleValues.includes(value)) {
+      if (value.trim().length > 0 && !this.multipleValues.includes(value)) {
         if (!this.multipleMaximum || this.multipleValues.length <= this.multipleMaximum) {
           this.multipleValues = [...this.multipleValues, value];
+          document.querySelectorAll(`mw-menu-item[value="${value}"]`).forEach(item => item.setAttribute("disabled", "true"));
         }
       }
       this.inputElement.value = "";
