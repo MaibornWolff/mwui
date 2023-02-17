@@ -1,11 +1,11 @@
 import { TransformedTokens } from "style-dictionary";
 
-export const createArray = ({ dictionary }) => {
+export const createArray = ({ dictionary }): string => {
     const arr = dictionary.allTokens;
     return JSON.stringify(arr);
 };
 
-export const getFontWeightValue = (fontWeight: string) => {
+export const getFontWeightValue = (fontWeight: string): number => {
     return {
         "light": 300,
         "regular": 400,
