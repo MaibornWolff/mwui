@@ -395,11 +395,12 @@ export class MwLink {
     }
 }
 
+import type { LoginFormData as IMwLoginLoginFormData } from "@maibornwolff/mwui-stencil";
 export declare interface MwLogin extends Components.MwLogin {
     /**
      * Event emitted after login button was clicked
      */
-    submit: EventEmitter<CustomEvent<void>>;
+    submit: EventEmitter<CustomEvent<IMwLoginLoginFormData>>;
 }
 
 @ProxyCmp({

@@ -12,6 +12,7 @@ import { ButtonVariant } from "./components/mw-button/models/enums/button-varian
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
 import { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
+import { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
@@ -1127,7 +1128,7 @@ declare namespace LocalJSX {
     /**
      * Event emitted after login button was clicked
      */
-    onSubmit?: (event: MwLoginCustomEvent<void>) => void;
+    onSubmit?: (event: MwLoginCustomEvent<LoginFormData>) => void;
     /**
      * Wether or not the signUp prompt should be displayed
      */
