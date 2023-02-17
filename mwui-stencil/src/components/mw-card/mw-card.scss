@@ -1,3 +1,5 @@
+@use "theme/mixins/box-shadow" as box-shadow;
+
 :host {
   display: block;
 }
@@ -19,23 +21,23 @@
   -moz-border-radius: var(--mw-component-card-border-radius);
   color: var(--mw-component-card-fg-default);
   border: none;
-  transition: all .4 ease;
-}
+  transition: all 0.4 ease;
 
-.card:first-child {
-  margin-top: 0 !important;
-}
+  &:first-child {
+    margin-top: 0;
+  }
 
-.card.muted {
-  color: var(--mw-component-card-fg-muted);
-}
+  &.muted {
+    color: var(--mw-component-card-fg-muted);
+  }
 
-.card.outlined {
-  border: var(--mw-component-card-border-width-outlined) solid var(--mw-component-card-border-outlined);
-}
+  &.outlined {
+    border: var(--mw-component-card-border-width-outlined) solid var(--mw-component-card-border-outlined);
+  }
 
-.card.elevated {
-  border: none;
-  /* TODO: token */
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+  &.elevated {
+    @include box-shadow.elevation("--mw-component-card-shadow-elevated", 2);
+
+    border: none;
+  }
 }
