@@ -48,11 +48,7 @@ export class MwIconGallery {
           <mw-textfield class="gallery-filter" onInput={this.onInput} placeholder="Type to filter icons" id="icon-filter">
             <mw-icon icon="search" slot="icon-start"></mw-icon>
           </mw-textfield>
-          <div>
-            {/* TODO: replace with mw-slider once implemented */}
-            <input onInput={this.onWeightChange} type="range" id="weight" name="weight" min="100" max="700" step="100" value={this.weight}></input>
-            <label htmlFor="weight">Weight: {this.weight}</label>
-          </div>
+          <mw-slider inline label="Weight" onInput={this.onWeightChange} id="weight" name="weight" min={100} max={700} step={100} value={this.weight}></mw-slider>
           <mw-switch class="toggle-fill" label="filled styles" onInput={this.onToggleFill}></mw-switch>
         </div>
         <div class="hint">
