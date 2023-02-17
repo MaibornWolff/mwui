@@ -1,15 +1,16 @@
-import { Format, Named, Transform } from "style-dictionary";
+import { Config, Format, Named, Transform } from "style-dictionary";
 import * as StyleDictionary from "style-dictionary";
 import * as log from "log-beautify";
 import { FORMATS } from "./formats";
 import { TRANSFORMS } from "./transforms";
 import { createArray } from "../utils/utils";
 
-const baseTransforms = ["attribute/cti", "size/px"];
+const baseTransforms = ["attribute/cti", ...TRANSFORMS.map(transform => transform.name)];
 const jsTransforms = baseTransforms.concat(["name/cti/camel"]);
 const scssTransforms = baseTransforms.concat(["name/cti/kebab"]);
+const cssTransforms = ["name/cti/kebab", "append/px", "percent/px", "fontWeight/number"];
 
-const getStyleDictionaryConfig = (theme: string) => {
+const getStyleDictionaryConfig = (theme: string): Config => {
     return {
         source: [`input/${theme}.json`],
         format: {
@@ -40,6 +41,7 @@ const getStyleDictionaryConfig = (theme: string) => {
             cssVariables: {
                 transformGroup: "css",
                 buildPath: "dist/css/",
+                transforms: cssTransforms,
                 files: [
                     {
                         destination: `${theme}.css`,
