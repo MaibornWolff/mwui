@@ -17,16 +17,6 @@ const getStyleDictionaryConfig = (theme: string): Config => {
             createArray,
         },
         platforms: {
-            css: {
-                transformGroup: "css",
-                buildPath: "dist/css/",
-                files: [
-                    {
-                        destination: `index.css`,
-                        format: "utilityClass",
-                    },
-                ],
-            },
             scss: {
                 transformGroup: "css",
                 transforms: scssTransforms,

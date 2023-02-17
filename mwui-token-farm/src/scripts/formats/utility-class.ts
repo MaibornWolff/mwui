@@ -2,6 +2,9 @@ import { utilities } from "../../utils/utility-classes";
 import { Format } from "style-dictionary";
 import { FormatterArguments } from "style-dictionary/types/Format";
 
+/**
+ * @deprecated - i think this can be removed
+ */
 export const utilityClassFormat: Format = {
     name: "utilityClass",
     formatter: ({ dictionary }: FormatterArguments) => {
