@@ -23,17 +23,26 @@
 | -------------- | ------------------------------------------------------- | --------------------- |
 | `valueChanged` | MwTextfield emits an event when textfield value changes | `CustomEvent<string>` |
 
+## Shadow Parts
+
+| Part           | Description |
+| -------------- | ----------- |
+| `"icon-end"`   |             |
+| `"icon-start"` |             |
+
 ## Dependencies
 
 ### Used by
 
 - [mw-icon-gallery](../mw-icon-gallery)
+- [mw-login](../mw-login)
 
 ### Graph
 
 ```mermaid
 graph TD;
   mw-icon-gallery --> mw-textfield
+  mw-login --> mw-textfield
   style mw-textfield fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

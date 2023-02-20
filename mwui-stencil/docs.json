@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-16T08:48:18",
+  "timestamp": "2023-02-20T10:20:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -445,10 +445,17 @@
       "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
-      "dependents": [],
+      "parts": [
+        {
+          "name": "button",
+          "docs": ""
+        }
+      ],
+      "dependents": ["mw-login"],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-login": ["mw-button"]
+      }
     },
     {
       "filePath": "./src/components/mw-card/mw-card.tsx",
@@ -1052,10 +1059,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-login"],
       "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-checkbox": ["mw-icon"]
+        "mw-checkbox": ["mw-icon"],
+        "mw-login": ["mw-checkbox"]
       }
     },
     {
@@ -1326,13 +1334,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-slider", "mw-tab"],
+      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-login", "mw-slider", "mw-tab"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-avatar": ["mw-icon"],
         "mw-checkbox": ["mw-icon"],
         "mw-chip": ["mw-icon"],
         "mw-icon-gallery": ["mw-icon"],
+        "mw-login": ["mw-icon"],
         "mw-slider": ["mw-icon"],
         "mw-tab": ["mw-icon"]
       }
@@ -1379,7 +1388,7 @@
       "filePath": "./src/components/mw-img/mw-img.tsx",
       "encapsulation": "shadow",
       "tag": "mw-img",
-      "readme": "# mw-img\n\n\n",
+      "readme": "# mw-img\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1598,9 +1607,150 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-login"],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-login": ["mw-link"]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-login/mw-login.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-login",
+      "readme": "# mw-login\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "backgroundImage",
+          "type": "string",
+          "mutable": false,
+          "attr": "background-image",
+          "reflectToAttr": false,
+          "docs": "URL to the image that should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "forgotPasswordHref",
+          "type": "string",
+          "mutable": false,
+          "attr": "forgot-password-href",
+          "reflectToAttr": false,
+          "docs": "Wether or not the forgot password button should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "headline",
+          "type": "string",
+          "mutable": false,
+          "attr": "headline",
+          "reflectToAttr": false,
+          "docs": "Headline text",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "layout",
+          "type": "\"center\" | \"end\" | \"start\"",
+          "mutable": false,
+          "attr": "layout",
+          "reflectToAttr": false,
+          "docs": "In which layout the Login component should be displayed",
+          "docsTags": [],
+          "default": "LoginLayoutEnum.CENTER",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "logo",
+          "type": "string",
+          "mutable": false,
+          "attr": "logo",
+          "reflectToAttr": false,
+          "docs": "URL to the image that should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "signUpHref",
+          "type": "string",
+          "mutable": false,
+          "attr": "sign-up-href",
+          "reflectToAttr": false,
+          "docs": "Wether or not the signUp prompt should be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "submit",
+          "detail": "LoginFormData",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "Event emitted after login button was clicked",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
+      "dependencyGraph": {
+        "mw-login": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
+        "mw-checkbox": ["mw-icon"]
+      }
     },
     {
       "filePath": "./src/components/mw-menu/mw-menu.tsx",
@@ -3082,11 +3232,21 @@
       "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
-      "dependents": ["mw-icon-gallery"],
+      "parts": [
+        {
+          "name": "icon-end",
+          "docs": ""
+        },
+        {
+          "name": "icon-start",
+          "docs": ""
+        }
+      ],
+      "dependents": ["mw-icon-gallery", "mw-login"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-textfield"]
+        "mw-icon-gallery": ["mw-textfield"],
+        "mw-login": ["mw-textfield"]
       }
     }
   ]

@@ -21,6 +21,10 @@
 
 ## Dependencies
 
+### Used by
+
+- [mw-login](../mw-login)
+
 ### Depends on
 
 - [mw-icon](../mw-icon)
@@ -30,6 +34,7 @@
 ```mermaid
 graph TD;
   mw-checkbox --> mw-icon
+  mw-login --> mw-checkbox
   style mw-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

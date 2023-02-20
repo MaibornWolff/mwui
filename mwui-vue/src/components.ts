@@ -53,6 +53,16 @@ export const MwImg = /*@__PURE__*/ defineContainer<JSX.MwImg>("mw-img", undefine
 
 export const MwLink = /*@__PURE__*/ defineContainer<JSX.MwLink>("mw-link", undefined, ["href", "target", "underline"]);
 
+export const MwLogin = /*@__PURE__*/ defineContainer<JSX.MwLogin>("mw-login", undefined, [
+    "headline",
+    "layout",
+    "backgroundImage",
+    "logo",
+    "signUpHref",
+    "forgotPasswordHref",
+    "submit",
+]);
+
 export const MwMenu = /*@__PURE__*/ defineContainer<JSX.MwMenu>("mw-menu", undefined, ["testId", "placement", "open"]);
 
 export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu-item", undefined, ["title", "subtitle", "disabled", "selected", "clickEmitter"]);
