@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-17T10:07:13",
+  "timestamp": "2023-02-20T10:20:55",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -1383,6 +1383,150 @@
       "dependencyGraph": {
         "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"]
       }
+    },
+    {
+      "filePath": "./src/components/mw-img/mw-img.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-img",
+      "readme": "# mw-img\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alt",
+          "type": "string",
+          "mutable": false,
+          "attr": "alt",
+          "reflectToAttr": false,
+          "docs": "Alt text for the image",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "fallback",
+          "type": "string",
+          "mutable": false,
+          "attr": "fallback",
+          "reflectToAttr": false,
+          "docs": "URL of the image to be displayed when an error on load occurs",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "lazyLoad",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "lazy-load",
+          "reflectToAttr": false,
+          "docs": "If the image should be lazy loaded",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "preloadSrc",
+          "type": "string",
+          "mutable": false,
+          "attr": "preload-src",
+          "reflectToAttr": false,
+          "docs": "Image source for preload",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "mutable": false,
+          "attr": "src",
+          "reflectToAttr": false,
+          "docs": "Image source",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "srcset",
+          "type": "SrcSetItem[] | string",
+          "mutable": false,
+          "attr": "srcset",
+          "reflectToAttr": false,
+          "docs": "Different resolutions for different viewport sizes can be passed\ne.g. \"img/vasen-420.webp 420w,\n      img/vasen-980.webp 980w,\n      img/vasen-1680.webp 1680w,\n      img/vasen-2400.webp 2400w\"",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "SrcSetItem[]"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "imgDidLoad",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": true,
+          "docs": "Event emitted when image did load",
+          "docsTags": []
+        },
+        {
+          "event": "imgLoadError",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": true,
+          "docs": "Event emitted when image could not be loaded",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "image",
+          "docs": ""
+        }
+      ],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-link/mw-link.tsx",

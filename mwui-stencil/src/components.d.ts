@@ -11,6 +11,7 @@ import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
+import { SrcSetItem } from "./components/mw-img/mw-img";
 import { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 import { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
@@ -262,6 +263,32 @@ export namespace Components {
      * The icons that should be rendered
      */
     icons: string[];
+  }
+  interface MwImg {
+    /**
+     * Alt text for the image
+     */
+    alt: string;
+    /**
+     * URL of the image to be displayed when an error on load occurs
+     */
+    fallback: string;
+    /**
+     * If the image should be lazy loaded
+     */
+    lazyLoad: boolean;
+    /**
+     * Image source for preload
+     */
+    preloadSrc: string;
+    /**
+     * Image source
+     */
+    src: string;
+    /**
+     * Different resolutions for different viewport sizes can be passed e.g. "img/vasen-420.webp 420w,       img/vasen-980.webp 980w,       img/vasen-1680.webp 1680w,       img/vasen-2400.webp 2400w"
+     */
+    srcset: string | SrcSetItem[];
   }
   interface MwLink {
     /**
@@ -607,6 +634,10 @@ export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
 }
+export interface MwImgCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwImgElement;
+}
 export interface MwLoginCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwLoginElement;
@@ -708,6 +739,11 @@ declare global {
     prototype: HTMLMwIconGalleryElement;
     new (): HTMLMwIconGalleryElement;
   };
+  interface HTMLMwImgElement extends Components.MwImg, HTMLStencilElement {}
+  var HTMLMwImgElement: {
+    prototype: HTMLMwImgElement;
+    new (): HTMLMwImgElement;
+  };
   interface HTMLMwLinkElement extends Components.MwLink, HTMLStencilElement {}
   var HTMLMwLinkElement: {
     prototype: HTMLMwLinkElement;
@@ -805,6 +841,7 @@ declare global {
     "mw-divider": HTMLMwDividerElement;
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
+    "mw-img": HTMLMwImgElement;
     "mw-link": HTMLMwLinkElement;
     "mw-login": HTMLMwLoginElement;
     "mw-menu": HTMLMwMenuElement;
@@ -1089,6 +1126,40 @@ declare namespace LocalJSX {
      * The icons that should be rendered
      */
     icons?: string[];
+  }
+  interface MwImg {
+    /**
+     * Alt text for the image
+     */
+    alt?: string;
+    /**
+     * URL of the image to be displayed when an error on load occurs
+     */
+    fallback?: string;
+    /**
+     * If the image should be lazy loaded
+     */
+    lazyLoad?: boolean;
+    /**
+     * Event emitted when image did load
+     */
+    onImgDidLoad?: (event: MwImgCustomEvent<any>) => void;
+    /**
+     * Event emitted when image could not be loaded
+     */
+    onImgLoadError?: (event: MwImgCustomEvent<any>) => void;
+    /**
+     * Image source for preload
+     */
+    preloadSrc?: string;
+    /**
+     * Image source
+     */
+    src?: string;
+    /**
+     * Different resolutions for different viewport sizes can be passed e.g. "img/vasen-420.webp 420w,       img/vasen-980.webp 980w,       img/vasen-1680.webp 1680w,       img/vasen-2400.webp 2400w"
+     */
+    srcset?: string | SrcSetItem[];
   }
   interface MwLink {
     /**
@@ -1442,6 +1513,7 @@ declare namespace LocalJSX {
     "mw-divider": MwDivider;
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
+    "mw-img": MwImg;
     "mw-link": MwLink;
     "mw-login": MwLogin;
     "mw-menu": MwMenu;
@@ -1480,6 +1552,7 @@ declare module "@stencil/core" {
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
+      "mw-img": LocalJSX.MwImg & JSXBase.HTMLAttributes<HTMLMwImgElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
       "mw-login": LocalJSX.MwLogin & JSXBase.HTMLAttributes<HTMLMwLoginElement>;
       "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;
