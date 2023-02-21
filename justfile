@@ -21,7 +21,7 @@ build integration:
   cd {{ integration }} && npm run build
 
 publish versionType:
-  release-it {{ versionType }} --dry-run
+  # release-it {{ versionType }} --dry-run
   echo release-it {{ versionType }} --release-version
   # just publish-integrations {{ versionType }}
 
