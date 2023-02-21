@@ -11,8 +11,7 @@ install:
 # Build tokens then run stencil & storybook in watch mode
 dev:
   cd {{ tokenFarm }} && npm run build
-  cd {{ stencil }} && npm run build -- --watch &
-  npm run storybook -- --watch
+  cd {{ stencil }} && npm run build -- --watch & npm run storybook -- --watch
 
 update-core integration:
   cd {{ integration }} && npm i "@maibornwolff/mwui-stencil@latest"
@@ -21,17 +20,14 @@ build integration:
   cd {{ integration }} && npm run build
 
 publish versionType:
-  #!/usr/bin/env bash
-  x=$(release-it {{ versionType }} --release-version)
-  echo "version" $x
-  # release-it {{ versionType }} --dry-run
-  # just publish-integrations {{ versionType }}
+  release-it {{ versionType }} --dry-run
+  just publish-integrations {{ versionType }}
 
 publish-integration integration versionType:
   just update-core {{ integration }}
   just build {{ integration }}
 
-  git add . && git commit -m "chore: build integration {{ integration }}"
+  git add . && git commit -m "chore: build {{ integration }} integration"
   cd {{ integration }} && release-it {{ integration }} --dry-run --ci
 
 publish-integrations versionType:

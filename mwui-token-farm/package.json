@@ -37,5 +37,8 @@
         "style-dictionary": "^3.7.0",
         "token-transformer": "^0.0.29",
         "ts-node": "^10.9.1"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

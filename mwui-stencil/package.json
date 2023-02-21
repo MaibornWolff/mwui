@@ -97,5 +97,8 @@
     "design",
     "system"
   ],
-  "author": "Martin Prinz"
+  "author": "Martin Prinz",
+  "publishConfig": {
+    "access": "public"
+  }
 }
