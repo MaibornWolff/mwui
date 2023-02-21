@@ -1,18 +1,19 @@
-import { defineComponent, getCurrentInstance, h, inject, ref } from 'vue';
-const UPDATE_VALUE_EVENT = 'update:modelValue';
-const MODEL_VALUE = 'modelValue';
-const ROUTER_LINK_VALUE = 'routerLink';
-const NAV_MANAGER = 'navManager';
-const ROUTER_PROP_PREFIX = 'router';
+import { defineComponent, getCurrentInstance, h, inject, ref } from "vue";
+const UPDATE_VALUE_EVENT = "update:modelValue";
+const MODEL_VALUE = "modelValue";
+const ROUTER_LINK_VALUE = "routerLink";
+const NAV_MANAGER = "navManager";
+const ROUTER_PROP_PREFIX = "router";
 const EMPTY_PROP = Symbol();
 const DEFAULT_EMPTY_PROP = { default: EMPTY_PROP };
-const getComponentClasses = (classes) => {
-    return (classes === null || classes === void 0 ? void 0 : classes.split(' ')) || [];
+const getComponentClasses = classes => {
+    return (classes === null || classes === void 0 ? void 0 : classes.split(" ")) || [];
 };
 const getElementClasses = (ref, componentClasses, defaultClasses = []) => {
     var _a;
-    return [...Array.from(((_a = ref.value) === null || _a === void 0 ? void 0 : _a.classList) || []), ...defaultClasses]
-        .filter((c, i, self) => !componentClasses.has(c) && self.indexOf(c) === i);
+    return [...Array.from(((_a = ref.value) === null || _a === void 0 ? void 0 : _a.classList) || []), ...defaultClasses].filter(
+        (c, i, self) => !componentClasses.has(c) && self.indexOf(c) === i,
+    );
 };
 export const defineContainer = (name, defineCustomElement, componentProps = [], modelProp, modelUpdateEvent, externalModelUpdateEvent) => {
     if (defineCustomElement !== undefined) {
@@ -23,11 +24,11 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
         let modelPropValue = props[modelProp];
         const containerRef = ref();
         const classes = new Set(getComponentClasses(attrs.class));
-        const onVnodeBeforeMount = (vnode) => {
+        const onVnodeBeforeMount = vnode => {
             if (vnode.el) {
                 const eventsNames = Array.isArray(modelUpdateEvent) ? modelUpdateEvent : [modelUpdateEvent];
-                eventsNames.forEach((eventName) => {
-                    vnode.el.addEventListener(eventName.toLowerCase(), (e) => {
+                eventsNames.forEach(eventName => {
+                    vnode.el.addEventListener(eventName.toLowerCase(), e => {
                         modelPropValue = (e === null || e === void 0 ? void 0 : e.target)[modelProp];
                         emit(UPDATE_VALUE_EVENT, modelPropValue);
                         if (externalModelUpdateEvent) {
@@ -38,12 +39,12 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
             }
         };
         const currentInstance = getCurrentInstance();
-        const hasRouter = (_a = currentInstance === null || currentInstance === void 0 ? void 0 : currentInstance.appContext) === null || _a === void 0 ? void 0 : _a.provides[NAV_MANAGER];
+        const hasRouter =
+            (_a = currentInstance === null || currentInstance === void 0 ? void 0 : currentInstance.appContext) === null || _a === void 0 ? void 0 : _a.provides[NAV_MANAGER];
         const navManager = hasRouter ? inject(NAV_MANAGER) : undefined;
-        const handleRouterLink = (ev) => {
+        const handleRouterLink = ev => {
             const { routerLink } = props;
-            if (routerLink === EMPTY_PROP)
-                return;
+            if (routerLink === EMPTY_PROP) return;
             if (navManager !== undefined) {
                 let navigationPayload = { event: ev };
                 for (const key in props) {
@@ -53,9 +54,8 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
                     }
                 }
                 navManager.navigate(navigationPayload);
-            }
-            else {
-                console.warn('Tried to navigate, but no router was found. Make sure you have mounted Vue Router.');
+            } else {
+                console.warn("Tried to navigate, but no router was found. Make sure you have mounted Vue Router.");
             }
         };
         return () => {
@@ -64,7 +64,7 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
                 classes.add(value);
             });
             const oldClick = props.onClick;
-            const handleClick = (ev) => {
+            const handleClick = ev => {
                 if (oldClick !== undefined) {
                     oldClick(ev);
                 }
@@ -76,7 +76,7 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
                 ref: containerRef,
                 class: getElementClasses(containerRef, classes),
                 onClick: handleClick,
-                onVnodeBeforeMount: (modelUpdateEvent) ? onVnodeBeforeMount : undefined
+                onVnodeBeforeMount: modelUpdateEvent ? onVnodeBeforeMount : undefined,
             };
             for (const key in props) {
                 const value = props[key];
@@ -87,8 +87,7 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
             if (modelProp) {
                 if (props[MODEL_VALUE] !== EMPTY_PROP) {
                     propsToAdd = Object.assign(Object.assign({}, propsToAdd), { [modelProp]: props[MODEL_VALUE] });
-                }
-                else if (modelPropValue !== EMPTY_PROP) {
+                } else if (modelPropValue !== EMPTY_PROP) {
                     propsToAdd = Object.assign(Object.assign({}, propsToAdd), { [modelProp]: modelPropValue });
                 }
             }
@@ -97,7 +96,7 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
     });
     Container.displayName = name;
     Container.props = {
-        [ROUTER_LINK_VALUE]: DEFAULT_EMPTY_PROP
+        [ROUTER_LINK_VALUE]: DEFAULT_EMPTY_PROP,
     };
     componentProps.forEach(componentProp => {
         Container.props[componentProp] = DEFAULT_EMPTY_PROP;
@@ -108,4 +107,4 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
     }
     return Container;
 };
-//# sourceMappingURL=utils.js.map
+//# sourceMappingURL=utils.ts.map

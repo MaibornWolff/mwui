@@ -1,5 +1,6 @@
 import { Component, Event, EventEmitter, h, Host, Prop, State } from "@stencil/core";
 import { LoginLayout, LoginLayoutEnum } from "./models/enums/login-layout.enum";
+import { LoginFormData } from "./models/interfaces/login-form-data";
 
 @Component({
   tag: "mw-login",
@@ -7,6 +8,8 @@ import { LoginLayout, LoginLayoutEnum } from "./models/enums/login-layout.enum";
   shadow: true,
 })
 export class MwLogin {
+  private loginForm: HTMLFormElement;
+
   @State() passwordType: "password" | "text" = "password";
 
   /**
@@ -46,7 +49,7 @@ export class MwLogin {
     cancelable: false,
     composed: false,
   })
-  submit: EventEmitter<void>;
+  submit: EventEmitter<LoginFormData>;
 
   constructor() {
     this.togglePasswordType = this.togglePasswordType.bind(this);
@@ -58,7 +61,16 @@ export class MwLogin {
   }
 
   private submitLoginForm(): void {
-    this.submit.emit();
+    const formData: LoginFormData = {
+      email: "",
+      password: "",
+    };
+
+    Array.from(this.loginForm.children).forEach((child: HTMLMwTextfieldElement) => {
+      formData[child.name] = child.value;
+    });
+
+    this.submit.emit(formData);
   }
 
   render() {
@@ -78,12 +90,12 @@ export class MwLogin {
             )}
             {this.headline && <div class="mw-login-container__headline">{this.headline}</div>}
 
-            <form class="mw-login-container__form">
-              <mw-textfield id="email" type="email" label="Email address" required={true}>
+            <form class="mw-login-container__form" ref={el => (this.loginForm = el as HTMLFormElement)}>
+              <mw-textfield id="email" name="email" type="email" label="Email address" required={true}>
                 <mw-icon icon="mail" slot="icon-end"></mw-icon>
               </mw-textfield>
 
-              <mw-textfield id="password" type={this.passwordType} label="Password" required={true} helper-text="min. 7 characters, 1 upper case, 1 lower case">
+              <mw-textfield id="password" name="password" type={this.passwordType} label="Password" required={true} helper-text="min. 7 characters, 1 upper case, 1 lower case">
                 <mw-icon icon={this.passwordType === "text" ? "visibility_off" : "visibility"} slot="icon-end" onClick={this.togglePasswordType}></mw-icon>
               </mw-textfield>
             </form>

@@ -2,7 +2,7 @@ import { Component, Element, Host, Prop, h } from "@stencil/core";
 
 @Component({
   tag: "mw-card-image",
-  styleUrl: "mw-card-image.css",
+  styleUrl: "mw-card-image.scss",
   shadow: true,
 })
 export class MwCardImage {

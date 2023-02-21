@@ -423,6 +423,36 @@ export class MwIconGallery {
     }
 }
 
+export declare interface MwImg extends Components.MwImg {
+    /**
+     * Event emitted when image did load
+     */
+    imgDidLoad: EventEmitter<CustomEvent<any>>;
+    /**
+     * Event emitted when image could not be loaded
+     */
+    imgLoadError: EventEmitter<CustomEvent<any>>;
+}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["alt", "fallback", "lazyLoad", "preloadSrc", "src", "srcset"],
+})
+@Component({
+    selector: "mw-img",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["alt", "fallback", "lazyLoad", "preloadSrc", "src", "srcset"],
+})
+export class MwImg {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["imgDidLoad", "imgLoadError"]);
+    }
+}
+
 export declare interface MwLink extends Components.MwLink {}
 
 @ProxyCmp({
@@ -443,11 +473,12 @@ export class MwLink {
     }
 }
 
+import type { LoginFormData as IMwLoginLoginFormData } from "@maibornwolff/mwui-stencil";
 export declare interface MwLogin extends Components.MwLogin {
     /**
      * Event emitted after login button was clicked
      */
-    submit: EventEmitter<CustomEvent<void>>;
+    submit: EventEmitter<CustomEvent<IMwLoginLoginFormData>>;
 }
 
 @ProxyCmp({

@@ -1,9 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
 
 /* CSS Token Imports */
-@import url('../../../mwui-token-farm/dist/css/MW_component.css');
+@import url("../../../mwui-token-farm/dist/css/MW_component.css");
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size);
+  font-weight: var(--body-font-weight);
+  line-height: var(--body-line-height);
+}
+
+h1 {
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+  line-height: var(--h1-line-height);
+}
+
+h2 {
+  font-family: var(--h2-font-family);
+  font-size: var(--h2-font-size);
+  font-weight: var(--h2-font-weight);
+  line-height: var(--h2-line-height);
+}
+
+h3 {
+  font-family: var(--h3-font-family);
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
+  line-height: var(--h3-line-height);
+}
+
+h4 {
+  font-family: var(--h4-font-family);
+  font-size: var(--h4-font-size);
+  font-weight: var(--h4-font-weight);
+  line-height: var(--h4-line-height);
+}
+
+h5 {
+  font-family: var(--h5-font-family);
+  font-size: var(--h5-font-size);
+  font-weight: var(--h5-font-weight);
+  line-height: var(--h5-line-height);
+}
+
+h6 {
+  font-family: var(--h6-font-family);
+  font-size: var(--h6-font-size);
+  font-weight: var(--h6-font-weight);
+  line-height: var(--h6-line-height);
+}
+
+.caption {
+  font-family: var(--caption-font-family);
+  font-size: var(--caption-font-size);
+  font-weight: var(--caption-font-weight);
+  line-height: var(--caption-line-height);
+  text-transform: var(--caption-text-case);
+  letter-spacing: var(--caption-letter-spacing);
+}
+
+.caption-bold {
+  font-family: var(--caption-bold-font-family);
+  font-size: var(--caption-bold-font-size);
+  font-weight: var(--caption-bold-font-weight);
+  line-height: var(--caption-bold-line-height);
+  text-transform: var(--caption-bold-text-case);
+  letter-spacing: var(--caption-bold-letter-spacing);
+}
+
+.quote {
+  font-family: var(--quote-font-family);
+  font-size: var(--quote-font-size);
+  font-weight: var(--quote-font-weight);
+  line-height: var(--quote-line-height);
+  text-transform: var(--quote-text-case);
+  letter-spacing: var(--quote-letter-spacing);
+}
+
+.lead {
+  font-family: var(--lead-font-family);
+  font-size: var(--lead-font-size);
+  font-weight: var(--lead-font-weight);
+  line-height: var(--lead-line-height);
+}
+
+.lead-bold {
+  font-family: var(--lead-bold-font-family);
+  font-size: var(--lead-bold-font-size);
+  font-weight: var(--lead-bold-font-weight);
+  line-height: var(--lead-bold-line-height);
+}
+
+.small {
+  font-family: var(--small-font-family);
+  font-size: var(--small-font-size);
+  font-weight: var(--small-font-weight);
+  line-height: var(--small-line-height);
+}
+
+.x-small {
+  font-family: var(--x-small-font-family);
+  font-size: var(--x-small-font-size);
+  font-weight: var(--x-small-font-weight);
+  line-height: var(--x-small-line-height);
+}
+
+.xx-small {
+  font-family: var(--xx-small-font-family);
+  font-size: var(--xx-small-font-size);
+  font-weight: var(--xx-small-font-weight);
+  line-height: var(--xx-small-line-height);
 }

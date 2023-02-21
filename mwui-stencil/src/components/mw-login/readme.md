@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event    | Description                                  | Type                |
-| -------- | -------------------------------------------- | ------------------- |
-| `submit` | Event emitted after login button was clicked | `CustomEvent<void>` |
+| Event    | Description                                  | Type                         |
+| -------- | -------------------------------------------- | ---------------------------- |
+| `submit` | Event emitted after login button was clicked | `CustomEvent<LoginFormData>` |
 
 ## Dependencies
 
