@@ -14,8 +14,8 @@ describe("mw-slider", () => {
        <div class="mw-slider">
          <div class="mw-slider-input-wrapper">
           <div class="mw-slider-input">
-           <input max="100" min="0" type="range" value="0">
-            <label id="mw-slider-range-value" style="transform: translateX(0px);">
+          <input max="100" min="0" step="1" type="range" value="0">
+          <label id="mw-slider-range-value" style="transform: translateX(0px);">
                0
              </label>
            </div>
