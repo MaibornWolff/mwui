@@ -7,9 +7,9 @@
         "url": "https://github.com/MaibornWolff/mwui.git"
     },
     "workspaces": [
+        "mwui-stencil",
         "mwui-token-farm",
         "mwui-react",
-        "mwui-stencil",
         "mwui-vue",
         "mwui-angular"
     ],

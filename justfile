@@ -14,6 +14,12 @@ dev:
   cd {{ stencil }} && npm run build -- --watch &
   npm run storybook -- --watch
 
+update-core integration:
+  cd {{ integration }} && npm i "@maibornwolff/mwui-stencil@latest"
+
+build integration:
+  cd {{ integration }} && npm run build
+
 publish versionType:
   release-it {{ versionType }} --dry-run
 
@@ -22,21 +28,15 @@ publish-integrations versionType:
   just publish-vue {{ versionType }}
   just publish-react {{ versionType }}
 
-publish-angular versionType:
-  just update-core #release-it {{ versionType }} --dry-run
-  cd {{ angular }} && npm run build --configuration=production
+publish-integration integration versionType:
+  just update-core {{ integration }}
+  just build {{ integration }}
 
-  # npm i new version && just build angular && commit
-  # npm publish --access-public
+  git add . && git commit -m "chore: build integration {{ integration }}"
+  cd {{ integration }} && release-it {{ integration }} --dry-run
 
-publish-vue versionType:
-  cd {{ vue }} && release-it {{ versionType }} --dry-run
+# publish-token versionType:
+#   just update-core {{ tokenFarm }}
+#   cd {{ tokenFarm }} && release-it {{ versionType }} --dry-run
 
-publish-react versionType:
-  cd {{ react }} && release-it {{ versionType }} --dry-run
 
-publish-token versionType:
-  cd {{ tokenFarm }} && release-it {{ versionType }} --dry-run
-
-update-core:
-  cd {{ angular }} && npm i "@maibornwolff/mwui-stencil"
