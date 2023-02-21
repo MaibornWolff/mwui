@@ -143,7 +143,7 @@ export class MwAutocomplete {
   };
 
   private onFocus = (): void => {
-    this.inputElement.focus();
+    if (this.inputElement) this.inputElement.focus();
     this.focused = true;
   };
 
@@ -153,12 +153,10 @@ export class MwAutocomplete {
   };
 
   private addMultiValue = (value: string): void => {
-    if (this.multiple) {
+    if (this.multiple && (!this.multipleMaximum || this.multipleValues.length < this.multipleMaximum)) {
       if (value.trim().length > 0 && !this.multipleValues.includes(value)) {
-        if (!this.multipleMaximum || this.multipleValues.length < this.multipleMaximum) {
-          this.multipleValues = [...this.multipleValues, value];
-          this.hostElement.querySelectorAll(`mw-menu-item[value="${value}"]`).forEach(item => item.setAttribute("disabled", "true"));
-        }
+        this.multipleValues = [...this.multipleValues, value];
+        this.hostElement.querySelectorAll(`mw-menu-item[value="${value}"]`).forEach(item => item.setAttribute("disabled", "true"));
       }
       this.inputElement.value = "";
       this.removeDropdownFilter();
@@ -173,10 +171,8 @@ export class MwAutocomplete {
   };
 
   private filterDropdownOptions = (): void => {
-    const slot = this.hostElement.querySelector("[slot='dropdown-menu']").children;
-    console.log(slot);
     this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
-      if (item.title.toLowerCase().includes(this.inputElement.value.toLowerCase())) {
+      if (item.value.toLowerCase().includes(this.inputElement.value.toLowerCase())) {
         item.style.display = "unset";
       } else {
         item.style.display = "none";
