@@ -29,7 +29,64 @@ export namespace Components {
     position?: AppBarPosition;
   }
   interface MwAppBarTitle {}
-  interface MwAutocomplete {}
+  interface MwAutocomplete {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Allows users to enter multiple values into autocomplete
+     */
+    multiple?: boolean;
+    /**
+     * Amount of allowed `multipleValues`
+     */
+    multipleMaximum?: number;
+    /**
+     * Values, when `multiple` is true
+     */
+    multipleValues?: Array<string | number>;
+    /**
+     * input field name
+     */
+    name: string;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * HTML Input type
+     */
+    type?: string;
+    /**
+     * input field value
+     */
+    value?: string | number;
+  }
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -640,25 +697,13 @@ export namespace Components {
      */
     helperText?: string;
     /**
-     * Display label and input horizontally
+     * Display label and input horizonally
      */
     inline?: boolean;
     /**
      * Label to be displayed
      */
     label?: string;
-    /**
-     * Allows users to enter multiple values into textfield
-     */
-    multiple?: boolean;
-    /**
-     * Amount of allowed `multipleValues`
-     */
-    multipleMaximum?: number;
-    /**
-     * Values, when `multiple` is true
-     */
-    multipleValues?: Array<string | number>;
     /**
      * input field name
      */
@@ -684,6 +729,10 @@ export namespace Components {
      */
     value?: string | number;
   }
+}
+export interface MwAutocompleteCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwAutocompleteElement;
 }
 export interface MwBackdropCustomEvent<T> extends CustomEvent<T> {
   detail: T;
@@ -963,7 +1012,68 @@ declare namespace LocalJSX {
     position?: AppBarPosition;
   }
   interface MwAppBarTitle {}
-  interface MwAutocomplete {}
+  interface MwAutocomplete {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Allows users to enter multiple values into autocomplete
+     */
+    multiple?: boolean;
+    /**
+     * Amount of allowed `multipleValues`
+     */
+    multipleMaximum?: number;
+    /**
+     * Values, when `multiple` is true
+     */
+    multipleValues?: Array<string | number>;
+    /**
+     * input field name
+     */
+    name?: string;
+    /**
+     * MwAutocomplete emits an event when its value changes
+     */
+    onValueChanged?: (event: MwAutocompleteCustomEvent<string>) => void;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * HTML Input type
+     */
+    type?: string;
+    /**
+     * input field value
+     */
+    value?: string | number;
+  }
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -1622,25 +1732,13 @@ declare namespace LocalJSX {
      */
     helperText?: string;
     /**
-     * Display label and input horizontally
+     * Display label and input horizonally
      */
     inline?: boolean;
     /**
      * Label to be displayed
      */
     label?: string;
-    /**
-     * Allows users to enter multiple values into textfield
-     */
-    multiple?: boolean;
-    /**
-     * Amount of allowed `multipleValues`
-     */
-    multipleMaximum?: number;
-    /**
-     * Values, when `multiple` is true
-     */
-    multipleValues?: Array<string | number>;
     /**
      * input field name
      */

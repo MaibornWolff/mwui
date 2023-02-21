@@ -45,11 +45,6 @@ label {
   padding: var(--mw-component-text-field-padding-text-field-label-horizontal);
 }
 
-.textfield.read-only,
-.textfield.read-only .input input {
-  cursor: pointer;
-}
-
 .input {
   display: flex;
   align-items: center;
@@ -76,12 +71,7 @@ label {
 .input .icon {
   color: var(--mw-component-text-field-fg-icon-default);
 }
-.input-options {
-  flex: 1;
-  display: flex;
-  flex-flow: row wrap;
-  gap: var(--mw-component-text-field-gap-horizontal-gap-within);
-}
+
 .focused {
   color: var(--mw-component-text-field-fg-icon-focused);
 }
@@ -97,14 +87,8 @@ label {
 .icon-end {
   margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
 }
-.icon-dropdown,
-.icon-close-multiple {
-  margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
-  cursor: pointer;
-}
 
-.input input  {
-  flex: 1;
+.input input {
   border: none;
   padding: 0;
   width: 100%;
