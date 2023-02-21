@@ -23,7 +23,7 @@ publish-integrations versionType:
   just publish-react {{ versionType }}
 
 publish-angular versionType:
-  # npm i new version && just build angular
+  # npm i new version && just build angular && commit
   cd {{ angular }} && release-it {{ versionType }} --dry-run
 
 publish-vue versionType:
