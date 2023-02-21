@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                                                            | Type      | Default     |
@@ -13,26 +14,27 @@
 | `onText`   | `on-text`  | Label to be shown when switch state is checked. Overrides label prop   | `string`  | `undefined` |
 | `testId`   | `test-id`  | Provide unique identifier for automated testing                        | `string`  | `undefined` |
 
+
 ## Events
 
 | Event     | Description                                               | Type               |
 | --------- | --------------------------------------------------------- | ------------------ |
 | `emitter` | MwSwitch emits an event when switch checked state changes | `CustomEvent<any>` |
 
+
 ## Dependencies
 
 ### Used by
 
-- [mw-icon-gallery](../mw-icon-gallery)
+ - [mw-icon-gallery](../mw-icon-gallery)
 
 ### Graph
-
 ```mermaid
 graph TD;
   mw-icon-gallery --> mw-switch
   style mw-switch fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

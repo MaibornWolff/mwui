@@ -89,7 +89,17 @@ export class MwSlider {
             <div class={{ "mw-slider-input-wrapper": true, "disabled": this.disabled }}>
               {this.startIcon && <mw-icon icon={this.startIcon} size="medium"></mw-icon>}
               <div class="mw-slider-input">
-                <input type="range" onInput={this.handleInput} disabled={this.disabled} id={this.name} name={this.name} min={this.min} max={this.max} value={this.value}></input>
+                <input
+                  type="range"
+                  onInput={this.handleInput}
+                  disabled={this.disabled}
+                  id={this.name}
+                  step={this.step}
+                  name={this.name}
+                  min={this.min}
+                  max={this.max}
+                  value={this.value}
+                ></input>
                 <label htmlfor={this.name} id="mw-slider-range-value">
                   {this.value}
                 </label>

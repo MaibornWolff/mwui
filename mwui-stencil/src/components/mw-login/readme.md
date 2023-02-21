@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property             | Attribute              | Description                                                  | Type                           | Default                  |
@@ -13,11 +14,13 @@
 | `logo`               | `logo`                 | URL to the image that should be displayed                    | `string`                       | `undefined`              |
 | `signUpHref`         | `sign-up-href`         | Wether or not the signUp prompt should be displayed          | `string`                       | `undefined`              |
 
+
 ## Events
 
 | Event    | Description                                  | Type                         |
 | -------- | -------------------------------------------- | ---------------------------- |
 | `submit` | Event emitted after login button was clicked | `CustomEvent<LoginFormData>` |
+
 
 ## Dependencies
 
@@ -30,7 +33,6 @@
 - [mw-button](../mw-button)
 
 ### Graph
-
 ```mermaid
 graph TD;
   mw-login --> mw-textfield
@@ -42,6 +44,6 @@ graph TD;
   style mw-login fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

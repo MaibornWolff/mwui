@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                                     | Type      | Default     |
@@ -13,24 +14,25 @@
 | `testId`   | `test-id`  | Provide unique identifier for automated testing | `string`  | `undefined` |
 | `value`    | `value`    | Value of checkbox input                         | `string`  | `undefined` |
 
+
 ## Events
 
 | Event     | Description                                                      | Type               |
 | --------- | ---------------------------------------------------------------- | ------------------ |
 | `emitter` | MwCheckbox emits an event when checkbox checked state is changed | `CustomEvent<any>` |
 
+
 ## Dependencies
 
 ### Used by
 
-- [mw-login](../mw-login)
+ - [mw-login](../mw-login)
 
 ### Depends on
 
 - [mw-icon](../mw-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   mw-checkbox --> mw-icon
@@ -38,6 +40,6 @@ graph TD;
   style mw-checkbox fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                                                               | Type      | Default     |
@@ -13,6 +14,7 @@
 | `testId`   | `test-id`  | Should be provided for automated testing                                  | `string`  | `undefined` |
 | `value`    | `value`    | Value of the radio button                                                 | `string`  | `undefined` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

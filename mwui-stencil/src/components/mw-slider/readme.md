@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property     | Attribute     | Description                                     | Type      | Default     |
@@ -19,20 +20,25 @@
 | `testId`     | `test-id`     | Provide unique identifier for automated testing | `string`  | `undefined` |
 | `value`      | `value`       | value of range input                            | `number`  | `0`         |
 
+
 ## Dependencies
+
+### Used by
+
+ - [mw-icon-gallery](../mw-icon-gallery)
 
 ### Depends on
 
 - [mw-icon](../mw-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   mw-slider --> mw-icon
+  mw-icon-gallery --> mw-slider
   style mw-slider fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

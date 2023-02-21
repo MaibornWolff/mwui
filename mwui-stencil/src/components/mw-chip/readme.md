@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property    | Attribute    | Description                                                        | Type      | Default     |
@@ -12,11 +13,13 @@
 | `showClose` | `show-close` | Flag wether to show close icon or not                              | `boolean` | `false`     |
 | `testId`    | `test-id`    | Provide unique identifier for automated testing                    | `string`  | `undefined` |
 
+
 ## Events
 
 | Event     | Description                                                  | Type               |
 | --------- | ------------------------------------------------------------ | ------------------ |
 | `emitter` | MwChip emits an event when chip is clicked or chip is closed | `CustomEvent<any>` |
+
 
 ## Dependencies
 
@@ -25,13 +28,12 @@
 - [mw-icon](../mw-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   mw-chip --> mw-icon
   style mw-chip fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

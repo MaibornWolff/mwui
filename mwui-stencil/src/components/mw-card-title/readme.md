@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                               | Type     | Default     |
@@ -10,6 +11,7 @@
 | `subtitle` | `subtitle` | Subtitle to be displayed in mw-card-title | `string` | `undefined` |
 | `title`    | `title`    | Title to be displayed in mw-card-title    | `string` | `undefined` |
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

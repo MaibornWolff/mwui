@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                                     | Type                                          | Default                    |
@@ -14,11 +15,13 @@
 | `testId`   | `test-id`  | Provide unique identifier for automated testing | `string`                                      | `undefined`                |
 | `variant`  | `variant`  | Button variants                                 | `"filled" \| "ghost" \| "outline"`            | `ButtonVariantEnum.FILLED` |
 
+
 ## Events
 
 | Event          | Description                                                                              | Type               |
 | -------------- | ---------------------------------------------------------------------------------------- | ------------------ |
 | `clickEmitter` | 'onClick' event is fired when clicking the button, unless it is used with a `href` prop. | `CustomEvent<any>` |
+
 
 ## Shadow Parts
 
@@ -26,20 +29,20 @@
 | ---------- | ----------- |
 | `"button"` |             |
 
+
 ## Dependencies
 
 ### Used by
 
-- [mw-login](../mw-login)
+ - [mw-login](../mw-login)
 
 ### Graph
-
 ```mermaid
 graph TD;
   mw-login --> mw-button
   style mw-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

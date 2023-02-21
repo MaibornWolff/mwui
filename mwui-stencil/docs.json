@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-21T08:46:23",
+  "timestamp": "2023-02-21T09:55:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -210,9 +210,13 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-icon"],
+      "dependencies": [
+        "mw-icon"
+      ],
       "dependencyGraph": {
-        "mw-avatar": ["mw-icon"]
+        "mw-avatar": [
+          "mw-icon"
+        ]
       }
     },
     {
@@ -264,10 +268,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-modal"],
+      "dependents": [
+        "mw-modal"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-modal": ["mw-backdrop"]
+        "mw-modal": [
+          "mw-backdrop"
+        ]
       }
     },
     {
@@ -451,10 +459,14 @@
           "docs": ""
         }
       ],
-      "dependents": ["mw-login"],
+      "dependents": [
+        "mw-login"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-login": ["mw-button"]
+        "mw-login": [
+          "mw-button"
+        ]
       }
     },
     {
@@ -1059,11 +1071,19 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-login"],
-      "dependencies": ["mw-icon"],
+      "dependents": [
+        "mw-login"
+      ],
+      "dependencies": [
+        "mw-icon"
+      ],
       "dependencyGraph": {
-        "mw-checkbox": ["mw-icon"],
-        "mw-login": ["mw-checkbox"]
+        "mw-checkbox": [
+          "mw-icon"
+        ],
+        "mw-login": [
+          "mw-checkbox"
+        ]
       }
     },
     {
@@ -1175,9 +1195,13 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-icon"],
+      "dependencies": [
+        "mw-icon"
+      ],
       "dependencyGraph": {
-        "mw-chip": ["mw-icon"]
+        "mw-chip": [
+          "mw-icon"
+        ]
       }
     },
     {
@@ -1334,16 +1358,38 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-login", "mw-slider", "mw-tab"],
+      "dependents": [
+        "mw-avatar",
+        "mw-checkbox",
+        "mw-chip",
+        "mw-icon-gallery",
+        "mw-login",
+        "mw-slider",
+        "mw-tab"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-avatar": ["mw-icon"],
-        "mw-checkbox": ["mw-icon"],
-        "mw-chip": ["mw-icon"],
-        "mw-icon-gallery": ["mw-icon"],
-        "mw-login": ["mw-icon"],
-        "mw-slider": ["mw-icon"],
-        "mw-tab": ["mw-icon"]
+        "mw-avatar": [
+          "mw-icon"
+        ],
+        "mw-checkbox": [
+          "mw-icon"
+        ],
+        "mw-chip": [
+          "mw-icon"
+        ],
+        "mw-icon-gallery": [
+          "mw-icon"
+        ],
+        "mw-login": [
+          "mw-icon"
+        ],
+        "mw-slider": [
+          "mw-icon"
+        ],
+        "mw-tab": [
+          "mw-icon"
+        ]
       }
     },
     {
@@ -1379,10 +1425,167 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-textfield", "mw-icon", "mw-switch"],
+      "dependencies": [
+        "mw-textfield",
+        "mw-icon",
+        "mw-slider",
+        "mw-switch"
+      ],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"]
+        "mw-icon-gallery": [
+          "mw-textfield",
+          "mw-icon",
+          "mw-slider",
+          "mw-switch"
+        ],
+        "mw-slider": [
+          "mw-icon"
+        ]
       }
+    },
+    {
+      "filePath": "./src/components/mw-img/mw-img.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-img",
+      "readme": "# mw-img\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "alt",
+          "type": "string",
+          "mutable": false,
+          "attr": "alt",
+          "reflectToAttr": false,
+          "docs": "Alt text for the image",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "fallback",
+          "type": "string",
+          "mutable": false,
+          "attr": "fallback",
+          "reflectToAttr": false,
+          "docs": "URL of the image to be displayed when an error on load occurs",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "lazyLoad",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "lazy-load",
+          "reflectToAttr": false,
+          "docs": "If the image should be lazy loaded",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "preloadSrc",
+          "type": "string",
+          "mutable": false,
+          "attr": "preload-src",
+          "reflectToAttr": false,
+          "docs": "Image source for preload",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "mutable": false,
+          "attr": "src",
+          "reflectToAttr": false,
+          "docs": "Image source",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "srcset",
+          "type": "SrcSetItem[] | string",
+          "mutable": false,
+          "attr": "srcset",
+          "reflectToAttr": false,
+          "docs": "Different resolutions for different viewport sizes can be passed\ne.g. \"img/vasen-420.webp 420w,\n      img/vasen-980.webp 980w,\n      img/vasen-1680.webp 1680w,\n      img/vasen-2400.webp 2400w\"",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "SrcSetItem[]"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "imgDidLoad",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": true,
+          "docs": "Event emitted when image did load",
+          "docsTags": []
+        },
+        {
+          "event": "imgLoadError",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": true,
+          "docs": "Event emitted when image could not be loaded",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "image",
+          "docs": ""
+        }
+      ],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-link/mw-link.tsx",
@@ -1463,10 +1666,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-login"],
+      "dependents": [
+        "mw-login"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-login": ["mw-link"]
+        "mw-login": [
+          "mw-link"
+        ]
       }
     },
     {
@@ -1602,10 +1809,24 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
+      "dependencies": [
+        "mw-textfield",
+        "mw-icon",
+        "mw-checkbox",
+        "mw-link",
+        "mw-button"
+      ],
       "dependencyGraph": {
-        "mw-login": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
-        "mw-checkbox": ["mw-icon"]
+        "mw-login": [
+          "mw-textfield",
+          "mw-icon",
+          "mw-checkbox",
+          "mw-link",
+          "mw-button"
+        ],
+        "mw-checkbox": [
+          "mw-icon"
+        ]
       }
     },
     {
@@ -1720,9 +1941,13 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-popover"],
+      "dependencies": [
+        "mw-popover"
+      ],
       "dependencyGraph": {
-        "mw-menu": ["mw-popover"]
+        "mw-menu": [
+          "mw-popover"
+        ]
       }
     },
     {
@@ -1994,9 +2219,13 @@
         }
       ],
       "dependents": [],
-      "dependencies": ["mw-backdrop"],
+      "dependencies": [
+        "mw-backdrop"
+      ],
       "dependencyGraph": {
-        "mw-modal": ["mw-backdrop"]
+        "mw-modal": [
+          "mw-backdrop"
+        ]
       }
     },
     {
@@ -2231,10 +2460,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-menu"],
+      "dependents": [
+        "mw-menu"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-menu": ["mw-popover"]
+        "mw-menu": [
+          "mw-popover"
+        ]
       }
     },
     {
@@ -2617,10 +2850,19 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
-      "dependencies": ["mw-icon"],
+      "dependents": [
+        "mw-icon-gallery"
+      ],
+      "dependencies": [
+        "mw-icon"
+      ],
       "dependencyGraph": {
-        "mw-slider": ["mw-icon"]
+        "mw-slider": [
+          "mw-icon"
+        ],
+        "mw-icon-gallery": [
+          "mw-slider"
+        ]
       }
     },
     {
@@ -2746,10 +2988,14 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-icon-gallery"],
+      "dependents": [
+        "mw-icon-gallery"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-switch"]
+        "mw-icon-gallery": [
+          "mw-switch"
+        ]
       }
     },
     {
@@ -2832,11 +3078,19 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-tabs"],
-      "dependencies": ["mw-icon"],
+      "dependents": [
+        "mw-tabs"
+      ],
+      "dependencies": [
+        "mw-icon"
+      ],
       "dependencyGraph": {
-        "mw-tab": ["mw-icon"],
-        "mw-tabs": ["mw-tab"]
+        "mw-tab": [
+          "mw-icon"
+        ],
+        "mw-tabs": [
+          "mw-tab"
+        ]
       }
     },
     {
@@ -2889,10 +3143,16 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-tab"],
+      "dependencies": [
+        "mw-tab"
+      ],
       "dependencyGraph": {
-        "mw-tabs": ["mw-tab"],
-        "mw-tab": ["mw-icon"]
+        "mw-tabs": [
+          "mw-tab"
+        ],
+        "mw-tab": [
+          "mw-icon"
+        ]
       }
     },
     {
@@ -3098,11 +3358,18 @@
           "docs": ""
         }
       ],
-      "dependents": ["mw-icon-gallery", "mw-login"],
+      "dependents": [
+        "mw-icon-gallery",
+        "mw-login"
+      ],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-textfield"],
-        "mw-login": ["mw-textfield"]
+        "mw-icon-gallery": [
+          "mw-textfield"
+        ],
+        "mw-login": [
+          "mw-textfield"
+        ]
       }
     }
   ]

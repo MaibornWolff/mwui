@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property          | Attribute          | Description                                               | Type                   | Default                 |
@@ -11,6 +12,7 @@
 | `isOpen`          | `is-open`          | Modal can be opened closed with this input property       | `boolean`              | `false`                 |
 | `size`            | `size`             | Determines the max size that the modal takes horizontally | `"default" \| "small"` | `ModalSizeEnum.DEFAULT` |
 | `trigger`         | `trigger`          | id used to present the modal                              | `string`               | `undefined`             |
+
 
 ## Methods
 
@@ -22,6 +24,8 @@ Method to dismiss the modal
 
 Type: `Promise<void>`
 
+
+
 ### `present() => Promise<void>`
 
 Method to present the modal
@@ -30,12 +34,16 @@ Method to present the modal
 
 Type: `Promise<void>`
 
+
+
+
 ## Shadow Parts
 
 | Part         | Description |
 | ------------ | ----------- |
 | `"backdrop"` |             |
 | `"content"`  |             |
+
 
 ## Dependencies
 
@@ -44,13 +52,12 @@ Type: `Promise<void>`
 - [mw-backdrop](../mw-backdrop)
 
 ### Graph
-
 ```mermaid
 graph TD;
   mw-modal --> mw-backdrop
   style mw-modal fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*

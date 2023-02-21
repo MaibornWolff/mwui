@@ -2,6 +2,7 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 | Property   | Attribute  | Description                        | Type      | Default     |
@@ -11,18 +12,18 @@
 | `label`    | `label`    | Label to be displayed              | `string`  | `undefined` |
 | `selected` | `selected` | Dictates if tab has selected state | `boolean` | `undefined` |
 
+
 ## Dependencies
 
 ### Used by
 
-- [mw-tabs](../mw-tabs)
+ - [mw-tabs](../mw-tabs)
 
 ### Depends on
 
 - [mw-icon](../mw-icon)
 
 ### Graph
-
 ```mermaid
 graph TD;
   mw-tab --> mw-icon
@@ -30,6 +31,6 @@ graph TD;
   style mw-tab fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
----
+----------------------------------------------
 
-_Built with [StencilJS](https://stenciljs.com/)_
+*Built with [StencilJS](https://stenciljs.com/)*
