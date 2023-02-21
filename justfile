@@ -23,8 +23,11 @@ publish-integrations versionType:
   just publish-react {{ versionType }}
 
 publish-angular versionType:
+  just update-core #release-it {{ versionType }} --dry-run
+  cd {{ angular }} && npm run build --configuration=production
+
   # npm i new version && just build angular && commit
-  cd {{ angular }} && release-it {{ versionType }} --dry-run
+  # npm publish --access-public
 
 publish-vue versionType:
   cd {{ vue }} && release-it {{ versionType }} --dry-run
@@ -34,3 +37,6 @@ publish-react versionType:
 
 publish-token versionType:
   cd {{ tokenFarm }} && release-it {{ versionType }} --dry-run
+
+update-core:
+  cd {{ angular }} && npm i "@maibornwolff/mwui-stencil"
