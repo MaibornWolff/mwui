@@ -22,11 +22,8 @@ build integration:
 
 publish versionType:
   release-it {{ versionType }} --dry-run
-
-publish-integrations versionType:
-  just publish-angular {{ versionType }}
-  just publish-vue {{ versionType }}
-  just publish-react {{ versionType }}
+  echo release-it {{ versionType }} --release-version
+  # just publish-integrations {{ versionType }}
 
 publish-integration integration versionType:
   just update-core {{ integration }}
@@ -35,8 +32,10 @@ publish-integration integration versionType:
   git add . && git commit -m "chore: build integration {{ integration }}"
   cd {{ integration }} && release-it {{ integration }} --dry-run --ci
 
-# publish-token versionType:
-#   just update-core {{ tokenFarm }}
-#   cd {{ tokenFarm }} && release-it {{ versionType }} --dry-run
+publish-integrations versionType:
+  just publish-integration {{ angular }} {{ versionType }}
+  just publish-integration {{ vue }} {{ versionType }}
+  just publish-integration {{ react }} {{ versionType }}
+  just publish-integration {{ tokenFarm }} {{ versionType }}
 
 
