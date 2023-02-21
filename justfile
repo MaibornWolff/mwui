@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 stencil := "mwui-stencil"
 react := "mwui-react"
 angular := "mwui-angular"
@@ -17,3 +16,6 @@ dev:
 
 publish versionType:
   release-it {{ versionType }} --dry-run
+
+publish-stencil versionType:
+  cd {{ stencil }} && release-it {{ versionType }} --dry-run
