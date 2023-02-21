@@ -23,7 +23,7 @@ build integration:
 publish versionType:
   #!/usr/bin/env bash
   x=$(release-it {{ versionType }} --release-version)
-  echo $x
+  echo "version" $x
   # release-it {{ versionType }} --dry-run
   # just publish-integrations {{ versionType }}
 
