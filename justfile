@@ -33,7 +33,7 @@ publish-integration integration versionType:
   just build {{ integration }}
 
   git add . && git commit -m "chore: build integration {{ integration }}"
-  cd {{ integration }} && release-it {{ integration }} --dry-run
+  cd {{ integration }} && release-it {{ integration }} --dry-run --ci
 
 # publish-token versionType:
 #   just update-core {{ tokenFarm }}
