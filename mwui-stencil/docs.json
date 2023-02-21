@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-20T10:20:55",
+  "timestamp": "2023-02-21T08:21:40",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -1379,9 +1379,10 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-textfield", "mw-icon", "mw-switch"],
+      "dependencies": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
       "dependencyGraph": {
-        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-switch"]
+        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
+        "mw-slider": ["mw-icon"]
       }
     },
     {
@@ -2761,10 +2762,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-icon-gallery"],
       "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-slider": ["mw-icon"]
+        "mw-slider": ["mw-icon"],
+        "mw-icon-gallery": ["mw-slider"]
       }
     },
     {

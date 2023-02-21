@@ -21,6 +21,10 @@
 
 ## Dependencies
 
+### Used by
+
+- [mw-icon-gallery](../mw-icon-gallery)
+
 ### Depends on
 
 - [mw-icon](../mw-icon)
@@ -30,6 +34,7 @@
 ```mermaid
 graph TD;
   mw-slider --> mw-icon
+  mw-icon-gallery --> mw-slider
   style mw-slider fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
