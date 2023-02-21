@@ -17,5 +17,20 @@ dev:
 publish versionType:
   release-it {{ versionType }} --dry-run
 
-publish-stencil versionType:
-  cd {{ stencil }} && release-it {{ versionType }} --dry-run
+publish-integrations versionType:
+  just publish-angular {{ versionType }}
+  just publish-vue {{ versionType }}
+  just publish-react {{ versionType }}
+
+publish-angular versionType:
+  # npm i new version && just build angular
+  cd {{ angular }} && release-it {{ versionType }} --dry-run
+
+publish-vue versionType:
+  cd {{ vue }} && release-it {{ versionType }} --dry-run
+
+publish-react versionType:
+  cd {{ react }} && release-it {{ versionType }} --dry-run
+
+publish-token versionType:
+  cd {{ tokenFarm }} && release-it {{ versionType }} --dry-run
