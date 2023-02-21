@@ -21,8 +21,10 @@ build integration:
   cd {{ integration }} && npm run build
 
 publish versionType:
+  #!/usr/bin/env bash
+  $VERSION = $( release-it {{ versionType }} --release-version )
+  echo $VERSION
   # release-it {{ versionType }} --dry-run
-  echo release-it {{ versionType }} --release-version
   # just publish-integrations {{ versionType }}
 
 publish-integration integration versionType:
