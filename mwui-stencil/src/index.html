@@ -458,7 +458,14 @@
           <mw-menu-item title="Item 3" value="Item 3"> </mw-menu-item>
           <mw-menu-item title="Item 4" value="Item 4"> </mw-menu-item>
         </mw-autocomplete>
-        <mw-textfield label="Without suggestions" placeholder="Add choices..." multiple multiple-maximum="8"> </mw-textfield>
+        <mw-textfield label="Without suggestions" placeholder="Add choices...">
+          <div slot="dropdown-menu">
+            <mw-menu-item title="Item 1" value="Item 1"> </mw-menu-item>
+            <mw-menu-item title="Item 2" value="Item 2"> </mw-menu-item>
+            <mw-menu-item title="Item 3" value="Item 3"> </mw-menu-item>
+            <mw-menu-item title="Item 4" value="Item 4"> </mw-menu-item>
+          </div>
+        </mw-textfield>
       </div>
     </section>
   </body>

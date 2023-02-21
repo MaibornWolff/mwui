@@ -9,7 +9,7 @@ export class MwAutocomplete {
   render() {
     return (
       <Host>
-        <mw-textfield multiple={true} multipleMaximum={4} placeholder="Select options" label="Autocomplete" helperText="Multiple options possible">
+        <mw-textfield multiple={true} placeholder="Select options" label="Autocomplete" helperText="Multiple options possible">
           <div slot="dropdown-menu">
             <slot></slot>
           </div>

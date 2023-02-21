@@ -77,14 +77,10 @@ label {
   color: var(--mw-component-text-field-fg-icon-default);
 }
 .input-options {
+  flex: 1;
   display: flex;
   flex-flow: row wrap;
   gap: var(--mw-component-text-field-gap-horizontal-gap-within);
-}
-.input input {
-  min-width: 150px;
-  width: 100%;
-  flex: 1;
 }
 .focused {
   color: var(--mw-component-text-field-fg-icon-focused);
@@ -101,8 +97,14 @@ label {
 .icon-end {
   margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
 }
+.icon-dropdown,
+.icon-close-multiple {
+  margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
+  cursor: pointer;
+}
 
 .input input  {
+  flex: 1;
   border: none;
   padding: 0;
   width: 100%;

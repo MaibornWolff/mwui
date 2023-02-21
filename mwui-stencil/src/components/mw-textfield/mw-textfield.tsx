@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h, Element, Listen } from "@stencil/core";
+import { Component, Event, EventEmitter, Host, Prop, State, h, Element, Listen, Watch } from "@stencil/core";
 
 @Component({
   tag: "mw-textfield",
@@ -31,7 +31,7 @@ export class MwTextfield {
   /**
    * Placeholder to be displayed
    */
-  @Prop() placeholder?: string;
+  @Prop({ reflect: true, mutable: true }) placeholder?: string;
   /**
    * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
    */
@@ -41,7 +41,7 @@ export class MwTextfield {
    */
   @Prop() hasError?: boolean = false;
   /**
-   * Display label and input horizonally
+   * Display label and input horizontally
    */
   @Prop() inline?: boolean = false;
   /**
@@ -70,6 +70,8 @@ export class MwTextfield {
   @Prop({ reflect: true, mutable: true }) multipleValues?: Array<string | number> = [];
   @State() focused = false;
   @State() isDropdownOpen = false;
+  @State() initialPlaceholder: string;
+  @State() hasMultipleValues: boolean;
   @Listen("mwMenuItemClick")
   clickEmitterHandler(event): void {
     const emittedValue = event.target.getAttribute("value");
@@ -97,24 +99,46 @@ export class MwTextfield {
       this.addMultiValue(this.inputElement.value);
       this.isDropdownOpen = false;
     }
+    if (this.multiple && this.focused && event.key === "Backspace") {
+      if (this.inputElement.value === "" && this.hasMultipleValues) {
+        const multiValuesCopy = this.multipleValues;
+        const indexToRemove = this.multipleValues.length - 1;
+        const valueToRemove = this.multipleValues[indexToRemove];
+        multiValuesCopy.splice(indexToRemove, 1);
+        document.querySelectorAll(`mw-menu-item[value="${valueToRemove}"]`).forEach(item => item.setAttribute("disabled", "false"));
+        this.multipleValues = [...multiValuesCopy];
+      }
+    }
   }
-
+  @Watch("multipleValues")
+  onMultipleValueChange(): void {
+    if (this.multipleValues.length > 0) {
+      this.placeholder = "";
+      this.hasMultipleValues = true;
+    } else {
+      this.placeholder = this.initialPlaceholder;
+      this.hasMultipleValues = false;
+    }
+  }
   private inputElement: HTMLInputElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
   private hasDropDownMenu: boolean;
 
   componentWillLoad(): void {
+    this.initialPlaceholder = this.placeholder;
+    this.onMultipleValueChange();
     this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
     this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
     this.hasDropDownMenu = !!this.hostElement.querySelector("[slot='dropdown-menu']");
   }
 
-  private onValueChange = (event: Event) => {
+  private onValueChange = (event: Event): void => {
     if (!this.multiple) {
       this.value = (event.target as HTMLInputElement).value;
       this.valueChanged.emit(this.value);
     }
+    this.filterDropdownOptions();
     this.isDropdownOpen = true;
   };
 
@@ -137,7 +161,31 @@ export class MwTextfield {
         }
       }
       this.inputElement.value = "";
+      this.removeDropdownFilter();
     }
+  };
+
+  private clearMultiValues = (): void => {
+    for (const value of this.multipleValues) {
+      document.querySelectorAll(`mw-menu-item[value="${value}"]`).forEach(item => item.setAttribute("disabled", "false"));
+    }
+    this.multipleValues = [];
+  };
+
+  private filterDropdownOptions = (): void => {
+    document.querySelectorAll("mw-menu-item").forEach(item => {
+      if (item.title.toLowerCase().includes(this.inputElement.value.toLowerCase())) {
+        item.style.display = "unset";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  };
+
+  private removeDropdownFilter = (): void => {
+    document.querySelectorAll("mw-menu-item").forEach(item => {
+      item.style.display = "unset";
+    });
   };
 
   render() {
@@ -172,7 +220,7 @@ export class MwTextfield {
                   </span>
                   <div class="input-options">
                     {this.multipleValues.map(value => (
-                      <mw-chip key={value} showClose={true} value={value}>
+                      <mw-chip key={value} showClose={true} value={value} selected={true}>
                         {value}
                       </mw-chip>
                     ))}
@@ -195,6 +243,11 @@ export class MwTextfield {
                       />
                     )}
                   </div>
+                  {this.hasMultipleValues && (
+                    <span class="icon-close-multiple" onClick={this.clearMultiValues}>
+                      <mw-icon icon="close" size="medium"></mw-icon>
+                    </span>
+                  )}
                   <span
                     class={{
                       "icon-end": this.hasIconEndSlot,
@@ -206,12 +259,12 @@ export class MwTextfield {
                   </span>
                   <span
                     class={{
-                      "icon-end": this.hasDropDownMenu,
+                      "icon-dropdown": this.hasDropDownMenu,
                       "focused": this.focused,
                       "has-error": this.hasError,
                     }}
                   >
-                    <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
+                    <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"} size="medium"></mw-icon>
                   </span>
                 </div>
                 <div slot="content">
@@ -232,7 +285,7 @@ export class MwTextfield {
 
                 <div class="input-options">
                   {this.multipleValues.map(value => (
-                    <mw-chip key={value} showClose={true} value={value}>
+                    <mw-chip key={value} showClose={true} value={value} selected={true}>
                       {value}
                     </mw-chip>
                   ))}
@@ -255,6 +308,11 @@ export class MwTextfield {
                     />
                   )}
                 </div>
+                {this.hasMultipleValues && (
+                  <span class="icon-close-multiple" onClick={this.clearMultiValues}>
+                    <mw-icon icon="close" size="medium"></mw-icon>
+                  </span>
+                )}
                 <span
                   class={{
                     "icon-end": this.hasIconEndSlot,
