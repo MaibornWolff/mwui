@@ -124,6 +124,7 @@ export class MwAutocomplete {
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
   private hasDropDownMenu: boolean;
+  private noSuggestions = false;
 
   componentWillLoad(): void {
     this.initialPlaceholder = this.placeholder;
@@ -171,13 +172,17 @@ export class MwAutocomplete {
   };
 
   private filterDropdownOptions = (): void => {
+    let hasNoSuggestions = true;
     this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
       if (item.value.toLowerCase().includes(this.inputElement.value.toLowerCase())) {
         item.style.display = "unset";
+        hasNoSuggestions = false;
       } else {
         item.style.display = "none";
       }
     });
+    this.noSuggestions = hasNoSuggestions;
+    console.log(this.noSuggestions);
   };
 
   private removeDropdownFilter = (): void => {
@@ -267,6 +272,7 @@ export class MwAutocomplete {
                 </div>
                 <div slot="content">
                   <slot name="dropdown-menu"></slot>
+                  {this.noSuggestions && <div class="no-matches">No matching suggestions</div>}
                 </div>
               </mw-popover>
             ) : (

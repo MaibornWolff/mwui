@@ -22,6 +22,7 @@
 }
 
 label {
+  white-space: nowrap;
   padding: 0 var(--mw-component-text-field-padding-text-field-label-vertical-x);
   font-family: var(--mw-component-text-field-label-font-family);
   font-weight: var(--mw-component-text-field-label-font-weight);
@@ -36,7 +37,6 @@ label {
 }
 
 .autocomplete.inline .input {
-  width: max-content;
   min-width: var(--mw-component-size-text-field-min-width);
 }
 
@@ -48,6 +48,10 @@ label {
 .autocomplete.read-only,
 .autocomplete.read-only .input input {
   cursor: pointer;
+}
+
+mw-popover {
+  width: 100%;
 }
 
 .input {
@@ -109,6 +113,7 @@ label {
   padding: 0;
   /* TODO: missing token */
   min-width: 30px;
+  min-height: 32px;
   width: 100%;
   background: transparent;
   font-family: var(--mw-component-text-field-text-font-family);
@@ -144,4 +149,12 @@ label {
 
 .required {
   color: var(--mw-component-text-field-fg-error);
+}
+.no-matches {
+  /* TODO: Discuss with design team */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkgrey;
+  height: 56px;
 }

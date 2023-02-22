@@ -139,7 +139,7 @@ export class MwDropdown {
                       "has-error": this.hasError,
                     }}
                   >
-                    <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"}></mw-icon>
+                    <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"} size="medium"></mw-icon>
                   </span>
                 )}
               </div>
