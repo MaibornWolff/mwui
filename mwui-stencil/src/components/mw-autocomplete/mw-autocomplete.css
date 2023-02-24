@@ -158,3 +158,10 @@ mw-popover {
   color: darkgrey;
   height: 56px;
 }
+.maximum-reached {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: darkgrey;
+  height: 56px;
+}

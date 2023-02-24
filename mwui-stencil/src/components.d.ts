@@ -59,6 +59,10 @@ export namespace Components {
      */
     multipleMaximum?: number;
     /**
+     * Text which is displayed when maximum amount of options is reached
+     */
+    multipleMaximumText?: string;
+    /**
      * Values, when `multiple` is true
      */
     multipleValues?: Array<string | number>;
@@ -66,6 +70,14 @@ export namespace Components {
      * input field name
      */
     name: string;
+    /**
+     * Text which is displayed when no dropdown options match the user input
+     */
+    noMatchText?: string;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     */
+    optionCounter?: boolean;
     /**
      * Placeholder to be displayed
      */
@@ -1046,6 +1058,10 @@ declare namespace LocalJSX {
      */
     multipleMaximum?: number;
     /**
+     * Text which is displayed when maximum amount of options is reached
+     */
+    multipleMaximumText?: string;
+    /**
      * Values, when `multiple` is true
      */
     multipleValues?: Array<string | number>;
@@ -1054,9 +1070,17 @@ declare namespace LocalJSX {
      */
     name?: string;
     /**
+     * Text which is displayed when no dropdown options match the user input
+     */
+    noMatchText?: string;
+    /**
      * MwAutocomplete emits an event when its value changes
      */
     onValueChanged?: (event: MwAutocompleteCustomEvent<string>) => void;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     */
+    optionCounter?: boolean;
     /**
      * Placeholder to be displayed
      */

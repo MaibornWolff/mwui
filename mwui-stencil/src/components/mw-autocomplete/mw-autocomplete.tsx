@@ -41,6 +41,10 @@ export class MwAutocomplete {
    */
   @Prop() hasError?: boolean = false;
   /**
+   * Text which is displayed when no dropdown options match the user input
+   */
+  @Prop() noMatchText?: string = "No matching options";
+  /**
    * Display label and input horizontally
    */
   @Prop() inline?: boolean = false;
@@ -65,9 +69,17 @@ export class MwAutocomplete {
    */
   @Prop() multipleMaximum?: number;
   /**
+   * Text which is displayed when maximum amount of options is reached
+   */
+  @Prop() multipleMaximumText?: string = "Maximum amount of selected options reached";
+  /**
    * Values, when `multiple` is true
    */
   @Prop({ reflect: true, mutable: true }) multipleValues?: Array<string | number> = [];
+  /**
+   * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+   */
+  @Prop() optionCounter?: boolean = false;
   @State() focused = false;
   @State() isDropdownOpen = false;
   @State() initialPlaceholder: string;
@@ -121,7 +133,7 @@ export class MwAutocomplete {
     }
   }
   private inputElement: HTMLInputElement;
-  private noSuggestionsDisclaimer: HTMLDivElement;
+  private noMatchDisclaimer: HTMLDivElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
   private hasDropDownMenu: boolean;
@@ -181,9 +193,9 @@ export class MwAutocomplete {
       }
     });
     if (hasNoSuggestions) {
-      this.noSuggestionsDisclaimer.style.display = "flex";
+      this.noMatchDisclaimer.style.display = "flex";
     } else {
-      this.noSuggestionsDisclaimer.style.display = "none";
+      this.noMatchDisclaimer.style.display = "none";
     }
   };
 
@@ -273,9 +285,13 @@ export class MwAutocomplete {
                   </span>
                 </div>
                 <div slot="content">
-                  <slot name="dropdown-menu"></slot>
-                  <div ref={el => (this.noSuggestionsDisclaimer = el as HTMLDivElement)} class="no-matches">
-                    No matching suggestions
+                  {!this.multipleMaximum || this.multipleValues.length < this.multipleMaximum ? (
+                    <slot name="dropdown-menu"></slot>
+                  ) : (
+                    <div class="maximum-reached">{this.multipleMaximumText}</div>
+                  )}
+                  <div ref={el => (this.noMatchDisclaimer = el as HTMLDivElement)} class="no-matches">
+                    {this.noMatchText}
                   </div>
                 </div>
               </mw-popover>
@@ -342,6 +358,16 @@ export class MwAutocomplete {
                 {this.helperText}
               </span>
             )}
+            {this.multipleMaximum && this.optionCounter && !this.inline && (
+              <span
+                class={{
+                  "helper-text": true,
+                  "has-error": this.hasError,
+                }}
+              >
+                {this.multipleValues.length}/{this.multipleMaximum}
+              </span>
+            )}
           </div>
           {this.helperText && this.inline && (
             <span
@@ -351,6 +377,16 @@ export class MwAutocomplete {
               }}
             >
               {this.helperText}
+            </span>
+          )}
+          {this.multipleMaximum && this.optionCounter && this.inline && (
+            <span
+              class={{
+                "helper-text": true,
+                "has-error": this.hasError,
+              }}
+            >
+              {this.multipleValues.length}/{this.multipleMaximum}
             </span>
           )}
         </div>
