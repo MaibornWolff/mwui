@@ -288,6 +288,10 @@ export namespace Components {
      */
     testId: string;
     /**
+     * Allows user to toggle chip
+     */
+    toggleable?: boolean;
+    /**
      * Value of chip
      */
     value?: string | number;
@@ -1298,6 +1302,10 @@ declare namespace LocalJSX {
      * Provide unique identifier for automated testing
      */
     testId?: string;
+    /**
+     * Allows user to toggle chip
+     */
+    toggleable?: boolean;
     /**
      * Value of chip
      */

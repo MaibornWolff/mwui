@@ -121,10 +121,10 @@ export class MwAutocomplete {
     }
   }
   private inputElement: HTMLInputElement;
+  private noSuggestionsDisclaimer: HTMLDivElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
   private hasDropDownMenu: boolean;
-  private noSuggestions = false;
 
   componentWillLoad(): void {
     this.initialPlaceholder = this.placeholder;
@@ -150,7 +150,6 @@ export class MwAutocomplete {
 
   private onBlur = (): void => {
     this.focused = false;
-    this.addMultiValue(this.inputElement.value);
   };
 
   private addMultiValue = (value: string): void => {
@@ -181,8 +180,11 @@ export class MwAutocomplete {
         item.style.display = "none";
       }
     });
-    this.noSuggestions = hasNoSuggestions;
-    console.log(this.noSuggestions);
+    if (hasNoSuggestions) {
+      this.noSuggestionsDisclaimer.style.display = "flex";
+    } else {
+      this.noSuggestionsDisclaimer.style.display = "none";
+    }
   };
 
   private removeDropdownFilter = (): void => {
@@ -223,7 +225,7 @@ export class MwAutocomplete {
                   </span>
                   <div class="input-options">
                     {this.multipleValues.map(value => (
-                      <mw-chip key={value} showClose={true} value={value} selected={true}>
+                      <mw-chip key={value} showClose={true} value={value} selected={true} toggleable={false}>
                         {value}
                       </mw-chip>
                     ))}
@@ -272,7 +274,9 @@ export class MwAutocomplete {
                 </div>
                 <div slot="content">
                   <slot name="dropdown-menu"></slot>
-                  {this.noSuggestions && <div class="no-matches">No matching suggestions</div>}
+                  <div ref={el => (this.noSuggestionsDisclaimer = el as HTMLDivElement)} class="no-matches">
+                    No matching suggestions
+                  </div>
                 </div>
               </mw-popover>
             ) : (
@@ -289,7 +293,7 @@ export class MwAutocomplete {
 
                 <div class="input-options">
                   {this.multipleValues.map(value => (
-                    <mw-chip key={value} showClose={true} value={value} selected={true}>
+                    <mw-chip key={value} showClose={true} value={value} selected={true} toggleable={false}>
                       {value}
                     </mw-chip>
                   ))}

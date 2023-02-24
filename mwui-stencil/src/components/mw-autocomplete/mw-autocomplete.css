@@ -152,7 +152,7 @@ mw-popover {
 }
 .no-matches {
   /* TODO: Discuss with design team */
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   color: darkgrey;

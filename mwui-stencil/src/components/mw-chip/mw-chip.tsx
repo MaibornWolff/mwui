@@ -19,6 +19,10 @@ export class MwChip {
    */
   @Prop({ reflect: true }) disabled?: boolean;
   /**
+   * Allows user to toggle chip
+   */
+  @Prop() toggleable?: boolean = true;
+  /**
    * Flag whether to show close icon or not
    */
   @Prop() showClose?: boolean = false;
@@ -60,7 +64,7 @@ export class MwChip {
   };
 
   private handleClick = (event: Event): void => {
-    this.selected = !this.selected;
+    if (this.toggleable) this.selected = !this.selected;
     this.clickEmitter.emit(event);
   };
 
