@@ -1,14 +1,12 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h, Element, Listen, Watch } from "@stencil/core";
-import { AriaRolesEnum } from "../../shared/models/enums/aria-roles.enum";
-import { MwHelperText } from "../mw-helper-text/mw-helper-text";
+import { Component, Element, Event, EventEmitter, h, Listen, Prop, State, Watch } from "@stencil/core";
 
 @Component({
-  tag: "mw-autocomplete",
-  styleUrl: "mw-autocomplete.css",
+  tag: "mw-chip-input",
+  styleUrl: "mw-chip-input.scss",
   shadow: true,
 })
-export class MwAutocomplete {
-  @Element() hostElement: HTMLMwAutocompleteElement;
+export class MwChipInput {
+  @Element() hostElement: HTMLMwChipInputElement;
 
   /**
    * MwAutocomplete emits an event when its value changes
@@ -88,26 +86,12 @@ export class MwAutocomplete {
   @State() initialPlaceholder: string;
   @State() hasMultipleValues: boolean;
 
-  @Listen("mwMenuItemClick")
-  clickEmitterHandler(event): void {
-    const emittedValue = event.target.getAttribute("value");
-    if (this.multiple) {
-      this.addMultiValue(emittedValue);
-    } else {
-      this.value = emittedValue;
-    }
-  }
-  @Listen("mwPopoverOpen")
-  stateEmitterHandler(event): void {
-    this.isDropdownOpen = event.detail;
-  }
-
   @Listen("mwChipClose")
   closeEmitterHandler(event): void {
     const multiValuesCopy = this.multipleValues;
     const indexToRemove = multiValuesCopy.indexOf(event.detail);
     multiValuesCopy.splice(indexToRemove, 1);
-    this.hostElement.querySelectorAll(`mw-menu-item[value="${event.detail}"]`).forEach(item => item.setAttribute("disabled", "false"));
+    // this.hostElement.querySelectorAll(`mw-menu-item[value="${event.detail}"]`).forEach(item => item.setAttribute("disabled", "false"));
     this.multipleValues = [...multiValuesCopy];
   }
 
@@ -122,8 +106,9 @@ export class MwAutocomplete {
         const multiValuesCopy = this.multipleValues;
         const indexToRemove = this.multipleValues.length - 1;
         const valueToRemove = this.multipleValues[indexToRemove];
+        console.log(valueToRemove);
         multiValuesCopy.splice(indexToRemove, 1);
-        this.hostElement.querySelectorAll(`mw-menu-item[value="${valueToRemove}"]`).forEach(item => item.setAttribute("disabled", "false"));
+        // this.hostElement.querySelectorAll(`mw-menu-item[value="${valueToRemove}"]`).forEach(item => item.setAttribute("disabled", "false"));
         this.multipleValues = [...multiValuesCopy];
       }
     }
@@ -141,7 +126,6 @@ export class MwAutocomplete {
   }
 
   private inputElement: HTMLInputElement;
-  private noMatchDisclaimer: HTMLDivElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
   private hasDropDownMenu: boolean;
@@ -159,8 +143,6 @@ export class MwAutocomplete {
       this.value = (event.target as HTMLInputElement).value;
       this.valueChanged.emit(this.value);
     }
-    this.filterDropdownOptions();
-    this.isDropdownOpen = true;
   };
 
   private onFocus = (): void => {
@@ -179,7 +161,6 @@ export class MwAutocomplete {
         this.hostElement.querySelectorAll(`mw-menu-item[value="${value}"]`).forEach(item => item.setAttribute("disabled", "true"));
       }
       this.inputElement.value = "";
-      this.removeDropdownFilter();
     }
   };
 
@@ -190,148 +171,100 @@ export class MwAutocomplete {
     this.multipleValues = [];
   };
 
-  private filterDropdownOptions = (): void => {
-    let hasNoSuggestions = true;
-    this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
-      if (item.value.toLowerCase().includes(this.inputElement.value.toLowerCase())) {
-        item.style.display = "unset";
-        hasNoSuggestions = false;
-      } else {
-        item.style.display = "none";
-      }
-    });
-    if (hasNoSuggestions) {
-      this.noMatchDisclaimer.style.display = "flex";
-    } else {
-      this.noMatchDisclaimer.style.display = "none";
-    }
-  };
+  render() {
+    const {
+      onFocus,
+      hasError,
+      disabled,
+      hasIconStartSlot,
+      hasIconEndSlot,
+      focused,
+      multipleValues,
+      multipleMaximum,
+      placeholder,
+      onBlur,
+      onValueChange,
+      type,
+      readOnly,
+      name,
+      value,
+      hasMultipleValues,
+      clearMultiValues,
+      hasDropDownMenu,
+      isDropdownOpen,
+    } = this;
 
-  private removeDropdownFilter = (): void => {
-    this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
-      item.style.display = "unset";
-    });
-  };
-
-  private InputWrapper(): JSX.Element {
     return (
       <div
         slot="anchor"
-        onClick={this.onFocus}
+        onClick={onFocus}
         class={{
           "input": true,
-          "has-error": this.hasError,
-          "disabled": this.disabled,
+          "has-error": hasError,
+          "disabled": disabled,
         }}
       >
         <span
           class={{
-            "icon-start": this.hasIconStartSlot,
-            "focused": this.focused,
-            "has-error": this.hasError,
+            "icon-start": hasIconStartSlot,
+            "focused": focused,
+            "has-error": hasError,
           }}
         >
           <slot name="icon-start"></slot>
         </span>
         <div class="input-options">
-          {this.multipleValues.map(value => (
-            <mw-chip key={value} showClose={true} value={value} selected={true} toggleable={false}>
-              {value}
+          {multipleValues.map(v => (
+            <mw-chip key={v} showClose={true} value={v} selected={true} toggleable={false}>
+              {v}
             </mw-chip>
           ))}
-          {(!this.multipleMaximum || this.multipleValues.length < this.multipleMaximum) && (
+          {(!multipleMaximum || multipleValues.length < multipleMaximum) && (
             <input
               ref={el => (this.inputElement = el as HTMLInputElement)}
-              placeholder={this.placeholder}
+              placeholder={placeholder}
               class={{
-                "has-error": this.hasError,
+                "has-error": hasError,
               }}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-              onInput={this.onValueChange}
-              onChange={this.onValueChange}
-              type={this.type}
-              name={this.name}
-              value={this.value}
-              disabled={this.disabled}
-              readOnly={this.readOnly}
+              onFocus={onFocus}
+              onBlur={onBlur}
+              onInput={onValueChange}
+              onChange={onValueChange}
+              type={type}
+              name={name}
+              value={value}
+              disabled={disabled}
+              readOnly={readOnly}
             />
           )}
         </div>
-        {this.hasMultipleValues && (
-          <span class="icon-close-multiple" onClick={this.clearMultiValues}>
+        {hasMultipleValues && (
+          <span class="icon-close-multiple" onClick={clearMultiValues}>
             <mw-icon icon="close" size="medium"></mw-icon>
           </span>
         )}
         <span
           class={{
-            "icon-end": this.hasIconEndSlot,
-            "focused": this.focused,
-            "has-error": this.hasError,
+            "icon-end": hasIconEndSlot,
+            "focused": focused,
+            "has-error": hasError,
           }}
         >
           <slot name="icon-end"></slot>
         </span>
 
-        {this.hasDropDownMenu ?? (
+        {hasDropDownMenu ?? (
           <span
             class={{
-              "icon-dropdown": this.hasDropDownMenu,
-              "focused": this.focused,
-              "has-error": this.hasError,
+              "icon-dropdown": hasDropDownMenu,
+              "focused": focused,
+              "has-error": hasError,
             }}
           >
-            <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"} size="medium"></mw-icon>
+            <mw-icon icon={isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"} size="medium"></mw-icon>
           </span>
         )}
       </div>
-    );
-  }
-
-  render() {
-    return (
-      <Host>
-        <div tabindex="0" class="wrapper" role={AriaRolesEnum.COMBOBOX}>
-          <div
-            class={{
-              "autocomplete": true,
-              "inline": this.inline,
-              "has-error": this.hasError,
-              "disabled": this.disabled,
-            }}
-          >
-            {!!this.label && (
-              <label htmlFor={this.name} class="label">
-                {this.label}
-                {this.required && <span class="required">*</span>}
-              </label>
-            )}
-
-            {this.hasDropDownMenu ? (
-              <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen}>
-                {this.InputWrapper()}
-
-                <div slot="content">
-                  {!this.multipleMaximum || this.multipleValues?.length < this.multipleMaximum ? (
-                    <slot name="dropdown-menu"></slot>
-                  ) : (
-                    <div class="maximum-reached">{this.multipleMaximumText}</div>
-                  )}
-                  <div ref={el => (this.noMatchDisclaimer = el as HTMLDivElement)} class="no-matches">
-                    {this.noMatchText}
-                  </div>
-                </div>
-              </mw-popover>
-            ) : (
-              <span>{this.InputWrapper()}</span>
-            )}
-
-            {this.inline ?? <MwHelperText helperText={this.helperText} hasError={this.hasError} />}
-          </div>
-
-          {!this.inline ?? <MwHelperText helperText={this.helperText} hasError={this.hasError} />}
-        </div>
-      </Host>
     );
   }
 }

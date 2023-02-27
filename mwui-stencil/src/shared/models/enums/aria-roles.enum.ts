@@ -4,4 +4,5 @@
 export enum AriaRolesEnum {
   NAVIGATION = "navigation",
   TOOLBAR = "toolbar",
+  COMBOBOX = "combobox",
 }

@@ -24,17 +24,17 @@
 
 ### Used by
 
+- [mw-autocomplete](../mw-autocomplete)
 - [mw-dropdown](../mw-dropdown)
 - [mw-menu](../mw-menu)
-- [mw-textfield](../mw-textfield)
 
 ### Graph
 
 ```mermaid
 graph TD;
+  mw-autocomplete --> mw-popover
   mw-dropdown --> mw-popover
   mw-menu --> mw-popover
-  mw-textfield --> mw-popover
   style mw-popover fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -9,7 +9,26 @@ export const MwAppBar = /*@__PURE__*/ defineContainer<JSX.MwAppBar>("mw-app-bar"
 
 export const MwAppBarTitle = /*@__PURE__*/ defineContainer<JSX.MwAppBarTitle>("mw-app-bar-title", undefined);
 
-export const MwAutocomplete = /*@__PURE__*/ defineContainer<JSX.MwAutocomplete>("mw-autocomplete", undefined);
+export const MwAutocomplete = /*@__PURE__*/ defineContainer<JSX.MwAutocomplete>("mw-autocomplete", undefined, [
+    "type",
+    "value",
+    "name",
+    "label",
+    "placeholder",
+    "helperText",
+    "hasError",
+    "noMatchText",
+    "inline",
+    "required",
+    "disabled",
+    "readOnly",
+    "multiple",
+    "multipleMaximum",
+    "multipleMaximumText",
+    "multipleValues",
+    "optionCounter",
+    "valueChanged",
+]);
 
 export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>("mw-avatar", undefined, ["testId", "src", "icon", "alt", "size"]);
 
@@ -47,11 +66,33 @@ export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>("mw-chip", undef
     "testId",
     "icon",
     "disabled",
+    "toggleable",
     "showClose",
     "value",
     "selected",
     "mwChipClick",
     "mwChipClose",
+]);
+
+export const MwChipInput = /*@__PURE__*/ defineContainer<JSX.MwChipInput>("mw-chip-input", undefined, [
+    "type",
+    "value",
+    "name",
+    "label",
+    "placeholder",
+    "helperText",
+    "hasError",
+    "noMatchText",
+    "inline",
+    "required",
+    "disabled",
+    "readOnly",
+    "multiple",
+    "multipleMaximum",
+    "multipleMaximumText",
+    "multipleValues",
+    "optionCounter",
+    "valueChanged",
 ]);
 
 export const MwDivider = /*@__PURE__*/ defineContainer<JSX.MwDivider>("mw-divider", undefined, ["inset"]);
@@ -69,6 +110,8 @@ export const MwDropdown = /*@__PURE__*/ defineContainer<JSX.MwDropdown>("mw-drop
     "disabled",
     "valueChanged",
 ]);
+
+export const MwHelperText = /*@__PURE__*/ defineContainer<JSX.MwHelperText>("mw-helper-text", undefined, ["helperText", "hasError"]);
 
 export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>("mw-icon", undefined, ["icon", "size", "fill", "color", "weight"]);
 
@@ -148,8 +191,5 @@ export const MwTextfield = /*@__PURE__*/ defineContainer<JSX.MwTextfield>("mw-te
     "required",
     "disabled",
     "readOnly",
-    "multiple",
-    "multipleMaximum",
-    "multipleValues",
     "valueChanged",
 ]);

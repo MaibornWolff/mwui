@@ -1,4 +1,4 @@
-# mw-autocomplete
+# mw-chip-input
 
 <!-- Auto Generated Below -->
 
@@ -36,17 +36,15 @@
 
 - [mw-chip](../mw-chip)
 - [mw-icon](../mw-icon)
-- [mw-popover](../mw-popover)
 
 ### Graph
 
 ```mermaid
 graph TD;
-  mw-autocomplete --> mw-chip
-  mw-autocomplete --> mw-icon
-  mw-autocomplete --> mw-popover
+  mw-chip-input --> mw-chip
+  mw-chip-input --> mw-icon
   mw-chip --> mw-icon
-  style mw-autocomplete fill:#f9f,stroke:#333,stroke-width:4px
+  style mw-chip-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ---

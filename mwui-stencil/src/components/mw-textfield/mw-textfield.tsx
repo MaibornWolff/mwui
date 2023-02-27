@@ -1,4 +1,5 @@
 import { Component, Event, EventEmitter, Host, Prop, State, h, Element } from "@stencil/core";
+import { MwHelperText } from "../mw-helper-text/mw-helper-text";
 
 @Component({
   tag: "mw-textfield",
@@ -124,27 +125,9 @@ export class MwTextfield {
                 <slot name="icon-end"></slot>
               </span>
             </div>
-            {this.helperText && !this.inline && (
-              <span
-                class={{
-                  "helper-text": true,
-                  "has-error": this.hasError,
-                }}
-              >
-                {this.helperText}
-              </span>
-            )}
+            {!this.inline && <MwHelperText helperText={this.helperText} hasError={this.hasError} />}
           </div>
-          {this.helperText && this.inline && (
-            <span
-              class={{
-                "helper-text": true,
-                "has-error": this.hasError,
-              }}
-            >
-              {this.helperText}
-            </span>
-          )}
+          {this.inline && <MwHelperText helperText={this.helperText} hasError={this.hasError} />}
         </div>
       </Host>
     );

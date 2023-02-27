@@ -43,21 +43,65 @@ export class MwAppBarTitle {
     }
 }
 
-export declare interface MwAutocomplete extends Components.MwAutocomplete {}
+export declare interface MwAutocomplete extends Components.MwAutocomplete {
+    /**
+     * MwAutocomplete emits an event when its value changes
+     */
+    valueChanged: EventEmitter<CustomEvent<string>>;
+}
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "multiple",
+        "multipleMaximum",
+        "multipleMaximumText",
+        "multipleValues",
+        "name",
+        "noMatchText",
+        "optionCounter",
+        "placeholder",
+        "readOnly",
+        "required",
+        "type",
+        "value",
+    ],
 })
 @Component({
     selector: "mw-autocomplete",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "multiple",
+        "multipleMaximum",
+        "multipleMaximumText",
+        "multipleValues",
+        "name",
+        "noMatchText",
+        "optionCounter",
+        "placeholder",
+        "readOnly",
+        "required",
+        "type",
+        "value",
+    ],
 })
 export class MwAutocomplete {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["valueChanged"]);
     }
 }
 
@@ -320,13 +364,13 @@ export declare interface MwChip extends Components.MwChip {
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["disabled", "icon", "selected", "showClose", "testId", "value"],
+    inputs: ["disabled", "icon", "selected", "showClose", "testId", "toggleable", "value"],
 })
 @Component({
     selector: "mw-chip",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["disabled", "icon", "selected", "showClose", "testId", "value"],
+    inputs: ["disabled", "icon", "selected", "showClose", "testId", "toggleable", "value"],
 })
 export class MwChip {
     protected el: HTMLElement;
@@ -334,6 +378,68 @@ export class MwChip {
         c.detach();
         this.el = r.nativeElement;
         proxyOutputs(this, this.el, ["mwChipClick", "mwChipClose"]);
+    }
+}
+
+export declare interface MwChipInput extends Components.MwChipInput {
+    /**
+     * MwAutocomplete emits an event when its value changes
+     */
+    valueChanged: EventEmitter<CustomEvent<string>>;
+}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "multiple",
+        "multipleMaximum",
+        "multipleMaximumText",
+        "multipleValues",
+        "name",
+        "noMatchText",
+        "optionCounter",
+        "placeholder",
+        "readOnly",
+        "required",
+        "type",
+        "value",
+    ],
+})
+@Component({
+    selector: "mw-chip-input",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "multiple",
+        "multipleMaximum",
+        "multipleMaximumText",
+        "multipleValues",
+        "name",
+        "noMatchText",
+        "optionCounter",
+        "placeholder",
+        "readOnly",
+        "required",
+        "type",
+        "value",
+    ],
+})
+export class MwChipInput {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["valueChanged"]);
     }
 }
 
@@ -380,6 +486,26 @@ export class MwDropdown {
         c.detach();
         this.el = r.nativeElement;
         proxyOutputs(this, this.el, ["valueChanged"]);
+    }
+}
+
+export declare interface MwHelperText extends Components.MwHelperText {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["hasError", "helperText"],
+})
+@Component({
+    selector: "mw-helper-text",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["hasError", "helperText"],
+})
+export class MwHelperText {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
     }
 }
 
@@ -792,43 +918,13 @@ export declare interface MwTextfield extends Components.MwTextfield {
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: [
-        "disabled",
-        "hasError",
-        "helperText",
-        "inline",
-        "label",
-        "multiple",
-        "multipleMaximum",
-        "multipleValues",
-        "name",
-        "placeholder",
-        "readOnly",
-        "required",
-        "type",
-        "value",
-    ],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
 })
 @Component({
     selector: "mw-textfield",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: [
-        "disabled",
-        "hasError",
-        "helperText",
-        "inline",
-        "label",
-        "multiple",
-        "multipleMaximum",
-        "multipleValues",
-        "name",
-        "placeholder",
-        "readOnly",
-        "required",
-        "type",
-        "value",
-    ],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
 })
 export class MwTextfield {
     protected el: HTMLElement;

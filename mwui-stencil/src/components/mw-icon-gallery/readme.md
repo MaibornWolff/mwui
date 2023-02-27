@@ -25,10 +25,6 @@ graph TD;
   mw-icon-gallery --> mw-icon
   mw-icon-gallery --> mw-slider
   mw-icon-gallery --> mw-switch
-  mw-textfield --> mw-popover
-  mw-textfield --> mw-chip
-  mw-textfield --> mw-icon
-  mw-chip --> mw-icon
   mw-slider --> mw-icon
   style mw-icon-gallery fill:#f9f,stroke:#333,stroke-width:4px
 ```

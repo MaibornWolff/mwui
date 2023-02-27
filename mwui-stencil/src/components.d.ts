@@ -308,6 +308,76 @@ export namespace Components {
      */
     value?: string | number;
   }
+  interface MwChipInput {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Allows users to enter multiple values into autocomplete
+     */
+    multiple?: boolean;
+    /**
+     * Amount of allowed `multipleValues`
+     */
+    multipleMaximum?: number;
+    /**
+     * Text which is displayed when maximum amount of options is reached
+     */
+    multipleMaximumText?: string;
+    /**
+     * Values, when `multiple` is true
+     */
+    multipleValues?: Array<string | number>;
+    /**
+     * input field name
+     */
+    name: string;
+    /**
+     * Text which is displayed when no dropdown options match the user input
+     */
+    noMatchText?: string;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     */
+    optionCounter?: boolean;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * HTML Input type
+     */
+    type?: string;
+    /**
+     * input field value
+     */
+    value?: string | number;
+  }
   interface MwDivider {
     /**
      * Whether the divider is a middle-inset
@@ -355,6 +425,16 @@ export namespace Components {
      * label of selected input value
      */
     valueLabel?: string | number;
+  }
+  interface MwHelperText {
+    /**
+     * Displays error
+     */
+    hasError?: boolean;
+    /**
+     * Text to be displayed
+     */
+    helperText?: string;
   }
   interface MwIcon {
     /**
@@ -770,6 +850,10 @@ export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
 }
+export interface MwChipInputCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwChipInputElement;
+}
 export interface MwDropdownCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwDropdownElement;
@@ -873,6 +957,11 @@ declare global {
     prototype: HTMLMwChipElement;
     new (): HTMLMwChipElement;
   };
+  interface HTMLMwChipInputElement extends Components.MwChipInput, HTMLStencilElement {}
+  var HTMLMwChipInputElement: {
+    prototype: HTMLMwChipInputElement;
+    new (): HTMLMwChipInputElement;
+  };
   interface HTMLMwDividerElement extends Components.MwDivider, HTMLStencilElement {}
   var HTMLMwDividerElement: {
     prototype: HTMLMwDividerElement;
@@ -882,6 +971,11 @@ declare global {
   var HTMLMwDropdownElement: {
     prototype: HTMLMwDropdownElement;
     new (): HTMLMwDropdownElement;
+  };
+  interface HTMLMwHelperTextElement extends Components.MwHelperText, HTMLStencilElement {}
+  var HTMLMwHelperTextElement: {
+    prototype: HTMLMwHelperTextElement;
+    new (): HTMLMwHelperTextElement;
   };
   interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {}
   var HTMLMwIconElement: {
@@ -993,8 +1087,10 @@ declare global {
     "mw-card-title": HTMLMwCardTitleElement;
     "mw-checkbox": HTMLMwCheckboxElement;
     "mw-chip": HTMLMwChipElement;
+    "mw-chip-input": HTMLMwChipInputElement;
     "mw-divider": HTMLMwDividerElement;
     "mw-dropdown": HTMLMwDropdownElement;
+    "mw-helper-text": HTMLMwHelperTextElement;
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-img": HTMLMwImgElement;
@@ -1335,6 +1431,80 @@ declare namespace LocalJSX {
      */
     value?: string | number;
   }
+  interface MwChipInput {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Allows users to enter multiple values into autocomplete
+     */
+    multiple?: boolean;
+    /**
+     * Amount of allowed `multipleValues`
+     */
+    multipleMaximum?: number;
+    /**
+     * Text which is displayed when maximum amount of options is reached
+     */
+    multipleMaximumText?: string;
+    /**
+     * Values, when `multiple` is true
+     */
+    multipleValues?: Array<string | number>;
+    /**
+     * input field name
+     */
+    name?: string;
+    /**
+     * Text which is displayed when no dropdown options match the user input
+     */
+    noMatchText?: string;
+    /**
+     * MwAutocomplete emits an event when its value changes
+     */
+    onValueChanged?: (event: MwChipInputCustomEvent<string>) => void;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     */
+    optionCounter?: boolean;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * HTML Input type
+     */
+    type?: string;
+    /**
+     * input field value
+     */
+    value?: string | number;
+  }
   interface MwDivider {
     /**
      * Whether the divider is a middle-inset
@@ -1386,6 +1556,16 @@ declare namespace LocalJSX {
      * label of selected input value
      */
     valueLabel?: string | number;
+  }
+  interface MwHelperText {
+    /**
+     * Displays error
+     */
+    hasError?: boolean;
+    /**
+     * Text to be displayed
+     */
+    helperText?: string;
   }
   interface MwIcon {
     /**
@@ -1815,8 +1995,10 @@ declare namespace LocalJSX {
     "mw-card-title": MwCardTitle;
     "mw-checkbox": MwCheckbox;
     "mw-chip": MwChip;
+    "mw-chip-input": MwChipInput;
     "mw-divider": MwDivider;
     "mw-dropdown": MwDropdown;
+    "mw-helper-text": MwHelperText;
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
     "mw-img": MwImg;
@@ -1856,8 +2038,10 @@ declare module "@stencil/core" {
       "mw-card-title": LocalJSX.MwCardTitle & JSXBase.HTMLAttributes<HTMLMwCardTitleElement>;
       "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
       "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
+      "mw-chip-input": LocalJSX.MwChipInput & JSXBase.HTMLAttributes<HTMLMwChipInputElement>;
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
       "mw-dropdown": LocalJSX.MwDropdown & JSXBase.HTMLAttributes<HTMLMwDropdownElement>;
+      "mw-helper-text": LocalJSX.MwHelperText & JSXBase.HTMLAttributes<HTMLMwHelperTextElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-img": LocalJSX.MwImg & JSXBase.HTMLAttributes<HTMLMwImgElement>;

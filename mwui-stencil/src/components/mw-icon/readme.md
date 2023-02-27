@@ -16,29 +16,31 @@
 
 ### Used by
 
+- [mw-autocomplete](../mw-autocomplete)
 - [mw-avatar](../mw-avatar)
 - [mw-checkbox](../mw-checkbox)
 - [mw-chip](../mw-chip)
+- [mw-chip-input](../mw-chip-input)
 - [mw-dropdown](../mw-dropdown)
 - [mw-icon-gallery](../mw-icon-gallery)
 - [mw-login](../mw-login)
 - [mw-slider](../mw-slider)
 - [mw-tab](../mw-tab)
-- [mw-textfield](../mw-textfield)
 
 ### Graph
 
 ```mermaid
 graph TD;
+  mw-autocomplete --> mw-icon
   mw-avatar --> mw-icon
   mw-checkbox --> mw-icon
   mw-chip --> mw-icon
+  mw-chip-input --> mw-icon
   mw-dropdown --> mw-icon
   mw-icon-gallery --> mw-icon
   mw-login --> mw-icon
   mw-slider --> mw-icon
   mw-tab --> mw-icon
-  mw-textfield --> mw-icon
   style mw-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
