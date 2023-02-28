@@ -26,6 +26,7 @@ export const MwAutocomplete = /*@__PURE__*/ defineContainer<JSX.MwAutocomplete>(
     "multipleMaximum",
     "multipleMaximumText",
     "optionCounter",
+    "selected",
     "valueChanged",
 ]);
 

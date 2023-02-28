@@ -87,6 +87,10 @@ export namespace Components {
      */
     required?: boolean;
     /**
+     * Currently selected options
+     */
+    selected: string[];
+    /**
      * HTML Input type
      */
     type?: string;
@@ -1185,6 +1189,10 @@ declare namespace LocalJSX {
      * Mark input as required
      */
     required?: boolean;
+    /**
+     * Currently selected options
+     */
+    selected?: string[];
     /**
      * HTML Input type
      */

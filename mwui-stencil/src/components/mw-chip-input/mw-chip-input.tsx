@@ -135,6 +135,10 @@ export class MwChipInput {
   };
 
   private addMultiValue = (value: string): void => {
+    if (value.trim()?.length === 0) {
+      return;
+    }
+
     if (!this.multipleMaximum || this.selected?.length < this.multipleMaximum) {
       this._selection.select(value);
       this.onValueChange();

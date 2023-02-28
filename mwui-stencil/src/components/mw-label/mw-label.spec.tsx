@@ -1,18 +1,47 @@
 import { newSpecPage } from "@stencil/core/testing";
 import { MwLabel } from "./mw-label";
+import { h } from "@stencil/core";
+import { SpecPage } from "@stencil/core/internal";
 
-describe("mw-label", () => {
-  it("renders", async () => {
-    const page = await newSpecPage({
+describe("Given MwLabel", () => {
+  const defaultProps = {
+    name: "some-name",
+    label: "some-label",
+    required: false,
+  };
+  const setup = async ({ name, label, required }: Pick<MwLabel, "label" | "required" | "name"> = defaultProps) => {
+    return await newSpecPage({
       components: [MwLabel],
-      html: `<mw-label></mw-label>`,
+      template: () => <mw-label label={label} name={name} required={required}></mw-label>,
     });
-    expect(page.root).toEqualHtml(`
-      <mw-label>
-        <mock:shadow-root>
-          <slot></slot>
-        </mock:shadow-root>
-      </mw-label>
-    `);
+  };
+
+  const getLabel = (page: SpecPage): HTMLLabelElement => {
+    return page.root.querySelector(".label");
+  };
+
+  it("SHOULD render MwLabel", async () => {
+    const page = await setup();
+    expect(page.root).toBeDefined();
+    expect(getLabel(page).innerHTML).not.toContain("*");
+  });
+
+  it("SHOULD display a * WHEN label is required", async () => {
+    const page = await setup({
+      ...defaultProps,
+      required: true,
+    });
+
+    expect(getLabel(page).innerHTML).toContain("*");
+  });
+
+  it("SHOULD contain label text WHEN passed", async () => {
+    const label = "some-label-text";
+    const page = await setup({
+      ...defaultProps,
+      label,
+    });
+
+    expect(getLabel(page).innerHTML).toContain(label);
   });
 });

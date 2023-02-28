@@ -20,6 +20,7 @@
 | `placeholder`         | `placeholder`           | Placeholder to be displayed                                                                                                    | `string`           | `undefined`                                    |
 | `readOnly`            | `read-only`             | Whether user can't type in input field                                                                                         | `boolean`          | `false`                                        |
 | `required`            | `required`              | Mark input as required                                                                                                         | `boolean`          | `false`                                        |
+| `selected`            | --                      | Currently selected options                                                                                                     | `string[]`         | `[]`                                           |
 | `type`                | `type`                  | HTML Input type                                                                                                                | `string`           | `"text"`                                       |
 | `value`               | `value`                 | input field value                                                                                                              | `number \| string` | `undefined`                                    |
 

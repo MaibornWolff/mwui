@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-28T13:35:17",
+  "timestamp": "2023-02-28T15:06:21",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -335,6 +335,22 @@
             }
           ],
           "optional": true,
+          "required": false
+        },
+        {
+          "name": "selected",
+          "type": "string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Currently selected options",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
           "required": false
         },
         {

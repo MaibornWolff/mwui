@@ -59,7 +59,6 @@ describe("GIVEN MwTextfield", () => {
     expect(page.root.shadowRoot.querySelector(".textfield")).toHaveClass(className);
     expect(page.root.shadowRoot.querySelector(".input")).toHaveClass(className);
     expect(page.root.shadowRoot.querySelector("input")).toHaveClass(className);
-    expect(page.root.shadowRoot.querySelector(".helper-text")).toHaveClass(className);
   });
 
   it("SHOULD set the inline class correctly WHEN inline is true", async () => {
@@ -116,26 +115,6 @@ describe("GIVEN MwTextfield", () => {
       placeholder,
     });
     expect(page.root.shadowRoot.querySelector("input").getAttribute("placeholder")).toBe(placeholder);
-  });
-
-  it("SHOULD display a * WHEN required is true", async () => {
-    const label = "some-label";
-    const page = await setup({
-      name: "",
-      required: true,
-      label,
-    });
-    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toContain("*");
-  });
-
-  it("SHOULD set the label WHEN label is passed", async () => {
-    const label = "some-label";
-    const page = await setup({
-      name: "",
-      label,
-    });
-    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toContain(label);
-    expect(page.root.shadowRoot.querySelector(".label").innerHTML).not.toContain("*");
   });
 
   it("SHOULD set disabled WHEN disabled is passed", async () => {

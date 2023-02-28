@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h, Element, Listen } from "@stencil/core";
+import { Component, Event, EventEmitter, Host, Prop, State, h, Element, Listen, Watch } from "@stencil/core";
 import { AriaRolesEnum } from "../../shared/models/enums/aria-roles.enum";
 import { MwChipInputCustomEvent } from "../../components";
 
@@ -80,11 +80,19 @@ export class MwAutocomplete {
    */
   @Prop() optionCounter?: boolean = false;
 
+  /**
+   * Currently selected options
+   */
+  @Prop() selected: string[] = [];
+  @Watch("selected")
+  onSelectedChange(selected: string[]): void {
+    this.setItemDisabledState(selected);
+  }
+
   @State() focused = false;
   @State() isDropdownOpen = false;
   @State() initialPlaceholder: string;
   @State() hasMultipleValues: boolean;
-  @State() selected: string[] = [];
 
   @Listen("mwMenuItemClick")
   clickEmitterHandler(event): void {
@@ -116,14 +124,12 @@ export class MwAutocomplete {
   };
 
   private addMultiValue = (value: string): void => {
-    if (this.multiple) {
-      if (value.trim().length > 0) {
-        this.selected = [...this.selected, value];
-        this.setItemDisabledState(this.selected);
-      }
-
-      this.removeDropdownFilter();
+    if (!this.multiple || value.trim().length === 0) {
+      return;
     }
+
+    this.selected = [...this.selected, value];
+    this.removeDropdownFilter();
   };
 
   private setItemDisabledState(selected: string[]): void {
@@ -135,7 +141,6 @@ export class MwAutocomplete {
 
   private handleChipListValueChange(event: MwChipInputCustomEvent<string[]>): void {
     this.selected = event.detail;
-    this.setItemDisabledState(this.selected);
   }
 
   private filterDropdownOptions = (value: string): void => {
@@ -175,7 +180,7 @@ export class MwAutocomplete {
           >
             <mw-label name={this.name} label={this.label} required={this.required} />
 
-            <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen}>
+            <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen} dismissable={this.isDropdownOpen}>
               {this.multiple ? (
                 <mw-chip-input
                   name={this.name}
