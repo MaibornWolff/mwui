@@ -14,6 +14,7 @@
 ### Used by
 
 - [mw-autocomplete](../mw-autocomplete)
+- [mw-chip-input](../mw-chip-input)
 - [mw-dropdown](../mw-dropdown)
 - [mw-textfield](../mw-textfield)
 
@@ -22,6 +23,7 @@
 ```mermaid
 graph TD;
   mw-autocomplete --> mw-helper-text
+  mw-chip-input --> mw-helper-text
   mw-dropdown --> mw-helper-text
   mw-textfield --> mw-helper-text
   style mw-helper-text fill:#f9f,stroke:#333,stroke-width:4px

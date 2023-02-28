@@ -392,13 +392,41 @@ export declare interface MwChipInput extends Components.MwChipInput {
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: ["disabled", "label", "multipleMaximum", "multipleMaximumText", "name", "optionCounter", "placeholder", "readOnly", "selected"],
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "multipleMaximum",
+        "multipleMaximumText",
+        "name",
+        "optionCounter",
+        "placeholder",
+        "readOnly",
+        "required",
+        "selected",
+    ],
 })
 @Component({
     selector: "mw-chip-input",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: ["disabled", "label", "multipleMaximum", "multipleMaximumText", "name", "optionCounter", "placeholder", "readOnly", "selected"],
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "multipleMaximum",
+        "multipleMaximumText",
+        "name",
+        "optionCounter",
+        "placeholder",
+        "readOnly",
+        "required",
+        "selected",
+    ],
 })
 export class MwChipInput {
     protected el: HTMLElement;
@@ -542,6 +570,26 @@ export class MwImg {
         c.detach();
         this.el = r.nativeElement;
         proxyOutputs(this, this.el, ["imgDidLoad", "imgLoadError"]);
+    }
+}
+
+export declare interface MwLabel extends Components.MwLabel {}
+
+@ProxyCmp({
+    defineCustomElementFn: undefined,
+    inputs: ["label", "name", "required"],
+})
+@Component({
+    selector: "mw-label",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    inputs: ["label", "name", "required"],
+})
+export class MwLabel {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
     }
 }
 

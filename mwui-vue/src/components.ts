@@ -81,6 +81,10 @@ export const MwChipInput = /*@__PURE__*/ defineContainer<JSX.MwChipInput>("mw-ch
     "readOnly",
     "multipleMaximum",
     "multipleMaximumText",
+    "helperText",
+    "hasError",
+    "inline",
+    "required",
     "optionCounter",
     "selected",
     "mwChipListValueChanged",
@@ -110,6 +114,8 @@ export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>("mw-icon", undef
 export const MwIconGallery = /*@__PURE__*/ defineContainer<JSX.MwIconGallery>("mw-icon-gallery", undefined, ["icons"]);
 
 export const MwImg = /*@__PURE__*/ defineContainer<JSX.MwImg>("mw-img", undefined, ["preloadSrc", "src", "alt", "lazyLoad", "fallback", "srcset", "imgDidLoad", "imgLoadError"]);
+
+export const MwLabel = /*@__PURE__*/ defineContainer<JSX.MwLabel>("mw-label", undefined, ["name", "label", "required"]);
 
 export const MwLink = /*@__PURE__*/ defineContainer<JSX.MwLink>("mw-link", undefined, ["href", "target", "underline"]);
 

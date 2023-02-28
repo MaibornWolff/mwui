@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Listen, Prop, State, Watch } from "@stencil/core";
+import { Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State, Watch } from "@stencil/core";
 import { Selection } from "../../utils/selection";
 
 @Component({
@@ -53,9 +53,27 @@ export class MwChipInput {
   /**
    * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
    */
+
+  @Prop({ reflect: true }) helperText?: string;
+  /**
+   * Use to display input and helper-text in error state
+   */
+  @Prop() hasError?: boolean = false;
+  /**
+   * Display label and input horizontally
+   */
+  @Prop() inline?: boolean = false;
+  /**
+   * Mark input as required
+   */
+  @Prop() required?: boolean = false;
+
+  /**
+   * Amount of currently selected options
+   */
   @Prop() optionCounter?: boolean = false;
   /**
-   *
+   * Currently selected Values
    */
   @Prop() selected: string[];
   @Watch("selected")
@@ -75,18 +93,25 @@ export class MwChipInput {
 
   @Listen("keydown", { passive: true })
   handleEnterPress(event: KeyboardEvent): void {
-    if (this.focused && event.key === "Enter") {
-      this.addMultiValue(this.inputElement.value);
+    if (!this.focused) {
+      return;
     }
 
-    if (this.focused && event.key === "Backspace") {
-      if (this.inputElement.value === "" && this._selection.hasValues()) {
-        const indexToRemove = this.selected.length - 1;
-        const valueToRemove = this.selected[indexToRemove];
+    switch (event.key) {
+      case "Enter":
+        this.addMultiValue(this.inputElement.value);
+        break;
+      case "Backspace":
+        if (this.inputElement.value === "" && this._selection.hasValues()) {
+          const indexToRemove = this.selected.length - 1;
+          const valueToRemove = this.selected[indexToRemove];
 
-        this._selection.deselect(valueToRemove);
-        this.onValueChange();
-      }
+          this._selection.deselect(valueToRemove);
+          this.onValueChange();
+        }
+        break;
+      default:
+        break;
     }
   }
 
@@ -129,66 +154,99 @@ export class MwChipInput {
   }
 
   private handleInputChange(): void {
-    console.log("INPUT CHANGE", this.inputElement.value);
     this.inputChange.emit(this.inputElement.value);
   }
 
   render() {
-    const { onFocus, disabled, hasIconStartSlot, hasIconEndSlot, focused, multipleMaximum, placeholder, onBlur, readOnly, name, clearMultiValues, selected, handleInputChange } =
-      this;
+    const {
+      onFocus,
+      disabled,
+      hasIconStartSlot,
+      hasIconEndSlot,
+      focused,
+      multipleMaximum,
+      placeholder,
+      onBlur,
+      readOnly,
+      name,
+      clearMultiValues,
+      selected,
+      handleInputChange,
+      required,
+      hasError,
+      inline,
+      helperText,
+    } = this;
 
     return (
-      <div
-        slot="anchor"
-        onClick={onFocus}
-        class={{
-          input: true,
-          disabled: disabled,
-        }}
-      >
-        <span
-          class={{
-            "icon-start": hasIconStartSlot,
-            "focused": focused,
-          }}
-        >
-          <slot name="icon-start"></slot>
-        </span>
-        <div class="input-options">
-          {selected?.map(v => (
-            <mw-chip key={v} showClose={true} value={v} selected={true} toggleable={false}>
-              {v}
-            </mw-chip>
-          ))}
-          {(!multipleMaximum || selected?.length < multipleMaximum) && (
-            <input
-              ref={el => (this.inputElement = el as HTMLInputElement)}
-              placeholder={placeholder}
-              onFocus={onFocus}
-              onBlur={onBlur}
-              type="text"
-              name={name}
-              disabled={disabled}
-              readOnly={readOnly}
-              onInput={handleInputChange.bind(this)}
-            />
-          )}
-        </div>
+      <Host>
+        <div class="wrapper">
+          <div
+            class={{
+              "chip-input": true,
+              "inline": inline,
+              "has-error": hasError,
+              "disabled": disabled,
+            }}
+          >
+            <mw-label name={this.name} label={this.label} required={required} />
 
-        {this._selection.hasValues() && (
-          <span class="icon-close-multiple" onClick={clearMultiValues}>
-            <mw-icon icon="close" size="medium"></mw-icon>
-          </span>
-        )}
-        <span
-          class={{
-            "icon-end": hasIconEndSlot,
-            "focused": focused,
-          }}
-        >
-          <slot name="icon-end" />
-        </span>
-      </div>
+            <div
+              slot="anchor"
+              onClick={onFocus}
+              class={{
+                input: true,
+                disabled: disabled,
+              }}
+            >
+              <span
+                class={{
+                  "icon-start": hasIconStartSlot,
+                  "focused": focused,
+                }}
+              >
+                <slot name="icon-start"></slot>
+              </span>
+              <div class="input-options">
+                {selected?.map(v => (
+                  <mw-chip key={v} showClose={true} value={v} selected={true} toggleable={false}>
+                    {v}
+                  </mw-chip>
+                ))}
+                {(!multipleMaximum || selected?.length < multipleMaximum) && (
+                  <input
+                    ref={el => (this.inputElement = el as HTMLInputElement)}
+                    placeholder={placeholder}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    type="text"
+                    name={name}
+                    disabled={disabled}
+                    readOnly={readOnly}
+                    onInput={handleInputChange.bind(this)}
+                  />
+                )}
+              </div>
+
+              {this._selection.hasValues() && (
+                <span class="icon-close-multiple" onClick={clearMultiValues}>
+                  <mw-icon icon="close" size="medium"></mw-icon>
+                </span>
+              )}
+              <span
+                class={{
+                  "icon-end": hasIconEndSlot,
+                  "focused": focused,
+                }}
+              >
+                <slot name="icon-end" />
+              </span>
+            </div>
+            {!inline && <mw-helper-text helperText={helperText} hasError={hasError} />}
+          </div>
+          {inline && <mw-helper-text helperText={helperText} hasError={hasError} />}
+        </div>
+      </Host>
     );
   }
 }

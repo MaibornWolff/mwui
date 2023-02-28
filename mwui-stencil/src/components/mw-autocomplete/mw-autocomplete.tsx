@@ -102,10 +102,6 @@ export class MwAutocomplete {
 
   private noMatchDisclaimer: HTMLDivElement;
 
-  componentWillLoad(): void {
-    this.initialPlaceholder = this.placeholder;
-  }
-
   private onInputChange = (event: MwChipInputCustomEvent<string>): void => {
     this.filterDropdownOptions(event.detail);
     this.isDropdownOpen = true;
@@ -177,18 +173,12 @@ export class MwAutocomplete {
               "disabled": this.disabled,
             }}
           >
-            {!!this.label && (
-              <label htmlFor={this.name} class="label">
-                {this.label}
-                {this.required && <span class="required">*</span>}
-              </label>
-            )}
+            <mw-label name={this.name} label={this.label} required={this.required} />
 
             <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen}>
               {this.multiple ? (
                 <mw-chip-input
                   name={this.name}
-                  label={this.label}
                   placeholder={this.placeholder}
                   disabled={this.disabled}
                   multipleMaximum={this.multipleMaximum}

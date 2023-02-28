@@ -1,0 +1,24 @@
+@use "theme/mixins/form-field" as ff;
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.textfield {
+  @include ff.form-field;
+}
+
+.input {
+  @include ff.input;
+}
+
+.has-error {
+  color: var(--mw-component-text-field-fg-error);
+}

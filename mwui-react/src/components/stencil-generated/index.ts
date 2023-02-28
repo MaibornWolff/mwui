@@ -29,6 +29,7 @@ export const MwHelperText = /*@__PURE__*/ createReactComponent<JSX.MwHelperText,
 export const MwIcon = /*@__PURE__*/ createReactComponent<JSX.MwIcon, HTMLMwIconElement>("mw-icon");
 export const MwIconGallery = /*@__PURE__*/ createReactComponent<JSX.MwIconGallery, HTMLMwIconGalleryElement>("mw-icon-gallery");
 export const MwImg = /*@__PURE__*/ createReactComponent<JSX.MwImg, HTMLMwImgElement>("mw-img");
+export const MwLabel = /*@__PURE__*/ createReactComponent<JSX.MwLabel, HTMLMwLabelElement>("mw-label");
 export const MwLink = /*@__PURE__*/ createReactComponent<JSX.MwLink, HTMLMwLinkElement>("mw-link");
 export const MwLogin = /*@__PURE__*/ createReactComponent<JSX.MwLogin, HTMLMwLoginElement>("mw-login");
 export const MwMenu = /*@__PURE__*/ createReactComponent<JSX.MwMenu, HTMLMwMenuElement>("mw-menu");

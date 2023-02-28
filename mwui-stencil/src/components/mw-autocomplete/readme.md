@@ -33,6 +33,7 @@
 
 ### Depends on
 
+- [mw-label](../mw-label)
 - [mw-popover](../mw-popover)
 - [mw-chip-input](../mw-chip-input)
 - [mw-icon](../mw-icon)
@@ -43,14 +44,18 @@
 
 ```mermaid
 graph TD;
+  mw-autocomplete --> mw-label
   mw-autocomplete --> mw-popover
   mw-autocomplete --> mw-chip-input
   mw-autocomplete --> mw-icon
   mw-autocomplete --> mw-textfield
   mw-autocomplete --> mw-helper-text
+  mw-chip-input --> mw-label
   mw-chip-input --> mw-chip
   mw-chip-input --> mw-icon
+  mw-chip-input --> mw-helper-text
   mw-chip --> mw-icon
+  mw-textfield --> mw-label
   mw-textfield --> mw-helper-text
   style mw-autocomplete fill:#f9f,stroke:#333,stroke-width:4px
 ```

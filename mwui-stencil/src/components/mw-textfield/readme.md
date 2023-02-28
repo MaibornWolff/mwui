@@ -41,12 +41,14 @@
 
 ### Depends on
 
+- [mw-label](../mw-label)
 - [mw-helper-text](../mw-helper-text)
 
 ### Graph
 
 ```mermaid
 graph TD;
+  mw-textfield --> mw-label
   mw-textfield --> mw-helper-text
   mw-autocomplete --> mw-textfield
   mw-icon-gallery --> mw-textfield

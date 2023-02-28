@@ -310,6 +310,18 @@ export namespace Components {
      */
     disabled?: boolean;
     /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
      * Label to be displayed
      */
     label?: string;
@@ -326,7 +338,7 @@ export namespace Components {
      */
     name: string;
     /**
-     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     * Amount of currently selected options
      */
     optionCounter?: boolean;
     /**
@@ -337,6 +349,13 @@ export namespace Components {
      * Whether user can't type in input field
      */
     readOnly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * Currently selected Values
+     */
     selected: string[];
   }
   interface MwDivider {
@@ -450,6 +469,20 @@ export namespace Components {
      * Different resolutions for different viewport sizes can be passed e.g. "img/vasen-420.webp 420w,       img/vasen-980.webp 980w,       img/vasen-1680.webp 1680w,       img/vasen-2400.webp 2400w"
      */
     srcset: string | SrcSetItem[];
+  }
+  interface MwLabel {
+    /**
+     * Text of the label
+     */
+    label?: string;
+    /**
+     * Name of input field connected to label
+     */
+    name: string;
+    /**
+     * Wether or not the input connected to the label is required
+     */
+    required?: boolean;
   }
   interface MwLink {
     /**
@@ -953,6 +986,11 @@ declare global {
     prototype: HTMLMwImgElement;
     new (): HTMLMwImgElement;
   };
+  interface HTMLMwLabelElement extends Components.MwLabel, HTMLStencilElement {}
+  var HTMLMwLabelElement: {
+    prototype: HTMLMwLabelElement;
+    new (): HTMLMwLabelElement;
+  };
   interface HTMLMwLinkElement extends Components.MwLink, HTMLStencilElement {}
   var HTMLMwLinkElement: {
     prototype: HTMLMwLinkElement;
@@ -1055,6 +1093,7 @@ declare global {
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-img": HTMLMwImgElement;
+    "mw-label": HTMLMwLabelElement;
     "mw-link": HTMLMwLinkElement;
     "mw-login": HTMLMwLoginElement;
     "mw-menu": HTMLMwMenuElement;
@@ -1394,6 +1433,18 @@ declare namespace LocalJSX {
      */
     disabled?: boolean;
     /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
      * Label to be displayed
      */
     label?: string;
@@ -1418,7 +1469,7 @@ declare namespace LocalJSX {
      */
     onMwChipListValueChanged?: (event: MwChipInputCustomEvent<string[]>) => void;
     /**
-     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     * Amount of currently selected options
      */
     optionCounter?: boolean;
     /**
@@ -1429,6 +1480,13 @@ declare namespace LocalJSX {
      * Whether user can't type in input field
      */
     readOnly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * Currently selected Values
+     */
     selected?: string[];
   }
   interface MwDivider {
@@ -1554,6 +1612,20 @@ declare namespace LocalJSX {
      * Different resolutions for different viewport sizes can be passed e.g. "img/vasen-420.webp 420w,       img/vasen-980.webp 980w,       img/vasen-1680.webp 1680w,       img/vasen-2400.webp 2400w"
      */
     srcset?: string | SrcSetItem[];
+  }
+  interface MwLabel {
+    /**
+     * Text of the label
+     */
+    label?: string;
+    /**
+     * Name of input field connected to label
+     */
+    name?: string;
+    /**
+     * Wether or not the input connected to the label is required
+     */
+    required?: boolean;
   }
   interface MwLink {
     /**
@@ -1928,6 +2000,7 @@ declare namespace LocalJSX {
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
     "mw-img": MwImg;
+    "mw-label": MwLabel;
     "mw-link": MwLink;
     "mw-login": MwLogin;
     "mw-menu": MwMenu;
@@ -1971,6 +2044,7 @@ declare module "@stencil/core" {
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-img": LocalJSX.MwImg & JSXBase.HTMLAttributes<HTMLMwImgElement>;
+      "mw-label": LocalJSX.MwLabel & JSXBase.HTMLAttributes<HTMLMwLabelElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
       "mw-login": LocalJSX.MwLogin & JSXBase.HTMLAttributes<HTMLMwLoginElement>;
       "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;

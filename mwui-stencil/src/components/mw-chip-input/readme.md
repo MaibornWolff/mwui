@@ -7,14 +7,18 @@
 | Property              | Attribute               | Description                                                                                                                    | Type       | Default                                        |
 | --------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------- | ---------------------------------------------- |
 | `disabled`            | `disabled`              | Visually and functionally disabled input                                                                                       | `boolean`  | `false`                                        |
+| `hasError`            | `has-error`             | Use to display input and helper-text in error state                                                                            | `boolean`  | `false`                                        |
+| `helperText`          | `helper-text`           | Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined. | `string`   | `undefined`                                    |
+| `inline`              | `inline`                | Display label and input horizontally                                                                                           | `boolean`  | `false`                                        |
 | `label`               | `label`                 | Label to be displayed                                                                                                          | `string`   | `undefined`                                    |
 | `multipleMaximum`     | `multiple-maximum`      | Amount of allowed `multipleValues`                                                                                             | `number`   | `undefined`                                    |
 | `multipleMaximumText` | `multiple-maximum-text` | Text which is displayed when maximum amount of options is reached                                                              | `string`   | `"Maximum amount of selected options reached"` |
 | `name`                | `name`                  | input field name                                                                                                               | `string`   | `undefined`                                    |
-| `optionCounter`       | `option-counter`        | Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined. | `boolean`  | `false`                                        |
+| `optionCounter`       | `option-counter`        | Amount of currently selected options                                                                                           | `boolean`  | `false`                                        |
 | `placeholder`         | `placeholder`           | Placeholder to be displayed                                                                                                    | `string`   | `undefined`                                    |
 | `readOnly`            | `read-only`             | Whether user can't type in input field                                                                                         | `boolean`  | `false`                                        |
-| `selected`            | --                      |                                                                                                                                | `string[]` | `undefined`                                    |
+| `required`            | `required`              | Mark input as required                                                                                                         | `boolean`  | `false`                                        |
+| `selected`            | --                      | Currently selected Values                                                                                                      | `string[]` | `undefined`                                    |
 
 ## Events
 
@@ -31,15 +35,19 @@
 
 ### Depends on
 
+- [mw-label](../mw-label)
 - [mw-chip](../mw-chip)
 - [mw-icon](../mw-icon)
+- [mw-helper-text](../mw-helper-text)
 
 ### Graph
 
 ```mermaid
 graph TD;
+  mw-chip-input --> mw-label
   mw-chip-input --> mw-chip
   mw-chip-input --> mw-icon
+  mw-chip-input --> mw-helper-text
   mw-chip --> mw-icon
   mw-autocomplete --> mw-chip-input
   style mw-chip-input fill:#f9f,stroke:#333,stroke-width:4px

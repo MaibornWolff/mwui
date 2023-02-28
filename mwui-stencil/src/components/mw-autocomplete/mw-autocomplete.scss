@@ -1,3 +1,5 @@
+@use "theme/mixins/form-field" as ff;
+
 :host {
   display: flex;
   align-items: center;
@@ -9,31 +11,12 @@
   width: 100%;
 }
 
+mw-popover {
+  width: 100%;
+}
+
 .autocomplete {
-  display: flex;
-  flex-direction: column;
-  min-width: var(--mw-component-size-text-field-min-width);
-  color: var(--mw-component-text-field-fg-default);
-
-  &.disabled,
-  &.disabled input {
-    color: var(--mw-component-text-field-fg-disabled);
-  }
-
-  &.inline {
-    flex-direction: row;
-    display: inline-flex;
-    align-items: center;
-
-    .input {
-      min-width: var(--mw-component-size-text-field-min-width);
-    }
-
-    label {
-      width: var(--mw-component-size-text-field-label-horizontal-width);
-      padding: var(--mw-component-text-field-padding-text-field-label-horizontal);
-    }
-  }
+  @include ff.form-field;
 
   &.read-only,
   &.read-only .input input {
@@ -41,107 +24,14 @@
   }
 }
 
-label {
-  white-space: nowrap;
-  padding: 0 var(--mw-component-text-field-padding-text-field-label-vertical-x);
-  font-family: var(--mw-component-text-field-label-font-family);
-  font-weight: var(--mw-component-text-field-label-font-weight);
-  font-size: var(--mw-component-text-field-label-font-size);
-  line-height: var(--mw-component-text-field-label-line-height);
-}
-
-mw-popover {
-  width: 100%;
-}
-
 .input {
-  display: flex;
-  align-items: center;
-  /* TODO: missing token */
-  border-radius: var(--border-radius-standard-md);
-  padding: var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);
-  background: var(--mw-component-text-field-bg-default);
-  box-shadow: inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default);
-}
-
-.input:focus-within {
-  background: var(--mw-component-text-field-bg-default);
-  box-shadow: inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused);
-}
-
-.input:not(.disabled):hover {
-  background: var(--mw-component-text-field-bg-hover);
-}
-
-.input.has-error {
-  background: var(--mw-component-text-field-bg-error);
-}
-
-.input .icon {
-  color: var(--mw-component-text-field-fg-icon-default);
-}
-.input-options {
-  flex: 1;
-  display: flex;
-  flex-flow: row wrap;
-  gap: var(--mw-component-text-field-gap-horizontal-gap-within);
-}
-.focused {
-  color: var(--mw-component-text-field-fg-icon-focused);
-}
-
-.focused.has-error {
-  color: var(--mw-component-text-field-fg-error);
-}
-
-.icon-dropdown {
-  margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
-  cursor: pointer;
-}
-
-.input input {
-  flex: 1;
-  border: none;
-  padding: 0;
-  /* TODO: missing token */
-  min-width: 30px;
-  min-height: 32px;
-  width: 100%;
-  background: transparent;
-  font-family: var(--mw-component-text-field-text-font-family);
-  font-weight: var(--mw-component-text-field-text-font-weight);
-  font-size: var(--mw-component-text-field-text-font-size);
-  line-height: var(--mw-component-text-field-text-line-height);
-}
-
-.input input:focus-visible,
-.input input:focus {
-  outline: none;
-  border: none;
-  box-shadow: none;
-}
-
-.input input::placeholder {
-  color: var(--mw-component-text-field-fg-placeholder);
-}
-
-.helper-text {
-  align-self: flex-end;
-  padding: var(--mw-component-text-field-padding-helper-text-y) 0;
-  color: var(--mw-component-text-field-fg-helper-text);
-  font-family: var(--mw-component-text-field-helper-text-font-family);
-  font-weight: var(--mw-component-text-field-helper-text-font-weight);
-  font-size: var(--mw-component-text-field-helper-text-font-size);
-  line-height: var(--mw-component-text-field-helper-text-line-height);
+  @include ff.input;
 }
 
 .has-error {
   color: var(--mw-component-text-field-fg-error);
 }
 
-.required {
-  color: var(--mw-component-text-field-fg-error);
-}
 .no-matches {
   /* TODO: Discuss with design team */
   display: none;
@@ -150,6 +40,7 @@ mw-popover {
   color: darkgrey;
   height: 56px;
 }
+
 .maximum-reached {
   display: flex;
   justify-content: center;

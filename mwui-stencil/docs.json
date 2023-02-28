@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-28T12:22:06",
+  "timestamp": "2023-02-28T13:32:10",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -402,12 +402,12 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-popover", "mw-chip-input", "mw-icon", "mw-textfield", "mw-helper-text"],
+      "dependencies": ["mw-label", "mw-popover", "mw-chip-input", "mw-icon", "mw-textfield", "mw-helper-text"],
       "dependencyGraph": {
-        "mw-autocomplete": ["mw-popover", "mw-chip-input", "mw-icon", "mw-textfield", "mw-helper-text"],
-        "mw-chip-input": ["mw-chip", "mw-icon"],
+        "mw-autocomplete": ["mw-label", "mw-popover", "mw-chip-input", "mw-icon", "mw-textfield", "mw-helper-text"],
+        "mw-chip-input": ["mw-label", "mw-chip", "mw-icon", "mw-helper-text"],
         "mw-chip": ["mw-icon"],
-        "mw-textfield": ["mw-helper-text"]
+        "mw-textfield": ["mw-label", "mw-helper-text"]
       }
     },
     {
@@ -1568,6 +1568,56 @@
           "required": false
         },
         {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Use to display input and helper-text in error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": true,
+          "docs": "Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Display label and input horizontally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "label",
           "type": "string",
           "mutable": false,
@@ -1638,7 +1688,7 @@
           "mutable": false,
           "attr": "option-counter",
           "reflectToAttr": false,
-          "docs": "Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.",
+          "docs": "Amount of currently selected options",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1683,11 +1733,28 @@
           "required": false
         },
         {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Mark input as required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "selected",
           "type": "string[]",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "",
+          "docs": "Currently selected Values",
           "docsTags": [],
           "values": [
             {
@@ -1735,9 +1802,9 @@
       "slots": [],
       "parts": [],
       "dependents": ["mw-autocomplete"],
-      "dependencies": ["mw-chip", "mw-icon"],
+      "dependencies": ["mw-label", "mw-chip", "mw-icon", "mw-helper-text"],
       "dependencyGraph": {
-        "mw-chip-input": ["mw-chip", "mw-icon"],
+        "mw-chip-input": ["mw-label", "mw-chip", "mw-icon", "mw-helper-text"],
         "mw-chip": ["mw-icon"],
         "mw-autocomplete": ["mw-chip-input"]
       }
@@ -2042,10 +2109,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-autocomplete", "mw-dropdown", "mw-textfield"],
+      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-dropdown", "mw-textfield"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-autocomplete": ["mw-helper-text"],
+        "mw-chip-input": ["mw-helper-text"],
         "mw-dropdown": ["mw-helper-text"],
         "mw-textfield": ["mw-helper-text"]
       }
@@ -2218,7 +2286,7 @@
       "dependencies": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
       "dependencyGraph": {
         "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
-        "mw-textfield": ["mw-helper-text"],
+        "mw-textfield": ["mw-label", "mw-helper-text"],
         "mw-slider": ["mw-icon"]
       }
     },
@@ -2365,6 +2433,79 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-label/mw-label.tsx",
+      "encapsulation": "none",
+      "tag": "mw-label",
+      "readme": "# mw-label\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Text of the label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Name of input field connected to label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Wether or not the input connected to the label is required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-textfield"],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-autocomplete": ["mw-label"],
+        "mw-chip-input": ["mw-label"],
+        "mw-textfield": ["mw-label"]
+      }
     },
     {
       "filePath": "./src/components/mw-link/mw-link.tsx",
@@ -2587,7 +2728,7 @@
       "dependencies": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
       "dependencyGraph": {
         "mw-login": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
-        "mw-textfield": ["mw-helper-text"],
+        "mw-textfield": ["mw-label", "mw-helper-text"],
         "mw-checkbox": ["mw-icon"]
       }
     },
@@ -4145,9 +4286,9 @@
         }
       ],
       "dependents": ["mw-autocomplete", "mw-icon-gallery", "mw-login"],
-      "dependencies": ["mw-helper-text"],
+      "dependencies": ["mw-label", "mw-helper-text"],
       "dependencyGraph": {
-        "mw-textfield": ["mw-helper-text"],
+        "mw-textfield": ["mw-label", "mw-helper-text"],
         "mw-autocomplete": ["mw-textfield"],
         "mw-icon-gallery": ["mw-textfield"],
         "mw-login": ["mw-textfield"]

@@ -22,6 +22,7 @@ export const DIRECTIVES = [
     d.MwIcon,
     d.MwIconGallery,
     d.MwImg,
+    d.MwLabel,
     d.MwLink,
     d.MwLogin,
     d.MwMenu,

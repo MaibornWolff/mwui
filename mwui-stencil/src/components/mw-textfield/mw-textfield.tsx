@@ -2,7 +2,7 @@ import { Component, Event, EventEmitter, Host, Prop, State, h, Element } from "@
 
 @Component({
   tag: "mw-textfield",
-  styleUrl: "mw-textfield.css",
+  styleUrl: "mw-textfield.scss",
   shadow: true,
 })
 export class MwTextfield {
@@ -94,12 +94,8 @@ export class MwTextfield {
               "disabled": this.disabled,
             }}
           >
-            {!!this.label && (
-              <label htmlFor={this.name} class="label">
-                {this.label}
-                {this.required && <span class="required">*</span>}
-              </label>
-            )}
+            <mw-label name={this.name} label={this.label} required={this.required} />
+
             <div onClick={this.onFocus} class={{ "input": true, "has-error": this.hasError, "disabled": this.disabled }}>
               <span class={{ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError }} part="icon-start">
                 <slot name="icon-start"></slot>
