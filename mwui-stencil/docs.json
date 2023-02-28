@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-28T13:32:10",
+  "timestamp": "2023-02-28T13:35:17",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -2055,9 +2055,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-popover", "mw-icon", "mw-helper-text"],
+      "dependencies": ["mw-label", "mw-popover", "mw-icon", "mw-helper-text"],
       "dependencyGraph": {
-        "mw-dropdown": ["mw-popover", "mw-icon", "mw-helper-text"]
+        "mw-dropdown": ["mw-label", "mw-popover", "mw-icon", "mw-helper-text"]
       }
     },
     {
@@ -2499,11 +2499,12 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-textfield"],
+      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-dropdown", "mw-textfield"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-autocomplete": ["mw-label"],
         "mw-chip-input": ["mw-label"],
+        "mw-dropdown": ["mw-label"],
         "mw-textfield": ["mw-label"]
       }
     },

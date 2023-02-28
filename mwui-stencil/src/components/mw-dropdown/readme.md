@@ -27,6 +27,7 @@
 
 ### Depends on
 
+- [mw-label](../mw-label)
 - [mw-popover](../mw-popover)
 - [mw-icon](../mw-icon)
 - [mw-helper-text](../mw-helper-text)
@@ -35,6 +36,7 @@
 
 ```mermaid
 graph TD;
+  mw-dropdown --> mw-label
   mw-dropdown --> mw-popover
   mw-dropdown --> mw-icon
   mw-dropdown --> mw-helper-text

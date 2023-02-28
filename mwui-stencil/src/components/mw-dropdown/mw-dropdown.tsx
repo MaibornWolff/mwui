@@ -2,7 +2,7 @@ import { Component, Host, h, Prop, Element, State, Listen, Event, EventEmitter }
 
 @Component({
   tag: "mw-dropdown",
-  styleUrl: "mw-dropdown.css",
+  styleUrl: "mw-dropdown.scss",
   shadow: true,
 })
 export class MwDropdown {
@@ -93,12 +93,8 @@ export class MwDropdown {
       <Host>
         <div class="wrapper">
           <div class={{ "dropdown": true, "inline": this.inline, "has-error": this.hasError, "disabled": this.disabled }}>
-            {!!this.label && (
-              <label htmlFor={this.name} class="label">
-                {this.label}
-                {this.required && <span class="required">*</span>}
-              </label>
-            )}
+            <mw-label name={this.name} label={this.label} required={this.required}></mw-label>
+
             <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen}>
               <div slot="anchor" onClick={this.onFocus} class={{ "input": true, "has-error": this.hasError, "disabled": this.disabled }}>
                 <span
