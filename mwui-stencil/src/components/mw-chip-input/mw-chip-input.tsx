@@ -1,25 +1,26 @@
 import { Component, Element, Event, EventEmitter, h, Listen, Prop, State, Watch } from "@stencil/core";
+import { Selection } from "../../utils/selection";
 
 @Component({
   tag: "mw-chip-input",
   styleUrl: "mw-chip-input.scss",
-  shadow: true,
+  shadow: false,
 })
 export class MwChipInput {
   @Element() hostElement: HTMLMwChipInputElement;
 
+  private _selection: Selection<string> = new Selection<string>(true);
+
   /**
-   * MwAutocomplete emits an event when its value changes
+   * Emits an event when its value changes
    */
-  @Event({ bubbles: true, composed: false }) valueChanged: EventEmitter<string>;
+  @Event({ bubbles: true, composed: false, eventName: "mwChipListValueChanged" }) valueChanged: EventEmitter<string[]>;
+
   /**
-   * HTML Input type
+   * Emits an event when value of input changes
    */
-  @Prop() type?: string = "text";
-  /**
-   * input field value
-   */
-  @Prop({ reflect: true, mutable: true }) value?: string | number;
+  @Event({ bubbles: true, composed: false, eventName: "mwChipListInputChange" }) inputChange: EventEmitter<string>;
+
   /**
    * input field name
    */
@@ -31,27 +32,7 @@ export class MwChipInput {
   /**
    * Placeholder to be displayed
    */
-  @Prop({ reflect: true, mutable: true }) placeholder?: string;
-  /**
-   * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
-   */
-  @Prop({ reflect: true }) helperText?: string;
-  /**
-   * Use to display input and helper-text in error state
-   */
-  @Prop() hasError?: boolean = false;
-  /**
-   * Text which is displayed when no dropdown options match the user input
-   */
-  @Prop() noMatchText?: string = "No matching options";
-  /**
-   * Display label and input horizontally
-   */
-  @Prop() inline?: boolean = false;
-  /**
-   * Mark input as required
-   */
-  @Prop() required?: boolean = false;
+  @Prop({ reflect: true, mutable: false }) placeholder?: string;
   /**
    * Visually and functionally disabled input
    */
@@ -60,10 +41,7 @@ export class MwChipInput {
    * Whether user can't type in input field
    */
   @Prop() readOnly?: boolean = false;
-  /**
-   * Allows users to enter multiple values into autocomplete
-   */
-  @Prop() multiple?: boolean = false;
+
   /**
    * Amount of allowed `multipleValues`
    */
@@ -73,77 +51,54 @@ export class MwChipInput {
    */
   @Prop() multipleMaximumText?: string = "Maximum amount of selected options reached";
   /**
-   * Values, when `multiple` is true
-   */
-  @Prop({ reflect: true, mutable: true }) multipleValues?: Array<string | number> = [];
-  /**
    * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
    */
   @Prop() optionCounter?: boolean = false;
+  /**
+   *
+   */
+  @Prop() selected: string[];
+  @Watch("selected")
+  handleSelectionChange(selected: string[]): void {
+    this._selection.select(...selected);
+    this.inputElement.value = "";
+  }
 
   @State() focused = false;
-  @State() isDropdownOpen = false;
   @State() initialPlaceholder: string;
-  @State() hasMultipleValues: boolean;
 
   @Listen("mwChipClose")
   closeEmitterHandler(event): void {
-    const multiValuesCopy = this.multipleValues;
-    const indexToRemove = multiValuesCopy.indexOf(event.detail);
-    multiValuesCopy.splice(indexToRemove, 1);
-    // this.hostElement.querySelectorAll(`mw-menu-item[value="${event.detail}"]`).forEach(item => item.setAttribute("disabled", "false"));
-    this.multipleValues = [...multiValuesCopy];
+    this._selection.deselect(event.detail);
+    this.onValueChange();
   }
 
   @Listen("keydown", { passive: true })
   handleEnterPress(event: KeyboardEvent): void {
-    if (this.multiple && this.focused && event.key === "Enter") {
+    if (this.focused && event.key === "Enter") {
       this.addMultiValue(this.inputElement.value);
-      this.isDropdownOpen = false;
     }
-    if (this.multiple && this.focused && event.key === "Backspace") {
-      if (this.inputElement.value === "" && this.hasMultipleValues) {
-        const multiValuesCopy = this.multipleValues;
-        const indexToRemove = this.multipleValues.length - 1;
-        const valueToRemove = this.multipleValues[indexToRemove];
-        console.log(valueToRemove);
-        multiValuesCopy.splice(indexToRemove, 1);
-        // this.hostElement.querySelectorAll(`mw-menu-item[value="${valueToRemove}"]`).forEach(item => item.setAttribute("disabled", "false"));
-        this.multipleValues = [...multiValuesCopy];
-      }
-    }
-  }
 
-  @Watch("multipleValues")
-  onMultipleValueChange(): void {
-    if (this.multipleValues.length > 0) {
-      this.placeholder = "";
-      this.hasMultipleValues = true;
-    } else {
-      this.placeholder = this.initialPlaceholder;
-      this.hasMultipleValues = false;
+    if (this.focused && event.key === "Backspace") {
+      if (this.inputElement.value === "" && this._selection.hasValues()) {
+        const indexToRemove = this.selected.length - 1;
+        const valueToRemove = this.selected[indexToRemove];
+
+        this._selection.deselect(valueToRemove);
+        this.onValueChange();
+      }
     }
   }
 
   private inputElement: HTMLInputElement;
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
-  private hasDropDownMenu: boolean;
 
   componentWillLoad(): void {
     this.initialPlaceholder = this.placeholder;
-    this.onMultipleValueChange();
     this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
     this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
-    this.hasDropDownMenu = !!this.hostElement.querySelector("[slot='dropdown-menu']");
   }
-
-  private onValueChange = (event: Event): void => {
-    if (!this.multiple) {
-      this.value = (event.target as HTMLInputElement).value;
-      this.valueChanged.emit(this.value);
-    }
-  };
 
   private onFocus = (): void => {
     if (this.inputElement) this.inputElement.focus();
@@ -155,90 +110,72 @@ export class MwChipInput {
   };
 
   private addMultiValue = (value: string): void => {
-    if (this.multiple && (!this.multipleMaximum || this.multipleValues.length < this.multipleMaximum)) {
-      if (value.trim().length > 0 && !this.multipleValues.includes(value)) {
-        this.multipleValues = [...this.multipleValues, value];
-        this.hostElement.querySelectorAll(`mw-menu-item[value="${value}"]`).forEach(item => item.setAttribute("disabled", "true"));
-      }
-      this.inputElement.value = "";
+    if (!this.multipleMaximum || this.selected?.length < this.multipleMaximum) {
+      this._selection.select(value);
+      this.onValueChange();
     }
+
+    this.inputElement.value = "";
   };
 
   private clearMultiValues = (): void => {
-    for (const value of this.multipleValues) {
-      this.hostElement.querySelectorAll(`mw-menu-item[value="${value}"]`).forEach(item => item.setAttribute("disabled", "false"));
-    }
-    this.multipleValues = [];
+    this._selection.clear();
+    this.onValueChange();
   };
 
+  private onValueChange(): void {
+    this.selected = this._selection.selected;
+    this.valueChanged.emit(this.selected);
+  }
+
+  private handleInputChange(): void {
+    console.log("INPUT CHANGE", this.inputElement.value);
+    this.inputChange.emit(this.inputElement.value);
+  }
+
   render() {
-    const {
-      onFocus,
-      hasError,
-      disabled,
-      hasIconStartSlot,
-      hasIconEndSlot,
-      focused,
-      multipleValues,
-      multipleMaximum,
-      placeholder,
-      onBlur,
-      onValueChange,
-      type,
-      readOnly,
-      name,
-      value,
-      hasMultipleValues,
-      clearMultiValues,
-      hasDropDownMenu,
-      isDropdownOpen,
-    } = this;
+    const { onFocus, disabled, hasIconStartSlot, hasIconEndSlot, focused, multipleMaximum, placeholder, onBlur, readOnly, name, clearMultiValues, selected, handleInputChange } =
+      this;
 
     return (
       <div
         slot="anchor"
         onClick={onFocus}
         class={{
-          "input": true,
-          "has-error": hasError,
-          "disabled": disabled,
+          input: true,
+          disabled: disabled,
         }}
       >
         <span
           class={{
             "icon-start": hasIconStartSlot,
             "focused": focused,
-            "has-error": hasError,
           }}
         >
           <slot name="icon-start"></slot>
         </span>
         <div class="input-options">
-          {multipleValues.map(v => (
+          {selected?.map(v => (
             <mw-chip key={v} showClose={true} value={v} selected={true} toggleable={false}>
               {v}
             </mw-chip>
           ))}
-          {(!multipleMaximum || multipleValues.length < multipleMaximum) && (
+          {(!multipleMaximum || selected?.length < multipleMaximum) && (
             <input
               ref={el => (this.inputElement = el as HTMLInputElement)}
               placeholder={placeholder}
-              class={{
-                "has-error": hasError,
-              }}
               onFocus={onFocus}
               onBlur={onBlur}
-              onInput={onValueChange}
-              onChange={onValueChange}
-              type={type}
+              type="text"
               name={name}
-              value={value}
               disabled={disabled}
               readOnly={readOnly}
+              onInput={handleInputChange.bind(this)}
             />
           )}
         </div>
-        {hasMultipleValues && (
+
+        {this._selection.hasValues() && (
           <span class="icon-close-multiple" onClick={clearMultiValues}>
             <mw-icon icon="close" size="medium"></mw-icon>
           </span>
@@ -247,23 +184,10 @@ export class MwChipInput {
           class={{
             "icon-end": hasIconEndSlot,
             "focused": focused,
-            "has-error": hasError,
           }}
         >
-          <slot name="icon-end"></slot>
+          <slot name="icon-end" />
         </span>
-
-        {hasDropDownMenu ?? (
-          <span
-            class={{
-              "icon-dropdown": hasDropDownMenu,
-              "focused": focused,
-              "has-error": hasError,
-            }}
-          >
-            <mw-icon icon={isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"} size="medium"></mw-icon>
-          </span>
-        )}
       </div>
     );
   }

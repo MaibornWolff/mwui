@@ -29,6 +29,7 @@
 
 - [mw-popover](../mw-popover)
 - [mw-icon](../mw-icon)
+- [mw-helper-text](../mw-helper-text)
 
 ### Graph
 
@@ -36,6 +37,7 @@
 graph TD;
   mw-dropdown --> mw-popover
   mw-dropdown --> mw-icon
+  mw-dropdown --> mw-helper-text
   style mw-dropdown fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-27T13:06:00",
+  "timestamp": "2023-02-28T12:22:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -238,25 +238,6 @@
           "required": false
         },
         {
-          "name": "multipleValues",
-          "type": "(string | number)[]",
-          "mutable": true,
-          "reflectToAttr": false,
-          "docs": "Values, when `multiple` is true",
-          "docsTags": [],
-          "default": "[]",
-          "values": [
-            {
-              "type": "(string"
-            },
-            {
-              "type": "number)[]"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "name",
           "type": "string",
           "mutable": false,
@@ -309,7 +290,7 @@
         {
           "name": "placeholder",
           "type": "string",
-          "mutable": true,
+          "mutable": false,
           "attr": "placeholder",
           "reflectToAttr": true,
           "docs": "Placeholder to be displayed",
@@ -415,26 +396,18 @@
           "event": "mwPopoverOpen",
           "capture": false,
           "passive": false
-        },
-        {
-          "event": "mwChipClose",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "keydown",
-          "capture": false,
-          "passive": true
         }
       ],
       "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-chip", "mw-icon", "mw-popover"],
+      "dependencies": ["mw-popover", "mw-chip-input", "mw-icon", "mw-textfield", "mw-helper-text"],
       "dependencyGraph": {
-        "mw-autocomplete": ["mw-chip", "mw-icon", "mw-popover"],
-        "mw-chip": ["mw-icon"]
+        "mw-autocomplete": ["mw-popover", "mw-chip-input", "mw-icon", "mw-textfield", "mw-helper-text"],
+        "mw-chip-input": ["mw-chip", "mw-icon"],
+        "mw-chip": ["mw-icon"],
+        "mw-textfield": ["mw-helper-text"]
       }
     },
     {
@@ -1561,19 +1534,18 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-autocomplete", "mw-chip-input"],
+      "dependents": ["mw-chip-input"],
       "dependencies": ["mw-icon"],
       "dependencyGraph": {
         "mw-chip": ["mw-icon"],
-        "mw-autocomplete": ["mw-chip"],
         "mw-chip-input": ["mw-chip"]
       }
     },
     {
       "filePath": "./src/components/mw-chip-input/mw-chip-input.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "none",
       "tag": "mw-chip-input",
-      "readme": "# mw-chip-input\n\n\n",
+      "readme": "# mw-chip-input\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1596,56 +1568,6 @@
           "required": false
         },
         {
-          "name": "hasError",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "has-error",
-          "reflectToAttr": false,
-          "docs": "Use to display input and helper-text in error state",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "helperText",
-          "type": "string",
-          "mutable": false,
-          "attr": "helper-text",
-          "reflectToAttr": true,
-          "docs": "HelperText to be displayed. Can be used as hint or error text when combined with `has-error`",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "inline",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "inline",
-          "reflectToAttr": false,
-          "docs": "Display label and input horizontally",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "label",
           "type": "string",
           "mutable": false,
@@ -1656,23 +1578,6 @@
           "values": [
             {
               "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "multiple",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "multiple",
-          "reflectToAttr": false,
-          "docs": "Allows users to enter multiple values into autocomplete",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
             }
           ],
           "optional": true,
@@ -1712,25 +1617,6 @@
           "required": false
         },
         {
-          "name": "multipleValues",
-          "type": "(string | number)[]",
-          "mutable": true,
-          "reflectToAttr": false,
-          "docs": "Values, when `multiple` is true",
-          "docsTags": [],
-          "default": "[]",
-          "values": [
-            {
-              "type": "(string"
-            },
-            {
-              "type": "number)[]"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "name",
           "type": "string",
           "mutable": false,
@@ -1744,23 +1630,6 @@
             }
           ],
           "optional": false,
-          "required": false
-        },
-        {
-          "name": "noMatchText",
-          "type": "string",
-          "mutable": false,
-          "attr": "no-match-text",
-          "reflectToAttr": false,
-          "docs": "Text which is displayed when no dropdown options match the user input",
-          "docsTags": [],
-          "default": "\"No matching options\"",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
           "required": false
         },
         {
@@ -1783,7 +1652,7 @@
         {
           "name": "placeholder",
           "type": "string",
-          "mutable": true,
+          "mutable": false,
           "attr": "placeholder",
           "reflectToAttr": true,
           "docs": "Placeholder to be displayed",
@@ -1814,68 +1683,39 @@
           "required": false
         },
         {
-          "name": "required",
-          "type": "boolean",
+          "name": "selected",
+          "type": "string[]",
           "mutable": false,
-          "attr": "required",
           "reflectToAttr": false,
-          "docs": "Mark input as required",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "type",
-          "type": "string",
-          "mutable": false,
-          "attr": "type",
-          "reflectToAttr": false,
-          "docs": "HTML Input type",
-          "docsTags": [],
-          "default": "\"text\"",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "value",
-          "type": "number | string",
-          "mutable": true,
-          "attr": "value",
-          "reflectToAttr": true,
-          "docs": "input field value",
+          "docs": "",
           "docsTags": [],
           "values": [
             {
-              "type": "number"
-            },
-            {
-              "type": "string"
+              "type": "string[]"
             }
           ],
-          "optional": true,
+          "optional": false,
           "required": false
         }
       ],
       "methods": [],
       "events": [
         {
-          "event": "valueChanged",
+          "event": "mwChipListInputChange",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": false,
-          "docs": "MwAutocomplete emits an event when its value changes",
+          "docs": "Emits an event when value of input changes",
+          "docsTags": []
+        },
+        {
+          "event": "mwChipListValueChanged",
+          "detail": "string[]",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": false,
+          "docs": "Emits an event when its value changes",
           "docsTags": []
         }
       ],
@@ -1894,11 +1734,12 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-autocomplete"],
       "dependencies": ["mw-chip", "mw-icon"],
       "dependencyGraph": {
         "mw-chip-input": ["mw-chip", "mw-icon"],
-        "mw-chip": ["mw-icon"]
+        "mw-chip": ["mw-icon"],
+        "mw-autocomplete": ["mw-chip-input"]
       }
     },
     {
@@ -2147,16 +1988,16 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": ["mw-popover", "mw-icon"],
+      "dependencies": ["mw-popover", "mw-icon", "mw-helper-text"],
       "dependencyGraph": {
-        "mw-dropdown": ["mw-popover", "mw-icon"]
+        "mw-dropdown": ["mw-popover", "mw-icon", "mw-helper-text"]
       }
     },
     {
       "filePath": "./src/components/mw-helper-text/mw-helper-text.tsx",
       "encapsulation": "shadow",
       "tag": "mw-helper-text",
-      "readme": "# mw-helper-text\n\n\n",
+      "readme": "# mw-helper-text\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2201,9 +2042,13 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-autocomplete", "mw-dropdown", "mw-textfield"],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "mw-autocomplete": ["mw-helper-text"],
+        "mw-dropdown": ["mw-helper-text"],
+        "mw-textfield": ["mw-helper-text"]
+      }
     },
     {
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
@@ -2373,6 +2218,7 @@
       "dependencies": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
       "dependencyGraph": {
         "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
+        "mw-textfield": ["mw-helper-text"],
         "mw-slider": ["mw-icon"]
       }
     },
@@ -2741,6 +2587,7 @@
       "dependencies": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
       "dependencyGraph": {
         "mw-login": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
+        "mw-textfield": ["mw-helper-text"],
         "mw-checkbox": ["mw-icon"]
       }
     },
@@ -4297,9 +4144,11 @@
           "docs": ""
         }
       ],
-      "dependents": ["mw-icon-gallery", "mw-login"],
-      "dependencies": [],
+      "dependents": ["mw-autocomplete", "mw-icon-gallery", "mw-login"],
+      "dependencies": ["mw-helper-text"],
       "dependencyGraph": {
+        "mw-textfield": ["mw-helper-text"],
+        "mw-autocomplete": ["mw-textfield"],
         "mw-icon-gallery": ["mw-textfield"],
         "mw-login": ["mw-textfield"]
       }

@@ -25,6 +25,7 @@ graph TD;
   mw-icon-gallery --> mw-icon
   mw-icon-gallery --> mw-slider
   mw-icon-gallery --> mw-switch
+  mw-textfield --> mw-helper-text
   mw-slider --> mw-icon
   style mw-icon-gallery fill:#f9f,stroke:#333,stroke-width:4px
 ```

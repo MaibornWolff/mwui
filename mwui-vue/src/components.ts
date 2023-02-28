@@ -25,7 +25,6 @@ export const MwAutocomplete = /*@__PURE__*/ defineContainer<JSX.MwAutocomplete>(
     "multiple",
     "multipleMaximum",
     "multipleMaximumText",
-    "multipleValues",
     "optionCounter",
     "valueChanged",
 ]);
@@ -75,24 +74,17 @@ export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>("mw-chip", undef
 ]);
 
 export const MwChipInput = /*@__PURE__*/ defineContainer<JSX.MwChipInput>("mw-chip-input", undefined, [
-    "type",
-    "value",
     "name",
     "label",
     "placeholder",
-    "helperText",
-    "hasError",
-    "noMatchText",
-    "inline",
-    "required",
     "disabled",
     "readOnly",
-    "multiple",
     "multipleMaximum",
     "multipleMaximumText",
-    "multipleValues",
     "optionCounter",
-    "valueChanged",
+    "selected",
+    "mwChipListValueChanged",
+    "mwChipListInputChange",
 ]);
 
 export const MwDivider = /*@__PURE__*/ defineContainer<JSX.MwDivider>("mw-divider", undefined, ["inset"]);

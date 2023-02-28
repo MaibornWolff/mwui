@@ -61,7 +61,6 @@ export declare interface MwAutocomplete extends Components.MwAutocomplete {
         "multiple",
         "multipleMaximum",
         "multipleMaximumText",
-        "multipleValues",
         "name",
         "noMatchText",
         "optionCounter",
@@ -85,7 +84,6 @@ export declare interface MwAutocomplete extends Components.MwAutocomplete {
         "multiple",
         "multipleMaximum",
         "multipleMaximumText",
-        "multipleValues",
         "name",
         "noMatchText",
         "optionCounter",
@@ -383,63 +381,31 @@ export class MwChip {
 
 export declare interface MwChipInput extends Components.MwChipInput {
     /**
-     * MwAutocomplete emits an event when its value changes
+     * Emits an event when its value changes
      */
-    valueChanged: EventEmitter<CustomEvent<string>>;
+    mwChipListValueChanged: EventEmitter<CustomEvent<string[]>>;
+    /**
+     * Emits an event when value of input changes
+     */
+    mwChipListInputChange: EventEmitter<CustomEvent<string>>;
 }
 
 @ProxyCmp({
     defineCustomElementFn: undefined,
-    inputs: [
-        "disabled",
-        "hasError",
-        "helperText",
-        "inline",
-        "label",
-        "multiple",
-        "multipleMaximum",
-        "multipleMaximumText",
-        "multipleValues",
-        "name",
-        "noMatchText",
-        "optionCounter",
-        "placeholder",
-        "readOnly",
-        "required",
-        "type",
-        "value",
-    ],
+    inputs: ["disabled", "label", "multipleMaximum", "multipleMaximumText", "name", "optionCounter", "placeholder", "readOnly", "selected"],
 })
 @Component({
     selector: "mw-chip-input",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
-    inputs: [
-        "disabled",
-        "hasError",
-        "helperText",
-        "inline",
-        "label",
-        "multiple",
-        "multipleMaximum",
-        "multipleMaximumText",
-        "multipleValues",
-        "name",
-        "noMatchText",
-        "optionCounter",
-        "placeholder",
-        "readOnly",
-        "required",
-        "type",
-        "value",
-    ],
+    inputs: ["disabled", "label", "multipleMaximum", "multipleMaximumText", "name", "optionCounter", "placeholder", "readOnly", "selected"],
 })
 export class MwChipInput {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["valueChanged"]);
+        proxyOutputs(this, this.el, ["mwChipListValueChanged", "mwChipListInputChange"]);
     }
 }
 

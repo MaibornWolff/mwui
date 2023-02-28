@@ -25,7 +25,6 @@
 
 ### Used by
 
-- [mw-autocomplete](../mw-autocomplete)
 - [mw-chip-input](../mw-chip-input)
 
 ### Depends on
@@ -37,7 +36,6 @@
 ```mermaid
 graph TD;
   mw-chip --> mw-icon
-  mw-autocomplete --> mw-chip
   mw-chip-input --> mw-chip
   style mw-chip fill:#f9f,stroke:#333,stroke-width:4px
 ```

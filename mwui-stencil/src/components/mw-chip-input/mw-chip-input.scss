@@ -95,19 +95,22 @@ mw-popover {
 }
 
 .icon-start {
+  display: flex;
   margin-right: var(--mw-component-text-field-gap-horizontal-gap-within);
 }
 
 .icon-end {
-  margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
+  display: flex;
+  gap: var(--mw-component-text-field-gap-horizontal-gap-within);
 }
-.icon-dropdown,
+
 .icon-close-multiple {
   margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
   cursor: pointer;
+  display: flex;
 }
 
-.input input  {
+.input input {
   flex: 1;
   border: none;
   padding: 0;
@@ -137,14 +140,6 @@ mw-popover {
   color: var(--mw-component-text-field-fg-error);
 }
 
-.no-matches {
-  /* TODO: Discuss with design team */
-  display: none;
-  justify-content: center;
-  align-items: center;
-  color: darkgrey;
-  height: 56px;
-}
 .maximum-reached {
   display: flex;
   justify-content: center;

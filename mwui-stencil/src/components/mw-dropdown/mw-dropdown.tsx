@@ -1,5 +1,4 @@
 import { Component, Host, h, Prop, Element, State, Listen, Event, EventEmitter } from "@stencil/core";
-import { MwHelperText } from "../mw-helper-text/mw-helper-text";
 
 @Component({
   tag: "mw-dropdown",
@@ -148,9 +147,9 @@ export class MwDropdown {
                 <slot name="dropdown-menu"></slot>
               </div>
             </mw-popover>
-            {!this.inline && <MwHelperText helperText={this.helperText} hasError={this.hasError} />}
+            {!this.inline && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
           </div>
-          {this.inline && <MwHelperText helperText={this.helperText} hasError={this.hasError} />}
+          {this.inline && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
         </div>
       </Host>
     );

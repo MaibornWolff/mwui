@@ -63,10 +63,6 @@ export namespace Components {
      */
     multipleMaximumText?: string;
     /**
-     * Values, when `multiple` is true
-     */
-    multipleValues?: Array<string | number>;
-    /**
      * input field name
      */
     name: string;
@@ -314,25 +310,9 @@ export namespace Components {
      */
     disabled?: boolean;
     /**
-     * Use to display input and helper-text in error state
-     */
-    hasError?: boolean;
-    /**
-     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizontally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
-    /**
-     * Allows users to enter multiple values into autocomplete
-     */
-    multiple?: boolean;
     /**
      * Amount of allowed `multipleValues`
      */
@@ -342,17 +322,9 @@ export namespace Components {
      */
     multipleMaximumText?: string;
     /**
-     * Values, when `multiple` is true
-     */
-    multipleValues?: Array<string | number>;
-    /**
      * input field name
      */
     name: string;
-    /**
-     * Text which is displayed when no dropdown options match the user input
-     */
-    noMatchText?: string;
     /**
      * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
      */
@@ -365,18 +337,7 @@ export namespace Components {
      * Whether user can't type in input field
      */
     readOnly?: boolean;
-    /**
-     * Mark input as required
-     */
-    required?: boolean;
-    /**
-     * HTML Input type
-     */
-    type?: string;
-    /**
-     * input field value
-     */
-    value?: string | number;
+    selected: string[];
   }
   interface MwDivider {
     /**
@@ -1158,10 +1119,6 @@ declare namespace LocalJSX {
      */
     multipleMaximumText?: string;
     /**
-     * Values, when `multiple` is true
-     */
-    multipleValues?: Array<string | number>;
-    /**
      * input field name
      */
     name?: string;
@@ -1437,25 +1394,9 @@ declare namespace LocalJSX {
      */
     disabled?: boolean;
     /**
-     * Use to display input and helper-text in error state
-     */
-    hasError?: boolean;
-    /**
-     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
-     */
-    helperText?: string;
-    /**
-     * Display label and input horizontally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
-    /**
-     * Allows users to enter multiple values into autocomplete
-     */
-    multiple?: boolean;
     /**
      * Amount of allowed `multipleValues`
      */
@@ -1465,21 +1406,17 @@ declare namespace LocalJSX {
      */
     multipleMaximumText?: string;
     /**
-     * Values, when `multiple` is true
-     */
-    multipleValues?: Array<string | number>;
-    /**
      * input field name
      */
     name?: string;
     /**
-     * Text which is displayed when no dropdown options match the user input
+     * Emits an event when value of input changes
      */
-    noMatchText?: string;
+    onMwChipListInputChange?: (event: MwChipInputCustomEvent<string>) => void;
     /**
-     * MwAutocomplete emits an event when its value changes
+     * Emits an event when its value changes
      */
-    onValueChanged?: (event: MwChipInputCustomEvent<string>) => void;
+    onMwChipListValueChanged?: (event: MwChipInputCustomEvent<string[]>) => void;
     /**
      * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
      */
@@ -1492,18 +1429,7 @@ declare namespace LocalJSX {
      * Whether user can't type in input field
      */
     readOnly?: boolean;
-    /**
-     * Mark input as required
-     */
-    required?: boolean;
-    /**
-     * HTML Input type
-     */
-    type?: string;
-    /**
-     * input field value
-     */
-    value?: string | number;
+    selected?: string[];
   }
   interface MwDivider {
     /**
