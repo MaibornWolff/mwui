@@ -350,17 +350,13 @@ export namespace Components {
      */
     placeholder?: string;
     /**
-     * Whether user can't type in input field
-     */
-    readOnly?: boolean;
-    /**
      * Mark input as required
      */
     required?: boolean;
     /**
      * Currently selected Values
      */
-    selected: string[];
+    selectedChips: string[];
   }
   interface MwDivider {
     /**
@@ -1485,17 +1481,13 @@ declare namespace LocalJSX {
      */
     placeholder?: string;
     /**
-     * Whether user can't type in input field
-     */
-    readOnly?: boolean;
-    /**
      * Mark input as required
      */
     required?: boolean;
     /**
      * Currently selected Values
      */
-    selected?: string[];
+    selectedChips?: string[];
   }
   interface MwDivider {
     /**

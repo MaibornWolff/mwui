@@ -405,9 +405,8 @@ export declare interface MwChipInput extends Components.MwChipInput {
         "name",
         "optionCounter",
         "placeholder",
-        "readOnly",
         "required",
-        "selected",
+        "selectedChips",
     ],
 })
 @Component({
@@ -425,9 +424,8 @@ export declare interface MwChipInput extends Components.MwChipInput {
         "name",
         "optionCounter",
         "placeholder",
-        "readOnly",
         "required",
-        "selected",
+        "selectedChips",
     ],
 })
 export class MwChipInput {

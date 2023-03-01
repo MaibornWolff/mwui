@@ -86,7 +86,13 @@ export class MwAutocomplete {
   @Prop() selected: string[] = [];
   @Watch("selected")
   onSelectedChange(selected: string[]): void {
-    this.setItemDisabledState(selected);
+    if (!this.canAddToValues()) {
+      this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
+        item.setAttribute("disabled", `true`);
+      });
+    } else {
+      this.setItemDisabledState(selected);
+    }
   }
 
   @State() focused = false;
@@ -145,6 +151,7 @@ export class MwAutocomplete {
 
   private filterDropdownOptions = (value: string): void => {
     let hasNoSuggestions = true;
+
     this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
       if (item.value.toLowerCase().includes(value.toLowerCase())) {
         item.style.display = "unset";
@@ -165,6 +172,10 @@ export class MwAutocomplete {
       item.style.display = "unset";
     });
   };
+
+  private canAddToValues(): boolean {
+    return !this.multipleMaximum || this.selected?.length < this.multipleMaximum;
+  }
 
   render() {
     return (
@@ -188,7 +199,7 @@ export class MwAutocomplete {
                   disabled={this.disabled}
                   multipleMaximum={this.multipleMaximum}
                   multipleMaximumText={this.multipleMaximumText}
-                  selected={this.selected}
+                  selectedChips={this.selected}
                   onFocus={this.onFocus}
                   onBlur={this.onBlur}
                   onMwChipListValueChanged={this.handleChipListValueChange.bind(this)}

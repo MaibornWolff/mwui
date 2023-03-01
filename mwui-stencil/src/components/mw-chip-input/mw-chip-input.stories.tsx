@@ -22,14 +22,43 @@ const Template = args => `
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "Autocomplete",
+  label: "ChipInput",
   value: "",
-  name: "autocomplete",
-  placeholder: "Select option",
+  name: "chip-input",
+  placeholder: "Enter a value",
   helperText: "",
   hasError: false,
   inline: false,
   required: false,
   disabled: false,
   multiple: true,
+};
+
+const DisabledTemplate = args => `
+  <mw-chip-input
+    selected-chips="${args.selectedChips}"
+    name="${args.name}"
+    label="${args.label}"
+    placeholder="${args.placeholder}"
+    helper-text="${args.helperText}"
+    has-error="${args.hasError}"
+    inline="${args.inline}"
+    required="${args.required}"
+    disabled="${args.disabled}"
+    ></mw-chip-input>
+`;
+
+export const Disabled = DisabledTemplate.bind({});
+Disabled.args = {
+  label: "ChipInput",
+  value: "",
+  name: "chip-input",
+  placeholder: "Enter a value",
+  helperText: "",
+  hasError: false,
+  inline: false,
+  required: false,
+  disabled: false,
+  multiple: true,
+  selectedChips: "asdf",
 };

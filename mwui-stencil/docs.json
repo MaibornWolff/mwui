@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-28T15:06:21",
+  "timestamp": "2023-03-01T09:45:34",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -1732,23 +1732,6 @@
           "required": false
         },
         {
-          "name": "readOnly",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "read-only",
-          "reflectToAttr": false,
-          "docs": "Whether user can't type in input field",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "required",
           "type": "boolean",
           "mutable": false,
@@ -1766,7 +1749,7 @@
           "required": false
         },
         {
-          "name": "selected",
+          "name": "selectedChips",
           "type": "string[]",
           "mutable": false,
           "reflectToAttr": false,
@@ -2454,7 +2437,7 @@
       "filePath": "./src/components/mw-label/mw-label.tsx",
       "encapsulation": "none",
       "tag": "mw-label",
-      "readme": "# mw-label\n\n\n",
+      "readme": "# mw-label\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

@@ -85,6 +85,7 @@ export class MwPopover {
       placement: this.placement,
     });
   };
+
   private closePopoverOnClick = (event: Event) => {
     if (this.closeOnClick) {
       event.preventDefault();

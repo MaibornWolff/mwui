@@ -16,9 +16,8 @@
 | `name`                | `name`                  | input field name                                                                                                               | `string`   | `undefined`                                    |
 | `optionCounter`       | `option-counter`        | Amount of currently selected options                                                                                           | `boolean`  | `false`                                        |
 | `placeholder`         | `placeholder`           | Placeholder to be displayed                                                                                                    | `string`   | `undefined`                                    |
-| `readOnly`            | `read-only`             | Whether user can't type in input field                                                                                         | `boolean`  | `false`                                        |
 | `required`            | `required`              | Mark input as required                                                                                                         | `boolean`  | `false`                                        |
-| `selected`            | --                      | Currently selected Values                                                                                                      | `string[]` | `undefined`                                    |
+| `selectedChips`       | --                      | Currently selected Values                                                                                                      | `string[]` | `undefined`                                    |
 
 ## Events
 

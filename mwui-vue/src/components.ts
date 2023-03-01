@@ -79,7 +79,6 @@ export const MwChipInput = /*@__PURE__*/ defineContainer<JSX.MwChipInput>("mw-ch
     "label",
     "placeholder",
     "disabled",
-    "readOnly",
     "multipleMaximum",
     "multipleMaximumText",
     "helperText",
@@ -87,7 +86,7 @@ export const MwChipInput = /*@__PURE__*/ defineContainer<JSX.MwChipInput>("mw-ch
     "inline",
     "required",
     "optionCounter",
-    "selected",
+    "selectedChips",
     "mwChipListValueChanged",
     "mwChipListInputChange",
 ]);

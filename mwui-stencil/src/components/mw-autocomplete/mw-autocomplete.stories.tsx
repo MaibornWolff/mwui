@@ -21,6 +21,7 @@ const Template = args => `
   required="${args.required}"
   disabled="${args.disabled}"
   multiple="${args.multiple}"
+  multiple-maximum="${args.multipleMaximum}"
   >
   <div slot="dropdown-menu">
     <mw-menu-item title="List Item 1" subtitle="Subtitle" value="List Item 1"></mw-menu-item>
@@ -43,4 +44,5 @@ Default.args = {
   required: false,
   disabled: false,
   multiple: true,
+  multipleMaximum: 2,
 };

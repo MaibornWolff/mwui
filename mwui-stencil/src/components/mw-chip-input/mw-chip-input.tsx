@@ -37,10 +37,6 @@ export class MwChipInput {
    * Visually and functionally disabled input
    */
   @Prop() disabled?: boolean = false;
-  /**
-   * Whether user can't type in input field
-   */
-  @Prop() readOnly?: boolean = false;
 
   /**
    * Amount of allowed `multipleValues`
@@ -75,13 +71,22 @@ export class MwChipInput {
   /**
    * Currently selected Values
    */
-  @Prop() selected: string[];
-  @Watch("selected")
+  @Prop() selectedChips: string[];
+  @Watch("selectedChips")
   handleSelectionChange(selected: string[]): void {
+    if (!this.canAddToValues() || !selected) {
+      return;
+    }
+
     this._selection.select(...selected);
-    this.inputElement.value = "";
+    this.selected = this._selection.selected;
+
+    if (this.inputElement) {
+      this.inputElement.value = "";
+    }
   }
 
+  @State() selected: string[] = [];
   @State() focused = false;
   @State() initialPlaceholder: string;
 
@@ -125,6 +130,10 @@ export class MwChipInput {
     this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
   }
 
+  connectedCallback(): void {
+    this.handleSelectionChange(this.selectedChips);
+  }
+
   private onFocus = (): void => {
     if (this.inputElement) this.inputElement.focus();
     this.focused = true;
@@ -139,12 +148,13 @@ export class MwChipInput {
       return;
     }
 
-    if (!this.multipleMaximum || this.selected?.length < this.multipleMaximum) {
+    if (this.canAddToValues()) {
       this._selection.select(value);
       this.onValueChange();
     }
 
     this.inputElement.value = "";
+    this.handleInputChange();
   };
 
   private clearMultiValues = (): void => {
@@ -161,6 +171,10 @@ export class MwChipInput {
     this.inputChange.emit(this.inputElement.value);
   }
 
+  private canAddToValues(): boolean {
+    return !this.multipleMaximum || this.selected?.length < this.multipleMaximum;
+  }
+
   render() {
     const {
       onFocus,
@@ -171,7 +185,6 @@ export class MwChipInput {
       multipleMaximum,
       placeholder,
       onBlur,
-      readOnly,
       name,
       clearMultiValues,
       selected,
@@ -213,23 +226,21 @@ export class MwChipInput {
               </span>
               <div class="input-options">
                 {selected?.map(v => (
-                  <mw-chip key={v} showClose={true} value={v} selected={true} toggleable={false}>
+                  <mw-chip key={v} showClose={true} value={v} selected={true} toggleable={false} disabled={disabled}>
                     {v}
                   </mw-chip>
                 ))}
-                {(!multipleMaximum || selected?.length < multipleMaximum) && (
-                  <input
-                    ref={el => (this.inputElement = el as HTMLInputElement)}
-                    placeholder={placeholder}
-                    onFocus={onFocus}
-                    onBlur={onBlur}
-                    type="text"
-                    name={name}
-                    disabled={disabled}
-                    readOnly={readOnly}
-                    onInput={handleInputChange.bind(this)}
-                  />
-                )}
+                <input
+                  ref={el => (this.inputElement = el as HTMLInputElement)}
+                  placeholder={placeholder}
+                  onFocus={onFocus}
+                  onBlur={onBlur}
+                  type="text"
+                  name={name}
+                  disabled={disabled}
+                  onInput={handleInputChange.bind(this)}
+                />
+                <span class={(!multipleMaximum || selected?.length < multipleMaximum) + ""}></span>
               </div>
 
               {this._selection.hasValues() && (
