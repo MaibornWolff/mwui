@@ -16,7 +16,8 @@
         "transform": "npm run transform:core && npm run transform:semantic && npm run transform:component",
         "build:style-dictionary": "ts-node src/scripts/build.ts",
         "build": "npm run transform && npm run build:style-dictionary",
-        "rollup": "rollup -c"
+        "rollup": "rollup -c",
+        "release": "release-it"
     },
     "author": "Martin Prinz",
     "license": "ISC",

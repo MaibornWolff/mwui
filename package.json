@@ -25,7 +25,8 @@
         "version:patch": "./scripts/bump-version.sh patch",
         "version:minor": "./scripts/bump-version.sh minor",
         "version:major": "./scripts/bump-version.sh major",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "release": "release-it"
     },
     "devDependencies": {
         "@babel/core": "^7.18.10",

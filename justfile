@@ -20,17 +20,21 @@ build integration:
   cd {{ integration }} && npm run build
 
 publish versionType:
-  just build {{ stencil }}
-  just publish-integration {{ stencil }} {{ versionType }}
+
 
   just publish-integrations {{ versionType }}
+
+publish-core versionType:
+  just build {{ stencil }}
+  git add . && git commit -m "chore: build {{ stencil }} integration"
+  cd {{ stencil }} && npm run release -- {{ versionType }} --ci
 
 publish-integration integration versionType:
   just update-core {{ integration }}
   just build {{ integration }}
 
   git add . && git commit -m "chore: build {{ integration }} integration"
-  cd {{ integration }} && release-it {{ integration }} --ci
+  cd {{ integration }} && npm run release -- {{ versionType }} --ci
 
 publish-integrations versionType:
   just publish-integration {{ angular }} {{ versionType }}

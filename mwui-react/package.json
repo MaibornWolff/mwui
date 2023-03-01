@@ -12,7 +12,8 @@
         "clean": "rm -rf dist",
         "compile": "npm run tsc",
         "tsc": "tsc -p .",
-        "rollup": "rollup -c"
+        "rollup": "rollup -c",
+        "release": "release-it"
     },
     "main": "./dist/index.js",
     "module": "./dist/index.js",

@@ -30,7 +30,8 @@
     "format:quick": "pretty-quick --staged",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
-    "build-storybook": "build-storybook public -o ../docs -s www/build"
+    "build-storybook": "build-storybook public -o ../docs -s www/build",
+    "release": "release-it"
   },
   "dependencies": {
     "@emotion/css": "^11.10.0",
