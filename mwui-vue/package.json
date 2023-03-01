@@ -18,7 +18,8 @@
     "scripts": {
         "test": "node ./__tests__/mwui-vue.test.js",
         "build": "npm run tsc",
-        "tsc": "tsc -p ."
+        "tsc": "tsc -p .",
+        "release": "release-it"
     },
     "dependencies": {
         "@maibornwolff/mwui-stencil": "^0.1.12"
