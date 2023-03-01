@@ -26,7 +26,7 @@ publish versionType:
 publish-core versionType:
   just build {{ stencil }}
   git add . && git commit -m "chore: build {{ stencil }} integration"
-  cd {{ stencil }} && npm run release -- {{ versionType }} --ci
+  cd {{ stencil }} && npm run release -- {{ versionType }} --verbose
 
 publish-integration integration versionType:
   just update-core {{ integration }}
