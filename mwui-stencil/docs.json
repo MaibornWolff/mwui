@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-02-21T09:55:06",
+  "timestamp": "2023-03-01T12:43:53",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.22.2",
@@ -210,13 +210,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-icon"
-      ],
+      "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-avatar": [
-          "mw-icon"
-        ]
+        "mw-avatar": ["mw-icon"]
       }
     },
     {
@@ -268,14 +264,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-modal"
-      ],
+      "dependents": ["mw-modal"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-modal": [
-          "mw-backdrop"
-        ]
+        "mw-modal": ["mw-backdrop"]
       }
     },
     {
@@ -459,14 +451,10 @@
           "docs": ""
         }
       ],
-      "dependents": [
-        "mw-login"
-      ],
+      "dependents": ["mw-login"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-login": [
-          "mw-button"
-        ]
+        "mw-login": ["mw-button"]
       }
     },
     {
@@ -1071,19 +1059,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-login"
-      ],
-      "dependencies": [
-        "mw-icon"
-      ],
+      "dependents": ["mw-login"],
+      "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-checkbox": [
-          "mw-icon"
-        ],
-        "mw-login": [
-          "mw-checkbox"
-        ]
+        "mw-checkbox": ["mw-icon"],
+        "mw-login": ["mw-checkbox"]
       }
     },
     {
@@ -1195,13 +1175,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-icon"
-      ],
+      "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-chip": [
-          "mw-icon"
-        ]
+        "mw-chip": ["mw-icon"]
       }
     },
     {
@@ -1358,38 +1334,16 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-avatar",
-        "mw-checkbox",
-        "mw-chip",
-        "mw-icon-gallery",
-        "mw-login",
-        "mw-slider",
-        "mw-tab"
-      ],
+      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-login", "mw-slider", "mw-tab"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-avatar": [
-          "mw-icon"
-        ],
-        "mw-checkbox": [
-          "mw-icon"
-        ],
-        "mw-chip": [
-          "mw-icon"
-        ],
-        "mw-icon-gallery": [
-          "mw-icon"
-        ],
-        "mw-login": [
-          "mw-icon"
-        ],
-        "mw-slider": [
-          "mw-icon"
-        ],
-        "mw-tab": [
-          "mw-icon"
-        ]
+        "mw-avatar": ["mw-icon"],
+        "mw-checkbox": ["mw-icon"],
+        "mw-chip": ["mw-icon"],
+        "mw-icon-gallery": ["mw-icon"],
+        "mw-login": ["mw-icon"],
+        "mw-slider": ["mw-icon"],
+        "mw-tab": ["mw-icon"]
       }
     },
     {
@@ -1425,22 +1379,10 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-textfield",
-        "mw-icon",
-        "mw-slider",
-        "mw-switch"
-      ],
+      "dependencies": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
       "dependencyGraph": {
-        "mw-icon-gallery": [
-          "mw-textfield",
-          "mw-icon",
-          "mw-slider",
-          "mw-switch"
-        ],
-        "mw-slider": [
-          "mw-icon"
-        ]
+        "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
+        "mw-slider": ["mw-icon"]
       }
     },
     {
@@ -1666,14 +1608,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-login"
-      ],
+      "dependents": ["mw-login"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-login": [
-          "mw-link"
-        ]
+        "mw-login": ["mw-link"]
       }
     },
     {
@@ -1809,24 +1747,10 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-textfield",
-        "mw-icon",
-        "mw-checkbox",
-        "mw-link",
-        "mw-button"
-      ],
+      "dependencies": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
       "dependencyGraph": {
-        "mw-login": [
-          "mw-textfield",
-          "mw-icon",
-          "mw-checkbox",
-          "mw-link",
-          "mw-button"
-        ],
-        "mw-checkbox": [
-          "mw-icon"
-        ]
+        "mw-login": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
+        "mw-checkbox": ["mw-icon"]
       }
     },
     {
@@ -1941,13 +1865,9 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-popover"
-      ],
+      "dependencies": ["mw-popover"],
       "dependencyGraph": {
-        "mw-menu": [
-          "mw-popover"
-        ]
+        "mw-menu": ["mw-popover"]
       }
     },
     {
@@ -2219,13 +2139,9 @@
         }
       ],
       "dependents": [],
-      "dependencies": [
-        "mw-backdrop"
-      ],
+      "dependencies": ["mw-backdrop"],
       "dependencyGraph": {
-        "mw-modal": [
-          "mw-backdrop"
-        ]
+        "mw-modal": ["mw-backdrop"]
       }
     },
     {
@@ -2460,14 +2376,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-menu"
-      ],
+      "dependents": ["mw-menu"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-menu": [
-          "mw-popover"
-        ]
+        "mw-menu": ["mw-popover"]
       }
     },
     {
@@ -2850,19 +2762,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-icon-gallery"
-      ],
-      "dependencies": [
-        "mw-icon"
-      ],
+      "dependents": ["mw-icon-gallery"],
+      "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-slider": [
-          "mw-icon"
-        ],
-        "mw-icon-gallery": [
-          "mw-slider"
-        ]
+        "mw-slider": ["mw-icon"],
+        "mw-icon-gallery": ["mw-slider"]
       }
     },
     {
@@ -2988,14 +2892,10 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-icon-gallery"
-      ],
+      "dependents": ["mw-icon-gallery"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-icon-gallery": [
-          "mw-switch"
-        ]
+        "mw-icon-gallery": ["mw-switch"]
       }
     },
     {
@@ -3078,19 +2978,11 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "mw-tabs"
-      ],
-      "dependencies": [
-        "mw-icon"
-      ],
+      "dependents": ["mw-tabs"],
+      "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-tab": [
-          "mw-icon"
-        ],
-        "mw-tabs": [
-          "mw-tab"
-        ]
+        "mw-tab": ["mw-icon"],
+        "mw-tabs": ["mw-tab"]
       }
     },
     {
@@ -3143,16 +3035,10 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [
-        "mw-tab"
-      ],
+      "dependencies": ["mw-tab"],
       "dependencyGraph": {
-        "mw-tabs": [
-          "mw-tab"
-        ],
-        "mw-tab": [
-          "mw-icon"
-        ]
+        "mw-tabs": ["mw-tab"],
+        "mw-tab": ["mw-icon"]
       }
     },
     {
@@ -3358,18 +3244,11 @@
           "docs": ""
         }
       ],
-      "dependents": [
-        "mw-icon-gallery",
-        "mw-login"
-      ],
+      "dependents": ["mw-icon-gallery", "mw-login"],
       "dependencies": [],
       "dependencyGraph": {
-        "mw-icon-gallery": [
-          "mw-textfield"
-        ],
-        "mw-login": [
-          "mw-textfield"
-        ]
+        "mw-icon-gallery": ["mw-textfield"],
+        "mw-login": ["mw-textfield"]
       }
     }
   ]

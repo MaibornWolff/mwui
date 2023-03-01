@@ -99,7 +99,7 @@ defineCustomElements(window);
 
 ### Styling
 
-To ensure CSS variables are available, import the global stylesheet in you Application root.
+To ensure CSS variables are available, import the global stylesheet in your Application root.
 
 ```javascript
 import "@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css";
