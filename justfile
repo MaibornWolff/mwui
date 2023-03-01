@@ -21,6 +21,8 @@ build integration:
 
 publish versionType:
   just build {{ stencil }}
+  git add . && git commit -m "chore: build stencil"
+
   just publish-integration {{ stencil }} {{ versionType }}
 
   just publish-integrations {{ versionType }}
@@ -30,7 +32,7 @@ publish-integration integration versionType:
   just build {{ integration }}
 
   git add . && git commit -m "chore: build {{ integration }} integration"
-  cd {{ integration }} && release-it {{ integration }} --ci
+  cd {{ integration }} && release-it {{ versionType }} --ci
 
 publish-integrations versionType:
   just publish-integration {{ angular }} {{ versionType }}
