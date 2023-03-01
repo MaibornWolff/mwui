@@ -20,7 +20,7 @@ build integration:
   cd {{ integration }} && npm run build
 
 publish versionType:
-  release-it {{ versionType }} --dry-run
+  release-it {{ versionType }}
   just publish-integrations {{ versionType }}
 
 publish-integration integration versionType:
@@ -28,7 +28,7 @@ publish-integration integration versionType:
   just build {{ integration }}
 
   git add . && git commit -m "chore: build {{ integration }} integration"
-  cd {{ integration }} && release-it {{ integration }} --dry-run --ci
+  cd {{ integration }} && release-it {{ integration }} --ci
 
 publish-integrations versionType:
   just publish-integration {{ angular }} {{ versionType }}
