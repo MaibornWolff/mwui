@@ -16,12 +16,12 @@
 
     .input {
       width: max-content;
-      min-width: var(--mw-component-size-text-field-min-width);
+      min-width: var(--mw-component-size-text-field-min-w);
     }
 
     label {
       width: var(--mw-component-size-text-field-label-horizontal-width);
-      padding: var(--mw-component-text-field-padding-text-field-label-horizontal);
+      padding: var(--mw-component-text-field-padding-label-vertical-x);
     }
   }
 }
