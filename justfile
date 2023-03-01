@@ -32,7 +32,7 @@ publish-integration integration versionType:
   just build {{ integration }}
 
   git add . && git commit -m "chore: build {{ integration }} integration"
-  cd {{ integration }} && release-it {{ versionType }} --ci
+  cd {{ integration }} && npm run release -- {{ versionType }} --ci
 
 publish-integrations versionType:
   just publish-integration {{ angular }} {{ versionType }}
