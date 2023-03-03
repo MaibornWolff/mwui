@@ -1,3 +1,4 @@
+/// <reference types="react" />
 import type { JSX } from "@maibornwolff/mwui-stencil";
 export declare const MwAppBar: import("react").ForwardRefExoticComponent<JSX.MwAppBar & Omit<import("react").HTMLAttributes<HTMLMwAppBarElement>, "style"> & import("./react-component-lib/interfaces").StyleReactProps & import("react").RefAttributes<HTMLMwAppBarElement>>;
 export declare const MwAppBarTitle: import("react").ForwardRefExoticComponent<JSX.MwAppBarTitle & Omit<import("react").HTMLAttributes<HTMLMwAppBarTitleElement>, "style"> & import("./react-component-lib/interfaces").StyleReactProps & import("react").RefAttributes<HTMLMwAppBarTitleElement>>;
