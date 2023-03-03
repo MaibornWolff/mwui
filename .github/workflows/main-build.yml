@@ -15,7 +15,6 @@ jobs:
               uses: actions/setup-node@v3
               with:
                   node-version: 18
-                  cache: npm
 
             # https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
             - name: Set GitHub Actions as Commit Author
