@@ -29,7 +29,6 @@ jobs:
 
             - name: Cache node modules
               uses: actions/cache@v3
-              working-directory: ./build
               env:
                   cache-name: cache-node-modules
               with:
