@@ -23,8 +23,7 @@
         "build-stencil": "npm run build --workspace=mwui-stencil",
         "build-storybook": "npm run build-storybook --workspace=mwui-stencil",
         "prepare": "husky install",
-        "release": "release-it",
-        "chromatic": "npx chromatic --project-token=04a082c1ac48"
+        "release": "release-it"
     },
     "devDependencies": {
         "@babel/core": "^7.18.10",
