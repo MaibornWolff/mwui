@@ -20,7 +20,7 @@ build integration:
   cd {{ integration }} && npm run build
 
 publish versionType:
-  just publish-core {{ versionType }}
+  # just publish-core {{ versionType }}
   just publish-integrations {{ versionType }}
 
 publish-core versionType:
