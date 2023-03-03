@@ -29,6 +29,7 @@ jobs:
 
             - name: Cache node modules
               uses: actions/cache@v3
+              working-directory: ./build
               env:
                   cache-name: cache-node-modules
               with:
@@ -85,6 +86,7 @@ jobs:
             # 👇 Adds Chromatic as a step in the workflow
             - name: Publish to Chromatic
               uses: chromaui/action@v1
+              working-directory: ./build
               with:
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   onlyChanged: true
