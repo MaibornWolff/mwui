@@ -20,23 +20,23 @@ build integration:
   cd {{ integration }} && npm run build
 
 publish versionType:
-  # just publish-core {{ versionType }}
+  just publish-core {{ versionType }}
   just publish-integrations {{ versionType }}
 
 publish-core versionType:
   just build {{ stencil }}
   git add . && git commit -m "chore: build {{ stencil }} integration"
-  cd {{ stencil }} && npm run release -- {{ versionType }}
+  cd {{ stencil }} && npm run release -- {{ versionType }} --ci
 
 publish-integration integration versionType:
   just update-core {{ integration }}
   just build {{ integration }}
 
   git add . && git commit -m "chore: build {{ integration }} integration"
-  cd {{ integration }} && npm run release -- {{ versionType }}
+  cd {{ integration }} && npm run release -- {{ versionType }} --ci
 
 publish-integrations versionType:
   # just publish-integration {{ angular }} {{ versionType }}
-  # just publish-integration {{ vue }} {{ versionType }}
+  just publish-integration {{ vue }} {{ versionType }}
   just publish-integration {{ react }} {{ versionType }}
   just publish-integration {{ tokenFarm }} {{ versionType }}
