@@ -26,6 +26,7 @@ jobs:
               uses: actions/checkout@v3
               with:
                   path: "build"
+                  fetch-depth: 0 # 👈 Required to retrieve git history in chromatic
 
             - name: Cache node modules
               uses: actions/cache@v3
@@ -43,7 +44,7 @@ jobs:
             - name: Install dependencies
               working-directory: ./build
               run: npm ci
-              if: steps.yarn-cache.outputs.cache-hit != 'true'
+              if: steps.cache-node-modules.outputs.cache-hit != 'true'
 
             - name: Transform Figma Tokens & Style Dictionary
               working-directory: ./build
@@ -72,8 +73,9 @@ jobs:
                   # 👇 Chromatic projectToken, refer to the manage page to obtain it.
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   onlyChanged: true
-                  workingDir: "mwui-stencil"
+                  workingDir: "../mwui-stencil"
                   buildScriptName: "build-storybook:ci"
+
             # do not persist build (done in release action)
             # checkout and push storybook build to mwui-dev
             - name: Checkout Dev Target
