@@ -15,7 +15,7 @@ const DefaultTemplate = args => `
   <div slot="start">
     <mw-icon slot="start" icon="menu" size="medium"></mw-icon>
     <img src="${logo}"/>
-    <mw-app-bar-title>Product name</mw-app-bar-title>
+    <mw-app-bar-title>Company name</mw-app-bar-title>
   </div>
   <div slot="end">
     <mw-avatar slot="end" src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>

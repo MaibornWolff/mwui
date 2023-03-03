@@ -4,7 +4,7 @@
     "description": "Component Library using Figma's design tokens",
     "repository": {
         "type": "git",
-        "url": "https://github.com/MaibornWolff/mwui.git"
+        "url": "git+https://github.com/MaibornWolff/mwui.git"
     },
     "workspaces": [
         "mwui-token-farm",
@@ -41,5 +41,10 @@
     "publishConfig": {
         "access": "public"
     },
-    "license": "MIT"
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/MaibornWolff/mwui/issues"
+    },
+    "homepage": "https://github.com/MaibornWolff/mwui#readme",
+    "_id": "@maibornwolff/mwui@0.1.12"
 }
