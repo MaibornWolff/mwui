@@ -86,5 +86,5 @@ jobs:
                   # 👇 Chromatic projectToken, refer to the manage page to obtain it.
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   onlyChanged: true
-                  workingDir: mwui-stencil
-                  storybookBuildDir: "docs"
+                  workingDir: "./mwui-stencil"
+                  storybookBuildDir: "../docs"
