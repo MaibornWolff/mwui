@@ -73,7 +73,7 @@ jobs:
                   # 👇 Chromatic projectToken, refer to the manage page to obtain it.
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   onlyChanged: true
-                  workingDir: "../mwui-stencil"
+                  workingDir: "./build/mwui-stencil"
                   buildScriptName: "build-storybook:ci"
 
             # do not persist build (done in release action)
