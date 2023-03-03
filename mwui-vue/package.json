@@ -22,7 +22,7 @@
         "release": "release-it"
     },
     "dependencies": {
-        "@maibornwolff/mwui-stencil": "^0.1.12"
+        "@maibornwolff/mwui-stencil": "^0.2.0"
     },
     "devDependencies": {
         "vue": "^3.2.37"
