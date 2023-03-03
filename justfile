@@ -37,6 +37,6 @@ publish-integration integration versionType:
 
 publish-integrations versionType:
   # just publish-integration {{ angular }} {{ versionType }}
-  just publish-integration {{ vue }} {{ versionType }}
+  # just publish-integration {{ vue }} {{ versionType }}
   just publish-integration {{ react }} {{ versionType }}
   just publish-integration {{ tokenFarm }} {{ versionType }}
