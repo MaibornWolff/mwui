@@ -28,4 +28,28 @@ describe("GIVEN MwSwitch", () => {
 
     expect(page.root.shadowRoot.querySelector(".label").innerHTML).toEqual(label);
   });
+
+  it("SHOULD render off-text label WHEN value is false", async () => {
+    const offText = "off-text";
+    const onText = "on-text";
+    const page = await setup({
+      checked: false,
+      offText,
+      onText,
+    });
+
+    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toEqual(offText);
+  });
+
+  it("SHOULD render on-text label WHEN value is true", async () => {
+    const offText = "off-text";
+    const onText = "on-text";
+    const page = await setup({
+      checked: true,
+      offText,
+      onText,
+    });
+
+    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toEqual(onText);
+  });
 });

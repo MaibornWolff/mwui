@@ -44,7 +44,6 @@ export class MwSwitch {
 
   private toggleSwitch(event: Event & { path: unknown[] }): void {
     (event.target as HTMLInputElement).blur();
-    (event.path[1] as HTMLInputElement).blur();
     this.checked = this.checkbox.checked;
     this.emitter.emit(event);
   }
