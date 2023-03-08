@@ -26,11 +26,11 @@ export class MwTabs {
     cancelable: false,
     composed: false,
   })
-  emitter: EventEmitter<{ selected: number }>;
+  tabsClickEmitter: EventEmitter<{ selected: number }>;
 
   private handleClick(key: number): void {
     this.selected = key;
-    this.emitter.emit({ selected: key });
+    this.tabsClickEmitter.emit({ selected: key });
   }
 
   componentWillRender(): void {
