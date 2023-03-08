@@ -1,4 +1,5 @@
 import { Component, h, Element, Prop, State } from "@stencil/core";
+import { Event, EventEmitter } from "@stencil/core/internal";
 
 @Component({
   tag: "mw-tabs",
@@ -16,6 +17,21 @@ export class MwTabs {
    */
   @Prop({ mutable: true, reflect: true }) selected: number | null = null;
   @State() tabs = [];
+
+  /**
+   * Emits an event when tab is changed
+   */
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: false,
+  })
+  emitter: EventEmitter<{ selected: number }>;
+
+  private handleClick(key: number): void {
+    this.selected = key;
+    this.emitter.emit({ selected: key });
+  }
 
   componentWillRender(): void {
     this.tabs = [];
@@ -35,7 +51,7 @@ export class MwTabs {
     return (
       <div test-id={this.testId} class="mw-tabs">
         {this.tabs.map((item, key) => (
-          <mw-tab key={key} icon={item.icon} label={item.label} selected={item.selected} disabled={item.disabled} onClick={() => (this.selected = key)}></mw-tab>
+          <mw-tab key={key} icon={item.icon} label={item.label} selected={item.selected} disabled={item.disabled} onClick={() => this.handleClick(key)}></mw-tab>
         ))}
       </div>
     );

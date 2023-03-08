@@ -55,7 +55,7 @@ export const MwSlider = defineContainer("mw-slider", undefined, [
 ]);
 export const MwSwitch = defineContainer("mw-switch", undefined, ["testId", "disabled", "label", "onText", "offText", "checked", "emitter"]);
 export const MwTab = defineContainer("mw-tab", undefined, ["selected", "icon", "label", "disabled"]);
-export const MwTabs = defineContainer("mw-tabs", undefined, ["testId", "selected"]);
+export const MwTabs = defineContainer("mw-tabs", undefined, ["testId", "selected", "emitter"]);
 export const MwTextfield = defineContainer("mw-textfield", undefined, [
     "type",
     "value",
