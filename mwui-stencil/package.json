@@ -63,7 +63,7 @@
     "@storybook/theming": "^6.5.10",
     "@types/jest": "^27.0.3",
     "@types/mdx": "^2.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.49.0",
     "babel-loader": "^8.2.5",
     "eslint": "^8.32.0",
