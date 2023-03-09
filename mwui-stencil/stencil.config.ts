@@ -20,19 +20,19 @@ export const config: Config = {
   },
   plugins: [sass()],
   outputTargets: [
+    vue({
+      componentCorePackage: "@maibornwolff/mwui-stencil",
+      proxiesFile: "../mwui-vue/src/components.ts",
+    }),
     react({
       componentCorePackage: "@maibornwolff/mwui-stencil",
       proxiesFile: "../mwui-react/src/components/stencil-generated/index.ts",
       includeDefineCustomElements: true,
-    }),
+    }) as any,
     angular({
       componentCorePackage: "@maibornwolff/mwui-stencil",
       directivesProxyFile: "../mwui-angular/projects/mwui-component-library/src/lib/stencil-generated/components.ts",
       directivesArrayFile: "../mwui-angular/projects/mwui-component-library/src/lib/stencil-generated/index.ts",
-    }),
-    vue({
-      componentCorePackage: "@maibornwolff/mwui-stencil",
-      proxiesFile: "../mwui-vue/src/components.ts",
     }),
     {
       type: "dist",
