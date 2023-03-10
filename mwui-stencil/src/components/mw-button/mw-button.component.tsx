@@ -51,13 +51,11 @@ export class MwButton {
 
   private hasIconStartSlot: boolean;
   private hasIconEndSlot: boolean;
-  private hasIcon: boolean;
   private hasLabel: boolean;
 
   componentWillLoad(): void {
     this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
     this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
-    this.hasIcon = this.hasIconStartSlot || this.hasIconEndSlot;
     this.hasLabel = !!this.label;
   }
 
@@ -74,85 +72,44 @@ export class MwButton {
   };
 
   render() {
-    if (this.href) {
-      return (
-        <Host>
-          <a
-            part="button"
-            href={this.href}
-            target={this.target}
+    const button = (
+      <button
+        part="button"
+        disabled={this.disabled}
+        onClick={this.handleClick}
+        class={{
+          "mw-button": true,
+          "mw-button--icon-only": !this.label,
+          [`mw-button--${this.variant}`]: true,
+          [`mw-button--${this.size}`]: true,
+        }}
+        test-id={this.testId}
+        type="button"
+      >
+        {this.hasIconStartSlot && (
+          <span
             class={{
-              "mw-button": true,
-              "mw-button--flex": this.hasIcon,
-              [`mw-button--${this.variant}`]: true,
-              [`mw-button--${this.size}`]: true,
+              "mw-button-icon-start": true,
+              [`mw-button-icon-start--${this.size}`]: this.hasLabel,
             }}
-            test-id={this.testId}
           >
-            {this.hasIconStartSlot && (
-              <span
-                class={{
-                  "mw-button-icon-start": true,
-                  [`mw-button-icon-start--${this.size}`]: this.hasLabel,
-                }}
-              >
-                <slot name="icon-start"></slot>
-              </span>
-            )}
-            <span>{this.label}</span>
-            {this.hasIconEndSlot && (
-              <span
-                class={{
-                  "mw-button-icon-end": true,
-                  [`mw-button-icon-end--${this.size}`]: this.hasLabel,
-                }}
-              >
-                <slot name="icon-end"></slot>
-              </span>
-            )}
-          </a>
-        </Host>
-      );
-    }
-    return (
-      <Host>
-        <button
-          part="button"
-          disabled={this.disabled}
-          onClick={this.handleClick}
-          class={{
-            "mw-button": true,
-            "mw-button--flex": this.hasIcon,
-            "mw-button--icon-only": !this.label,
-            [`mw-button--${this.variant}`]: true,
-            [`mw-button--${this.size}`]: true,
-          }}
-          test-id={this.testId}
-          type="button"
-        >
-          {this.hasIconStartSlot && (
-            <span
-              class={{
-                "mw-button-icon-start": true,
-                [`mw-button-icon-start--${this.size}`]: this.hasLabel,
-              }}
-            >
-              <slot name="icon-start"></slot>
-            </span>
-          )}
-          <span>{this.label}</span>
-          {this.hasIconEndSlot && (
-            <span
-              class={{
-                "mw-button-icon-end": true,
-                [`mw-button-icon-end--${this.size}`]: this.hasLabel,
-              }}
-            >
-              <slot name="icon-end"></slot>
-            </span>
-          )}
-        </button>
-      </Host>
+            <slot name="icon-start"></slot>
+          </span>
+        )}
+        <span>{this.label}</span>
+        {this.hasIconEndSlot && (
+          <span
+            class={{
+              "mw-button-icon-end": true,
+              [`mw-button-icon-end--${this.size}`]: this.hasLabel,
+            }}
+          >
+            <slot name="icon-end"></slot>
+          </span>
+        )}
+      </button>
     );
+
+    return <Host>{this.href ? <a href={this.href}>{button}</a> : button}</Host>;
   }
 }

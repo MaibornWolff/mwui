@@ -63,7 +63,7 @@ WithIcon.args = {
 };
 
 const IconTemplate = args => `
-<mw-button test-id="${args.testId}" onClick="${args.onClick}" size="${args.size}" disabled="${args.disabled}" variant="${args.variant}">
+<mw-button test-id="${args.testId}" onClick="${args.onClick}" size="${args.size}" disabled="${args.disabled}" variant="${args.variant}" href="${args.href}">
   <mw-icon slot="icon-start" icon="settings"></mw-icon>
 </mw-button>`;
 
@@ -72,7 +72,9 @@ Icon.args = {
   testId: "button",
   disabled: false,
   variant: "filled",
+  label: "LINK BUTTON",
   size: "medium",
+  href: "#example.com",
 };
 
 const LinkTemplate = args => `

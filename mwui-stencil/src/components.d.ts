@@ -270,6 +270,7 @@ export namespace Components {
      */
     weight: number;
   }
+  interface MwIconButton {}
   interface MwIconGallery {
     /**
      * The icons that should be rendered
@@ -746,6 +747,11 @@ declare global {
     prototype: HTMLMwIconElement;
     new (): HTMLMwIconElement;
   };
+  interface HTMLMwIconButtonElement extends Components.MwIconButton, HTMLStencilElement {}
+  var HTMLMwIconButtonElement: {
+    prototype: HTMLMwIconButtonElement;
+    new (): HTMLMwIconButtonElement;
+  };
   interface HTMLMwIconGalleryElement extends Components.MwIconGallery, HTMLStencilElement {}
   var HTMLMwIconGalleryElement: {
     prototype: HTMLMwIconGalleryElement;
@@ -852,6 +858,7 @@ declare global {
     "mw-chip": HTMLMwChipElement;
     "mw-divider": HTMLMwDividerElement;
     "mw-icon": HTMLMwIconElement;
+    "mw-icon-button": HTMLMwIconButtonElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-img": HTMLMwImgElement;
     "mw-link": HTMLMwLinkElement;
@@ -1133,6 +1140,7 @@ declare namespace LocalJSX {
      */
     weight?: number;
   }
+  interface MwIconButton {}
   interface MwIconGallery {
     /**
      * The icons that should be rendered
@@ -1524,6 +1532,7 @@ declare namespace LocalJSX {
     "mw-chip": MwChip;
     "mw-divider": MwDivider;
     "mw-icon": MwIcon;
+    "mw-icon-button": MwIconButton;
     "mw-icon-gallery": MwIconGallery;
     "mw-img": MwImg;
     "mw-link": MwLink;
@@ -1563,6 +1572,7 @@ declare module "@stencil/core" {
       "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
+      "mw-icon-button": LocalJSX.MwIconButton & JSXBase.HTMLAttributes<HTMLMwIconButtonElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-img": LocalJSX.MwImg & JSXBase.HTMLAttributes<HTMLMwImgElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
