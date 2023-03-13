@@ -205,7 +205,6 @@ export class MwAutocomplete {
             }}
           >
             <mw-label name={this.name} label={this.label} required={this.required} />
-
             <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen} dismissable={this.isDropdownOpen} disabled={this.disabled}>
               {this.multiple ? (
                 <mw-chip-input

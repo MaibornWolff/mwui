@@ -10,13 +10,13 @@
   flex-direction: column;
   width: 100%;
 }
+
 mw-label {
-  flex: 1;
+  white-space: nowrap;
 }
 mw-popover {
   width: 100%;
 }
-
 .autocomplete {
   @include ff.form-field;
 

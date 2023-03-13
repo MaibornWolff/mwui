@@ -452,19 +452,16 @@
       <hr />
       <h2>Autocomplete</h2>
       <div style="width: 500px">
-        <mw-autocomplete inline multiple placeholder="Select options..." multiple-maximum="4" label="Multi choice" option-counter helper-text="Pick up to 4 options">
+        <mw-autocomplete inline multiple placeholder="Select options..." multiple-maximum="8" label="Multi choice" option-counter helper-text="Pick up to 8 options:">
           <div slot="dropdown-menu">
-            <b style="padding: 0 12px; font-size: 1.2em; display: block">Cars</b>
             <mw-menu-item title="Audi"></mw-menu-item>
             <mw-menu-item title="BMW" disabled></mw-menu-item>
+            <mw-menu-item title="Ford"></mw-menu-item>
+            <mw-menu-item title="Hyundai"></mw-menu-item>
             <mw-menu-item title="Mercedes-Benz"></mw-menu-item>
+            <mw-menu-item title="Porsche"></mw-menu-item>
+            <mw-menu-item title="Toyota"></mw-menu-item>
             <mw-menu-item title="Volkswagen"></mw-menu-item>
-            <mw-divider></mw-divider>
-            <b style="padding: 0 12px; font-size: 1.2em; display: block">Motorcycle</b>
-            <mw-menu-item title="Ducati"></mw-menu-item>
-            <mw-menu-item title="Honda"></mw-menu-item>
-            <mw-menu-item title="Kawasaki"></mw-menu-item>
-            <mw-menu-item title="Yamaha"></mw-menu-item>
           </div>
         </mw-autocomplete>
         <mw-autocomplete multiple placeholder="Select options..." multiple-maximum="4" label="Multi choice" option-counter helper-text="Pick up to 4 options:">
@@ -481,6 +478,14 @@
           </div>
         </mw-autocomplete>
         <mw-autocomplete label="Single choice" placeholder="Add choices..." has-error>
+          <div slot="dropdown-menu">
+            <mw-menu-item title="Item 1"></mw-menu-item>
+            <mw-menu-item title="Item 2"></mw-menu-item>
+            <mw-menu-item title="Item 3"></mw-menu-item>
+            <mw-menu-item title="Item 4"></mw-menu-item>
+          </div>
+        </mw-autocomplete>
+        <mw-autocomplete label="Single choice" placeholder="Add choices..." inline>
           <div slot="dropdown-menu">
             <mw-menu-item title="Item 1"></mw-menu-item>
             <mw-menu-item title="Item 2"></mw-menu-item>

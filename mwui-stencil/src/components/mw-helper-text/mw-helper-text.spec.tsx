@@ -25,7 +25,7 @@ describe("Given MwHelperText", () => {
       ...defaultProps,
       hasError: true,
     });
-    expect(page.root).toHaveClass("has-error");
+    expect(page.root.shadowRoot.querySelector(`.helper-text`)).toHaveClass("has-error");
   });
 
   it("SHOULD display helperText WHEN passed", async () => {

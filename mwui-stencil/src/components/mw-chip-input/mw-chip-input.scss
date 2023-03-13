@@ -16,7 +16,8 @@
 
   .input {
     @include ff.input;
-
+    box-sizing: border-box;
+    width: 100%;
     &.has-error {
       background: var(--mw-component-text-field-bg-error);
     }
@@ -40,6 +41,7 @@
       width: 100%;
       /*TODO: Tokens*/
       min-width: 30px;
+      max-width: 100%;
       height: 32px;
     }
   }
