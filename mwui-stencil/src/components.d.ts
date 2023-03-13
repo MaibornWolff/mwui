@@ -17,6 +17,18 @@ import { LoginFormData } from "./components/mw-login/models/interfaces/login-for
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
+export { AriaRolesEnum } from "./shared/models/enums/aria-roles.enum";
+export { AppBarPosition } from "./components/mw-app-bar/mw-app-bar";
+export { Size } from "./shared/models/enums/size.enum";
+export { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
+export { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
+export { Target } from "./components/mw-button/models/enums/button-target.enum";
+export { SrcSetItem } from "./components/mw-img/mw-img";
+export { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
+export { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
+export { PopoverPlacement } from "./components/mw-popover/mw-popover";
+export { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
+export { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
   interface MwAppBar {
     /**
@@ -613,6 +625,10 @@ export namespace Components {
      */
     closeOnClick?: boolean;
     /**
+     * Whether popover is disabled
+     */
+    disabled?: boolean;
+    /**
      * If set to true, the popover can be closed by clicking outside
      */
     dismissable?: boolean;
@@ -631,7 +647,7 @@ export namespace Components {
     /**
      * Placement relative to anchor element
      */
-    placement: PopoverPlacement;
+    placement: PopoverPlacement1;
     /**
      * Provide unique identifier for automated testing
      */
@@ -1756,6 +1772,10 @@ declare namespace LocalJSX {
      */
     closeOnClick?: boolean;
     /**
+     * Whether popover is disabled
+     */
+    disabled?: boolean;
+    /**
      * If set to true, the popover can be closed by clicking outside
      */
     dismissable?: boolean;
@@ -1778,7 +1798,7 @@ declare namespace LocalJSX {
     /**
      * Placement relative to anchor element
      */
-    placement?: PopoverPlacement;
+    placement?: PopoverPlacement1;
     /**
      * Provide unique identifier for automated testing
      */

@@ -1,5 +1,11 @@
+:host {
+  display: flex;
+  justify-content: right;
+}
+
 .helper-text {
   align-self: flex-end;
+  align-items: end;
   padding: var(--mw-component-text-field-padding-helper-text-y) 0;
   color: var(--mw-component-text-field-fg-helper-text);
   font-family: var(--mw-component-text-field-helper-text-font-family);

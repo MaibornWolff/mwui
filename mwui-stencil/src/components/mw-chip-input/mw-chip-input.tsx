@@ -71,7 +71,7 @@ export class MwChipInput {
   /**
    * Currently selected Values
    */
-  @Prop() selectedChips: string[];
+  @Prop({ reflect: true, mutable: false }) selectedChips: string[];
   @Watch("selectedChips")
   handleSelectionChange(selected: string[]): void {
     if (!this.canAddToValues() || !selected) {
@@ -135,8 +135,10 @@ export class MwChipInput {
   }
 
   private onFocus = (): void => {
-    if (this.inputElement) this.inputElement.focus();
-    this.focused = true;
+    if (!this.disabled) {
+      if (this.inputElement) this.inputElement.focus();
+      this.focused = true;
+    }
   };
 
   private onBlur = (): void => {
@@ -182,7 +184,6 @@ export class MwChipInput {
       hasIconStartSlot,
       hasIconEndSlot,
       focused,
-      multipleMaximum,
       placeholder,
       onBlur,
       name,
@@ -212,8 +213,9 @@ export class MwChipInput {
               slot="anchor"
               onClick={onFocus}
               class={{
-                input: true,
-                disabled: disabled,
+                "input": true,
+                "disabled": disabled,
+                "has-error": hasError,
               }}
             >
               <span
@@ -230,32 +232,35 @@ export class MwChipInput {
                     {v}
                   </mw-chip>
                 ))}
-                <input
-                  ref={el => (this.inputElement = el as HTMLInputElement)}
-                  placeholder={placeholder}
-                  onFocus={onFocus}
-                  onBlur={onBlur}
-                  type="text"
-                  name={name}
-                  disabled={disabled}
-                  onInput={handleInputChange.bind(this)}
-                />
-                <span class={(!multipleMaximum || selected?.length < multipleMaximum) + ""}></span>
+                {this.canAddToValues() && (
+                  <input
+                    ref={el => (this.inputElement = el as HTMLInputElement)}
+                    class={{
+                      "has-error": this.hasError,
+                    }}
+                    placeholder={placeholder}
+                    onFocus={onFocus}
+                    onBlur={onBlur}
+                    type="text"
+                    name={name}
+                    disabled={disabled}
+                    onInput={handleInputChange.bind(this)}
+                  />
+                )}
               </div>
-
               {this._selection.hasValues() && (
                 <span class="icon-close-multiple" onClick={clearMultiValues}>
                   <mw-icon icon="close" size="medium"></mw-icon>
                 </span>
               )}
-              <span
+              <div
                 class={{
                   "icon-end": hasIconEndSlot,
                   "focused": focused,
                 }}
               >
                 <slot name="icon-end" />
-              </span>
+              </div>
             </div>
             {!inline && <mw-helper-text helperText={helperText} hasError={hasError} />}
           </div>

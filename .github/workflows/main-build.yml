@@ -14,7 +14,7 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v3
               with:
-                  node-version: 16
+                  node-version: 18
 
             # https://github.com/actions/checkout#push-a-commit-using-the-built-in-token
             - name: Set GitHub Actions as Commit Author
@@ -26,10 +26,25 @@ jobs:
               uses: actions/checkout@v3
               with:
                   path: "build"
+                  fetch-depth: 0 # 👈 Required to retrieve git history in chromatic
+
+            - name: Cache node modules
+              uses: actions/cache@v3
+              env:
+                  cache-name: cache-node-modules
+              with:
+                  # npm cache files are stored in `~/.npm` on Linux/macOS
+                  path: ~/.npm
+                  key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-build-${{ env.cache-name }}-
+                      ${{ runner.os }}-build-
+                      ${{ runner.os }}-
 
             - name: Install dependencies
               working-directory: ./build
               run: npm ci
+              if: steps.cache-node-modules.outputs.cache-hit != 'true'
 
             - name: Transform Figma Tokens & Style Dictionary
               working-directory: ./build
@@ -50,6 +65,16 @@ jobs:
             - name: Generate Storybook
               working-directory: ./build
               run: npm run build-storybook
+
+            - name: Publish to Chromatic
+              uses: chromaui/action@v1
+              # Chromatic GitHub Action options
+              with:
+                  # 👇 Chromatic projectToken, refer to the manage page to obtain it.
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+                  onlyChanged: true
+                  workingDir: "./build/mwui-stencil"
+                  buildScriptName: "build-storybook:ci"
 
             # do not persist build (done in release action)
             # checkout and push storybook build to mwui-dev

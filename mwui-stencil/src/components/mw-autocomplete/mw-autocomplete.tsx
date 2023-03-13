@@ -45,7 +45,7 @@ export class MwAutocomplete {
   /**
    * Text which is displayed when no dropdown options match the user input
    */
-  @Prop() noMatchText?: string = "No matching options";
+  @Prop() noMatchText?: string = "No suggestions found.";
   /**
    * Display label and input horizontally
    */
@@ -73,7 +73,7 @@ export class MwAutocomplete {
   /**
    * Text which is displayed when maximum amount of options is reached
    */
-  @Prop() multipleMaximumText?: string = "Maximum amount of selected options reached";
+  @Prop() multipleMaximumText?: string = "You reached the maximum number of options.";
 
   /**
    * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
@@ -83,7 +83,7 @@ export class MwAutocomplete {
   /**
    * Currently selected options
    */
-  @Prop() selected: string[] = [];
+  @Prop({ reflect: true, mutable: false }) selected: string[] = [];
   @Watch("selected")
   onSelectedChange(selected: string[]): void {
     if (!this.canAddToValues()) {
@@ -93,12 +93,14 @@ export class MwAutocomplete {
     } else {
       this.setItemDisabledState(selected);
     }
+    this.displayMaximumDisclaimer = this.hasReachedMaximum();
   }
 
   @State() focused = false;
   @State() isDropdownOpen = false;
   @State() initialPlaceholder: string;
   @State() hasMultipleValues: boolean;
+  @State() displayMaximumDisclaimer: boolean;
 
   @Listen("mwMenuItemClick")
   clickEmitterHandler(event): void {
@@ -115,6 +117,12 @@ export class MwAutocomplete {
   }
 
   private noMatchDisclaimer: HTMLDivElement;
+  private hasIconStartSlot: boolean;
+
+  componentWillLoad(): void {
+    this.displayMaximumDisclaimer = this.hasReachedMaximum();
+    this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
+  }
 
   private onInputChange = (event: MwChipInputCustomEvent<string>): void => {
     this.filterDropdownOptions(event.detail);
@@ -122,7 +130,7 @@ export class MwAutocomplete {
   };
 
   private onFocus = (): void => {
-    this.focused = true;
+    if (!this.disabled) this.focused = true;
   };
 
   private onBlur = (): void => {
@@ -148,6 +156,13 @@ export class MwAutocomplete {
   private handleChipListValueChange(event: MwChipInputCustomEvent<string[]>): void {
     this.selected = event.detail;
   }
+  private hasReachedMaximum = (): boolean => {
+    if (this.multipleMaximum) {
+      if (this.selected.length >= this.multipleMaximum) return true;
+    } else {
+      return false;
+    }
+  };
 
   private filterDropdownOptions = (value: string): void => {
     let hasNoSuggestions = true;
@@ -191,12 +206,13 @@ export class MwAutocomplete {
           >
             <mw-label name={this.name} label={this.label} required={this.required} />
 
-            <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen} dismissable={this.isDropdownOpen}>
+            <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen} dismissable={this.isDropdownOpen} disabled={this.disabled}>
               {this.multiple ? (
                 <mw-chip-input
                   name={this.name}
-                  placeholder={this.placeholder}
+                  placeholder={this.selected?.length === 0 ? this.placeholder : null}
                   disabled={this.disabled}
+                  hasError={this.hasError}
                   multipleMaximum={this.multipleMaximum}
                   multipleMaximumText={this.multipleMaximumText}
                   selectedChips={this.selected}
@@ -206,8 +222,17 @@ export class MwAutocomplete {
                   onMwChipListInputChange={this.onInputChange.bind(this)}
                   slot="anchor"
                 >
-                  <slot name="icon-start" />
-                  <slot name="icon-end" />
+                  {this.hasIconStartSlot && (
+                    <div
+                      class={{
+                        "focused": this.focused,
+                        "has-error": this.hasError,
+                      }}
+                      slot="icon-start"
+                    >
+                      <slot name="icon-start" />
+                    </div>
+                  )}
                   <span
                     class={{
                       "focused": this.focused,
@@ -215,11 +240,22 @@ export class MwAutocomplete {
                     }}
                     slot="icon-end"
                   >
-                    <mw-icon icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"} size="medium"></mw-icon>
+                    <mw-icon slot="icon-end" icon={this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down"} size="medium"></mw-icon>
                   </span>
                 </mw-chip-input>
               ) : (
-                <mw-textfield disabled={this.disabled} type={this.type} value={this.value} name={this.name} placeholder={this.placeholder} slot="anchor">
+                <mw-textfield disabled={this.disabled} type={this.type} value={this.value} name={this.name} hasError={this.hasError} placeholder={this.placeholder} slot="anchor">
+                  {this.hasIconStartSlot && (
+                    <div
+                      class={{
+                        "focused": this.focused,
+                        "has-error": this.hasError,
+                      }}
+                      slot="icon-start"
+                    >
+                      <slot name="icon-start" />
+                    </div>
+                  )}
                   <span
                     class={{
                       "focused": this.focused,
@@ -231,19 +267,18 @@ export class MwAutocomplete {
                   </span>
                 </mw-textfield>
               )}
-
               <div slot="content">
-                {!this.multipleMaximum || -1 < this.multipleMaximum ? <slot name="dropdown-menu"></slot> : <div class="maximum-reached">{this.multipleMaximumText}</div>}
+                {!this.displayMaximumDisclaimer ? <slot name="dropdown-menu"></slot> : <div class="maximum-reached">{this.multipleMaximumText}</div>}
                 <div ref={el => (this.noMatchDisclaimer = el as HTMLDivElement)} class="no-matches">
                   {this.noMatchText}
                 </div>
               </div>
             </mw-popover>
-
-            {this.inline ?? <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
           </div>
-
-          {!this.inline ?? <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
+          <div class="helper-text-container">
+            <mw-helper-text helperText={this.helperText} hasError={this.hasError} />
+            {this.optionCounter && <mw-helper-text helperText={`${this.selected.length}/${this.multipleMaximum}`} />}
+          </div>
         </div>
       </Host>
     );

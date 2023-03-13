@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 @mixin button-sizes {
   &--small {
     font-weight: var(--mw-component-button-label-sm-font-weight);
@@ -189,11 +193,9 @@
     @include icon-button-styles;
   }
 
-  &--flex {
-    display: flex;
-    align-items: center;
-  }
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   appearance: none;
   text-decoration: none;
   white-space: nowrap;

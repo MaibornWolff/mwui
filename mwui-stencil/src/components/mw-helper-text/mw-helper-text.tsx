@@ -19,14 +19,16 @@ export class MwHelperText {
   render() {
     const { helperText, hasError } = this;
     return (
-      <Host
-        class={{
-          "hidden": !this.helperText,
-          "helper-text": true,
-          "has-error": hasError,
-        }}
-      >
-        {helperText}
+      <Host>
+        <span
+          class={{
+            "hidden": !this.helperText,
+            "helper-text": true,
+            "has-error": hasError,
+          }}
+        >
+          {helperText}
+        </span>
       </Host>
     );
   }

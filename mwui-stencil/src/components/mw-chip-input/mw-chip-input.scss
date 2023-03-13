@@ -17,6 +17,10 @@
   .input {
     @include ff.input;
 
+    &.has-error {
+      background: var(--mw-component-text-field-bg-error);
+    }
+
     .input-options {
       flex: 1;
       display: flex;
@@ -32,15 +36,11 @@
     }
 
     input {
-      width: auto;
+      flex: 1;
+      width: 100%;
+      /*TODO: Tokens*/
+      min-width: 30px;
+      height: 32px;
     }
   }
-}
-
-.maximum-reached {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: darkgrey;
-  height: 56px;
 }

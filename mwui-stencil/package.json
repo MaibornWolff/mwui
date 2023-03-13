@@ -1,6 +1,6 @@
 {
   "name": "@maibornwolff/mwui-stencil",
-  "version": "0.1.12",
+  "version": "0.2.0",
   "description": "Component Library using Figma's design tokens",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -30,16 +30,20 @@
     "format:quick": "pretty-quick --staged",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006 -s www/build",
-    "build-storybook": "build-storybook public -o ../docs -s www/build"
+    "build-storybook": "build-storybook public -o ../docs -s www/build",
+    "build-storybook:ci": "build-storybook",
+    "release": "release-it"
   },
   "dependencies": {
     "@emotion/css": "^11.10.0",
     "@emotion/styled": "^11.10.4",
-    "@maibornwolff/mwui-stencil": "file:",
-    "@stencil/angular-output-target": "^0.4.0",
-    "@stencil/core": "^2.21.0",
-    "@stencil/react-output-target": "^0.3.1",
-    "@stencil/vue-output-target": "^0.6.2",
+    "@maibornwolff/mwui-stencil": "^0.1.12",
+    "@stencil/angular-output-target": "^0.5.0",
+    "@stencil/core": "^3.1.0",
+    "@stencil/react-output-target": "^0.4.0",
+    "@stencil/vue-output-target": "^0.7.0",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
     "prettier": "^2.7.1"
   },
   "devDependencies": {
@@ -54,16 +58,14 @@
     "@storybook/addon-interactions": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
     "@storybook/addons": "^6.5.10",
-    "@storybook/builder-webpack4": "^6.5.10",
     "@storybook/html": "^6.1.21",
-    "@storybook/manager-webpack4": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
     "@storybook/theming": "^6.5.10",
     "@types/jest": "^27.0.3",
     "@types/mdx": "^2.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.49.0",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^9.1.2",
     "eslint": "^8.32.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsdoc": "^39.6.8",
@@ -97,5 +99,8 @@
     "design",
     "system"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Martin Prinz"
 }

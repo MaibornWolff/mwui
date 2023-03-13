@@ -29,3 +29,5 @@ packages/*/lib
 
 mwui-stencil/dist/
 mwui-token-farm/dist/
+
+docs

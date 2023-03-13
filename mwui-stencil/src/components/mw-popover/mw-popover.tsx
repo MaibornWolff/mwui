@@ -32,6 +32,10 @@ export class MwPopover {
    */
   @Prop({ mutable: true }) open: boolean;
   /**
+   * Whether popover is disabled
+   */
+  @Prop() disabled?: boolean = false;
+  /**
    * Placement relative to anchor element
    */
   @Prop() placement: PopoverPlacement = "bottom";
@@ -78,16 +82,18 @@ export class MwPopover {
   }
 
   private onClick = (event: Event) => {
-    event.preventDefault();
-    this.open = !this.open;
+    if (!this.disabled) {
+      event.preventDefault();
+      this.open = !this.open;
 
-    createPopper(this.anchorRef, this.contentRef, {
-      placement: this.placement,
-    });
+      createPopper(this.anchorRef, this.contentRef, {
+        placement: this.placement,
+      });
+    }
   };
 
   private closePopoverOnClick = (event: Event) => {
-    if (this.closeOnClick) {
+    if (this.closeOnClick && !this.disabled) {
       event.preventDefault();
       this.open = !this.open;
     }

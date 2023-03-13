@@ -21,7 +21,7 @@ export class MwIconGallery {
     this.weight = 400;
   }
 
-  private onInput = (event: Event & { target: { value: string } }): void => {
+  private onInput = (event: InputEvent & { target: { value: string } }): void => {
     const filterTerm = event.target.value.toLowerCase();
     this.filteredIcons = this.icons.filter(icon => icon.toLowerCase().includes(filterTerm));
   };
@@ -37,7 +37,7 @@ export class MwIconGallery {
     this.fill = !this.fill;
   };
 
-  private onWeightChange = (event: Event & { target: { value: number } }): void => {
+  private onWeightChange = (event: InputEvent & { target: { value: number } }): void => {
     this.weight = event.target.value;
   };
 
