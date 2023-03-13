@@ -57,6 +57,7 @@ Disabled.args = {
   inline: false,
   required: false,
   disabled: true,
+  selectedChips: ["Test"],
 };
 
 const InlineTemplate = args => `

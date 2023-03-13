@@ -67,13 +67,13 @@ export namespace Components {
      */
     maximum?: number;
     /**
+     * Text which is displayed when maximum amount of options is reached
+     */
+    maximumText?: string;
+    /**
      * Allows users to enter multiple values into autocomplete
      */
     multiple?: boolean;
-    /**
-     * Text which is displayed when maximum amount of options is reached
-     */
-    multipleMaximumText?: string;
     /**
      * input field name
      */
@@ -81,7 +81,7 @@ export namespace Components {
     /**
      * Text which is displayed when no dropdown options match the user input
      */
-    noMatchText?: string;
+    noSuggestionsText?: string;
     /**
      * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
      */
@@ -1162,13 +1162,13 @@ declare namespace LocalJSX {
      */
     maximum?: number;
     /**
+     * Text which is displayed when maximum amount of options is reached
+     */
+    maximumText?: string;
+    /**
      * Allows users to enter multiple values into autocomplete
      */
     multiple?: boolean;
-    /**
-     * Text which is displayed when maximum amount of options is reached
-     */
-    multipleMaximumText?: string;
     /**
      * input field name
      */
@@ -1176,7 +1176,7 @@ declare namespace LocalJSX {
     /**
      * Text which is displayed when no dropdown options match the user input
      */
-    noMatchText?: string;
+    noSuggestionsText?: string;
     /**
      * Emits an event when its value changes
      */

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-03-13T13:45:01",
+  "timestamp": "2023-03-13T15:17:51",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.1.0",
@@ -188,6 +188,39 @@
           "required": false
         },
         {
+          "name": "maximum",
+          "type": "number",
+          "mutable": false,
+          "attr": "maximum",
+          "reflectToAttr": false,
+          "docs": "Amount of allowed `selected` options",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "maximumText",
+          "type": "string",
+          "mutable": false,
+          "attr": "maximum-text",
+          "reflectToAttr": false,
+          "docs": "Text which is displayed when maximum amount of options is reached",
+          "docsTags": [],
+          "default": "\"You reached the maximum number of options.\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "multiple",
           "type": "boolean",
           "mutable": false,
@@ -199,39 +232,6 @@
           "values": [
             {
               "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "multipleMaximum",
-          "type": "number",
-          "mutable": false,
-          "attr": "multiple-maximum",
-          "reflectToAttr": false,
-          "docs": "Amount of allowed `multipleValues`",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "multipleMaximumText",
-          "type": "string",
-          "mutable": false,
-          "attr": "multiple-maximum-text",
-          "reflectToAttr": false,
-          "docs": "Text which is displayed when maximum amount of options is reached",
-          "docsTags": [],
-          "default": "\"You reached the maximum number of options.\"",
-          "values": [
-            {
-              "type": "string"
             }
           ],
           "optional": true,
@@ -254,10 +254,10 @@
           "required": false
         },
         {
-          "name": "noMatchText",
+          "name": "noSuggestionsText",
           "type": "string",
           "mutable": false,
-          "attr": "no-match-text",
+          "attr": "no-suggestions-text",
           "reflectToAttr": false,
           "docs": "Text which is displayed when no dropdown options match the user input",
           "docsTags": [],
@@ -276,7 +276,7 @@
           "mutable": false,
           "attr": "option-counter",
           "reflectToAttr": false,
-          "docs": "Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.",
+          "docs": "Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -393,12 +393,12 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChanged",
+          "event": "mwAutocompleteValueChanged",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
           "composed": false,
-          "docs": "MwAutocomplete emits an event when its value changes",
+          "docs": "Emits an event when its value changes",
           "docsTags": []
         }
       ],
@@ -1606,7 +1606,7 @@
           "mutable": false,
           "attr": "helper-text",
           "reflectToAttr": true,
-          "docs": "Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.",
+          "docs": "Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.",
           "docsTags": [],
           "values": [
             {
@@ -1650,33 +1650,16 @@
           "required": false
         },
         {
-          "name": "multipleMaximum",
+          "name": "maximum",
           "type": "number",
           "mutable": false,
-          "attr": "multiple-maximum",
+          "attr": "maximum",
           "reflectToAttr": false,
-          "docs": "Amount of allowed `multipleValues`",
+          "docs": "Amount of allowed `selected` values",
           "docsTags": [],
           "values": [
             {
               "type": "number"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "multipleMaximumText",
-          "type": "string",
-          "mutable": false,
-          "attr": "multiple-maximum-text",
-          "reflectToAttr": false,
-          "docs": "Text which is displayed when maximum amount of options is reached",
-          "docsTags": [],
-          "default": "\"Maximum amount of selected options reached\"",
-          "values": [
-            {
-              "type": "string"
             }
           ],
           "optional": true,

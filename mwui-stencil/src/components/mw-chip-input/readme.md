@@ -4,20 +4,19 @@
 
 ## Properties
 
-| Property              | Attribute               | Description                                                                                                                    | Type       | Default                                        |
-| --------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------- | ---------------------------------------------- |
-| `disabled`            | `disabled`              | Visually and functionally disabled input                                                                                       | `boolean`  | `false`                                        |
-| `hasError`            | `has-error`             | Use to display input and helper-text in error state                                                                            | `boolean`  | `false`                                        |
-| `helperText`          | `helper-text`           | Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined. | `string`   | `undefined`                                    |
-| `inline`              | `inline`                | Display label and input horizontally                                                                                           | `boolean`  | `false`                                        |
-| `label`               | `label`                 | Label to be displayed                                                                                                          | `string`   | `undefined`                                    |
-| `multipleMaximum`     | `multiple-maximum`      | Amount of allowed `multipleValues`                                                                                             | `number`   | `undefined`                                    |
-| `multipleMaximumText` | `multiple-maximum-text` | Text which is displayed when maximum amount of options is reached                                                              | `string`   | `"Maximum amount of selected options reached"` |
-| `name`                | `name`                  | input field name                                                                                                               | `string`   | `undefined`                                    |
-| `optionCounter`       | `option-counter`        | Amount of currently selected options                                                                                           | `boolean`  | `false`                                        |
-| `placeholder`         | `placeholder`           | Placeholder to be displayed                                                                                                    | `string`   | `undefined`                                    |
-| `required`            | `required`              | Mark input as required                                                                                                         | `boolean`  | `false`                                        |
-| `selectedChips`       | --                      | Currently selected Values                                                                                                      | `string[]` | `undefined`                                    |
+| Property        | Attribute        | Description                                                                                                            | Type       | Default     |
+| --------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------- | ----------- |
+| `disabled`      | `disabled`       | Visually and functionally disabled input                                                                               | `boolean`  | `false`     |
+| `hasError`      | `has-error`      | Use to display input and helper-text in error state                                                                    | `boolean`  | `false`     |
+| `helperText`    | `helper-text`    | Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined. | `string`   | `undefined` |
+| `inline`        | `inline`         | Display label and input horizontally                                                                                   | `boolean`  | `false`     |
+| `label`         | `label`          | Label to be displayed                                                                                                  | `string`   | `undefined` |
+| `maximum`       | `maximum`        | Amount of allowed `selected` values                                                                                    | `number`   | `undefined` |
+| `name`          | `name`           | input field name                                                                                                       | `string`   | `undefined` |
+| `optionCounter` | `option-counter` | Amount of currently selected options                                                                                   | `boolean`  | `false`     |
+| `placeholder`   | `placeholder`    | Placeholder to be displayed                                                                                            | `string`   | `undefined` |
+| `required`      | `required`       | Mark input as required                                                                                                 | `boolean`  | `false`     |
+| `selectedChips` | --               | Currently selected Values                                                                                              | `string[]` | `undefined` |
 
 ## Events
 

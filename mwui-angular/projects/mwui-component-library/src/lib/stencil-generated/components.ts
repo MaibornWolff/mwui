@@ -51,11 +51,11 @@ export declare interface MwAppBarTitle extends Components.MwAppBarTitle {}
         "helperText",
         "inline",
         "label",
+        "maximum",
+        "maximumText",
         "multiple",
-        "multipleMaximum",
-        "multipleMaximumText",
         "name",
-        "noMatchText",
+        "noSuggestionsText",
         "optionCounter",
         "placeholder",
         "readOnly",
@@ -76,11 +76,11 @@ export declare interface MwAppBarTitle extends Components.MwAppBarTitle {}
         "helperText",
         "inline",
         "label",
+        "maximum",
+        "maximumText",
         "multiple",
-        "multipleMaximum",
-        "multipleMaximumText",
         "name",
-        "noMatchText",
+        "noSuggestionsText",
         "optionCounter",
         "placeholder",
         "readOnly",
@@ -95,15 +95,15 @@ export class MwAutocomplete {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["valueChanged"]);
+        proxyOutputs(this, this.el, ["mwAutocompleteValueChanged"]);
     }
 }
 
 export declare interface MwAutocomplete extends Components.MwAutocomplete {
     /**
-     * MwAutocomplete emits an event when its value changes
+     * Emits an event when its value changes
      */
-    valueChanged: EventEmitter<CustomEvent<string>>;
+    mwAutocompleteValueChanged: EventEmitter<CustomEvent<string>>;
 }
 
 @ProxyCmp({
@@ -383,40 +383,14 @@ export declare interface MwChip extends Components.MwChip {
 }
 
 @ProxyCmp({
-    inputs: [
-        "disabled",
-        "hasError",
-        "helperText",
-        "inline",
-        "label",
-        "multipleMaximum",
-        "multipleMaximumText",
-        "name",
-        "optionCounter",
-        "placeholder",
-        "required",
-        "selectedChips",
-    ],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips"],
 })
 @Component({
     selector: "mw-chip-input",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: [
-        "disabled",
-        "hasError",
-        "helperText",
-        "inline",
-        "label",
-        "multipleMaximum",
-        "multipleMaximumText",
-        "name",
-        "optionCounter",
-        "placeholder",
-        "required",
-        "selectedChips",
-    ],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips"],
 })
 export class MwChipInput {
     protected el: HTMLElement;

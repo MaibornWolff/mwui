@@ -414,7 +414,14 @@
       <br />
       <hr />
       <h2>Chip Input</h2>
-      <mw-chip-input label="Chip Input" placeholder="You can add multiple values here..." maximum="5" helper-text="Enter up to 5 options:" option-counter></mw-chip-input>
+      <mw-chip-input
+        id="chip-input"
+        label="Chip Input"
+        placeholder="You can add multiple values here..."
+        maximum="5"
+        helper-text="Enter up to 5 options:"
+        option-counter
+      ></mw-chip-input>
     </section>
     <section>
       <br />
@@ -504,7 +511,6 @@
   <script>
     const cards = document.getElementsByTagName("mw-card");
     const chips = document.getElementsByTagName("mw-chip");
-
     for (var i = 0; i < cards.length; i++) {
       cards[i].addEventListener("click", event => {
         console.log("card clicked", event);

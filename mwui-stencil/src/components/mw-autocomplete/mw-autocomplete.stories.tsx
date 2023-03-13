@@ -16,33 +16,86 @@ const Template = args => `
   label="${args.label}"
   placeholder="${args.placeholder}"
   helper-text="${args.helperText}"
+  no-suggestions-text="${args.noSuggestionsText}"
   has-error="${args.hasError}"
   inline="${args.inline}"
   required="${args.required}"
   disabled="${args.disabled}"
+  read-only="${args.readOnly}"
   multiple="${args.multiple}"
-  multiple-maximum="${args.multipleMaximum}"
+  maximum="${args.maximum}"
+  maximumText="${args.maximumText}"
+  option-counter="${args.optionCounter}"
+  selected="${args.selected}"
   >
   <div slot="dropdown-menu">
-    <mw-menu-item title="List Item 1" subtitle="Subtitle" value="List Item 1"></mw-menu-item>
-    <mw-menu-item title="List Item 2" subtitle="Subtitle" value="List Item 2"></mw-menu-item>
-    <mw-menu-item title="List Item 3" subtitle="Subtitle" value="List Item 3"></mw-menu-item>
-    <mw-menu-item title="List Item 4" subtitle="Subtitle" value="List Item 4"></mw-menu-item>
+    <mw-menu-item title="List Item 1"></mw-menu-item>
+    <mw-menu-item title="List Item 2"></mw-menu-item>
+    <mw-menu-item title="List Item 3"></mw-menu-item>
+    <mw-menu-item title="List Item 4"></mw-menu-item>
   </div>
 
 </mw-autocomplete>`;
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "Autocomplete",
+  label: "Single choice",
   value: "",
   name: "autocomplete",
-  placeholder: "Select option",
-  helperText: "",
+  placeholder: "Select option...",
+  helperText: "helper text",
+  hasError: false,
+  inline: false,
+  required: false,
+  disabled: false,
+  maximum: 4,
+  optionCounter: false,
+};
+
+export const Multiple = Template.bind({});
+Multiple.args = {
+  label: "Multiple choice",
+  value: "",
+  name: "autocomplete",
+  placeholder: "Select options...",
+  helperText: "helper text:",
   hasError: false,
   inline: false,
   required: false,
   disabled: false,
   multiple: true,
-  multipleMaximum: 2,
+  maximum: 4,
+  optionCounter: true,
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  label: "Multiple choice",
+  value: "",
+  name: "autocomplete",
+  placeholder: "Select options...",
+  helperText: "helper text:",
+  hasError: false,
+  inline: false,
+  required: false,
+  disabled: true,
+  multiple: true,
+  maximum: 4,
+  optionCounter: true,
+};
+
+export const Inline = Template.bind({});
+Inline.args = {
+  label: "Multiple choice",
+  value: "",
+  name: "autocomplete",
+  placeholder: "Select options...",
+  helperText: "",
+  hasError: false,
+  inline: true,
+  required: true,
+  disabled: false,
+  multiple: true,
+  maximum: 12,
+  optionCounter: false,
 };

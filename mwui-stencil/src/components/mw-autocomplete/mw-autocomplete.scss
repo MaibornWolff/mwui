@@ -33,7 +33,7 @@ mw-popover {
 .has-error {
   color: var(--mw-component-text-field-fg-error);
 }
-.no-matches,
+.no-suggestions,
 .maximum-reached {
   flex-direction: column;
   justify-content: center;
@@ -51,7 +51,7 @@ mw-popover {
   font-size: var(--mw-component-menu-item-title-font-size);
 }
 
-.no-matches {
+.no-suggestions {
   display: none;
 }
 

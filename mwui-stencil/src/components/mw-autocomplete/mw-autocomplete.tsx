@@ -44,7 +44,7 @@ export class MwAutocomplete {
   /**
    * Text which is displayed when no dropdown options match the user input
    */
-  @Prop() noMatchText?: string = "No suggestions found.";
+  @Prop() noSuggestionsText?: string = "No suggestions found.";
   /**
    * Display label and input horizontally
    */
@@ -72,7 +72,7 @@ export class MwAutocomplete {
   /**
    * Text which is displayed when maximum amount of options is reached
    */
-  @Prop() multipleMaximumText?: string = "You reached the maximum number of options.";
+  @Prop() maximumText?: string = "You reached the maximum number of options.";
   /**
    * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
    */
@@ -109,7 +109,7 @@ export class MwAutocomplete {
     this.isDropdownOpen = event.detail;
   }
 
-  private noMatchDisclaimer: HTMLDivElement;
+  private noSuggestionsDisclaimer: HTMLDivElement;
   private hasIconStartSlot: boolean;
 
   componentWillLoad(): void {
@@ -161,9 +161,9 @@ export class MwAutocomplete {
       }
     });
     if (hasNoSuggestions) {
-      this.noMatchDisclaimer.style.display = "flex";
+      this.noSuggestionsDisclaimer.style.display = "flex";
     } else {
-      this.noMatchDisclaimer.style.display = "none";
+      this.noSuggestionsDisclaimer.style.display = "none";
     }
   };
 
@@ -252,9 +252,9 @@ export class MwAutocomplete {
                 </mw-textfield>
               )}
               <div slot="content">
-                {this.canAddToValues() ? <slot name="dropdown-menu"></slot> : <div class="maximum-reached">{this.multipleMaximumText}</div>}
-                <div ref={el => (this.noMatchDisclaimer = el as HTMLDivElement)} class="no-matches">
-                  {this.noMatchText}
+                {this.canAddToValues() ? <slot name="dropdown-menu"></slot> : <div class="maximum-reached">{this.maximumText}</div>}
+                <div ref={el => (this.noSuggestionsDisclaimer = el as HTMLDivElement)} class="no-suggestions">
+                  {this.noSuggestionsText}
                 </div>
               </div>
             </mw-popover>
