@@ -144,6 +144,7 @@ export const MwModalTitle = /*@__PURE__*/ defineContainer<JSX.MwModalTitle>("mw-
 export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popover", undefined, [
     "testId",
     "open",
+    "disabled",
     "placement",
     "dismissable",
     "closeOnClick",
@@ -189,5 +190,5 @@ export const MwTextfield = /*@__PURE__*/ defineContainer<JSX.MwTextfield>("mw-te
     "required",
     "disabled",
     "readOnly",
-    "valueChanged",
+    "mwTextfieldValueChanged",
 ]);

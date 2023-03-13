@@ -410,10 +410,15 @@
         </mw-tabs>
       </div>
     </section>
-    <br />
-    <hr />
-    <h1>Molecules</h1>
     <section>
+      <br />
+      <hr />
+      <h2>Chip Input</h2>
+      <mw-chip-input label="Chip Input" placeholder="You can add multiple values here..." maximum="5" helper-text="Enter up to 5 options:" option-counter></mw-chip-input>
+    </section>
+    <section>
+      <br />
+      <hr />
       <h2>App Bar</h2>
       <mw-app-bar position="relative">
         <div slot="start">
@@ -452,7 +457,7 @@
       <hr />
       <h2>Autocomplete</h2>
       <div style="width: 500px">
-        <mw-autocomplete inline multiple placeholder="Select options..." multiple-maximum="8" label="Multi choice" option-counter helper-text="Pick up to 8 options:">
+        <mw-autocomplete inline multiple placeholder="Select options..." maximum="4" label="Multi choice" option-counter helper-text="Pick up to 8 options:">
           <div slot="dropdown-menu">
             <mw-menu-item title="Audi"></mw-menu-item>
             <mw-menu-item title="BMW" disabled></mw-menu-item>
@@ -464,7 +469,7 @@
             <mw-menu-item title="Volkswagen"></mw-menu-item>
           </div>
         </mw-autocomplete>
-        <mw-autocomplete multiple placeholder="Select options..." multiple-maximum="4" label="Multi choice" option-counter helper-text="Pick up to 4 options:">
+        <mw-autocomplete multiple placeholder="Select options..." maximum="8" label="Multi choice" option-counter helper-text="Pick up to 4 options:">
           <mw-icon slot="icon-start" icon="directions_car"></mw-icon>
           <div slot="dropdown-menu">
             <mw-menu-item title="Audi"></mw-menu-item>

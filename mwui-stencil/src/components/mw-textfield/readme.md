@@ -20,9 +20,9 @@
 
 ## Events
 
-| Event          | Description                                             | Type                  |
-| -------------- | ------------------------------------------------------- | --------------------- |
-| `valueChanged` | MwTextfield emits an event when textfield value changes | `CustomEvent<string>` |
+| Event                     | Description                                             | Type                  |
+| ------------------------- | ------------------------------------------------------- | --------------------- |
+| `mwTextfieldValueChanged` | MwTextfield emits an event when textfield value changes | `CustomEvent<string>` |
 
 ## Shadow Parts
 

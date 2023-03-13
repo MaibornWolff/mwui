@@ -768,14 +768,14 @@ export class MwModalTitle {
 export declare interface MwModalTitle extends Components.MwModalTitle {}
 
 @ProxyCmp({
-    inputs: ["closeOnClick", "dismissable", "name", "noPadding", "open", "placement", "testId"],
+    inputs: ["closeOnClick", "disabled", "dismissable", "name", "noPadding", "open", "placement", "testId"],
 })
 @Component({
     selector: "mw-popover",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["closeOnClick", "dismissable", "name", "noPadding", "open", "placement", "testId"],
+    inputs: ["closeOnClick", "disabled", "dismissable", "name", "noPadding", "open", "placement", "testId"],
 })
 export class MwPopover {
     protected el: HTMLElement;
@@ -940,7 +940,7 @@ export class MwTextfield {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["valueChanged"]);
+        proxyOutputs(this, this.el, ["mwTextfieldValueChanged"]);
     }
 }
 
@@ -948,5 +948,5 @@ export declare interface MwTextfield extends Components.MwTextfield {
     /**
      * MwTextfield emits an event when textfield value changes
      */
-    valueChanged: EventEmitter<CustomEvent<string>>;
+    mwTextfieldValueChanged: EventEmitter<CustomEvent<string>>;
 }

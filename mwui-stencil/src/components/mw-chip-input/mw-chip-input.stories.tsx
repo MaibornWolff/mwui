@@ -16,7 +16,6 @@ const Template = args => `
     inline="${args.inline}"
     required="${args.required}"
     disabled="${args.disabled}"
-    multiple="${args.multiple}"
     ></mw-chip-input>
 `;
 
@@ -31,7 +30,6 @@ Default.args = {
   inline: false,
   required: false,
   disabled: false,
-  multiple: true,
 };
 
 const DisabledTemplate = args => `
@@ -58,7 +56,7 @@ Disabled.args = {
   hasError: false,
   inline: false,
   required: false,
-  disabled: false,
+  disabled: true,
 };
 
 const InlineTemplate = args => `

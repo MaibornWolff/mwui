@@ -11,7 +11,7 @@ export class MwTextfield {
   /**
    * MwTextfield emits an event when textfield value changes
    */
-  @Event({ bubbles: true, composed: false }) valueChanged: EventEmitter<string>;
+  @Event({ bubbles: true, composed: true, eventName: "mwTextfieldValueChanged" }) valueChanged: EventEmitter<string>;
   /**
    * HTML Input type
    */

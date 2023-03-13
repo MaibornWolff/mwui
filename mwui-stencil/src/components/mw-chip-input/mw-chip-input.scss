@@ -46,3 +46,10 @@
     }
   }
 }
+
+.helper-text-container {
+  display: flex;
+  justify-content: right;
+  /*TODO: token*/
+  gap: 4px;
+}

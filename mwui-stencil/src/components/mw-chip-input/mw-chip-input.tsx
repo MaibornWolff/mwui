@@ -39,17 +39,12 @@ export class MwChipInput {
   @Prop() disabled?: boolean = false;
 
   /**
-   * Amount of allowed `multipleValues`
+   * Amount of allowed `selected` values
    */
-  @Prop() multipleMaximum?: number;
+  @Prop() maximum?: number;
   /**
-   * Text which is displayed when maximum amount of options is reached
+   * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
    */
-  @Prop() multipleMaximumText?: string = "Maximum amount of selected options reached";
-  /**
-   * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
-   */
-
   @Prop({ reflect: true }) helperText?: string;
   /**
    * Use to display input and helper-text in error state
@@ -174,7 +169,7 @@ export class MwChipInput {
   }
 
   private canAddToValues(): boolean {
-    return !this.multipleMaximum || this.selected?.length < this.multipleMaximum;
+    return !this.maximum || this.selected?.length < this.maximum;
   }
 
   render() {
@@ -194,6 +189,8 @@ export class MwChipInput {
       hasError,
       inline,
       helperText,
+      optionCounter,
+      maximum,
     } = this;
 
     return (
@@ -222,6 +219,7 @@ export class MwChipInput {
                 class={{
                   "icon-start": hasIconStartSlot,
                   "focused": focused,
+                  "has-error": hasError,
                 }}
               >
                 <slot name="icon-start"></slot>
@@ -238,7 +236,7 @@ export class MwChipInput {
                     class={{
                       "has-error": this.hasError,
                     }}
-                    placeholder={placeholder}
+                    placeholder={this.selected?.length === 0 ? placeholder : null}
                     onFocus={onFocus}
                     onBlur={onBlur}
                     type="text"
@@ -257,14 +255,17 @@ export class MwChipInput {
                 class={{
                   "icon-end": hasIconEndSlot,
                   "focused": focused,
+                  "has-error": hasError,
                 }}
               >
                 <slot name="icon-end" />
               </div>
             </div>
-            {!inline && <mw-helper-text helperText={helperText} hasError={hasError} />}
           </div>
-          {inline && <mw-helper-text helperText={helperText} hasError={hasError} />}
+          <div class="helper-text-container">
+            <mw-helper-text helperText={helperText} hasError={hasError} />
+            {this.maximum && optionCounter && <mw-helper-text helperText={`${this.selected.length}/${maximum}`} />}
+          </div>
         </div>
       </Host>
     );

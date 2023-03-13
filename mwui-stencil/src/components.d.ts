@@ -63,13 +63,13 @@ export namespace Components {
      */
     label?: string;
     /**
+     * Amount of allowed `selected` options
+     */
+    maximum?: number;
+    /**
      * Allows users to enter multiple values into autocomplete
      */
     multiple?: boolean;
-    /**
-     * Amount of allowed `multipleValues`
-     */
-    multipleMaximum?: number;
     /**
      * Text which is displayed when maximum amount of options is reached
      */
@@ -83,7 +83,7 @@ export namespace Components {
      */
     noMatchText?: string;
     /**
-     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
      */
     optionCounter?: boolean;
     /**
@@ -330,7 +330,7 @@ export namespace Components {
      */
     hasError?: boolean;
     /**
-     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
      */
     helperText?: string;
     /**
@@ -342,13 +342,9 @@ export namespace Components {
      */
     label?: string;
     /**
-     * Amount of allowed `multipleValues`
+     * Amount of allowed `selected` values
      */
-    multipleMaximum?: number;
-    /**
-     * Text which is displayed when maximum amount of options is reached
-     */
-    multipleMaximumText?: string;
+    maximum?: number;
     /**
      * input field name
      */
@@ -1162,13 +1158,13 @@ declare namespace LocalJSX {
      */
     label?: string;
     /**
+     * Amount of allowed `selected` options
+     */
+    maximum?: number;
+    /**
      * Allows users to enter multiple values into autocomplete
      */
     multiple?: boolean;
-    /**
-     * Amount of allowed `multipleValues`
-     */
-    multipleMaximum?: number;
     /**
      * Text which is displayed when maximum amount of options is reached
      */
@@ -1182,11 +1178,11 @@ declare namespace LocalJSX {
      */
     noMatchText?: string;
     /**
-     * MwAutocomplete emits an event when its value changes
+     * Emits an event when its value changes
      */
-    onValueChanged?: (event: MwAutocompleteCustomEvent<string>) => void;
+    onMwAutocompleteValueChanged?: (event: MwAutocompleteCustomEvent<string>) => void;
     /**
-     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
      */
     optionCounter?: boolean;
     /**
@@ -1457,7 +1453,7 @@ declare namespace LocalJSX {
      */
     hasError?: boolean;
     /**
-     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `multipleMaximum` prop is defined.
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
      */
     helperText?: string;
     /**
@@ -1469,13 +1465,9 @@ declare namespace LocalJSX {
      */
     label?: string;
     /**
-     * Amount of allowed `multipleValues`
+     * Amount of allowed `selected` values
      */
-    multipleMaximum?: number;
-    /**
-     * Text which is displayed when maximum amount of options is reached
-     */
-    multipleMaximumText?: string;
+    maximum?: number;
     /**
      * input field name
      */
@@ -1976,7 +1968,7 @@ declare namespace LocalJSX {
     /**
      * MwTextfield emits an event when textfield value changes
      */
-    onValueChanged?: (event: MwTextfieldCustomEvent<string>) => void;
+    onMwTextfieldValueChanged?: (event: MwTextfieldCustomEvent<string>) => void;
     /**
      * Placeholder to be displayed
      */

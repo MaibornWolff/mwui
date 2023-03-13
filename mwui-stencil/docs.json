@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-03-13T08:19:36",
+  "timestamp": "2023-03-13T13:45:01",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.1.0",
@@ -99,7 +99,7 @@
       "filePath": "./src/components/mw-autocomplete/mw-autocomplete.tsx",
       "encapsulation": "shadow",
       "tag": "mw-autocomplete",
-      "readme": "# mw-autocomplete\r\n\r",
+      "readme": "# mw-autocomplete\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -228,7 +228,7 @@
           "reflectToAttr": false,
           "docs": "Text which is displayed when maximum amount of options is reached",
           "docsTags": [],
-          "default": "\"Maximum amount of selected options reached\"",
+          "default": "\"You reached the maximum number of options.\"",
           "values": [
             {
               "type": "string"
@@ -261,7 +261,7 @@
           "reflectToAttr": false,
           "docs": "Text which is displayed when no dropdown options match the user input",
           "docsTags": [],
-          "default": "\"No matching options\"",
+          "default": "\"No suggestions found.\"",
           "values": [
             {
               "type": "string"
@@ -1401,7 +1401,7 @@
       "filePath": "./src/components/mw-chip/mw-chip.tsx",
       "encapsulation": "shadow",
       "tag": "mw-chip",
-      "readme": "# mw-chip\r\n\r",
+      "readme": "# mw-chip\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1561,7 +1561,7 @@
       "filePath": "./src/components/mw-chip-input/mw-chip-input.tsx",
       "encapsulation": "none",
       "tag": "mw-chip-input",
-      "readme": "# mw-chip-input\r\n\r",
+      "readme": "# mw-chip-input\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1849,7 +1849,7 @@
       "filePath": "./src/components/mw-dropdown/mw-dropdown.tsx",
       "encapsulation": "shadow",
       "tag": "mw-dropdown",
-      "readme": "# mw-dropdown\r\n\r",
+      "readme": "# mw-dropdown\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2063,7 +2063,7 @@
       "filePath": "./src/components/mw-helper-text/mw-helper-text.tsx",
       "encapsulation": "shadow",
       "tag": "mw-helper-text",
-      "readme": "# mw-helper-text\r\n\r",
+      "readme": "# mw-helper-text\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2121,7 +2121,7 @@
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon",
-      "readme": "# mw-icon\r\n\r",
+      "readme": "# mw-icon\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2253,7 +2253,7 @@
       "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",
       "encapsulation": "shadow",
       "tag": "mw-icon-gallery",
-      "readme": "# mw-icon-gallery\r\n\r",
+      "readme": "# mw-icon-gallery\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2437,7 +2437,7 @@
       "filePath": "./src/components/mw-label/mw-label.tsx",
       "encapsulation": "none",
       "tag": "mw-label",
-      "readme": "# mw-label\r\n\r",
+      "readme": "# mw-label\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2596,7 +2596,7 @@
       "filePath": "./src/components/mw-login/mw-login.tsx",
       "encapsulation": "shadow",
       "tag": "mw-login",
-      "readme": "# mw-login\r\n\r",
+      "readme": "# mw-login\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3214,7 +3214,7 @@
       "filePath": "./src/components/mw-popover/mw-popover.tsx",
       "encapsulation": "shadow",
       "tag": "mw-popover",
-      "readme": "# mw-popover\r\n\r",
+      "readme": "# mw-popover\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3226,6 +3226,23 @@
           "attr": "close-on-click",
           "reflectToAttr": false,
           "docs": "Closes Popover when user clicks on it",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Whether popover is disabled",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -4069,7 +4086,7 @@
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
       "encapsulation": "shadow",
       "tag": "mw-textfield",
-      "readme": "# mw-textfield\r\n\r",
+      "readme": "# mw-textfield\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -4263,11 +4280,11 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChanged",
+          "event": "mwTextfieldValueChanged",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
-          "composed": false,
+          "composed": true,
           "docs": "MwTextfield emits an event when textfield value changes",
           "docsTags": []
         }
