@@ -1,8 +1,12 @@
 import "../../global/global.css";
+import docs from "./mw-chip-input.docs.mdx";
 
 export default {
   title: "Components/ChipInput",
   component: "mw-chip-input",
+  parameters: {
+    docs: { page: docs },
+  },
 };
 
 const Template = args => `
@@ -46,20 +50,6 @@ const DisabledTemplate = args => `
     ></mw-chip-input>
 `;
 
-export const Disabled = DisabledTemplate.bind({});
-Disabled.args = {
-  label: "ChipInput",
-  value: "",
-  name: "chip-input",
-  placeholder: "Enter a value",
-  helperText: "",
-  hasError: false,
-  inline: false,
-  required: false,
-  disabled: true,
-  selectedChips: ["Test"],
-};
-
 const InlineTemplate = args => `
   <mw-chip-input
     selected-chips="${args.selectedChips}"
@@ -83,6 +73,32 @@ Inline.args = {
   helperText: "",
   hasError: false,
   inline: true,
+  required: false,
+  disabled: false,
+};
+
+export const Disabled = DisabledTemplate.bind({});
+Disabled.args = {
+  label: "ChipInput",
+  value: "",
+  name: "chip-input",
+  placeholder: "Enter a value",
+  helperText: "",
+  hasError: false,
+  inline: false,
+  required: false,
+  disabled: true,
+};
+
+export const Error = DisabledTemplate.bind({});
+Error.args = {
+  label: "ChipInput",
+  value: "",
+  name: "chip-input",
+  placeholder: "Enter a value",
+  helperText: "",
+  hasError: true,
+  inline: false,
   required: false,
   disabled: false,
 };
