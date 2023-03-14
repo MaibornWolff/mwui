@@ -356,24 +356,6 @@ export class MwIcon {
 
 export declare interface MwIcon extends Components.MwIcon {}
 
-@ProxyCmp({})
-@Component({
-    selector: "mw-icon-button",
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    template: "<ng-content></ng-content>",
-    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: [],
-})
-export class MwIconButton {
-    protected el: HTMLElement;
-    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
-        c.detach();
-        this.el = r.nativeElement;
-    }
-}
-
-export declare interface MwIconButton extends Components.MwIconButton {}
-
 @ProxyCmp({
     inputs: ["icons"],
 })
