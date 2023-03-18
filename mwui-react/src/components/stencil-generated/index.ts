@@ -23,6 +23,7 @@ export const MwCheckbox = /*@__PURE__*/ createReactComponent<JSX.MwCheckbox, HTM
 export const MwChip = /*@__PURE__*/ createReactComponent<JSX.MwChip, HTMLMwChipElement>("mw-chip");
 export const MwDivider = /*@__PURE__*/ createReactComponent<JSX.MwDivider, HTMLMwDividerElement>("mw-divider");
 export const MwIcon = /*@__PURE__*/ createReactComponent<JSX.MwIcon, HTMLMwIconElement>("mw-icon");
+export const MwIconButton = /*@__PURE__*/ createReactComponent<JSX.MwIconButton, HTMLMwIconButtonElement>("mw-icon-button");
 export const MwIconGallery = /*@__PURE__*/ createReactComponent<JSX.MwIconGallery, HTMLMwIconGalleryElement>("mw-icon-gallery");
 export const MwImg = /*@__PURE__*/ createReactComponent<JSX.MwImg, HTMLMwImgElement>("mw-img");
 export const MwLink = /*@__PURE__*/ createReactComponent<JSX.MwLink, HTMLMwLinkElement>("mw-link");

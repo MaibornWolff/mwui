@@ -1,9 +1,9 @@
 {
-  "timestamp": "2023-03-02T11:03:55",
+  "timestamp": "2023-03-10T10:13:09",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.22.2",
-    "typescriptVersion": "4.9.4"
+    "version": "3.1.0",
+    "typescriptVersion": "4.9.5"
   },
   "components": [
     {
@@ -1345,6 +1345,25 @@
         "mw-slider": ["mw-icon"],
         "mw-tab": ["mw-icon"]
       }
+    },
+    {
+      "filePath": "./src/components/mw-icon-button/mw-icon-button.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-icon-button",
+      "readme": "# mw-icon-button\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/mw-icon-gallery/mw-icon-gallery.tsx",

@@ -17,6 +17,18 @@ import { LoginFormData } from "./components/mw-login/models/interfaces/login-for
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
+export { AriaRolesEnum } from "./shared/models/enums/aria-roles.enum";
+export { AppBarPosition } from "./components/mw-app-bar/mw-app-bar";
+export { Size } from "./shared/models/enums/size.enum";
+export { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
+export { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
+export { Target } from "./components/mw-button/models/enums/button-target.enum";
+export { SrcSetItem } from "./components/mw-img/mw-img";
+export { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
+export { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
+export { PopoverPlacement } from "./components/mw-popover/mw-popover";
+export { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
+export { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
 export namespace Components {
   interface MwAppBar {
     /**
@@ -258,6 +270,7 @@ export namespace Components {
      */
     weight: number;
   }
+  interface MwIconButton {}
   interface MwIconGallery {
     /**
      * The icons that should be rendered
@@ -429,7 +442,7 @@ export namespace Components {
     /**
      * Placement relative to anchor element
      */
-    placement: PopoverPlacement;
+    placement: PopoverPlacement1;
     /**
      * Provide unique identifier for automated testing
      */
@@ -734,6 +747,11 @@ declare global {
     prototype: HTMLMwIconElement;
     new (): HTMLMwIconElement;
   };
+  interface HTMLMwIconButtonElement extends Components.MwIconButton, HTMLStencilElement {}
+  var HTMLMwIconButtonElement: {
+    prototype: HTMLMwIconButtonElement;
+    new (): HTMLMwIconButtonElement;
+  };
   interface HTMLMwIconGalleryElement extends Components.MwIconGallery, HTMLStencilElement {}
   var HTMLMwIconGalleryElement: {
     prototype: HTMLMwIconGalleryElement;
@@ -840,6 +858,7 @@ declare global {
     "mw-chip": HTMLMwChipElement;
     "mw-divider": HTMLMwDividerElement;
     "mw-icon": HTMLMwIconElement;
+    "mw-icon-button": HTMLMwIconButtonElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-img": HTMLMwImgElement;
     "mw-link": HTMLMwLinkElement;
@@ -1121,6 +1140,7 @@ declare namespace LocalJSX {
      */
     weight?: number;
   }
+  interface MwIconButton {}
   interface MwIconGallery {
     /**
      * The icons that should be rendered
@@ -1300,7 +1320,7 @@ declare namespace LocalJSX {
     /**
      * Placement relative to anchor element
      */
-    placement?: PopoverPlacement;
+    placement?: PopoverPlacement1;
     /**
      * Provide unique identifier for automated testing
      */
@@ -1512,6 +1532,7 @@ declare namespace LocalJSX {
     "mw-chip": MwChip;
     "mw-divider": MwDivider;
     "mw-icon": MwIcon;
+    "mw-icon-button": MwIconButton;
     "mw-icon-gallery": MwIconGallery;
     "mw-img": MwImg;
     "mw-link": MwLink;
@@ -1551,6 +1572,7 @@ declare module "@stencil/core" {
       "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
+      "mw-icon-button": LocalJSX.MwIconButton & JSXBase.HTMLAttributes<HTMLMwIconButtonElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-img": LocalJSX.MwImg & JSXBase.HTMLAttributes<HTMLMwImgElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;

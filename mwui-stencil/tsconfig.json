@@ -11,6 +11,7 @@
     "target": "es2017",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "skipLibCheck": true,
     "jsx": "react",
     "jsxFactory": "h",
     "paths": {
@@ -18,5 +19,5 @@
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["./node_modules"]
 }
