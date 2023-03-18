@@ -1,0 +1,28 @@
+.container {
+    display: flex; /* or inline-flex */
+    align-items: stretch;
+
+    flex-flow: row wrap;
+    height: 700px;
+}
+
+.item {
+    /* This aligns items to the end line on main-axis */
+    justify-content: flex-end;
+    height: 100%;
+    min-width: 100px; /* A fixed width as the default */
+    border: 1px solid rgb(191, 189, 189);
+    padding: 5px;
+}
+
+.item-center {
+    /* This aligns items to the end line on main-axis */
+    justify-content: flex-end;
+    flex-grow: 1; /* Set the middle element to grow and stretch */
+    background-color: rgb(232, 234, 234);
+    padding: 5px;
+}
+
+.item + .item {
+    margin-left: 2%;
+}

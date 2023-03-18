@@ -1,0 +1,8 @@
+#token-overview {
+    overflow-y: scroll;
+}
+
+#token-overview ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
