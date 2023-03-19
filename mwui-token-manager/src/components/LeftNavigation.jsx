@@ -4,8 +4,6 @@ import { getTokenGroupNames, getTokensByGroupName } from "./token-data/TokenDese
 
 //import { SidebarData } from "./token-navigation/SidebarData";
 
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
 
 const toggleActive = event => {
     event.target.classList.toggle("active");
@@ -16,7 +14,7 @@ const toggleActive = event => {
         dropdownContent.style.display = "block";
     }
 };
-
+/*
 const createSubNav = mainNavName => {
     const tokensNameListByGroup = Object.keys(getTokensByGroupName(mainNavName));
     tokensNameListByGroup.map(tokenName => {
@@ -40,8 +38,9 @@ const createSubNav = mainNavName => {
         </ul>;
     }
 };
+*/
 
-const TokenNavigation = () => (
+const TokenNavigation = ({ activeToken, setActiveToken, setActiveView }) => (
     <div id="token-overview" className="item">
         <h4>Tokens</h4>
         <div className="sidenav">
@@ -52,14 +51,16 @@ const TokenNavigation = () => (
                 <>
                     <button className="dropdown-btn" onClick={e => toggleActive(e)}>
                         {groupName}
-                        <i className="fa fa-caret-down"></i>
+                        {/* <i className="fa fa-caret-down"></i> */}
                     </button>
                     <div className="dropdown-container">
                         {/*createSubNav(groupName)*/}
                         <ul>
                             {Object.keys(getTokensByGroupName(groupName)).map(tokenName => (
-                                <li>
-                                    <a href={"#${key}"} key={tokenName}>
+                                <li style={activeToken === tokenName ? { backgroundColor: "#EEF" } : {}}>
+                                    <a href={"#" + tokenName} key={tokenName} onClick={() => setActiveToken(tokenName)}>
+                                        {/* REVIEW: href geändert von "#${tokenName}" zu "#"+tokenName (siehe URL wenn etwas geklickt wird)*/}
+                                        {/* Kann übrigens mit window.location.hash abgerufen werden; beim Seitenaufruf könntest du damit activeToken direkt befüllen (siehe App.js) */}
                                         {" "}
                                         {tokenName}{" "}
                                     </a>

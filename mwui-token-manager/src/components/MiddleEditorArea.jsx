@@ -2,10 +2,10 @@ import React from "react";
 import Flow from "./editor/Relation";
 import "./styles/MiddleEditorArea.css";
 
-const Editor = ({ setActiveToken }, { setActiveView }) => (
-    <div id="editor" className="item-center">
-        <Flow />
+const MiddleEditorArea = ({ activeToken, setActiveToken, setActiveView }) => (
+    <div id="editor-area" className="item-center">
+        <Flow activeToken={activeToken} setActiveToken={setActiveToken} />
     </div>
 );
 
-export default Editor;
+export default MiddleEditorArea;

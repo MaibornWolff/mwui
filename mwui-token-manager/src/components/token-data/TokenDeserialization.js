@@ -78,21 +78,27 @@ const filterDictByTokenreferenz = (tokenName, dict) => {
 };
 
 export const getRelationTokens = (tokenName, tokenDict) => {
-    const tokens = Object.values(tokenDict).filter(token => {
-        if (typeof token.value === "string") {
-            return token.value.includes(tokenName);
+    if (tokenName === "") { return [] }
+    const relationTokensDict = { "alias": [], "composed": [], "composition": [] }
+    for (const token of Object.values(tokenDict)) {
+        if (typeof token.value === "string" && token.value.includes(tokenName)) {
+            relationTokensDict["alias"].push(token)
         } else if (Array.isArray(token.value)) {
             const relationTokens = token.value.map(ele => {
-                filterDictByTokenreferenz(tokenName, ele);
+                return filterDictByTokenreferenz(tokenName, ele);
             });
-            return relationTokens.some(t => t !== undefined);
+            if (relationTokens.some(t => t !== undefined && t.length > 0)) {
+                relationTokensDict["composed"].push(token)
+            }
         } else {
             const relationTokens = filterDictByTokenreferenz(tokenName, token.value);
-            return relationTokens.length !== 0;
+            if (relationTokens.length !== 0) {
+                relationTokensDict["composition"].push(token)
+            }
         }
-    });
-    console.log("Relation Tokens: ", tokens);
-    return tokens;
+    }
+    console.log("Relation Tokens: ", relationTokensDict);
+    return relationTokensDict
 };
 
 export const getTokenGroupNames = () => {

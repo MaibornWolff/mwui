@@ -6,24 +6,26 @@ import LeftNavigation from "./components/LeftNavigation";
 import MiddleEditorArea from "./components/MiddleEditorArea";
 import LoginPage from "./pages/LoginPage";
 
-const [activeToken, setActiveToken] = useState("");
-const [loginUser, setLoginUser] = useState("");
-const [activeView, setActiveView] = useState("designView");
 
 function App() {
+    const [activeToken, setActiveToken] = useState(""); // REVIEW: könntest hier z.B. window.location.hash.substring(1) ausprobieren; siehe LeftNavigation.jsx
+    const [loginUser, setLoginUser] = useState("");
+    const [activeView, setActiveView] = useState("designView");
+
+
     if (loginUser !== "") {
         //drehen wenn funktioniert!!!
         return <LoginPage setLoginUser={setLoginUser} />;
     } else {
         //macht es sinn hier seiten zu benutzen?? wahrscheinlich nicht, ich hab ja immer das gleiche standard layout
-        <div className="App">
+        return (<div className="App">
             <TopMenuBar setActiveToken={setActiveToken} setActiveView={setActiveView} />
             <div className="container">
-                <LeftNavigation setActiveToken={setActiveToken} setActiveView={setActiveView} />
-                <MiddleEditorArea setActiveToken={setActiveToken} setActiveView={setActiveView} />
-                <RightContextMenu setActiveToken={setActiveToken} setActiveView={setActiveView} />
+                <LeftNavigation activeToken={activeToken} setActiveToken={setActiveToken} setActiveView={setActiveView} />
+                <MiddleEditorArea activeToken={activeToken} setActiveToken={setActiveToken} setActiveView={setActiveView} />
+                <RightContextMenu activeToken={activeToken} setActiveToken={setActiveToken} setActiveView={setActiveView} />
             </div>
-        </div>;
+        </div>);
     }
 }
 
