@@ -1,6 +1,6 @@
 import React from "react";
 
-const SubMenu = () => (
+const SubMenu = ({ setActiveToken }, { setActiveView }) => (
     <div id="submenu" className="item">
         <h4>Beziehungen</h4>
     </div>

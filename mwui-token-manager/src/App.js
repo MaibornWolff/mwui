@@ -1,29 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/App.css";
-import MainMenu from "./components/MainMenu";
-import ContextMenu from "./components/ContextMenu";
-import TokenNavigation from "./components/TokenNavigation";
-import Editor from "./components/Editor";
-import "@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css";
-import { MwButton } from "@maibornwolff/mwui-react";
-import { initializeTokens, logTokens } from "./components/token-data/TokenDeserialization";
+import TopMenuBar from "./components/TopMenuBar";
+import RightContextMenu from "./components/RightContextMenu";
+import LeftNavigation from "./components/LeftNavigation";
+import MiddleEditorArea from "./components/MiddleEditorArea";
+import LoginPage from "./pages/LoginPage";
+
+const [activeToken, setActiveToken] = useState("");
+const [loginUser, setLoginUser] = useState("");
+const [activeView, setActiveView] = useState("designView");
 
 function App() {
-    //const currentTokenOverview = false ? <TokenOverview /> : <Editor />;
-    // initializeTokens();
-    // logTokens();
-
-    return (
+    if (loginUser !== "") {
+        //drehen wenn funktioniert!!!
+        return <LoginPage setLoginUser={setLoginUser} />;
+    } else {
+        //macht es sinn hier seiten zu benutzen?? wahrscheinlich nicht, ich hab ja immer das gleiche standard layout
         <div className="App">
-            <MwButton />
-            <MainMenu />
+            <TopMenuBar setActiveToken={setActiveToken} setActiveView={setActiveView} />
             <div className="container">
-                <TokenNavigation />
-                <Editor />
-                <ContextMenu />
+                <LeftNavigation setActiveToken={setActiveToken} setActiveView={setActiveView} />
+                <MiddleEditorArea setActiveToken={setActiveToken} setActiveView={setActiveView} />
+                <RightContextMenu setActiveToken={setActiveToken} setActiveView={setActiveView} />
             </div>
-        </div>
-    );
+        </div>;
+    }
 }
 
 export default App;

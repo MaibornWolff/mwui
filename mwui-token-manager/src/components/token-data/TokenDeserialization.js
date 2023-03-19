@@ -73,17 +73,22 @@ export const filterTokensByType = (tokenType, groupName = null) => {
     const tokens = Object.values(dict).filter(value => value.type === tokenType);
     return tokens;
 };
+const filterDictByTokenreferenz = (tokenName, dict) => {
+    return Object.values(dict).filter(value => (typeof value === "string" ? value.includes(tokenName) : false));
+};
 
-export const getRelationTokens = tokenName => {
-    for (const ele of Object.values(getAllTokensDict())) {
-        console.log("Value: ", ele.value);
-    }
-    const tokens = Object.values(getAllTokensDict()).filter(token => {
-        if (typeof token.value === String) {
+export const getRelationTokens = (tokenName, tokenDict) => {
+    const tokens = Object.values(tokenDict).filter(token => {
+        if (typeof token.value === "string") {
             return token.value.includes(tokenName);
+        } else if (Array.isArray(token.value)) {
+            const relationTokens = token.value.map(ele => {
+                filterDictByTokenreferenz(tokenName, ele);
+            });
+            return relationTokens.some(t => t !== undefined);
         } else {
-            //token.value.values()
-            return false;
+            const relationTokens = filterDictByTokenreferenz(tokenName, token.value);
+            return relationTokens.length !== 0;
         }
     });
     console.log("Relation Tokens: ", tokens);

@@ -1,8 +1,7 @@
 import React from "react";
-import "./styles/TokenNavigation.css";
+import "./styles/LeftNavigation.css";
 import { getTokenGroupNames, getTokensByGroupName } from "./token-data/TokenDeserialization";
-import SubMenu from "./token-navigation/SubMenu";
-import "../styles/TokenOverview.css";
+
 //import { SidebarData } from "./token-navigation/SidebarData";
 
 var dropdown = document.getElementsByClassName("dropdown-btn");

@@ -4,7 +4,7 @@ import { useCallback } from "react";
 import ReactFlow, { MiniMap, Controls, Background, useNodesState, useEdgesState, addEdge } from "reactflow";
 
 import "reactflow/dist/style.css";
-import { createTokens, getTokensByGroupName, filterTokensByType, logTokens, getRelationTokens } from "../token-data/TokenDeserialization";
+import { createTokens, getTokensByGroupName, filterTokensByType, logTokens, getRelationTokens, getAllTokensDict } from "../token-data/TokenDeserialization";
 
 const initialNodes = [];
 
@@ -16,8 +16,7 @@ const createTokenNodes = () => {
         count += 1;
         count2 += 50;
     }
-    getRelationTokens("mw.core.sizing.base");
-    //console.log("NODES: ", initialNodes)
+    getRelationTokens("mw.core.spacing.linear.2xl", getAllTokensDict());
 };
 
 const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
