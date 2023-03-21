@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/LeftNavigation.css";
 import { getTokenGroupNames, getTokensByGroupName } from "./token-data/TokenDeserialization";
+import { getAllTokensDict } from "./token-data/TokenfilterUtils";
 
 //import { SidebarData } from "./token-navigation/SidebarData";
 

@@ -1,6 +1,7 @@
 import React from "react";
-import { initializeTokens, getAllTokensDict } from "./token-data/TokenDeserialization";
+import { initializeTokens } from "./token-data/TokenDeserialization";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import { getAllTokensDict } from "./token-data/TokenfilterUtils";
 
 import "./styles/TopMenuBar.css";
 

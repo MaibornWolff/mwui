@@ -35,7 +35,7 @@ export const SidebarData = getTokenGroupNames().map(groupName => ({
     subNav: Object.keys(getTokensByGroupName(groupName)).map(tokenName => {
         let tokenSubCategory = tokenName.split(".").slice(0, -1); //not the identifyer
         tokenSubCategory = tokenSubCategory[0] === "mw" ? tokenSubCategory.slice(1) : tokenSubCategory; // not the domain
-        tokenSubCategory = tokenSubCategory[0] === groupName.toLowerCase ? tokenSubCategory.slice(1) : tokenSubCategory; // not the group
+        tokenSubCategory = tokenSubCategory[0] === groupName.split('_')[1].toLowerCase ? tokenSubCategory.slice(1) : tokenSubCategory; // not the group
         console.log("SubCategory: ", tokenSubCategory);
         return createSubNav(tokenName, groupName, 0, 1, tokenSubCategory);
     }),

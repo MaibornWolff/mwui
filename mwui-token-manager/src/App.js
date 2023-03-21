@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles/App.css";
 import TopMenuBar from "./components/TopMenuBar";
 import RightContextMenu from "./components/RightContextMenu";
-import LeftNavigation from "./components/LeftNavigation";
+import LeftNavigation, { TokenNavigationButDifferent } from "./components/LeftNavigation";
 import MiddleEditorArea from "./components/MiddleEditorArea";
 import LoginPage from "./pages/LoginPage";
 

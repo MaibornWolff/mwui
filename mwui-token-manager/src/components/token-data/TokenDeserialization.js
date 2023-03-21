@@ -1,30 +1,27 @@
 import Tokens from "./tokens.json";
 
-const Token = (name, type, value, description = "", extensions = {}) => {
-    return { name: name, type: type, value: value };
+const Token = (name, type, value, group, description = "", extensions = {}) => {
+    return { name: name, type: type, value: value, group: group };
 };
-const groupsDict = {}; //all Tokens clusted under groups (Core, Semantic_*, Component)
+export const groupsDict = {}; //all Tokens clusted under groups (Core, Semantic_*, Component)
 const metaDataDict = {}; //Information for categorize the groups
 
-export const filterTokensBySubString = (subString, groupName = "") => {
-    const tokenNamesList = groupName ? Object.keys(getTokensByGroupName(groupName)) : Object.keys(getAllTokensDict());
-    return tokenNamesList.filter(name => name.includes(subString));
-};
+export const initializeTokens = () => createGroupDict(Tokens);
 
-const unpack = (obj, tokensDict, name = null) => {
+const unpack = (obj, tokensDict, group, name = null) => {
     for (const [key, value] of Object.entries(obj)) {
         if (key === "value" || typeof value !== "object") {
-            fillToken(key, value, name, tokensDict);
+            fillToken(key, value, name, group, tokensDict);
         } else {
-            unpack(value, tokensDict, name === null ? key : name + "." + key);
+            unpack(value, tokensDict, group, name === null ? key : name + "." + key);
         }
     }
     return tokensDict;
 };
 
-const fillToken = (key, value, name, tokensDict) => {
+const fillToken = (key, value, name, group, tokensDict) => {
     if (!(name in tokensDict)) {
-        const token = Token(name, "", "");
+        const token = Token(name, "", "", group);
         tokensDict[name] = token;
     }
     switch (key) {
@@ -47,7 +44,7 @@ const createGroupDict = obj => {
     for (const [key, value] of Object.entries(obj)) {
         if (key !== "$themes" && key !== "$metadata") {
             const tokensDict = {}; // example: {"my.token.name": Token(name, type, value, description, extenstions*)}
-            unpack(value, tokensDict);
+            unpack(value, tokensDict, key);
             groupsDict[key] = tokensDict;
         } else {
             metaDataDict[key] = value;
@@ -56,52 +53,11 @@ const createGroupDict = obj => {
     return groupsDict;
 };
 
-export const getAllTokensDict = () => {
-    const tokensDict = {};
-    Object.values(groupsDict).forEach(tgd => Object.assign(tokensDict, tgd));
-    return tokensDict;
-};
-
-export const initializeTokens = () => createGroupDict(Tokens);
-
-export const logTokens = () => console.log(groupsDict);
-
 export const getTokensByGroupName = groupName => groupsDict[groupName];
-
-export const filterTokensByType = (tokenType, groupName = null) => {
-    const dict = groupName ? getTokensByGroupName(groupName) : getAllTokensDict();
-    const tokens = Object.values(dict).filter(value => value.type === tokenType);
-    return tokens;
-};
-const filterDictByTokenreferenz = (tokenName, dict) => {
-    return Object.values(dict).filter(value => (typeof value === "string" ? value.includes(tokenName) : false));
-};
-
-export const getRelationTokens = (tokenName, tokenDict) => {
-    if (tokenName === "") { return [] }
-    const relationTokensDict = { "alias": [], "composed": [], "composition": [] }
-    for (const token of Object.values(tokenDict)) {
-        if (typeof token.value === "string" && token.value.includes(tokenName)) {
-            relationTokensDict["alias"].push(token)
-        } else if (Array.isArray(token.value)) {
-            const relationTokens = token.value.map(ele => {
-                return filterDictByTokenreferenz(tokenName, ele);
-            });
-            if (relationTokens.some(t => t !== undefined && t.length > 0)) {
-                relationTokensDict["composed"].push(token)
-            }
-        } else {
-            const relationTokens = filterDictByTokenreferenz(tokenName, token.value);
-            if (relationTokens.length !== 0) {
-                relationTokensDict["composition"].push(token)
-            }
-        }
-    }
-    console.log("Relation Tokens: ", relationTokensDict);
-    return relationTokensDict
-};
 
 export const getTokenGroupNames = () => {
     const groupNames = Object.keys(groupsDict);
     return groupNames;
 };
+
+export const logTokens = () => console.log(groupsDict);
