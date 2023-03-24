@@ -19,9 +19,10 @@ const initRelationNodeData = (activeTokenName) => {
     const activeToken = getTokenByName(activeTokenName)
 
     relationsTokensDict = getRelationTokensDict(activeTokenName, getAllTokensDict())
+    console.log("DICT: ", relationsTokensDict)
     for (const groupName of getTokenGroupNames()) {
-        groupContainerParams[groupName].width = calcGroupWidth(groupName, activeToken)
-        groupContainerParams[groupName].height = calcGroupHeight(groupName, activeToken)
+        groupContainerParams[groupName].width = Math.round(calcGroupWidth(groupName, activeToken))
+        groupContainerParams[groupName].height = Math.round(calcGroupHeight(groupName, activeToken))
         groupContainerParams[groupName].color = 'rgba(' + r.toString() + ', ' + g.toString() + ', ' + b.toString() + ', 0.2)'
         b = g
         g = r
@@ -48,10 +49,14 @@ const calcGroupWidth = (groupName, activeToken) => {
 }
 
 const calcGroupHeight = (groupName, activeToken) => {
-    const relationsTokens = Object.values(getRelationTokensDict(activeToken, getTokensByGroupName(groupName)))
+
+    const relationsTokens = Object.values(getRelationTokensDict(activeToken.name, getTokensByGroupName(groupName)))
+    const length = relationsTokens.filter(tList => tList.length != 0).flat().length
+
+    console.log("relationTokens", length, relationsTokens)
 
     if (relationsTokens) {
-        return nodeDistance * 2 + relationsTokens.length * nodeDistance
+        return nodeDistance * 2 + length * nodeDistance
     } else { return nodeDistance * 2 }
 }
 
@@ -69,6 +74,7 @@ const createTokenNodes = (activeToken, setNodes, setEdges) => {
     //Group Container
     for (const group of getTokenGroupNames()) {
         const size = groupContainerParams[group].width > groupContainerParams[group].height ? groupContainerParams[group].width : groupContainerParams[group].height
+        xPosCounter += size / 2
         tokenNodes.push({
             id: group,
             data: { label: group },
@@ -78,10 +84,13 @@ const createTokenNodes = (activeToken, setNodes, setEdges) => {
             style: { borderRadius: "20em", backgroundColor: groupContainerParams[group].color, width: size, height: size }
         },)
         idCounter += 1;
-        xPosCounter += size + nodeDistance
+        console.log("xPos, size: ", xPosCounter, size)
+        xPosCounter += size / 2
     }
     //Active Node
-    tokenNodes.push({ id: "activeToken", position: { x: 0, y: 0 }, data: { label: activeToken }, style: { background: "#EFF", width: 'unset' }, parentNode: getTokenByName(activeToken).group })
+    const groupOfActiveNode = groupContainerParams[getTokenByName(activeToken).group]
+    // groupContainerParams[getTokenByName(activeToken).group].width
+    tokenNodes.push({ id: "activeToken", position: { x: Math.max(groupOfActiveNode.width, groupOfActiveNode.height) / 2, y: 0 }, data: { label: activeToken }, style: { background: "#EFF", width: 'unset' }, parentNode: getTokenByName(activeToken).group })
     idCounter += 1;
     yPosCounter += nodeDistance;
     //Relation Nodes
@@ -92,8 +101,10 @@ const createTokenNodes = (activeToken, setNodes, setEdges) => {
                 // console.log("key, value:", key, value)
                 value.forEach(token => {
                     yPosCounter += nodeDistance;
+                    const groupOfNode = groupContainerParams[token.group]
                     tokenNodes.push({
-                        id: token.name, position: { x: 10, y: yPosCounter }, data: { label: token.name }, parentNode: groupName, style:
+                        // groupContainerParams[token.group].width / 2
+                        id: token.name, position: { x: Math.max(groupOfNode.width, groupOfNode.height) / 2, y: yPosCounter }, data: { label: token.name }, parentNode: groupName, style:
                             { width: 'unset' }
                     });
                     tokenEdges.push(createEdge("activeToken", tokenNodes[tokenNodes.length - 1].id, key))
@@ -114,23 +125,64 @@ function Flow({ activeToken, setActiveToken }) {
     const [nodes, setNodes, onNodesChange] = useNodesState([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
-    React.useEffect(() => createTokenNodes(activeToken, setNodes, setEdges), [activeToken]);
+    React.useEffect(() => { createTokenNodes(activeToken, setNodes, setEdges); setNodesNeedLayouting(true) }, [activeToken]);
 
     const onConnect = useCallback(params => setEdges(eds => addEdge(params, eds)), [setEdges]);
 
     // REVIEW: testweise initialize ausprobieren
-    const nodesInitialized = useNodesInitialized();
-    const nodeDimensions = nodes.map(n => n.width !== undefined ? n.width + "," + n.height : undefined)
+    const [nodesNeedLayouting, setNodesNeedLayouting] = useState(true);
+    // const [nodeDimensions, setNodeDimensions] = useState(nodes.map(n => {return {width:n.width, height:n.height}}))
+    // const nodesInitialized = useNodesInitialized();
+    // const nodeDimensions = nodes.map(n => n.width !== undefined ? n.width + "," + n.height : undefined)
 
-    useEffect(() => {
-        if (nodesInitialized && nodeDimensions.some(n => n !== undefined)) {
-            console.log("W x H", nodeDimensions, nodes)
+    if (nodesNeedLayouting) {
+        // const nodeDimensions = nodes.map(n => { return { width: n.width, height: n.height } })
+        if (nodes.some(node => node.width !== undefined)) {
+            let hochzaehler = {}
+            nodes.forEach(node => {
+                if (node.className === "group") {
+                    // console.log("gruppen node gefunden", node)
+                } else {
+                    // console.log("token node gefunden", node)
+                    const pnode = nodes.find(n => n.data.label === node.parentNode)
+                    const hz = hochzaehler[node.parentNode]
+                    if (hz === undefined) {
+                        hochzaehler[node.parentNode] = 0
+                    } else {
+                        hochzaehler[node.parentNode] += node.height + 5
+                    }
+                    // node.position.y = hochzaehler[node.parentNode]
+                    // node.position.x = pnode.position.x / 2
+                }
+            })
+            // console.log(nodeDimensions)
+            setNodesNeedLayouting(false)
+            // }
+            // if (nodeDimensions.some(n => n.width !== undefined)) {
+        } else {
+            console.log("nodes need layouting but values are undefined")
         }
-    }, [nodesInitialized, nodeDimensions])
+    }
+
+    // useEffect(() => {
+    //     if (nodeDimensions.some(n => n !== undefined)) {
+    //         console.log("W x H", nodeDimensions, nodes)
+    //     }
+    // }, [nodesNeedLayouting])
 
     return (
-        <ReactFlow nodes={nodes} edges={edges} onNodesChange={onNodesChange} onEdgesChange={onEdgesChange} onConnect={onConnect} nodeOrigin={origin}>
+        <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={onConnect}
+            nodeOrigin={origin}
+            defaultViewport={{ zoom: 1, x: 0, y: 0 }}
+            fitView
+            fitViewOptions={{ padding: 0.4 }}>
             {/* <MiniMap /> */}
+
             <Controls />
             <Background />
         </ReactFlow>
