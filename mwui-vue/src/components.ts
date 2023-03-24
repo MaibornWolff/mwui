@@ -47,8 +47,6 @@ export const MwDivider = /*@__PURE__*/ defineContainer<JSX.MwDivider>("mw-divide
 
 export const MwIcon = /*@__PURE__*/ defineContainer<JSX.MwIcon>("mw-icon", undefined, ["icon", "size", "fill", "color", "weight"]);
 
-export const MwIconButton = /*@__PURE__*/ defineContainer<JSX.MwIconButton>("mw-icon-button", undefined);
-
 export const MwIconGallery = /*@__PURE__*/ defineContainer<JSX.MwIconGallery>("mw-icon-gallery", undefined, ["icons"]);
 
 export const MwImg = /*@__PURE__*/ defineContainer<JSX.MwImg>("mw-img", undefined, ["preloadSrc", "src", "alt", "lazyLoad", "fallback", "srcset", "imgDidLoad", "imgLoadError"]);
