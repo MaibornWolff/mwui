@@ -8,8 +8,6 @@ import "./styles/TopMenuBar.css";
 initializeTokens();
 
 const handleOnSelect = (item, setActiveToken) => {
-    console.log("selected:", item);
-    console.log(item.name);
     setActiveToken(item.name);
 };
 

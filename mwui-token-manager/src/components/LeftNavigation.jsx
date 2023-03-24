@@ -44,12 +44,12 @@ const createSubNav = mainNavName => {
 const TokenNavigation = ({ activeToken, setActiveToken, setActiveView }) => (
     <div id="token-overview" className="item">
         <h4>Tokens</h4>
-        <div className="sidenav">
+        <div key="sidenav" className="sidenav">
             {/* {SidebarData.map((item, index) => {
               return <SubMenu item={item} key={index} />;
             })} */}
             {getTokenGroupNames().map(groupName => (
-                <>
+                <div key={groupName}>
                     <button className="dropdown-btn" onClick={e => toggleActive(e)}>
                         {groupName}
                         {/* <i className="fa fa-caret-down"></i> */}
@@ -58,18 +58,17 @@ const TokenNavigation = ({ activeToken, setActiveToken, setActiveView }) => (
                         {/*createSubNav(groupName)*/}
                         <ul>
                             {Object.keys(getTokensByGroupName(groupName)).map(tokenName => (
-                                <li style={activeToken === tokenName ? { backgroundColor: "#EEF" } : {}}>
-                                    <a href={"#" + tokenName} key={tokenName} onClick={() => setActiveToken(tokenName)}>
+                                <li key={tokenName} style={activeToken === tokenName ? { backgroundColor: "#EEF" } : {}}>
+                                    <a href={"#" + tokenName} onClick={() => setActiveToken(tokenName)}>
                                         {/* REVIEW: href geändert von "#${tokenName}" zu "#"+tokenName (siehe URL wenn etwas geklickt wird)*/}
                                         {/* Kann übrigens mit window.location.hash abgerufen werden; beim Seitenaufruf könntest du damit activeToken direkt befüllen (siehe App.js) */}
-                                        {" "}
-                                        {tokenName}{" "}
+                                        {tokenName}
                                     </a>
                                 </li>
                             ))}
                         </ul>
                     </div>
-                </>
+                </div>
             ))}
         </div>
     </div>

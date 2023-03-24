@@ -1,6 +1,8 @@
 import React from "react";
 import * as RiIcons from "react-icons/ri";
-import { getTokenGroupNames, getTokensByGroupName, filterTokensBySubString } from "../token-data/TokenDeserialization";
+import { filterTokensBySubString } from "../token-data/TokenfilterUtils";
+import { getTokenGroupNames, getTokensByGroupName } from "../token-data/TokenDeserialization"
+import { DefaultContext } from "react-icons/lib";
 
 // Das fängt noch nicht wenn mehrere tokens in einem untermenü sind, der macht dann viel zu viele menüs, vllt
 const createSubNav = (tokenName, groupName, index, deep, tokenSubCategory) => {
@@ -40,3 +42,5 @@ export const SidebarData = getTokenGroupNames().map(groupName => ({
         return createSubNav(tokenName, groupName, 0, 1, tokenSubCategory);
     }),
 }));
+
+export default SidebarData;

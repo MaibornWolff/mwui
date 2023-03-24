@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./styles/App.css";
 import TopMenuBar from "./components/TopMenuBar";
 import RightContextMenu from "./components/RightContextMenu";
 import LeftNavigation, { TokenNavigationButDifferent } from "./components/LeftNavigation";

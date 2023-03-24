@@ -67,11 +67,12 @@
     padding-right: 8px;
 }
 
-#token-overview {
+#relation-overview {
     overflow-y: scroll;
+    height: 100%;
 }
 
-#token-overview ul {
+#relation-overview ul {
     list-style-type: none;
     padding-left: 10px;
 }
@@ -89,4 +90,8 @@ pre {
 
 span {
     color: rgb(27, 150, 70);
+}
+
+.code-block {
+    display: none;
 }

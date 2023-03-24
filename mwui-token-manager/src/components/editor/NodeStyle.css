@@ -1,6 +1,11 @@
-.group {
+.react-flow__container {
+    display: flex;
+}
 
-    background-color: green;
-    width: 200;
-    height: 800;
+div[data-id="MW_core"] {
+    justify-content: center;
+}
+
+div[data-id="MW_component"] {
+    justify-content: flex-end;
 }

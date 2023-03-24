@@ -12,30 +12,39 @@ const toggleActive = event => {
     }
 };
 
-const DropDown = ({ dataDic, activeToken, setActiveToken }) => (
-    <div id="dropdown-menu" className="item">
-        <h4>Tokens</h4>
-        <div className="sidenav">
-            {Object.keys(dataDic).map(key => (
-                <>
-                    <button className="dropdown-btn" onClick={e => toggleActive(e)}>
-                        {key}
-                    </button>
-                    <div className="dropdown-container">
-                        <ul>
-                            {Object.keys(dataDic[key]).map(value => (
-                                <li style={activeToken === value ? { backgroundColor: "#EEF" } : {}}>
-                                    <a href={"#" + value} key={value} onClick={() => setActiveToken(value)}>
-                                        {" "}
-                                        {value}{" "}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </>
-            ))}
+export const Details = (name) => {
+    return (
+        <h2>{name}</h2>
+    )
+
+}
+export const SubNav = (dataDic, key) => {
+    return (
+        <div className="dropdown-sublist">
+            <ul>
+                {Object.keys(dataDic[key]).map(value => (
+                    <li key={value} style={activeToken === value ? { backgroundColor: "#EEF" } : {}}>
+                        <a href={"#" + value} key={value} onClick={() => setActiveToken(value)}>
+                            {value}
+                        </a>
+                        <Details />
+                    </li>
+                ))}
+            </ul>
         </div>
+    )
+}
+
+export const DropDown = ({ name, dataDic, activeToken, setActiveToken }) => (
+    <div className="dropdown-container">
+        {Object.keys(dataDic).map(key => (
+            <div key={name}>
+                <button className="dropdown-btn" onClick={e => toggleActive(e)}>
+                    {key}
+                </button>
+                <SubNav />
+            </div>
+        ))}
     </div>
 );
 
