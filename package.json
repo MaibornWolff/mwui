@@ -46,5 +46,8 @@
         "url": "https://github.com/MaibornWolff/mwui/issues"
     },
     "homepage": "https://github.com/MaibornWolff/mwui#readme",
-    "_id": "@maibornwolff/mwui@0.1.12"
+    "_id": "@maibornwolff/mwui@0.1.12",
+    "dependencies": {
+        "xtypejs": "^0.7.1"
+    }
 }

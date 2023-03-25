@@ -1,3 +1,8 @@
+/**
+* Styles for custom-nodes to change the behaviour. No style for RelationFlow needed yet.
+*
+*/
+
 .react-flow__container {
     display: flex;
 }

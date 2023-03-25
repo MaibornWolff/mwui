@@ -1,6 +1,5 @@
 import React from "react";
-import "./styles/LeftNavigation.css";
-import { getTokenGroupNames, getTokensByGroupName } from "../token-data/TokenDeserialization";
+import "./styles/Dropdown.css";
 
 const toggleActive = event => {
     event.target.classList.toggle("active");
@@ -18,7 +17,8 @@ export const Details = (name) => {
     )
 
 }
-export const SubNav = (dataDic, key) => {
+
+export const SubNav = (dataDic, key, activeToken, setActiveToken) => {
     return (
         <div className="dropdown-sublist">
             <ul>
@@ -35,6 +35,34 @@ export const SubNav = (dataDic, key) => {
     )
 }
 
+/*
+const createSubNav = mainNavName => {
+    const tokensNameListByGroup = Object.keys(getTokensByGroupName(mainNavName));
+    tokensNameListByGroup.map(tokenName => {
+        let tokenSubCategory = tokenName.split(".").slice(0, -1); //not the identifyer
+        tokenSubCategory = tokenSubCategory.slice(0, 1).contains() ? tokenSubCategory.slice(1) : tokenSubCategory;
+        tokenSubCategory = tokenSubCategory[0] === "mw" ? tokenSubCategory.slice(1) : tokenSubCategory; // not the domain
+        tokenSubCategory = tokenSubCategory[0] === mainNavName.toLowerCase ? tokenSubCategory.slice(1) : tokenSubCategory; // not the group
+        console.log("SubCategory: ", tokenSubCategory);
+    });
+
+    {
+        <ul>
+            {tokensNameListByGroup.map(tokenName => (
+                <li>
+                    <a href={"#${key}"} key={tokenName}>
+                        {" "}
+                        {tokenName}{" "}
+                    </a>
+                </li>
+            ))}
+        </ul>;
+    }
+};
+*/
+
+
+
 export const DropDown = ({ name, dataDic, activeToken, setActiveToken }) => (
     <div className="dropdown-container">
         {Object.keys(dataDic).map(key => (
@@ -42,7 +70,7 @@ export const DropDown = ({ name, dataDic, activeToken, setActiveToken }) => (
                 <button className="dropdown-btn" onClick={e => toggleActive(e)}>
                     {key}
                 </button>
-                <SubNav />
+                <SubNav dataDic={dataDic} key={key} activeToken={activeToken} setActiveToken={setActiveToken} />
             </div>
         ))}
     </div>

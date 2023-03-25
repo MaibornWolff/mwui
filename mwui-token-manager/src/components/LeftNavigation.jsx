@@ -1,10 +1,9 @@
 import React from "react";
 import "./styles/LeftNavigation.css";
-import { getTokenGroupNames, getTokensByGroupName } from "./token-data/TokenDeserialization";
-import { getAllTokensDict } from "./token-data/TokenfilterUtils";
+import { getTokenGroupNames, getTokensByGroupName } from "../token-data/TokenSerialization";
 
-//import { SidebarData } from "./token-navigation/SidebarData";
 
+//TODO: clean up
 
 const toggleActive = event => {
     event.target.classList.toggle("active");
@@ -15,32 +14,6 @@ const toggleActive = event => {
         dropdownContent.style.display = "block";
     }
 };
-/*
-const createSubNav = mainNavName => {
-    const tokensNameListByGroup = Object.keys(getTokensByGroupName(mainNavName));
-    tokensNameListByGroup.map(tokenName => {
-        let tokenSubCategory = tokenName.split(".").slice(0, -1); //not the identifyer
-        tokenSubCategory = tokenSubCategory.slice(0, 1).contains() ? tokenSubCategory.slice(1) : tokenSubCategory;
-        tokenSubCategory = tokenSubCategory[0] === "mw" ? tokenSubCategory.slice(1) : tokenSubCategory; // not the domain
-        tokenSubCategory = tokenSubCategory[0] === mainNavName.toLowerCase ? tokenSubCategory.slice(1) : tokenSubCategory; // not the group
-        console.log("SubCategory: ", tokenSubCategory);
-    });
-
-    {
-        <ul>
-            {tokensNameListByGroup.map(tokenName => (
-                <li>
-                    <a href={"#${key}"} key={tokenName}>
-                        {" "}
-                        {tokenName}{" "}
-                    </a>
-                </li>
-            ))}
-        </ul>;
-    }
-};
-*/
-
 const TokenNavigation = ({ activeToken, setActiveToken, setActiveView }) => (
     <div id="token-overview" className="item">
         <h4>Tokens</h4>

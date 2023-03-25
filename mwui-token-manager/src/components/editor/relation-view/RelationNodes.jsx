@@ -1,4 +1,19 @@
 import { Handle, NodeProps, Position } from 'reactflow';
+import "./NodeStyle.css";
+//TODO:
+//helper method: createNewNode (tokenName, NodeType)
+
+//RootNode
+
+//GroupNode
+
+//ChildRelationNode
+
+//ParentRelationNode
+
+
+
+
 
 export const nodeData = {
     label: string

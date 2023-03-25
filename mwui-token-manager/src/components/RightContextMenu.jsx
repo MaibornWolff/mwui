@@ -1,9 +1,9 @@
 import React from "react";
-import DetailsRelations from "./context-menu/DetailsRelations";
+import DetailsRelations from "./context-menu/relation-view/DetailsRelations";
 
 const SubMenu = ({ activeToken, setActiveToken, setActiveView }) => (
     <div id="submenu" className="item">
-        {/* <h4>Beziehungen</h4> */}
+        {/* <h4>Relations</h4> */}
         <DetailsRelations activeToken={activeToken} setActiveToken={setActiveToken} setActiveView={setActiveView} />
     </div>
 );

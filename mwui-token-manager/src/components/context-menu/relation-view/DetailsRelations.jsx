@@ -1,8 +1,6 @@
 import React from "react";
 import "./DetailsRelations.css";
-import SubMenu from "../templates/SubMenu";
-import SidebarData from "../templates/SidebarData";
-import { getAllTokensDict, getRelationTokensDict } from "../token-data/TokenfilterUtils";
+import { getAllTokensDict, getRelationTokensDict } from "../../../token-data/TokenUtils";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
@@ -19,7 +17,7 @@ const toggleActive = event => {
 
 const handleTextFieldChange = (id) => {
     const ele = document.getElementById(id)
-    console.log("Textfiled ist set: ", ele.value)
+    console.log("Textfiled is set: ", ele.value)
 }
 
 const DetailsRelations = ({ activeToken, setActiveToken, setActiveView }) => {
@@ -58,7 +56,6 @@ const DetailsRelations = ({ activeToken, setActiveToken, setActiveView }) => {
                             </div>
                         ))}
                     </div>
-                    {/* <SubMenu item={SidebarData} /> */}
                 </div>
             )
         }

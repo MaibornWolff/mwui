@@ -1,11 +1,13 @@
 import React from "react";
-import { initializeTokens } from "./token-data/TokenDeserialization";
-import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import { getAllTokensDict } from "./token-data/TokenfilterUtils";
-
 import "./styles/TopMenuBar.css";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import { deserializeTokens } from "../token-data/TokenSerialization";
+import { getAllTokensDict } from "../token-data/TokenUtils";
 
-initializeTokens();
+
+//TODO: in App.js wird das nicht ausgeführt, warum auch immer. im zweifel so lassen und kommentare löschen
+deserializeTokens();
+
 
 const handleOnSelect = (item, setActiveToken) => {
     setActiveToken(item.name);
