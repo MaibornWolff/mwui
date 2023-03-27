@@ -1,5 +1,5 @@
 import { Handle, NodeProps, Position } from 'reactflow';
-import "./NodeStyle.css";
+import "./NodesStyle.css";
 //TODO:
 //helper method: createNewNode (tokenName, NodeType)
 

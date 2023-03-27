@@ -55,8 +55,8 @@ export const getTokenByName = (tokenName) => {
  * @param {*} groupName 
  * @returns 
  */
-export const filterTokensByType = (tokenType, groupName = null) => {
-    const dict = groupName ? getTokensByGroupName(groupName) : getAllTokensDict();
+export const filterTokensByType = (tokenType, dict = {}, groupName = null) => {
+    if (dict === {}) dict = groupName ? getTokensByGroupName(groupName) : getAllTokensDict();
     const tokens = Object.values(dict).filter(value => value.type === tokenType);
     return tokens;
 };
