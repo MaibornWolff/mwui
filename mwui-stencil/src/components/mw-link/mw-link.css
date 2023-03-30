@@ -6,7 +6,9 @@
   text-decoration: none;
 }
 .mw-link.underline {
+  /* todo: fix missing token */
   text-decoration: var(--mw-component-link-typo-text-decoration);
+  text-decoration: underline;
 }
 .mw-link:hover {
   color: var(--mw-component-link-color-fg-hover);
