@@ -1,9 +1,9 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 
 # Card
 
-<div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-  <div style={{ width: '50%' }}>
+<div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "space-between" }}>
+  <div style={{ width: "50%" }}>
     <p>
       The <code>mw-card</code> component provides a basic structure element with <code>default</code>, <code>elevated</code> or <code>outlined</code> appearances. Different Card
       variants can be created by composing Card sub-elements in arbitrary order:
@@ -26,7 +26,7 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
       </li>
     </ul>
   </div>
-  <div style={{ width: '40%' }}>
+  <div style={{ width: "40%" }}>
     <Story id="components-card--card-header" />
   </div>
 </div>
@@ -34,7 +34,7 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 ### Variants
 
 <Canvas>
-  <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+  <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
     <mw-card>
       <mw-card-body>default</mw-card-body>
     </mw-card>
@@ -52,7 +52,7 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 ### Card Body
 
 <Canvas withSource="open">
-  <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+  <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
     <Story id="components-card--card-body" />
   </div>
 </Canvas>
@@ -60,7 +60,7 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 ### Card Header
 
 <Canvas withSource="open">
-  <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+  <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
     <Story id="components-card--card-header" />
   </div>
 </Canvas>
@@ -68,20 +68,20 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 ### Card Title
 
 <Canvas withSource="open">
-  <div style={{ display: 'flex', gap: '20px', justifyContent: 'space-evenly' }}>
-    <mw-card style={{ display: 'contents' }} outlined>
+  <div style={{ display: "flex", gap: "20px", justifyContent: "space-evenly" }}>
+    <mw-card style={{ display: "contents" }} outlined>
       <mw-card-title title="Title"></mw-card-title>
       <mw-card-body>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam.
       </mw-card-body>
     </mw-card>
-    <mw-card style={{ display: 'contents' }} outlined>
+    <mw-card style={{ display: "contents" }} outlined>
       <mw-card-title title="Title" subtitle="Subtitle"></mw-card-title>
       <mw-card-body>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam.
       </mw-card-body>
     </mw-card>
-    <div style={{ display: 'contents' }}>
+    <div style={{ display: "contents" }}>
       <Story id="components-card--card-title" />
     </div>
   </div>
@@ -90,14 +90,14 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 ### Card Image
 
 <Canvas withSource="open">
-  <div style={{ display: 'flex', gap: '20px', justifyContent: 'space-evenly' }}>
+  <div style={{ display: "flex", gap: "20px", justifyContent: "space-evenly" }}>
     <Story id="components-card--card-image-top" />
     <Story id="components-card--card-image-bottom" />
     <mw-card elevated>
       <mw-card-header header="Header" subheader="Subheader">
-        <mw-avatar slot="icon" src="https://i.pravatar.cc/150" alt="John Doe"></mw-avatar>
+        <mw-avatar slot="icon" src="https://i.pravatar.cc/150?img=23" alt="John Doe"></mw-avatar>
       </mw-card-header>
-      <mw-card-image src="https://placedog.net/250/150?r" alt="card image"></mw-card-image>
+      <mw-card-image src="https://placedog.net/250/150?id=3" alt="card image"></mw-card-image>
       <mw-card-title title="Title" subtitle="Subtitle" metadata="Metadata"></mw-card-title>
     </mw-card>
   </div>
@@ -105,7 +105,7 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 
 ```jsx
 <mw-card elevated>
-  <mw-card-image src="https://placedog.net/250/150?r" alt="card image"></mw-card-image>
+  <mw-card-image src="https://placedog.net/250/150?id=3" alt="card image"></mw-card-image>
   <mw-card-title title="Title" subtitle="Subtitle" metadata="Metadata"></mw-card-title>
 </mw-card>
 ```
@@ -113,15 +113,15 @@ import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
 ### Card Image Only
 
 <Canvas withSource="open">
-  <div style={{ display: 'flex', gap: '20px', justifyContent: 'space-evenly' }}>
+  <div style={{ display: "flex", gap: "20px", justifyContent: "space-evenly" }}>
     <mw-card elevated>
-      <mw-card-image src="https://placedog.net/350/200?r" alt="card image"></mw-card-image>
+      <mw-card-image src="https://placedog.net/350/200?id=3" alt="card image"></mw-card-image>
     </mw-card>
     <mw-card elevated>
-      <mw-card-image src="https://placedog.net/200/200?r" alt="card image"></mw-card-image>
+      <mw-card-image src="https://placedog.net/200/200?id=3" alt="card image"></mw-card-image>
     </mw-card>
     <mw-card elevated>
-      <mw-card-image src="https://placedog.net/100/200?r" alt="card image"></mw-card-image>
+      <mw-card-image src="https://placedog.net/100/200?id=3" alt="card image"></mw-card-image>
     </mw-card>
   </div>
 </Canvas>
@@ -157,7 +157,7 @@ The `mw-card-footer` element is not limited to the usage of Buttons. Any Element
   <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
     <mw-card test-id="${args.testId}" elevated="${args.elevated}" outlined="${args.outlined}">
       <mw-card-header header="Header" subheader="Subheader">
-        <mw-avatar slot="icon" src="https://i.pravatar.cc/150" alt="John Doe"></mw-avatar>
+        <mw-avatar slot="icon" src="https://i.pravatar.cc/150?img=23" alt="John Doe"></mw-avatar>
       </mw-card-header>
       <mw-card-body>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. At vero eos et accusam.

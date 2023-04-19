@@ -1,8 +1,8 @@
-import '../../global/global.css';
+import "../../global/global.css";
 
 export default {
-  title: 'Components/Avatar',
-  component: 'mw-avatar',
+  title: "Components/Avatar",
+  component: "mw-avatar",
 };
 
 const DefaultTemplate = args => `
@@ -10,34 +10,34 @@ const DefaultTemplate = args => `
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  testId: 'avatar',
-  src: 'https://i.pravatar.cc/150',
-  alt: 'John Doe',
-  size: 'medium',
+  testId: "avatar",
+  src: "https://i.pravatar.cc/150?img=23",
+  alt: "John Doe",
+  size: "medium",
 };
 
 export const Large = DefaultTemplate.bind({});
 Large.args = {
-  testId: 'avatar',
-  src: 'https://i.pravatar.cc/150',
-  alt: 'John Doe',
-  size: 'large',
+  testId: "avatar",
+  src: "https://i.pravatar.cc/150?img=23",
+  alt: "John Doe",
+  size: "large",
 };
 
 export const Small = DefaultTemplate.bind({});
 Small.args = {
-  testId: 'avatar',
-  src: 'https://i.pravatar.cc/150',
-  alt: 'John Doe',
-  size: 'small',
+  testId: "avatar",
+  src: "https://i.pravatar.cc/150?img=23",
+  alt: "John Doe",
+  size: "small",
 };
 
 export const XSmall = DefaultTemplate.bind({});
 XSmall.args = {
-  testId: 'avatar',
-  src: 'https://i.pravatar.cc/150',
-  alt: 'John Doe',
-  size: 'x-small',
+  testId: "avatar",
+  src: "https://i.pravatar.cc/150?img=23",
+  alt: "John Doe",
+  size: "x-small",
 };
 
 const FallbackTemplate = args => `
@@ -45,9 +45,9 @@ const FallbackTemplate = args => `
 
 export const Fallback = FallbackTemplate.bind({});
 Fallback.args = {
-  testId: 'avatar',
-  alt: 'John Doe',
-  size: 'medium',
+  testId: "avatar",
+  alt: "John Doe",
+  size: "medium",
 };
 
 const IconTemplate = args => `
@@ -55,6 +55,6 @@ const IconTemplate = args => `
 
 export const Icon = IconTemplate.bind({});
 Icon.args = {
-  testId: 'avatar',
-  size: 'medium',
+  testId: "avatar",
+  size: "medium",
 };
