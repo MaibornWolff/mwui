@@ -101,5 +101,5 @@ ImageWithPreload.args = {
   fallback,
   alt: "alt-text",
   lazyLoad: true,
-  preloadSrc: "https://i.pravatar.cc/15",
+  preloadSrc: "https://i.pravatar.cc/15?img=23",
 };
