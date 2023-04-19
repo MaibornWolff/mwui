@@ -45,7 +45,7 @@ const SearchTemplate = args => `
 <mw-app-bar position="${args.position}">
   <div slot="start">
     <img src="${logo}"/>
-    <mw-app-bar-title>Product</mw-app-bar-title>
+    <mw-app-bar-title>Product name</mw-app-bar-title>
   </div>
   <div slot="end" style="width: 250px">
     <mw-textfield type="text" placeholder="Search things..." has-error="false">
