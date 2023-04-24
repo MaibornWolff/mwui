@@ -26,7 +26,7 @@
         "release": "release-it"
     },
     "devDependencies": {
-        "@babel/core": "^7.18.10",
+        "@babel/core": "^7.21.4",
         "@release-it/conventional-changelog": "^5.1.1",
         "@types/estree": "^1.0.0",
         "@types/node": "^18.15.11",
