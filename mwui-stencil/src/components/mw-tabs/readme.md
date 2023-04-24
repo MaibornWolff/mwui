@@ -9,6 +9,12 @@
 | `selected` | `selected` | Dictates which tab is pre-selected. Omit if no tab should be pre-selected. | `number` | `null`      |
 | `testId`   | `test-id`  | Test ID                                                                    | `string` | `undefined` |
 
+## Events
+
+| Event     | Description                        | Type                                 |
+| --------- | ---------------------------------- | ------------------------------------ |
+| `emitter` | Emits an event when tab is changed | `CustomEvent<{ selected: number; }>` |
+
 ## Dependencies
 
 ### Depends on

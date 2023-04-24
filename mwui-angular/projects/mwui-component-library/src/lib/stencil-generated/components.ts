@@ -877,7 +877,12 @@ export class MwTab {
     }
 }
 
-export declare interface MwTab extends Components.MwTab {}
+export declare interface MwTabs extends Components.MwTabs {
+    /**
+     * Emits an event when tab is changed
+     */
+    emitter: EventEmitter<CustomEvent<{ selected: number }>>;
+}
 
 @ProxyCmp({
     inputs: ["selected", "testId"],
@@ -894,6 +899,7 @@ export class MwTabs {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["emitter"]);
     }
 }
 

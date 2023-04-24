@@ -513,6 +513,8 @@
   <script>
     const cards = document.getElementsByTagName("mw-card");
     const chips = document.getElementsByTagName("mw-chip");
+    const tabs = document.getElementsByTagName("mw-tabs");
+    
     for (var i = 0; i < cards.length; i++) {
       cards[i].addEventListener("click", event => {
         console.log("card clicked", event);
@@ -530,6 +532,12 @@
 
       chips[i].addEventListener("toggle", event => {
         console.log("chip: toggled", event);
+      });
+    }
+
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener("click", event => {
+        console.log("tabs clicked", event, event.detail);
       });
     }
   </script>
