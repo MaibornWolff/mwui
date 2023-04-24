@@ -51,7 +51,7 @@ const AvatarTemplate = args => `
   test-id="${args.testId}"
   show-close="${args.showClose}">
     <mw-avatar
-      src="https://i.pravatar.cc/150"
+      src="https://i.pravatar.cc/150?img=23"
       alt="Peter Pan"
       size="x-small">
     </mw-avatar>

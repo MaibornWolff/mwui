@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-03-13T15:17:51",
+  "timestamp": "2023-03-23T09:31:29",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.1.0",
@@ -2948,7 +2948,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
-      "readme": "# mw-menu-list\n",
+      "readme": "# mw-menu-list\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
