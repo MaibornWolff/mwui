@@ -3029,7 +3029,17 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "emitter",
+          "detail": "{ selected: number; }",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "Emits an event when tab is changed",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],

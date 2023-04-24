@@ -1,17 +1,33 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 
 # Tabs
 
 `mw-tabs` is a wrapper for a group of `mw-tab` components and allows the user to switch the active tab by pressing on it.
-
 The amount of tabs and their appearance is determined by how many `mw-tab` components were placed in the `mw-tabs` slot.
 
 The `selected` prop determines which tab is enabled by default.
-
-<ArgsTable of="mw-tabs" />
-
-### Default
+A `mw-tab` does not represent tab content but only the selectable tab in the navigation. Implementing behaviour to switch between contents by using `mw-tabs` is up to the application using it.
 
 <Canvas>
   <Story id="components-tabs--default" />
 </Canvas>
+
+### Listen to Tab changes
+
+Selecting one of the tabs fires a `click` Event containing the current `selected` property.
+
+```javascript
+import type { MwCheckboxCustomEvent } from "@maibornwolff/mwui-stencil/dist/types/components";
+
+const onClick = (event: MwTabsCustomEvent<number>) => {
+  console.log("tabs changed/clicked", event.target.selected);
+};
+```
+
+```javascript
+document.getElementsByTagName("mw-tabs")[0].addEventListener("click", event => {
+  console.log(event.target.selected);
+});
+```
+
+<ArgsTable of="mw-tabs" />
