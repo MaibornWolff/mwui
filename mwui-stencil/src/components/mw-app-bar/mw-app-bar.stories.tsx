@@ -18,7 +18,7 @@ const DefaultTemplate = args => `
     <mw-app-bar-title>Company name</mw-app-bar-title>
   </div>
   <div slot="end">
-    <mw-avatar slot="end" src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>
+    <mw-avatar slot="end" src="https://i.pravatar.cc/150?img=23" alt="John Doe" size="medium"></mw-avatar>
   </div>
 </mw-app-bar>`;
 
@@ -34,7 +34,7 @@ const CenterTemplate = args => `
    <img src="${logo}"/>
 </div>
   <div slot="end">
-    <mw-avatar slot="end" src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>
+    <mw-avatar slot="end" src="https://i.pravatar.cc/150?img=23" alt="John Doe" size="medium"></mw-avatar>
   </div>
 </mw-app-bar>`;
 
@@ -51,7 +51,7 @@ const SearchTemplate = args => `
     <mw-textfield type="text" placeholder="Search things..." has-error="false">
       <mw-icon slot="icon-start" icon="search"></mw-icon>
     </mw-textfield>
-    <mw-avatar slot="end" src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>
+    <mw-avatar slot="end" src="https://i.pravatar.cc/150?img=23" alt="John Doe" size="medium"></mw-avatar>
    </div>
 
 </mw-app-bar>`;

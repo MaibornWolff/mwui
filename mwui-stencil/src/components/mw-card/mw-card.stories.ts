@@ -24,7 +24,7 @@ CardBody.args = {
 const HeaderTemplate = args => `
 <mw-card test-id="${args.testId}" elevated="${args.elevated}" outlined="${args.outlined}">
   <mw-card-header header="Header" subheader="Subheader">
-    <mw-avatar slot="icon" src="https://i.pravatar.cc/150" alt="John Doe"></mw-avatar>
+    <mw-avatar slot="icon" src="https://i.pravatar.cc/150?img=23" alt="John Doe"></mw-avatar>
   </mw-card-header>
   <mw-card-body>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</mw-card-body>
 </mw-card>`;
@@ -81,7 +81,7 @@ CardImageTop.args = {
   testId: "card",
   elevated: true,
   outlined: false,
-  src: "https://placedog.net/250/150?r",
+  src: "https://placedog.net/250/150?id=3",
 };
 
 const ImageBottomTemplate = args => `
@@ -95,7 +95,7 @@ CardImageBottom.args = {
   testId: "card",
   elevated: true,
   outlined: false,
-  src: "https://placedog.net/250/150?r",
+  src: "https://placedog.net/250/150?id=3",
 };
 
 const ImageSingleTemplate = args => `
@@ -108,12 +108,12 @@ CardImageSingle.args = {
   testId: "card",
   elevated: true,
   outlined: false,
-  src: "https://placedog.net/250/150?r",
+  src: "https://placedog.net/250/150?id=3",
 };
 
 const FullTemplate = args => `
 <mw-card test-id="${args.testId}" elevated="${args.elevated}" outlined="${args.outlined}">
-  <mw-card-header header="Header" subheader="Subheader"><mw-avatar slot="icon" src="https://i.pravatar.cc/150" alt="John Doe"></mw-card-header>
+  <mw-card-header header="Header" subheader="Subheader"><mw-avatar slot="icon" src="https://i.pravatar.cc/150?img=23" alt="John Doe"></mw-card-header>
   <mw-card-image src="${args.src}" alt="card image"></mw-card-image>
   <mw-card-title title="Title" subtitle="Subtitle" metadata="Metadata"></mw-card-title>
   <mw-card-body>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</mw-card-body>
@@ -128,5 +128,5 @@ CardFull.args = {
   testId: "card",
   elevated: true,
   outlined: false,
-  src: "https://placedog.net/250/150?r",
+  src: "https://placedog.net/250/150?id=3",
 };

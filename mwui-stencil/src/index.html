@@ -224,10 +224,10 @@
       <h2>Avatar</h2>
       <h3>Image</h3>
       <div style="display: flex; gap: 16px">
-        <mw-avatar src="https://i.pravatar.cc/150" alt="John Doe" size="large"></mw-avatar>
-        <mw-avatar src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>
-        <mw-avatar src="https://i.pravatar.cc/150" alt="John Doe" size="small"></mw-avatar>
-        <mw-avatar src="https://i.pravatar.cc/150" alt="John Doe" size="x-small"></mw-avatar>
+        <mw-avatar src="https://i.pravatar.cc/150?img=23" alt="John Doe" size="large"></mw-avatar>
+        <mw-avatar src="https://i.pravatar.cc/150?img=23" alt="John Doe" size="medium"></mw-avatar>
+        <mw-avatar src="https://i.pravatar.cc/150?img=23" alt="John Doe" size="small"></mw-avatar>
+        <mw-avatar src="https://i.pravatar.cc/150?img=23" alt="John Doe" size="x-small"></mw-avatar>
       </div>
       <h3>Icon</h3>
       <div style="display: flex; gap: 16px">
@@ -340,10 +340,10 @@
       <div style="display: flex; gap: 20px">
         <mw-card elevated>
           <mw-card-header header="Header" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe" /></mw-card-header>
-          <mw-card-image src="https://placedog.net/500/280" alt="card image"></mw-card-image>
+          <mw-card-image src="https://placedog.net/500/280?id=3" alt="card image"></mw-card-image>
         </mw-card>
         <mw-card elevated>
-          <mw-card-image src="https://placedog.net/500/280" alt="card image"></mw-card-image>
+          <mw-card-image src="https://placedog.net/500/280?id=3" alt="card image"></mw-card-image>
           <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
           <mw-card-body>I am the body section of this card.</mw-card-body>
           <mw-card-footer>
@@ -353,7 +353,7 @@
         </mw-card>
         <mw-card elevated>
           <mw-card-header header="Header" subheader="Subheader"><mw-avatar slot="icon" alt="John Doe" /></mw-card-header>
-          <mw-card-image src="https://placedog.net/500/280" alt="card image"></mw-card-image>
+          <mw-card-image src="https://placedog.net/500/280?id=3" alt="card image"></mw-card-image>
           <mw-card-title title="Peter Pan" subtitle="DTD" metadata="Last updated: 2 days ago"></mw-card-title>
           <mw-card-body>I am the body section of this card.</mw-card-body>
           <mw-card-footer>
@@ -365,13 +365,13 @@
       <h3>CardImage Only</h3>
       <div style="display: flex; gap: 20px">
         <mw-card>
-          <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
+          <mw-card-image src="https://placedog.net/200/150?id=3" alt="card image"></mw-card-image>
         </mw-card>
         <mw-card outlined>
-          <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
+          <mw-card-image src="https://placedog.net/200/150?id=3" alt="card image"></mw-card-image>
         </mw-card>
         <mw-card elevated>
-          <mw-card-image src="https://placedog.net/200/150" alt="card image"></mw-card-image>
+          <mw-card-image src="https://placedog.net/200/150?id=3" alt="card image"></mw-card-image>
         </mw-card>
       </div>
     </section>
@@ -426,9 +426,15 @@
               <mw-icon slot="icon-start" icon="search"></mw-icon>
             </mw-textfield>
           </div>
-          <mw-avatar slot="end" src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>
+          <mw-avatar slot="end" src="https://i.pravatar.cc/150?img=23" alt="John Doe" size="medium"></mw-avatar>
         </div>
       </mw-app-bar>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Login</h2>
+      <mw-login headline="Log in to your account" layout="center" forgot-password-href="test" sign-up-href="test"> </mw-login>
     </section>
   </body>
   <script>
