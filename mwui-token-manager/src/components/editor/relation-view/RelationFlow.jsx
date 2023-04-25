@@ -16,10 +16,10 @@ const createTokenNodes = (rootTokenName, setNodes, setEdges) => {
     const tokenNodes = [];
     const tokenEdges = [];
 
-    createNodesAndEdges(tokenNodes, tokenEdges, setNodes)
-    //createGroupNodes(tokenNodes)
-    //createRootNode(tokenNodes)
-    //createRelationNodes(tokenNodes, tokenEdges)
+    //createNodesAndEdges(tokenNodes, tokenEdges, setNodes)
+    createGroupNodes(tokenNodes)
+    createRootNode(tokenNodes)
+    createRelationNodes(tokenNodes, tokenEdges)
 
     setNodes(tokenNodes);
     setEdges(tokenEdges);

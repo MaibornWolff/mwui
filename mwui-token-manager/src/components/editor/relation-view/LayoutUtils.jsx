@@ -132,7 +132,6 @@ export function createNodesAndEdges(nodes, edges, setNodes) {
         }
     },)
 
-
     nodes.push({
         id: rootToken.name,
         data: { label: rootToken.name },
@@ -143,11 +142,7 @@ export function createNodesAndEdges(nodes, edges, setNodes) {
         //nodeOrigin: [0.5, 0.5],
         parentNode: rootToken.group
     },)
-
 }
-
-
-
 
 export const createGroupNodes = (tokenNodes) => {
     for (const group of getTokenGroupNames()) {
@@ -182,7 +177,7 @@ export const createRelationNodes = (tokenNodes, tokenEdges) => {
                 const groupOfNode = groupContainerParams[token.group]
                 tokenNodes.push({
                     // groupContainerParams[token.group].width / 2
-                    id: token.name, position: Position.Bottom/*{ x: Math.max(groupOfNode.width, groupOfNode.height) / 2, y: yPosCounter }*/, data: { label: token.name }, parentNode: groupName, style:
+                    id: token.name, position: { x: Math.max(groupOfNode.width, groupOfNode.height) / 2, y: yPosCounter }, data: { label: token.name }, parentNode: groupName, style:
                         { width: 'unset' }
                 });
                 tokenEdges.push(createEdge("rootToken", tokenNodes[tokenNodes.length - 1].id, key))
