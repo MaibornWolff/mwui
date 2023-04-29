@@ -20,6 +20,12 @@
     border-color: rgb(191, 189, 189);
     vertical-align: top;
     padding: 10px 0px;
+    /* Standard syntax */
+    user-select: none;
+    /* Safari */
+    -webkit-user-select: none;
+    /* IE 10 and IE 11 */
+    -ms-user-select: none;
 }
 
 #submenu-handle:hover {
