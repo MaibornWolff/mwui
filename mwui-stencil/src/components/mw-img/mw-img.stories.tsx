@@ -73,7 +73,7 @@ const SrcSetTemplate = args => `
     </div>
   </div>
 `;
-const randomImgId = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+const randomImgId = 23;
 export const ImageWithAdaptiveSizes = SrcSetTemplate.bind({});
 ImageWithAdaptiveSizes.args = {
   src: `https://i.pravatar.cc/2400?img=${randomImgId}`,
@@ -101,5 +101,5 @@ ImageWithPreload.args = {
   fallback,
   alt: "alt-text",
   lazyLoad: true,
-  preloadSrc: "https://i.pravatar.cc/15",
+  preloadSrc: "https://i.pravatar.cc/15?img=23",
 };
