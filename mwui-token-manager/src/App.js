@@ -17,7 +17,6 @@ function App() {
         return <LoginPage setLoginUser={setLoginUser} />;
     } else {
 
-        //macht es sinn hier seiten zu benutzen?? wahrscheinlich nicht, ich hab ja immer das gleiche standard layout
         return (
             <div className="App">
                 <TopMenuBar setActiveToken={setActiveToken} setActiveView={setActiveView} />

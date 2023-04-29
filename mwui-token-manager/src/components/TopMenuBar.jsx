@@ -3,7 +3,7 @@ import "./styles/TopMenuBar.css";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { deserializeTokens } from "../token-data/TokenSerialization";
 import { getAllTokensDict } from "../token-data/TokenUtils";
-
+import { MwAppBar, MwAppBarTitle } from "@maibornwolff/mwui-react";
 import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
 
 
@@ -21,26 +21,17 @@ const itemsMapped = items.map((value, index) => {
 });
 
 const TopMenuBar = ({ setActiveToken, setActiveView }) => (
-    <mw-app-bar position="undefined">
+    <MwAppBar>
         <div slot="start">
-            <img src="static/media/mw_logo.693e45a5.svg" />
-            <mw-app-bar-title>Tokenmanager</mw-app-bar-title>
+            <MwAppBarTitle>Token Manager</MwAppBarTitle>
         </div>
-        <div slot="end" style={{ width: '250px' }}>
-            <mw-search>HAllo</mw-search>
-            {/* <ReactSearchAutocomplete items={itemsMapped} onSelect={(result) => handleOnSelect(result, setActiveToken)} styling={{ zIndex: "1" }} /> */}
-            <mw-textfield type="text" placeholder="Search things..." has-error="false">
-                <mw-icon slot="icon-start" icon="search"></mw-icon>
-            </mw-textfield>
+        <div slot="end" style={{ minWidth: "400px", display: "block" }}>
+            <ReactSearchAutocomplete items={itemsMapped} placeholder="Search token..." onSelect={(result) => handleOnSelect(result, setActiveToken)} styling={{ zIndex: "1" }}><mw-icon slot="icon-start" icon="search"></mw-icon></ReactSearchAutocomplete>
+        </div>
+        <div slot="end">
             <mw-avatar slot="end" src="https://i.pravatar.cc/150" alt="John Doe" size="medium"></mw-avatar>
         </div>
-
-    </mw-app-bar>
-    /*
-        <div id="topmenubar">
-            <h1>Token Manager</h1>
-            <ReactSearchAutocomplete items={itemsMapped} onSelect={(result) => handleOnSelect(result, setActiveToken)} styling={{ zIndex: "1" }} />
-        </div>*/
+    </MwAppBar>
 );
 
 export default TopMenuBar;

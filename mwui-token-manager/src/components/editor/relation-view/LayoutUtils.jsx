@@ -145,6 +145,7 @@ export function createNodesAndEdges(nodes, edges, setNodes) {
 }
 
 export const createGroupNodes = (tokenNodes) => {
+    xPosCounter = 0;
     for (const group of getTokenGroupNames()) {
         const size = groupContainerParams[group].width > groupContainerParams[group].height ? groupContainerParams[group].width : groupContainerParams[group].height
         xPosCounter += size / 2
@@ -171,7 +172,7 @@ export const createRelationNodes = (tokenNodes, tokenEdges) => {
 
     for (const groupName of getTokenGroupNames()) {
         yPosCounter = nodeDistance
-        for (const [key, value] of Object.entries(getRelationTokensDict(rootToken, getTokensByGroupName(groupName)))) {
+        for (const [key, value] of Object.entries(getRelationTokensDict(rootToken.name, getTokensByGroupName(groupName)))) {
             value.forEach(token => {
                 yPosCounter += nodeDistance;
                 const groupOfNode = groupContainerParams[token.group]

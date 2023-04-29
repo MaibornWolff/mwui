@@ -5,6 +5,7 @@
     "dependencies": {
         "@emotion/react": "^11.10.6",
         "@emotion/styled": "^11.10.6",
+        "@maibornwolff/mwui-react": "^0.2.0",
         "@maibornwolff/mwui-stencil": "^0.2.0",
         "@mui/material": "^5.11.14",
         "@testing-library/jest-dom": "^5.16.5",

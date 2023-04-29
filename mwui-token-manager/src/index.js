@@ -2,10 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
 import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
 
-defineCustomElements(window);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
