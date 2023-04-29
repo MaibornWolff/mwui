@@ -1,0 +1,46 @@
+#submenu-wrapper {
+    display: block;
+    position: fixed;
+    right: -410px;
+    transition: right 0.5s;
+    /* 72 pixel is the topmenubar height*/
+    height: calc(100% - 72px);
+}
+
+#submenu-handle {
+    margin-top: 25px;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    width: 20px;
+    background-color: #FFF;
+    cursor: pointer;
+    display: inline-block;
+    border-width: 1px 0px 1px 1px;
+    border-style: solid;
+    border-color: rgb(191, 189, 189);
+    vertical-align: top;
+    padding: 10px 0px;
+}
+
+#submenu-handle:hover {
+    color: #c42177;
+}
+
+#submenu {
+    height: 100%;
+    width: 400px;
+    display: inline-block;
+    background-color: #FFF;
+}
+
+#submenu-wrapper.open {
+    right: 0px;
+}
+
+#submenu-wrapper.open.hover {
+    right: -5px;
+}
+
+#submenu-wrapper.hover {
+    right: -405px;
+}

@@ -21,7 +21,7 @@ const itemsMapped = items.map((value, index) => {
 });
 
 const TopMenuBar = ({ setActiveToken, setActiveView }) => (
-    <MwAppBar>
+    <MwAppBar id="topmenubar">
         <div slot="start">
             <MwAppBarTitle>Token Manager</MwAppBarTitle>
         </div>

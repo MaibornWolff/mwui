@@ -163,7 +163,7 @@ export const createGroupNodes = (tokenNodes) => {
 }
 export const createRootNode = (tokenNodes) => {
     const groupOfActiveNode = groupContainerParams[rootToken.group]
-    tokenNodes.push({ id: "rootToken", position: Position.Top/*{ x: Math.max(groupOfActiveNode.width, groupOfActiveNode.height) / 2, y: (Math.max(groupOfActiveNode.width, groupOfActiveNode.height) / 2) }*/, data: { label: rootToken.name }, style: { background: "#EFF", width: 'unset' }, parentNode: rootToken.group })
+    tokenNodes.push({ id: "rootToken", position: Position.Top/*{ x: Math.max(groupOfActiveNode.width, groupOfActiveNode.height) / 2, y: (Math.max(groupOfActiveNode.width, groupOfActiveNode.height) / 2) }*/, data: { label: rootToken.name }, style: { background: "#333", color: "#EFF", width: 'unset' }, parentNode: rootToken.group })
     idCounter += 1;
     yPosCounter += nodeDistance;
 

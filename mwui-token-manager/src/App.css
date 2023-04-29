@@ -3,13 +3,28 @@
 *
 */
 
+html,
+body,
+#root {
+    height: 100%;
+    margin: 0;
+}
+
+.App {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
 .container {
     display: flex;
     /* or inline-flex */
     align-items: stretch;
+    flex: 0 1 auto;
 
     flex-flow: row wrap;
-    height: 700px;
+    /* 72 pixel is the topmenubar height */
+    height: calc(100% - 72px);
 }
 
 .item {
@@ -18,8 +33,11 @@
     height: 100%;
     min-width: 100px;
     /* A fixed width as the default */
-    border: 1px solid rgb(191, 189, 189);
-    padding: 5px;
+    border-right: 1px solid rgb(191, 189, 189);
+    border-left: 1px solid rgb(191, 189, 189);
+    /* padding: 5px; */
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .item-center {

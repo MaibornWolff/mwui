@@ -31,6 +31,10 @@
     padding: 0 var(--mw-component-header-padding-x);
 } */
 
+#topmenubar {
+    flex: 0 1 auto;
+}
+
 div[slot='end'] {
     position: relative;
 }
