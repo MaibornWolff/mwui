@@ -7,7 +7,12 @@ import "reactflow/dist/style.css";
 import { escapeLeadingUnderscores } from "typescript";
 import { origin, initRelationNodeData, calcDimensionOfNodes, createGroupNodes, createRelationNodes, createRootNode, createNodesAndEdges } from "./LayoutUtils";
 
-const createTokenNodes = (rootTokenName, setNodes, setEdges) => {
+export const FlowLayoutTypes = {
+    default: "DEFAULT",
+    mindmap: "MINDMAP"
+}
+
+const createTokenNodes = (rootTokenName, setNodes, setEdges, flowLayout) => {
 
     if (rootTokenName === "" || rootTokenName === undefined) { return; }
 
@@ -17,24 +22,23 @@ const createTokenNodes = (rootTokenName, setNodes, setEdges) => {
     const tokenEdges = [];
 
     //createNodesAndEdges(tokenNodes, tokenEdges, setNodes)
-    createGroupNodes(tokenNodes)
-    createRootNode(tokenNodes)
-    createRelationNodes(tokenNodes, tokenEdges)
+    createGroupNodes(tokenNodes, flowLayout)
+    createRootNode(tokenNodes, flowLayout)
+    createRelationNodes(tokenNodes, tokenEdges, flowLayout)
 
     setNodes(tokenNodes);
     setEdges(tokenEdges);
 };
 
-function Flow({ activeToken, setActiveToken }) {
+function Flow({ activeToken, setActiveToken, flowLayoutType }) {
 
     const [nodes, setNodes, onNodesChange] = useNodesState([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
-    React.useEffect(() => { createTokenNodes(activeToken, setNodes, setEdges); setNodesNeedLayouting(true) }, [activeToken]);
+    React.useEffect(() => { createTokenNodes(activeToken, setNodes, setEdges, flowLayoutType); setNodesNeedLayouting(true) }, [activeToken, flowLayoutType]);
 
     const onConnect = useCallback(params => setEdges(eds => addEdge(params, eds)), [setEdges]);
 
-    // TODO: REVIEW: testweise initialize ausprobieren
     const [nodesNeedLayouting, setNodesNeedLayouting] = useState(true);
     // const [nodeDimensions, setNodeDimensions] = useState(nodes.map(n => {return {width:n.width, height:n.height}}))
     const nodesInitialized = useNodesInitialized();

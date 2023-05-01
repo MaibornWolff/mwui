@@ -16,8 +16,8 @@ const toggleActive = event => {
 };
 
 const handleTextFieldChange = (id) => {
-    const ele = document.getElementById(id)
-    console.log("Textfiled is set: ", ele.value)
+    const textfieldContent = document.getElementById("input_" + id).value
+    console.log("Textfield", id, "has content", textfieldContent)
 }
 
 const DetailsRelations = ({ activeToken, setActiveToken, setActiveView }) => {
@@ -27,8 +27,6 @@ const DetailsRelations = ({ activeToken, setActiveToken, setActiveView }) => {
         if (relationsDict.length !== 0) {
             return (
                 <div id="relation-overview">
-                    {/*REVIEW: da war als id token-overview gesetzt - das ist allerdings links auch dieselbe id, somit nicht unique.
-                    außerdem habe ich die class "item" entfernt, das parent element hat es ja schon.*/}
                     <h4>Beziehungen</h4>
                     <div className="sidenav">
                         {relationsDict.map((relationGroup) => (
@@ -46,7 +44,7 @@ const DetailsRelations = ({ activeToken, setActiveToken, setActiveView }) => {
                                                 <div className="code-block" >
                                                     <Box component="form" sx={{ '& > :not(style)': { m: 1 }, }} autoComplete="off">
                                                         <TextField id={"input_" + token.name} label="Code:" variant="filled" multiline defaultValue={JSON.stringify(token.value)} />
-                                                        <button onClick={() => handleTextFieldChange("input_" + token.name)}>save</button>
+                                                        <button onClick={() => handleTextFieldChange(token.name)}>save</button>
                                                     </Box>
                                                 </div>
                                             </li>

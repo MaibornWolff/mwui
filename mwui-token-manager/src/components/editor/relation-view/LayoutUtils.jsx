@@ -3,6 +3,7 @@ import { Position, useNodesInitialized } from "reactflow";
 
 import { getTokenGroupNames, getTokensByGroupName } from "../../../token-data/TokenSerialization"
 import { getAllTokensDict, getRelationTokensDict, getTokenByName } from "../../../token-data/TokenUtils";
+import { FlowLayoutTypes } from "./RelationFlow";
 
 let relationsTokensDict = {}
 let rootToken = {};
@@ -54,11 +55,19 @@ export const initRelationNodeData = (rootTokenName) => {
     }
 }
 
+const calcNodeWidth = (nodeContent) => {
+    // re-use canvas object for better performance
+    const canvas = calcGroupWidth.canvas || (calcGroupWidth.canvas = document.createElement("canvas"));
+    const ctx = canvas.getContext("2d");
+    ctx.font = "400 12px 'Roboto', sans-serif"; // font styling of nodes
+    return ctx.measureText(nodeContent).width + 40;
+}
+
 const calcGroupWidth = (groupName, rootToken) => {
     // re-use canvas object for better performance
     const canvas = calcGroupWidth.canvas || (calcGroupWidth.canvas = document.createElement("canvas"));
     const ctx = canvas.getContext("2d");
-    ctx.font = "400 12px 'Times New Roman'"; // font styling of nodes
+    ctx.font = "400 12px 'Roboto', sans-serif"; // font styling of nodes
     const relationTokensOfGroup = Object.values(relationsTokensDict).map(rtvalue => rtvalue.filter(t => t.group === groupName)).flat()
     if (rootToken.group === groupName) {
         relationTokensOfGroup.push(rootToken)
@@ -144,31 +153,39 @@ export function createNodesAndEdges(nodes, edges, setNodes) {
     },)
 }
 
-export const createGroupNodes = (tokenNodes) => {
+export const createGroupNodes = (tokenNodes, flowLayout) => {
     xPosCounter = 0;
+    yPosCounter = 0;
     for (const group of getTokenGroupNames()) {
-        const size = groupContainerParams[group].width > groupContainerParams[group].height ? groupContainerParams[group].width : groupContainerParams[group].height
-        xPosCounter += size / 2
+        var sizex, sizey, borderRadius;
+        if (flowLayout === FlowLayoutTypes.mindmap) {
+            sizey = sizex = groupContainerParams[group].width > groupContainerParams[group].height ? groupContainerParams[group].width : groupContainerParams[group].height;
+            borderRadius = "200em";
+        } else {
+            sizex = groupContainerParams[group].width;
+            sizey = groupContainerParams[group].height;
+            borderRadius = "3px";
+        }
         tokenNodes.push({
             id: group,
             data: { label: group },
             type: 'input',
             position: { x: xPosCounter, y: yPosCounter },
             className: 'group',
-            style: { borderRadius: "20em", backgroundColor: groupContainerParams[group].color, width: size, height: size }
+            style: { borderRadius: borderRadius, backgroundColor: groupContainerParams[group].color, width: sizex, height: sizey }
         },)
         idCounter += 1;
-        xPosCounter += size / 2 //+ nodeDistance
+        xPosCounter += sizex + nodeDistance / 2
     }
 }
-export const createRootNode = (tokenNodes) => {
+export const createRootNode = (tokenNodes, flowLayout) => {
     const groupOfActiveNode = groupContainerParams[rootToken.group]
-    tokenNodes.push({ id: "rootToken", position: Position.Top/*{ x: Math.max(groupOfActiveNode.width, groupOfActiveNode.height) / 2, y: (Math.max(groupOfActiveNode.width, groupOfActiveNode.height) / 2) }*/, data: { label: rootToken.name }, style: { background: "#333", color: "#EFF", width: 'unset' }, parentNode: rootToken.group })
+    tokenNodes.push({ id: "rootToken", position: { x: 10, y: nodeDistance } /*{ x: Math.max(groupOfActiveNode.width, groupOfActiveNode.height) / 2, y: (Math.max(groupOfActiveNode.width, groupOfActiveNode.height) / 2) }*/, data: { label: rootToken.name }, style: { background: "#333", color: "#EFF", width: 'unset' }, parentNode: rootToken.group })
     idCounter += 1;
     yPosCounter += nodeDistance;
 
 }
-export const createRelationNodes = (tokenNodes, tokenEdges) => {
+export const createRelationNodes = (tokenNodes, tokenEdges, flowLayout) => {
 
     for (const groupName of getTokenGroupNames()) {
         yPosCounter = nodeDistance
@@ -176,9 +193,14 @@ export const createRelationNodes = (tokenNodes, tokenEdges) => {
             value.forEach(token => {
                 yPosCounter += nodeDistance;
                 const groupOfNode = groupContainerParams[token.group]
+                var tokenPosition;
+                if (flowLayout === FlowLayoutTypes.mindmap) {
+                    tokenPosition = { x: 10 + (Math.max(groupOfNode.width, groupOfNode.height) - calcNodeWidth(token.name)) / 2, y: yPosCounter }
+                } else {
+                    tokenPosition = { x: 10 + (groupContainerParams[token.group].width - calcNodeWidth(token.name)) / 2, y: yPosCounter };
+                }
                 tokenNodes.push({
-                    // groupContainerParams[token.group].width / 2
-                    id: token.name, position: { x: Math.max(groupOfNode.width, groupOfNode.height) / 2, y: yPosCounter }, data: { label: token.name }, parentNode: groupName, style:
+                    id: token.name, position: tokenPosition, data: { label: token.name }, parentNode: groupName, style:
                         { width: 'unset' }
                 });
                 tokenEdges.push(createEdge("rootToken", tokenNodes[tokenNodes.length - 1].id, key))

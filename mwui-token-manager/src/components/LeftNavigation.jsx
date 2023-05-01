@@ -33,8 +33,6 @@ const TokenNavigation = ({ activeToken, setActiveToken, setActiveView }) => (
                             {Object.keys(getTokensByGroupName(groupName)).map(tokenName => (
                                 <li key={tokenName} style={activeToken === tokenName ? { backgroundColor: "#EEF" } : {}}>
                                     <a href={"#" + tokenName} onClick={() => setActiveToken(tokenName)}>
-                                        {/* REVIEW: href geändert von "#${tokenName}" zu "#"+tokenName (siehe URL wenn etwas geklickt wird)*/}
-                                        {/* Kann übrigens mit window.location.hash abgerufen werden; beim Seitenaufruf könntest du damit activeToken direkt befüllen (siehe App.js) */}
                                         {tokenName}
                                     </a>
                                 </li>

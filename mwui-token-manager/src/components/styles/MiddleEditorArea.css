@@ -2,3 +2,9 @@
 * Arrange and style look of sub-elements
 *
 */
+
+#flow-type-selector {
+    position: absolute;
+    z-index: 5;
+    margin: 10px;
+}

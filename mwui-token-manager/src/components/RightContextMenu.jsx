@@ -31,7 +31,6 @@ const SubMenu = ({ activeToken, setActiveToken, setActiveView }) => (
             Beziehungen
         </div>
         <div id="submenu" className="item">
-            {/* <h4>Relations</h4> */}
             <DetailsRelations activeToken={activeToken} setActiveToken={setActiveToken} setActiveView={setActiveView} />
         </div>
     </div>

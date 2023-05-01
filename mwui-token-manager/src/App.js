@@ -7,7 +7,7 @@ import MiddleEditorArea from "./components/MiddleEditorArea";
 import LoginPage from "./pages/LoginPage";
 
 function App() {
-    const [activeToken, setActiveToken] = useState(window.location.hash.substring(1)); // REVIEW: könntest hier z.B. window.location.hash.substring(1) ausprobieren; siehe LeftNavigation.jsx
+    const [activeToken, setActiveToken] = useState(window.location.hash.substring(1));
     const [loginUser, setLoginUser] = useState("");
     const [activeView, setActiveView] = useState("designView");
 
