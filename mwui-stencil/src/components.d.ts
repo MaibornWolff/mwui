@@ -1938,7 +1938,7 @@ declare namespace LocalJSX {
     /**
      * Emits an event when tab is changed
      */
-    onEmitter?: (event: MwTabsCustomEvent<{ selected: number }>) => void;
+    onTabsClickEmitter?: (event: MwTabsCustomEvent<{ selected: number }>) => void;
     /**
      * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
      */

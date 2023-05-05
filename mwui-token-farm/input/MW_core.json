@@ -353,7 +353,7 @@
             },
             "size": {
                 "button": {
-                    "filled-outline": {
+                    "height": {
                         "minW": {
                             "value": 88,
                             "type": "sizing"
@@ -381,19 +381,19 @@
                             "type": "sizing"
                         },
                         "sm": {
-                            "value": 16,
+                            "value": 14,
                             "type": "sizing"
                         },
                         "md": {
-                            "value": 24,
+                            "value": 20,
                             "type": "sizing"
                         },
                         "lg": {
-                            "value": 32,
+                            "value": 24,
                             "type": "sizing"
                         },
                         "xl": {
-                            "value": 48,
+                            "value": 32,
                             "type": "sizing"
                         }
                     }
@@ -404,7 +404,7 @@
                         "type": "sizing"
                     },
                     "defaultH": {
-                        "value": 32,
+                        "value": "28px",
                         "type": "sizing"
                     }
                 },
@@ -456,7 +456,7 @@
                         }
                     },
                     "handle": {
-                        "value": 20,
+                        "value": "20px",
                         "type": "sizing"
                     },
                     "trackH": {

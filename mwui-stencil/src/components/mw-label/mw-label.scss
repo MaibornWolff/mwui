@@ -5,9 +5,13 @@
 }
 
 .label {
-  padding: 0 var(--mw-component-text-field-padding-text-field-label-vertical-x);
+  padding: 0 var(--mw-component-text-field-padding-label-vertical-x);
   font-family: var(--mw-component-text-field-label-font-family);
   font-weight: var(--mw-component-text-field-label-font-weight);
   font-size: var(--mw-component-text-field-label-font-size);
   line-height: var(--mw-component-text-field-label-line-height);
+}
+
+.required {
+  color: var(--mw-component-text-field-fg-required);
 }

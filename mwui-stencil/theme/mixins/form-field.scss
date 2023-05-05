@@ -11,16 +11,18 @@
 
   &.inline {
     flex-direction: row;
-    display: inline-flex;
+    display: flex;
     align-items: center;
 
     .input {
       min-width: var(--mw-component-size-text-field-min-w);
+      width: 100%;
     }
 
     label {
+      display: block;
       width: var(--mw-component-size-text-field-label-horizontal-width);
-      padding: var(--mw-component-text-field-padding-label-vertical-x);
+      padding: var(--mw-component-text-field-padding-label-horizontal);
     }
   }
 }
@@ -57,7 +59,7 @@
   box-shadow: inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default);
 
   &:focus-within {
-    background: var(--mw-component-text-field-bg-default);
+    background: var(--mw-component-text-field-bg-hover);
     box-shadow: inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused);
   }
 
