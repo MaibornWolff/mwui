@@ -8,8 +8,8 @@ export default {
 const DefaultTemplate = args => `
 <mw-avatar src="${args.src}" alt="${args.alt}" size="${args.size}"></mw-avatar>`;
 
-export const Default = DefaultTemplate.bind({});
-Default.args = {
+export const Medium = DefaultTemplate.bind({});
+Medium.args = {
   testId: "avatar",
   src: "https://i.pravatar.cc/150?img=23",
   alt: "John Doe",
@@ -51,10 +51,11 @@ Fallback.args = {
 };
 
 const IconTemplate = args => `
-<mw-avatar size="${args.size}"><mw-icon icon="placeholder"></mw-icon></mw-avatar>`;
+<mw-avatar size="${args.size}" icon="${args.icon}"></mw-avatar>`;
 
 export const Icon = IconTemplate.bind({});
 Icon.args = {
   testId: "avatar",
   size: "medium",
+  icon: "person",
 };
