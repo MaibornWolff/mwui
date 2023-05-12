@@ -8,6 +8,9 @@ on:
                 required: true
 jobs:
     deploy:
+        permissions:
+          contents: 'read'
+          id-token: 'write'
         environment:
             name: github-pages
             url: ${{ steps.build-publish.outputs.page_url }}
