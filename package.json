@@ -1,6 +1,6 @@
 {
     "name": "@maibornwolff/mwui",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Component Library using Figma's design tokens",
     "repository": {
         "type": "git",
@@ -45,6 +45,5 @@
     "bugs": {
         "url": "https://github.com/MaibornWolff/mwui/issues"
     },
-    "homepage": "https://github.com/MaibornWolff/mwui#readme",
-    "_id": "@maibornwolff/mwui@0.1.12"
+    "homepage": "https://github.com/MaibornWolff/mwui#readme"
 }
