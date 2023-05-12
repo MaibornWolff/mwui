@@ -16,4 +16,4 @@ jobs:
             - id: build-publish
               uses: bitovi/github-actions-react-to-ghp@v1.2.0
               with:
-                  build_command: npm run build-stencil && npm run build-storybook
+                  build_command: npm run build-tokens && npm run build-stencil && npm run build-storybook
