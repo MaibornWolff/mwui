@@ -25,7 +25,7 @@
         "@maibornwolff/mwui-stencil": "^0.3.0"
     },
     "devDependencies": {
-        "vue": "^3.2.37"
+        "vue": "^3.3.2"
     },
     "publishConfig": {
         "access": "public"
