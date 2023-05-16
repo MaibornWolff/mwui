@@ -55,13 +55,7 @@ export class MwCheckbox {
         <input type="checkbox" checked={this.checked} value={this.value} name={this.name} />
         <span class="mw-checkbox-outer">
           <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
-            <mw-icon
-              class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`}
-              color={`var(--mw-component-controls-color-fg-default)`}
-              icon="check"
-              weight={600}
-              size="small"
-            ></mw-icon>
+            <mw-icon class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`} color={`var(--mw-component-controls-color-fg-default)`} icon="check" size="small"></mw-icon>
           </span>
         </span>
 
