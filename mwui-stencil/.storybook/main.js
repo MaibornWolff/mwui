@@ -5,4 +5,7 @@ module.exports = {
   core: {
     builder: "webpack5",
   },
+  features: {
+    buildStoriesJson: true,
+  },
 };

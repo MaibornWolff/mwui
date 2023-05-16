@@ -4,6 +4,7 @@ const MODEL_VALUE = "modelValue";
 const ROUTER_LINK_VALUE = "routerLink";
 const NAV_MANAGER = "navManager";
 const ROUTER_PROP_PREFIX = "router";
+const ARIA_PROP_PREFIX = "aria";
 const EMPTY_PROP = Symbol();
 const DEFAULT_EMPTY_PROP = { default: EMPTY_PROP };
 const getComponentClasses = classes => {
@@ -80,7 +81,7 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
             };
             for (const key in props) {
                 const value = props[key];
-                if (props.hasOwnProperty(key) && value !== EMPTY_PROP) {
+                if ((props.hasOwnProperty(key) && value !== EMPTY_PROP) || key.startsWith(ARIA_PROP_PREFIX)) {
                     propsToAdd[key] = value;
                 }
             }

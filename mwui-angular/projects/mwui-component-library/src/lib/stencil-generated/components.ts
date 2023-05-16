@@ -726,10 +726,16 @@ export class MwTabs {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["tabsClickEmitter"]);
     }
 }
 
-export declare interface MwTabs extends Components.MwTabs {}
+export declare interface MwTabs extends Components.MwTabs {
+    /**
+     * Emits an event when tab is changed
+     */
+    tabsClickEmitter: EventEmitter<CustomEvent<{ selected: number }>>;
+}
 
 @ProxyCmp({
     inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "type", "value"],

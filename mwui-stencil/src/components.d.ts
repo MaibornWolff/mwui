@@ -666,6 +666,10 @@ export interface MwSwitchCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwSwitchElement;
 }
+export interface MwTabsCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwTabsElement;
+}
 export interface MwTextfieldCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwTextfieldElement;
@@ -1453,6 +1457,10 @@ declare namespace LocalJSX {
     selected?: boolean;
   }
   interface MwTabs {
+    /**
+     * Emits an event when tab is changed
+     */
+    onTabsClickEmitter?: (event: MwTabsCustomEvent<{ selected: number }>) => void;
     /**
      * Dictates which tab is pre-selected. Omit if no tab should be pre-selected.
      */
