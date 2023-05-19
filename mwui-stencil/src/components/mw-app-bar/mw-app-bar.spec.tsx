@@ -22,7 +22,7 @@ describe("GIVEN MwAppBar", () => {
 
   describe("SHOULD have role defined WHEN role is given", () => {
     const testCases = [AriaRolesEnum.TOOLBAR, AriaRolesEnum.NAVIGATION];
-    testCases.forEach(async ariaRole => {
+    testCases.forEach(async (ariaRole: AriaRolesEnum.TOOLBAR | AriaRolesEnum.NAVIGATION) => {
       it(`SHOULD have role ${ariaRole}`, async () => {
         const page = await setup({
           ariaRole,

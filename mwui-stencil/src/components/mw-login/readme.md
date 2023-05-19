@@ -38,6 +38,8 @@ graph TD;
   mw-login --> mw-checkbox
   mw-login --> mw-link
   mw-login --> mw-button
+  mw-textfield --> mw-label
+  mw-textfield --> mw-helper-text
   mw-checkbox --> mw-icon
   style mw-login fill:#f9f,stroke:#333,stroke-width:4px
 ```

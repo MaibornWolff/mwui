@@ -1,0 +1,103 @@
+@mixin form-field {
+  display: flex;
+  flex-direction: column;
+  min-width: var(--mw-component-size-text-field-min-width);
+  color: var(--mw-component-text-field-fg-default);
+
+  &.disabled,
+  &.disabled input {
+    color: var(--mw-component-text-field-fg-disabled);
+  }
+
+  &.inline {
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+
+    .input {
+      min-width: var(--mw-component-size-text-field-min-w);
+      width: 100%;
+    }
+
+    label {
+      display: block;
+      width: var(--mw-component-size-text-field-label-horizontal-width);
+      padding: var(--mw-component-text-field-padding-label-horizontal);
+    }
+  }
+}
+
+@mixin icon-start {
+  .icon-start {
+    margin-right: var(--mw-component-text-field-gap-horizontal-gap-within);
+  }
+}
+
+@mixin icon-end {
+  .icon-end {
+    margin-left: var(--mw-component-text-field-gap-horizontal-gap-within);
+  }
+}
+
+@mixin has-error {
+  &.has-error {
+    background: var(--mw-component-text-field-bg-error);
+  }
+}
+
+@mixin input {
+  @include icon-start;
+  @include icon-end;
+  @include has-error;
+
+  display: flex;
+  align-items: center;
+  /* TODO: missing token */
+  border-radius: var(--border-radius-standard-md);
+  padding: var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);
+  background: var(--mw-component-text-field-bg-default);
+  box-shadow: inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default);
+
+  &:focus-within {
+    background: var(--mw-component-text-field-bg-hover);
+    box-shadow: inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused);
+  }
+
+  &:not(.disabled):hover {
+    background: var(--mw-component-text-field-bg-hover);
+  }
+
+  .icon {
+    color: var(--mw-component-text-field-fg-icon-default);
+  }
+
+  .focused {
+    color: var(--mw-component-text-field-fg-icon-focused);
+
+    &.has-error {
+      color: var(--mw-component-text-field-fg-error);
+    }
+  }
+
+  input {
+    border: none;
+    padding: 0;
+    width: 100%;
+    background: transparent;
+    font-family: var(--mw-component-text-field-text-font-family);
+    font-weight: var(--mw-component-text-field-text-font-weight);
+    font-size: var(--mw-component-text-field-text-font-size);
+    line-height: var(--mw-component-text-field-text-line-height);
+
+    &:focus-visible,
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: var(--mw-component-text-field-fg-placeholder);
+    }
+  }
+}

@@ -75,7 +75,7 @@ describe("GIVEN MwChip", () => {
       disabled: false,
     });
 
-    const clickMock = (page.rootInstance.emitter.emit = jest.fn());
+    const clickMock = (page.rootInstance.closeEmitter.emit = jest.fn());
     clickCloseButton(page);
 
     expect(clickMock).toHaveBeenCalled();
@@ -88,7 +88,7 @@ describe("GIVEN MwChip", () => {
       disabled: true,
     });
 
-    const clickMock = (page.rootInstance.emitter.emit = jest.fn());
+    const clickMock = (page.rootInstance.closeEmitter.emit = jest.fn());
     clickCloseButton(page);
 
     expect(clickMock).not.toHaveBeenCalled();
@@ -99,7 +99,7 @@ describe("GIVEN MwChip", () => {
       selected: false,
     });
 
-    const clickMock = (page.rootInstance.emitter.emit = jest.fn());
+    const clickMock = (page.rootInstance.clickEmitter.emit = jest.fn());
 
     toggleChip(page);
     await page.waitForChanges();

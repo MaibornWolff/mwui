@@ -23,7 +23,10 @@ export class MwMenuItem {
    * Selected state
    */
   @Prop({ mutable: false, reflect: true }) selected?: boolean = false;
-
+  /**
+   * Value of item
+   */
+  @Prop({ mutable: true, reflect: true }) value?: string;
   /**
    * MwMenuItem emits an event when its clicked
    */
@@ -31,13 +34,17 @@ export class MwMenuItem {
     bubbles: true,
     cancelable: false,
     composed: false,
+    eventName: "mwMenuItemClick",
   })
   clickEmitter: EventEmitter;
 
+  componentWillLoad(): void {
+    if (!this.value) this.value = this.title;
+  }
+
   private handleClick = (event: PointerEvent & { path: unknown[] }): void => {
     (event.target as HTMLButtonElement).blur();
-    (event.path[1] as HTMLButtonElement).blur();
-    this.clickEmitter.emit();
+    if (!this.disabled) this.clickEmitter.emit(event);
   };
 
   render() {

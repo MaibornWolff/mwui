@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-05-12T10:10:50",
+  "timestamp": "2023-05-19T08:57:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.1.0",
@@ -96,10 +96,341 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/mw-autocomplete/mw-autocomplete.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-autocomplete",
+      "readme": "# mw-autocomplete\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disabled input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Use to display input and helper-text in error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": true,
+          "docs": "HelperText to be displayed. Can be used as hint or error text when combined with `has-error`",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Display label and input horizontally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "maximum",
+          "type": "number",
+          "mutable": false,
+          "attr": "maximum",
+          "reflectToAttr": false,
+          "docs": "Amount of allowed `selected` options",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "maximumText",
+          "type": "string",
+          "mutable": false,
+          "attr": "maximum-text",
+          "reflectToAttr": false,
+          "docs": "Text which is displayed when maximum amount of options is reached",
+          "docsTags": [],
+          "default": "\"You reached the maximum number of options.\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "Allows users to enter multiple values into autocomplete",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "input field name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "noSuggestionsText",
+          "type": "string",
+          "mutable": false,
+          "attr": "no-suggestions-text",
+          "reflectToAttr": false,
+          "docs": "Text which is displayed when no dropdown options match the user input",
+          "docsTags": [],
+          "default": "\"No suggestions found.\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "optionCounter",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "option-counter",
+          "reflectToAttr": false,
+          "docs": "Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": true,
+          "docs": "Placeholder to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "read-only",
+          "reflectToAttr": false,
+          "docs": "Whether user can't type in input field",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Mark input as required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "selected",
+          "type": "string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Currently selected options",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "HTML Input type",
+          "docsTags": [],
+          "default": "\"text\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "input field value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "mwAutocompleteValueChanged",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": false,
+          "docs": "Emits an event when its value changes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "mwMenuItemClick",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "mwPopoverOpen",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mw-label", "mw-popover", "mw-chip-input", "mw-icon", "mw-textfield", "mw-helper-text"],
+      "dependencyGraph": {
+        "mw-autocomplete": ["mw-label", "mw-popover", "mw-chip-input", "mw-icon", "mw-textfield", "mw-helper-text"],
+        "mw-chip-input": ["mw-label", "mw-chip", "mw-icon", "mw-helper-text"],
+        "mw-chip": ["mw-icon"],
+        "mw-textfield": ["mw-label", "mw-helper-text"]
+      }
+    },
+    {
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-avatar",
-      "readme": "# mw-avatar\n\n\n",
+      "readme": "# mw-avatar\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -230,7 +561,7 @@
           "mutable": false,
           "attr": "backdrop-dismiss",
           "reflectToAttr": false,
-          "docs": "determines wether the backdrop will be dismissed by click",
+          "docs": "determines whether the backdrop will be dismissed by click",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -541,7 +872,7 @@
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-body",
-      "readme": "# mw-card-body\n\n\n",
+      "readme": "# mw-card-body\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -560,7 +891,7 @@
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-footer",
-      "readme": "# mw-card-footer\n\n\n",
+      "readme": "# mw-card-footer\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -819,7 +1150,7 @@
       "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-image",
-      "readme": "# mw-card-image\n\n\n",
+      "readme": "# mw-card-image\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1130,7 +1461,7 @@
           "mutable": false,
           "attr": "show-close",
           "reflectToAttr": false,
-          "docs": "Flag wether to show close icon or not",
+          "docs": "Flag whether to show close icon or not",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1156,17 +1487,62 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "toggleable",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "toggleable",
+          "reflectToAttr": false,
+          "docs": "Allows user to toggle chip",
+          "docsTags": [],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "Value of chip",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
       "events": [
         {
-          "event": "emitter",
+          "event": "mwChipClick",
           "detail": "any",
           "bubbles": true,
           "cancelable": false,
-          "composed": false,
-          "docs": "MwChip emits an event when chip is clicked or chip is closed",
+          "composed": true,
+          "docs": "MwChip emits an event when chip is clicked",
+          "docsTags": []
+        },
+        {
+          "event": "mwChipClose",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": true,
+          "docs": "MwChip emits an event when chip is closed",
           "docsTags": []
         }
       ],
@@ -1174,17 +1550,252 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": ["mw-chip-input"],
       "dependencies": ["mw-icon"],
       "dependencyGraph": {
-        "mw-chip": ["mw-icon"]
+        "mw-chip": ["mw-icon"],
+        "mw-chip-input": ["mw-chip"]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-chip-input/mw-chip-input.tsx",
+      "encapsulation": "none",
+      "tag": "mw-chip-input",
+      "readme": "# mw-chip-input\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disabled input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Use to display input and helper-text in error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": true,
+          "docs": "Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Display label and input horizontally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "maximum",
+          "type": "number",
+          "mutable": false,
+          "attr": "maximum",
+          "reflectToAttr": false,
+          "docs": "Amount of allowed `selected` values",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "input field name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "optionCounter",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "option-counter",
+          "reflectToAttr": false,
+          "docs": "Amount of currently selected options",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": true,
+          "docs": "Placeholder to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Mark input as required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "selectedChips",
+          "type": "string[]",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Currently selected Values",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "mwChipListInputChange",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": false,
+          "docs": "Emits an event when value of input changes",
+          "docsTags": []
+        },
+        {
+          "event": "mwChipListValueChanged",
+          "detail": "string[]",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": false,
+          "docs": "Emits an event when its value changes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "mwChipClose",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "keydown",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": ["mw-autocomplete"],
+      "dependencies": ["mw-label", "mw-chip", "mw-icon", "mw-helper-text"],
+      "dependencyGraph": {
+        "mw-chip-input": ["mw-label", "mw-chip", "mw-icon", "mw-helper-text"],
+        "mw-chip": ["mw-icon"],
+        "mw-autocomplete": ["mw-chip-input"]
       }
     },
     {
       "filePath": "./src/components/mw-divider/mw-divider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-divider",
-      "readme": "# mw-divider\n\n\n",
+      "readme": "# mw-divider\r\n\r\n\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1216,6 +1827,278 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-dropdown/mw-dropdown.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-dropdown",
+      "readme": "# mw-dropdown\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disabled input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Use to display input and helper-text in error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": true,
+          "docs": "HelperText to be displayed. Can be used as hint or error text when combined with `has-error`",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inline",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "inline",
+          "reflectToAttr": false,
+          "docs": "Display label and input horizonally",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "input field name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder to be displayed",
+          "docsTags": [],
+          "default": "\"Placeholder\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Mark input as required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "input field value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "valueLabel",
+          "type": "number | string",
+          "mutable": true,
+          "attr": "value-label",
+          "reflectToAttr": true,
+          "docs": "label of selected input value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "valueChanged",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": false,
+          "docs": "MwDropdown emits an event when value changes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "mwMenuItemClick",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "mwPopoverOpen",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mw-label", "mw-popover", "mw-icon", "mw-helper-text"],
+      "dependencyGraph": {
+        "mw-dropdown": ["mw-label", "mw-popover", "mw-icon", "mw-helper-text"]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-helper-text/mw-helper-text.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-helper-text",
+      "readme": "# mw-helper-text\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Displays error",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": false,
+          "docs": "Text to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-dropdown", "mw-textfield"],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-autocomplete": ["mw-helper-text"],
+        "mw-chip-input": ["mw-helper-text"],
+        "mw-dropdown": ["mw-helper-text"],
+        "mw-textfield": ["mw-helper-text"]
+      }
     },
     {
       "filePath": "./src/components/mw-icon/mw-icon.tsx",
@@ -1334,12 +2217,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-avatar", "mw-checkbox", "mw-chip", "mw-icon-gallery", "mw-login", "mw-slider", "mw-tab"],
+      "dependents": ["mw-autocomplete", "mw-avatar", "mw-checkbox", "mw-chip", "mw-chip-input", "mw-dropdown", "mw-icon-gallery", "mw-login", "mw-slider", "mw-tab"],
       "dependencies": [],
       "dependencyGraph": {
+        "mw-autocomplete": ["mw-icon"],
         "mw-avatar": ["mw-icon"],
         "mw-checkbox": ["mw-icon"],
         "mw-chip": ["mw-icon"],
+        "mw-chip-input": ["mw-icon"],
+        "mw-dropdown": ["mw-icon"],
         "mw-icon-gallery": ["mw-icon"],
         "mw-login": ["mw-icon"],
         "mw-slider": ["mw-icon"],
@@ -1382,6 +2268,7 @@
       "dependencies": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
       "dependencyGraph": {
         "mw-icon-gallery": ["mw-textfield", "mw-icon", "mw-slider", "mw-switch"],
+        "mw-textfield": ["mw-label", "mw-helper-text"],
         "mw-slider": ["mw-icon"]
       }
     },
@@ -1528,6 +2415,80 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/mw-label/mw-label.tsx",
+      "encapsulation": "none",
+      "tag": "mw-label",
+      "readme": "# mw-label\r\n\r",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Text of the label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Name of input field connected to label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Wether or not the input connected to the label is required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-dropdown", "mw-textfield"],
+      "dependencies": [],
+      "dependencyGraph": {
+        "mw-autocomplete": ["mw-label"],
+        "mw-chip-input": ["mw-label"],
+        "mw-dropdown": ["mw-label"],
+        "mw-textfield": ["mw-label"]
+      }
     },
     {
       "filePath": "./src/components/mw-link/mw-link.tsx",
@@ -1750,6 +2711,7 @@
       "dependencies": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
       "dependencyGraph": {
         "mw-login": ["mw-textfield", "mw-icon", "mw-checkbox", "mw-link", "mw-button"],
+        "mw-textfield": ["mw-label", "mw-helper-text"],
         "mw-checkbox": ["mw-icon"]
       }
     },
@@ -1944,12 +2906,28 @@
           ],
           "optional": false,
           "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Value of item",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
         }
       ],
       "methods": [],
       "events": [
         {
-          "event": "clickEmitter",
+          "event": "mwMenuItemClick",
           "detail": "any",
           "bubbles": true,
           "cancelable": false,
@@ -1970,7 +2948,7 @@
       "filePath": "./src/components/mw-menu-list/mw-menu-list.tsx",
       "encapsulation": "shadow",
       "tag": "mw-menu-list",
-      "readme": "# mw-menu-list\n\n\n",
+      "readme": "# mw-menu-list\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2225,6 +3203,40 @@
       "usage": {},
       "props": [
         {
+          "name": "closeOnClick",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "close-on-click",
+          "reflectToAttr": false,
+          "docs": "Closes Popover when user clicks on it",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Whether popover is disabled",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "dismissable",
           "type": "boolean",
           "mutable": false,
@@ -2371,14 +3383,26 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "mwPopoverOpen",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": true,
+          "docs": "MwPopover emits an event when the value of the open prop changes",
+          "docsTags": []
+        }
+      ],
       "listeners": [],
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-menu"],
+      "dependents": ["mw-autocomplete", "mw-dropdown", "mw-menu"],
       "dependencies": [],
       "dependencyGraph": {
+        "mw-autocomplete": ["mw-popover"],
+        "mw-dropdown": ["mw-popover"],
         "mw-menu": ["mw-popover"]
       }
     },
@@ -2989,7 +4013,7 @@
       "filePath": "./src/components/mw-tabs/mw-tabs.tsx",
       "encapsulation": "shadow",
       "tag": "mw-tabs",
-      "readme": "# mw-tabs\r\n\r",
+      "readme": "# mw-tabs\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3017,7 +4041,7 @@
           "mutable": false,
           "attr": "test-id",
           "reflectToAttr": false,
-          "docs": "Test Id",
+          "docs": "Test ID",
           "docsTags": [],
           "values": [
             {
@@ -3176,6 +4200,23 @@
           "required": false
         },
         {
+          "name": "readOnly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "read-only",
+          "reflectToAttr": false,
+          "docs": "Whether user can't type in input field",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "required",
           "type": "boolean",
           "mutable": false,
@@ -3232,11 +4273,11 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChanged",
+          "event": "mwTextfieldValueChanged",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
-          "composed": false,
+          "composed": true,
           "docs": "MwTextfield emits an event when textfield value changes",
           "docsTags": []
         }
@@ -3254,9 +4295,11 @@
           "docs": ""
         }
       ],
-      "dependents": ["mw-icon-gallery", "mw-login"],
-      "dependencies": [],
+      "dependents": ["mw-autocomplete", "mw-icon-gallery", "mw-login"],
+      "dependencies": ["mw-label", "mw-helper-text"],
       "dependencyGraph": {
+        "mw-textfield": ["mw-label", "mw-helper-text"],
+        "mw-autocomplete": ["mw-textfield"],
         "mw-icon-gallery": ["mw-textfield"],
         "mw-login": ["mw-textfield"]
       }

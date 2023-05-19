@@ -13,15 +13,16 @@
 | `label`       | `label`       | Label to be displayed                                                                        | `string`           | `undefined` |
 | `name`        | `name`        | input field name                                                                             | `string`           | `undefined` |
 | `placeholder` | `placeholder` | Placeholder to be displayed                                                                  | `string`           | `undefined` |
+| `readOnly`    | `read-only`   | Whether user can't type in input field                                                       | `boolean`          | `false`     |
 | `required`    | `required`    | Mark input as required                                                                       | `boolean`          | `false`     |
 | `type`        | `type`        | HTML Input type                                                                              | `string`           | `"text"`    |
 | `value`       | `value`       | input field value                                                                            | `number \| string` | `undefined` |
 
 ## Events
 
-| Event          | Description                                             | Type                  |
-| -------------- | ------------------------------------------------------- | --------------------- |
-| `valueChanged` | MwTextfield emits an event when textfield value changes | `CustomEvent<string>` |
+| Event                     | Description                                             | Type                  |
+| ------------------------- | ------------------------------------------------------- | --------------------- |
+| `mwTextfieldValueChanged` | MwTextfield emits an event when textfield value changes | `CustomEvent<string>` |
 
 ## Shadow Parts
 
@@ -34,13 +35,22 @@
 
 ### Used by
 
+- [mw-autocomplete](../mw-autocomplete)
 - [mw-icon-gallery](../mw-icon-gallery)
 - [mw-login](../mw-login)
+
+### Depends on
+
+- [mw-label](../mw-label)
+- [mw-helper-text](../mw-helper-text)
 
 ### Graph
 
 ```mermaid
 graph TD;
+  mw-textfield --> mw-label
+  mw-textfield --> mw-helper-text
+  mw-autocomplete --> mw-textfield
   mw-icon-gallery --> mw-textfield
   mw-login --> mw-textfield
   style mw-textfield fill:#f9f,stroke:#333,stroke-width:4px

@@ -9,7 +9,7 @@ import { Event, EventEmitter } from "@stencil/core/internal";
 export class MwTabs {
   @Element() host: HTMLMwTabsElement;
   /**
-   * Test Id
+   * Test ID
    */
   @Prop() testId: string;
   /**

@@ -19,34 +19,53 @@ export class MwChip {
    */
   @Prop({ reflect: true }) disabled?: boolean;
   /**
-   * Flag wether to show close icon or not
+   * Allows user to toggle chip
+   */
+  @Prop() toggleable?: boolean = true;
+  /**
+   * Flag whether to show close icon or not
    */
   @Prop() showClose?: boolean = false;
+  /**
+   * Value of chip
+   */
+  @Prop() value?: string | number;
   /**
    * Selection state that changes onToggle. Can be set as mutable prop.
    */
   @Prop({ reflect: true, mutable: true }) selected = false;
 
   /**
-   * MwChip emits an event when chip is clicked or chip is closed
+   * MwChip emits an event when chip is clicked
    */
   @Event({
     bubbles: true,
     cancelable: false,
-    composed: false,
+    composed: true,
+    eventName: "mwChipClick",
   })
-  emitter: EventEmitter;
+  clickEmitter: EventEmitter;
+  /**
+   * MwChip emits an event when chip is closed
+   */
+  @Event({
+    bubbles: true,
+    cancelable: false,
+    composed: true,
+    eventName: "mwChipClose",
+  })
+  closeEmitter: EventEmitter;
 
   private handleClose = (event: Event): void => {
     event.stopPropagation();
     if (!this.disabled) {
-      this.emitter.emit(event);
+      this.closeEmitter.emit(this.value);
     }
   };
 
   private handleClick = (event: Event): void => {
-    this.selected = !this.selected;
-    this.emitter.emit(event);
+    if (this.toggleable) this.selected = !this.selected;
+    this.clickEmitter.emit(event);
   };
 
   render() {

@@ -41,6 +41,76 @@ export namespace Components {
     position?: AppBarPosition;
   }
   interface MwAppBarTitle {}
+  interface MwAutocomplete {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Amount of allowed `selected` options
+     */
+    maximum?: number;
+    /**
+     * Text which is displayed when maximum amount of options is reached
+     */
+    maximumText?: string;
+    /**
+     * Allows users to enter multiple values into autocomplete
+     */
+    multiple?: boolean;
+    /**
+     * input field name
+     */
+    name: string;
+    /**
+     * Text which is displayed when no dropdown options match the user input
+     */
+    noSuggestionsText?: string;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
+     */
+    optionCounter?: boolean;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * Currently selected options
+     */
+    selected: string[];
+    /**
+     * HTML Input type
+     */
+    type?: string;
+    /**
+     * input field value
+     */
+    value?: string | number;
+  }
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -65,7 +135,7 @@ export namespace Components {
   }
   interface MwBackdrop {
     /**
-     * determines wether the backdrop will be dismissed by click
+     * determines whether the backdrop will be dismissed by click
      */
     backdropDismiss: boolean;
   }
@@ -234,19 +304,125 @@ export namespace Components {
      */
     selected: boolean;
     /**
-     * Flag wether to show close icon or not
+     * Flag whether to show close icon or not
      */
     showClose?: boolean;
     /**
      * Provide unique identifier for automated testing
      */
     testId: string;
+    /**
+     * Allows user to toggle chip
+     */
+    toggleable?: boolean;
+    /**
+     * Value of chip
+     */
+    value?: string | number;
+  }
+  interface MwChipInput {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Amount of allowed `selected` values
+     */
+    maximum?: number;
+    /**
+     * input field name
+     */
+    name: string;
+    /**
+     * Amount of currently selected options
+     */
+    optionCounter?: boolean;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * Currently selected Values
+     */
+    selectedChips: string[];
   }
   interface MwDivider {
     /**
      * Whether the divider is a middle-inset
      */
     inset?: boolean;
+  }
+  interface MwDropdown {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizonally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * input field name
+     */
+    name: string;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * input field value
+     */
+    value?: string | number;
+    /**
+     * label of selected input value
+     */
+    valueLabel?: string | number;
+  }
+  interface MwHelperText {
+    /**
+     * Displays error
+     */
+    hasError?: boolean;
+    /**
+     * Text to be displayed
+     */
+    helperText?: string;
   }
   interface MwIcon {
     /**
@@ -301,6 +477,20 @@ export namespace Components {
      * Different resolutions for different viewport sizes can be passed e.g. "img/vasen-420.webp 420w,       img/vasen-980.webp 980w,       img/vasen-1680.webp 1680w,       img/vasen-2400.webp 2400w"
      */
     srcset: string | SrcSetItem[];
+  }
+  interface MwLabel {
+    /**
+     * Text of the label
+     */
+    label?: string;
+    /**
+     * Name of input field connected to label
+     */
+    name: string;
+    /**
+     * Wether or not the input connected to the label is required
+     */
+    required?: boolean;
   }
   interface MwLink {
     /**
@@ -373,6 +563,10 @@ export namespace Components {
      * Menu item title
      */
     title: string;
+    /**
+     * Value of item
+     */
+    value?: string;
   }
   interface MwMenuList {
     /**
@@ -422,6 +616,14 @@ export namespace Components {
     headline: string | undefined;
   }
   interface MwPopover {
+    /**
+     * Closes Popover when user clicks on it
+     */
+    closeOnClick?: boolean;
+    /**
+     * Whether popover is disabled
+     */
+    disabled?: boolean;
     /**
      * If set to true, the popover can be closed by clicking outside
      */
@@ -579,7 +781,7 @@ export namespace Components {
      */
     selected: number | null;
     /**
-     * Test Id
+     * Test ID
      */
     testId: string;
   }
@@ -613,6 +815,10 @@ export namespace Components {
      */
     placeholder?: string;
     /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
+    /**
      * Mark input as required
      */
     required?: boolean;
@@ -625,6 +831,10 @@ export namespace Components {
      */
     value?: string | number;
   }
+}
+export interface MwAutocompleteCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwAutocompleteElement;
 }
 export interface MwBackdropCustomEvent<T> extends CustomEvent<T> {
   detail: T;
@@ -646,6 +856,14 @@ export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
 }
+export interface MwChipInputCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwChipInputElement;
+}
+export interface MwDropdownCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwDropdownElement;
+}
 export interface MwImgCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwImgElement;
@@ -657,6 +875,10 @@ export interface MwLoginCustomEvent<T> extends CustomEvent<T> {
 export interface MwMenuItemCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwMenuItemElement;
+}
+export interface MwPopoverCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwPopoverElement;
 }
 export interface MwRadioGroupCustomEvent<T> extends CustomEvent<T> {
   detail: T;
@@ -684,6 +906,11 @@ declare global {
   var HTMLMwAppBarTitleElement: {
     prototype: HTMLMwAppBarTitleElement;
     new (): HTMLMwAppBarTitleElement;
+  };
+  interface HTMLMwAutocompleteElement extends Components.MwAutocomplete, HTMLStencilElement {}
+  var HTMLMwAutocompleteElement: {
+    prototype: HTMLMwAutocompleteElement;
+    new (): HTMLMwAutocompleteElement;
   };
   interface HTMLMwAvatarElement extends Components.MwAvatar, HTMLStencilElement {}
   var HTMLMwAvatarElement: {
@@ -740,10 +967,25 @@ declare global {
     prototype: HTMLMwChipElement;
     new (): HTMLMwChipElement;
   };
+  interface HTMLMwChipInputElement extends Components.MwChipInput, HTMLStencilElement {}
+  var HTMLMwChipInputElement: {
+    prototype: HTMLMwChipInputElement;
+    new (): HTMLMwChipInputElement;
+  };
   interface HTMLMwDividerElement extends Components.MwDivider, HTMLStencilElement {}
   var HTMLMwDividerElement: {
     prototype: HTMLMwDividerElement;
     new (): HTMLMwDividerElement;
+  };
+  interface HTMLMwDropdownElement extends Components.MwDropdown, HTMLStencilElement {}
+  var HTMLMwDropdownElement: {
+    prototype: HTMLMwDropdownElement;
+    new (): HTMLMwDropdownElement;
+  };
+  interface HTMLMwHelperTextElement extends Components.MwHelperText, HTMLStencilElement {}
+  var HTMLMwHelperTextElement: {
+    prototype: HTMLMwHelperTextElement;
+    new (): HTMLMwHelperTextElement;
   };
   interface HTMLMwIconElement extends Components.MwIcon, HTMLStencilElement {}
   var HTMLMwIconElement: {
@@ -759,6 +1001,11 @@ declare global {
   var HTMLMwImgElement: {
     prototype: HTMLMwImgElement;
     new (): HTMLMwImgElement;
+  };
+  interface HTMLMwLabelElement extends Components.MwLabel, HTMLStencilElement {}
+  var HTMLMwLabelElement: {
+    prototype: HTMLMwLabelElement;
+    new (): HTMLMwLabelElement;
   };
   interface HTMLMwLinkElement extends Components.MwLink, HTMLStencilElement {}
   var HTMLMwLinkElement: {
@@ -843,6 +1090,7 @@ declare global {
   interface HTMLElementTagNameMap {
     "mw-app-bar": HTMLMwAppBarElement;
     "mw-app-bar-title": HTMLMwAppBarTitleElement;
+    "mw-autocomplete": HTMLMwAutocompleteElement;
     "mw-avatar": HTMLMwAvatarElement;
     "mw-backdrop": HTMLMwBackdropElement;
     "mw-button": HTMLMwButtonElement;
@@ -854,10 +1102,14 @@ declare global {
     "mw-card-title": HTMLMwCardTitleElement;
     "mw-checkbox": HTMLMwCheckboxElement;
     "mw-chip": HTMLMwChipElement;
+    "mw-chip-input": HTMLMwChipInputElement;
     "mw-divider": HTMLMwDividerElement;
+    "mw-dropdown": HTMLMwDropdownElement;
+    "mw-helper-text": HTMLMwHelperTextElement;
     "mw-icon": HTMLMwIconElement;
     "mw-icon-gallery": HTMLMwIconGalleryElement;
     "mw-img": HTMLMwImgElement;
+    "mw-label": HTMLMwLabelElement;
     "mw-link": HTMLMwLinkElement;
     "mw-login": HTMLMwLoginElement;
     "mw-menu": HTMLMwMenuElement;
@@ -888,6 +1140,80 @@ declare namespace LocalJSX {
     position?: AppBarPosition;
   }
   interface MwAppBarTitle {}
+  interface MwAutocomplete {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Amount of allowed `selected` options
+     */
+    maximum?: number;
+    /**
+     * Text which is displayed when maximum amount of options is reached
+     */
+    maximumText?: string;
+    /**
+     * Allows users to enter multiple values into autocomplete
+     */
+    multiple?: boolean;
+    /**
+     * input field name
+     */
+    name?: string;
+    /**
+     * Text which is displayed when no dropdown options match the user input
+     */
+    noSuggestionsText?: string;
+    /**
+     * Emits an event when its value changes
+     */
+    onMwAutocompleteValueChanged?: (event: MwAutocompleteCustomEvent<string>) => void;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
+     */
+    optionCounter?: boolean;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * Currently selected options
+     */
+    selected?: string[];
+    /**
+     * HTML Input type
+     */
+    type?: string;
+    /**
+     * input field value
+     */
+    value?: string | number;
+  }
   interface MwAvatar {
     /**
      * Alt text, first letter used as fallback when no src or icon given
@@ -912,7 +1238,7 @@ declare namespace LocalJSX {
   }
   interface MwBackdrop {
     /**
-     * determines wether the backdrop will be dismissed by click
+     * determines whether the backdrop will be dismissed by click
      */
     backdropDismiss?: boolean;
     /**
@@ -1093,27 +1419,149 @@ declare namespace LocalJSX {
      */
     icon?: string;
     /**
-     * MwChip emits an event when chip is clicked or chip is closed
+     * MwChip emits an event when chip is clicked
      */
-    onEmitter?: (event: MwChipCustomEvent<any>) => void;
+    onMwChipClick?: (event: MwChipCustomEvent<any>) => void;
+    /**
+     * MwChip emits an event when chip is closed
+     */
+    onMwChipClose?: (event: MwChipCustomEvent<any>) => void;
     /**
      * Selection state that changes onToggle. Can be set as mutable prop.
      */
     selected?: boolean;
     /**
-     * Flag wether to show close icon or not
+     * Flag whether to show close icon or not
      */
     showClose?: boolean;
     /**
      * Provide unique identifier for automated testing
      */
     testId?: string;
+    /**
+     * Allows user to toggle chip
+     */
+    toggleable?: boolean;
+    /**
+     * Value of chip
+     */
+    value?: string | number;
+  }
+  interface MwChipInput {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizontally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Amount of allowed `selected` values
+     */
+    maximum?: number;
+    /**
+     * input field name
+     */
+    name?: string;
+    /**
+     * Emits an event when value of input changes
+     */
+    onMwChipListInputChange?: (event: MwChipInputCustomEvent<string>) => void;
+    /**
+     * Emits an event when its value changes
+     */
+    onMwChipListValueChanged?: (event: MwChipInputCustomEvent<string[]>) => void;
+    /**
+     * Amount of currently selected options
+     */
+    optionCounter?: boolean;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * Currently selected Values
+     */
+    selectedChips?: string[];
   }
   interface MwDivider {
     /**
      * Whether the divider is a middle-inset
      */
     inset?: boolean;
+  }
+  interface MwDropdown {
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Display label and input horizonally
+     */
+    inline?: boolean;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * input field name
+     */
+    name?: string;
+    /**
+     * MwDropdown emits an event when value changes
+     */
+    onValueChanged?: (event: MwDropdownCustomEvent<string>) => void;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * input field value
+     */
+    value?: string | number;
+    /**
+     * label of selected input value
+     */
+    valueLabel?: string | number;
+  }
+  interface MwHelperText {
+    /**
+     * Displays error
+     */
+    hasError?: boolean;
+    /**
+     * Text to be displayed
+     */
+    helperText?: string;
   }
   interface MwIcon {
     /**
@@ -1176,6 +1624,20 @@ declare namespace LocalJSX {
      * Different resolutions for different viewport sizes can be passed e.g. "img/vasen-420.webp 420w,       img/vasen-980.webp 980w,       img/vasen-1680.webp 1680w,       img/vasen-2400.webp 2400w"
      */
     srcset?: string | SrcSetItem[];
+  }
+  interface MwLabel {
+    /**
+     * Text of the label
+     */
+    label?: string;
+    /**
+     * Name of input field connected to label
+     */
+    name?: string;
+    /**
+     * Wether or not the input connected to the label is required
+     */
+    required?: boolean;
   }
   interface MwLink {
     /**
@@ -1243,7 +1705,7 @@ declare namespace LocalJSX {
     /**
      * MwMenuItem emits an event when its clicked
      */
-    onClickEmitter?: (event: MwMenuItemCustomEvent<any>) => void;
+    onMwMenuItemClick?: (event: MwMenuItemCustomEvent<any>) => void;
     /**
      * Selected state
      */
@@ -1256,6 +1718,10 @@ declare namespace LocalJSX {
      * Menu item title
      */
     title?: string;
+    /**
+     * Value of item
+     */
+    value?: string;
   }
   interface MwMenuList {
     /**
@@ -1298,6 +1764,14 @@ declare namespace LocalJSX {
   }
   interface MwPopover {
     /**
+     * Closes Popover when user clicks on it
+     */
+    closeOnClick?: boolean;
+    /**
+     * Whether popover is disabled
+     */
+    disabled?: boolean;
+    /**
      * If set to true, the popover can be closed by clicking outside
      */
     dismissable?: boolean;
@@ -1309,6 +1783,10 @@ declare namespace LocalJSX {
      * disable default padding
      */
     noPadding?: boolean;
+    /**
+     * MwPopover emits an event when the value of the open prop changes
+     */
+    onMwPopoverOpen?: (event: MwPopoverCustomEvent<any>) => void;
     /**
      * Whether the popover is visible
      */
@@ -1466,7 +1944,7 @@ declare namespace LocalJSX {
      */
     selected?: number | null;
     /**
-     * Test Id
+     * Test ID
      */
     testId?: string;
   }
@@ -1498,11 +1976,15 @@ declare namespace LocalJSX {
     /**
      * MwTextfield emits an event when textfield value changes
      */
-    onValueChanged?: (event: MwTextfieldCustomEvent<string>) => void;
+    onMwTextfieldValueChanged?: (event: MwTextfieldCustomEvent<string>) => void;
     /**
      * Placeholder to be displayed
      */
     placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readOnly?: boolean;
     /**
      * Mark input as required
      */
@@ -1519,6 +2001,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     "mw-app-bar": MwAppBar;
     "mw-app-bar-title": MwAppBarTitle;
+    "mw-autocomplete": MwAutocomplete;
     "mw-avatar": MwAvatar;
     "mw-backdrop": MwBackdrop;
     "mw-button": MwButton;
@@ -1530,10 +2013,14 @@ declare namespace LocalJSX {
     "mw-card-title": MwCardTitle;
     "mw-checkbox": MwCheckbox;
     "mw-chip": MwChip;
+    "mw-chip-input": MwChipInput;
     "mw-divider": MwDivider;
+    "mw-dropdown": MwDropdown;
+    "mw-helper-text": MwHelperText;
     "mw-icon": MwIcon;
     "mw-icon-gallery": MwIconGallery;
     "mw-img": MwImg;
+    "mw-label": MwLabel;
     "mw-link": MwLink;
     "mw-login": MwLogin;
     "mw-menu": MwMenu;
@@ -1558,6 +2045,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       "mw-app-bar": LocalJSX.MwAppBar & JSXBase.HTMLAttributes<HTMLMwAppBarElement>;
       "mw-app-bar-title": LocalJSX.MwAppBarTitle & JSXBase.HTMLAttributes<HTMLMwAppBarTitleElement>;
+      "mw-autocomplete": LocalJSX.MwAutocomplete & JSXBase.HTMLAttributes<HTMLMwAutocompleteElement>;
       "mw-avatar": LocalJSX.MwAvatar & JSXBase.HTMLAttributes<HTMLMwAvatarElement>;
       "mw-backdrop": LocalJSX.MwBackdrop & JSXBase.HTMLAttributes<HTMLMwBackdropElement>;
       "mw-button": LocalJSX.MwButton & JSXBase.HTMLAttributes<HTMLMwButtonElement>;
@@ -1569,10 +2057,14 @@ declare module "@stencil/core" {
       "mw-card-title": LocalJSX.MwCardTitle & JSXBase.HTMLAttributes<HTMLMwCardTitleElement>;
       "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
       "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
+      "mw-chip-input": LocalJSX.MwChipInput & JSXBase.HTMLAttributes<HTMLMwChipInputElement>;
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
+      "mw-dropdown": LocalJSX.MwDropdown & JSXBase.HTMLAttributes<HTMLMwDropdownElement>;
+      "mw-helper-text": LocalJSX.MwHelperText & JSXBase.HTMLAttributes<HTMLMwHelperTextElement>;
       "mw-icon": LocalJSX.MwIcon & JSXBase.HTMLAttributes<HTMLMwIconElement>;
       "mw-icon-gallery": LocalJSX.MwIconGallery & JSXBase.HTMLAttributes<HTMLMwIconGalleryElement>;
       "mw-img": LocalJSX.MwImg & JSXBase.HTMLAttributes<HTMLMwImgElement>;
+      "mw-label": LocalJSX.MwLabel & JSXBase.HTMLAttributes<HTMLMwLabelElement>;
       "mw-link": LocalJSX.MwLink & JSXBase.HTMLAttributes<HTMLMwLinkElement>;
       "mw-login": LocalJSX.MwLogin & JSXBase.HTMLAttributes<HTMLMwLoginElement>;
       "mw-menu": LocalJSX.MwMenu & JSXBase.HTMLAttributes<HTMLMwMenuElement>;

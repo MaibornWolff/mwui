@@ -1,9 +1,6 @@
 # mw-menu-list
 
-
-
 <!-- Auto Generated Below -->
-
 
 ## Properties
 
@@ -11,7 +8,6 @@
 | -------- | --------- | ----------------------------------------------- | -------- | ----------- |
 | `testId` | `test-id` | Provide unique identifier for automated testing | `string` | `undefined` |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Built with [StencilJS](https://stenciljs.com/)_

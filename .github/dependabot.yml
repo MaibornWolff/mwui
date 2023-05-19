@@ -3,10 +3,10 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/" 
-    schedule:
-      interval: "weekly"
-      day: "sunday"
-    commit-message:
-      prefix: "depandabot-update"
+    - package-ecosystem: "npm"
+      directory: "/"
+      schedule:
+          interval: "weekly"
+          day: "sunday"
+      commit-message:
+          prefix: "depandabot-update"

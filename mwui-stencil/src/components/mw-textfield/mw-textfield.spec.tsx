@@ -2,7 +2,7 @@ import { newSpecPage } from "@stencil/core/testing";
 import { h } from "@stencil/core";
 import { MwTextfield } from "./mw-textfield";
 
-describe("GIVEN MwTabs", () => {
+describe("GIVEN MwTextfield", () => {
   const setup = async (
     {
       type,
@@ -15,7 +15,8 @@ describe("GIVEN MwTabs", () => {
       inline,
       required,
       disabled,
-    }: Pick<MwTextfield, "type" | "value" | "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled"> = {
+      readOnly,
+    }: Pick<MwTextfield, "type" | "value" | "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled" | "readOnly"> = {
       name: "",
     },
     slottedContent = "",
@@ -34,6 +35,7 @@ describe("GIVEN MwTabs", () => {
           inline={inline}
           required={required}
           disabled={disabled}
+          readOnly={readOnly}
         >
           {slottedContent}
         </mw-textfield>
@@ -57,7 +59,6 @@ describe("GIVEN MwTabs", () => {
     expect(page.root.shadowRoot.querySelector(".textfield")).toHaveClass(className);
     expect(page.root.shadowRoot.querySelector(".input")).toHaveClass(className);
     expect(page.root.shadowRoot.querySelector("input")).toHaveClass(className);
-    expect(page.root.shadowRoot.querySelector(".helper-text")).toHaveClass(className);
   });
 
   it("SHOULD set the inline class correctly WHEN inline is true", async () => {
@@ -116,24 +117,22 @@ describe("GIVEN MwTabs", () => {
     expect(page.root.shadowRoot.querySelector("input").getAttribute("placeholder")).toBe(placeholder);
   });
 
-  it("SHOULD display a * WHEN required is true", async () => {
-    const label = "some-label";
+  it("SHOULD set disabled WHEN disabled is passed", async () => {
+    const disabled = true;
     const page = await setup({
       name: "",
-      required: true,
-      label,
+      disabled,
     });
-    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toContain("*");
+    expect(page.root.shadowRoot.querySelector("input").getAttribute("disabled")).toBe("");
   });
 
-  it("SHOULD set the label WHEN label is passed", async () => {
-    const label = "some-label";
+  it("SHOULD set readOnly WHEN readOnly is passed", async () => {
+    const readOnly = true;
     const page = await setup({
       name: "",
-      label,
+      readOnly,
     });
-    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toContain(label);
-    expect(page.root.shadowRoot.querySelector(".label").innerHTML).not.toContain("*");
+    expect(page.root.shadowRoot.querySelector("input").getAttribute("readOnly")).toBe("");
   });
 
   it("SHOULD set class icon-start WHEN hasIconStartSlot is true", async () => {

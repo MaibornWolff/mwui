@@ -97,19 +97,19 @@
     <hr />
     <section>
       <h2>Textfield</h2>
-      <div>
-        <div style="width: 200px; display: flex; flex-direction: column; gap: 16px">
+      <div style="max-width: 500px; width: 100%">
+        <div style="display: flex; flex-direction: column; gap: 16px">
           <h3>default</h3>
           <mw-textfield type="text" label="Label"></mw-textfield>
           <mw-textfield type="text" value="some value" label="Label" placeholder="Placeholder" helper-text="helper text error" has-error></mw-textfield>
           <mw-textfield required type="text" value="some value" label="Required Label" placeholder="Placeholder" helper-text="helper text default"></mw-textfield>
           <mw-textfield disabled type="text" value="disabled" label="Label" placeholder="Placeholder" helper-text="helper text default"></mw-textfield>
         </div>
-        <div style="width: 200px; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; flex-direction: column; gap: 16px">
           <h3>inline</h3>
           <mw-textfield type="text" value="some value" label="Label" placeholder="Placeholder" helper-text="hfelper text default" inline></mw-textfield>
         </div>
-        <div style="width: 200px; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; flex-direction: column; gap: 16px">
           <h3>Icons</h3>
           <mw-textfield type="text" label="Label" placeholder="Search things..." helper-text="helper text" has-error="false">
             <mw-icon slot="icon-start" icon="search"></mw-icon>
@@ -410,10 +410,22 @@
         </mw-tabs>
       </div>
     </section>
-    <br />
-    <hr />
-    <h1>Molecules</h1>
     <section>
+      <br />
+      <hr />
+      <h2>Chip Input</h2>
+      <mw-chip-input
+        id="chip-input"
+        label="Chip Input"
+        placeholder="You can add multiple values here..."
+        maximum="5"
+        helper-text="Enter up to 5 options:"
+        option-counter
+      ></mw-chip-input>
+    </section>
+    <section>
+      <br />
+      <hr />
       <h2>App Bar</h2>
       <mw-app-bar position="relative">
         <div slot="start">
@@ -433,6 +445,67 @@
     <section>
       <br />
       <hr />
+      <h2>Dropdown</h2>
+      <div style="display: flex; flex-flow: row">
+        <mw-dropdown label="Dropdown" placeholder="Select option" inline="true">
+          <div slot="dropdown-menu">
+            <mw-menu-item value="item-1" title="List Item 1" disabled></mw-menu-item>
+            <mw-menu-item value="item-2" title="List Item 2" subtitle="Subtitle"> </mw-menu-item>
+            <mw-divider></mw-divider>
+            <mw-menu-item value="item-3" title="List Item 3"> </mw-menu-item>
+            <mw-menu-item value="item-4" title="List Item 4" subtitle="Some very long Subtitle"> </mw-menu-item>
+            <mw-menu-item value="item-5" title="List Item 5" subtitle="Subtitle"> </mw-menu-item>
+          </div>
+        </mw-dropdown>
+      </div>
+    </section>
+    <section>
+      <br />
+      <hr />
+      <h2>Autocomplete</h2>
+      <div style="width: 500px">
+        <mw-autocomplete inline multiple placeholder="Select options..." maximum="4" label="Multi choice" option-counter helper-text="Pick up to 8 options:">
+          <div slot="dropdown-menu">
+            <mw-menu-item title="Audi"></mw-menu-item>
+            <mw-menu-item title="BMW" disabled></mw-menu-item>
+            <mw-menu-item title="Ford"></mw-menu-item>
+            <mw-menu-item title="Hyundai"></mw-menu-item>
+            <mw-menu-item title="Mercedes-Benz"></mw-menu-item>
+            <mw-menu-item title="Porsche"></mw-menu-item>
+            <mw-menu-item title="Toyota"></mw-menu-item>
+            <mw-menu-item title="Volkswagen"></mw-menu-item>
+          </div>
+        </mw-autocomplete>
+        <mw-autocomplete multiple placeholder="Select options..." maximum="8" label="Multi choice" option-counter helper-text="Pick up to 4 options:">
+          <mw-icon slot="icon-start" icon="directions_car"></mw-icon>
+          <div slot="dropdown-menu">
+            <mw-menu-item title="Audi"></mw-menu-item>
+            <mw-menu-item title="BMW" disabled></mw-menu-item>
+            <mw-menu-item title="Ford"></mw-menu-item>
+            <mw-menu-item title="Hyundai"></mw-menu-item>
+            <mw-menu-item title="Mercedes-Benz"></mw-menu-item>
+            <mw-menu-item title="Porsche"></mw-menu-item>
+            <mw-menu-item title="Toyota"></mw-menu-item>
+            <mw-menu-item title="Volkswagen"></mw-menu-item>
+          </div>
+        </mw-autocomplete>
+        <mw-autocomplete label="Single choice" placeholder="Add choices..." has-error>
+          <div slot="dropdown-menu">
+            <mw-menu-item title="Item 1"></mw-menu-item>
+            <mw-menu-item title="Item 2"></mw-menu-item>
+            <mw-menu-item title="Item 3"></mw-menu-item>
+            <mw-menu-item title="Item 4"></mw-menu-item>
+          </div>
+        </mw-autocomplete>
+        <mw-autocomplete label="Single choice" placeholder="Add choices..." inline>
+          <div slot="dropdown-menu">
+            <mw-menu-item title="Item 1"></mw-menu-item>
+            <mw-menu-item title="Item 2"></mw-menu-item>
+            <mw-menu-item title="Item 3"></mw-menu-item>
+            <mw-menu-item title="Item 4"></mw-menu-item>
+          </div>
+        </mw-autocomplete>
+      </div>
       <h2>Login</h2>
       <mw-login headline="Log in to your account" layout="center" forgot-password-href="test" sign-up-href="test"> </mw-login>
     </section>

@@ -1,0 +1,46 @@
+@use "theme/mixins/form-field" as ff;
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.dropdown {
+  @include ff.form-field;
+}
+
+.input {
+  @include ff.input;
+
+  button {
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    width: 100%;
+    background: transparent;
+    font-family: var(--mw-component-text-field-text-font-family);
+    font-weight: var(--mw-component-text-field-text-font-weight);
+    font-size: var(--mw-component-text-field-text-font-size);
+    line-height: var(--mw-component-text-field-text-line-height);
+
+    &:focus-visible,
+    &:focus {
+      outline: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    &.placeholder {
+      color: var(--mw-component-text-field-fg-placeholder);
+    }
+  }
+}
+
+.has-error {
+  color: var(--mw-component-text-field-fg-error);
+}

@@ -2,7 +2,7 @@ import { Component, Event, EventEmitter, Host, Prop, State, h, Element } from "@
 
 @Component({
   tag: "mw-textfield",
-  styleUrl: "mw-textfield.css",
+  styleUrl: "mw-textfield.scss",
   shadow: true,
 })
 export class MwTextfield {
@@ -11,7 +11,7 @@ export class MwTextfield {
   /**
    * MwTextfield emits an event when textfield value changes
    */
-  @Event({ bubbles: true, composed: false }) valueChanged: EventEmitter<string>;
+  @Event({ bubbles: true, composed: true, eventName: "mwTextfieldValueChanged" }) valueChanged: EventEmitter<string>;
   /**
    * HTML Input type
    */
@@ -52,6 +52,10 @@ export class MwTextfield {
    * Visually and functionally disabled input
    */
   @Prop() disabled?: boolean = false;
+  /**
+   * Whether user can't type in input field
+   */
+  @Prop() readOnly?: boolean = false;
 
   @State() focused = false;
 
@@ -90,12 +94,8 @@ export class MwTextfield {
               "disabled": this.disabled,
             }}
           >
-            {!!this.label && (
-              <label htmlFor={this.name} class="label">
-                {this.label}
-                {this.required && <span class="required">*</span>}
-              </label>
-            )}
+            <mw-label name={this.name} label={this.label} required={this.required} />
+
             <div onClick={this.onFocus} class={{ "input": true, "has-error": this.hasError, "disabled": this.disabled }}>
               <span class={{ "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError }} part="icon-start">
                 <slot name="icon-start"></slot>
@@ -114,32 +114,15 @@ export class MwTextfield {
                 name={this.name}
                 value={this.value}
                 disabled={this.disabled}
+                readOnly={this.readOnly}
               />
               <span class={{ "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError }} part="icon-end">
                 <slot name="icon-end"></slot>
               </span>
             </div>
-            {this.helperText && !this.inline && (
-              <span
-                class={{
-                  "helper-text": true,
-                  "has-error": this.hasError,
-                }}
-              >
-                {this.helperText}
-              </span>
-            )}
+            {!this.inline && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
           </div>
-          {this.helperText && this.inline && (
-            <span
-              class={{
-                "helper-text": true,
-                "has-error": this.hasError,
-              }}
-            >
-              {this.helperText}
-            </span>
-          )}
+          {this.inline && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
         </div>
       </Host>
     );

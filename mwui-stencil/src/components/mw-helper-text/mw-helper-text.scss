@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  justify-content: right;
+}
+
+.helper-text {
+  align-self: flex-end;
+  align-items: end;
+  padding: var(--mw-component-text-field-padding-helper-text-y) 0;
+  color: var(--mw-component-text-field-fg-helper-text);
+  font-family: var(--mw-component-text-field-helper-text-font-family);
+  font-weight: var(--mw-component-text-field-helper-text-font-weight);
+  font-size: var(--mw-component-text-field-helper-text-font-size);
+  line-height: var(--mw-component-text-field-helper-text-line-height);
+
+  &.has-error {
+    color: var(--mw-component-text-field-fg-error);
+  }
+}
+
+.hidden {
+  display: none;
+}

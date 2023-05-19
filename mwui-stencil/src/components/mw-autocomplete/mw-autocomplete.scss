@@ -1,0 +1,66 @@
+@use "theme/mixins/form-field" as ff;
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+mw-label {
+  white-space: nowrap;
+}
+mw-popover {
+  width: 100%;
+}
+.autocomplete {
+  @include ff.form-field;
+
+  &.read-only,
+  &.read-only .input input {
+    cursor: pointer;
+  }
+}
+
+.input {
+  @include ff.input;
+}
+
+.has-error {
+  color: var(--mw-component-text-field-fg-error);
+}
+.no-suggestions,
+.maximum-reached {
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--mw-component-menu-item-gap-between);
+  /* TODO: token */
+  padding: 0 12px;
+  height: var(--mw-component-size-menu-item-default-h);
+  background: var(--mw-component-menu-item-bg-default);
+  border: var(--mw-component-menu-item-border-width-default) solid var(--mw-component-menu-item-border-default);
+  border-radius: var(--mw-component-menu-item-border-radius);
+  color: var(--mw-component-menu-item-fg-disabled);
+  font-family: var(--mw-component-menu-item-title-font-family);
+  font-weight: var(--mw-component-menu-item-title-font-weight);
+  line-height: var(--mw-component-menu-item-title-line-height);
+  font-size: var(--mw-component-menu-item-title-font-size);
+}
+
+.no-suggestions {
+  display: none;
+}
+
+.maximum-reached {
+  display: flex;
+}
+.helper-text-container {
+  display: flex;
+  justify-content: right;
+  /*TODO: token*/
+  gap: 4px;
+}

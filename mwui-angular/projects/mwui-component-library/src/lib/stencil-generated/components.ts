@@ -45,6 +45,68 @@ export class MwAppBarTitle {
 export declare interface MwAppBarTitle extends Components.MwAppBarTitle {}
 
 @ProxyCmp({
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "maximum",
+        "maximumText",
+        "multiple",
+        "name",
+        "noSuggestionsText",
+        "optionCounter",
+        "placeholder",
+        "readOnly",
+        "required",
+        "selected",
+        "type",
+        "value",
+    ],
+})
+@Component({
+    selector: "mw-autocomplete",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: [
+        "disabled",
+        "hasError",
+        "helperText",
+        "inline",
+        "label",
+        "maximum",
+        "maximumText",
+        "multiple",
+        "name",
+        "noSuggestionsText",
+        "optionCounter",
+        "placeholder",
+        "readOnly",
+        "required",
+        "selected",
+        "type",
+        "value",
+    ],
+})
+export class MwAutocomplete {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["mwAutocompleteValueChanged"]);
+    }
+}
+
+export declare interface MwAutocomplete extends Components.MwAutocomplete {
+    /**
+     * Emits an event when its value changes
+     */
+    mwAutocompleteValueChanged: EventEmitter<CustomEvent<string>>;
+}
+
+@ProxyCmp({
     inputs: ["alt", "icon", "size", "src", "testId"],
 })
 @Component({
@@ -291,29 +353,63 @@ export declare interface MwCheckbox extends Components.MwCheckbox {
 }
 
 @ProxyCmp({
-    inputs: ["disabled", "icon", "selected", "showClose", "testId"],
+    inputs: ["disabled", "icon", "selected", "showClose", "testId", "toggleable", "value"],
 })
 @Component({
     selector: "mw-chip",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "icon", "selected", "showClose", "testId"],
+    inputs: ["disabled", "icon", "selected", "showClose", "testId", "toggleable", "value"],
 })
 export class MwChip {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["emitter"]);
+        proxyOutputs(this, this.el, ["mwChipClick", "mwChipClose"]);
     }
 }
 
 export declare interface MwChip extends Components.MwChip {
     /**
-     * MwChip emits an event when chip is clicked or chip is closed
+     * MwChip emits an event when chip is clicked
      */
-    emitter: EventEmitter<CustomEvent<any>>;
+    mwChipClick: EventEmitter<CustomEvent<any>>;
+    /**
+     * MwChip emits an event when chip is closed
+     */
+    mwChipClose: EventEmitter<CustomEvent<any>>;
+}
+
+@ProxyCmp({
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips"],
+})
+@Component({
+    selector: "mw-chip-input",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips"],
+})
+export class MwChipInput {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["mwChipListValueChanged", "mwChipListInputChange"]);
+    }
+}
+
+export declare interface MwChipInput extends Components.MwChipInput {
+    /**
+     * Emits an event when its value changes
+     */
+    mwChipListValueChanged: EventEmitter<CustomEvent<string[]>>;
+    /**
+     * Emits an event when value of input changes
+     */
+    mwChipListInputChange: EventEmitter<CustomEvent<string>>;
 }
 
 @ProxyCmp({
@@ -335,6 +431,52 @@ export class MwDivider {
 }
 
 export declare interface MwDivider extends Components.MwDivider {}
+
+@ProxyCmp({
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value", "valueLabel"],
+})
+@Component({
+    selector: "mw-dropdown",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value", "valueLabel"],
+})
+export class MwDropdown {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["valueChanged"]);
+    }
+}
+
+export declare interface MwDropdown extends Components.MwDropdown {
+    /**
+     * MwDropdown emits an event when value changes
+     */
+    valueChanged: EventEmitter<CustomEvent<string>>;
+}
+
+@ProxyCmp({
+    inputs: ["hasError", "helperText"],
+})
+@Component({
+    selector: "mw-helper-text",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: ["hasError", "helperText"],
+})
+export class MwHelperText {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwHelperText extends Components.MwHelperText {}
 
 @ProxyCmp({
     inputs: ["color", "fill", "icon", "size", "weight"],
@@ -407,6 +549,26 @@ export declare interface MwImg extends Components.MwImg {
 }
 
 @ProxyCmp({
+    inputs: ["label", "name", "required"],
+})
+@Component({
+    selector: "mw-label",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: ["label", "name", "required"],
+})
+export class MwLabel {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+    }
+}
+
+export declare interface MwLabel extends Components.MwLabel {}
+
+@ProxyCmp({
     inputs: ["href", "target", "underline"],
 })
 @Component({
@@ -475,21 +637,21 @@ export class MwMenu {
 export declare interface MwMenu extends Components.MwMenu {}
 
 @ProxyCmp({
-    inputs: ["disabled", "selected", "subtitle", "title"],
+    inputs: ["disabled", "selected", "subtitle", "title", "value"],
 })
 @Component({
     selector: "mw-menu-item",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "selected", "subtitle", "title"],
+    inputs: ["disabled", "selected", "subtitle", "title", "value"],
 })
 export class MwMenuItem {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["clickEmitter"]);
+        proxyOutputs(this, this.el, ["mwMenuItemClick"]);
     }
 }
 
@@ -497,7 +659,7 @@ export declare interface MwMenuItem extends Components.MwMenuItem {
     /**
      * MwMenuItem emits an event when its clicked
      */
-    clickEmitter: EventEmitter<CustomEvent<any>>;
+    mwMenuItemClick: EventEmitter<CustomEvent<any>>;
 }
 
 @ProxyCmp({
@@ -580,24 +742,30 @@ export class MwModalTitle {
 export declare interface MwModalTitle extends Components.MwModalTitle {}
 
 @ProxyCmp({
-    inputs: ["dismissable", "name", "noPadding", "open", "placement", "testId"],
+    inputs: ["closeOnClick", "disabled", "dismissable", "name", "noPadding", "open", "placement", "testId"],
 })
 @Component({
     selector: "mw-popover",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["dismissable", "name", "noPadding", "open", "placement", "testId"],
+    inputs: ["closeOnClick", "disabled", "dismissable", "name", "noPadding", "open", "placement", "testId"],
 })
 export class MwPopover {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["mwPopoverOpen"]);
     }
 }
 
-export declare interface MwPopover extends Components.MwPopover {}
+export declare interface MwPopover extends Components.MwPopover {
+    /**
+     * MwPopover emits an event when the value of the open prop changes
+     */
+    mwPopoverOpen: EventEmitter<CustomEvent<any>>;
+}
 
 @ProxyCmp({
     inputs: ["checked", "disabled", "label", "name", "testId", "value"],
@@ -738,21 +906,21 @@ export declare interface MwTabs extends Components.MwTabs {
 }
 
 @ProxyCmp({
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "type", "value"],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
 })
 @Component({
     selector: "mw-textfield",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "type", "value"],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
 })
 export class MwTextfield {
     protected el: HTMLElement;
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["valueChanged"]);
+        proxyOutputs(this, this.el, ["mwTextfieldValueChanged"]);
     }
 }
 
@@ -760,5 +928,5 @@ export declare interface MwTextfield extends Components.MwTextfield {
     /**
      * MwTextfield emits an event when textfield value changes
      */
-    valueChanged: EventEmitter<CustomEvent<string>>;
+    mwTextfieldValueChanged: EventEmitter<CustomEvent<string>>;
 }

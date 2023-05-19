@@ -10,12 +10,13 @@
 | `selected` | `selected` | Selected state     | `boolean` | `false`     |
 | `subtitle` | `subtitle` | Menu item subtitle | `string`  | `undefined` |
 | `title`    | `title`    | Menu item title    | `string`  | `undefined` |
+| `value`    | `value`    | Value of item      | `string`  | `undefined` |
 
 ## Events
 
-| Event          | Description                                | Type               |
-| -------------- | ------------------------------------------ | ------------------ |
-| `clickEmitter` | MwMenuItem emits an event when its clicked | `CustomEvent<any>` |
+| Event             | Description                                | Type               |
+| ----------------- | ------------------------------------------ | ------------------ |
+| `mwMenuItemClick` | MwMenuItem emits an event when its clicked | `CustomEvent<any>` |
 
 ---
 
