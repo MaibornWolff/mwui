@@ -85,8 +85,6 @@ input:focus + .mw-checkbox.selected.enabled {
 }
 /* mw-checkmark */
 .mw-checkmark {
-  /* TODO: fix sizing of mw-icon container so hard coded height isn't needed here */
-  height: 16px;
   display: none;
 }
 /* Selected */

@@ -8,6 +8,9 @@ on:
                 required: true
 jobs:
     deploy:
+        permissions:
+            pages: "write"
+            id-token: "write"
         environment:
             name: github-pages
             url: ${{ steps.build-publish.outputs.page_url }}
@@ -17,4 +20,4 @@ jobs:
               uses: bitovi/github-actions-react-to-ghp@v1.2.0
               with:
                   path: docs
-                  build_command: npm run build-storybook
+                  build_command: npm run build-tokens && npm run build-stencil && npm run build-storybook

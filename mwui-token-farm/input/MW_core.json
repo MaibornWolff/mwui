@@ -2085,6 +2085,14 @@
                         "type": "color"
                     }
                 }
+            },
+            "accordeon": {
+                "bg": {
+                    "default": {
+                        "value": "#ffffff00",
+                        "type": "color"
+                    }
+                }
             }
         },
         "semantic": {

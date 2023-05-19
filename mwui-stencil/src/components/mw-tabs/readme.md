@@ -11,9 +11,9 @@
 
 ## Events
 
-| Event     | Description                        | Type                                 |
-| --------- | ---------------------------------- | ------------------------------------ |
-| `emitter` | Emits an event when tab is changed | `CustomEvent<{ selected: number; }>` |
+| Event              | Description                        | Type                                 |
+| ------------------ | ---------------------------------- | ------------------------------------ |
+| `tabsClickEmitter` | Emits an event when tab is changed | `CustomEvent<{ selected: number; }>` |
 
 ## Dependencies
 
