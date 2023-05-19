@@ -165,6 +165,10 @@ export namespace Components {
      */
     testId: string;
     /**
+     * Title which is shown on hover
+     */
+    title?: string;
+    /**
      * Button variants
      */
     variant?: ButtonVariant;
@@ -1275,6 +1279,10 @@ declare namespace LocalJSX {
      * Provide unique identifier for automated testing
      */
     testId?: string;
+    /**
+     * Title which is shown on hover
+     */
+    title?: string;
     /**
      * Button variants
      */

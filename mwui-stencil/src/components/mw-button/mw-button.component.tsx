@@ -23,6 +23,10 @@ export class MwButton {
    */
   @Prop() label?: string;
   /**
+   * Title which is shown on hover
+   */
+  @Prop() title?: string;
+  /**
    * Button variants
    */
   @Prop() variant?: ButtonVariant = ButtonVariantEnum.FILLED;
@@ -77,6 +81,7 @@ export class MwButton {
         part="button"
         disabled={this.disabled}
         onClick={this.handleClick}
+        title={this.title}
         class={{
           "mw-button": true,
           "mw-button--icon-only": !this.label,
