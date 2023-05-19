@@ -246,6 +246,10 @@ export namespace Components {
      */
     alt: string;
     /**
+     * Height of image
+     */
+    height?: string;
+    /**
      * Image source
      */
     src: string;
@@ -1360,6 +1364,10 @@ declare namespace LocalJSX {
      * Alt text for the image
      */
     alt?: string;
+    /**
+     * Height of image
+     */
+    height?: string;
     /**
      * Image source
      */
