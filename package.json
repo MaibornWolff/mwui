@@ -30,7 +30,7 @@
         "@release-it/conventional-changelog": "^5.1.1",
         "@types/estree": "^1.0.0",
         "@types/node": "^18.15.11",
-        "eslint": "^8.22.0",
+        "eslint": "^8.41.0",
         "jest": "^27.4.5",
         "jest-cli": "^27.4.5",
         "parcel-bundler": "^1.8.1",
