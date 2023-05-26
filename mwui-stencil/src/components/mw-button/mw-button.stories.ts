@@ -47,6 +47,15 @@ Ghost.args = {
   size: "medium",
 };
 
+export const GhostInverted = Template.bind({});
+GhostInverted.args = {
+  testId: "button",
+  label: "BUTTON",
+  disabled: false,
+  variant: "ghost-inverted",
+  size: "medium",
+};
+
 const WithIconTemplate = args => `
 <mw-button test-id="${args.testId}" label="${args.label}" onClick="${args.onClick}" size="${args.size}" disabled="${args.disabled}" variant="${args.variant}">
   <mw-icon slot="icon-start" icon="settings"></mw-icon>

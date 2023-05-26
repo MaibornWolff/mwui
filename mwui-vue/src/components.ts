@@ -34,7 +34,17 @@ export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>("mw-avatar",
 
 export const MwBackdrop = /*@__PURE__*/ defineContainer<JSX.MwBackdrop>("mw-backdrop", undefined, ["backdropDismiss", "backdropClick"]);
 
-export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>("mw-button", undefined, ["testId", "disabled", "label", "variant", "size", "href", "target", "clickEmitter"]);
+export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>("mw-button", undefined, [
+    "testId",
+    "disabled",
+    "label",
+    "title",
+    "variant",
+    "size",
+    "href",
+    "target",
+    "clickEmitter",
+]);
 
 export const MwCard = /*@__PURE__*/ defineContainer<JSX.MwCard>("mw-card", undefined, ["testId", "outlined", "elevated", "clickEmitter"]);
 
