@@ -25,6 +25,7 @@ export class MwButton {
   /**
    * Title which is shown on hover
    */
+  // eslint-disable-next-line
   @Prop() title?: string;
   /**
    * Button variants
