@@ -54,7 +54,7 @@
     "@stencil/sass": "^3.0.0",
     "@storybook/addon-a11y": "^6.5.16",
     "@storybook/addon-actions": "^6.5.10",
-    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-essentials": "^7.0.18",
     "@storybook/addon-interactions": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
     "@storybook/addons": "^6.5.10",
