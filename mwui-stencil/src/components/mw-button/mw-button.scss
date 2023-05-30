@@ -123,6 +123,35 @@ a {
   }
 }
 
+@mixin button-ghost-inverted {
+  &--ghost-inverted {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: var(--mw-component-button-outline-ghost-color-fg-inverted);
+    background-color: var(--mw-component-button-outline-ghost-color-bg-default);
+
+    &:hover {
+      color: var(--mw-component-button-outline-ghost-color-fg-hover);
+    }
+
+    &:focus {
+      box-shadow: none;
+      color: var(--mw-component-button-outline-ghost-color-fg-focused);
+    }
+
+    &:active {
+      box-shadow: none;
+      color: var(--mw-component-button-outline-ghost-color-fg-pressed);
+    }
+
+    &:disabled {
+      box-shadow: none;
+      color: var(--mw-component-button-outline-ghost-color-fg-disabled);
+    }
+  }
+}
+
 @mixin icon-button-styles {
   min-width: 0;
 
@@ -183,6 +212,7 @@ a {
   @include button-filled;
   @include button-outlined;
   @include button-ghost;
+  @include button-ghost-inverted;
 }
 
 .mw-button {

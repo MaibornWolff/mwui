@@ -153,14 +153,14 @@ export declare interface MwBackdrop extends Components.MwBackdrop {
 }
 
 @ProxyCmp({
-    inputs: ["disabled", "href", "label", "size", "target", "testId", "variant"],
+    inputs: ["disabled", "href", "label", "size", "target", "testId", "title", "variant"],
 })
 @Component({
     selector: "mw-button",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "href", "label", "size", "target", "testId", "variant"],
+    inputs: ["disabled", "href", "label", "size", "target", "testId", "title", "variant"],
 })
 export class MwButton {
     protected el: HTMLElement;

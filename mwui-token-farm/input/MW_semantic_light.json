@@ -84,6 +84,10 @@
                             "focused": {
                                 "value": "#ed2985",
                                 "type": "color"
+                            },
+                            "inverted": {
+                                "value": "#ffffff",
+                                "type": "color"
                             }
                         },
                         "border": {
@@ -2112,6 +2116,10 @@
                     },
                     "muted": {
                         "value": "#44555b",
+                        "type": "color"
+                    },
+                    "on-dark": {
+                        "value": "#ffffff",
                         "type": "color"
                     }
                 },
