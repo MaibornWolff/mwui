@@ -35,7 +35,7 @@
         "typescript": "^4.8.2"
     },
     "dependencies": {
-        "@maibornwolff/mwui-stencil": "^0.3.0",
+        "@maibornwolff/mwui-stencil": "^0.4.1",
         "parcel-bundler": "^1.8.1"
     },
     "peerDependencies": {
