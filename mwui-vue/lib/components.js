@@ -23,7 +23,7 @@ export const MwAutocomplete = defineContainer("mw-autocomplete", undefined, [
 ]);
 export const MwAvatar = defineContainer("mw-avatar", undefined, ["testId", "src", "icon", "alt", "size"]);
 export const MwBackdrop = defineContainer("mw-backdrop", undefined, ["backdropDismiss", "backdropClick"]);
-export const MwButton = defineContainer("mw-button", undefined, ["testId", "disabled", "label", "title", "variant", "size", "href", "target", "clickEmitter"]);
+export const MwButton = defineContainer("mw-button", undefined, ["testId", "disabled", "label", "variant", "size", "href", "target", "clickEmitter"]);
 export const MwCard = defineContainer("mw-card", undefined, ["testId", "outlined", "elevated", "clickEmitter"]);
 export const MwCardBody = defineContainer("mw-card-body", undefined);
 export const MwCardFooter = defineContainer("mw-card-footer", undefined, [
@@ -41,7 +41,7 @@ export const MwCardFooter = defineContainer("mw-card-footer", undefined, [
 ]);
 export const MwCardHeader = defineContainer("mw-card-header", undefined, ["header", "subheader"]);
 export const MwCardImage = defineContainer("mw-card-image", undefined, ["src", "alt"]);
-export const MwCardTitle = defineContainer("mw-card-title", undefined, ["title", "subtitle", "metadata"]);
+export const MwCardTitle = defineContainer("mw-card-title", undefined, ["text", "subtitle", "metadata"]);
 export const MwCheckbox = defineContainer("mw-checkbox", undefined, ["testId", "value", "name", "checked", "disabled", "label", "emitter"]);
 export const MwChip = defineContainer("mw-chip", undefined, ["testId", "icon", "disabled", "toggleable", "showClose", "value", "selected", "mwChipClick", "mwChipClose"]);
 export const MwChipInput = defineContainer("mw-chip-input", undefined, [
@@ -79,9 +79,9 @@ export const MwIconGallery = defineContainer("mw-icon-gallery", undefined, ["ico
 export const MwImg = defineContainer("mw-img", undefined, ["preloadSrc", "src", "alt", "lazyLoad", "fallback", "srcset", "imgDidLoad", "imgLoadError"]);
 export const MwLabel = defineContainer("mw-label", undefined, ["name", "label", "required"]);
 export const MwLink = defineContainer("mw-link", undefined, ["href", "target", "underline"]);
-export const MwLogin = defineContainer("mw-login", undefined, ["headline", "layout", "backgroundImage", "logo", "signUpHref", "forgotPasswordHref", "submit"]);
+export const MwLogin = defineContainer("mw-login", undefined, ["headline", "layout", "backgroundImage", "logo", "signUpHref", "forgotPasswordHref", "submitEmitter"]);
 export const MwMenu = defineContainer("mw-menu", undefined, ["testId", "placement", "open"]);
-export const MwMenuItem = defineContainer("mw-menu-item", undefined, ["title", "subtitle", "disabled", "selected", "value", "mwMenuItemClick"]);
+export const MwMenuItem = defineContainer("mw-menu-item", undefined, ["text", "subtitle", "disabled", "selected", "value", "mwMenuItemClick"]);
 export const MwMenuList = defineContainer("mw-menu-list", undefined, ["testId"]);
 export const MwModal = defineContainer("mw-modal", undefined, ["backdropDismiss", "size", "trigger", "dismissTrigger", "isOpen"]);
 export const MwModalFooter = defineContainer("mw-modal-footer", undefined);
@@ -103,7 +103,7 @@ export const MwSlider = defineContainer("mw-slider", undefined, [
     "inline",
     "disabled",
 ]);
-export const MwSwitch = defineContainer("mw-switch", undefined, ["testId", "disabled", "label", "onText", "offText", "checked", "emitter"]);
+export const MwSwitch = defineContainer("mw-switch", undefined, ["testId", "disabled", "label", "on", "off", "checked", "emitter"]);
 export const MwTab = defineContainer("mw-tab", undefined, ["selected", "icon", "label", "disabled"]);
 export const MwTabs = defineContainer("mw-tabs", undefined, ["testId", "selected", "tabsClickEmitter"]);
 export const MwTextfield = defineContainer("mw-textfield", undefined, [
