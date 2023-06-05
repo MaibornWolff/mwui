@@ -95,16 +95,18 @@ export const defineContainer = (name, defineCustomElement, componentProps = [], 
             return h(name, propsToAdd, slots.default && slots.default());
         };
     });
-    Container.displayName = name;
-    Container.props = {
-        [ROUTER_LINK_VALUE]: DEFAULT_EMPTY_PROP,
-    };
-    componentProps.forEach(componentProp => {
-        Container.props[componentProp] = DEFAULT_EMPTY_PROP;
-    });
-    if (modelProp) {
-        Container.props[MODEL_VALUE] = DEFAULT_EMPTY_PROP;
-        Container.emits = [UPDATE_VALUE_EVENT, externalModelUpdateEvent];
+    if (typeof Container !== "function") {
+        Container.name = name;
+        Container.props = {
+            [ROUTER_LINK_VALUE]: DEFAULT_EMPTY_PROP,
+        };
+        componentProps.forEach(componentProp => {
+            Container.props[componentProp] = DEFAULT_EMPTY_PROP;
+        });
+        if (modelProp) {
+            Container.props[MODEL_VALUE] = DEFAULT_EMPTY_PROP;
+            Container.emits = [UPDATE_VALUE_EVENT, externalModelUpdateEvent];
+        }
     }
     return Container;
 };
