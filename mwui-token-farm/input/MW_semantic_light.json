@@ -2097,6 +2097,22 @@
                         "type": "color"
                     }
                 }
+            },
+            "image": {
+                "paddingX": {
+                    "value": 24,
+                    "type": "spacing"
+                },
+                "color": {
+                    "fg": {
+                        "value": "#ffffff",
+                        "type": "color"
+                    },
+                    "bg": {
+                        "value": "#CFD6D8",
+                        "type": "color"
+                    }
+                }
             }
         },
         "semantic": {

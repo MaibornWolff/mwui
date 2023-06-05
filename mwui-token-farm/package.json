@@ -25,7 +25,7 @@
         "sass": "^1.52.1"
     },
     "dependencies": {
-        "@maibornwolff/mwui-stencil": "^0.3.0",
+        "@maibornwolff/mwui-stencil": "^0.4.1",
         "lodash.template": "^4.5.0",
         "style-dictionary": "^3.7.0",
         "token-transformer": "^0.0.29",
