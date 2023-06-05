@@ -4,13 +4,13 @@ import { MwSwitch } from "./mw-switch";
 
 describe("GIVEN MwSwitch", () => {
   const setup = async (
-    { disabled, label, onText, offText, checked }: Pick<MwSwitch, "disabled" | "label" | "onText" | "offText" | "checked"> = {
+    { disabled, label, on, off, checked }: Pick<MwSwitch, "disabled" | "label" | "on" | "off" | "checked"> = {
       checked: false,
     },
   ) => {
     return await newSpecPage({
       components: [MwSwitch],
-      template: () => <mw-switch disabled={disabled} label={label} onText={onText} offText={offText} checked={checked}></mw-switch>,
+      template: () => <mw-switch disabled={disabled} label={label} on={on} off={off} checked={checked}></mw-switch>,
     });
   };
 
@@ -30,26 +30,26 @@ describe("GIVEN MwSwitch", () => {
   });
 
   it("SHOULD render off-text label WHEN value is false", async () => {
-    const offText = "off-text";
-    const onText = "on-text";
+    const off = "off-text";
+    const on = "on-text";
     const page = await setup({
       checked: false,
-      offText,
-      onText,
+      off,
+      on,
     });
 
-    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toEqual(offText);
+    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toEqual(off);
   });
 
   it("SHOULD render on-text label WHEN value is true", async () => {
-    const offText = "off-text";
-    const onText = "on-text";
+    const off = "off-text";
+    const on = "on-text";
     const page = await setup({
       checked: true,
-      offText,
-      onText,
+      off,
+      on,
     });
 
-    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toEqual(onText);
+    expect(page.root.shadowRoot.querySelector(".label").innerHTML).toEqual(on);
   });
 });

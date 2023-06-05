@@ -115,7 +115,7 @@ const FullTemplate = args => `
 <mw-card test-id="${args.testId}" elevated="${args.elevated}" outlined="${args.outlined}">
   <mw-card-header header="Header" subheader="Subheader"><mw-avatar slot="icon" src="https://i.pravatar.cc/150?img=23" alt="John Doe"></mw-card-header>
   <mw-card-image src="${args.src}" alt="card image"></mw-card-image>
-  <mw-card-title title="Title" subtitle="Subtitle" metadata="Metadata"></mw-card-title>
+  <mw-card-title text="Title" subtitle="Subtitle" metadata="Metadata"></mw-card-title>
   <mw-card-body>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</mw-card-body>
   <mw-card-footer>
     <mw-button label="Cancel" size="small" variant="outline"></mw-button>

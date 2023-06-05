@@ -49,7 +49,7 @@ export class MwLogin {
     cancelable: false,
     composed: false,
   })
-  submit: EventEmitter<LoginFormData>;
+  submitEmitter: EventEmitter<LoginFormData>;
 
   constructor() {
     this.togglePasswordType = this.togglePasswordType.bind(this);
@@ -70,7 +70,7 @@ export class MwLogin {
       formData[child.name] = child.value;
     });
 
-    this.submit.emit(formData);
+    this.submitEmitter.emit(formData);
   }
 
   render() {

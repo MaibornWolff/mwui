@@ -1,9 +1,9 @@
 {
-  "timestamp": "2023-06-05T07:45:52",
+  "timestamp": "2023-06-05T08:21:09",
   "compiler": {
     "name": "@stencil/core",
-    "version": "3.1.0",
-    "typescriptVersion": "4.9.5"
+    "version": "3.3.1",
+    "typescriptVersion": "5.0.4"
   },
   "components": [
     {
@@ -735,22 +735,6 @@
           "required": false
         },
         {
-          "name": "title",
-          "type": "string",
-          "mutable": false,
-          "attr": "title",
-          "reflectToAttr": false,
-          "docs": "Title which is shown on hover",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "variant",
           "type": "\"filled\" | \"ghost\" | \"ghost-inverted\" | \"outline\"",
           "mutable": false,
@@ -1260,10 +1244,10 @@
           "required": false
         },
         {
-          "name": "title",
+          "name": "text",
           "type": "string",
           "mutable": false,
-          "attr": "title",
+          "attr": "text",
           "reflectToAttr": false,
           "docs": "Title to be displayed in mw-card-title",
           "docsTags": [],
@@ -2714,7 +2698,7 @@
       "methods": [],
       "events": [
         {
-          "event": "submit",
+          "event": "submitEmitter",
           "detail": "LoginFormData",
           "bubbles": true,
           "cancelable": false,
@@ -2912,12 +2896,12 @@
           "required": false
         },
         {
-          "name": "title",
+          "name": "text",
           "type": "string",
           "mutable": false,
-          "attr": "title",
+          "attr": "text",
           "reflectToAttr": false,
-          "docs": "Menu item title",
+          "docs": "Menu item text",
           "docsTags": [],
           "values": [
             {
@@ -3872,10 +3856,10 @@
           "required": false
         },
         {
-          "name": "offText",
+          "name": "off",
           "type": "string",
           "mutable": false,
-          "attr": "off-text",
+          "attr": "off",
           "reflectToAttr": false,
           "docs": "Label to be shown when switch state is unchecked. Overrides label prop",
           "docsTags": [],
@@ -3888,10 +3872,10 @@
           "required": false
         },
         {
-          "name": "onText",
+          "name": "on",
           "type": "string",
           "mutable": false,
-          "attr": "on-text",
+          "attr": "on",
           "reflectToAttr": false,
           "docs": "Label to be shown when switch state is checked. Overrides label prop",
           "docsTags": [],

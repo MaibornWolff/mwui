@@ -34,17 +34,7 @@ export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>("mw-avatar",
 
 export const MwBackdrop = /*@__PURE__*/ defineContainer<JSX.MwBackdrop>("mw-backdrop", undefined, ["backdropDismiss", "backdropClick"]);
 
-export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>("mw-button", undefined, [
-    "testId",
-    "disabled",
-    "label",
-    "title",
-    "variant",
-    "size",
-    "href",
-    "target",
-    "clickEmitter",
-]);
+export const MwButton = /*@__PURE__*/ defineContainer<JSX.MwButton>("mw-button", undefined, ["testId", "disabled", "label", "variant", "size", "href", "target", "clickEmitter"]);
 
 export const MwCard = /*@__PURE__*/ defineContainer<JSX.MwCard>("mw-card", undefined, ["testId", "outlined", "elevated", "clickEmitter"]);
 
@@ -68,7 +58,7 @@ export const MwCardHeader = /*@__PURE__*/ defineContainer<JSX.MwCardHeader>("mw-
 
 export const MwCardImage = /*@__PURE__*/ defineContainer<JSX.MwCardImage>("mw-card-image", undefined, ["src", "alt"]);
 
-export const MwCardTitle = /*@__PURE__*/ defineContainer<JSX.MwCardTitle>("mw-card-title", undefined, ["title", "subtitle", "metadata"]);
+export const MwCardTitle = /*@__PURE__*/ defineContainer<JSX.MwCardTitle>("mw-card-title", undefined, ["text", "subtitle", "metadata"]);
 
 export const MwCheckbox = /*@__PURE__*/ defineContainer<JSX.MwCheckbox>("mw-checkbox", undefined, ["testId", "value", "name", "checked", "disabled", "label", "emitter"]);
 
@@ -135,12 +125,12 @@ export const MwLogin = /*@__PURE__*/ defineContainer<JSX.MwLogin>("mw-login", un
     "logo",
     "signUpHref",
     "forgotPasswordHref",
-    "submit",
+    "submitEmitter",
 ]);
 
 export const MwMenu = /*@__PURE__*/ defineContainer<JSX.MwMenu>("mw-menu", undefined, ["testId", "placement", "open"]);
 
-export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu-item", undefined, ["title", "subtitle", "disabled", "selected", "value", "mwMenuItemClick"]);
+export const MwMenuItem = /*@__PURE__*/ defineContainer<JSX.MwMenuItem>("mw-menu-item", undefined, ["text", "subtitle", "disabled", "selected", "value", "mwMenuItemClick"]);
 
 export const MwMenuList = /*@__PURE__*/ defineContainer<JSX.MwMenuList>("mw-menu-list", undefined, ["testId"]);
 
@@ -181,7 +171,7 @@ export const MwSlider = /*@__PURE__*/ defineContainer<JSX.MwSlider>("mw-slider",
     "disabled",
 ]);
 
-export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>("mw-switch", undefined, ["testId", "disabled", "label", "onText", "offText", "checked", "emitter"]);
+export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>("mw-switch", undefined, ["testId", "disabled", "label", "on", "off", "checked", "emitter"]);
 
 export const MwTab = /*@__PURE__*/ defineContainer<JSX.MwTab>("mw-tab", undefined, ["selected", "icon", "label", "disabled"]);
 

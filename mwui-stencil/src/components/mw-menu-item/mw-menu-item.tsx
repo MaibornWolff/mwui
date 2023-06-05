@@ -7,10 +7,9 @@ import { Component, Event, EventEmitter, Host, Prop, h } from "@stencil/core";
 })
 export class MwMenuItem {
   /**
-   * Menu item title
+   * Menu item text
    */
-  // eslint-disable-next-line
-  @Prop() title: string;
+  @Prop() text: string;
   /**
    * Menu item subtitle
    */
@@ -39,7 +38,7 @@ export class MwMenuItem {
   clickEmitter: EventEmitter;
 
   componentWillLoad(): void {
-    if (!this.value) this.value = this.title;
+    if (!this.value) this.value = this.text;
   }
 
   private handleClick = (event: PointerEvent & { path: unknown[] }): void => {
@@ -51,7 +50,7 @@ export class MwMenuItem {
     return (
       <Host>
         <div onClick={this.handleClick} tabindex="0" class={{ "mw-menu-item": true, "disabled": this.disabled, "selected": this.selected }}>
-          {!!this.title && <div class="mw-menu-item-title">{this.title}</div>}
+          {!!this.text && <div class="mw-menu-item-title">{this.text}</div>}
           {!!this.subtitle && <div class="mw-menu-item-subtitle">{this.subtitle}</div>}
         </div>
       </Host>

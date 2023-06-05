@@ -1,8 +1,8 @@
-import '../../global/global.css';
+import "../../global/global.css";
 
 export default {
-  title: 'Components/Switch',
-  component: 'mw-switch',
+  title: "Components/Switch",
+  component: "mw-switch",
 };
 
 const DefaultTemplate = args => `
@@ -10,7 +10,7 @@ const DefaultTemplate = args => `
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  testId: 'switch',
+  testId: "switch",
   disabled: false,
   checked: true,
 };
@@ -20,20 +20,20 @@ const LabelTemplate = args => `
 
 export const WithLabel = LabelTemplate.bind({});
 WithLabel.args = {
-  testId: 'switch',
+  testId: "switch",
   disabled: false,
   checked: true,
-  label: 'Label',
+  label: "Label",
 };
 
 const OnOffTemplate = args => `
-<mw-switch test-id="${args.testId}" checked="${args.checked}" on-text="${args.onText}" off-text="${args.offText}" disabled="${args.disabled}"></mw-switch>`;
+<mw-switch test-id="${args.testId}" checked="${args.checked}" on-text="${args.on}" off-text="${args.off}" disabled="${args.disabled}"></mw-switch>`;
 
 export const WithDynamicLabel = OnOffTemplate.bind({});
 WithDynamicLabel.args = {
-  testId: 'switch',
+  testId: "switch",
   disabled: false,
   checked: true,
-  onText: 'Active',
-  offText: 'Inactive',
+  on: "Active",
+  off: "Inactive",
 };

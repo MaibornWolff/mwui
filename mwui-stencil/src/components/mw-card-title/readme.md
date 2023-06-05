@@ -8,7 +8,7 @@
 | ---------- | ---------- | ----------------------------------------- | -------- | ----------- |
 | `metadata` | `metadata` | Metadata to be displayed in mw-card-title | `string` | `undefined` |
 | `subtitle` | `subtitle` | Subtitle to be displayed in mw-card-title | `string` | `undefined` |
-| `title`    | `title`    | Title to be displayed in mw-card-title    | `string` | `undefined` |
+| `text`     | `text`     | Title to be displayed in mw-card-title    | `string` | `undefined` |
 
 ---
 

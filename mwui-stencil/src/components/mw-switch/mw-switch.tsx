@@ -22,11 +22,11 @@ export class MwSwitch {
   /**
    * Label to be shown when switch state is checked. Overrides label prop
    */
-  @Prop() onText?: string;
+  @Prop() on?: string;
   /**
    * Label to be shown when switch state is unchecked. Overrides label prop
    */
-  @Prop() offText?: string;
+  @Prop() off?: string;
   /**
    * Switch state
    */
@@ -53,7 +53,7 @@ export class MwSwitch {
 
   componentWillLoad(): void {
     this.hasLabel = !!this.label;
-    this.hasOnOffLabel = !!this.onText && !!this.offText;
+    this.hasOnOffLabel = !!this.on && !!this.off;
   }
 
   render() {
@@ -64,7 +64,7 @@ export class MwSwitch {
           <span class="slider round"></span>
         </label>
         {this.hasLabel && <span class="label">{this.label}</span>}
-        {this.hasOnOffLabel && <span class="label">{this.checked ? this.onText : this.offText}</span>}
+        {this.hasOnOffLabel && <span class="label">{this.checked ? this.on : this.off}</span>}
       </Host>
     );
   }

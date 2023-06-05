@@ -153,14 +153,14 @@ export declare interface MwBackdrop extends Components.MwBackdrop {
 }
 
 @ProxyCmp({
-    inputs: ["disabled", "href", "label", "size", "target", "testId", "title", "variant"],
+    inputs: ["disabled", "href", "label", "size", "target", "testId", "variant"],
 })
 @Component({
     selector: "mw-button",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "href", "label", "size", "target", "testId", "title", "variant"],
+    inputs: ["disabled", "href", "label", "size", "target", "testId", "variant"],
 })
 export class MwButton {
     protected el: HTMLElement;
@@ -307,14 +307,14 @@ export class MwCardImage {
 export declare interface MwCardImage extends Components.MwCardImage {}
 
 @ProxyCmp({
-    inputs: ["metadata", "subtitle", "title"],
+    inputs: ["metadata", "subtitle", "text"],
 })
 @Component({
     selector: "mw-card-title",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["metadata", "subtitle", "title"],
+    inputs: ["metadata", "subtitle", "text"],
 })
 export class MwCardTitle {
     protected el: HTMLElement;
@@ -603,7 +603,7 @@ export class MwLogin {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["submit"]);
+        proxyOutputs(this, this.el, ["submitEmitter"]);
     }
 }
 
@@ -613,7 +613,7 @@ export declare interface MwLogin extends Components.MwLogin {
     /**
      * Event emitted after login button was clicked
      */
-    submit: EventEmitter<CustomEvent<IMwLoginLoginFormData>>;
+    submitEmitter: EventEmitter<CustomEvent<IMwLoginLoginFormData>>;
 }
 
 @ProxyCmp({
@@ -637,14 +637,14 @@ export class MwMenu {
 export declare interface MwMenu extends Components.MwMenu {}
 
 @ProxyCmp({
-    inputs: ["disabled", "selected", "subtitle", "title", "value"],
+    inputs: ["disabled", "selected", "subtitle", "text", "value"],
 })
 @Component({
     selector: "mw-menu-item",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "selected", "subtitle", "title", "value"],
+    inputs: ["disabled", "selected", "subtitle", "text", "value"],
 })
 export class MwMenuItem {
     protected el: HTMLElement;
@@ -834,14 +834,14 @@ export class MwSlider {
 export declare interface MwSlider extends Components.MwSlider {}
 
 @ProxyCmp({
-    inputs: ["checked", "disabled", "label", "offText", "onText", "testId"],
+    inputs: ["checked", "disabled", "label", "off", "on", "testId"],
 })
 @Component({
     selector: "mw-switch",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["checked", "disabled", "label", "offText", "onText", "testId"],
+    inputs: ["checked", "disabled", "label", "off", "on", "testId"],
 })
 export class MwSwitch {
     protected el: HTMLElement;

@@ -165,10 +165,6 @@ export namespace Components {
      */
     testId: string;
     /**
-     * Title which is shown on hover
-     */
-    title?: string;
-    /**
      * Button variants
      */
     variant?: ButtonVariant;
@@ -266,7 +262,7 @@ export namespace Components {
     /**
      * Title to be displayed in mw-card-title
      */
-    title: string;
+    text: string;
   }
   interface MwCheckbox {
     /**
@@ -564,9 +560,9 @@ export namespace Components {
      */
     subtitle?: string;
     /**
-     * Menu item title
+     * Menu item text
      */
-    title: string;
+    text: string;
     /**
      * Value of item
      */
@@ -751,11 +747,11 @@ export namespace Components {
     /**
      * Label to be shown when switch state is unchecked. Overrides label prop
      */
-    offText?: string;
+    off?: string;
     /**
      * Label to be shown when switch state is checked. Overrides label prop
      */
-    onText?: string;
+    on?: string;
     /**
      * Provide unique identifier for automated testing
      */
@@ -1280,10 +1276,6 @@ declare namespace LocalJSX {
      */
     testId?: string;
     /**
-     * Title which is shown on hover
-     */
-    title?: string;
-    /**
      * Button variants
      */
     variant?: ButtonVariant;
@@ -1385,7 +1377,7 @@ declare namespace LocalJSX {
     /**
      * Title to be displayed in mw-card-title
      */
-    title?: string;
+    text?: string;
   }
   interface MwCheckbox {
     /**
@@ -1685,7 +1677,7 @@ declare namespace LocalJSX {
     /**
      * Event emitted after login button was clicked
      */
-    onSubmit?: (event: MwLoginCustomEvent<LoginFormData>) => void;
+    onSubmitEmitter?: (event: MwLoginCustomEvent<LoginFormData>) => void;
     /**
      * Wether or not the signUp prompt should be displayed
      */
@@ -1723,9 +1715,9 @@ declare namespace LocalJSX {
      */
     subtitle?: string;
     /**
-     * Menu item title
+     * Menu item text
      */
-    title?: string;
+    text?: string;
     /**
      * Value of item
      */
@@ -1910,15 +1902,15 @@ declare namespace LocalJSX {
     /**
      * Label to be shown when switch state is unchecked. Overrides label prop
      */
-    offText?: string;
+    off?: string;
+    /**
+     * Label to be shown when switch state is checked. Overrides label prop
+     */
+    on?: string;
     /**
      * MwSwitch emits an event when switch checked state changes
      */
     onEmitter?: (event: MwSwitchCustomEvent<any>) => void;
-    /**
-     * Label to be shown when switch state is checked. Overrides label prop
-     */
-    onText?: string;
     /**
      * Provide unique identifier for automated testing
      */

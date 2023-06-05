@@ -9,8 +9,7 @@ export class MwCardTitle {
   /**
    * Title to be displayed in mw-card-title
    */
-  // eslint-disable-next-line
-  @Prop() title: string;
+  @Prop() text: string;
   /**
    * Subtitle to be displayed in mw-card-title
    */
@@ -25,7 +24,7 @@ export class MwCardTitle {
       <Host>
         <div class="card-title">
           <div class="metadata">{this.metadata}</div>
-          <div class="title">{this.title}</div>
+          <div class="title">{this.text}</div>
           <div class="subtitle">{this.subtitle}</div>
         </div>
       </Host>

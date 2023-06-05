@@ -12,7 +12,7 @@ describe("GIVEN MwCardTitle", () => {
   ) => {
     return await newSpecPage({
       components: [MwCardTitle],
-      template: () => <mw-card-title title={title} subtitle={subtitle} metadata={metadata}></mw-card-title>,
+      template: () => <mw-card-title text={title} subtitle={subtitle} metadata={metadata}></mw-card-title>,
     });
   };
 
