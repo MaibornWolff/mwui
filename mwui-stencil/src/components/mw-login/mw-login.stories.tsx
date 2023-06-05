@@ -15,8 +15,8 @@ const Template = args => `
       layout="${args.layout}"
       background-image="${args.backgroundImage}"
       logo="${args.logo}"
-      show-forgot-password="${args.forgotPasswordHref}"
-      show-sign-up="${args.signUpHref}"
+      forgot-password-href="${args.forgotPasswordHref}"
+      sign-up-href="${args.signUpHref}"
     ></mw-login>
 `;
 export const MwLogin = Template.bind({});
@@ -54,5 +54,5 @@ MwLoginWithImage.args = {
 };
 
 MwLoginWithImage.parameters = {
-  layout: "fullscreen",
+  layout: "CENTER",
 };

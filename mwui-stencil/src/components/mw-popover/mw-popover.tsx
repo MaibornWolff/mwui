@@ -1,6 +1,6 @@
 import { Component, Host, Prop, h, Element, Event, EventEmitter, Watch } from "@stencil/core";
 import { createPopper } from "@popperjs/core";
-import { ClickOutside } from "stencil-click-outside";
+// import { ClickOutside } from "stencil-click-outside";
 
 export type PopoverPlacement =
   | "top"
@@ -74,12 +74,12 @@ export class MwPopover {
     this.openEmitter.emit(this.open);
   }
 
-  @ClickOutside()
-  toggleIfOpen(): void {
-    if (this.open && this.dismissable) {
-      this.open = !this.open;
-    }
-  }
+  // @ClickOutside()
+  // private toggleIfOpen(): void {
+  //   if (this.open && this.dismissable) {
+  //     this.open = !this.open;
+  //   }
+  // }
 
   private onClick = (event: Event) => {
     if (!this.disabled) {

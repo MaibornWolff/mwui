@@ -111,7 +111,7 @@ describe("GIVEN MwLogin", () => {
 
   it("SHOULD emit a submit event WHEN login is done", async () => {
     const page = await setup();
-    const clickMock = (page.rootInstance.submit.emit = jest.fn());
+    const clickMock = (page.rootInstance.submitEmitter.emit = jest.fn());
     const submitButton = page.root.shadowRoot.querySelector<HTMLMwButtonElement>("mw-button#submit");
 
     submitButton.click();
