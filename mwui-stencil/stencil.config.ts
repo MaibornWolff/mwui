@@ -23,6 +23,7 @@ export const config: Config = {
     vue({
       componentCorePackage: "@maibornwolff/mwui-stencil",
       proxiesFile: "../mwui-vue/src/components.ts",
+      includePolyfills: true,
     }),
     react({
       componentCorePackage: "@maibornwolff/mwui-stencil",
