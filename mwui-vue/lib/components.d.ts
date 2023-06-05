@@ -27,6 +27,20 @@ export declare const MwAppBarTitle: import("vue").DefineComponent<
     Readonly<JSX.MwAppBarTitle & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
     {}
 >;
+export declare const MwAutocomplete: import("vue").DefineComponent<
+    JSX.MwAutocomplete & import("./vue-component-lib/utils").InputProps<string | number | boolean>,
+    object,
+    {},
+    import("vue").ComputedOptions,
+    import("vue").MethodOptions,
+    import("vue").ComponentOptionsMixin,
+    import("vue").ComponentOptionsMixin,
+    {},
+    string,
+    import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps,
+    Readonly<JSX.MwAutocomplete & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
+    {}
+>;
 export declare const MwAvatar: import("vue").DefineComponent<
     JSX.MwAvatar & import("./vue-component-lib/utils").InputProps<string | number | boolean>,
     object,
@@ -181,6 +195,20 @@ export declare const MwChip: import("vue").DefineComponent<
     Readonly<JSX.MwChip & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
     {}
 >;
+export declare const MwChipInput: import("vue").DefineComponent<
+    JSX.MwChipInput & import("./vue-component-lib/utils").InputProps<string | number | boolean>,
+    object,
+    {},
+    import("vue").ComputedOptions,
+    import("vue").MethodOptions,
+    import("vue").ComponentOptionsMixin,
+    import("vue").ComponentOptionsMixin,
+    {},
+    string,
+    import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps,
+    Readonly<JSX.MwChipInput & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
+    {}
+>;
 export declare const MwDivider: import("vue").DefineComponent<
     JSX.MwDivider & import("./vue-component-lib/utils").InputProps<string | number | boolean>,
     object,
@@ -193,6 +221,34 @@ export declare const MwDivider: import("vue").DefineComponent<
     string,
     import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps,
     Readonly<JSX.MwDivider & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
+    {}
+>;
+export declare const MwDropdown: import("vue").DefineComponent<
+    JSX.MwDropdown & import("./vue-component-lib/utils").InputProps<string | number | boolean>,
+    object,
+    {},
+    import("vue").ComputedOptions,
+    import("vue").MethodOptions,
+    import("vue").ComponentOptionsMixin,
+    import("vue").ComponentOptionsMixin,
+    {},
+    string,
+    import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps,
+    Readonly<JSX.MwDropdown & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
+    {}
+>;
+export declare const MwHelperText: import("vue").DefineComponent<
+    JSX.MwHelperText & import("./vue-component-lib/utils").InputProps<string | number | boolean>,
+    object,
+    {},
+    import("vue").ComputedOptions,
+    import("vue").MethodOptions,
+    import("vue").ComponentOptionsMixin,
+    import("vue").ComponentOptionsMixin,
+    {},
+    string,
+    import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps,
+    Readonly<JSX.MwHelperText & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
     {}
 >;
 export declare const MwIcon: import("vue").DefineComponent<
@@ -235,6 +291,20 @@ export declare const MwImg: import("vue").DefineComponent<
     string,
     import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps,
     Readonly<JSX.MwImg & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
+    {}
+>;
+export declare const MwLabel: import("vue").DefineComponent<
+    JSX.MwLabel & import("./vue-component-lib/utils").InputProps<string | number | boolean>,
+    object,
+    {},
+    import("vue").ComputedOptions,
+    import("vue").MethodOptions,
+    import("vue").ComponentOptionsMixin,
+    import("vue").ComponentOptionsMixin,
+    {},
+    string,
+    import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps,
+    Readonly<JSX.MwLabel & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
     {}
 >;
 export declare const MwLink: import("vue").DefineComponent<
