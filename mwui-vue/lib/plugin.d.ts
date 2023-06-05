@@ -1,2 +1,2 @@
-import { Plugin } from 'vue';
+import { Plugin } from "vue";
 export declare const MwuiComponents: Plugin;
