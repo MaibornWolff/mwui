@@ -1,3 +1,16 @@
+## [0.5.0](https://github.com/MaibornWolff/mwui/compare/v0.3.1...v0.5.0) (2023-06-05)
+
+### Reworks
+
+-   **#42:** add new styling to dropdown ([6863c88](https://github.com/MaibornWolff/mwui/commit/6863c884354222e181e702e7050d16b87e425139)), closes [#42](https://github.com/MaibornWolff/mwui/issues/42)
+-   **#42:** cleanup duplication ([04b7ef7](https://github.com/MaibornWolff/mwui/commit/04b7ef7a95c268f0b163e51f6f94854af344cd6e)), closes [#42](https://github.com/MaibornWolff/mwui/issues/42)
+-   **#42:** rework with chips-input ([e07ff79](https://github.com/MaibornWolff/mwui/commit/e07ff79259e5652d7d7a85a15d90898198213068)), closes [#42](https://github.com/MaibornWolff/mwui/issues/42)
+-   **#42:** unify styling ([29eed39](https://github.com/MaibornWolff/mwui/commit/29eed390f2b30c439440bd74ed39f7fc49607be7)), closes [#42](https://github.com/MaibornWolff/mwui/issues/42)
+
+### Bugfixes
+
+-   **#42:** fix inline padding for labels ([7a12bc0](https://github.com/MaibornWolff/mwui/commit/7a12bc0653cc5aeef02299c8afc334db9481060f))
+
 ## [0.2.0](https://github.com/MaibornWolff/mwui/compare/v0.1.12...v0.2.0) (2023-03-03)
 
 ### Features
