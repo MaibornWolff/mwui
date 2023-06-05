@@ -1,5 +1,5 @@
 <script>
-import { MwAutocomplete, MwMenuItem, MwChip, MwLogin, MwCard, MwButton, MwCardFooter, MwCardTitle, MwCardBody, MwIcon } from "@maibornwolff/mwui-vue";
+import { MwAutocomplete, MwMenuItem, MwLogin, MwCard, MwButton, MwCardFooter, MwCardTitle, MwCardBody, MwIcon } from "@maibornwolff/mwui-vue";
 import bg from "../assets/background.jpg";
 export default {
     components: {
@@ -12,22 +12,23 @@ export default {
         MwCardFooter,
         MwButton,
         MwLogin,
-        MwChip,
     },
     data() {
         return {
             selected: ["Pineapple"],
-            value: "",
             bg,
             showClose: true,
         };
     },
     methods: {
-        onToggle: () => {},
-        onSend: () => {},
-        onChange: () => {},
-        onInput: () => {
-            console.log("askkkdf");
+        onSend() {
+            console.log(this.selected);
+        },
+        onSubmit({ detail }) {
+            alert(`${detail.email} ${detail.password}`);
+        },
+        onInput(e) {
+            console.log(e, "input..");
         },
     },
 };
@@ -35,15 +36,14 @@ export default {
 
 <template>
     <div id="app">
-        <mw-chip :show-close="showClose"> chip </mw-chip>
-        <mw-login headline="Welcome back" :background-image="bg" layout="start" forgot-password-href="/aksddfd" sign-up-href="/askdf" />
+        <mw-login headline="Welcome back" :background-image="bg" layout="start" forgot-password-href="/aksddfd" sign-up-href="/askdf" @submitemitter="onSubmit" />
         <div class="container">
             <mw-card elevated>
                 <mw-card-title text="All about fruits" />
                 <mw-card-body>
-                    {{ value }}
-                    <p>For some reason we're interetsed in you selecting favorites fruits.</p>
+                    <p>For some reason we're interested in you selecting favorites fruits.</p>
                     <mw-autocomplete
+                        :selected.prop="selected"
                         name="some-items"
                         placeholder=""
                         helper-text="Select Multiple Items"

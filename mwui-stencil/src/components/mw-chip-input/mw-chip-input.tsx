@@ -20,7 +20,6 @@ export class MwChipInput {
    * Emits an event when value of input changes
    */
   @Event({ bubbles: true, composed: false, eventName: "mwChipListInputChange" }) inputChange: EventEmitter<string>;
-
   /**
    * input field name
    */
@@ -29,6 +28,10 @@ export class MwChipInput {
    * Label to be displayed
    */
   @Prop({ reflect: true }) label?: string;
+  /**
+   * input field value
+   */
+  @Prop({ reflect: true }) value?: string | number;
   /**
    * Placeholder to be displayed
    */
@@ -241,6 +244,7 @@ export class MwChipInput {
                     onBlur={onBlur}
                     type="text"
                     name={name}
+                    value={this.value}
                     disabled={disabled}
                     onInput={handleInputChange.bind(this)}
                   />
