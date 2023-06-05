@@ -130,15 +130,17 @@ createApp(App).use(MwuiComponents).mount("#app");
 </template>
 
 <script>
-import { MWButton } from '@maibornwolff/mwui-vue';
+import { MwButton } from '@maibornwolff/mwui-vue';
 
 export default {
   name: 'HelloWorld',
   components: {
-    MWButton
+    MwButton
   }
 }
 ```
+
+> **_IMPORTANT:_** If using `vue 3` and `vite`, [setup your vite.config accordingly](https://stenciljs.com/docs/vue#creating-a-consumer-vue-app).
 
 > **_NOTE:_** for known issues, see [MWUI Vue Integration](https://github.com/MaibornWolff/mwui/tree/main/mwui-vue#known-issues).
 
