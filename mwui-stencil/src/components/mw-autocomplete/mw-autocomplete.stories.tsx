@@ -29,10 +29,10 @@ const Template = args => `
   selected="${args.selected}"
   >
   <div slot="dropdown-menu">
-    <mw-menu-item title="List Item 1"></mw-menu-item>
-    <mw-menu-item title="List Item 2"></mw-menu-item>
-    <mw-menu-item title="List Item 3"></mw-menu-item>
-    <mw-menu-item title="List Item 4"></mw-menu-item>
+    <mw-menu-item text="List Item 1"></mw-menu-item>
+    <mw-menu-item text="List Item 2"></mw-menu-item>
+    <mw-menu-item text="List Item 3"></mw-menu-item>
+    <mw-menu-item text="List Item 4"></mw-menu-item>
   </div>
 
 </mw-autocomplete>`;
