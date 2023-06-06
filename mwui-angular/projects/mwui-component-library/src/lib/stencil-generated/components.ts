@@ -383,14 +383,14 @@ export declare interface MwChip extends Components.MwChip {
 }
 
 @ProxyCmp({
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips"],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips", "value"],
 })
 @Component({
     selector: "mw-chip-input",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips"],
+    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips", "value"],
 })
 export class MwChipInput {
     protected el: HTMLElement;

@@ -26,7 +26,7 @@ exports.MwTextfield =
 /* tslint:disable */
 /* auto-generated react proxies */
 var react_component_lib_1 = require("./react-component-lib/index.js");
-var loader_1 = require("@maibornwolff/mwui-stencil/loader/index.es2017");
+var loader_1 = require("@maibornwolff/mwui-stencil/loader/index.js");
 loader_1.defineCustomElements();
 exports.MwAvatar = react_component_lib_1.createReactComponent("mw-avatar");
 exports.MwButton = react_component_lib_1.createReactComponent("mw-button");

@@ -365,6 +365,10 @@ export namespace Components {
      * Currently selected Values
      */
     selectedChips: string[];
+    /**
+     * input field value
+     */
+    value?: string | number;
   }
   interface MwDivider {
     /**
@@ -1500,6 +1504,10 @@ declare namespace LocalJSX {
      * Currently selected Values
      */
     selectedChips?: string[];
+    /**
+     * input field value
+     */
+    value?: string | number;
   }
   interface MwDivider {
     /**

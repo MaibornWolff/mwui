@@ -77,6 +77,7 @@ export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>("mw-chip", undef
 export const MwChipInput = /*@__PURE__*/ defineContainer<JSX.MwChipInput>("mw-chip-input", undefined, [
     "name",
     "label",
+    "value",
     "placeholder",
     "disabled",
     "maximum",
