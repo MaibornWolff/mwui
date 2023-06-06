@@ -1,6 +1,6 @@
 import React from "react";
 import { OverlayEventDetail } from "./interfaces";
-import { StencilReactForwardedRef } from "./utils";
+import { StencilReactForwardedRef } from "./utils/index.js";
 interface OverlayElement extends HTMLElement {
     present: () => Promise<void>;
     dismiss: (data?: any, role?: string | undefined) => Promise<boolean>;

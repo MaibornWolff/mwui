@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -24,6 +25,29 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -35,13 +59,15 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React, { createElement } from "react";
-import { attachProps, camelToDashCase, createForwardRef, dashToPascalCase, isCoveredByReact, mergeRefs } from "./utils";
-export var createReactComponent = function (tagName, ReactComponentContext, manipulatePropsFunction, defineCustomElement) {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createReactComponent = void 0;
+var react_1 = __importStar(require("react"));
+var index_js_1 = require("./utils/index.js");
+var createReactComponent = function (tagName, ReactComponentContext, manipulatePropsFunction, defineCustomElement) {
     if (defineCustomElement !== undefined) {
         defineCustomElement();
     }
-    var displayName = dashToPascalCase(tagName);
+    var displayName = (0, index_js_1.dashToPascalCase)(tagName);
     var ReactComponent = /** @class */ (function (_super) {
         __extends(class_1, _super);
         function class_1(props) {
@@ -55,7 +81,7 @@ export var createReactComponent = function (tagName, ReactComponentContext, mani
             this.componentDidUpdate(this.props);
         };
         class_1.prototype.componentDidUpdate = function (prevProps) {
-            attachProps(this.componentEl, this.props, prevProps);
+            (0, index_js_1.attachProps)(this.componentEl, this.props, prevProps);
         };
         class_1.prototype.render = function () {
             var _a = this.props, children = _a.children, forwardedRef = _a.forwardedRef, style = _a.style, className = _a.className, ref = _a.ref, cProps = __rest(_a, ["children", "forwardedRef", "style", "className", "ref"]);
@@ -63,7 +89,7 @@ export var createReactComponent = function (tagName, ReactComponentContext, mani
                 var value = cProps[name];
                 if (name.indexOf("on") === 0 && name[2] === name[2].toUpperCase()) {
                     var eventName = name.substring(2).toLowerCase();
-                    if (typeof document !== "undefined" && isCoveredByReact(eventName)) {
+                    if (typeof document !== "undefined" && (0, index_js_1.isCoveredByReact)(eventName)) {
                         acc[name] = value;
                     }
                 }
@@ -72,7 +98,7 @@ export var createReactComponent = function (tagName, ReactComponentContext, mani
                     // objects, functions, arrays etc get synced via properties on mount.
                     var type = typeof value;
                     if (type === "string" || type === "boolean" || type === "number") {
-                        acc[camelToDashCase(name)] = value;
+                        acc[(0, index_js_1.camelToDashCase)(name)] = value;
                     }
                 }
                 return acc;
@@ -80,7 +106,7 @@ export var createReactComponent = function (tagName, ReactComponentContext, mani
             if (manipulatePropsFunction) {
                 propsToPass = manipulatePropsFunction(this.props, propsToPass);
             }
-            var newProps = __assign(__assign({}, propsToPass), { ref: mergeRefs(forwardedRef, this.setComponentElRef), style: style });
+            var newProps = __assign(__assign({}, propsToPass), { ref: (0, index_js_1.mergeRefs)(forwardedRef, this.setComponentElRef), style: style });
             /**
              * We use createElement here instead of
              * React.createElement to work around a
@@ -88,7 +114,7 @@ export var createReactComponent = function (tagName, ReactComponentContext, mani
              * React.createElement causes all elements to be rendered
              * as <tagname> instead of the actual Web Component.
              */
-            return createElement(tagName, newProps, children);
+            return (0, react_1.createElement)(tagName, newProps, children);
         };
         Object.defineProperty(class_1, "displayName", {
             get: function () {
@@ -98,11 +124,12 @@ export var createReactComponent = function (tagName, ReactComponentContext, mani
             configurable: true
         });
         return class_1;
-    }(React.Component));
+    }(react_1.default.Component));
     // If context was passed to createReactComponent then conditionally add it to the Component Class
     if (ReactComponentContext) {
         ReactComponent.contextType = ReactComponentContext;
     }
-    return createForwardRef(ReactComponent, displayName);
+    return (0, index_js_1.createForwardRef)(ReactComponent, displayName);
 };
+exports.createReactComponent = createReactComponent;
 //# sourceMappingURL=createComponent.js.map

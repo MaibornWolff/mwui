@@ -1,3 +1,4 @@
+"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -71,12 +72,17 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React from "react";
-import ReactDOM from "react-dom";
-import { attachProps, dashToPascalCase, defineCustomElement, setRef } from "./utils";
-export var createOverlayComponent = function (tagName, controller, customElement) {
-    defineCustomElement(tagName, customElement);
-    var displayName = dashToPascalCase(tagName);
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createOverlayComponent = void 0;
+var react_1 = __importDefault(require("react"));
+var react_dom_1 = __importDefault(require("react-dom"));
+var index_js_1 = require("./utils/index.js");
+var createOverlayComponent = function (tagName, controller, customElement) {
+    (0, index_js_1.defineCustomElement)(tagName, customElement);
+    var displayName = (0, index_js_1.dashToPascalCase)(tagName);
     var didDismissEventName = "on".concat(displayName, "DidDismiss");
     var didPresentEventName = "on".concat(displayName, "DidPresent");
     var willDismissEventName = "on".concat(displayName, "WillDismiss");
@@ -113,7 +119,7 @@ export var createOverlayComponent = function (tagName, controller, customElement
             if (this.props.onDidDismiss) {
                 this.props.onDidDismiss(event);
             }
-            setRef(this.props.forwardedRef, null);
+            (0, index_js_1.setRef)(this.props.forwardedRef, null);
         };
         Overlay.prototype.shouldComponentUpdate = function (nextProps) {
             // Check if the overlay component is about to dismiss
@@ -128,7 +134,7 @@ export var createOverlayComponent = function (tagName, controller, customElement
                     switch (_a.label) {
                         case 0:
                             if (this.overlay) {
-                                attachProps(this.overlay, this.props, prevProps);
+                                (0, index_js_1.attachProps)(this.overlay, this.props, prevProps);
                             }
                             if (prevProps.isOpen !== this.props.isOpen && this.props.isOpen === true) {
                                 this.present(prevProps);
@@ -164,8 +170,8 @@ export var createOverlayComponent = function (tagName, controller, customElement
                             return [4 /*yield*/, controller.create(__assign(__assign({}, elementProps), { component: this.el, componentProps: {} }))];
                         case 1:
                             _b.overlay = _d.sent();
-                            setRef(this.props.forwardedRef, this.overlay);
-                            attachProps(this.overlay, elementProps, prevProps);
+                            (0, index_js_1.setRef)(this.props.forwardedRef, this.overlay);
+                            (0, index_js_1.attachProps)(this.overlay, elementProps, prevProps);
                             return [4 /*yield*/, this.overlay.present()];
                         case 2:
                             _d.sent();
@@ -180,12 +186,13 @@ export var createOverlayComponent = function (tagName, controller, customElement
              * overlay is dismissing otherwise component
              * will be hidden before animation is done.
              */
-            return ReactDOM.createPortal(this.props.isOpen || isDismissing ? this.props.children : null, this.el);
+            return react_dom_1.default.createPortal(this.props.isOpen || isDismissing ? this.props.children : null, this.el);
         };
         return Overlay;
-    }(React.Component));
-    return React.forwardRef(function (props, ref) {
-        return React.createElement(Overlay, __assign({}, props, { forwardedRef: ref }));
+    }(react_1.default.Component));
+    return react_1.default.forwardRef(function (props, ref) {
+        return react_1.default.createElement(Overlay, __assign({}, props, { forwardedRef: ref }));
     });
 };
+exports.createOverlayComponent = createOverlayComponent;
 //# sourceMappingURL=createOverlayComponent.js.map

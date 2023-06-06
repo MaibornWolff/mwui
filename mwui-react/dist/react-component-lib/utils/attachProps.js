@@ -1,10 +1,13 @@
-import { camelToDashCase } from './case';
-export var attachProps = function (node, newProps, oldProps) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.syncEvent = exports.isCoveredByReact = exports.getClassName = exports.attachProps = void 0;
+var case_1 = require("./case");
+var attachProps = function (node, newProps, oldProps) {
     if (oldProps === void 0) { oldProps = {}; }
     // some test frameworks don't render DOM elements, so we test here to make sure we are dealing with DOM first
     if (node instanceof Element) {
         // add any classes in className to the class list
-        var className = getClassName(node.classList, newProps, oldProps);
+        var className = (0, exports.getClassName)(node.classList, newProps, oldProps);
         if (className !== '') {
             node.className = className;
         }
@@ -20,21 +23,22 @@ export var attachProps = function (node, newProps, oldProps) {
             if (name.indexOf('on') === 0 && name[2] === name[2].toUpperCase()) {
                 var eventName = name.substring(2);
                 var eventNameLc = eventName[0].toLowerCase() + eventName.substring(1);
-                if (!isCoveredByReact(eventNameLc)) {
-                    syncEvent(node, eventNameLc, newProps[name]);
+                if (!(0, exports.isCoveredByReact)(eventNameLc)) {
+                    (0, exports.syncEvent)(node, eventNameLc, newProps[name]);
                 }
             }
             else {
                 node[name] = newProps[name];
                 var propType = typeof newProps[name];
                 if (propType === 'string') {
-                    node.setAttribute(camelToDashCase(name), newProps[name]);
+                    node.setAttribute((0, case_1.camelToDashCase)(name), newProps[name]);
                 }
             }
         });
     }
 };
-export var getClassName = function (classList, newProps, oldProps) {
+exports.attachProps = attachProps;
+var getClassName = function (classList, newProps, oldProps) {
     var newClassProp = newProps.className || newProps.class;
     var oldClassProp = oldProps.className || oldProps.class;
     // map the classes to Maps for performance
@@ -58,11 +62,12 @@ export var getClassName = function (classList, newProps, oldProps) {
     incomingPropClasses.forEach(function (s) { return finalClassNames.push(s); });
     return finalClassNames.join(' ');
 };
+exports.getClassName = getClassName;
 /**
  * Checks if an event is supported in the current execution environment.
  * @license Modernizr 3.0.0pre (Custom Build) | MIT
  */
-export var isCoveredByReact = function (eventNameSuffix) {
+var isCoveredByReact = function (eventNameSuffix) {
     if (typeof document === 'undefined') {
         return true;
     }
@@ -77,7 +82,8 @@ export var isCoveredByReact = function (eventNameSuffix) {
         return isSupported;
     }
 };
-export var syncEvent = function (node, eventName, newEventHandler) {
+exports.isCoveredByReact = isCoveredByReact;
+var syncEvent = function (node, eventName, newEventHandler) {
     var eventStore = node.__events || (node.__events = {});
     var oldEventHandler = eventStore[eventName];
     // Remove old listener so they don't double up.
@@ -91,6 +97,7 @@ export var syncEvent = function (node, eventName, newEventHandler) {
         }
     }));
 };
+exports.syncEvent = syncEvent;
 var arrayToMap = function (arr) {
     var map = new Map();
     arr.forEach(function (s) { return map.set(s, s); });

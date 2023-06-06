@@ -174,7 +174,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.createOverlayComponent = void 0;
 var react_1 = __importDefault(require("react"));
 var react_dom_1 = __importDefault(require("react-dom"));
-var utils_1 = require("./utils.js");
+var utils_1 = require("./utils/index.js");
 exports.createOverlayComponent = function (tagName, controller, customElement) {
     utils_1.defineCustomElement(tagName, customElement);
     var displayName = utils_1.dashToPascalCase(tagName);

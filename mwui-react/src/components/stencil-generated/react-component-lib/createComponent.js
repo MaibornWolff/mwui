@@ -84,7 +84,7 @@ var __rest =
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createReactComponent = void 0;
 var react_1 = __importStar(require("react"));
-var utils_1 = require("./utils.js");
+var utils_1 = require("./utils/index.js");
 exports.createReactComponent = function (tagName, ReactComponentContext, manipulatePropsFunction, defineCustomElement) {
     if (defineCustomElement !== undefined) {
         defineCustomElement();
