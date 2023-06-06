@@ -1,7 +1,7 @@
 import typescript from "@rollup/plugin-typescript";
 import terser from "@rollup/plugin-terser";
-import { nodeResolve } from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
+// import { nodeResolve } from "@rollup/plugin-node-resolve";
+// import commonjs from "@rollup/plugin-commonjs";
 
 export default {
     input: "./src/components/stencil-generated/index.ts",
@@ -29,17 +29,17 @@ export default {
             mangle: false,
             module: true,
         }),
-        nodeResolve(),
-        commonjs({
-            // non-CommonJS modules will be ignored, but you can also
-            // specifically include/exclude files
-            include: "node_modules/**", // Default: undefined
-            // these values can also be regular expressions
-            // include: /node_modules/
+        // nodeResolve(),
+        // commonjs({
+        //     // non-CommonJS modules will be ignored, but you can also
+        //     // specifically include/exclude files
+        //     include: "node_modules/**", // Default: undefined
+        //     // these values can also be regular expressions
+        //     // include: /node_modules/
 
-            // search for files other than .js files (must already
-            // be transpiled by a previous plugin!)
-            extensions: [".js"], // Default: [ '.js' ]
-        }),
+        //     // search for files other than .js files (must already
+        //     // be transpiled by a previous plugin!)
+        //     extensions: [".js"], // Default: [ '.js' ]
+        // }),
     ],
 };
