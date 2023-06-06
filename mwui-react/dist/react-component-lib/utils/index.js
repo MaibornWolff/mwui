@@ -1,5 +1,16 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 import React from "react";
-export const setRef = (ref, value) => {
+export var setRef = function (ref, value) {
     if (typeof ref === "function") {
         ref(value);
     }
@@ -8,21 +19,25 @@ export const setRef = (ref, value) => {
         ref.current = value;
     }
 };
-export const mergeRefs = (...refs) => {
-    return (value) => {
-        refs.forEach(ref => {
+export var mergeRefs = function () {
+    var refs = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        refs[_i] = arguments[_i];
+    }
+    return function (value) {
+        refs.forEach(function (ref) {
             setRef(ref, value);
         });
     };
 };
-export const createForwardRef = (ReactComponent, displayName) => {
-    const forwardRef = (props, ref) => {
-        return React.createElement(ReactComponent, Object.assign({}, props, { forwardedRef: ref }));
+export var createForwardRef = function (ReactComponent, displayName) {
+    var forwardRef = function (props, ref) {
+        return React.createElement(ReactComponent, __assign({}, props, { forwardedRef: ref }));
     };
     forwardRef.displayName = displayName;
     return React.forwardRef(forwardRef);
 };
-export const defineCustomElement = (tagName, customElement) => {
+export var defineCustomElement = function (tagName, customElement) {
     if (customElement !== undefined && typeof customElements !== "undefined" && !customElements.get(tagName)) {
         customElements.define(tagName, customElement);
     }

@@ -1,11 +1,11 @@
 /* eslint-disable */
 /* tslint:disable */
 /* auto-generated react proxies */
-import { createReactComponent } from "./react-component-lib";
+import { createReactComponent } from "./react-component-lib/index.js";
 
 import type { JSX } from "@maibornwolff/mwui-stencil";
 
-import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
+import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader/index.js";
 
 defineCustomElements();
 export const MwAppBar = /*@__PURE__*/ createReactComponent<JSX.MwAppBar, HTMLMwAppBarElement>("mw-app-bar");

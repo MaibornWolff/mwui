@@ -1,8 +1,8 @@
-export const isDevMode = () => {
+export var isDevMode = function () {
     return process && process.env && process.env.NODE_ENV === 'development';
 };
-const warnings = {};
-export const deprecationWarning = (key, message) => {
+var warnings = {};
+export var deprecationWarning = function (key, message) {
     if (isDevMode()) {
         if (!warnings[key]) {
             console.warn(message);
