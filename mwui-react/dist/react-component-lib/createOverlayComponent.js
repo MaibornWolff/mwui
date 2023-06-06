@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { attachProps, dashToPascalCase, defineCustomElement, setRef } from "./utils";
+import { attachProps, dashToPascalCase, defineCustomElement, setRef } from "./utils/index.js";
 export const createOverlayComponent = (tagName, controller, customElement) => {
     defineCustomElement(tagName, customElement);
     const displayName = dashToPascalCase(tagName);
