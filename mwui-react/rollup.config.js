@@ -1,7 +1,7 @@
 import typescript from "@rollup/plugin-typescript";
-import terser from "@rollup/plugin-terser";
-// import { nodeResolve } from "@rollup/plugin-node-resolve";
-// import commonjs from "@rollup/plugin-commonjs";
+// import terser from "@rollup/plugin-terser";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
 
 export default {
     input: "./src/components/stencil-generated/index.ts",
@@ -19,17 +19,18 @@ export default {
     ],
     plugins: [
         typescript({ sourceMap: true }),
-        terser({
-            format: {
-                comments: "some",
-                beautify: true,
-                ecma: "2022",
-            },
-            compress: false,
-            mangle: false,
-            module: true,
-        }),
-        // nodeResolve(),
+        // terser({
+        //     format: {
+        //         comments: "some",
+        //         beautify: true,
+        //         ecma: "2022",
+        //     },
+        //     compress: false,
+        //     mangle: false,
+        //     module: true,
+        // }),
+        nodeResolve(),
+        commonjs(),
         // commonjs({
         //     // non-CommonJS modules will be ignored, but you can also
         //     // specifically include/exclude files

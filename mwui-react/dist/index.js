@@ -1,45 +1,44 @@
-/* eslint-disable */
-/* tslint:disable */
-/* auto-generated react proxies */
-import { createReactComponent } from "./react-component-lib";
-import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
-defineCustomElements();
-export const MwAppBar = /*@__PURE__*/ createReactComponent("mw-app-bar");
-export const MwAppBarTitle = /*@__PURE__*/ createReactComponent("mw-app-bar-title");
-export const MwAutocomplete = /*@__PURE__*/ createReactComponent("mw-autocomplete");
-export const MwAvatar = /*@__PURE__*/ createReactComponent("mw-avatar");
-export const MwBackdrop = /*@__PURE__*/ createReactComponent("mw-backdrop");
-export const MwButton = /*@__PURE__*/ createReactComponent("mw-button");
-export const MwCard = /*@__PURE__*/ createReactComponent("mw-card");
-export const MwCardBody = /*@__PURE__*/ createReactComponent("mw-card-body");
-export const MwCardFooter = /*@__PURE__*/ createReactComponent("mw-card-footer");
-export const MwCardHeader = /*@__PURE__*/ createReactComponent("mw-card-header");
-export const MwCardImage = /*@__PURE__*/ createReactComponent("mw-card-image");
-export const MwCardTitle = /*@__PURE__*/ createReactComponent("mw-card-title");
-export const MwCheckbox = /*@__PURE__*/ createReactComponent("mw-checkbox");
-export const MwChip = /*@__PURE__*/ createReactComponent("mw-chip");
-export const MwChipInput = /*@__PURE__*/ createReactComponent("mw-chip-input");
-export const MwDivider = /*@__PURE__*/ createReactComponent("mw-divider");
-export const MwDropdown = /*@__PURE__*/ createReactComponent("mw-dropdown");
-export const MwHelperText = /*@__PURE__*/ createReactComponent("mw-helper-text");
-export const MwIcon = /*@__PURE__*/ createReactComponent("mw-icon");
-export const MwIconGallery = /*@__PURE__*/ createReactComponent("mw-icon-gallery");
-export const MwImg = /*@__PURE__*/ createReactComponent("mw-img");
-export const MwLabel = /*@__PURE__*/ createReactComponent("mw-label");
-export const MwLink = /*@__PURE__*/ createReactComponent("mw-link");
-export const MwLogin = /*@__PURE__*/ createReactComponent("mw-login");
-export const MwMenu = /*@__PURE__*/ createReactComponent("mw-menu");
-export const MwMenuItem = /*@__PURE__*/ createReactComponent("mw-menu-item");
-export const MwMenuList = /*@__PURE__*/ createReactComponent("mw-menu-list");
-export const MwModal = /*@__PURE__*/ createReactComponent("mw-modal");
-export const MwModalFooter = /*@__PURE__*/ createReactComponent("mw-modal-footer");
-export const MwModalTitle = /*@__PURE__*/ createReactComponent("mw-modal-title");
-export const MwPopover = /*@__PURE__*/ createReactComponent("mw-popover");
-export const MwRadio = /*@__PURE__*/ createReactComponent("mw-radio");
-export const MwRadioGroup = /*@__PURE__*/ createReactComponent("mw-radio-group");
-export const MwSlider = /*@__PURE__*/ createReactComponent("mw-slider");
-export const MwSwitch = /*@__PURE__*/ createReactComponent("mw-switch");
-export const MwTab = /*@__PURE__*/ createReactComponent("mw-tab");
-export const MwTabs = /*@__PURE__*/ createReactComponent("mw-tabs");
-export const MwTextfield = /*@__PURE__*/ createReactComponent("mw-textfield");
-//# sourceMappingURL=index.js.map
+'use strict';
+
+var index = require('./index-2d942898.js');
+
+
+
+exports.MwAppBar = index.MwAppBar;
+exports.MwAppBarTitle = index.MwAppBarTitle;
+exports.MwAutocomplete = index.MwAutocomplete;
+exports.MwAvatar = index.MwAvatar;
+exports.MwBackdrop = index.MwBackdrop;
+exports.MwButton = index.MwButton;
+exports.MwCard = index.MwCard;
+exports.MwCardBody = index.MwCardBody;
+exports.MwCardFooter = index.MwCardFooter;
+exports.MwCardHeader = index.MwCardHeader;
+exports.MwCardImage = index.MwCardImage;
+exports.MwCardTitle = index.MwCardTitle;
+exports.MwCheckbox = index.MwCheckbox;
+exports.MwChip = index.MwChip;
+exports.MwChipInput = index.MwChipInput;
+exports.MwDivider = index.MwDivider;
+exports.MwDropdown = index.MwDropdown;
+exports.MwHelperText = index.MwHelperText;
+exports.MwIcon = index.MwIcon;
+exports.MwIconGallery = index.MwIconGallery;
+exports.MwImg = index.MwImg;
+exports.MwLabel = index.MwLabel;
+exports.MwLink = index.MwLink;
+exports.MwLogin = index.MwLogin;
+exports.MwMenu = index.MwMenu;
+exports.MwMenuItem = index.MwMenuItem;
+exports.MwMenuList = index.MwMenuList;
+exports.MwModal = index.MwModal;
+exports.MwModalFooter = index.MwModalFooter;
+exports.MwModalTitle = index.MwModalTitle;
+exports.MwPopover = index.MwPopover;
+exports.MwRadio = index.MwRadio;
+exports.MwRadioGroup = index.MwRadioGroup;
+exports.MwSlider = index.MwSlider;
+exports.MwSwitch = index.MwSwitch;
+exports.MwTab = index.MwTab;
+exports.MwTabs = index.MwTabs;
+exports.MwTextfield = index.MwTextfield;
