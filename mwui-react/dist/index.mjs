@@ -1,8 +1,10 @@
 /* eslint-disable */
 /* tslint:disable */
 /* auto-generated react proxies */
-import { createReactComponent } from "./react-component-lib/index.js";
-import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader/index.es2017.js";
+import rcl from "./react-component-lib/index.js";
+const { createReactComponent } = rcl;
+import l from "@maibornwolff/mwui-stencil/loader/index.es2017.js";
+const { defineCustomElements } = l;
 defineCustomElements();
 export const MwAppBar = /*@__PURE__*/ createReactComponent("mw-app-bar");
 export const MwAppBarTitle = /*@__PURE__*/ createReactComponent("mw-app-bar-title");
