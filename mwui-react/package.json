@@ -8,7 +8,7 @@
         "url": "https://github.com/MaibornWolff/mwui.git"
     },
     "scripts": {
-        "build": "npm run clean && npm run compile",
+        "build": "npm run clean && npm run compile && npm run rollup",
         "clean": "rm -rf dist",
         "compile": "npm run tsc",
         "tsc": "tsc -p .",
