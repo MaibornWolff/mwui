@@ -1,10 +1,8 @@
-"use strict";
+import React, { createElement } from "react";
 
-var React = require("react");
+import "react-dom";
 
-require("react-dom");
-
-var index_js = require("@maibornwolff/mwui-stencil/loader/index.js");
+import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader/index.js";
 
 const dashToPascalCase = str => str.toLowerCase().split("-").map((segment => segment.charAt(0).toUpperCase() + segment.slice(1))).join("");
 
@@ -160,7 +158,7 @@ const createReactComponent = (tagName, ReactComponentContext, manipulatePropsFun
                 ref: mergeRefs(forwardedRef, this.setComponentElRef),
                 style
             };
-            return React.createElement(tagName, newProps, children);
+            return createElement(tagName, newProps, children);
         }
         static get displayName() {
             return displayName;
@@ -172,7 +170,7 @@ const createReactComponent = (tagName, ReactComponentContext, manipulatePropsFun
     return createForwardRef(ReactComponent, displayName);
 };
 
-index_js.defineCustomElements();
+defineCustomElements();
 
 const MwAppBar = createReactComponent("mw-app-bar");
 
@@ -250,78 +248,4 @@ const MwTabs = createReactComponent("mw-tabs");
 
 const MwTextfield = createReactComponent("mw-textfield");
 
-exports.MwAppBar = MwAppBar;
-
-exports.MwAppBarTitle = MwAppBarTitle;
-
-exports.MwAutocomplete = MwAutocomplete;
-
-exports.MwAvatar = MwAvatar;
-
-exports.MwBackdrop = MwBackdrop;
-
-exports.MwButton = MwButton;
-
-exports.MwCard = MwCard;
-
-exports.MwCardBody = MwCardBody;
-
-exports.MwCardFooter = MwCardFooter;
-
-exports.MwCardHeader = MwCardHeader;
-
-exports.MwCardImage = MwCardImage;
-
-exports.MwCardTitle = MwCardTitle;
-
-exports.MwCheckbox = MwCheckbox;
-
-exports.MwChip = MwChip;
-
-exports.MwChipInput = MwChipInput;
-
-exports.MwDivider = MwDivider;
-
-exports.MwDropdown = MwDropdown;
-
-exports.MwHelperText = MwHelperText;
-
-exports.MwIcon = MwIcon;
-
-exports.MwIconGallery = MwIconGallery;
-
-exports.MwImg = MwImg;
-
-exports.MwLabel = MwLabel;
-
-exports.MwLink = MwLink;
-
-exports.MwLogin = MwLogin;
-
-exports.MwMenu = MwMenu;
-
-exports.MwMenuItem = MwMenuItem;
-
-exports.MwMenuList = MwMenuList;
-
-exports.MwModal = MwModal;
-
-exports.MwModalFooter = MwModalFooter;
-
-exports.MwModalTitle = MwModalTitle;
-
-exports.MwPopover = MwPopover;
-
-exports.MwRadio = MwRadio;
-
-exports.MwRadioGroup = MwRadioGroup;
-
-exports.MwSlider = MwSlider;
-
-exports.MwSwitch = MwSwitch;
-
-exports.MwTab = MwTab;
-
-exports.MwTabs = MwTabs;
-
-exports.MwTextfield = MwTextfield;
+export { MwAppBar, MwAppBarTitle, MwAutocomplete, MwAvatar, MwBackdrop, MwButton, MwCard, MwCardBody, MwCardFooter, MwCardHeader, MwCardImage, MwCardTitle, MwCheckbox, MwChip, MwChipInput, MwDivider, MwDropdown, MwHelperText, MwIcon, MwIconGallery, MwImg, MwLabel, MwLink, MwLogin, MwMenu, MwMenuItem, MwMenuList, MwModal, MwModalFooter, MwModalTitle, MwPopover, MwRadio, MwRadioGroup, MwSlider, MwSwitch, MwTab, MwTabs, MwTextfield };
