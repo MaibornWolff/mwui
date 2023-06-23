@@ -233,6 +233,7 @@ a {
   border-radius: var(--mw-component-button-border-radius-default);
   min-width: var(--mw-component-size-button-filled-outline-min-w);
   letter-spacing: var(--mw-core-letter-spacing-buttons);
+  transition: all 0.2s ease-out;
 
   .mw-button-icon-start {
     @include icon-start-styles;
