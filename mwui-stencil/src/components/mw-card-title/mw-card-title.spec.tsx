@@ -4,15 +4,15 @@ import { MwCardTitle } from "./mw-card-title";
 
 describe("GIVEN MwCardTitle", () => {
   const setup = async (
-    { title, subtitle, metadata }: Partial<Pick<MwCardTitle, "title" | "subtitle" | "metadata">> = {
-      title: "",
+    { text, subtitle, metadata }: Partial<Pick<MwCardTitle, "text" | "subtitle" | "metadata">> = {
+      text: "",
       subtitle: "",
       metadata: "",
     },
   ) => {
     return await newSpecPage({
       components: [MwCardTitle],
-      template: () => <mw-card-title text={title} subtitle={subtitle} metadata={metadata}></mw-card-title>,
+      template: () => <mw-card-title text={text} subtitle={subtitle} metadata={metadata}></mw-card-title>,
     });
   };
 
@@ -22,11 +22,11 @@ describe("GIVEN MwCardTitle", () => {
   });
 
   it("SHOULD render title WHEN value is given", async () => {
-    const title = "some-title";
+    const text = "some-title";
     const page = await setup({
-      title,
+      text,
     });
-    expect(page.root.shadowRoot.querySelector(".title").innerHTML).toEqual(title);
+    expect(page.root.shadowRoot.querySelector(".title").innerHTML).toEqual(text);
   });
 
   it("SHOULD render subtitle WHEN value is given", async () => {

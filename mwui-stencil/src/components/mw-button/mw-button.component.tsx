@@ -77,7 +77,7 @@ export class MwButton {
         part="button"
         disabled={this.disabled}
         onClick={this.handleClick}
-        title={this.title}
+        title={this.label}
         class={{
           "mw-button": true,
           "mw-button--icon-only": !this.label,
