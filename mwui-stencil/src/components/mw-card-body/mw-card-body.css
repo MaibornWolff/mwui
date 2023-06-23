@@ -1,4 +1,5 @@
 :host {
   display: block;
   padding: 0 var(--mw-component-card-padding-components-x-default);
+  flex: 1;
 }

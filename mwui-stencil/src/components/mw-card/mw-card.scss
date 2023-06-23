@@ -21,6 +21,8 @@
   -moz-border-radius: var(--mw-component-card-border-radius);
   color: var(--mw-component-card-fg-default);
   border: none;
+  height: 100%;
+  box-sizing: border-box;
   transition: all 0.4 ease;
 
   &:first-child {
