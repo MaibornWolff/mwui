@@ -7,7 +7,7 @@
 .label {
   /* TODO: tokenize font family, font size */
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-left: var(--mw-component-controls-with-label-gap);
   color: var(--mw-component-controls-color-label-default);
 }
@@ -42,11 +42,11 @@
 /* handle, checked */
 input:checked + .slider:before {
   position: absolute;
-  content: '';
+  content: "";
   height: 24px;
   width: 24px;
-  left: 4px;
-  bottom: 4px;
+  left: 5px;
+  bottom: 2px;
   background-color: var(--mw-component-controls-color-fg-default);
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -58,11 +58,11 @@ input:checked + .slider:before {
 /* handle, unchecked */
 input:not(:checked) + .slider:before {
   position: absolute;
-  content: '';
+  content: "";
   height: 16px;
   width: 16px;
-  left: 8px;
-  bottom: 8px;
+  left: 6px;
+  bottom: 6px;
   background-color: var(--mw-component-controls-color-fg-off);
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -71,7 +71,7 @@ input:not(:checked) + .slider:before {
 /* handle, unchecked, active */
 input:active + .slider:before {
   position: absolute;
-  content: '';
+  content: "";
   height: 28px;
   width: 28px;
   left: 2px;
@@ -84,7 +84,7 @@ input:active + .slider:before {
 /* handle, unchecked, not disabled, active */
 input:not(:checked):not(:disabled):active + .slider:before {
   position: absolute;
-  content: '';
+  content: "";
   height: 28px;
   width: 28px;
   left: 2px;
@@ -97,11 +97,11 @@ input:not(:checked):not(:disabled):active + .slider:before {
 /* handle, disabled */
 input:disabled + .slider:before {
   position: absolute;
-  content: '';
+  content: "";
   height: 16px;
   width: 16px;
-  left: 8px;
-  bottom: 8px;
+  left: 6px;
+  bottom: 6px;
   background-color: var(--mw-component-controls-color-fg-disabled);
   -webkit-transition: 0.4s;
   transition: 0.4s;
