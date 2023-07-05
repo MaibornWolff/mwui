@@ -37,16 +37,17 @@ export class MwSwitch {
    */
   @Event({
     bubbles: true,
-    cancelable: false,
-    composed: false,
+    composed: true,
   })
-  emitter: EventEmitter;
+  emitter: EventEmitter<boolean>;
 
-  private toggleSwitch(event: Event & { path: unknown[] }): void {
-    (event.target as HTMLInputElement).blur();
-    this.checked = this.checkbox.checked;
-    this.emitter.emit(event);
-  }
+  private toggleSwitch = (event: Event): void => {
+    if (!this.disabled) {
+      (event.target as HTMLInputElement).blur();
+      this.checked = !this.checked;
+      this.emitter.emit(this.checked);
+    }
+  };
 
   private hasLabel: boolean;
   private hasOnOffLabel: boolean;
@@ -59,8 +60,8 @@ export class MwSwitch {
   render() {
     return (
       <Host>
-        <label test-id={this.testId} onClick={this.toggleSwitch.bind(this)} class="switch">
-          <input disabled={this.disabled} ref={(el: HTMLInputElement) => (this.checkbox = el)} type="checkbox" checked={this.checked} />
+        <label test-id={this.testId} class="switch">
+          <input disabled={this.disabled} type="checkbox" onInput={this.toggleSwitch} checked={this.checked} />
           <span class="slider round"></span>
         </label>
         {this.hasLabel && <span class="label">{this.label}</span>}
