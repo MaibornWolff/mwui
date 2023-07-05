@@ -10,7 +10,12 @@ describe("mw-textarea", () => {
     expect(page.root).toEqualHtml(`
       <mw-textarea>
         <mock:shadow-root>
-          <slot></slot>
+          <div class="wrapper">
+            <div class="textarea-field">
+              <mw-label></mw-label><textarea class="textarea" style="resize: none;"></textarea>
+            </div>
+            <mw-helper-text></mw-helper-text>
+          </div>
         </mock:shadow-root>
       </mw-textarea>
     `);
