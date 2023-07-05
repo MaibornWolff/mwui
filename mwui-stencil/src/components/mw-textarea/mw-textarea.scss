@@ -1,0 +1,28 @@
+@use "theme/mixins/form-field" as ff;
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.textarea-field {
+  @include ff.form-field;
+}
+
+.textarea {
+  @include ff.textarea;
+  resize: none;
+
+  &.resize {
+    resize: both;
+  }
+}
+
+.has-error {
+  color: var(--mw-component-text-field-fg-default);
+}

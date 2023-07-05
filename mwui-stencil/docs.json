@@ -393,7 +393,7 @@
       "methods": [],
       "events": [
         {
-          "event": "mwAutocompleteValueChanged",
+          "event": "valueChanged",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -1789,7 +1789,7 @@
       "methods": [],
       "events": [
         {
-          "event": "mwChipListInputChange",
+          "event": "inputChange",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -1798,7 +1798,7 @@
           "docsTags": []
         },
         {
-          "event": "mwChipListValueChanged",
+          "event": "valueChanged",
           "detail": "string[]",
           "bubbles": true,
           "cancelable": true,
@@ -2130,12 +2130,13 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-dropdown", "mw-textfield"],
+      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-dropdown", "mw-textarea", "mw-textfield"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-autocomplete": ["mw-helper-text"],
         "mw-chip-input": ["mw-helper-text"],
         "mw-dropdown": ["mw-helper-text"],
+        "mw-textarea": ["mw-helper-text"],
         "mw-textfield": ["mw-helper-text"]
       }
     },
@@ -2520,12 +2521,13 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-dropdown", "mw-textfield"],
+      "dependents": ["mw-autocomplete", "mw-chip-input", "mw-dropdown", "mw-textarea", "mw-textfield"],
       "dependencies": [],
       "dependencyGraph": {
         "mw-autocomplete": ["mw-label"],
         "mw-chip-input": ["mw-label"],
         "mw-dropdown": ["mw-label"],
+        "mw-textarea": ["mw-label"],
         "mw-textfield": ["mw-label"]
       }
     },
@@ -4115,6 +4117,298 @@
       }
     },
     {
+      "filePath": "./src/components/mw-textarea/mw-textarea.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-textarea",
+      "readme": "# mw-textarea\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "cols",
+          "type": "number",
+          "mutable": false,
+          "attr": "cols",
+          "reflectToAttr": false,
+          "docs": "Visible width of textarea",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Visually and functionally disabled input",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "form",
+          "type": "string",
+          "mutable": false,
+          "attr": "form",
+          "reflectToAttr": false,
+          "docs": "formId",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "hasError",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "has-error",
+          "reflectToAttr": false,
+          "docs": "Use to display input and helper-text in error state",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "helperText",
+          "type": "string",
+          "mutable": false,
+          "attr": "helper-text",
+          "reflectToAttr": true,
+          "docs": "HelperText to be displayed. Can be used as hint or error text when combined with `has-error`",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": true,
+          "docs": "Label to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "Maximum allowed characters",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "input field name",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder to be displayed",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "Whether user can't type in input field",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Mark input as required",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "resize",
+          "type": "\"both\" | \"horizontal\" | \"none\" | \"vertical\"",
+          "mutable": false,
+          "attr": "resize",
+          "reflectToAttr": false,
+          "docs": "enable or disable resizing option of textarea",
+          "docsTags": [],
+          "default": "\"none\"",
+          "values": [
+            {
+              "value": "both",
+              "type": "string"
+            },
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "rows",
+          "type": "number",
+          "mutable": false,
+          "attr": "rows",
+          "reflectToAttr": false,
+          "docs": "Visible number of lines",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "input field value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "blurEmitter",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit blur event",
+          "docsTags": []
+        },
+        {
+          "event": "changeEmitter",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit change event",
+          "docsTags": []
+        },
+        {
+          "event": "inputEmitter",
+          "detail": "string",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "emit input event",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mw-label", "mw-helper-text"],
+      "dependencyGraph": {
+        "mw-textarea": ["mw-label", "mw-helper-text"]
+      }
+    },
+    {
       "filePath": "./src/components/mw-textfield/mw-textfield.tsx",
       "encapsulation": "shadow",
       "tag": "mw-textfield",
@@ -4312,7 +4606,7 @@
       "methods": [],
       "events": [
         {
-          "event": "mwTextfieldValueChanged",
+          "event": "valueChanged",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,

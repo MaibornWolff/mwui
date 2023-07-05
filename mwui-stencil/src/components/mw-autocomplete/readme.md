@@ -26,9 +26,9 @@
 
 ## Events
 
-| Event                        | Description                           | Type                  |
-| ---------------------------- | ------------------------------------- | --------------------- |
-| `mwAutocompleteValueChanged` | Emits an event when its value changes | `CustomEvent<string>` |
+| Event          | Description                           | Type                  |
+| -------------- | ------------------------------------- | --------------------- |
+| `valueChanged` | Emits an event when its value changes | `CustomEvent<string>` |
 
 ## Dependencies
 

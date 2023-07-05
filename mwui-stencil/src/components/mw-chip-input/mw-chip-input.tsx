@@ -14,12 +14,12 @@ export class MwChipInput {
   /**
    * Emits an event when its value changes
    */
-  @Event({ bubbles: true, composed: false, eventName: "mwChipListValueChanged" }) valueChanged: EventEmitter<string[]>;
+  @Event({ bubbles: true, composed: false }) valueChanged: EventEmitter<string[]>;
 
   /**
    * Emits an event when value of input changes
    */
-  @Event({ bubbles: true, composed: false, eventName: "mwChipListInputChange" }) inputChange: EventEmitter<string>;
+  @Event({ bubbles: true, composed: false }) inputChange: EventEmitter<string>;
   /**
    * input field name
    */
@@ -187,7 +187,6 @@ export class MwChipInput {
       name,
       clearMultiValues,
       selected,
-      handleInputChange,
       required,
       hasError,
       inline,
@@ -247,7 +246,8 @@ export class MwChipInput {
                     name={name}
                     value={this.value}
                     disabled={disabled}
-                    onInput={handleInputChange.bind(this)}
+                    onInput={this.handleInputChange}
+                    onChange={this.onValueChange}
                   />
                 )}
               </div>

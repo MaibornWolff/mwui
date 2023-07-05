@@ -12,7 +12,7 @@ export class MwAutocomplete {
   /**
    * Emits an event when its value changes
    */
-  @Event({ bubbles: true, composed: false, eventName: "mwAutocompleteValueChanged" }) valueChanged: EventEmitter<string>;
+  @Event({ bubbles: true, composed: false }) valueChanged: EventEmitter<string>;
   /**
    * HTML Input type
    */
@@ -116,7 +116,7 @@ export class MwAutocomplete {
     this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
   }
 
-  private onInputChange = (event: MwChipInputCustomEvent<string> | MwTextfieldCustomEvent<string>): void => {
+  private onInputChange = (event: MwChipInputCustomEvent<string> | MwTextfieldCustomEvent<string> | InputEvent): void => {
     this.filterDropdownOptions(event.detail);
     this.isDropdownOpen = true;
   };
@@ -149,11 +149,11 @@ export class MwAutocomplete {
     this.selected = event.detail;
   }
 
-  private filterDropdownOptions = (value: string): void => {
+  private filterDropdownOptions = (value: string | number): void => {
     let hasNoSuggestions = true;
 
     this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
-      if (item.value.toLowerCase().includes(value.toLowerCase())) {
+      if (item.value.toLowerCase().includes(value.toString().toLowerCase())) {
         item.style.display = "unset";
         hasNoSuggestions = false;
       } else {
@@ -201,8 +201,8 @@ export class MwAutocomplete {
                   selectedChips={this.selected}
                   onFocus={this.onFocus}
                   onBlur={this.onBlur}
-                  onMwChipListValueChanged={this.handleChipListValueChange.bind(this)}
-                  onMwChipListInputChange={this.onInputChange.bind(this)}
+                  onChange={this.handleChipListValueChange}
+                  onInput={this.onInputChange}
                   slot="anchor"
                 >
                   {this.hasIconStartSlot && (
@@ -226,7 +226,8 @@ export class MwAutocomplete {
                   name={this.name}
                   hasError={this.hasError}
                   placeholder={this.placeholder}
-                  onMwTextfieldValueChanged={this.onInputChange.bind(this)}
+                  onChange={this.onInputChange}
+                  onInput={this.onInputChange}
                   slot="anchor"
                 >
                   {this.hasIconStartSlot && (
