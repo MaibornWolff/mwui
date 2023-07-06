@@ -4,7 +4,7 @@ import { Selection } from "../../utils/selection";
 @Component({
   tag: "mw-chip-input",
   styleUrl: "mw-chip-input.scss",
-  shadow: false,
+  shadow: true,
 })
 export class MwChipInput {
   @Element() hostElement: HTMLMwChipInputElement;

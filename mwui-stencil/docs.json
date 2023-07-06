@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-06-23T11:41:02",
+  "timestamp": "2023-07-06T13:22:45",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.3.1",
@@ -1176,6 +1176,22 @@
           "required": false
         },
         {
+          "name": "height",
+          "type": "string",
+          "mutable": false,
+          "attr": "height",
+          "reflectToAttr": false,
+          "docs": "Height of image",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "src",
           "type": "string",
           "mutable": false,
@@ -1563,7 +1579,7 @@
     },
     {
       "filePath": "./src/components/mw-chip-input/mw-chip-input.tsx",
-      "encapsulation": "none",
+      "encapsulation": "shadow",
       "tag": "mw-chip-input",
       "readme": "# mw-chip-input\n",
       "docs": "",

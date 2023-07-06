@@ -1,8 +1,14 @@
 import { create } from "@storybook/theming";
-import logo from "./public/mw_logo.png";
 import "../src/global/global.css";
 
-import { mwCoreColorDarkblue900, mwCoreColorPink500, mwCoreFontFontFamiliesBody, mwCoreColorNeutral100, borderRadiusStandardMd } from "../../mwui-token-farm/dist/js/MW_core";
+import {
+  mwCoreColorDarkblue900,
+  mwCoreColorPink500,
+  mwCoreFontFontFamiliesBody,
+  mwCoreColorNeutral100,
+  borderRadiusStandardMd,
+  mwCoreColorNeutral50,
+} from "../../mwui-token-farm/dist/js/MW_core";
 
 export default create({
   base: "light",
@@ -11,25 +17,23 @@ export default create({
   // brandImage: logo,
   brandTarget: "_self",
 
-  colorPink: mwCoreColorPink500,
-  colorPurple: mwCoreColorDarkblue900,
-
   // UI
+  colorPrimary: mwCoreColorPink500,
+  colorSecondary: mwCoreColorDarkblue900,
   appBg: mwCoreColorNeutral100,
-  // appContentBg: 'white',
-  // appBorderColor: 'grey',
+  appContentBg: mwCoreColorNeutral50,
+  appBorderColor: "grey",
   appBorderRadius: borderRadiusStandardMd,
 
   // Typography
   fontBase: mwCoreFontFontFamiliesBody,
-  // fontCode: 'monospace',
 
   // Text colors
-  // textColor: mwCoreColorNeutralWhite,
+  // textColor: 'white',
   // textInverseColor: 'black',
 
   // Toolbar default and active colors
-  barTextColor: "white",
-  //barSelectedColor: mwCoreColorPink500,
-  barBg: mwCoreColorDarkblue900,
+  barTextColor: mwCoreColorDarkblue900,
+  barSelectedColor: mwCoreColorPink500,
+  // barBg: mwCoreColorDarkblue900,
 });

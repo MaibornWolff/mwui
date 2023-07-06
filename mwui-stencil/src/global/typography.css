@@ -69,6 +69,7 @@ h6 {
   letter-spacing: var(--caption-bold-letter-spacing);
 }
 
+p.quote,
 .quote {
   font-family: var(--quote-font-family);
   font-size: var(--quote-font-size);
@@ -78,6 +79,7 @@ h6 {
   letter-spacing: var(--quote-letter-spacing);
 }
 
+p.lead,
 .lead {
   font-family: var(--lead-font-family);
   font-size: var(--lead-font-size);
@@ -85,6 +87,7 @@ h6 {
   line-height: var(--lead-line-height);
 }
 
+p.lead-bold,
 .lead-bold {
   font-family: var(--lead-bold-font-family);
   font-size: var(--lead-bold-font-size);
@@ -92,6 +95,7 @@ h6 {
   line-height: var(--lead-bold-line-height);
 }
 
+p.small,
 .small {
   font-family: var(--small-font-family);
   font-size: var(--small-font-size);
@@ -99,13 +103,15 @@ h6 {
   line-height: var(--small-line-height);
 }
 
-.x-small {
+p.x-small,
+.small {
   font-family: var(--x-small-font-family);
   font-size: var(--x-small-font-size);
   font-weight: var(--x-small-font-weight);
   line-height: var(--x-small-line-height);
 }
 
+p.xx-small,
 .xx-small {
   font-family: var(--xx-small-font-family);
   font-size: var(--xx-small-font-size);

@@ -6,67 +6,35 @@ import logo from "../../.storybook/public/mw_logo.png";
 
 <Meta title="Welcome" />
 
-<section style={{ minHeight: '100vh'}}>
-<h1 style={{ fontSize: '3em', marginTop: '10vh', marginBottom: '20px' }}>Welcome 👋</h1>
-
-### Get started with the MaibornWolff Design System
-
-The MWUI Web Component Libary is based on the MW Design System created and maintained in Figma. The styling of the Web Components is strictly coupled to the Figma Components
-using Design Tokens. These Design decisions are versioned and synced between Design and Web, therefore this Storybook represents a synced live state of the
-Figma Designs.
-
-There are several ways to include the MWUI components in a project. Build with Stenciljs, all components can be used as **Web Components**. Framwork-specific integrations make it easier to use the Web Components.
-
-<div style={{ display: "flex", flexWrap: "wrap", gap: "var(--mw-component-chips-gap-between-x)" }}>
-  <mw-chip selected="true" icon="check">
-    Web Components
-  </mw-chip>
-  <mw-chip selected="true" icon="check">
-    React
-  </mw-chip>
-  <mw-chip selected="true" icon="check">
-    Vue
-  </mw-chip>
-  <mw-chip icon="check">Angular</mw-chip>
-</div>
-
-The components seen in Storybook are pure Web Components and therefore not bound to custom events.
-
-<h3 style={{ fontSize: "2em", textAlign: "center", marginTop: "100px", marginBottom: "50px" }}>Learn more about...</h3>
-<div style={{ marginBottom: "50px", display: "grid", gridAutoColumns: "minmax(0, 1fr)", gridAutoFlow: "column", gap: "20px" }}>
-  <mw-card style={{ display: "contents" }} outlined>
-    <mw-card-title title="Design Tokens"></mw-card-title>
-    <mw-card-body>Learn more about Design Tokens, how we use and manage them and what the potentials are.</mw-card-body>
-    <mw-card-footer justify-center>
-      <mw-button href="#" variant="outline" label="Coming soon"></mw-button>
-    </mw-card-footer>
-  </mw-card>
-  <mw-card style={{ display: "contents" }} outlined>
-    <mw-card-title title="Figma and Web Components"></mw-card-title>
-    <mw-card-footer justify-center>
-      <mw-button href="#" variant="outline" label="Coming soon"></mw-button>
-    </mw-card-footer>
-  </mw-card>
-  <mw-card style={{ display: "contents" }} outlined>
-    <mw-card-title title="How to contribute"></mw-card-title>
-    <mw-card-footer justify-center>
-      <mw-button href="mailto:martin.prinz@maibornwolff.de" label="Get in contact"></mw-button>
-    </mw-card-footer>
-  </mw-card>
-  <mw-card style={{ display: "contents" }} outlined>
-    <mw-card-title title="Blog"></mw-card-title>
-    <mw-card-footer justify-center>
-      <mw-button href="#" label="Coming soon" variant="outline"></mw-button>
-    </mw-card-footer>
-  </mw-card>
-</div>
+<section style={{ marginTop: '3vh', marginBottom: '10vh' }}>
+<mw-card elevated>
+  <mw-card-header header="MWUI" subheader="Web Component Library">
+    <mw-avatar slot="icon" src="https://placedog.net/250/250?id=3" alt="mwui"></mw-avatar>
+  </mw-card-header>
+  <mw-card-body>
+<div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
+  <mw-chip selected>Web Components</mw-chip><mw-chip selected>Design Tokens</mw-chip><mw-chip selected>Figma</mw-chip>
+  </div>
+  The MWUI Web Component Libary is based on the MW Design System created and maintained in Figma.</mw-card-body>
+</mw-card>
 
 </section>
-
 <section>
-<h3 style={{ fontSize: '2em', textAlign: 'center', marginBottom: '50px' }}>How to use the Component Library</h3>
 
-### Web Components
+## Getting Started
+
+> _This project is part of a research project and not an official library._
+
+The styling of the Web Components is strictly coupled to the Figma Components using Design Tokens. These Design decisions are versioned and synced between Design and Web,
+therefore this Storybook represents a **synchronized state** of the Figma Designs.
+
+There are several ways to include the MWUI components in a project. Build with Stenciljs, all components can be used as Web Components.
+Framwork-specific integrations make it easier to use the Web Components but are not mandatory to use.
+
+</section>
+<section>
+
+## Web Components
 
 Integrate Web Components in any framework or none at all:
 
@@ -83,7 +51,7 @@ import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
 defineCustomElements(window);
 ```
 
-### React
+## React
 
 1. Install npm package
 
@@ -104,7 +72,7 @@ import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
 import { MWButton } from "@maibornwolff/mwui-react";
 ```
 
-### Vue
+## Vue
 
 1. Install npm package
 
@@ -144,7 +112,7 @@ export default {
 
 > **_NOTE:_** for known issues, see [MWUI Vue Integration](https://github.com/MaibornWolff/mwui/tree/main/mwui-vue#known-issues).
 
-### Angular
+## Angular
 
 To enable support for web components in Angular, add the following to the `@NgModule` in `app.module.ts`:
 
@@ -154,7 +122,7 @@ schemas: [CUSTOM_ELEMENTS_SCHEMA];
 
 > **_NOTE:_** The Angular integration is still work in progress
 
-### Further Readings
+## Further Readings
 
 - Learn more about [Stenciljs](https://stenciljs.com/)
 - [Listening to events from a non-JSX element](https://stenciljs.com/docs/events#listening-to-events-from-a-non-jsx-element)
