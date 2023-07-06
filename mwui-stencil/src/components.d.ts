@@ -1491,11 +1491,11 @@ declare namespace LocalJSX {
     /**
      * Emits an event when value of input changes
      */
-    onMwChipListInputChange?: (event: MwChipInputCustomEvent<string>) => void;
+    onInputChange?: (event: MwChipInputCustomEvent<string>) => void;
     /**
      * Emits an event when its value changes
      */
-    onMwChipListValueChanged?: (event: MwChipInputCustomEvent<string[]>) => void;
+    onValueChanged?: (event: MwChipInputCustomEvent<string[]>) => void;
     /**
      * Amount of currently selected options
      */

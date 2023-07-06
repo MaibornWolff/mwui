@@ -80,7 +80,7 @@ export class MwAutocomplete {
   /**
    * Currently selected options
    */
-  @Prop({ reflect: true, mutable: false }) selected: string[] = [];
+  @Prop({ reflect: true, mutable: true }) selected: string[] = [];
   @Watch("selected")
   onSelectedChange(selected: string[]): void {
     if (!this.canAddToValues()) {
@@ -116,8 +116,8 @@ export class MwAutocomplete {
     this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
   }
 
-  private onInputChange = (event: MwChipInputCustomEvent<string> | MwTextfieldCustomEvent<string>): void => {
-    this.filterDropdownOptions(event.detail);
+  private onInputChange = (event: MwChipInputCustomEvent<string> | MwTextfieldCustomEvent<string> | InputEvent): void => {
+    this.filterDropdownOptions((event.target as HTMLMwChipInputElement).value);
     this.isDropdownOpen = true;
   };
 
@@ -138,22 +138,22 @@ export class MwAutocomplete {
     this.removeDropdownFilter();
   };
 
-  private setItemDisabledState(selected: string[]): void {
+  private setItemDisabledState = (selected: string[]): void => {
     this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
       const isDisabled = selected.includes(item.getAttribute("value"));
       item.setAttribute("disabled", `${isDisabled}`);
     });
-  }
+  };
 
-  private handleChipListValueChange(event: MwChipInputCustomEvent<string[]>): void {
+  private handleChipListValueChange = (event: MwChipInputCustomEvent<string[]>): void => {
     this.selected = event.detail;
-  }
+  };
 
-  private filterDropdownOptions = (value: string): void => {
+  private filterDropdownOptions = (value: string | number): void => {
     let hasNoSuggestions = true;
 
     this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
-      if (item.value.toLowerCase().includes(value.toLowerCase())) {
+      if (item.value.toLowerCase().includes(value.toString().toLowerCase())) {
         item.style.display = "unset";
         hasNoSuggestions = false;
       } else {
@@ -173,9 +173,9 @@ export class MwAutocomplete {
     });
   };
 
-  private canAddToValues(): boolean {
+  private canAddToValues = (): boolean => {
     return !this.maximum || this.selected?.length < this.maximum;
-  }
+  };
 
   render() {
     return (
@@ -201,8 +201,8 @@ export class MwAutocomplete {
                   selectedChips={this.selected}
                   onFocus={this.onFocus}
                   onBlur={this.onBlur}
-                  onMwChipListValueChanged={this.handleChipListValueChange.bind(this)}
-                  onMwChipListInputChange={this.onInputChange.bind(this)}
+                  onValueChanged={this.handleChipListValueChange}
+                  onInput={this.onInputChange}
                   slot="anchor"
                 >
                   {this.hasIconStartSlot && (
