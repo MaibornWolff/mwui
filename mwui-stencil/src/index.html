@@ -528,6 +528,11 @@
     const cards = document.getElementsByTagName("mw-card");
     const chips = document.getElementsByTagName("mw-chip");
     const tabs = document.getElementsByTagName("mw-tabs");
+    const autocomplete = document.getElementsByTagName("mw-autocomplete")[0];
+
+    autocomplete.addEventListener("change", event => {
+      console.log("autocomplete changed", event.target.selection);
+    });
 
     for (var i = 0; i < cards.length; i++) {
       cards[i].addEventListener("click", event => {

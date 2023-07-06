@@ -12,7 +12,7 @@ export class MwAutocomplete {
   /**
    * Emits an event when its value changes
    */
-  @Event({ bubbles: true, composed: false, eventName: "mwAutocompleteValueChanged" }) valueChanged: EventEmitter<string>;
+  @Event({ bubbles: true, composed: false, eventName: "selectionChanged" }) valueChanged: EventEmitter<string>;
   /**
    * HTML Input type
    */
@@ -80,16 +80,17 @@ export class MwAutocomplete {
   /**
    * Currently selected options
    */
-  @Prop({ reflect: true, mutable: true }) selected: string[] = [];
-  @Watch("selected")
-  onSelectedChange(selected: string[]): void {
+  @Prop({ reflect: true, mutable: true }) selection: string[] = [];
+  @Watch("selection")
+  onSelectedChange(selection: string[]): void {
     if (!this.canAddToValues()) {
       this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
         item.setAttribute("disabled", `true`);
       });
     } else {
-      this.setItemDisabledState(selected);
+      this.setItemDisabledState(selection);
     }
+    this.valueChanged.emit();
   }
 
   @State() focused = false;
@@ -134,19 +135,19 @@ export class MwAutocomplete {
       return;
     }
 
-    this.selected = [...this.selected, value];
+    this.selection = [...this.selection, value];
     this.removeDropdownFilter();
   };
 
-  private setItemDisabledState = (selected: string[]): void => {
+  private setItemDisabledState = (selection: string[]): void => {
     this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
-      const isDisabled = selected.includes(item.getAttribute("value"));
+      const isDisabled = selection.includes(item.getAttribute("value"));
       item.setAttribute("disabled", `${isDisabled}`);
     });
   };
 
   private handleChipListValueChange = (event: MwChipInputCustomEvent<string[]>): void => {
-    this.selected = event.detail;
+    this.selection = event.detail;
   };
 
   private filterDropdownOptions = (value: string | number): void => {
@@ -174,7 +175,7 @@ export class MwAutocomplete {
   };
 
   private canAddToValues = (): boolean => {
-    return !this.maximum || this.selected?.length < this.maximum;
+    return !this.maximum || this.selection?.length < this.maximum;
   };
 
   render() {
@@ -198,7 +199,7 @@ export class MwAutocomplete {
                   disabled={this.disabled}
                   hasError={this.hasError}
                   maximum={this.maximum}
-                  selectedChips={this.selected}
+                  selectedChips={this.selection}
                   onFocus={this.onFocus}
                   onBlur={this.onBlur}
                   onValueChanged={this.handleChipListValueChange}
@@ -226,7 +227,7 @@ export class MwAutocomplete {
                   name={this.name}
                   hasError={this.hasError}
                   placeholder={this.placeholder}
-                  onMwTextfieldValueChanged={this.onInputChange.bind(this)}
+                  onMwTextfieldValueChanged={this.onInputChange}
                   slot="anchor"
                 >
                   {this.hasIconStartSlot && (
@@ -261,7 +262,7 @@ export class MwAutocomplete {
           </div>
           <div class="helper-text-container">
             <mw-helper-text helperText={this.helperText} hasError={this.hasError} />
-            {this.maximum && this.optionCounter && <mw-helper-text helperText={`${this.selected.length}/${this.maximum}`} />}
+            {this.maximum && this.optionCounter && <mw-helper-text helperText={`${this.selection.length}/${this.maximum}`} />}
           </div>
         </div>
       </Host>

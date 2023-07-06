@@ -6,6 +6,16 @@ The autocomplete allows the user to pick from a predetermined list of options, o
 
 The dropdown options should be placed in the `dropdown-menu` slot. Additionally an icon can be added to the start of the input box using the `icon-start` slot.
 
+## Listen to changes
+
+Whenever the selection is updated, a `selectionChanged` event is fired. The currently selected items can be retrieved from the element, like `event.target.selection`.
+
+```javascript
+document.getElementById("my-autocomplete").addEventListener("selectionChanged", event => {
+  console.log(event.target.selection); // yields an array of strings
+});
+```
+
 <ArgsTable of="mw-autocomplete" />
 
 ## Examples

@@ -101,7 +101,7 @@ export namespace Components {
     /**
      * Currently selected options
      */
-    selected: string[];
+    selection: string[];
     /**
      * HTML Input type
      */
@@ -1192,7 +1192,7 @@ declare namespace LocalJSX {
     /**
      * Emits an event when its value changes
      */
-    onMwAutocompleteValueChanged?: (event: MwAutocompleteCustomEvent<string>) => void;
+    onSelectionChanged?: (event: MwAutocompleteCustomEvent<string>) => void;
     /**
      * Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined.
      */
@@ -1212,7 +1212,7 @@ declare namespace LocalJSX {
     /**
      * Currently selected options
      */
-    selected?: string[];
+    selection?: string[];
     /**
      * HTML Input type
      */

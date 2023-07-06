@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-06-23T11:41:02",
+  "timestamp": "2023-07-06T07:09:39",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.3.1",
@@ -338,9 +338,9 @@
           "required": false
         },
         {
-          "name": "selected",
+          "name": "selection",
           "type": "string[]",
-          "mutable": false,
+          "mutable": true,
           "reflectToAttr": false,
           "docs": "Currently selected options",
           "docsTags": [],
@@ -393,7 +393,7 @@
       "methods": [],
       "events": [
         {
-          "event": "mwAutocompleteValueChanged",
+          "event": "selectionChanged",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -1176,6 +1176,22 @@
           "required": false
         },
         {
+          "name": "height",
+          "type": "string",
+          "mutable": false,
+          "attr": "height",
+          "reflectToAttr": false,
+          "docs": "Height of image",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "src",
           "type": "string",
           "mutable": false,
@@ -1773,20 +1789,20 @@
       "methods": [],
       "events": [
         {
-          "event": "mwChipListInputChange",
+          "event": "inputChange",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
-          "composed": false,
+          "composed": true,
           "docs": "Emits an event when value of input changes",
           "docsTags": []
         },
         {
-          "event": "mwChipListValueChanged",
+          "event": "valueChanged",
           "detail": "string[]",
           "bubbles": true,
           "cancelable": true,
-          "composed": false,
+          "composed": true,
           "docs": "Emits an event when its value changes",
           "docsTags": []
         }
