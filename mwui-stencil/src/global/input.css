@@ -1,4 +1,4 @@
-input {
+input:not(.mw-chip-input) {
   border: none;
   padding: 0;
   width: 100%;

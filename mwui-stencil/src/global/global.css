@@ -5,7 +5,7 @@
 @import url("../../../mwui-token-farm/dist/css/MW_component.css");
 
 /* basic CSS reset based on https://www.joshwcomeau.com/css/custom-css-reset/ */
-@import url("./reset.css");
+/* @import url("./reset.css"); */
 
 @import url("./typography.css");
 @import url("./input.css");
