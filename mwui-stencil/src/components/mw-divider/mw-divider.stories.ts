@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import docs from "./mw-divider.docs.mdx";
 
 export default {

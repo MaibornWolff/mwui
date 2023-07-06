@@ -1,5 +1,3 @@
-import "../../global/global.css";
-
 export default {
   title: "Components/Avatar",
   component: "mw-avatar",

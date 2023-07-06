@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import logo from "../../../.storybook/public/mw_logo.svg";
 // @ts-ignore
 import backgroundImage from "../../../.storybook/public/login_bg.png";

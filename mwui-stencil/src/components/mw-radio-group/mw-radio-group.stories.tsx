@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import docs from "./mw-radio-group.docs.mdx";
 
 export default {

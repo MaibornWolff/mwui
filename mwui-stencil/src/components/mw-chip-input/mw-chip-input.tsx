@@ -242,6 +242,7 @@ export class MwChipInput {
                     ref={el => (this.inputElement = el as HTMLInputElement)}
                     class={{
                       "has-error": this.hasError,
+                      "mw-chip-input": true,
                     }}
                     placeholder={this.selected?.length === 0 ? placeholder : null}
                     onFocus={onFocus}

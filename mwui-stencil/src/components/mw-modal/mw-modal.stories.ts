@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import docs from "./mw-modal.docs.mdx";
 import { ModalSizeEnum } from "./models/enums/modal-size.enum";
 

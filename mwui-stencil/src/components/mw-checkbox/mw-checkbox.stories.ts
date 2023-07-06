@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import docs from "./mw-checkbox.docs.mdx";
 
 export default {

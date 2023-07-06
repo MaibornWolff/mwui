@@ -1,8 +1,8 @@
-<!-- colors.stories.mdx -->
+{/* colors.stories.mdx */}
 
-import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
-import * as colors from '../../../mwui-token-farm/dist/js/MW_core.js';
-export const palette = Object.entries(colors).filter(([key, value]) => key.toLowerCase().includes('mwcorecolor'));
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs";
+import * as colors from "../../../mwui-token-farm/dist/js/MW_core.js";
+export const palette = Object.entries(colors).filter(([key, value]) => key.toLowerCase().includes("mwcorecolor"));
 export const camelToKebabCase = str => str.replace(/[A-Z]/g, letter => `-${letter.toLowerCase()}`);
 
 export const groupedPalette = palette.reduce((acc, cur) => {

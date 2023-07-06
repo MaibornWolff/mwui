@@ -1,4 +1,4 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { SpecPage, newSpecPage } from "@stencil/core/testing";
 import { h } from "@stencil/core";
 import { MwChipInput } from "./mw-chip-input";
 
@@ -19,7 +19,7 @@ describe("Given MwChipInput", () => {
     required,
     disabled,
     selectedChips,
-  }: Pick<MwChipInput, "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled" | "selectedChips"> = defaultProps) => {
+  }: Pick<MwChipInput, "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled" | "selectedChips"> = defaultProps): Promise<SpecPage> => {
     return await newSpecPage({
       components: [MwChipInput],
       template: () => (

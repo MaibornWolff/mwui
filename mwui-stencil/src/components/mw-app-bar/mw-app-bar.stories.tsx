@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import docs from "./mw-app-bar.docs.mdx";
 import logo from "../../../.storybook/public/mw_logo.svg";
 

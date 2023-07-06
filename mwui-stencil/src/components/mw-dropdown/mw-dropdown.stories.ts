@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import docs from "./mw-dropdown.docs.mdx";
 
 export default {
