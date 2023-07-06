@@ -1,13 +1,11 @@
-import '../../global/global.css';
-
 export default {
-  title: 'Components/Textfield',
-  component: 'mw-textfield',
+  title: "Components/Textfield",
+  component: "mw-textfield",
   argTypes: {
     value: {
-      description: 'Input value',
+      description: "Input value",
       control: {
-        type: 'text',
+        type: "text",
         default: null,
       },
     },
@@ -23,8 +21,8 @@ const DefaultTemplate = args => `
   name="${args.name}"
   label="${args.label}"
   placeholder="${args.placeholder}"
-  helper-text="${args['helper-text']}"
-  has-error="${args['has-error']}"
+  helper-text="${args["helper-text"]}"
+  has-error="${args["has-error"]}"
   required="${args.required}"
   inline="${args.inline}"
 >
@@ -32,107 +30,107 @@ const DefaultTemplate = args => `
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  testId: 'textfield',
-  value: '',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: '',
-  placeholder: '',
-  'helper-text': '',
-  'has-error': false,
-  required: false,
-  inline: false,
+  "testId": "textfield",
+  "value": "",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "",
+  "placeholder": "",
+  "helper-text": "",
+  "has-error": false,
+  "required": false,
+  "inline": false,
 };
 
 export const Label = DefaultTemplate.bind({});
 Label.args = {
-  testId: 'textfield',
-  value: '',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: 'Input Label',
-  placeholder: '',
-  'helper-text': '',
-  'has-error': false,
-  required: false,
-  inline: false,
+  "testId": "textfield",
+  "value": "",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "Input Label",
+  "placeholder": "",
+  "helper-text": "",
+  "has-error": false,
+  "required": false,
+  "inline": false,
 };
 
 export const Placeholder = DefaultTemplate.bind({});
 Placeholder.args = {
-  testId: 'textfield',
-  value: '',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: '',
-  placeholder: 'Type something...',
-  'helper-text': '',
-  'has-error': false,
-  required: false,
-  inline: false,
+  "testId": "textfield",
+  "value": "",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "",
+  "placeholder": "Type something...",
+  "helper-text": "",
+  "has-error": false,
+  "required": false,
+  "inline": false,
 };
 
 export const HelperText = DefaultTemplate.bind({});
 HelperText.args = {
-  testId: 'textfield',
-  value: '',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: '',
-  placeholder: 'Type something...',
-  'helper-text': 'helper text',
-  'has-error': false,
-  required: false,
-  inline: false,
+  "testId": "textfield",
+  "value": "",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "",
+  "placeholder": "Type something...",
+  "helper-text": "helper text",
+  "has-error": false,
+  "required": false,
+  "inline": false,
 };
 
 export const ErrorState = DefaultTemplate.bind({});
 ErrorState.args = {
-  testId: 'textfield',
-  value: 'wrong input',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: '',
-  placeholder: 'Type something...',
-  'helper-text': 'error text',
-  'has-error': true,
-  required: false,
-  inline: false,
+  "testId": "textfield",
+  "value": "wrong input",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "",
+  "placeholder": "Type something...",
+  "helper-text": "error text",
+  "has-error": true,
+  "required": false,
+  "inline": false,
 };
 
 export const Required = DefaultTemplate.bind({});
 Required.args = {
-  testId: 'textfield',
-  value: '',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: 'Name',
-  placeholder: '',
-  'helper-text': '',
-  'has-error': false,
-  required: true,
-  inline: false,
+  "testId": "textfield",
+  "value": "",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "Name",
+  "placeholder": "",
+  "helper-text": "",
+  "has-error": false,
+  "required": true,
+  "inline": false,
 };
 
 export const Inline = DefaultTemplate.bind({});
 Inline.args = {
-  testId: 'textfield',
-  value: 'Some value',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: 'Name',
-  placeholder: '',
-  'helper-text': 'helper text',
-  'has-error': false,
-  required: true,
-  inline: true,
+  "testId": "textfield",
+  "value": "Some value",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "Name",
+  "placeholder": "",
+  "helper-text": "helper text",
+  "has-error": false,
+  "required": true,
+  "inline": true,
 };
 
 const IconStartTemplate = args => `
@@ -144,8 +142,8 @@ const IconStartTemplate = args => `
   name="${args.name}"
   label="${args.label}"
   placeholder="${args.placeholder}"
-  helper-text="${args['helper-text']}"
-  has-error="${args['has-error']}"
+  helper-text="${args["helper-text"]}"
+  has-error="${args["has-error"]}"
   required="${args.required}"
   inline="${args.inline}"
 >
@@ -154,17 +152,17 @@ const IconStartTemplate = args => `
 
 export const WithIconStart = IconStartTemplate.bind({});
 WithIconStart.args = {
-  testId: 'textfield',
-  value: 'Some value',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: 'Name',
-  placeholder: '',
-  'helper-text': 'helper text',
-  'has-error': false,
-  required: true,
-  inline: false,
+  "testId": "textfield",
+  "value": "Some value",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "Name",
+  "placeholder": "",
+  "helper-text": "helper text",
+  "has-error": false,
+  "required": true,
+  "inline": false,
 };
 
 const IconEndTemplate = args => `
@@ -176,8 +174,8 @@ const IconEndTemplate = args => `
   name="${args.name}"
   label="${args.label}"
   placeholder="${args.placeholder}"
-  helper-text="${args['helper-text']}"
-  has-error="${args['has-error']}"
+  helper-text="${args["helper-text"]}"
+  has-error="${args["has-error"]}"
   required="${args.required}"
   inline="${args.inline}"
 >
@@ -186,17 +184,17 @@ const IconEndTemplate = args => `
 
 export const WithIconEnd = IconEndTemplate.bind({});
 WithIconEnd.args = {
-  testId: 'textfield',
-  value: 'Some value',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: 'Name',
-  placeholder: '',
-  'helper-text': 'helper text',
-  'has-error': false,
-  required: true,
-  inline: false,
+  "testId": "textfield",
+  "value": "Some value",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "Name",
+  "placeholder": "",
+  "helper-text": "helper text",
+  "has-error": false,
+  "required": true,
+  "inline": false,
 };
 
 const IconStartEndTemplate = args => `
@@ -208,8 +206,8 @@ const IconStartEndTemplate = args => `
   name="${args.name}"
   label="${args.label}"
   placeholder="${args.placeholder}"
-  helper-text="${args['helper-text']}"
-  has-error="${args['has-error']}"
+  helper-text="${args["helper-text"]}"
+  has-error="${args["has-error"]}"
   required="${args.required}"
   inline="${args.inline}"
 >
@@ -219,15 +217,15 @@ const IconStartEndTemplate = args => `
 
 export const WithIconBoth = IconStartEndTemplate.bind({});
 WithIconBoth.args = {
-  testId: 'textfield',
-  value: 'Some value',
-  disabled: false,
-  type: 'text',
-  name: 'test-input',
-  label: 'Name',
-  placeholder: '',
-  'helper-text': 'helper text',
-  'has-error': false,
-  required: true,
-  inline: false,
+  "testId": "textfield",
+  "value": "Some value",
+  "disabled": false,
+  "type": "text",
+  "name": "test-input",
+  "label": "Name",
+  "placeholder": "",
+  "helper-text": "helper text",
+  "has-error": false,
+  "required": true,
+  "inline": false,
 };

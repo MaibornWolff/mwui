@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import docs from "./mw-chip.docs.mdx";
 
 export default {

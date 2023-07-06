@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import docs from "./mw-menu-list.docs.mdx";
 
 export default {

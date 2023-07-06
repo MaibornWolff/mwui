@@ -1,4 +1,3 @@
-import "../../global/global.css";
 import docs from "./mw-link.docs.mdx";
 
 export default {

@@ -1,5 +1,6 @@
 import { create } from "@storybook/theming";
-import "../src/global/global.css";
+// import "../src/global/global.css";
+import "../../mwui-token-farm/dist/css/MW_component.css";
 
 import {
   mwCoreColorDarkblue900,

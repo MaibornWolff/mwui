@@ -1,4 +1,3 @@
-import "../../global/global.css";
 // @ts-ignore
 import fallback from "../../../.storybook/public/mw_logo.png";
 import docs from "./mw-img.docs.mdx";
