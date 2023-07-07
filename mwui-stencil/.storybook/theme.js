@@ -9,7 +9,6 @@ import {
   mwCoreColorNeutral100,
   borderRadiusStandardMd,
   mwCoreColorNeutral50,
-  mwCoreColorPink700,
   mwCoreColorBlue500,
 } from "../../mwui-token-farm/dist/js/MW_core";
 
@@ -21,7 +20,7 @@ export default create({
   brandTarget: "_self",
 
   // UI
-  colorPrimary: mwCoreColorPink500,
+  colorPrimary: mwCoreColorBlue500,
   colorSecondary: mwCoreColorPink500,
   appBg: mwCoreColorNeutral100,
   appContentBg: mwCoreColorNeutral50,
