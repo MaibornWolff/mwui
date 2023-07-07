@@ -45,4 +45,5 @@ export const MwSlider = /*@__PURE__*/ createReactComponent<JSX.MwSlider, HTMLMwS
 export const MwSwitch = /*@__PURE__*/ createReactComponent<JSX.MwSwitch, HTMLMwSwitchElement>("mw-switch");
 export const MwTab = /*@__PURE__*/ createReactComponent<JSX.MwTab, HTMLMwTabElement>("mw-tab");
 export const MwTabs = /*@__PURE__*/ createReactComponent<JSX.MwTabs, HTMLMwTabsElement>("mw-tabs");
+export const MwTextarea = /*@__PURE__*/ createReactComponent<JSX.MwTextarea, HTMLMwTextareaElement>("mw-textarea");
 export const MwTextfield = /*@__PURE__*/ createReactComponent<JSX.MwTextfield, HTMLMwTextfieldElement>("mw-textfield");

@@ -1,5 +1,5 @@
 import "../../../mwui-token-farm/dist/css/MW_core.css";
-import { Meta } from "@storybook/addon-docs";
+import { Meta, Source } from "@storybook/addon-docs";
 import logo from "../../.storybook/public/mw_logo.png";
 
 <Meta title="Welcome" />
@@ -41,60 +41,80 @@ Integrate Web Components in any framework or none at all:
 
 1. Install npm package
 
-```bash
-npm i @maibornwolff/mwui-stencil
-```
+<Source language="bash" dark code={`npm i @maibornwolff/mwui-stencil`} />
 
 2. Include the following in the `main.js` (e.g. Angular, Vue) or `index.js` (e.g. React):
 
-```javascript
-import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
-defineCustomElements(window);
-```
+<Source
+  dark
+  language="tsx"
+  code={`import { defineCustomElements } from "@maibornwolff/mwui-stencil/loader";
+defineCustomElements(window);`}
+/>
 
-## React
+## Integrations
+
+Framework integrations are optional to use as Web Components run in any browser without specific frameworks or libraries. The provided integrations can help using the Web Components in a more "react, vue or angular" way.
+
+### React
 
 1. Install npm package
 
-```bash
-npm i @maibornwolff/mwui-react
-npm i @maibornwolff/mwui-stencil
-```
+<Source
+  dark
+  language="bash"
+  code={`npm i @maibornwolff/mwui-react
+npm i @maibornwolff/mwui-stencil`}
+/>
 
 2. Import and use as a React-like component.
 
-Import global styles
+<Source
+  dark
+  language="tsx"
+  code={`import { MWButton } from "@maibornwolff/mwui-react";
+`}
+/>
 
-```bash
-import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
-```
+3. Import global styles
 
-```javascript
-import { MWButton } from "@maibornwolff/mwui-react";
-```
+<Source
+  dark
+  language="bash"
+  code={`import '@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css';
+`}
+/>
 
-## Vue
+### Vue
 
 1. Install npm package
 
-```bash
-npm i @maibornwolff/mwui-vue
+<Source
+  dark
+  language="bash"
+  code={`npm i @maibornwolff/mwui-vue
 npm i @maibornwolff/mwui-stencil
-```
+`}
+/>
 
 2. Import the library plugin and global styles in the `main.js` file:
 
-```javascript
-import { MwuiComponents } from "@maibornwolff/mwui-vue";
+<Source
+  dark
+  language="tsx"
+  code={`import { MwuiComponents } from "@maibornwolff/mwui-vue";
 import "@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css";
 
 createApp(App).use(MwuiComponents).mount("#app");
-```
+`}
+/>
 
 3. You can then use your components within vue:
 
-```javascript
-<template>
+<Source
+  language="tsx"
+  dark
+  code={`<template>
   <mw-button test-id="test-id" label="Press here" />
 </template>
 
@@ -107,19 +127,22 @@ export default {
     MwButton
   }
 }
-```
+`}
+/>
 
 > **_IMPORTANT:_** If using `vue 3` and `vite`, [setup your vite.config accordingly](https://stenciljs.com/docs/vue#creating-a-consumer-vue-app).
 
 > **_NOTE:_** for known issues, see [MWUI Vue Integration](https://github.com/MaibornWolff/mwui/tree/main/mwui-vue#known-issues).
 
-## Angular
+### Angular
 
 To enable support for web components in Angular, add the following to the `@NgModule` in `app.module.ts`:
 
-```TypeScript
-schemas: [CUSTOM_ELEMENTS_SCHEMA];
-```
+<Source
+  dark
+  code={`schemas: [CUSTOM_ELEMENTS_SCHEMA];
+`}
+/>
 
 > **_NOTE:_** The Angular integration is still work in progress
 
@@ -129,3 +152,13 @@ schemas: [CUSTOM_ELEMENTS_SCHEMA];
 - [Listening to events from a non-JSX element](https://stenciljs.com/docs/events#listening-to-events-from-a-non-jsx-element)
 
 </section>
+
+
+
+
+
+
+
+
+
+

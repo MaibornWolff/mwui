@@ -21,10 +21,10 @@
 
 ## Events
 
-| Event                    | Description                                | Type                    |
-| ------------------------ | ------------------------------------------ | ----------------------- |
-| `mwChipListInputChange`  | Emits an event when value of input changes | `CustomEvent<string>`   |
-| `mwChipListValueChanged` | Emits an event when its value changes      | `CustomEvent<string[]>` |
+| Event          | Description                                | Type                    |
+| -------------- | ------------------------------------------ | ----------------------- |
+| `inputChange`  | Emits an event when value of input changes | `CustomEvent<string>`   |
+| `valueChanged` | Emits an event when its value changes      | `CustomEvent<string[]>` |
 
 ## Dependencies
 

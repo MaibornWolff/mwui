@@ -27,7 +27,7 @@ export const MwAutocomplete = /*@__PURE__*/ defineContainer<JSX.MwAutocomplete>(
     "maximumText",
     "optionCounter",
     "selected",
-    "mwAutocompleteValueChanged",
+    "valueChanged",
 ]);
 
 export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>("mw-avatar", undefined, ["testId", "src", "icon", "alt", "size"]);
@@ -87,8 +87,8 @@ export const MwChipInput = /*@__PURE__*/ defineContainer<JSX.MwChipInput>("mw-ch
     "required",
     "optionCounter",
     "selectedChips",
-    "mwChipListValueChanged",
-    "mwChipListInputChange",
+    "valueChanged",
+    "inputChange",
 ]);
 
 export const MwDivider = /*@__PURE__*/ defineContainer<JSX.MwDivider>("mw-divider", undefined, ["inset"]);
@@ -178,6 +178,26 @@ export const MwTab = /*@__PURE__*/ defineContainer<JSX.MwTab>("mw-tab", undefine
 
 export const MwTabs = /*@__PURE__*/ defineContainer<JSX.MwTabs>("mw-tabs", undefined, ["testId", "selected", "tabsClickEmitter"]);
 
+export const MwTextarea = /*@__PURE__*/ defineContainer<JSX.MwTextarea>("mw-textarea", undefined, [
+    "value",
+    "name",
+    "label",
+    "placeholder",
+    "helperText",
+    "hasError",
+    "required",
+    "disabled",
+    "readonly",
+    "maxlength",
+    "rows",
+    "cols",
+    "form",
+    "resize",
+    "inputEmitter",
+    "changeEmitter",
+    "blurEmitter",
+]);
+
 export const MwTextfield = /*@__PURE__*/ defineContainer<JSX.MwTextfield>("mw-textfield", undefined, [
     "type",
     "value",
@@ -190,5 +210,5 @@ export const MwTextfield = /*@__PURE__*/ defineContainer<JSX.MwTextfield>("mw-te
     "required",
     "disabled",
     "readOnly",
-    "mwTextfieldValueChanged",
+    "valueChanged",
 ]);
