@@ -1,8 +1,12 @@
-import { Canvas, Story } from "@storybook/addon-docs";
+import { Canvas, Story, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwButton from "./mw-button.stories.ts";
 
-# Button
+<Title>Button</Title>
 
-Buttons execute an action, either in the background or foreground of an experience. Different button categories help guide users through certain actions. Buttons express what action will occur when the user clicks or touches it either by text, icon, or both. Additional meaning can be derived from the button variant.
+<Subtitle>
+  Buttons execute an action, either in the background or foreground of an experience. Different button categories help guide users through certain actions. Buttons express what
+  action will occur when the user clicks or touches it either by text, icon, or both. Additional meaning can be derived from the button variant.
+</Subtitle>
 
 `mw-button` is the primary component. It has 4 main variants:
 
@@ -15,35 +19,37 @@ Buttons execute an action, either in the background or foreground of an experien
 
 ### Filled
 
-<Canvas withSource="open">
-  <Story id="components-button--filled" />
-</Canvas>
+<Canvas
+  of={MwButton.Filled}
+  sourceState="shown"
+  withToolbar
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-button", "_blank");
+      },
+    },
+  ]}
+/>
 
 ### Outline
 
-<Canvas>
-  <Story id="components-button--outline" />
-</Canvas>
+<Canvas of={MwButton.Outline} />
 
 ### Ghost
 
-<Canvas>
-  <Story id="components-button--ghost" />
-</Canvas>
+<Canvas of={MwButton.GhostInverted} />
 
 ### Ghost Inverted
 
-<Canvas>
-  <Story id="components-button--ghost-inverted" />
-</Canvas>
+<Canvas of={MwButton.Ghost} />
 
 ### Icon
 
 The button component can be used as an `IconButton` by omitting the label property and setting either a start- or end icon.
 
-<Canvas>
-  <Story id="components-button--icon" />
-</Canvas>
+<Canvas of={MwButton.Icon} />
 
 ### With Icon
 
@@ -59,14 +65,10 @@ The `mw-button` component uses slots (`icon-start`, `icon-end`) to provide space
 </mw-button>
 ```
 
-<Canvas>
-  <Story id="components-button--with-icon" />
-</Canvas>
+<Canvas of={MwButton.WithIcon} />
 
 ### Link
 
 If provided a `href` property, the button will render as a `<a>` tag with the button appearance. The link target can be specified by setting `target`.
 
-<Canvas>
-  <Story id="components-button--link" />
-</Canvas>
+<Canvas of={MwButton.Link} />

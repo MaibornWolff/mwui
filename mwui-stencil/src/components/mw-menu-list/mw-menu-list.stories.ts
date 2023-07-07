@@ -3,6 +3,7 @@ import docs from "./mw-menu-list.docs.mdx";
 export default {
   title: "Components/MenuList",
   component: "mw-menu-list",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

@@ -3,6 +3,7 @@ import docs from "./mw-tabs.docs.mdx";
 export default {
   title: "Components/Tabs",
   component: "mw-tabs",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

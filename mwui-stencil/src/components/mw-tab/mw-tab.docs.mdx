@@ -1,37 +1,44 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwTab from "./mw-tab.stories.tsx";
 
-# Tab
+<Title>Tab</Title>
 
-Tabs are the individual elements within `mw-tabs`. They should not be used as singular instances.
+<Subtitle>
+  Tabs are the individual elements within <code>mw-tabs</code>. They should not be used as singular instances.
+</Subtitle>
 
-<ArgsTable of="mw-tab" />
+<Canvas
+  of={MwTab.IconLabelEnabled}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-tab", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of="mw-tab" />
 
 ### Icon + Label / Enabled
 
-<Canvas>
-  <Story id="components-tab--icon-label-enabled" />
-</Canvas>
+<Canvas of={MwTab.IconLabelEnabled} />
 
 ### Icon + Label / Enabled, Selected
 
-<Canvas>
-  <Story id="components-tab--icon-label-enabled-selected" />
-</Canvas>
+<Canvas of={MwTab.IconLabelEnabledSelected} />
 
 ### Icon + Label / Disabled
 
-<Canvas>
-  <Story id="components-tab--icon-label-disabled" />
-</Canvas>
+<Canvas of={MwTab.IconLabelDisabled} />
 
 ### Icon / Enabled
 
-<Canvas>
-  <Story id="components-tab--icon-enabled" />
-</Canvas>
+<Canvas of={MwTab.IconEnabled} />
 
 ## Label / Enabled
 
-<Canvas>
-  <Story id="components-tab--label-enabled" />
-</Canvas>
+<Canvas of={MwTab.LabelEnabled} />

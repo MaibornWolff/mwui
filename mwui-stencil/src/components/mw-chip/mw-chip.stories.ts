@@ -3,6 +3,7 @@ import docs from "./mw-chip.docs.mdx";
 export default {
   title: "Components/Chip",
   component: "mw-chip",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

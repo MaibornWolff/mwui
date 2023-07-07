@@ -3,6 +3,7 @@ import docs from "./mw-icon.docs.mdx";
 export default {
   title: "Components/Icon",
   component: "mw-icon",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

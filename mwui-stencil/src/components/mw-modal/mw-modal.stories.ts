@@ -4,6 +4,7 @@ import { ModalSizeEnum } from "./models/enums/modal-size.enum";
 export default {
   title: "Components/Modal",
   component: "mw-modal",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

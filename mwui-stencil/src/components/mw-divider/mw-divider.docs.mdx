@@ -1,17 +1,28 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Canvas, Story, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwDivider from "./mw-divider.stories.ts";
 
-# Divider
+<Title>Divider</Title>
 
-Used to separate sections on a page. Use `inset = true` for larger margins on the sides.
+<Subtitle>
+  Used to separate sections on a page. Use <code>inset=true</code> for larger margins on the sides.
+</Subtitle>
 
 ## Full
 
-<Canvas>
-  <Story id="components-divider--full" />
-</Canvas>
+<Canvas
+  of={MwDivider.Full}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-divider", "_blank");
+      },
+    },
+  ]}
+/>
 
 ## Inset
 
-<Canvas>
-  <Story id="components-divider--inset" />
-</Canvas>
+<Canvas of={MwDivider.Inset} />

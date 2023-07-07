@@ -1,8 +1,9 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwImg from "./mw-img.stories.tsx";
 
-# Image
+<Title>Image</Title>
 
-The MwImage component displays an image like a regular img tag but brings some quality of life improvements.
+<Subtitle>The Image component displays an image like a regular img tag but brings some quality of life improvements.</Subtitle>
 
 Images can:
 
@@ -11,28 +12,34 @@ Images can:
 - can have different resolutions for different viewport sizes
 - can have a preloadImg which will display the low resolution img first then switch to the original src
 
-<ArgsTable of="mw-img" />
+<Canvas
+  of={MwImg.Image}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-img", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of="mw-img" />
 
 ### Default
 
-<Canvas>
-  <Story id="components-image--image" />
-</Canvas>
+<Canvas of={MwImg.Image} />
 
 ### Image with fallback
 
-<Canvas>
-  <Story id="components-image--image-with-fallback" />
-</Canvas>
+<Canvas of={MwImg.ImageWithFallback} />
 
 ### Image with adaptive sizes
 
-<Canvas>
-  <Story id="components-image--image-with-adaptive-sizes" />
-</Canvas>
+<Canvas of={MwImg.ImageWithAdaptiveSizes} />
 
 ### Image with preload
 
-<Canvas>
-  <Story id="components-image--image-with-preload" />
-</Canvas>
+<Canvas of={MwImg.ImageWithPreload} />

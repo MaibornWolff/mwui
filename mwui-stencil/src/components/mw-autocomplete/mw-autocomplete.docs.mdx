@@ -1,35 +1,44 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwAutocompleteStories from "./mw-autocomplete.stories.tsx";
 
-# Autocomplete
+<Title>Autocomplete</Title>
 
-The autocomplete allows the user to pick from a predetermined list of options, or enter their own text. The component allows either one or multiple entries if the `multiple` prop is set to true.
+<Subtitle>
+  The autocomplete allows the user to pick from a predetermined list of options, or enter their own text. The component allows either one or multiple entries if the{" "}
+  <code>multiple</code> prop is set to true. The dropdown options should be placed in the <code>dropdown-menu</code> slot. Additionally an icon can be added to the start of the
+  input box using the <code>icon-start</code> slot.
+</Subtitle>
 
-The dropdown options should be placed in the `dropdown-menu` slot. Additionally an icon can be added to the start of the input box using the `icon-start` slot.
+<Canvas
+  of={MwAutocompleteStories.Multiple}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-autocomplete", "_blank");
+      },
+    },
+  ]}
+/>
 
-<ArgsTable of="mw-autocomplete" />
+<ArgTypes of="mw-autocomplete" />
 
 ## Examples
 
 ## Default
 
-<Canvas>
-  <Story id="components-autocomplete--default" />
-</Canvas>
+<Canvas of={MwAutocompleteStories.Default} />
 
 ## Multiple
 
-<Canvas>
-  <Story id="components-autocomplete--multiple" />
-</Canvas>
+<Canvas of={MwAutocompleteStories.Multiple} />
 
 ## Inline
 
-<Canvas>
-  <Story id="components-autocomplete--inline" />
-</Canvas>
+<Canvas of={MwAutocompleteStories.Inline} />
 
 ## Disabled
 
-<Canvas>
-  <Story id="components-autocomplete--disabled" />
-</Canvas>
+<Canvas of={MwAutocompleteStories.Disabled} />

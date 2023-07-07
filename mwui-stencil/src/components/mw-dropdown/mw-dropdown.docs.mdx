@@ -1,27 +1,39 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwDropdown from "./mw-dropdown.stories.ts";
 
-# Dropdown
+<Title>Dropdown</Title>
 
-The dropdown component lets users pick from one of several choices by clicking on the input and selecting their choice from the menu. The options should be placed into the `dropdown-menu` slot as `mw-menu-item` components. Icons can be added to the component using the `icon-start` and `icon-end` slots.
+<Subtitle>
+  The dropdown component lets users pick from one of several choices by clicking on the input and selecting their choice from the menu. The options should be placed into the{" "}
+  <code>dropdown-menu</code> slot as <code>mw-menu-item</code> components. Icons can be added to the component using the <code>icon-start</code> and <code>icon-end</code> slots.
+</Subtitle>
 
-<ArgsTable of="mw-dropdown" />
+<Canvas
+  of={MwDropdown.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-dropdown", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of="mw-dropdown" />
 
 ## Examples
 
 ### Default
 
-<Canvas>
-  <Story id="components-dropdown--default" />
-</Canvas>
+<Canvas of={MwDropdown.Default} />
 
 ### Inline
 
-<Canvas>
-  <Story id="components-dropdown--inline" />
-</Canvas>
+<Canvas of={MwDropdown.Inline} />
 
 ### With Error
 
-<Canvas>
-  <Story id="components-dropdown--with-error" />
-</Canvas>
+<Canvas of={MwDropdown.WithError} />

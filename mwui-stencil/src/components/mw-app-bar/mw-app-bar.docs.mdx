@@ -1,28 +1,39 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwAppBar from "./mw-app-bar.stories.tsx";
 
-# App Bar
+<Title>App Bar</Title>
 
-The App Bar is the main control hub of a web page and is usually placed at the top.
-Components can be placed into the App Bar by using the positional slots (`start`, `center`, `end`).
+<Subtitle>
+  The App Bar is the main control hub of a web page and is usually placed at the top. Components can be placed into the App Bar by using the positional slots (`start`, `center`,
+  `end`).
+</Subtitle>
 
-<ArgsTable of="mw-app-bar" />
+<Canvas
+  of={MwAppBar.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-app-bar", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of={MwAppBar} />
 
 ## Examples
 
 ### Default
 
-<Canvas>
-  <Story id="components-appbar--default" />
-</Canvas>
+<Canvas of={MwAppBar.Default} />
 
 ### With Center
 
-<Canvas>
-  <Story id="components-appbar--center" />
-</Canvas>
+<Canvas of={MwAppBar.Center} />
 
 ### With Search
 
-<Canvas>
-  <Story id="components-appbar--search" />
-</Canvas>
+<Canvas of={MwAppBar.Search} />

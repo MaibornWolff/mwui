@@ -3,6 +3,7 @@ import docs from "./mw-chip-input.docs.mdx";
 export default {
   title: "Components/ChipInput",
   component: "mw-chip-input",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

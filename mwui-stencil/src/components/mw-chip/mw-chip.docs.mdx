@@ -1,51 +1,54 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwChip from "./mw-chip.stories.ts";
 
-# Chip
+<Title>Chip</Title>
 
-`mw-chip` is the primary component. There are several variants as described below. All variants share an internal `selection` state acting as a toggle when clicked.
+<Subtitle>
+  <code>mw-chip</code> is the primary component. There are several variants as described below. All variants share an internal `selection` state acting as a toggle when clicked.
+</Subtitle>
 
 ### Default
 
-<Canvas withSource="open">
-  <Story id="components-chip--default" />
-</Canvas>
+<Canvas
+  of={MwChip.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-chip-input", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of="mw-chip" />
 
 ### Selected
 
 A `selected` property can be provided to define the initial state of the toggle state.
 
-<Canvas withSource="open">
-  <Story id="components-chip--selected" />
-</Canvas>
-
-<ArgsTable of="mw-chip" />
+<Canvas of={MwChip.Selected} />
 
 ### With Icon
 
 When providing a `icon` prop containing the name of an icon, a `mw-icon` will be shown at the start of the chip.
 
-<Canvas withSource="open">
-  <Story id="components-chip--icon" />
-</Canvas>
+<Canvas of={MwChip.Icon} />
 
 ### With Avatar
 
-<Canvas withSource="open">
-  <Story id="components-chip--avatar" />
-</Canvas>
+<Canvas of={MwChip.Avatar} />
 
 ### Close Icon
 
 Any variant of a `chip` can be configured to render a close icon at the end by setting the `close` prop.
 
-<Canvas withSource="open">
-  <Story id="components-chip--closable" />
-</Canvas>
+<Canvas of={MwChip.Closable} />
 
 ### Disabled
 
 Setting the `disabled` prop, the `chip` is visually and functionally disabled and cannot be clicked.
 
-<Canvas>
-  <Story id="components-chip--disabled" />
-</Canvas>
+<Canvas of={MwChip.Disabled} />

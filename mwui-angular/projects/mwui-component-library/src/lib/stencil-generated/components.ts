@@ -287,14 +287,14 @@ export class MwCardHeader {
 export declare interface MwCardHeader extends Components.MwCardHeader {}
 
 @ProxyCmp({
-    inputs: ["alt", "src"],
+    inputs: ["alt", "height", "src"],
 })
 @Component({
     selector: "mw-card-image",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["alt", "src"],
+    inputs: ["alt", "height", "src"],
 })
 export class MwCardImage {
     protected el: HTMLElement;

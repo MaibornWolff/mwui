@@ -3,6 +3,7 @@ import docs from "./mw-card.docs.mdx";
 export default {
   title: "Components/Card",
   component: "mw-card",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

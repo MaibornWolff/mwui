@@ -1,6 +1,12 @@
+import docs from "./mw-textfield.docs.mdx";
+
 export default {
   title: "Components/Textfield",
   component: "mw-textfield",
+  tags: ["autodocs"],
+  parameters: {
+    docs: { page: docs },
+  },
   argTypes: {
     value: {
       description: "Input value",

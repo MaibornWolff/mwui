@@ -1,11 +1,22 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwSlider from "./mw-slider.stories.tsx";
 
-# Slider
+<Title>Slider</Title>
 
-The `mw-slider` component is a wrapper around the native range input element. It additionally provides optional label, helper-text and icons at the start or end.
+<Subtitle>The Slider component is a wrapper around the native range input element. It additionally provides optional label, helper-text and icons at the start or end.</Subtitle>
 
-<Canvas>
-  <Story id="components-slider--default" />
-</Canvas>
+<Canvas
+  of={MwSlider.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-slider", "_blank");
+      },
+    },
+  ]}
+/>
 
-<ArgsTable of="mw-slider" />
+<ArgTypes of="mw-slider" />

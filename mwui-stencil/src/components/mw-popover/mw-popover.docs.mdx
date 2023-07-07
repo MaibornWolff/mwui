@@ -1,14 +1,27 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwPopover from "./mw-popover.stories.ts";
 
-# Popover
+<Title>Popover</Title>
 
-A Popover can be used to display some content in relative position to an anchor element. Internally it is used for `menus` and `dropdowns`.
+<Subtitle>
+  A Popover can be used to display some content in relative position to an anchor element. Internally it is used for <code>menus</code> and <code>dropdowns</code>.
+</Subtitle>
 
-<Canvas withSource="open">
-  <Story id="components-popover--default" />
-</Canvas>
+<Canvas
+  of={MwPopover.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-popover", "_blank");
+      },
+    },
+  ]}
+/>
 
-<ArgsTable of="mw-popover" />
+<ArgTypes of="mw-popover" />
 
 ## Placement
 
@@ -17,17 +30,17 @@ The anchor and popover position can overwrite the specified placement if the pop
 
 <Canvas>
   <div>
-    <div style={{ height: '150px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '50px' }}>
-      {['top', 'bottom', 'left', 'right'].map(placement => (
+    <div style={{ height: "150px", display: "flex", justifyContent: "center", alignItems: "center", gap: "50px" }}>
+      {["top", "bottom", "left", "right"].map(placement => (
         <mw-popover key={placement} placement={placement}>
           <mw-button slot="anchor" label={placement} variant="outline"></mw-button>
           <div slot="content">Popover {placement}</div>
         </mw-popover>
       ))}
     </div>
-    <div style={{ height: '150px', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '50px' }}>
-      {['top-start', 'bottom-start', 'bottom-end', 'bottom-end'].map(placement => (
-        <mw-popover key={placement} placement={placement}>
+    <div style={{ height: "150px", display: "flex", justifyContent: "center", alignItems: "center", gap: "50px" }}>
+      {["top-start", "bottom-start", "bottom-end", "top-end"].map(placement => (
+        <mw-popover key={`s-${placement}`} placement={placement}>
           <mw-button slot="anchor" label={placement} variant="outline"></mw-button>
           <div slot="content">Popover {placement}</div>
         </mw-popover>
@@ -41,11 +54,11 @@ The anchor and popover position can overwrite the specified placement if the pop
 If scrolling popover near the context's boundaries, it will flip it's position to be displayed in available space.
 
 <Canvas>
-  <div style={{ height: '250px' }}>
-    <div style={{ paddingTop: '100px', height: '500px', overflow: 'scroll' }}>
-      <mw-popover style={{ width: 'fit-content' }} placement="top">
+  <div style={{ height: "250px" }}>
+    <div style={{ paddingTop: "100px", height: "500px", overflow: "scroll" }}>
+      <mw-popover style={{ width: "fit-content" }} placement="top">
         <mw-button slot="anchor" label="Open and scroll down..." variant="outline"></mw-button>
-        <div style={{ width: '200px' }} slot="content">
+        <div style={{ width: "200px" }} slot="content">
           Popovers flip to the opposite position when scrolling to the boundaries.
         </div>
       </mw-popover>
@@ -58,11 +71,11 @@ If scrolling popover near the context's boundaries, it will flip it's position t
 When scrolling, the popover will stay within the boundaries until the opposite edges of the anchor element and the popover are aligned.
 
 <Canvas>
-  <div style={{ height: '250px' }}>
-    <div style={{ height: '500px', overflow: 'scroll' }}>
-      <mw-popover style={{ width: 'fit-content' }} placement="right-start">
+  <div style={{ height: "250px" }}>
+    <div style={{ height: "500px", overflow: "scroll" }}>
+      <mw-popover style={{ width: "fit-content" }} placement="right-start">
         <mw-button slot="anchor" label="Open and scroll down..." variant="outline"></mw-button>
-        <div style={{ width: '200px' }} slot="content">
+        <div style={{ width: "200px" }} slot="content">
           <h3>Overflow Prevention</h3>
           <p>When scrolling, the popover will stay within the boundaries until the opposite edges of the anchor element and the popover are aligned.</p>
         </div>
@@ -75,6 +88,4 @@ When scrolling, the popover will stay within the boundaries until the opposite e
 
 With the `dismissable` prop set to true, an open popover will close when clicking outside the element.
 
-<Canvas withSource="open">
-  <Story id="components-popover--dismissable" />
-</Canvas>
+<Canvas of={MwPopover.Dismissable} sourceState="shown" />

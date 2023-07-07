@@ -56,7 +56,7 @@ export const MwCardFooter = /*@__PURE__*/ defineContainer<JSX.MwCardFooter>("mw-
 
 export const MwCardHeader = /*@__PURE__*/ defineContainer<JSX.MwCardHeader>("mw-card-header", undefined, ["header", "subheader"]);
 
-export const MwCardImage = /*@__PURE__*/ defineContainer<JSX.MwCardImage>("mw-card-image", undefined, ["src", "alt"]);
+export const MwCardImage = /*@__PURE__*/ defineContainer<JSX.MwCardImage>("mw-card-image", undefined, ["src", "alt", "height"]);
 
 export const MwCardTitle = /*@__PURE__*/ defineContainer<JSX.MwCardTitle>("mw-card-title", undefined, ["text", "subtitle", "metadata"]);
 

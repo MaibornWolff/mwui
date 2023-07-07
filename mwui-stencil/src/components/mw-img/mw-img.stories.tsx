@@ -5,6 +5,7 @@ import docs from "./mw-img.docs.mdx";
 export default {
   title: "Components/Image",
   component: "mw-img",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

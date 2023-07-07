@@ -1,8 +1,12 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
 
-# Tabs
+<Title>Tabs</Title>
 
-`mw-tabs` is a wrapper for a group of `mw-tab` components and allows the user to switch the active tab by pressing on it.
+<Subtitle>
+  The Tabs component is a wrapper for a group of <code>mw-tab</code> components.
+</Subtitle>
+
+It allows the user to switch the active tab by pressing on it.
 The amount of tabs and their appearance is determined by how many `mw-tab` components were placed in the `mw-tabs` slot.
 
 The `selected` prop determines which tab is enabled by default.
@@ -30,4 +34,4 @@ document.getElementsByTagName("mw-tabs")[0].addEventListener("click", event => {
 });
 ```
 
-<ArgsTable of="mw-tabs" />
+<ArgTypes of="mw-tabs" />

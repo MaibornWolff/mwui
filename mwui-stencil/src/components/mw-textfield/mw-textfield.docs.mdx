@@ -1,0 +1,78 @@
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwTextfield from "./mw-textfield.stories.ts";
+import "../../global/global.css";
+
+<Title>Textfield</Title>
+
+<Subtitle>The Textfield web component provides input elements wrapped with optional labelling, icons, helper texts and errors states.</Subtitle>
+
+If not applicable, also the native HTML input elements might be used. Therefore, we also provide (experimental) styling of native input elements.
+
+<Canvas
+  of={MwTextfield.Placeholder}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-textfield", "_blank");
+      },
+    },
+  ]}
+/>
+
+### Native HTMLInputElement
+
+When importing the global `@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css` also the native HTML input element can be used in a MWUI styled version.
+
+> _Beta Feature: not all types of inputs are equally supported yet. Especially checkboxes, radio buttons and sliders are not yet fully compatible with the web component variant._
+
+<form style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+  <input style={{ width: "200px" }} type="text" placeholder="Text input element" />
+  <input style={{ width: "50px" }} placeholder="23" type="number" />
+  <input style={{ width: "400px" }} type="file" />
+  <input style={{ width: "80%" }} type="range" />
+</form>
+
+<ArgTypes of={MwTextfield} />
+
+### Default
+
+<Canvas of={MwTextfield.Default} />
+
+### Label
+
+<Canvas of={MwTextfield.Label} />
+
+### Placeholder
+
+<Canvas of={MwTextfield.Placeholder} />
+
+### Helper Text
+
+<Canvas of={MwTextfield.HelperText} />
+
+### Error State
+
+<Canvas of={MwTextfield.ErrorState} />
+
+### Required
+
+<Canvas of={MwTextfield.Required} />
+
+### Inline
+
+<Canvas of={MwTextfield.Inline} />
+
+### With Icon Start
+
+<Canvas of={MwTextfield.WithIconStart} />
+
+### With Icon End
+
+<Canvas of={MwTextfield.WithIconEnd} />
+
+### With Icon Both
+
+<Canvas of={MwTextfield.WithIconBoth} />

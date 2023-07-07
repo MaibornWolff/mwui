@@ -3,6 +3,7 @@ import docs from "./mw-autocomplete.docs.mdx";
 export default {
   title: "Components/Autocomplete",
   component: "mw-autocomplete",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

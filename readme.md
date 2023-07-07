@@ -53,7 +53,7 @@ Follow this checklist to comply with our definition of done.
 
 A stencil component ideally is created using the CLI command `npm run generate` inside the mwui-stencil directory. Each component should be represented in various states and variants in a Storybook `*.stories.ts` file. If there is more complex documentation needed, both a stories file and a customized `*.docs.mdx` file (e.g. [mw-button.docs.mdx](https://github.com/MaibornWolff/mwui/blob/main/mwui-stencil/src/components/mw-button/mw-button.docs.mdx)) can and should be provided.
 
-To further improve automated component docs, make sure to correctly type `Properties` and provide comments to each prop (those will show up in the Storybook ArgsTable in addition to the default output generated).
+To further improve automated component docs, make sure to correctly type `Properties` and provide comments to each prop (those will show up in the Storybook ArgTypes in addition to the default output generated).
 
 ### Build & Release Libraries
 

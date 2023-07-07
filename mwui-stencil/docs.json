@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-07-06T13:22:45",
+  "timestamp": "2023-07-06T15:42:57",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.3.1",
@@ -1154,7 +1154,7 @@
       "filePath": "./src/components/mw-card-image/mw-card-image.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-image",
-      "readme": "# mw-card-image\n\n\n",
+      "readme": "# mw-card-image\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1579,7 +1579,7 @@
     },
     {
       "filePath": "./src/components/mw-chip-input/mw-chip-input.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "none",
       "tag": "mw-chip-input",
       "readme": "# mw-chip-input\n",
       "docs": "",

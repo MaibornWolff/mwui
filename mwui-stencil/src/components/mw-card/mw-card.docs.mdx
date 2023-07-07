@@ -1,13 +1,14 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwCard from "./mw-card.stories.ts";
 
-# Card
+<Title>Card</Title>
 
 <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "space-between" }}>
   <div style={{ width: "50%" }}>
-    <p>
+    <Subtitle>
       The <code>mw-card</code> component provides a basic structure element with <code>default</code>, <code>elevated</code> or <code>outlined</code> appearances. Different Card
       variants can be created by composing Card sub-elements in arbitrary order:
-    </p>
+    </Subtitle>
     <ul>
       <li>
         <a href="#card-body">mw-card-body</a>
@@ -33,7 +34,17 @@ import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
 
 ### Variants
 
-<Canvas>
+<Canvas
+  withToolbar
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-card", "_blank");
+      },
+    },
+  ]}
+>
   <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
     <mw-card>
       <mw-card-body>default</mw-card-body>
@@ -47,7 +58,7 @@ import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
   </div>
 </Canvas>
 
-<ArgsTable of="mw-card" />
+<ArgTypes of="mw-card" />
 
 ### Card Body
 
@@ -174,4 +185,4 @@ The `mw-card-footer` element is not limited to the usage of Buttons. Any Element
   </div>
 </Canvas>
 
-<ArgsTable of="mw-card-footer" />
+<ArgTypes of="mw-card-footer" />
