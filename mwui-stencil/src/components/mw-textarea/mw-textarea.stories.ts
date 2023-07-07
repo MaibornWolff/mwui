@@ -1,8 +1,14 @@
+import docs from "./mw-textarea.docs.mdx";
 import "../../global/global.css";
 
 export default {
   title: "Components/Textarea",
   component: "mw-textarea",
+  tags: ["autodocs"],
+
+  parameters: {
+    docs: { page: docs },
+  },
   argTypes: {
     value: {
       description: "Input value",
@@ -38,13 +44,13 @@ Default.args = {
   "value": "",
   "disabled": false,
   "name": "test-input",
-  "label": "",
-  "placeholder": "",
-  "helper-text": "",
+  "label": "Label",
+  "placeholder": "Type something...",
+  "helper-text": "helper/error text",
   "has-error": false,
-  "required": false,
+  "required": true,
   "readonly": false,
-  "resize": "none",
+  "resize": "both",
   "maxlength": "100",
   "rows": "3",
   "cols": "50",

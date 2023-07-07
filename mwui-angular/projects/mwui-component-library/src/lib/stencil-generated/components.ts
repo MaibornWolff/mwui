@@ -95,7 +95,7 @@ export class MwAutocomplete {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["mwAutocompleteValueChanged"]);
+        proxyOutputs(this, this.el, ["valueChanged"]);
     }
 }
 
@@ -103,7 +103,7 @@ export declare interface MwAutocomplete extends Components.MwAutocomplete {
     /**
      * Emits an event when its value changes
      */
-    mwAutocompleteValueChanged: EventEmitter<CustomEvent<string>>;
+    valueChanged: EventEmitter<CustomEvent<string>>;
 }
 
 @ProxyCmp({
@@ -397,7 +397,7 @@ export class MwChipInput {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["mwChipListValueChanged", "mwChipListInputChange"]);
+        proxyOutputs(this, this.el, ["valueChanged", "inputChange"]);
     }
 }
 
@@ -405,11 +405,11 @@ export declare interface MwChipInput extends Components.MwChipInput {
     /**
      * Emits an event when its value changes
      */
-    mwChipListValueChanged: EventEmitter<CustomEvent<string[]>>;
+    valueChanged: EventEmitter<CustomEvent<string[]>>;
     /**
      * Emits an event when value of input changes
      */
-    mwChipListInputChange: EventEmitter<CustomEvent<string>>;
+    inputChange: EventEmitter<CustomEvent<string>>;
 }
 
 @ProxyCmp({
@@ -906,6 +906,40 @@ export declare interface MwTabs extends Components.MwTabs {
 }
 
 @ProxyCmp({
+    inputs: ["cols", "disabled", "form", "hasError", "helperText", "label", "maxlength", "name", "placeholder", "readonly", "required", "resize", "rows", "value"],
+})
+@Component({
+    selector: "mw-textarea",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: ["cols", "disabled", "form", "hasError", "helperText", "label", "maxlength", "name", "placeholder", "readonly", "required", "resize", "rows", "value"],
+})
+export class MwTextarea {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["inputEmitter", "changeEmitter", "blurEmitter"]);
+    }
+}
+
+export declare interface MwTextarea extends Components.MwTextarea {
+    /**
+     * emit input event
+     */
+    inputEmitter: EventEmitter<CustomEvent<string>>;
+    /**
+     * emit change event
+     */
+    changeEmitter: EventEmitter<CustomEvent<any>>;
+    /**
+     * emit blur event
+     */
+    blurEmitter: EventEmitter<CustomEvent<any>>;
+}
+
+@ProxyCmp({
     inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
 })
 @Component({
@@ -920,7 +954,7 @@ export class MwTextfield {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["mwTextfieldValueChanged"]);
+        proxyOutputs(this, this.el, ["valueChanged"]);
     }
 }
 
@@ -928,5 +962,5 @@ export declare interface MwTextfield extends Components.MwTextfield {
     /**
      * MwTextfield emits an event when textfield value changes
      */
-    mwTextfieldValueChanged: EventEmitter<CustomEvent<string>>;
+    valueChanged: EventEmitter<CustomEvent<string>>;
 }
