@@ -88,6 +88,6 @@ export default {
     align-items: center;
 }
 #textarea {
-    width: 500px;
+    width: 100%;
 }
 </style>
