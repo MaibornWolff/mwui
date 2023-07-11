@@ -60,7 +60,7 @@ export declare interface MwAppBarTitle extends Components.MwAppBarTitle {}
         "placeholder",
         "readOnly",
         "required",
-        "selected",
+        "selection",
         "type",
         "value",
     ],
@@ -85,7 +85,7 @@ export declare interface MwAppBarTitle extends Components.MwAppBarTitle {}
         "placeholder",
         "readOnly",
         "required",
-        "selected",
+        "selection",
         "type",
         "value",
     ],
@@ -95,7 +95,7 @@ export class MwAutocomplete {
     constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
         c.detach();
         this.el = r.nativeElement;
-        proxyOutputs(this, this.el, ["valueChanged"]);
+        proxyOutputs(this, this.el, ["selectionChanged"]);
     }
 }
 
@@ -103,7 +103,7 @@ export declare interface MwAutocomplete extends Components.MwAutocomplete {
     /**
      * Emits an event when its value changes
      */
-    valueChanged: EventEmitter<CustomEvent<string>>;
+    selectionChanged: EventEmitter<CustomEvent<string>>;
 }
 
 @ProxyCmp({
@@ -856,7 +856,7 @@ export declare interface MwSwitch extends Components.MwSwitch {
     /**
      * MwSwitch emits an event when switch checked state changes
      */
-    emitter: EventEmitter<CustomEvent<any>>;
+    emitter: EventEmitter<CustomEvent<boolean>>;
 }
 
 @ProxyCmp({

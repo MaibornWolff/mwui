@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-07-07T14:40:55",
+  "timestamp": "2023-07-11T13:23:06",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.3.1",
@@ -3945,10 +3945,10 @@
       "events": [
         {
           "event": "emitter",
-          "detail": "any",
+          "detail": "boolean",
           "bubbles": true,
-          "cancelable": false,
-          "composed": false,
+          "cancelable": true,
+          "composed": true,
           "docs": "MwSwitch emits an event when switch checked state changes",
           "docsTags": []
         }

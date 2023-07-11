@@ -1994,7 +1994,7 @@ declare namespace LocalJSX {
     /**
      * MwSwitch emits an event when switch checked state changes
      */
-    onEmitter?: (event: MwSwitchCustomEvent<any>) => void;
+    onEmitter?: (event: MwSwitchCustomEvent<boolean>) => void;
     /**
      * Provide unique identifier for automated testing
      */

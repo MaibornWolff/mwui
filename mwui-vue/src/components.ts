@@ -26,8 +26,8 @@ export const MwAutocomplete = /*@__PURE__*/ defineContainer<JSX.MwAutocomplete>(
     "maximum",
     "maximumText",
     "optionCounter",
-    "selected",
-    "valueChanged",
+    "selection",
+    "selectionChanged",
 ]);
 
 export const MwAvatar = /*@__PURE__*/ defineContainer<JSX.MwAvatar>("mw-avatar", undefined, ["testId", "src", "icon", "alt", "size"]);

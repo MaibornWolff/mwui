@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event     | Description                                               | Type               |
-| --------- | --------------------------------------------------------- | ------------------ |
-| `emitter` | MwSwitch emits an event when switch checked state changes | `CustomEvent<any>` |
+| Event     | Description                                               | Type                   |
+| --------- | --------------------------------------------------------- | ---------------------- |
+| `emitter` | MwSwitch emits an event when switch checked state changes | `CustomEvent<boolean>` |
 
 ## Dependencies
 
