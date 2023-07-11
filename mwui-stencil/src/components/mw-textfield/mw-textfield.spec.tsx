@@ -1,4 +1,4 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { SpecPage, newSpecPage } from "@stencil/core/testing";
 import { h } from "@stencil/core";
 import { MwTextfield } from "./mw-textfield";
 
@@ -20,7 +20,7 @@ describe("GIVEN MwTextfield", () => {
       name: "",
     },
     slottedContent = "",
-  ) => {
+  ): Promise<SpecPage> => {
     return await newSpecPage({
       components: [MwTextfield],
       template: () => (

@@ -252,6 +252,7 @@ export class MwChipInput {
                     value={this.value}
                     disabled={disabled}
                     onInput={this.handleInputChange}
+                    onChange={this.onValueChange}
                   />
                 )}
               </div>

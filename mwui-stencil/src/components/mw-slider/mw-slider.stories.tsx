@@ -3,6 +3,7 @@ import docs from "./mw-slider.docs.mdx";
 export default {
   title: "Components/Slider",
   component: "mw-slider",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

@@ -17,6 +17,7 @@
 - [mw-autocomplete](../mw-autocomplete)
 - [mw-chip-input](../mw-chip-input)
 - [mw-dropdown](../mw-dropdown)
+- [mw-textarea](../mw-textarea)
 - [mw-textfield](../mw-textfield)
 
 ### Graph
@@ -26,6 +27,7 @@ graph TD;
   mw-autocomplete --> mw-label
   mw-chip-input --> mw-label
   mw-dropdown --> mw-label
+  mw-textarea --> mw-label
   mw-textfield --> mw-label
   style mw-label fill:#f9f,stroke:#333,stroke-width:4px
 ```

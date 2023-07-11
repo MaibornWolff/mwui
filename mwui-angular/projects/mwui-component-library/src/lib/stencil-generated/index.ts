@@ -38,5 +38,6 @@ export const DIRECTIVES = [
     d.MwSwitch,
     d.MwTab,
     d.MwTabs,
+    d.MwTextarea,
     d.MwTextfield,
 ];

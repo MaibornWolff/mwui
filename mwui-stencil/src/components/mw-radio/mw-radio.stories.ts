@@ -3,6 +3,7 @@ import docs from "./mw-radio.docs.mdx";
 export default {
   title: "Components/Radio",
   component: "mw-radio",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },
@@ -15,7 +16,7 @@ const Template = args => `
   name="${args.name}"
   checked="${args.checked}"
   disabled="${args.disabled}"
-  label="${args.label}"
+  label="${args.label}">
 </mw-radio>`;
 
 export const EnabledUnchecked = Template.bind({});

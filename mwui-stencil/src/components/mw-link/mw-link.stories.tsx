@@ -3,6 +3,7 @@ import docs from "./mw-link.docs.mdx";
 export default {
   title: "Components/Link",
   component: "mw-link",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

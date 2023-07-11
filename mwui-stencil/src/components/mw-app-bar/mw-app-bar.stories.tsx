@@ -4,6 +4,7 @@ import logo from "../../../.storybook/public/mw_logo.svg";
 export default {
   title: "Components/AppBar",
   component: "mw-app-bar",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

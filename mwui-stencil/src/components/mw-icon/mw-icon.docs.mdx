@@ -1,9 +1,13 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
-import '../../global/global.css';
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwIcon from "./mw-icon.stories.ts";
 
-# Icons
+<Title>Icons</Title>
 
-The `mw-icon` component is a wrapper for [Material Symbols](https://developers.google.com/fonts/docs/material_symbols) made available via webfonts. Material Symbols bring variable font styles (fill, weight, grade, and optical size).
+<Subtitle>
+  The <code>mw-icon</code> component is a wrapper for [Material Symbols](https://developers.google.com/fonts/docs/material_symbols) made available via webfonts.
+</Subtitle>
+
+Material Symbols bring variable font styles (fill, weight, grade, and optical size).
 Those font styles can be configured with the `mw-icon` props and come with default values.
 
 Available icons can be found in the MWUI internal [Icon Gallery](#available-icons). We use the same names as the Material Font does. However you might want to reference to this Storybooks docs about available icons and options as the underlying Icon Library might be swapped if necessary.
@@ -25,9 +29,19 @@ Available icons can be found in the MWUI internal [Icon Gallery](#available-icon
   </div>
 </div>
 
-<Canvas withSource="open">
-  <Story id="components-icon--default" />
-</Canvas>
+<Canvas
+  of={MwIcon.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-icon", "_blank");
+      },
+    },
+  ]}
+/>
 
 ## Variable Font Style
 
@@ -38,7 +52,7 @@ As we use [Material Symbols](https://developers.google.com/fonts/docs/material_s
 If there is a need to make use of the variable styles, just provide the props needed as described below. Find more information about the usage at Material Symbols guide: [font axes/variable styles](https://developers.google.com/fonts/docs/material_symbols).
 
 <Canvas>
-  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', justifyContent: 'start' }}>
+  <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "start" }}>
     <mw-icon icon="favorite" fill size="large"></mw-icon>
     <mw-icon icon="favorite" weight="700" size="large"></mw-icon>
     <mw-icon icon="favorite" weight="100" size="large"></mw-icon>
@@ -46,7 +60,7 @@ If there is a need to make use of the variable styles, just provide the props ne
   </div>
 </Canvas>
 
-<ArgsTable of="mw-icon" />
+<ArgTypes of="mw-icon" />
 
 ## Available Icons
 

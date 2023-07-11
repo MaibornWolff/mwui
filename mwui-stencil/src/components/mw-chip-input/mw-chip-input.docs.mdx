@@ -1,35 +1,42 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwChipInput from "./mw-chip-input.stories.tsx";
 
-# Chip Input
+<Title>Chip Input</Title>
 
-The Chip Input component allows users to enter multiple entries into an input field.
+<Subtitle>The Chip Input component allows users to enter multiple entries into an input field.</Subtitle>
 
 Icons can be added to the input field using the `icon-start` and `icon-end` slots.
 
-<ArgsTable of="mw-chip-input" />
+<Canvas
+  of={MwChipInput.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-chip", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of="mw-chip-input" />
 
 ## Examples
 
 ## Default
 
-<Canvas>
-  <Story id="components-chipinput--default" />
-</Canvas>
+<Canvas of={MwChipInput.Default} />
 
 ## Inline
 
-<Canvas>
-  <Story id="components-chipinput--inline" />
-</Canvas>
+<Canvas of={MwChipInput.Inline} />
 
 ## Disabled
 
-<Canvas>
-  <Story id="components-chipinput--disabled" />
-</Canvas>
+<Canvas of={MwChipInput.Disabled} />
 
 ## Error
 
-<Canvas>
-  <Story id="components-chipinput--error" />
-</Canvas>
+<Canvas of={MwChipInput.Error} />

@@ -42,6 +42,7 @@
     "@stencil/core": "^3.1.0",
     "@stencil/react-output-target": "^0.4.0",
     "@stencil/vue-output-target": "^0.8.6",
+    "@storybook/web-components": "^7.0.26",
     "prettier": "^2.7.1"
   },
   "devDependencies": {

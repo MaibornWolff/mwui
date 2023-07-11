@@ -3,6 +3,7 @@ import docs from "./mw-divider.docs.mdx";
 export default {
   title: "Components/Divider",
   component: "mw-divider",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

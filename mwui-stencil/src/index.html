@@ -146,6 +146,13 @@
       </div>
     </section>
     <section>
+      <h2>Textarea</h2>
+      <mw-textarea placeholder="Placeholder" rows="5" cols="100" required label="Label"></mw-textarea>
+      <mw-textarea placeholder="Placeholder" rows="2" cols="10" label="Resizable" resize="vertical"></mw-textarea>
+      <mw-textarea placeholder="Placeholder" rows="2" cols="20" label="Resizable" disabled></mw-textarea>
+      <mw-textarea placeholder="Placeholder" rows="2" cols="20" label="Resizable" readonly value="read only..."></mw-textarea>
+    </section>
+    <section>
       <br />
       <hr />
       <h2>Controls</h2>
@@ -539,6 +546,16 @@
 
     autocomplete.addEventListener("change", event => {
       console.log("autocomplete changed", event.target.selection);
+    });
+
+    const textarea = document.getElementsByTagName("mw-textarea")[0];
+
+    textarea.addEventListener("input", event => {
+      console.log("textarea input", event);
+    });
+
+    textarea.addEventListener("change", event => {
+      console.log("textarea change", event);
     });
 
     for (var i = 0; i < cards.length; i++) {

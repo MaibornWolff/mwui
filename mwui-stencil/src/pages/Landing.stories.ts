@@ -6,7 +6,7 @@ import tokenIcon from "../../.storybook/public/token_icon.svg";
 import tokenCloud from "../../.storybook/public/token_cloud.svg";
 
 export default {
-  title: "Pages/Demo",
+  title: "Pages/Landing",
 };
 
 const Template = (): string => `

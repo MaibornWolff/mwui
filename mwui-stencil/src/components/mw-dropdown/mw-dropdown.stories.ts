@@ -3,6 +3,7 @@ import docs from "./mw-dropdown.docs.mdx";
 export default {
   title: "Components/Dropdown",
   component: "mw-dropdown",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

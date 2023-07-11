@@ -1,19 +1,32 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwLink from "./mw-link.stories.tsx";
 
-# Link
+<Title>Link</Title>
 
-With the link component you can link to different url using the `href` prop.
+<Subtitle>
+  With the link component you can link to different url using the <code>href</code> prop.
+</Subtitle>
 
-<ArgsTable of="mw-link" />
+<Canvas
+  of={MwLink.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-link", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of="mw-link" />
 
 ### Default
 
-<Canvas>
-  <Story id="components-link--default" />
-</Canvas>
+<Canvas of={MwLink.Default} />
 
 ### No Underline
 
-<Canvas>
-  <Story id="components-link--no-underline" />
-</Canvas>
+<Canvas of={MwLink.NoUnderline} />

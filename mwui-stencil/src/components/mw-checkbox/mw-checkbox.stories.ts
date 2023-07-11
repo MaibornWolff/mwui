@@ -3,6 +3,7 @@ import docs from "./mw-checkbox.docs.mdx";
 export default {
   title: "Components/Checkbox",
   component: "mw-checkbox",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

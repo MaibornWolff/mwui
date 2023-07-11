@@ -1,11 +1,6 @@
-import docs from "../mw-menu/mw-menu.docs.mdx";
-
 export default {
   title: "Components/MenuItem",
   component: "mw-menu-item",
-  parameters: {
-    docs: { page: docs },
-  },
 };
 
 const DefaultTemplate = args => `

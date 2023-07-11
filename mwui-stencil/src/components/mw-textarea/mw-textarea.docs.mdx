@@ -1,0 +1,33 @@
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwTextarea from "./mw-textarea.stories.ts";
+import "../../global/global.css";
+
+<Title>Textarea</Title>
+
+<Subtitle>The Textarea web component provides a textarea element wrapped with optional labelling, icons, helper texts and errors states.</Subtitle>
+
+<Canvas
+  of={MwTextarea.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-textarea", "_blank");
+      },
+    },
+  ]}
+/>
+
+### Native HTMLInputElement
+
+When importing the global `@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css` also the native HTML textarea element can be used in a MWUI styled version.
+
+<textarea rows="4" cols="50" placeholder="I'm a plain HTML textarea element..." />
+
+<ArgTypes of="mw-textarea" />
+
+### Default
+
+<Canvas of={MwTextarea.Default} />

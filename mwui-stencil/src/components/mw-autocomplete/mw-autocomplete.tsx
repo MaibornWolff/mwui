@@ -227,7 +227,8 @@ export class MwAutocomplete {
                   name={this.name}
                   hasError={this.hasError}
                   placeholder={this.placeholder}
-                  onMwTextfieldValueChanged={this.onInputChange}
+                  onChange={this.onInputChange}
+                  onInput={this.onInputChange}
                   slot="anchor"
                 >
                   {this.hasIconStartSlot && (

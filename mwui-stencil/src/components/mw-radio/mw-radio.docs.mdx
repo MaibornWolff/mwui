@@ -1,33 +1,40 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwRadio from "./mw-radio.stories.ts";
 
-# Radio Button
+<Title>Radio Button</Title>
 
-Radio buttons allow for a single option to be selected from a visible list.
+<Subtitle>Radio buttons allow for a single option to be selected from a visible list.</Subtitle>
 
 All radio-buttons with the same name property comprise a set from which only one may be selected at a time.
 
-<ArgsTable of="mw-radio" />
+<Canvas
+  of={MwRadio.EnabledUnchecked}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-radio", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of="mw-radio" />
 
 ### Enabled/Unchecked
 
-<Canvas>
-  <Story id="components-radio--enabled-unchecked" />
-</Canvas>
+<Canvas of={MwRadio.EnabledUnchecked} />
 
 ### Enabled/Checked
 
-<Canvas>
-  <Story id="components-radio--enabled-checked" />
-</Canvas>
+<Canvas of={MwRadio.EnabledChecked} />
 
 ### Disabled/Unchecked
 
-<Canvas>
-  <Story id="components-radio--disabled-unchecked" />
-</Canvas>
+<Canvas of={MwRadio.DisabledUnchecked} />
 
 ### Disabled/Checked
 
-<Canvas>
-  <Story id="components-radio--disabled-checked" />
-</Canvas>
+<Canvas of={MwRadio.DisabledChecked} />

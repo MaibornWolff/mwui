@@ -3,6 +3,7 @@ import docs from "./mw-popover.docs.mdx";
 export default {
   title: "Components/Popover",
   component: "mw-popover",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

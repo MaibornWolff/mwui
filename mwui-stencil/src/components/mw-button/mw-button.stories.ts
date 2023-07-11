@@ -3,6 +3,7 @@ import docs from "./mw-button.docs.mdx";
 export default {
   title: "Components/Button",
   component: "mw-button",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

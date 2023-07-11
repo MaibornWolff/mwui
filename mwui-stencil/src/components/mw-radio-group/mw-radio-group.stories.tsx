@@ -3,6 +3,7 @@ import docs from "./mw-radio-group.docs.mdx";
 export default {
   title: "Components/RadioGroup",
   component: "mw-radio-group",
+  tags: ["autodocs"],
   parameters: {
     docs: { page: docs },
   },

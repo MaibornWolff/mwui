@@ -793,6 +793,64 @@ export namespace Components {
      */
     testId: string;
   }
+  interface MwTextarea {
+    /**
+     * Visible width of textarea
+     */
+    cols?: number;
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * formId
+     */
+    form?: string;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Maximum allowed characters
+     */
+    maxlength?: number;
+    /**
+     * input field name
+     */
+    name: string;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readonly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * enable or disable resizing option of textarea
+     */
+    resize?: "both" | "none" | "horizontal" | "vertical";
+    /**
+     * Visible number of lines
+     */
+    rows?: number;
+    /**
+     * input field value
+     */
+    value?: string;
+  }
   interface MwTextfield {
     /**
      * Visually and functionally disabled input
@@ -899,6 +957,10 @@ export interface MwSwitchCustomEvent<T> extends CustomEvent<T> {
 export interface MwTabsCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwTabsElement;
+}
+export interface MwTextareaCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwTextareaElement;
 }
 export interface MwTextfieldCustomEvent<T> extends CustomEvent<T> {
   detail: T;
@@ -1090,6 +1152,11 @@ declare global {
     prototype: HTMLMwTabsElement;
     new (): HTMLMwTabsElement;
   };
+  interface HTMLMwTextareaElement extends Components.MwTextarea, HTMLStencilElement {}
+  var HTMLMwTextareaElement: {
+    prototype: HTMLMwTextareaElement;
+    new (): HTMLMwTextareaElement;
+  };
   interface HTMLMwTextfieldElement extends Components.MwTextfield, HTMLStencilElement {}
   var HTMLMwTextfieldElement: {
     prototype: HTMLMwTextfieldElement;
@@ -1133,6 +1200,7 @@ declare global {
     "mw-switch": HTMLMwSwitchElement;
     "mw-tab": HTMLMwTabElement;
     "mw-tabs": HTMLMwTabsElement;
+    "mw-textarea": HTMLMwTextareaElement;
     "mw-textfield": HTMLMwTextfieldElement;
   }
 }
@@ -1964,6 +2032,76 @@ declare namespace LocalJSX {
      */
     testId?: string;
   }
+  interface MwTextarea {
+    /**
+     * Visible width of textarea
+     */
+    cols?: number;
+    /**
+     * Visually and functionally disabled input
+     */
+    disabled?: boolean;
+    /**
+     * formId
+     */
+    form?: string;
+    /**
+     * Use to display input and helper-text in error state
+     */
+    hasError?: boolean;
+    /**
+     * HelperText to be displayed. Can be used as hint or error text when combined with `has-error`
+     */
+    helperText?: string;
+    /**
+     * Label to be displayed
+     */
+    label?: string;
+    /**
+     * Maximum allowed characters
+     */
+    maxlength?: number;
+    /**
+     * input field name
+     */
+    name?: string;
+    /**
+     * emit blur event
+     */
+    onBlurEmitter?: (event: MwTextareaCustomEvent<any>) => void;
+    /**
+     * emit change event
+     */
+    onChangeEmitter?: (event: MwTextareaCustomEvent<any>) => void;
+    /**
+     * emit input event
+     */
+    onInputEmitter?: (event: MwTextareaCustomEvent<string>) => void;
+    /**
+     * Placeholder to be displayed
+     */
+    placeholder?: string;
+    /**
+     * Whether user can't type in input field
+     */
+    readonly?: boolean;
+    /**
+     * Mark input as required
+     */
+    required?: boolean;
+    /**
+     * enable or disable resizing option of textarea
+     */
+    resize?: "both" | "none" | "horizontal" | "vertical";
+    /**
+     * Visible number of lines
+     */
+    rows?: number;
+    /**
+     * input field value
+     */
+    value?: string;
+  }
   interface MwTextfield {
     /**
      * Visually and functionally disabled input
@@ -1992,7 +2130,7 @@ declare namespace LocalJSX {
     /**
      * MwTextfield emits an event when textfield value changes
      */
-    onMwTextfieldValueChanged?: (event: MwTextfieldCustomEvent<string>) => void;
+    onValueChanged?: (event: MwTextfieldCustomEvent<string>) => void;
     /**
      * Placeholder to be displayed
      */
@@ -2052,6 +2190,7 @@ declare namespace LocalJSX {
     "mw-switch": MwSwitch;
     "mw-tab": MwTab;
     "mw-tabs": MwTabs;
+    "mw-textarea": MwTextarea;
     "mw-textfield": MwTextfield;
   }
 }
@@ -2096,6 +2235,7 @@ declare module "@stencil/core" {
       "mw-switch": LocalJSX.MwSwitch & JSXBase.HTMLAttributes<HTMLMwSwitchElement>;
       "mw-tab": LocalJSX.MwTab & JSXBase.HTMLAttributes<HTMLMwTabElement>;
       "mw-tabs": LocalJSX.MwTabs & JSXBase.HTMLAttributes<HTMLMwTabsElement>;
+      "mw-textarea": LocalJSX.MwTextarea & JSXBase.HTMLAttributes<HTMLMwTextareaElement>;
       "mw-textfield": LocalJSX.MwTextfield & JSXBase.HTMLAttributes<HTMLMwTextfieldElement>;
     }
   }

@@ -15,7 +15,4 @@ module.exports = {
   features: {
     buildStoriesJson: true,
   },
-  docs: {
-    autodocs: true,
-  },
 };
