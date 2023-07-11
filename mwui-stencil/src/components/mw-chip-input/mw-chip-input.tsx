@@ -14,12 +14,12 @@ export class MwChipInput {
   /**
    * Emits an event when its value changes
    */
-  @Event({ bubbles: true, composed: false }) valueChanged: EventEmitter<string[]>;
+  @Event({ bubbles: true, composed: true, eventName: "valueChanged" }) valueChanged: EventEmitter<string[]>;
 
   /**
    * Emits an event when value of input changes
    */
-  @Event({ bubbles: true, composed: false }) inputChange: EventEmitter<string>;
+  @Event({ bubbles: true, composed: true }) inputChange: EventEmitter<string>;
   /**
    * input field name
    */
@@ -143,6 +143,11 @@ export class MwChipInput {
     this.focused = false;
   };
 
+  private onRemoveSelection = (value: string): void => {
+    this._selection.deselect(value);
+    this.onValueChange();
+  };
+
   private addMultiValue = (value: string): void => {
     if (value.trim()?.length === 0) {
       return;
@@ -162,18 +167,18 @@ export class MwChipInput {
     this.onValueChange();
   };
 
-  private onValueChange(): void {
+  private onValueChange = (): void => {
     this.selected = this._selection.selected;
     this.valueChanged.emit(this.selected);
-  }
+  };
 
-  private handleInputChange(): void {
+  private handleInputChange = (): void => {
     this.inputChange.emit(this.inputElement.value);
-  }
+  };
 
-  private canAddToValues(): boolean {
+  private canAddToValues = (): boolean => {
     return !this.maximum || this.selected?.length < this.maximum;
-  }
+  };
 
   render() {
     const {
@@ -228,7 +233,7 @@ export class MwChipInput {
               </span>
               <div class="input-options">
                 {selected?.map(v => (
-                  <mw-chip key={v} showClose={true} value={v} selected={true} toggleable={false} disabled={disabled}>
+                  <mw-chip key={v} onMwChipClose={() => this.onRemoveSelection(v)} showClose={true} value={v} selected={true} toggleable={false} disabled={disabled}>
                     {v}
                   </mw-chip>
                 ))}

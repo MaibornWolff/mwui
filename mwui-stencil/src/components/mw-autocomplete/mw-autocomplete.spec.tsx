@@ -1,4 +1,4 @@
-import { newSpecPage } from "@stencil/core/testing";
+import { SpecPage, newSpecPage } from "@stencil/core/testing";
 import { h } from "@stencil/core";
 import { MwAutocomplete } from "./mw-autocomplete";
 
@@ -7,7 +7,7 @@ describe("Given MwAutocomplete", () => {
     name: "some-name",
     label: "some-label",
     required: false,
-    selected: [],
+    selection: [],
   };
   const setup = async ({
     name,
@@ -18,8 +18,8 @@ describe("Given MwAutocomplete", () => {
     inline,
     required,
     disabled,
-    selected,
-  }: Pick<MwAutocomplete, "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled" | "selected"> = defaultProps) => {
+    selection,
+  }: Pick<MwAutocomplete, "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled" | "selection"> = defaultProps): Promise<SpecPage> => {
     return await newSpecPage({
       components: [MwAutocomplete],
       template: () => (
@@ -31,7 +31,7 @@ describe("Given MwAutocomplete", () => {
           has-error={hasError}
           inline={inline}
           required={required}
-          selected={selected}
+          selection={selection}
           disabled={disabled}
         ></mw-autcomplete>
       ),

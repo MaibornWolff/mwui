@@ -338,9 +338,9 @@
           "required": false
         },
         {
-          "name": "selected",
+          "name": "selection",
           "type": "string[]",
-          "mutable": false,
+          "mutable": true,
           "reflectToAttr": false,
           "docs": "Currently selected options",
           "docsTags": [],
@@ -393,7 +393,7 @@
       "methods": [],
       "events": [
         {
-          "event": "valueChanged",
+          "event": "selectionChanged",
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
@@ -1793,7 +1793,7 @@
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
-          "composed": false,
+          "composed": true,
           "docs": "Emits an event when value of input changes",
           "docsTags": []
         },
@@ -1802,7 +1802,7 @@
           "detail": "string[]",
           "bubbles": true,
           "cancelable": true,
-          "composed": false,
+          "composed": true,
           "docs": "Emits an event when its value changes",
           "docsTags": []
         }

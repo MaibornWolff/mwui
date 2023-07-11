@@ -23,6 +23,16 @@ import * as MwAutocompleteStories from "./mw-autocomplete.stories.tsx";
   ]}
 />
 
+## Listen to changes
+
+Whenever the selection is updated, a `selectionChanged` event is fired. The currently selected items can be retrieved from the element, like `event.target.selection`.
+
+```javascript
+document.getElementById("my-autocomplete").addEventListener("selectionChanged", event => {
+  console.log(event.target.selection); // yields an array of strings
+});
+```
+
 <ArgTypes of="mw-autocomplete" />
 
 ## Examples
