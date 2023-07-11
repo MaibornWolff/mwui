@@ -517,6 +517,20 @@ export declare const MwTabs: import("vue").DefineComponent<
     Readonly<JSX.MwTabs & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
     {}
 >;
+export declare const MwTextarea: import("vue").DefineComponent<
+    JSX.MwTextarea & import("./vue-component-lib/utils").InputProps<string | number | boolean>,
+    object,
+    {},
+    import("vue").ComputedOptions,
+    import("vue").MethodOptions,
+    import("vue").ComponentOptionsMixin,
+    import("vue").ComponentOptionsMixin,
+    {},
+    string,
+    import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps,
+    Readonly<JSX.MwTextarea & import("./vue-component-lib/utils").InputProps<string | number | boolean>>,
+    {}
+>;
 export declare const MwTextfield: import("vue").DefineComponent<
     JSX.MwTextfield & import("./vue-component-lib/utils").InputProps<string | number | boolean>,
     object,

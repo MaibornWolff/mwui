@@ -18,8 +18,8 @@ export const MwAutocomplete = defineContainer("mw-autocomplete", undefined, [
     "maximum",
     "maximumText",
     "optionCounter",
-    "selected",
-    "mwAutocompleteValueChanged",
+    "selection",
+    "selectionChanged",
 ]);
 export const MwAvatar = defineContainer("mw-avatar", undefined, ["testId", "src", "icon", "alt", "size"]);
 export const MwBackdrop = defineContainer("mw-backdrop", undefined, ["backdropDismiss", "backdropClick"]);
@@ -40,13 +40,14 @@ export const MwCardFooter = defineContainer("mw-card-footer", undefined, [
     "justifySpaceEvenly",
 ]);
 export const MwCardHeader = defineContainer("mw-card-header", undefined, ["header", "subheader"]);
-export const MwCardImage = defineContainer("mw-card-image", undefined, ["src", "alt"]);
+export const MwCardImage = defineContainer("mw-card-image", undefined, ["src", "alt", "height"]);
 export const MwCardTitle = defineContainer("mw-card-title", undefined, ["text", "subtitle", "metadata"]);
 export const MwCheckbox = defineContainer("mw-checkbox", undefined, ["testId", "value", "name", "checked", "disabled", "label", "emitter"]);
 export const MwChip = defineContainer("mw-chip", undefined, ["testId", "icon", "disabled", "toggleable", "showClose", "value", "selected", "mwChipClick", "mwChipClose"]);
 export const MwChipInput = defineContainer("mw-chip-input", undefined, [
     "name",
     "label",
+    "value",
     "placeholder",
     "disabled",
     "maximum",
@@ -56,8 +57,8 @@ export const MwChipInput = defineContainer("mw-chip-input", undefined, [
     "required",
     "optionCounter",
     "selectedChips",
-    "mwChipListValueChanged",
-    "mwChipListInputChange",
+    "valueChanged",
+    "inputChange",
 ]);
 export const MwDivider = defineContainer("mw-divider", undefined, ["inset"]);
 export const MwDropdown = defineContainer("mw-dropdown", undefined, [
@@ -106,6 +107,25 @@ export const MwSlider = defineContainer("mw-slider", undefined, [
 export const MwSwitch = defineContainer("mw-switch", undefined, ["testId", "disabled", "label", "on", "off", "checked", "emitter"]);
 export const MwTab = defineContainer("mw-tab", undefined, ["selected", "icon", "label", "disabled"]);
 export const MwTabs = defineContainer("mw-tabs", undefined, ["testId", "selected", "tabsClickEmitter"]);
+export const MwTextarea = defineContainer("mw-textarea", undefined, [
+    "value",
+    "name",
+    "label",
+    "placeholder",
+    "helperText",
+    "hasError",
+    "required",
+    "disabled",
+    "readonly",
+    "maxlength",
+    "rows",
+    "cols",
+    "form",
+    "resize",
+    "inputEmitter",
+    "changeEmitter",
+    "blurEmitter",
+]);
 export const MwTextfield = defineContainer("mw-textfield", undefined, [
     "type",
     "value",
@@ -118,6 +138,6 @@ export const MwTextfield = defineContainer("mw-textfield", undefined, [
     "required",
     "disabled",
     "readOnly",
-    "mwTextfieldValueChanged",
+    "valueChanged",
 ]);
 //# sourceMappingURL=components.js.map
