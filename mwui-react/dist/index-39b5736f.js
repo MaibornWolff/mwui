@@ -1,3 +1,5 @@
+'use strict';
+
 function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
@@ -35861,33 +35863,33 @@ const loadModule = (cmpMeta, hostRef, hmrVersionId) => {
       switch(bundleId) {
         
         case 'mw-app-bar_33':
-          return import(
+          return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-app-bar_33.entry-ec4a363e.js').then(processMod, consoleError);
+            './mw-app-bar_33.entry-b983ca09.js'); }).then(processMod, consoleError);
         case 'mw-img':
-          return import(
+          return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-img.entry-fab32711.js').then(processMod, consoleError);
+            './mw-img.entry-6517fdb1.js'); }).then(processMod, consoleError);
         case 'mw-modal':
-          return import(
+          return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-modal.entry-d9135da4.js').then(processMod, consoleError);
+            './mw-modal.entry-85db31be.js'); }).then(processMod, consoleError);
         case 'mw-modal-footer':
-          return import(
+          return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-modal-footer.entry-c16a5c48.js').then(processMod, consoleError);
+            './mw-modal-footer.entry-cb37ef6b.js'); }).then(processMod, consoleError);
         case 'mw-modal-title':
-          return import(
+          return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-modal-title.entry-acb0e6ba.js').then(processMod, consoleError);
+            './mw-modal-title.entry-65461b15.js'); }).then(processMod, consoleError);
         case 'mw-radio-group':
-          return import(
+          return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-radio-group.entry-da9aa8c0.js').then(processMod, consoleError);
+            './mw-radio-group.entry-ab7f2c80.js'); }).then(processMod, consoleError);
         case 'mw-backdrop':
-          return import(
+          return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-backdrop.entry-97e0dd3a.js').then(processMod, consoleError);
+            './mw-backdrop.entry-2a6f7461.js'); }).then(processMod, consoleError);
       }
     }
     return import(
@@ -36036,4 +36038,47 @@ const MwTabs = /*@__PURE__*/ createReactComponent("mw-tabs");
 const MwTextarea = /*@__PURE__*/ createReactComponent("mw-textarea");
 const MwTextfield = /*@__PURE__*/ createReactComponent("mw-textfield");
 
-export { MwLogin as A, MwMenu as B, MwMenuItem as C, MwMenuList as D, MwModal as E, MwModalFooter as F, MwModalTitle as G, Host as H, MwPopover as I, MwRadio as J, MwRadioGroup as K, MwSlider as L, MwAppBar as M, MwSwitch as N, MwTab as O, MwTabs as P, MwTextarea as Q, MwTextfield as R, MwAppBarTitle as a, MwAutocomplete as b, createEvent as c, MwAvatar as d, MwBackdrop as e, MwButton as f, getElement as g, h, MwCard as i, MwCardBody as j, MwCardFooter as k, MwCardHeader as l, MwCardImage as m, MwCardTitle as n, MwCheckbox as o, MwChip as p, MwChipInput as q, registerInstance as r, MwDivider as s, MwDropdown as t, MwHelperText as u, MwIcon as v, MwIconGallery as w, MwImg as x, MwLabel as y, MwLink as z };
+exports.Host = Host;
+exports.MwAppBar = MwAppBar;
+exports.MwAppBarTitle = MwAppBarTitle;
+exports.MwAutocomplete = MwAutocomplete;
+exports.MwAvatar = MwAvatar;
+exports.MwBackdrop = MwBackdrop;
+exports.MwButton = MwButton;
+exports.MwCard = MwCard;
+exports.MwCardBody = MwCardBody;
+exports.MwCardFooter = MwCardFooter;
+exports.MwCardHeader = MwCardHeader;
+exports.MwCardImage = MwCardImage;
+exports.MwCardTitle = MwCardTitle;
+exports.MwCheckbox = MwCheckbox;
+exports.MwChip = MwChip;
+exports.MwChipInput = MwChipInput;
+exports.MwDivider = MwDivider;
+exports.MwDropdown = MwDropdown;
+exports.MwHelperText = MwHelperText;
+exports.MwIcon = MwIcon;
+exports.MwIconGallery = MwIconGallery;
+exports.MwImg = MwImg;
+exports.MwLabel = MwLabel;
+exports.MwLink = MwLink;
+exports.MwLogin = MwLogin;
+exports.MwMenu = MwMenu;
+exports.MwMenuItem = MwMenuItem;
+exports.MwMenuList = MwMenuList;
+exports.MwModal = MwModal;
+exports.MwModalFooter = MwModalFooter;
+exports.MwModalTitle = MwModalTitle;
+exports.MwPopover = MwPopover;
+exports.MwRadio = MwRadio;
+exports.MwRadioGroup = MwRadioGroup;
+exports.MwSlider = MwSlider;
+exports.MwSwitch = MwSwitch;
+exports.MwTab = MwTab;
+exports.MwTabs = MwTabs;
+exports.MwTextarea = MwTextarea;
+exports.MwTextfield = MwTextfield;
+exports.createEvent = createEvent;
+exports.getElement = getElement;
+exports.h = h;
+exports.registerInstance = registerInstance;

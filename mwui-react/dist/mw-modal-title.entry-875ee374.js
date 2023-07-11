@@ -1,4 +1,4 @@
-import { r as registerInstance, h, H as Host } from './index-194e1ff2.js';
+import { r as registerInstance, h, H as Host } from './index-3847b4d2.js';
 
 /*!
  * Built with Stencil

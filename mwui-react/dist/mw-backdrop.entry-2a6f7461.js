@@ -1,4 +1,6 @@
-import { r as registerInstance, c as createEvent, h, H as Host } from './index-194e1ff2.js';
+'use strict';
+
+var index = require('./index-39b5736f.js');
 
 /*!
  * Built with Stencil
@@ -9,8 +11,8 @@ const mwBackdropCss = ".backdrop{position:absolute;top:0;left:0;width:100vw;heig
 
 const MwBackdrop = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.backdropClick = createEvent(this, "backdropClick", 7);
+    index.registerInstance(this, hostRef);
+    this.backdropClick = index.createEvent(this, "backdropClick", 7);
     this.backdropDismiss = true;
   }
   onMouseDown(ev) {
@@ -25,9 +27,9 @@ const MwBackdrop = class {
     this.backdropClick.emit();
   }
   render() {
-    return (h(Host, null, h("div", { class: "backdrop" })));
+    return (index.h(index.Host, null, index.h("div", { class: "backdrop" })));
   }
 };
 MwBackdrop.style = mwBackdropCss;
 
-export { MwBackdrop as mw_backdrop };
+exports.mw_backdrop = MwBackdrop;

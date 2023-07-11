@@ -1,4 +1,6 @@
-import { r as registerInstance, h, H as Host } from './index-194e1ff2.js';
+'use strict';
+
+var index = require('./index-39b5736f.js');
 
 /*!
  * Built with Stencil
@@ -9,12 +11,12 @@ const mwModalFooterCss = ":host{display:grid;align-items:center;box-sizing:borde
 
 const MwModalFooter = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
   }
   render() {
-    return (h(Host, null, h("slot", { name: "start" }), h("slot", { name: "center" }), h("slot", { name: "end" })));
+    return (index.h(index.Host, null, index.h("slot", { name: "start" }), index.h("slot", { name: "center" }), index.h("slot", { name: "end" })));
   }
 };
 MwModalFooter.style = mwModalFooterCss;
 
-export { MwModalFooter as mw_modal_footer };
+exports.mw_modal_footer = MwModalFooter;
