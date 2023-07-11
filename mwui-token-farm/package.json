@@ -28,7 +28,7 @@
         "@maibornwolff/mwui-stencil": "^0.4.1",
         "lodash.template": "^4.5.0",
         "style-dictionary": "^3.7.0",
-        "token-transformer": "^0.0.29",
+        "token-transformer": "^0.0.33",
         "ts-node": "^10.9.1"
     },
     "publishConfig": {
