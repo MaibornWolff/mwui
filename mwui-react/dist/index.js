@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-2d942898.js');
+var index = require('./index-5391349b.js');
 
 
 
@@ -41,4 +41,5 @@ exports.MwSlider = index.MwSlider;
 exports.MwSwitch = index.MwSwitch;
 exports.MwTab = index.MwTab;
 exports.MwTabs = index.MwTabs;
+exports.MwTextarea = index.MwTextarea;
 exports.MwTextfield = index.MwTextfield;

@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-2d942898.js');
+var index = require('./index-5391349b.js');
 
 /*!
  * Built with Stencil

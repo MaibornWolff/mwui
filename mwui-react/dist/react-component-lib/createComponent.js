@@ -1,5 +1,5 @@
 import React, { createElement } from "react";
-import { attachProps, camelToDashCase, createForwardRef, dashToPascalCase, isCoveredByReact, mergeRefs } from "./utils/index.js";
+import { attachProps, camelToDashCase, createForwardRef, dashToPascalCase, isCoveredByReact, mergeRefs } from "./utils";
 export const createReactComponent = (tagName, ReactComponentContext, manipulatePropsFunction, defineCustomElement) => {
     if (defineCustomElement !== undefined) {
         defineCustomElement();

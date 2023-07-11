@@ -1,4 +1,4 @@
-import { r as registerInstance, c as createEvent, h, H as Host, g as getElement } from './index-dc90bbac.js';
+import { r as registerInstance, c as createEvent, h, H as Host, g as getElement } from './index-194e1ff2.js';
 
 /*!
  * Built with Stencil

@@ -1,4 +1,6 @@
-import { r as registerInstance, c as createEvent, h, H as Host, g as getElement } from './index-dc90bbac.js';
+'use strict';
+
+var index = require('./index-5391349b.js');
 
 /*!
  * Built with Stencil
@@ -9,9 +11,9 @@ const mwImgCss = ":host{display:block;position:relative;width:100%;height:100%}:
 
 const MwImg = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.imgDidLoad = createEvent(this, "imgDidLoad", 6);
-    this.imgLoadError = createEvent(this, "imgLoadError", 6);
+    index.registerInstance(this, hostRef);
+    this.imgDidLoad = index.createEvent(this, "imgDidLoad", 6);
+    this.imgLoadError = index.createEvent(this, "imgLoadError", 6);
     this.onIntersection = async (entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) {
@@ -79,13 +81,13 @@ const MwImg = class {
   }
   render() {
     const { src, alt, preloadSrc, isLoaded, srcSetState, onLoad, onError } = this;
-    return (h(Host, { class: "mw-img" }, h("img", { decoding: "async", "data-src": src, alt: alt, part: "image", onLoad: onLoad.bind(this), onError: onError.bind(this), ref: el => (this.imgElement = el), srcset: srcSetState }), preloadSrc && !isLoaded && (h("span", null, h("img", { decoding: "sync", src: preloadSrc, alt: alt, id: "preload-img" }), h("div", { class: "blur" })))));
+    return (index.h(index.Host, { class: "mw-img" }, index.h("img", { decoding: "async", "data-src": src, alt: alt, part: "image", onLoad: onLoad.bind(this), onError: onError.bind(this), ref: el => (this.imgElement = el), srcset: srcSetState }), preloadSrc && !isLoaded && (index.h("span", null, index.h("img", { decoding: "sync", src: preloadSrc, alt: alt, id: "preload-img" }), index.h("div", { class: "blur" })))));
   }
-  get el() { return getElement(this); }
+  get el() { return index.getElement(this); }
   static get watchers() { return {
     "srcset": ["onSrcSet"]
   }; }
 };
 MwImg.style = mwImgCss;
 
-export { MwImg as mw_img };
+exports.mw_img = MwImg;

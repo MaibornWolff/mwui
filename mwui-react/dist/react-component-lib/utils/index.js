@@ -27,6 +27,6 @@ export const defineCustomElement = (tagName, customElement) => {
         customElements.define(tagName, customElement);
     }
 };
-export * from "./attachProps.js";
-export * from "./case.js";
+export * from "./attachProps";
+export * from "./case";
 //# sourceMappingURL=index.js.map

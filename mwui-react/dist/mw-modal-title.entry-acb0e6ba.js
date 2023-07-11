@@ -1,6 +1,4 @@
-'use strict';
-
-var index = require('./index-2d942898.js');
+import { r as registerInstance, h, H as Host } from './index-194e1ff2.js';
 
 /*!
  * Built with Stencil
@@ -11,14 +9,14 @@ const mwModalTitleCss = ":host{display:block;padding-bottom:var(--mw-component-m
 
 const MwModalTitle = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
+    registerInstance(this, hostRef);
     this.headline = undefined;
     this.description = undefined;
   }
   render() {
-    return (index.h(index.Host, null, index.h("div", { class: "mw-modal-title" }, index.h("h2", { class: "mw-modal-title__headline" }, this.headline), index.h("span", { class: "spacefiller" }), index.h("slot", { name: "icon" })), !!this.description && (index.h("div", { class: "mw-modal-title" }, index.h("div", { class: "mw-modal-title__description" }, this.description)))));
+    return (h(Host, null, h("div", { class: "mw-modal-title" }, h("h2", { class: "mw-modal-title__headline" }, this.headline), h("span", { class: "spacefiller" }), h("slot", { name: "icon" })), !!this.description && (h("div", { class: "mw-modal-title" }, h("div", { class: "mw-modal-title__description" }, this.description)))));
   }
 };
 MwModalTitle.style = mwModalTitleCss;
 
-exports.mw_modal_title = MwModalTitle;
+export { MwModalTitle as mw_modal_title };

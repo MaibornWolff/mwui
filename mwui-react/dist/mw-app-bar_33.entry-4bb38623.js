@@ -1,4 +1,6 @@
-import { r as registerInstance, h, H as Host, c as createEvent, g as getElement } from './index-dc90bbac.js';
+'use strict';
+
+var index = require('./index-5391349b.js');
 
 /*!
  * Built with Stencil
@@ -19,12 +21,12 @@ const mwAppBarCss = ":host{display:block}.mw-app-bar{z-index:1000;box-sizing:bor
 
 const MwAppBar = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.ariaRole = AriaRolesEnum.NAVIGATION;
     this.position = "relative";
   }
   render() {
-    return (h(Host, null, h("div", { class: `mw-app-bar ${this.position}`, role: this.ariaRole }, h("slot", { name: "start" }), h("slot", { name: "center" }), h("slot", { name: "end" }))));
+    return (index.h(index.Host, null, index.h("div", { class: `mw-app-bar ${this.position}`, role: this.ariaRole }, index.h("slot", { name: "start" }), index.h("slot", { name: "center" }), index.h("slot", { name: "end" }))));
   }
 };
 MwAppBar.style = mwAppBarCss;
@@ -33,22 +35,22 @@ const mwAppBarTitleCss = ":host .mw-app-bar-title{color:var(--mw-component-heade
 
 const MwAppBarTitle = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
   }
   render() {
-    return (h(Host, null, h("div", { class: "mw-app-bar-title" }, h("slot", null))));
+    return (index.h(index.Host, null, index.h("div", { class: "mw-app-bar-title" }, index.h("slot", null))));
   }
 };
 MwAppBarTitle.style = mwAppBarTitleCss;
 
-const mwAutocompleteCss = ":host{display:flex;align-items:center}.wrapper{display:inline-flex;flex-direction:column;width:100%}mw-label{white-space:nowrap}mw-popover{width:100%}.autocomplete{display:flex;flex-direction:column;min-width:var(--mw-component-size-text-field-min-width);color:var(--mw-component-text-field-fg-default)}.autocomplete.disabled,.autocomplete.disabled input{color:var(--mw-component-text-field-fg-disabled)}.autocomplete.inline{flex-direction:row;display:flex;align-items:center}.autocomplete.inline .input{min-width:var(--mw-component-size-text-field-min-w);width:100%}.autocomplete.inline label{display:block;width:var(--mw-component-size-text-field-label-horizontal-width);padding:var(--mw-component-text-field-padding-label-horizontal)}.autocomplete.read-only,.autocomplete.read-only .input input{cursor:pointer}.input{display:flex;align-items:center;border-radius:var(--border-radius-standard-md);padding:var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);background:var(--mw-component-text-field-bg-default);box-shadow:inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default)}.input .icon-start{margin-right:var(--mw-component-text-field-gap-horizontal-gap-within)}.input .icon-end{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within)}.input.has-error{background:var(--mw-component-text-field-bg-error)}.input:focus-within{background:var(--mw-component-text-field-bg-hover);box-shadow:inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused)}.input:not(.disabled):hover{background:var(--mw-component-text-field-bg-hover)}.input .icon{color:var(--mw-component-text-field-fg-icon-default)}.input .focused{color:var(--mw-component-text-field-fg-icon-focused)}.input .focused.has-error{color:var(--mw-component-text-field-fg-error)}.input input{border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.input input:focus-visible,.input input:focus{outline:none;border:none;box-shadow:none}.input input::placeholder{color:var(--mw-component-text-field-fg-placeholder)}.has-error{color:var(--mw-component-text-field-fg-error)}.no-suggestions,.maximum-reached{flex-direction:column;justify-content:center;gap:var(--mw-component-menu-item-gap-between);padding:0 12px;height:var(--mw-component-size-menu-item-default-h);background:var(--mw-component-menu-item-bg-default);border:var(--mw-component-menu-item-border-width-default) solid var(--mw-component-menu-item-border-default);border-radius:var(--mw-component-menu-item-border-radius);color:var(--mw-component-menu-item-fg-disabled);font-family:var(--mw-component-menu-item-title-font-family);font-weight:var(--mw-component-menu-item-title-font-weight);line-height:var(--mw-component-menu-item-title-line-height);font-size:var(--mw-component-menu-item-title-font-size)}.no-suggestions{display:none}.maximum-reached{display:flex}.helper-text-container{display:flex;justify-content:right;gap:4px}";
+const mwAutocompleteCss = ":host{display:flex;align-items:center}.wrapper{display:inline-flex;flex-direction:column;width:100%}mw-label{white-space:nowrap}mw-popover{width:100%}.autocomplete{display:flex;flex-direction:column;min-width:var(--mw-component-size-text-field-min-width);color:var(--mw-component-text-field-fg-default)}.autocomplete.disabled,.autocomplete.disabled input{color:var(--mw-component-text-field-fg-disabled)}.autocomplete.inline{flex-direction:row;display:flex;align-items:center}.autocomplete.inline .input{min-width:var(--mw-component-size-text-field-min-w);width:100%}.autocomplete.inline label{display:block;width:var(--mw-component-size-text-field-label-horizontal-width);padding:var(--mw-component-text-field-padding-label-horizontal)}.autocomplete.read-only,.autocomplete.read-only .input input{cursor:pointer}.input{display:flex;align-items:center;border-radius:var(--border-radius-standard-md);padding:var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);background:var(--mw-component-text-field-bg-default);box-shadow:inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default)}.input .icon-start{margin-right:var(--mw-component-text-field-gap-horizontal-gap-within)}.input .icon-end{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within)}.input.has-error{background:var(--mw-component-text-field-bg-error)}.input:focus-within{background:var(--mw-component-text-field-bg-hover);box-shadow:inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused)}.input:not(.disabled):hover{background:var(--mw-component-text-field-bg-hover)}.input .icon{color:var(--mw-component-text-field-fg-icon-default)}.input .focused{color:var(--mw-component-text-field-fg-icon-focused)}.input .focused.has-error{color:var(--mw-component-text-field-fg-error)}.input input{border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.input input:focus-visible,.input input:focus{outline:transparent;border:none;box-shadow:none}.input input::placeholder{color:var(--mw-component-text-field-fg-placeholder)}.has-error{color:var(--mw-component-text-field-fg-error)}.no-suggestions,.maximum-reached{flex-direction:column;justify-content:center;gap:var(--mw-component-menu-item-gap-between);padding:0 12px;height:var(--mw-component-size-menu-item-default-h);background:var(--mw-component-menu-item-bg-default);border:var(--mw-component-menu-item-border-width-default) solid var(--mw-component-menu-item-border-default);border-radius:var(--mw-component-menu-item-border-radius);color:var(--mw-component-menu-item-fg-disabled);font-family:var(--mw-component-menu-item-title-font-family);font-weight:var(--mw-component-menu-item-title-font-weight);line-height:var(--mw-component-menu-item-title-line-height);font-size:var(--mw-component-menu-item-title-font-size)}.no-suggestions{display:none}.maximum-reached{display:flex}.helper-text-container{display:flex;justify-content:right;gap:4px}";
 
 const MwAutocomplete = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.valueChanged = createEvent(this, "mwAutocompleteValueChanged", 5);
+    index.registerInstance(this, hostRef);
+    this.valueChanged = index.createEvent(this, "selectionChanged", 5);
     this.onInputChange = (event) => {
-      this.filterDropdownOptions(event.detail);
+      this.filterDropdownOptions(event.target.value);
       this.isDropdownOpen = true;
     };
     this.onFocus = () => {
@@ -62,13 +64,22 @@ const MwAutocomplete = class {
       if (!this.multiple || value.trim().length === 0) {
         return;
       }
-      this.selected = [...this.selected, value];
+      this.selection = [...this.selection, value];
       this.removeDropdownFilter();
+    };
+    this.setItemDisabledState = (selection) => {
+      this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
+        const isDisabled = selection.includes(item.getAttribute("value"));
+        item.setAttribute("disabled", `${isDisabled}`);
+      });
+    };
+    this.handleChipListValueChange = (event) => {
+      this.selection = event.detail;
     };
     this.filterDropdownOptions = (value) => {
       let hasNoSuggestions = true;
       this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
-        if (item.value.toLowerCase().includes(value.toLowerCase())) {
+        if (item.value.toLowerCase().includes(value.toString().toLowerCase())) {
           item.style.display = "unset";
           hasNoSuggestions = false;
         }
@@ -88,6 +99,10 @@ const MwAutocomplete = class {
         item.style.display = "unset";
       });
     };
+    this.canAddToValues = () => {
+      var _a;
+      return !this.maximum || ((_a = this.selection) === null || _a === void 0 ? void 0 : _a.length) < this.maximum;
+    };
     this.type = "text";
     this.value = undefined;
     this.name = undefined;
@@ -104,19 +119,20 @@ const MwAutocomplete = class {
     this.maximum = undefined;
     this.maximumText = "You reached the maximum number of options.";
     this.optionCounter = false;
-    this.selected = [];
+    this.selection = [];
     this.focused = false;
     this.isDropdownOpen = false;
   }
-  onSelectedChange(selected) {
+  onSelectedChange(selection) {
     if (!this.canAddToValues()) {
       this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
         item.setAttribute("disabled", `true`);
       });
     }
     else {
-      this.setItemDisabledState(selected);
+      this.setItemDisabledState(selection);
     }
+    this.valueChanged.emit();
   }
   clickEmitterHandler(event) {
     const emittedValue = event.target.getAttribute("value");
@@ -133,39 +149,26 @@ const MwAutocomplete = class {
   componentWillLoad() {
     this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
   }
-  setItemDisabledState(selected) {
-    this.hostElement.querySelectorAll("mw-menu-item").forEach(item => {
-      const isDisabled = selected.includes(item.getAttribute("value"));
-      item.setAttribute("disabled", `${isDisabled}`);
-    });
-  }
-  handleChipListValueChange(event) {
-    this.selected = event.detail;
-  }
-  canAddToValues() {
-    var _a;
-    return !this.maximum || ((_a = this.selected) === null || _a === void 0 ? void 0 : _a.length) < this.maximum;
-  }
   render() {
-    return (h(Host, null, h("div", { tabindex: "0", class: "wrapper", role: AriaRolesEnum.COMBOBOX }, h("div", { class: {
+    return (index.h(index.Host, null, index.h("div", { tabindex: "0", class: "wrapper", role: AriaRolesEnum.COMBOBOX }, index.h("div", { class: {
         "autocomplete": true,
         "inline": this.inline,
         "has-error": this.hasError,
         "disabled": this.disabled,
-      } }, h("mw-label", { name: this.name, label: this.label, required: this.required }), h("mw-popover", { noPadding: true, closeOnClick: true, open: this.isDropdownOpen, dismissable: this.isDropdownOpen, disabled: this.disabled }, this.multiple ? (h("mw-chip-input", { name: this.name, placeholder: this.placeholder, disabled: this.disabled, hasError: this.hasError, maximum: this.maximum, selectedChips: this.selected, onFocus: this.onFocus, onBlur: this.onBlur, onMwChipListValueChanged: this.handleChipListValueChange.bind(this), onMwChipListInputChange: this.onInputChange.bind(this), slot: "anchor" }, this.hasIconStartSlot && (h("div", { class: {
+      } }, index.h("mw-label", { name: this.name, label: this.label, required: this.required }), index.h("mw-popover", { noPadding: true, closeOnClick: true, open: this.isDropdownOpen, dismissable: this.isDropdownOpen, disabled: this.disabled }, this.multiple ? (index.h("mw-chip-input", { name: this.name, placeholder: this.placeholder, disabled: this.disabled, hasError: this.hasError, maximum: this.maximum, selectedChips: this.selection, onFocus: this.onFocus, onBlur: this.onBlur, onValueChanged: this.handleChipListValueChange, onInput: this.onInputChange, slot: "anchor" }, this.hasIconStartSlot && (index.h("div", { class: {
         "focused": this.focused,
         "has-error": this.hasError,
-      }, slot: "icon-start" }, h("slot", { name: "icon-start" }))), h("mw-icon", { slot: "icon-end", icon: this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down", size: "medium" }))) : (h("mw-textfield", { disabled: this.disabled, type: this.type, value: this.value, name: this.name, hasError: this.hasError, placeholder: this.placeholder, onMwTextfieldValueChanged: this.onInputChange.bind(this), slot: "anchor" }, this.hasIconStartSlot && (h("div", { class: {
+      }, slot: "icon-start" }, index.h("slot", { name: "icon-start" }))), index.h("mw-icon", { slot: "icon-end", icon: this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down", size: "medium" }))) : (index.h("mw-textfield", { disabled: this.disabled, type: this.type, value: this.value, name: this.name, hasError: this.hasError, placeholder: this.placeholder, onChange: this.onInputChange, onInput: this.onInputChange, slot: "anchor" }, this.hasIconStartSlot && (index.h("div", { class: {
         "focused": this.focused,
         "has-error": this.hasError,
-      }, slot: "icon-start" }, h("slot", { name: "icon-start" }))), h("span", { class: {
+      }, slot: "icon-start" }, index.h("slot", { name: "icon-start" }))), index.h("span", { class: {
         "focused": this.focused,
         "has-error": this.hasError,
-      }, slot: "icon-end" }, h("mw-icon", { icon: this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down", size: "medium" })))), h("div", { slot: "content" }, this.canAddToValues() ? h("slot", { name: "dropdown-menu" }) : h("div", { class: "maximum-reached" }, this.maximumText), h("div", { ref: el => (this.noSuggestionsDisclaimer = el), class: "no-suggestions" }, this.noSuggestionsText)))), h("div", { class: "helper-text-container" }, h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError }), this.maximum && this.optionCounter && h("mw-helper-text", { helperText: `${this.selected.length}/${this.maximum}` })))));
+      }, slot: "icon-end" }, index.h("mw-icon", { icon: this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down", size: "medium" })))), index.h("div", { slot: "content" }, this.canAddToValues() ? index.h("slot", { name: "dropdown-menu" }) : index.h("div", { class: "maximum-reached" }, this.maximumText), index.h("div", { ref: el => (this.noSuggestionsDisclaimer = el), class: "no-suggestions" }, this.noSuggestionsText)))), index.h("div", { class: "helper-text-container" }, index.h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError }), this.maximum && this.optionCounter && index.h("mw-helper-text", { helperText: `${this.selection.length}/${this.maximum}` })))));
   }
-  get hostElement() { return getElement(this); }
+  get hostElement() { return index.getElement(this); }
   static get watchers() { return {
-    "selected": ["onSelectedChange"]
+    "selection": ["onSelectedChange"]
   }; }
 };
 MwAutocomplete.style = mwAutocompleteCss;
@@ -183,7 +186,7 @@ const mwAvatarCss = ":host{display:block}.avatar{position:relative;display:flex;
 
 const MwAvatar = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.testId = undefined;
     this.src = undefined;
     this.icon = undefined;
@@ -191,7 +194,7 @@ const MwAvatar = class {
     this.size = SizeEnum.MEDIUM;
   }
   render() {
-    return (h(Host, null, h("div", { "test-id": this.testId, class: `avatar ${this.size}` }, this.alt && h("div", { class: `fallback ${this.size}` }, this.alt.substring(0, 1)), this.src && h("img", { src: this.src, alt: this.alt }), this.icon && h("mw-icon", { icon: this.icon, size: this.size }))));
+    return (index.h(index.Host, null, index.h("div", { "test-id": this.testId, class: `avatar ${this.size}` }, this.alt && index.h("div", { class: `fallback ${this.size}` }, this.alt.substring(0, 1)), this.src && index.h("img", { src: this.src, alt: this.alt }), this.icon && index.h("mw-icon", { icon: this.icon, size: this.size }))));
   }
 };
 MwAvatar.style = mwAvatarCss;
@@ -220,12 +223,12 @@ var TargetEnum;
   TargetEnum["TOP"] = "_top";
 })(TargetEnum || (TargetEnum = {}));
 
-const mwButtonCss = "a{text-decoration:none}.mw-button{display:flex;align-items:center;justify-content:center;appearance:none;text-decoration:none;white-space:nowrap;overflow:hidden;border-radius:var(--mw-component-button-border-radius-default);min-width:var(--mw-component-size-button-filled-outline-min-w);letter-spacing:var(--mw-core-letter-spacing-buttons)}.mw-button--small{font-weight:var(--mw-component-button-label-sm-font-weight);padding:var(--mw-component-button-sm-padding-y) var(--mw-component-button-sm-padding-x);font-family:var(--mw-component-button-label-sm-font-family);line-height:var(--mw-component-button-label-sm-line-height);font-size:var(--mw-component-button-label-sm-font-size)}.mw-button--medium{font-weight:var(--mw-component-button-label-md-font-weight);padding:var(--mw-component-button-md-padding-y) var(--mw-component-button-md-padding-x);font-family:var(--mw-component-button-label-md-font-family);line-height:var(--mw-component-button-label-md-line-height);font-size:var(--mw-component-button-label-md-font-size)}.mw-button--large{font-weight:var(--mw-component-button-label-lg-font-weight);padding:var(--mw-component-button-lg-padding-y) var(--mw-component-button-lg-padding-x);font-family:var(--mw-component-button-label-lg-font-family);line-height:var(--mw-component-button-label-lg-line-height);font-size:var(--mw-component-button-label-lg-font-size)}.mw-button--x-large{font-weight:var(--mw-component-button-label-xl-font-weight);padding:var(--mw-component-button-xl-padding-y) var(--mw-component-button-xl-padding-x);font-family:var(--mw-component-button-label-xl-font-family);line-height:var(--mw-component-button-label-xl-line-height);font-size:var(--mw-component-button-label-xl-font-size)}.mw-button--filled{border:var(--mw-component-button-border-width-filled-default);color:var(--mw-component-button-filled-color-fg-default);background-color:var(--mw-component-button-filled-color-bg-default)}.mw-button--filled:hover{background-color:var(--mw-component-button-filled-color-bg-hover);color:var(--mw-component-button-filled-color-fg-hover)}.mw-button--filled:focus{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-filled-focused) var(--mw-component-button-filled-color-outline-focused);background-color:var(--mw-component-button-filled-color-bg-focused);color:var(--mw-component-button-filled-color-fg-focused)}.mw-button--filled:active{background-color:var(--mw-component-button-filled-color-bg-pressed);color:var(--mw-component-button-filled-color-fg-pressed)}.mw-button--filled:disabled{background-color:var(--mw-component-button-filled-color-bg-disabled);color:var(--mw-component-button-filled-color-fg-disabled)}.mw-button--outline{border:0;box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-default);color:var(--mw-component-button-outline-ghost-color-fg-default);background-color:var(--mw-component-button-outline-ghost-color-bg-default)}.mw-button--outline:hover{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-hover);color:var(--mw-component-button-outline-ghost-color-fg-hover)}.mw-button--outline:focus{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-focused);color:var(--mw-component-button-outline-ghost-color-fg-focused)}.mw-button--outline:active{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-pressed);color:var(--mw-component-button-outline-ghost-color-fg-pressed)}.mw-button--outline:disabled{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-disabled);color:var(--mw-component-button-outline-ghost-color-fg-disabled)}.mw-button--ghost{outline:none;box-shadow:none;border:none;color:var(--mw-component-button-outline-ghost-color-fg-default);background-color:var(--mw-component-button-outline-ghost-color-bg-default)}.mw-button--ghost:hover{color:var(--mw-component-button-outline-ghost-color-fg-hover)}.mw-button--ghost:focus{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-focused) var(--mw-component-button-outline-ghost-color-border-focused);color:var(--mw-component-button-outline-ghost-color-fg-focused)}.mw-button--ghost:active{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-pressed)}.mw-button--ghost:disabled{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-disabled)}.mw-button--ghost-inverted{outline:none;box-shadow:none;border:none;color:var(--mw-component-button-outline-ghost-color-fg-inverted);background-color:var(--mw-component-button-outline-ghost-color-bg-default)}.mw-button--ghost-inverted:hover{color:var(--mw-component-button-outline-ghost-color-fg-hover)}.mw-button--ghost-inverted:focus{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-focused)}.mw-button--ghost-inverted:active{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-pressed)}.mw-button--ghost-inverted:disabled{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-disabled)}.mw-button--icon-only{min-width:0}.mw-button--icon-only--small{padding:var(--mw-component-button-sm-padding-icon)}.mw-button--icon-only--medium{padding:var(--mw-component-button-md-padding-icon)}.mw-button--icon-only--large{padding:var(--mw-component-button-lg-padding-icon)}.mw-button--icon-only--x-large{padding:var(--mw-component-button-xl-padding-icon)}.mw-button .mw-button-icon-start--small{margin-right:var(--mw-component-button-sm-gap-between)}.mw-button .mw-button-icon-start--medium{margin-right:var(--mw-component-button-md-gap-between)}.mw-button .mw-button-icon-start--large{margin-right:var(--mw-component-button-lg-gap-between)}.mw-button .mw-button-icon-start--x-large{margin-right:var(--mw-component-button-xl-gap-between)}.mw-button .mw-button-icon-end--small{margin-left:var(--mw-component-button-sm-gap-between)}.mw-button .mw-button-icon-end--medium{margin-left:var(--mw-component-button-md-gap-between)}.mw-button .mw-button-icon-end--large{margin-left:var(--mw-component-button-lg-gap-between)}.mw-button .mw-button-icon-end--x-large{margin-left:var(--mw-component-button-xl-gap-between)}";
+const mwButtonCss = "a{text-decoration:none}.mw-button{display:flex;align-items:center;justify-content:center;appearance:none;text-decoration:none;white-space:nowrap;overflow:hidden;border-radius:var(--mw-component-button-border-radius-default);min-width:var(--mw-component-size-button-filled-outline-min-w);letter-spacing:var(--mw-core-letter-spacing-buttons);transition:all 0.2s ease-out}.mw-button--small{font-weight:var(--mw-component-button-label-sm-font-weight);padding:var(--mw-component-button-sm-padding-y) var(--mw-component-button-sm-padding-x);font-family:var(--mw-component-button-label-sm-font-family);line-height:var(--mw-component-button-label-sm-line-height);font-size:var(--mw-component-button-label-sm-font-size)}.mw-button--medium{font-weight:var(--mw-component-button-label-md-font-weight);padding:var(--mw-component-button-md-padding-y) var(--mw-component-button-md-padding-x);font-family:var(--mw-component-button-label-md-font-family);line-height:var(--mw-component-button-label-md-line-height);font-size:var(--mw-component-button-label-md-font-size)}.mw-button--large{font-weight:var(--mw-component-button-label-lg-font-weight);padding:var(--mw-component-button-lg-padding-y) var(--mw-component-button-lg-padding-x);font-family:var(--mw-component-button-label-lg-font-family);line-height:var(--mw-component-button-label-lg-line-height);font-size:var(--mw-component-button-label-lg-font-size)}.mw-button--x-large{font-weight:var(--mw-component-button-label-xl-font-weight);padding:var(--mw-component-button-xl-padding-y) var(--mw-component-button-xl-padding-x);font-family:var(--mw-component-button-label-xl-font-family);line-height:var(--mw-component-button-label-xl-line-height);font-size:var(--mw-component-button-label-xl-font-size)}.mw-button--filled{border:var(--mw-component-button-border-width-filled-default);color:var(--mw-component-button-filled-color-fg-default);background-color:var(--mw-component-button-filled-color-bg-default)}.mw-button--filled:hover{background-color:var(--mw-component-button-filled-color-bg-hover);color:var(--mw-component-button-filled-color-fg-hover)}.mw-button--filled:focus{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-filled-focused) var(--mw-component-button-filled-color-outline-focused);background-color:var(--mw-component-button-filled-color-bg-focused);color:var(--mw-component-button-filled-color-fg-focused)}.mw-button--filled:active{background-color:var(--mw-component-button-filled-color-bg-pressed);color:var(--mw-component-button-filled-color-fg-pressed)}.mw-button--filled:disabled{background-color:var(--mw-component-button-filled-color-bg-disabled);color:var(--mw-component-button-filled-color-fg-disabled)}.mw-button--outline{border:0;box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-default);color:var(--mw-component-button-outline-ghost-color-fg-default);background-color:var(--mw-component-button-outline-ghost-color-bg-default)}.mw-button--outline:hover{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-hover);color:var(--mw-component-button-outline-ghost-color-fg-hover)}.mw-button--outline:focus{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-focused);color:var(--mw-component-button-outline-ghost-color-fg-focused)}.mw-button--outline:active{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-pressed);color:var(--mw-component-button-outline-ghost-color-fg-pressed)}.mw-button--outline:disabled{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-disabled);color:var(--mw-component-button-outline-ghost-color-fg-disabled)}.mw-button--ghost{outline:none;box-shadow:none;border:none;color:var(--mw-component-button-outline-ghost-color-fg-default);background-color:var(--mw-component-button-outline-ghost-color-bg-default)}.mw-button--ghost:hover{color:var(--mw-component-button-outline-ghost-color-fg-hover)}.mw-button--ghost:focus{box-shadow:inset 0 0 0 var(--mw-component-button-border-width-outline-focused) var(--mw-component-button-outline-ghost-color-border-focused);color:var(--mw-component-button-outline-ghost-color-fg-focused)}.mw-button--ghost:active{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-pressed)}.mw-button--ghost:disabled{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-disabled)}.mw-button--ghost-inverted{outline:none;box-shadow:none;border:none;color:var(--mw-component-button-outline-ghost-color-fg-inverted);background-color:var(--mw-component-button-outline-ghost-color-bg-default)}.mw-button--ghost-inverted:hover{color:var(--mw-component-button-outline-ghost-color-fg-hover)}.mw-button--ghost-inverted:focus{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-focused)}.mw-button--ghost-inverted:active{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-pressed)}.mw-button--ghost-inverted:disabled{box-shadow:none;color:var(--mw-component-button-outline-ghost-color-fg-disabled)}.mw-button--icon-only{min-width:0}.mw-button--icon-only--small{padding:var(--mw-component-button-sm-padding-icon)}.mw-button--icon-only--medium{padding:var(--mw-component-button-md-padding-icon)}.mw-button--icon-only--large{padding:var(--mw-component-button-lg-padding-icon)}.mw-button--icon-only--x-large{padding:var(--mw-component-button-xl-padding-icon)}.mw-button .mw-button-icon-start--small{margin-right:var(--mw-component-button-sm-gap-between)}.mw-button .mw-button-icon-start--medium{margin-right:var(--mw-component-button-md-gap-between)}.mw-button .mw-button-icon-start--large{margin-right:var(--mw-component-button-lg-gap-between)}.mw-button .mw-button-icon-start--x-large{margin-right:var(--mw-component-button-xl-gap-between)}.mw-button .mw-button-icon-end--small{margin-left:var(--mw-component-button-sm-gap-between)}.mw-button .mw-button-icon-end--medium{margin-left:var(--mw-component-button-md-gap-between)}.mw-button .mw-button-icon-end--large{margin-left:var(--mw-component-button-lg-gap-between)}.mw-button .mw-button-icon-end--x-large{margin-left:var(--mw-component-button-xl-gap-between)}";
 
 const MwButton = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.clickEmitter = createEvent(this, "clickEmitter", 4);
+    index.registerInstance(this, hostRef);
+    this.clickEmitter = index.createEvent(this, "clickEmitter", 4);
     this.handleClick = (event) => {
       if (this.disabled) {
         return;
@@ -250,52 +253,52 @@ const MwButton = class {
     this.hasLabel = !!this.label;
   }
   render() {
-    const button = (h("button", { part: "button", disabled: this.disabled, onClick: this.handleClick, title: this.title, class: {
+    const button = (index.h("button", { part: "button", disabled: this.disabled, onClick: this.handleClick, title: this.label, class: {
         "mw-button": true,
         "mw-button--icon-only": !this.label,
         [`mw-button--${this.variant}`]: true,
         [`mw-button--${this.size}`]: true,
-      }, "test-id": this.testId, type: "button" }, this.hasIconStartSlot && (h("span", { class: {
+      }, "test-id": this.testId, type: "button" }, this.hasIconStartSlot && (index.h("span", { class: {
         "mw-button-icon-start": true,
         [`mw-button-icon-start--${this.size}`]: this.hasLabel,
-      } }, h("slot", { name: "icon-start" }))), h("span", null, this.label), this.hasIconEndSlot && (h("span", { class: {
+      } }, index.h("slot", { name: "icon-start" }))), index.h("span", null, this.label), this.hasIconEndSlot && (index.h("span", { class: {
         "mw-button-icon-end": true,
         [`mw-button-icon-end--${this.size}`]: this.hasLabel,
-      } }, h("slot", { name: "icon-end" })))));
-    return h(Host, null, this.href ? h("a", { href: this.href }, button) : button);
+      } }, index.h("slot", { name: "icon-end" })))));
+    return index.h(index.Host, null, this.href ? index.h("a", { href: this.href }, button) : button);
   }
-  get hostElement() { return getElement(this); }
+  get hostElement() { return index.getElement(this); }
 };
 MwButton.style = mwButtonCss;
 
-const mwCardCss = ":host{display:block}.card{max-width:600px;width:100%;overflow-wrap:break-word;display:flex;flex-direction:column;justify-content:space-between;gap:var(--mw-component-card-padding-components-y-default);padding-top:var(--mw-component-card-padding-components-y-default);padding-bottom:var(--mw-component-card-padding-components-y-default);background:var(--mw-component-card-bg-default);border-radius:var(--mw-component-card-border-radius);-webkit-border-radius:var(--mw-component-card-border-radius);-moz-border-radius:var(--mw-component-card-border-radius);color:var(--mw-component-card-fg-default);border:none;transition:all 0.4 ease}.card:first-child{margin-top:0}.card.muted{color:var(--mw-component-card-fg-muted)}.card.outlined{border:var(--mw-component-card-border-width-outlined) solid var(--mw-component-card-border-outlined)}.card.elevated{box-shadow:var(--mw-component-card-shadow-elevated-0-x) var(--mw-component-card-shadow-elevated-0-y) var(--mw-component-card-shadow-elevated-0-blur) var(--mw-component-card-shadow-elevated-0-spread) var(--mw-component-card-shadow-elevated-0-color), var(--mw-component-card-shadow-elevated-1-x) var(--mw-component-card-shadow-elevated-1-y) var(--mw-component-card-shadow-elevated-1-blur) var(--mw-component-card-shadow-elevated-1-spread) var(--mw-component-card-shadow-elevated-1-color), var(--mw-component-card-shadow-elevated-2-x) var(--mw-component-card-shadow-elevated-2-y) var(--mw-component-card-shadow-elevated-2-blur) var(--mw-component-card-shadow-elevated-2-spread) var(--mw-component-card-shadow-elevated-2-color);border:none}";
+const mwCardCss = ":host{display:block}.card{max-width:600px;width:100%;overflow-wrap:break-word;display:flex;flex-direction:column;justify-content:space-between;gap:var(--mw-component-card-padding-components-y-default);padding-top:var(--mw-component-card-padding-components-y-default);padding-bottom:var(--mw-component-card-padding-components-y-default);background:var(--mw-component-card-bg-default);border-radius:var(--mw-component-card-border-radius);-webkit-border-radius:var(--mw-component-card-border-radius);-moz-border-radius:var(--mw-component-card-border-radius);color:var(--mw-component-card-fg-default);border:none;height:100%;box-sizing:border-box;transition:all 0.4 ease}.card:first-child{margin-top:0}.card.muted{color:var(--mw-component-card-fg-muted)}.card.outlined{border:var(--mw-component-card-border-width-outlined) solid var(--mw-component-card-border-outlined)}.card.elevated{box-shadow:var(--mw-component-card-shadow-elevated-0-x) var(--mw-component-card-shadow-elevated-0-y) var(--mw-component-card-shadow-elevated-0-blur) var(--mw-component-card-shadow-elevated-0-spread) var(--mw-component-card-shadow-elevated-0-color), var(--mw-component-card-shadow-elevated-1-x) var(--mw-component-card-shadow-elevated-1-y) var(--mw-component-card-shadow-elevated-1-blur) var(--mw-component-card-shadow-elevated-1-spread) var(--mw-component-card-shadow-elevated-1-color), var(--mw-component-card-shadow-elevated-2-x) var(--mw-component-card-shadow-elevated-2-y) var(--mw-component-card-shadow-elevated-2-blur) var(--mw-component-card-shadow-elevated-2-spread) var(--mw-component-card-shadow-elevated-2-color);border:none}";
 
 const MwCard = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.clickEmitter = createEvent(this, "clickEmitter", 4);
+    index.registerInstance(this, hostRef);
+    this.clickEmitter = index.createEvent(this, "clickEmitter", 4);
     this.testId = undefined;
     this.outlined = false;
     this.elevated = false;
   }
   render() {
-    return (h(Host, null, h("div", { onClick: () => this.clickEmitter.emit(), "test-id": this.testId, class: {
+    return (index.h(index.Host, null, index.h("div", { onClick: () => this.clickEmitter.emit(), "test-id": this.testId, class: {
         card: true,
         outlined: this.outlined,
         elevated: this.elevated,
-      } }, h("slot", null))));
+      } }, index.h("slot", null))));
   }
 };
 MwCard.style = mwCardCss;
 
-const mwCardBodyCss = ":host{display:block;padding:0 var(--mw-component-card-padding-components-x-default)}";
+const mwCardBodyCss = ":host{display:block;padding:0 var(--mw-component-card-padding-components-x-default);flex:1}";
 
 const MwCardBody = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
   }
   render() {
-    return (h(Host, null, h("slot", null)));
+    return (index.h(index.Host, null, index.h("slot", null)));
   }
 };
 MwCardBody.style = mwCardBodyCss;
@@ -304,7 +307,7 @@ const mwCardFooterCss = ".card-footer{display:flex;justify-content:end;align-ite
 
 const MwCardFooter = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.justifyCenter = false;
     this.justifyStart = false;
     this.justifyEnd = false;
@@ -318,7 +321,7 @@ const MwCardFooter = class {
     this.justifySpaceEvenly = false;
   }
   render() {
-    return (h(Host, null, h("div", { class: {
+    return (index.h(index.Host, null, index.h("div", { class: {
         "card-footer": true,
         "justify-center": this.justifyCenter,
         "justify-start": this.justifyStart,
@@ -330,7 +333,7 @@ const MwCardFooter = class {
         "justify-space-around": this.justifySpaceAround,
         "justify-space-evenly": this.justifySpaceEvenly,
         "justify-space-between": this.justifySpaceBetween,
-      } }, h("slot", null))));
+      } }, index.h("slot", null))));
   }
 };
 MwCardFooter.style = mwCardFooterCss;
@@ -339,12 +342,12 @@ const mwCardHeaderCss = ":host{display:block;display:flex;flex-direction:row;ali
 
 const MwCardHeader = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.header = undefined;
     this.subheader = undefined;
   }
   render() {
-    return (h(Host, null, h("slot", { name: "icon" }), h("div", { class: "text" }, h("div", { class: "header" }, this.header), h("div", { class: "subheader" }, this.subheader))));
+    return (index.h(index.Host, null, index.h("slot", { name: "icon" }), index.h("div", { class: "text" }, index.h("div", { class: "header" }, this.header), index.h("div", { class: "subheader" }, this.subheader))));
   }
 };
 MwCardHeader.style = mwCardHeaderCss;
@@ -353,20 +356,28 @@ const mwCardImageCss = ":host{display:block}.card-image img{width:100%;height:10
 
 const MwCardImage = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.src = undefined;
     this.alt = undefined;
+    this.height = undefined;
   }
   componentWillLoad() {
     const card = this.hostElement.parentNode;
     this.isOnlyChild = card.childElementCount === 1;
     this.isFirstChild = !this.isOnlyChild && this.hostElement.isSameNode(card.firstElementChild);
     this.isLastChild = !this.isOnlyChild && this.hostElement.isSameNode(card.lastElementChild);
+    if (this.height) {
+      this.styles = {
+        "height": this.height,
+        "object-fit": "cover",
+        "width": "100%",
+      };
+    }
   }
   render() {
-    return (h(Host, null, h("div", { class: { "card-image": true, "top": this.isFirstChild, "bottom": this.isLastChild, "single": this.isOnlyChild } }, h("img", { src: this.src, alt: this.alt }))));
+    return (index.h(index.Host, null, index.h("div", { class: { "card-image": true, "top": this.isFirstChild, "bottom": this.isLastChild, "single": this.isOnlyChild } }, index.h("img", { src: this.src, alt: this.alt, style: this.styles }))));
   }
-  get hostElement() { return getElement(this); }
+  get hostElement() { return index.getElement(this); }
 };
 MwCardImage.style = mwCardImageCss;
 
@@ -374,13 +385,13 @@ const mwCardTitleCss = ":host{display:block;display:flex;flex-direction:row;alig
 
 const MwCardTitle = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.text = undefined;
     this.subtitle = undefined;
     this.metadata = undefined;
   }
   render() {
-    return (h(Host, null, h("div", { class: "card-title" }, h("div", { class: "metadata" }, this.metadata), h("div", { class: "title" }, this.text), h("div", { class: "subtitle" }, this.subtitle))));
+    return (index.h(index.Host, null, index.h("div", { class: "card-title" }, index.h("div", { class: "metadata" }, this.metadata), index.h("div", { class: "title" }, this.text), index.h("div", { class: "subtitle" }, this.subtitle))));
   }
 };
 MwCardTitle.style = mwCardTitleCss;
@@ -389,8 +400,8 @@ const mwCheckboxCss = ".mw-checkbox-container{display:inline-flex;cursor:pointer
 
 const MwCheckbox = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.emitter = createEvent(this, "emitter", 4);
+    index.registerInstance(this, hostRef);
+    this.emitter = index.createEvent(this, "emitter", 4);
     this.handleCheck = () => {
       if (!this.disabled) {
         this.checked = !this.checked;
@@ -405,7 +416,7 @@ const MwCheckbox = class {
     this.label = undefined;
   }
   render() {
-    return (h("div", { "test-id": this.testId, class: "mw-checkbox-container", onClick: this.handleCheck }, h("input", { type: "checkbox", checked: this.checked, value: this.value, name: this.name }), h("span", { class: "mw-checkbox-outer" }, h("span", { class: `mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}` }, h("mw-icon", { class: `mw-checkmark ${this.checked ? "selected" : "unselected"}`, color: `var(--mw-component-controls-color-fg-default)`, icon: "check", size: "small" }))), h("san", { class: "mw-checkbox-label" }, this.label)));
+    return (index.h("div", { "test-id": this.testId, class: "mw-checkbox-container", onClick: this.handleCheck }, index.h("input", { type: "checkbox", checked: this.checked, value: this.value, name: this.name }), index.h("span", { class: "mw-checkbox-outer" }, index.h("span", { class: `mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}` }, index.h("mw-icon", { class: `mw-checkmark ${this.checked ? "selected" : "unselected"}`, color: `var(--mw-component-controls-color-fg-default)`, icon: "check", size: "small" }))), index.h("san", { class: "mw-checkbox-label" }, this.label)));
   }
   static get assetsDirs() { return ["./../assets"]; }
 };
@@ -415,9 +426,9 @@ const mwChipCss = ":host{display:block}.chip{cursor:default;display:flex;white-s
 
 const MwChip = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.clickEmitter = createEvent(this, "mwChipClick", 6);
-    this.closeEmitter = createEvent(this, "mwChipClose", 6);
+    index.registerInstance(this, hostRef);
+    this.clickEmitter = index.createEvent(this, "mwChipClick", 6);
+    this.closeEmitter = index.createEvent(this, "mwChipClose", 6);
     this.handleClose = (event) => {
       event.stopPropagation();
       if (!this.disabled) {
@@ -438,11 +449,11 @@ const MwChip = class {
     this.selected = false;
   }
   render() {
-    return (h(Host, null, h("div", { tabindex: "0", class: {
+    return (index.h(index.Host, null, index.h("div", { tabindex: "0", class: {
         chip: true,
         selected: this.selected,
         disabled: this.disabled,
-      }, onClick: this.handleClick, "test-id": this.testId }, !!this.icon && h("mw-icon", { icon: this.icon, size: "small" }), h("slot", null), this.showClose && (h("span", { onClick: this.handleClose }, h("mw-icon", { icon: "close", color: "currentcolor", size: "small" }))))));
+      }, onClick: this.handleClick, "test-id": this.testId }, !!this.icon && index.h("mw-icon", { icon: this.icon, size: "small" }), index.h("slot", null), this.showClose && (index.h("span", { onClick: this.handleClose }, index.h("mw-icon", { icon: "close", color: "currentcolor", size: "small" }))))));
   }
 };
 MwChip.style = mwChipCss;
@@ -492,13 +503,13 @@ class Selection {
   }
 }
 
-const mwChipInputCss = ":host{display:flex;align-items:center}.wrapper{display:inline-flex;flex-direction:column;width:100%}.chip-input{display:flex;flex-direction:column;min-width:var(--mw-component-size-text-field-min-width);color:var(--mw-component-text-field-fg-default)}.chip-input.disabled,.chip-input.disabled input{color:var(--mw-component-text-field-fg-disabled)}.chip-input.inline{flex-direction:row;display:flex;align-items:center}.chip-input.inline .input{min-width:var(--mw-component-size-text-field-min-w);width:100%}.chip-input.inline label{display:block;width:var(--mw-component-size-text-field-label-horizontal-width);padding:var(--mw-component-text-field-padding-label-horizontal)}.chip-input .input{display:flex;align-items:center;border-radius:var(--border-radius-standard-md);padding:var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);background:var(--mw-component-text-field-bg-default);box-shadow:inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default);box-sizing:border-box;width:100%}.chip-input .input .icon-start{margin-right:var(--mw-component-text-field-gap-horizontal-gap-within)}.chip-input .input .icon-end{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within)}.chip-input .input.has-error{background:var(--mw-component-text-field-bg-error)}.chip-input .input:focus-within{background:var(--mw-component-text-field-bg-hover);box-shadow:inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused)}.chip-input .input:not(.disabled):hover{background:var(--mw-component-text-field-bg-hover)}.chip-input .input .icon{color:var(--mw-component-text-field-fg-icon-default)}.chip-input .input .focused{color:var(--mw-component-text-field-fg-icon-focused)}.chip-input .input .focused.has-error{color:var(--mw-component-text-field-fg-error)}.chip-input .input input{border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.chip-input .input input:focus-visible,.chip-input .input input:focus{outline:none;border:none;box-shadow:none}.chip-input .input input::placeholder{color:var(--mw-component-text-field-fg-placeholder)}.chip-input .input.has-error{background:var(--mw-component-text-field-bg-error)}.chip-input .input .input-options{flex:1;display:flex;flex-flow:row wrap;gap:var(--mw-component-text-field-gap-horizontal-gap-within)}.chip-input .input .icon-close-multiple{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within);gap:var(--mw-component-text-field-gap-horizontal-gap-within);cursor:pointer;display:flex}.chip-input .input input{flex:1;width:100%;min-width:30px;max-width:100%;height:32px}.helper-text-container{display:flex;justify-content:right;gap:4px}";
+const mwChipInputCss = ":host{display:flex;align-items:center}.wrapper{display:inline-flex;flex-direction:column;width:100%}.chip-input{display:flex;flex-direction:column;min-width:var(--mw-component-size-text-field-min-width);color:var(--mw-component-text-field-fg-default)}.chip-input.disabled,.chip-input.disabled input{color:var(--mw-component-text-field-fg-disabled)}.chip-input.inline{flex-direction:row;display:flex;align-items:center}.chip-input.inline .input{min-width:var(--mw-component-size-text-field-min-w);width:100%}.chip-input.inline label{display:block;width:var(--mw-component-size-text-field-label-horizontal-width);padding:var(--mw-component-text-field-padding-label-horizontal)}.chip-input .input{display:flex;align-items:center;border-radius:var(--border-radius-standard-md);padding:var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);background:var(--mw-component-text-field-bg-default);box-shadow:inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default);box-sizing:border-box;width:100%}.chip-input .input .icon-start{margin-right:var(--mw-component-text-field-gap-horizontal-gap-within)}.chip-input .input .icon-end{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within)}.chip-input .input.has-error{background:var(--mw-component-text-field-bg-error)}.chip-input .input:focus-within{background:var(--mw-component-text-field-bg-hover);box-shadow:inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused)}.chip-input .input:not(.disabled):hover{background:var(--mw-component-text-field-bg-hover)}.chip-input .input .icon{color:var(--mw-component-text-field-fg-icon-default)}.chip-input .input .focused{color:var(--mw-component-text-field-fg-icon-focused)}.chip-input .input .focused.has-error{color:var(--mw-component-text-field-fg-error)}.chip-input .input input{border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.chip-input .input input:focus-visible,.chip-input .input input:focus{outline:transparent;border:none;box-shadow:none}.chip-input .input input::placeholder{color:var(--mw-component-text-field-fg-placeholder)}.chip-input .input.has-error{background:var(--mw-component-text-field-bg-error)}.chip-input .input .input-options{flex:1;display:flex;flex-flow:row wrap;gap:var(--mw-component-text-field-gap-horizontal-gap-within)}.chip-input .input .icon-close-multiple{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within);gap:var(--mw-component-text-field-gap-horizontal-gap-within);cursor:pointer;display:flex}.chip-input .input input{flex:1;width:100%;min-width:30px;max-width:100%;height:32px}.helper-text-container{display:flex;justify-content:right;gap:4px}";
 
 const MwChipInput = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.valueChanged = createEvent(this, "mwChipListValueChanged", 5);
-    this.inputChange = createEvent(this, "mwChipListInputChange", 5);
+    index.registerInstance(this, hostRef);
+    this.valueChanged = index.createEvent(this, "valueChanged", 7);
+    this.inputChange = index.createEvent(this, "inputChange", 7);
     this._selection = new Selection(true);
     this.onFocus = () => {
       if (!this.disabled) {
@@ -509,6 +520,10 @@ const MwChipInput = class {
     };
     this.onBlur = () => {
       this.focused = false;
+    };
+    this.onRemoveSelection = (value) => {
+      this._selection.deselect(value);
+      this.onValueChange();
     };
     this.addMultiValue = (value) => {
       var _a;
@@ -525,6 +540,17 @@ const MwChipInput = class {
     this.clearMultiValues = () => {
       this._selection.clear();
       this.onValueChange();
+    };
+    this.onValueChange = () => {
+      this.selected = this._selection.selected;
+      this.valueChanged.emit(this.selected);
+    };
+    this.handleInputChange = () => {
+      this.inputChange.emit(this.inputElement.value);
+    };
+    this.canAddToValues = () => {
+      var _a;
+      return !this.maximum || ((_a = this.selected) === null || _a === void 0 ? void 0 : _a.length) < this.maximum;
     };
     this.name = undefined;
     this.label = undefined;
@@ -582,43 +608,33 @@ const MwChipInput = class {
   connectedCallback() {
     this.handleSelectionChange(this.selectedChips);
   }
-  onValueChange() {
-    this.selected = this._selection.selected;
-    this.valueChanged.emit(this.selected);
-  }
-  handleInputChange() {
-    this.inputChange.emit(this.inputElement.value);
-  }
-  canAddToValues() {
-    var _a;
-    return !this.maximum || ((_a = this.selected) === null || _a === void 0 ? void 0 : _a.length) < this.maximum;
-  }
   render() {
     var _a;
-    const { onFocus, disabled, hasIconStartSlot, hasIconEndSlot, focused, placeholder, onBlur, name, clearMultiValues, selected, handleInputChange, required, hasError, inline, helperText, optionCounter, maximum, } = this;
-    return (h(Host, null, h("div", { class: "wrapper" }, h("div", { class: {
+    const { onFocus, disabled, hasIconStartSlot, hasIconEndSlot, focused, placeholder, onBlur, name, clearMultiValues, selected, required, hasError, inline, helperText, optionCounter, maximum, } = this;
+    return (index.h(index.Host, null, index.h("div", { class: "wrapper" }, index.h("div", { class: {
         "chip-input": true,
         "inline": inline,
         "has-error": hasError,
         "disabled": disabled,
-      } }, h("mw-label", { name: this.name, label: this.label, required: required }), h("div", { slot: "anchor", onClick: onFocus, class: {
+      } }, index.h("mw-label", { name: this.name, label: this.label, required: required }), index.h("div", { slot: "anchor", onClick: onFocus, class: {
         "input": true,
         "disabled": disabled,
         "has-error": hasError,
-      } }, h("span", { class: {
+      } }, index.h("span", { class: {
         "icon-start": hasIconStartSlot,
         "focused": focused,
         "has-error": hasError,
-      } }, h("slot", { name: "icon-start" })), h("div", { class: "input-options" }, selected === null || selected === void 0 ? void 0 :
-      selected.map(v => (h("mw-chip", { key: v, showClose: true, value: v, selected: true, toggleable: false, disabled: disabled }, v))), this.canAddToValues() && (h("input", { ref: el => (this.inputElement = el), class: {
+      } }, index.h("slot", { name: "icon-start" })), index.h("div", { class: "input-options" }, selected === null || selected === void 0 ? void 0 :
+      selected.map(v => (index.h("mw-chip", { key: v, onMwChipClose: () => this.onRemoveSelection(v), showClose: true, value: v, selected: true, toggleable: false, disabled: disabled }, v))), this.canAddToValues() && (index.h("input", { ref: el => (this.inputElement = el), class: {
         "has-error": this.hasError,
-      }, placeholder: ((_a = this.selected) === null || _a === void 0 ? void 0 : _a.length) === 0 ? placeholder : null, onFocus: onFocus, onBlur: onBlur, type: "text", name: name, value: this.value, disabled: disabled, onInput: handleInputChange.bind(this) }))), this._selection.hasValues() && (h("span", { class: "icon-close-multiple", onClick: clearMultiValues }, h("mw-icon", { icon: "close", size: "medium" }))), h("div", { class: {
+        "mw-chip-input": true,
+      }, placeholder: ((_a = this.selected) === null || _a === void 0 ? void 0 : _a.length) === 0 ? placeholder : null, onFocus: onFocus, onBlur: onBlur, type: "text", name: name, value: this.value, disabled: disabled, onInput: this.handleInputChange, onChange: this.onValueChange }))), this._selection.hasValues() && (index.h("span", { class: "icon-close-multiple", onClick: clearMultiValues }, index.h("mw-icon", { icon: "close", size: "medium" }))), index.h("div", { class: {
         "icon-end": hasIconEndSlot,
         "focused": focused,
         "has-error": hasError,
-      } }, h("slot", { name: "icon-end" })))), h("div", { class: "helper-text-container" }, h("mw-helper-text", { helperText: helperText, hasError: hasError }), this.maximum && optionCounter && h("mw-helper-text", { helperText: `${this.selected.length}/${maximum}` })))));
+      } }, index.h("slot", { name: "icon-end" })))), index.h("div", { class: "helper-text-container" }, index.h("mw-helper-text", { helperText: helperText, hasError: hasError }), this.maximum && optionCounter && index.h("mw-helper-text", { helperText: `${this.selected.length}/${maximum}` })))));
   }
-  get hostElement() { return getElement(this); }
+  get hostElement() { return index.getElement(this); }
   static get watchers() { return {
     "selectedChips": ["handleSelectionChange"]
   }; }
@@ -629,21 +645,21 @@ const mwDividerCss = ".mw-divider{box-sizing:border-box;-moz-box-sizing:border-b
 
 const MwDivider = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.inset = false;
   }
   render() {
-    return h("div", { class: `mw-divider ${this.inset && "inset"}` });
+    return index.h("div", { class: `mw-divider ${this.inset && "inset"}` });
   }
 };
 MwDivider.style = mwDividerCss;
 
-const mwDropdownCss = ":host{display:flex;align-items:center}.wrapper{display:inline-flex;flex-direction:column}.dropdown{display:flex;flex-direction:column;min-width:var(--mw-component-size-text-field-min-width);color:var(--mw-component-text-field-fg-default)}.dropdown.disabled,.dropdown.disabled input{color:var(--mw-component-text-field-fg-disabled)}.dropdown.inline{flex-direction:row;display:flex;align-items:center}.dropdown.inline .input{min-width:var(--mw-component-size-text-field-min-w);width:100%}.dropdown.inline label{display:block;width:var(--mw-component-size-text-field-label-horizontal-width);padding:var(--mw-component-text-field-padding-label-horizontal)}.input{display:flex;align-items:center;border-radius:var(--border-radius-standard-md);padding:var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);background:var(--mw-component-text-field-bg-default);box-shadow:inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default)}.input .icon-start{margin-right:var(--mw-component-text-field-gap-horizontal-gap-within)}.input .icon-end{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within)}.input.has-error{background:var(--mw-component-text-field-bg-error)}.input:focus-within{background:var(--mw-component-text-field-bg-hover);box-shadow:inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused)}.input:not(.disabled):hover{background:var(--mw-component-text-field-bg-hover)}.input .icon{color:var(--mw-component-text-field-fg-icon-default)}.input .focused{color:var(--mw-component-text-field-fg-icon-focused)}.input .focused.has-error{color:var(--mw-component-text-field-fg-error)}.input input{border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.input input:focus-visible,.input input:focus{outline:none;border:none;box-shadow:none}.input input::placeholder{color:var(--mw-component-text-field-fg-placeholder)}.input button{cursor:pointer;border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.input button:focus-visible,.input button:focus{outline:none;border:none;box-shadow:none}.input button.placeholder{color:var(--mw-component-text-field-fg-placeholder)}.has-error{color:var(--mw-component-text-field-fg-error)}";
+const mwDropdownCss = ":host{display:flex;align-items:center}.wrapper{display:inline-flex;flex-direction:column}.dropdown{display:flex;flex-direction:column;min-width:var(--mw-component-size-text-field-min-width);color:var(--mw-component-text-field-fg-default)}.dropdown.disabled,.dropdown.disabled input{color:var(--mw-component-text-field-fg-disabled)}.dropdown.inline{flex-direction:row;display:flex;align-items:center}.dropdown.inline .input{min-width:var(--mw-component-size-text-field-min-w);width:100%}.dropdown.inline label{display:block;width:var(--mw-component-size-text-field-label-horizontal-width);padding:var(--mw-component-text-field-padding-label-horizontal)}.input{display:flex;align-items:center;border-radius:var(--border-radius-standard-md);padding:var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);background:var(--mw-component-text-field-bg-default);box-shadow:inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default)}.input .icon-start{margin-right:var(--mw-component-text-field-gap-horizontal-gap-within)}.input .icon-end{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within)}.input.has-error{background:var(--mw-component-text-field-bg-error)}.input:focus-within{background:var(--mw-component-text-field-bg-hover);box-shadow:inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused)}.input:not(.disabled):hover{background:var(--mw-component-text-field-bg-hover)}.input .icon{color:var(--mw-component-text-field-fg-icon-default)}.input .focused{color:var(--mw-component-text-field-fg-icon-focused)}.input .focused.has-error{color:var(--mw-component-text-field-fg-error)}.input input{border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.input input:focus-visible,.input input:focus{outline:transparent;border:none;box-shadow:none}.input input::placeholder{color:var(--mw-component-text-field-fg-placeholder)}.input button{cursor:pointer;border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.input button:focus-visible,.input button:focus{outline:none;border:none;box-shadow:none}.input button.placeholder{color:var(--mw-component-text-field-fg-placeholder)}.has-error{color:var(--mw-component-text-field-fg-error)}";
 
 const MwDropdown = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.valueChanged = createEvent(this, "valueChanged", 5);
+    index.registerInstance(this, hostRef);
+    this.valueChanged = index.createEvent(this, "valueChanged", 5);
     this.onValueChange = (event) => {
       this.value = event.target.value;
       this.valueChanged.emit(this.value);
@@ -681,21 +697,21 @@ const MwDropdown = class {
     this.hasDropDownMenu = !!this.host.querySelector("[slot='dropdown-menu']");
   }
   render() {
-    return (h(Host, null, h("div", { class: "wrapper" }, h("div", { class: { "dropdown": true, "inline": this.inline, "has-error": this.hasError, "disabled": this.disabled } }, h("mw-label", { name: this.name, label: this.label, required: this.required }), h("mw-popover", { noPadding: true, closeOnClick: true, open: this.isDropdownOpen }, h("div", { slot: "anchor", onClick: this.onFocus, class: { "input": true, "has-error": this.hasError, "disabled": this.disabled } }, h("span", { class: {
+    return (index.h(index.Host, null, index.h("div", { class: "wrapper" }, index.h("div", { class: { "dropdown": true, "inline": this.inline, "has-error": this.hasError, "disabled": this.disabled } }, index.h("mw-label", { name: this.name, label: this.label, required: this.required }), index.h("mw-popover", { noPadding: true, closeOnClick: true, open: this.isDropdownOpen }, index.h("div", { slot: "anchor", onClick: this.onFocus, class: { "input": true, "has-error": this.hasError, "disabled": this.disabled } }, index.h("span", { class: {
         "icon-start": this.hasIconStartSlot,
         "focused": this.focused,
         "has-error": this.hasError,
-      } }, h("slot", { name: "icon-start" })), h("button", { class: { "button": true, "has-error": this.hasError, "placeholder": !this.valueLabel }, ref: el => (this.buttonElement = el), name: this.name, value: this.value, disabled: this.disabled, onChange: this.onValueChange, onFocus: this.onFocus, onBlur: this.onBlur }, this.valueLabel ? this.valueLabel : this.placeholder), h("span", { class: {
+      } }, index.h("slot", { name: "icon-start" })), index.h("button", { class: { "button": true, "has-error": this.hasError, "placeholder": !this.valueLabel }, ref: el => (this.buttonElement = el), name: this.name, value: this.value, disabled: this.disabled, onChange: this.onValueChange, onFocus: this.onFocus, onBlur: this.onBlur }, this.valueLabel ? this.valueLabel : this.placeholder), index.h("span", { class: {
         "icon-end": this.hasIconEndSlot,
         "focused": this.focused,
         "has-error": this.hasError,
-      } }, h("slot", { name: "icon-end" })), this.hasDropDownMenu && (h("span", { class: {
+      } }, index.h("slot", { name: "icon-end" })), this.hasDropDownMenu && (index.h("span", { class: {
         "icon-end": this.hasDropDownMenu,
         "focused": this.focused,
         "has-error": this.hasError,
-      } }, h("mw-icon", { icon: this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down", size: "medium" })))), h("div", { slot: "content" }, h("slot", { name: "dropdown-menu" }))), !this.inline && h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError })), this.inline && h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError }))));
+      } }, index.h("mw-icon", { icon: this.isDropdownOpen ? "keyboard_arrow_up" : "keyboard_arrow_down", size: "medium" })))), index.h("div", { slot: "content" }, index.h("slot", { name: "dropdown-menu" }))), !this.inline && index.h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError })), this.inline && index.h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError }))));
   }
-  get host() { return getElement(this); }
+  get host() { return index.getElement(this); }
 };
 MwDropdown.style = mwDropdownCss;
 
@@ -703,13 +719,13 @@ const mwHelperTextCss = ":host{display:flex;justify-content:right}.helper-text{a
 
 const MwHelperText = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.helperText = undefined;
     this.hasError = false;
   }
   render() {
     const { helperText, hasError } = this;
-    return (h(Host, null, h("span", { class: {
+    return (index.h(index.Host, null, index.h("span", { class: {
         "hidden": !this.helperText,
         "helper-text": true,
         "has-error": hasError,
@@ -751,7 +767,7 @@ const getFontSize = (size) => ({
 }[size]);
 const MwIcon = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.icon = null;
     this.size = SizeEnum.SMALL;
     this.fill = false;
@@ -759,7 +775,7 @@ const MwIcon = class {
     this.weight = 400;
   }
   render() {
-    return (h("span", { style: {
+    return (index.h("span", { style: {
         "fontSize": getFontSize(this.size),
         "color": this.color,
         "font-variation-settings": `
@@ -770,7 +786,7 @@ const MwIcon = class {
       }, class: `material-symbols-outlined ${this.size}` }, this.icon));
   }
   static get assetsDirs() { return ["./assets"]; }
-  get el() { return getElement(this); }
+  get el() { return index.getElement(this); }
 };
 MwIcon.style = mwIconCss;
 
@@ -3416,7 +3432,7 @@ const mwIconGalleryCss = ":host{display:block}.gallery-filter{margin-bottom:20px
 
 const MwIconGallery = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.onInput = (event) => {
       const filterTerm = event.target.value.toLowerCase();
       this.filteredIcons = this.icons.filter(icon => icon.toLowerCase().includes(filterTerm));
@@ -3443,7 +3459,7 @@ const MwIconGallery = class {
     this.weight = 400;
   }
   render() {
-    return (h(Host, null, h("div", { class: "gallery-toolbar" }, h("mw-textfield", { class: "gallery-filter", onInput: this.onInput, placeholder: "Type to filter icons", id: "icon-filter" }, h("mw-icon", { icon: "search", slot: "icon-start" })), h("mw-slider", { inline: true, label: "Weight", onInput: this.onWeightChange, id: "weight", name: "weight", min: 100, max: 700, step: 100, value: this.weight }), h("mw-switch", { class: "toggle-fill", label: "filled styles", onInput: this.onToggleFill })), h("div", { class: "hint" }, h("mw-icon", { icon: "content_copy", size: "small" }), "Click item to copy icon name."), h("div", { class: "gallery" }, this.filteredIcons.map(iconName => (h("div", { class: `gallery-item-container ${iconName}`, onClick: () => this.copyIconName(iconName) }, h("div", { class: "gallery-item" }, h("mw-icon", { fill: this.fill, icon: iconName, weight: this.weight, size: "large" }), h("p", { class: "gallery-item-text" }, iconName.split("_").join(" ")))))))));
+    return (index.h(index.Host, null, index.h("div", { class: "gallery-toolbar" }, index.h("mw-textfield", { class: "gallery-filter", onInput: this.onInput, placeholder: "Type to filter icons", id: "icon-filter" }, index.h("mw-icon", { icon: "search", slot: "icon-start" })), index.h("mw-slider", { inline: true, label: "Weight", onInput: this.onWeightChange, id: "weight", name: "weight", min: 100, max: 700, step: 100, value: this.weight }), index.h("mw-switch", { class: "toggle-fill", label: "filled styles", onInput: this.onToggleFill })), index.h("div", { class: "hint" }, index.h("mw-icon", { icon: "content_copy", size: "small" }), "Click item to copy icon name."), index.h("div", { class: "gallery" }, this.filteredIcons.map(iconName => (index.h("div", { class: `gallery-item-container ${iconName}`, onClick: () => this.copyIconName(iconName) }, index.h("div", { class: "gallery-item" }, index.h("mw-icon", { fill: this.fill, icon: iconName, weight: this.weight, size: "large" }), index.h("p", { class: "gallery-item-text" }, iconName.split("_").join(" ")))))))));
   }
 };
 MwIconGallery.style = mwIconGalleryCss;
@@ -3452,14 +3468,14 @@ const mwLabelCss = ".mw-label:empty{display:none}.label{padding:0 var(--mw-compo
 
 const MwLabel = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.name = undefined;
     this.label = undefined;
     this.required = false;
   }
   render() {
     const { label, name, required } = this;
-    return (h(Host, { role: "label", class: "mw-label" }, !!label && (h("label", { htmlFor: name, class: "label" }, label, required && h("span", { class: "required" }, "*")))));
+    return (index.h(index.Host, { role: "label", class: "mw-label" }, !!label && (index.h("label", { htmlFor: name, class: "label" }, label, required && index.h("span", { class: "required" }, "*")))));
   }
 };
 MwLabel.style = mwLabelCss;
@@ -3468,13 +3484,13 @@ const mwLinkCss = ".mw-link{font-family:var(--mw-component-link-typo-font-family
 
 const MwLink = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.href = undefined;
     this.target = TargetEnum.SELF;
     this.underline = true;
   }
   render() {
-    return (h("a", { class: `mw-link ${this.underline && "underline"}`, href: this.href, target: this.target }, h("slot", null)));
+    return (index.h("a", { class: `mw-link ${this.underline && "underline"}`, href: this.href, target: this.target }, index.h("slot", null)));
   }
 };
 MwLink.style = mwLinkCss;
@@ -3490,8 +3506,8 @@ const mwLoginCss = ":host{display:block;overflow:hidden;width:100%;height:100%}.
 
 const MwLogin = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.submitEmitter = createEvent(this, "submitEmitter", 4);
+    index.registerInstance(this, hostRef);
+    this.submitEmitter = index.createEvent(this, "submitEmitter", 4);
     this.passwordType = "password";
     this.headline = undefined;
     this.layout = LoginLayoutEnum.CENTER;
@@ -3516,7 +3532,7 @@ const MwLogin = class {
     this.submitEmitter.emit(formData);
   }
   render() {
-    return (h(Host, null, h("div", { class: `mw-login mw-login--${this.layout}` }, this.backgroundImage && this.layout !== LoginLayoutEnum.CENTER && (h("div", { class: `mw-login-background mw-login-background--${this.layout}` }, h("img", { class: "mw-login-background__image", src: this.backgroundImage }))), h("div", { class: `mw-login-container mw-login-container--${this.layout}` }, this.logo && (h("div", { class: "mw-login-container__logo" }, h("img", { src: this.logo }))), this.headline && h("div", { class: "mw-login-container__headline" }, this.headline), h("form", { class: "mw-login-container__form", ref: el => (this.loginForm = el) }, h("mw-textfield", { id: "email", name: "email", type: "email", label: "Email address", required: true }, h("mw-icon", { icon: "mail", slot: "icon-end" })), h("mw-textfield", { id: "password", name: "password", type: this.passwordType, label: "Password", required: true, "helper-text": "min. 7 characters, 1 upper case, 1 lower case" }, h("mw-icon", { icon: this.passwordType === "text" ? "visibility_off" : "visibility", slot: "icon-end", onClick: this.togglePasswordType }))), h("div", { class: "mw-login-container__user-actions" }, h("mw-checkbox", { label: "Remember me" }), h("span", { class: "spacefiller" }), this.forgotPasswordHref && h("mw-link", { href: this.forgotPasswordHref }, "Forgot your password?")), h("mw-button", { label: "Log In", onClick: this.submitLoginForm, id: "submit" }), this.signUpHref && (h("div", { class: "mw-login-container__sign-up" }, "Dont't have an account?", " ", h("mw-link", { href: this.signUpHref, underline: true }, "Sign up")))))));
+    return (index.h(index.Host, null, index.h("div", { class: `mw-login mw-login--${this.layout}` }, this.backgroundImage && this.layout !== LoginLayoutEnum.CENTER && (index.h("div", { class: `mw-login-background mw-login-background--${this.layout}` }, index.h("img", { class: "mw-login-background__image", src: this.backgroundImage }))), index.h("div", { class: `mw-login-container mw-login-container--${this.layout}` }, this.logo && (index.h("div", { class: "mw-login-container__logo" }, index.h("img", { src: this.logo }))), this.headline && index.h("div", { class: "mw-login-container__headline" }, this.headline), index.h("form", { class: "mw-login-container__form", ref: el => (this.loginForm = el) }, index.h("mw-textfield", { id: "email", name: "email", type: "email", label: "Email address", required: true }, index.h("mw-icon", { icon: "mail", slot: "icon-end" })), index.h("mw-textfield", { id: "password", name: "password", type: this.passwordType, label: "Password", required: true, "helper-text": "min. 7 characters, 1 upper case, 1 lower case" }, index.h("mw-icon", { icon: this.passwordType === "text" ? "visibility_off" : "visibility", slot: "icon-end", onClick: this.togglePasswordType }))), index.h("div", { class: "mw-login-container__user-actions" }, index.h("mw-checkbox", { label: "Remember me" }), index.h("span", { class: "spacefiller" }), this.forgotPasswordHref && index.h("mw-link", { href: this.forgotPasswordHref }, "Forgot your password?")), index.h("mw-button", { label: "Log In", onClick: this.submitLoginForm, id: "submit" }), this.signUpHref && (index.h("div", { class: "mw-login-container__sign-up" }, "Dont't have an account?", " ", index.h("mw-link", { href: this.signUpHref, underline: true }, "Sign up")))))));
   }
 };
 MwLogin.style = mwLoginCss;
@@ -3525,13 +3541,13 @@ const mwMenuCss = ":host{display:block}";
 
 const MwMenu = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.testId = undefined;
     this.placement = "bottom-end";
     this.open = false;
   }
   render() {
-    return (h(Host, null, h("mw-popover", { testId: this.testId, placement: this.placement, open: this.open, "no-padding": true }, h("div", { slot: "anchor" }, h("slot", { name: "anchor" })), h("div", { slot: "content", class: "menu" }, h("slot", null)))));
+    return (index.h(index.Host, null, index.h("mw-popover", { testId: this.testId, placement: this.placement, open: this.open, "no-padding": true }, index.h("div", { slot: "anchor" }, index.h("slot", { name: "anchor" })), index.h("div", { slot: "content", class: "menu" }, index.h("slot", null)))));
   }
 };
 MwMenu.style = mwMenuCss;
@@ -3540,8 +3556,8 @@ const mwMenuItemCss = ":host{display:block}.mw-menu-item{display:flex;flex-direc
 
 const MwMenuItem = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.clickEmitter = createEvent(this, "mwMenuItemClick", 4);
+    index.registerInstance(this, hostRef);
+    this.clickEmitter = index.createEvent(this, "mwMenuItemClick", 4);
     this.handleClick = (event) => {
       event.target.blur();
       if (!this.disabled)
@@ -3558,7 +3574,7 @@ const MwMenuItem = class {
       this.value = this.text;
   }
   render() {
-    return (h(Host, null, h("div", { onClick: this.handleClick, tabindex: "0", class: { "mw-menu-item": true, "disabled": this.disabled, "selected": this.selected } }, !!this.text && h("div", { class: "mw-menu-item-title" }, this.text), !!this.subtitle && h("div", { class: "mw-menu-item-subtitle" }, this.subtitle))));
+    return (index.h(index.Host, null, index.h("div", { onClick: this.handleClick, tabindex: "0", class: { "mw-menu-item": true, "disabled": this.disabled, "selected": this.selected } }, !!this.text && index.h("div", { class: "mw-menu-item-title" }, this.text), !!this.subtitle && index.h("div", { class: "mw-menu-item-subtitle" }, this.subtitle))));
   }
 };
 MwMenuItem.style = mwMenuItemCss;
@@ -3567,11 +3583,11 @@ const mwMenuListCss = ":host{display:block}.mw-menu-list{box-shadow:0px 5px 5px 
 
 const MwMenuList = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.testId = undefined;
   }
   render() {
-    return (h(Host, null, h("div", { "test-id": this.testId, slot: "content", class: "mw-menu-list" }, h("slot", null))));
+    return (index.h(index.Host, null, index.h("div", { "test-id": this.testId, slot: "content", class: "mw-menu-list" }, index.h("slot", null))));
   }
 };
 MwMenuList.style = mwMenuListCss;
@@ -5378,8 +5394,8 @@ const mwPopoverCss = ":host{display:block}.mw-popover{position:relative}.mw-popo
 
 const MwPopover = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.openEmitter = createEvent(this, "mwPopoverOpen", 6);
+    index.registerInstance(this, hostRef);
+    this.openEmitter = index.createEvent(this, "mwPopoverOpen", 6);
     // @ClickOutside()
     // private toggleIfOpen(): void {
     //   if (this.open && this.dismissable) {
@@ -5414,13 +5430,13 @@ const MwPopover = class {
     this.openEmitter.emit(this.open);
   }
   render() {
-    return (h(Host, null, h("div", { class: "mw-popover" }, h("div", { "aria-describedby": this.name, onClick: this.onClick, ref: el => {
+    return (index.h(index.Host, null, index.h("div", { class: "mw-popover" }, index.h("div", { "aria-describedby": this.name, onClick: this.onClick, ref: el => {
         this.anchorRef = el;
-      } }, h("slot", { name: "anchor" })), h("div", { role: "tooltip", id: this.name, class: { "mw-popover-content": true, "open": this.open, "no-padding": this.noPadding }, ref: el => {
+      } }, index.h("slot", { name: "anchor" })), index.h("div", { role: "tooltip", id: this.name, class: { "mw-popover-content": true, "open": this.open, "no-padding": this.noPadding }, ref: el => {
         this.contentRef = el;
-      }, onClick: this.closePopoverOnClick }, h("slot", { name: "content" })))));
+      }, onClick: this.closePopoverOnClick }, index.h("slot", { name: "content" })))));
   }
-  get hostElement() { return getElement(this); }
+  get hostElement() { return index.getElement(this); }
   static get watchers() { return {
     "open": ["onOpenChange"]
   }; }
@@ -5432,7 +5448,7 @@ const mwRadioCss = ".mw-radio-container{display:flex;position:relative;cursor:po
 let radioIds = 0;
 const MwRadio = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.radioId = `radio-input-${radioIds++}`;
     this.setSelection = () => {
       const { radioGroup, radioGroupValue, value } = this;
@@ -5472,9 +5488,9 @@ const MwRadio = class {
     this.checked = !this.checked;
   }
   render() {
-    return (h(Host, { "test-id": this.testId, class: "mw-radio-container", onClick: this.onClick, "aria-checked": `${this.checked}`, "aria-hidden": this.disabled ? "true" : null, role: "radio" }, h("input", { id: this.radioId, type: "radio", value: this.value, name: this.name, checked: this.checked, disabled: this.disabled }), h("span", { class: "mw-radio" }), h("label", { class: "mw-radio-label", htmlFor: this.radioId }, this.label)));
+    return (index.h(index.Host, { "test-id": this.testId, class: "mw-radio-container", onClick: this.onClick, "aria-checked": `${this.checked}`, "aria-hidden": this.disabled ? "true" : null, role: "radio" }, index.h("input", { id: this.radioId, type: "radio", value: this.value, name: this.name, checked: this.checked, disabled: this.disabled }), index.h("span", { class: "mw-radio" }), index.h("label", { class: "mw-radio-label", htmlFor: this.radioId }, this.label)));
   }
-  get hostElement() { return getElement(this); }
+  get hostElement() { return index.getElement(this); }
 };
 MwRadio.style = mwRadioCss;
 
@@ -5482,7 +5498,7 @@ const mwSliderCss = ":host{display:block}.mw-slider,.mw-slider-container{display
 
 const MwSlider = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.updateRangeValuePosition = () => {
       const rangeValueElement = this.host.shadowRoot.querySelector("#mw-slider-range-value");
       const inputElement = this.host.shadowRoot.querySelector(".mw-slider-input input");
@@ -5512,18 +5528,25 @@ const MwSlider = class {
     this.updateRangeValuePosition();
   }
   render() {
-    return (h(Host, null, h("div", { class: "mw-slider-container" }, h("div", { class: { "mw-slider": true, "inline": this.inline, "disabled": this.disabled }, "test-id": this.testId }, this.label && (h("label", { class: "mw-slider-label", htmlFor: this.name }, this.label)), h("div", { class: { "mw-slider-input-wrapper": true, "disabled": this.disabled } }, this.startIcon && h("mw-icon", { icon: this.startIcon, size: "medium" }), h("div", { class: "mw-slider-input" }, h("input", { type: "range", onInput: this.handleInput, disabled: this.disabled, id: this.name, step: this.step, name: this.name, min: this.min, max: this.max, value: this.value }), h("label", { htmlfor: this.name, id: "mw-slider-range-value" }, this.value)), this.endIcon && h("mw-icon", { icon: this.endIcon, size: "medium" })), this.helperText && !this.inline && h("div", { class: "mw-slider-helper" }, this.helperText)), this.helperText && this.inline && h("div", { class: "mw-slider-helper" }, this.helperText))));
+    return (index.h(index.Host, null, index.h("div", { class: "mw-slider-container" }, index.h("div", { class: { "mw-slider": true, "inline": this.inline, "disabled": this.disabled }, "test-id": this.testId }, this.label && (index.h("label", { class: "mw-slider-label", htmlFor: this.name }, this.label)), index.h("div", { class: { "mw-slider-input-wrapper": true, "disabled": this.disabled } }, this.startIcon && index.h("mw-icon", { icon: this.startIcon, size: "medium" }), index.h("div", { class: "mw-slider-input" }, index.h("input", { type: "range", onInput: this.handleInput, disabled: this.disabled, id: this.name, step: this.step, name: this.name, min: this.min, max: this.max, value: this.value }), index.h("label", { htmlfor: this.name, id: "mw-slider-range-value" }, this.value)), this.endIcon && index.h("mw-icon", { icon: this.endIcon, size: "medium" })), this.helperText && !this.inline && index.h("div", { class: "mw-slider-helper" }, this.helperText)), this.helperText && this.inline && index.h("div", { class: "mw-slider-helper" }, this.helperText))));
   }
-  get host() { return getElement(this); }
+  get host() { return index.getElement(this); }
 };
 MwSlider.style = mwSliderCss;
 
-const mwSwitchCss = ":host{display:flex;justify-content:flex-start;align-items:center}.label{font-size:16px;font-family:'Poppins', sans-serif;margin-left:var(--mw-component-controls-with-label-gap);color:var(--mw-component-controls-color-label-default)}.switch{position:relative;display:inline-block;width:var(--mw-component-size-toggle-switch-default-w);height:var(--mw-component-size-toggle-switch-default-h)}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:var(--mw-component-controls-color-bg-unselected);-webkit-transition:0.4s;transition:0.4s}input:checked+.slider:before{position:absolute;content:'';height:24px;width:24px;left:4px;bottom:4px;background-color:var(--mw-component-controls-color-fg-default);-webkit-transition:0.4s;transition:0.4s;-webkit-transform:translateX(20px);-ms-transform:translateX(20px);transform:translateX(20px)}input:not(:checked)+.slider:before{position:absolute;content:'';height:16px;width:16px;left:8px;bottom:8px;background-color:var(--mw-component-controls-color-fg-off);-webkit-transition:0.4s;transition:0.4s}input:active+.slider:before{position:absolute;content:'';height:28px;width:28px;left:2px;bottom:2px;background-color:var(--mw-component-controls-color-fg-default);-webkit-transition:0.4s;transition:0.4s}input:not(:checked):not(:disabled):active+.slider:before{position:absolute;content:'';height:28px;width:28px;left:2px;bottom:2px;background-color:var(--mw-component-controls-color-fg-off);-webkit-transition:0.4s;transition:0.4s}input:disabled+.slider:before{position:absolute;content:'';height:16px;width:16px;left:8px;bottom:8px;background-color:var(--mw-component-controls-color-fg-disabled);-webkit-transition:0.4s;transition:0.4s}input:checked+.slider{background-color:var(--mw-component-controls-color-bg-selected)}input:disabled+.slider{background-color:var(--mw-component-controls-color-bg-disabled)}input:focus:not(:active):not(:disabled)+.slider{box-shadow:inset 0 0 0 var(--mw-component-controls-border-width-focused) var(--mw-component-controls-color-outline-default);background-color:var(--mw-component-controls-color-bg-focused)}input:hover:not(:disabled)+.slider{background-color:var(--mw-component-controls-color-bg-hover)}input:active:not(:disabled)+.slider{background-color:var(--mw-component-controls-color-bg-pressed)}input:not(:checked):not(:disabled)+.slider{box-shadow:inset 0 0 0 var(--mw-component-controls-border-width-unselected) var(--mw-component-controls-color-outline-default)}input:not(:checked):disabled+.slider{box-shadow:inset 0 0 0 var(--mw-component-controls-border-width-unselected) var(--mw-component-controls-color-outline-disabled)}.slider.round{border-radius:34px;-webkit-border-radius:34px}.slider.round:before{border-radius:50%;-webkit-border-radius:50%}";
+const mwSwitchCss = ":host{display:flex;justify-content:flex-start;align-items:center}.label{font-size:16px;font-family:\"Poppins\", sans-serif;margin-left:var(--mw-component-controls-with-label-gap);color:var(--mw-component-controls-color-label-default)}.switch{position:relative;display:inline-block;width:var(--mw-component-size-toggle-switch-default-w);height:var(--mw-component-size-toggle-switch-default-h)}.switch input{opacity:0;width:0;height:0}.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:var(--mw-component-controls-color-bg-unselected);-webkit-transition:0.4s;transition:0.4s}input:checked+.slider:before{position:absolute;content:\"\";height:24px;width:24px;left:5px;bottom:2px;background-color:var(--mw-component-controls-color-fg-default);-webkit-transition:0.4s;transition:0.4s;-webkit-transform:translateX(20px);-ms-transform:translateX(20px);transform:translateX(20px)}input:not(:checked)+.slider:before{position:absolute;content:\"\";height:16px;width:16px;left:6px;bottom:6px;background-color:var(--mw-component-controls-color-fg-off);-webkit-transition:0.4s;transition:0.4s}input:active+.slider:before{position:absolute;content:\"\";height:28px;width:28px;left:2px;bottom:2px;background-color:var(--mw-component-controls-color-fg-default);-webkit-transition:0.4s;transition:0.4s}input:not(:checked):not(:disabled):active+.slider:before{position:absolute;content:\"\";height:28px;width:28px;left:2px;bottom:2px;background-color:var(--mw-component-controls-color-fg-off);-webkit-transition:0.4s;transition:0.4s}input:disabled+.slider:before{position:absolute;content:\"\";height:16px;width:16px;left:6px;bottom:6px;background-color:var(--mw-component-controls-color-fg-disabled);-webkit-transition:0.4s;transition:0.4s}input:checked+.slider{background-color:var(--mw-component-controls-color-bg-selected)}input:disabled+.slider{background-color:var(--mw-component-controls-color-bg-disabled)}input:focus:not(:active):not(:disabled)+.slider{box-shadow:inset 0 0 0 var(--mw-component-controls-border-width-focused) var(--mw-component-controls-color-outline-default);background-color:var(--mw-component-controls-color-bg-focused)}input:hover:not(:disabled)+.slider{background-color:var(--mw-component-controls-color-bg-hover)}input:active:not(:disabled)+.slider{background-color:var(--mw-component-controls-color-bg-pressed)}input:not(:checked):not(:disabled)+.slider{box-shadow:inset 0 0 0 var(--mw-component-controls-border-width-unselected) var(--mw-component-controls-color-outline-default)}input:not(:checked):disabled+.slider{box-shadow:inset 0 0 0 var(--mw-component-controls-border-width-unselected) var(--mw-component-controls-color-outline-disabled)}.slider.round{border-radius:34px;-webkit-border-radius:34px}.slider.round:before{border-radius:50%;-webkit-border-radius:50%}";
 
 const MwSwitch = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.emitter = createEvent(this, "emitter", 4);
+    index.registerInstance(this, hostRef);
+    this.emitter = index.createEvent(this, "emitter", 7);
+    this.toggleSwitch = (event) => {
+      if (!this.disabled) {
+        event.target.blur();
+        this.checked = !this.checked;
+        this.emitter.emit(this.checked);
+      }
+    };
     this.testId = undefined;
     this.disabled = undefined;
     this.label = undefined;
@@ -5531,17 +5554,12 @@ const MwSwitch = class {
     this.off = undefined;
     this.checked = false;
   }
-  toggleSwitch(event) {
-    event.target.blur();
-    this.checked = this.checkbox.checked;
-    this.emitter.emit(event);
-  }
   componentWillLoad() {
     this.hasLabel = !!this.label;
     this.hasOnOffLabel = !!this.on && !!this.off;
   }
   render() {
-    return (h(Host, null, h("label", { "test-id": this.testId, onClick: this.toggleSwitch.bind(this), class: "switch" }, h("input", { disabled: this.disabled, ref: (el) => (this.checkbox = el), type: "checkbox", checked: this.checked }), h("span", { class: "slider round" })), this.hasLabel && h("span", { class: "label" }, this.label), this.hasOnOffLabel && h("span", { class: "label" }, this.checked ? this.on : this.off)));
+    return (index.h(index.Host, null, index.h("label", { "test-id": this.testId, class: "switch" }, index.h("input", { disabled: this.disabled, type: "checkbox", onInput: this.toggleSwitch, checked: this.checked }), index.h("span", { class: "slider round" })), this.hasLabel && index.h("span", { class: "label" }, this.label), this.hasOnOffLabel && index.h("span", { class: "label" }, this.checked ? this.on : this.off)));
   }
 };
 MwSwitch.style = mwSwitchCss;
@@ -5550,14 +5568,14 @@ const mwTabCss = ":host{width:100%;flex-grow:1}.mw-tab{width:100%;box-sizing:bor
 
 const MwTab = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
+    index.registerInstance(this, hostRef);
     this.selected = undefined;
     this.icon = undefined;
     this.label = undefined;
     this.disabled = undefined;
   }
   render() {
-    return (h(Host, null, h("button", { disabled: this.disabled, class: `mw-tab ${this.icon && this.label ? "label-with-icon" : ""} ${this.selected ? "selected" : ""}` }, this.icon && h("mw-icon", { icon: this.icon, size: "small" }), this.label)));
+    return (index.h(index.Host, null, index.h("button", { disabled: this.disabled, class: `mw-tab ${this.icon && this.label ? "label-with-icon" : ""} ${this.selected ? "selected" : ""}` }, this.icon && index.h("mw-icon", { icon: this.icon, size: "small" }), this.label)));
   }
 };
 MwTab.style = mwTabCss;
@@ -5566,8 +5584,8 @@ const mwTabsCss = ".mw-tabs{display:flex;flex-flow:row;gap:0;width:100%}";
 
 const MwTabs = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.tabsClickEmitter = createEvent(this, "tabsClickEmitter", 4);
+    index.registerInstance(this, hostRef);
+    this.tabsClickEmitter = index.createEvent(this, "tabsClickEmitter", 4);
     this.testId = undefined;
     this.selected = null;
     this.tabs = [];
@@ -5591,18 +5609,66 @@ const MwTabs = class {
     }
   }
   render() {
-    return (h("div", { "test-id": this.testId, class: "mw-tabs" }, this.tabs.map((item, key) => (h("mw-tab", { key: key, icon: item.icon, label: item.label, selected: item.selected, disabled: item.disabled, onClick: () => this.handleClick(key) })))));
+    return (index.h("div", { "test-id": this.testId, class: "mw-tabs" }, this.tabs.map((item, key) => (index.h("mw-tab", { key: key, icon: item.icon, label: item.label, selected: item.selected, disabled: item.disabled, onClick: () => this.handleClick(key) })))));
   }
-  get host() { return getElement(this); }
+  get host() { return index.getElement(this); }
 };
 MwTabs.style = mwTabsCss;
 
-const mwTextfieldCss = ":host{display:flex;align-items:center}.wrapper{display:inline-flex;flex-direction:column;width:100%}.textfield{display:flex;flex-direction:column;min-width:var(--mw-component-size-text-field-min-width);color:var(--mw-component-text-field-fg-default)}.textfield.disabled,.textfield.disabled input{color:var(--mw-component-text-field-fg-disabled)}.textfield.inline{flex-direction:row;display:flex;align-items:center}.textfield.inline .input{min-width:var(--mw-component-size-text-field-min-w);width:100%}.textfield.inline label{display:block;width:var(--mw-component-size-text-field-label-horizontal-width);padding:var(--mw-component-text-field-padding-label-horizontal)}.input{display:flex;align-items:center;border-radius:var(--border-radius-standard-md);padding:var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);background:var(--mw-component-text-field-bg-default);box-shadow:inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default)}.input .icon-start{margin-right:var(--mw-component-text-field-gap-horizontal-gap-within)}.input .icon-end{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within)}.input.has-error{background:var(--mw-component-text-field-bg-error)}.input:focus-within{background:var(--mw-component-text-field-bg-hover);box-shadow:inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused)}.input:not(.disabled):hover{background:var(--mw-component-text-field-bg-hover)}.input .icon{color:var(--mw-component-text-field-fg-icon-default)}.input .focused{color:var(--mw-component-text-field-fg-icon-focused)}.input .focused.has-error{color:var(--mw-component-text-field-fg-error)}.input input{border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.input input:focus-visible,.input input:focus{outline:none;border:none;box-shadow:none}.input input::placeholder{color:var(--mw-component-text-field-fg-placeholder)}.has-error{color:var(--mw-component-text-field-fg-default)}";
+const mwTextareaCss = ":host{display:flex;align-items:center}.wrapper{display:inline-flex;flex-direction:column}.textarea-field{display:flex;flex-direction:column;min-width:var(--mw-component-size-text-field-min-width);color:var(--mw-component-text-field-fg-default)}.textarea-field.disabled,.textarea-field.disabled input{color:var(--mw-component-text-field-fg-disabled)}.textarea-field.inline{flex-direction:row;display:flex;align-items:center}.textarea-field.inline .input{min-width:var(--mw-component-size-text-field-min-w);width:100%}.textarea-field.inline label{display:block;width:var(--mw-component-size-text-field-label-horizontal-width);padding:var(--mw-component-text-field-padding-label-horizontal)}.textarea{border-radius:var(--border-radius-standard-md);padding:var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);background:var(--mw-component-text-field-bg-default);box-shadow:inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default);border:none;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height);resize:none}.textarea.has-error{background:var(--mw-component-text-field-bg-error)}.textarea:focus-visible,.textarea:focus{outline:transparent;border:none;box-shadow:none}.textarea::placeholder{color:var(--mw-component-text-field-fg-placeholder)}.textarea:focus-within,.textarea:focus-visible{background:var(--mw-component-text-field-bg-hover);box-shadow:inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused)}.textarea:not(.disabled):hover{background:var(--mw-component-text-field-bg-hover)}.textarea .focused{color:var(--mw-component-text-field-fg-icon-focused)}.textarea .focused.has-error{color:var(--mw-component-text-field-fg-error)}.textarea.resize{resize:both}.has-error{color:var(--mw-component-text-field-fg-default)}";
+
+const MwTextarea = class {
+  constructor(hostRef) {
+    index.registerInstance(this, hostRef);
+    this.inputEmitter = index.createEvent(this, "inputEmitter", 7);
+    this.changeEmitter = index.createEvent(this, "changeEmitter", 7);
+    this.blurEmitter = index.createEvent(this, "blurEmitter", 7);
+    this.onChange = (event) => {
+      this.value = event.target.value;
+      this.changeEmitter.emit(this.value);
+    };
+    this.onInput = (event) => {
+      this.value = event.target.value;
+      this.inputEmitter.emit(this.value);
+    };
+    this.onBlur = () => {
+      this.blurEmitter.emit();
+    };
+    this.value = undefined;
+    this.name = undefined;
+    this.label = undefined;
+    this.placeholder = undefined;
+    this.helperText = undefined;
+    this.hasError = false;
+    this.required = false;
+    this.disabled = false;
+    this.readonly = false;
+    this.maxlength = undefined;
+    this.rows = undefined;
+    this.cols = undefined;
+    this.form = undefined;
+    this.resize = "none";
+  }
+  render() {
+    return (index.h(index.Host, null, index.h("div", { class: "wrapper" }, index.h("div", { class: {
+        "textarea-field": true,
+        "has-error": this.hasError,
+        "disabled": this.disabled,
+      } }, index.h("mw-label", { name: this.name, label: this.label, required: this.required }), index.h("textarea", { placeholder: this.placeholder, style: { resize: this.resize }, class: {
+        "textarea": true,
+        "has-error": this.hasError,
+      }, onInput: this.onInput, onChange: this.onChange, onBlur: this.onBlur, name: this.name, value: this.value, disabled: this.disabled, readonly: this.readonly, maxlength: this.maxlength, cols: this.cols, rows: this.rows, form: this.form, required: this.required })), index.h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError }))));
+  }
+  get hostElement() { return index.getElement(this); }
+};
+MwTextarea.style = mwTextareaCss;
+
+const mwTextfieldCss = ":host{display:flex;align-items:center}.wrapper{display:inline-flex;flex-direction:column;width:100%}.textfield{display:flex;flex-direction:column;min-width:var(--mw-component-size-text-field-min-width);color:var(--mw-component-text-field-fg-default)}.textfield.disabled,.textfield.disabled input{color:var(--mw-component-text-field-fg-disabled)}.textfield.inline{flex-direction:row;display:flex;align-items:center}.textfield.inline .input{min-width:var(--mw-component-size-text-field-min-w);width:100%}.textfield.inline label{display:block;width:var(--mw-component-size-text-field-label-horizontal-width);padding:var(--mw-component-text-field-padding-label-horizontal)}.input{display:flex;align-items:center;border-radius:var(--border-radius-standard-md);padding:var(--mw-component-text-field-padding-text-field-y) var(--mw-component-text-field-padding-text-field-x);background:var(--mw-component-text-field-bg-default);box-shadow:inset 0 0 0 var(--mw-component-text-field-default) var(--mw-component-text-field-border-default)}.input .icon-start{margin-right:var(--mw-component-text-field-gap-horizontal-gap-within)}.input .icon-end{margin-left:var(--mw-component-text-field-gap-horizontal-gap-within)}.input.has-error{background:var(--mw-component-text-field-bg-error)}.input:focus-within{background:var(--mw-component-text-field-bg-hover);box-shadow:inset 0 0 0 var(--mw-component-text-field-focused) var(--mw-component-text-field-border-focused)}.input:not(.disabled):hover{background:var(--mw-component-text-field-bg-hover)}.input .icon{color:var(--mw-component-text-field-fg-icon-default)}.input .focused{color:var(--mw-component-text-field-fg-icon-focused)}.input .focused.has-error{color:var(--mw-component-text-field-fg-error)}.input input{border:none;padding:0;width:100%;background:transparent;font-family:var(--mw-component-text-field-text-font-family);font-weight:var(--mw-component-text-field-text-font-weight);font-size:var(--mw-component-text-field-text-font-size);line-height:var(--mw-component-text-field-text-line-height)}.input input:focus-visible,.input input:focus{outline:transparent;border:none;box-shadow:none}.input input::placeholder{color:var(--mw-component-text-field-fg-placeholder)}.has-error{color:var(--mw-component-text-field-fg-default)}";
 
 const MwTextfield = class {
   constructor(hostRef) {
-    registerInstance(this, hostRef);
-    this.valueChanged = createEvent(this, "mwTextfieldValueChanged", 7);
+    index.registerInstance(this, hostRef);
+    this.valueChanged = index.createEvent(this, "valueChanged", 7);
     this.onValueChange = (event) => {
       this.value = event.target.value;
       this.valueChanged.emit(this.value);
@@ -5632,17 +5698,49 @@ const MwTextfield = class {
     this.hasIconEndSlot = !!this.hostElement.querySelector("[slot='icon-end']");
   }
   render() {
-    return (h(Host, null, h("div", { class: "wrapper" }, h("div", { class: {
+    return (index.h(index.Host, null, index.h("div", { class: "wrapper" }, index.h("div", { class: {
         "textfield": true,
         "inline": this.inline,
         "has-error": this.hasError,
         "disabled": this.disabled,
-      } }, h("mw-label", { name: this.name, label: this.label, required: this.required }), h("div", { onClick: this.onFocus, class: { "input": true, "has-error": this.hasError, "disabled": this.disabled } }, h("span", { class: { "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError }, part: "icon-start" }, h("slot", { name: "icon-start" })), h("input", { ref: el => (this.inputElement = el), placeholder: this.placeholder, class: {
+      } }, index.h("mw-label", { name: this.name, label: this.label, required: this.required }), index.h("div", { onClick: this.onFocus, class: { "input": true, "has-error": this.hasError, "disabled": this.disabled } }, index.h("span", { class: { "icon-start": this.hasIconStartSlot, "focused": this.focused, "has-error": this.hasError }, part: "icon-start" }, index.h("slot", { name: "icon-start" })), index.h("input", { ref: el => (this.inputElement = el), placeholder: this.placeholder, class: {
         "has-error": this.hasError,
-      }, onFocus: this.onFocus, onBlur: this.onBlur, onInput: this.onValueChange, onChange: this.onValueChange, type: this.type, name: this.name, value: this.value, disabled: this.disabled, readOnly: this.readOnly }), h("span", { class: { "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError }, part: "icon-end" }, h("slot", { name: "icon-end" }))), !this.inline && h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError })), this.inline && h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError }))));
+      }, onFocus: this.onFocus, onBlur: this.onBlur, onInput: this.onValueChange, onChange: this.onValueChange, type: this.type, name: this.name, value: this.value, disabled: this.disabled, readOnly: this.readOnly }), index.h("span", { class: { "icon-end": this.hasIconEndSlot, "focused": this.focused, "has-error": this.hasError }, part: "icon-end" }, index.h("slot", { name: "icon-end" }))), !this.inline && index.h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError })), this.inline && index.h("mw-helper-text", { helperText: this.helperText, hasError: this.hasError }))));
   }
-  get hostElement() { return getElement(this); }
+  get hostElement() { return index.getElement(this); }
 };
 MwTextfield.style = mwTextfieldCss;
 
-export { MwAppBar as mw_app_bar, MwAppBarTitle as mw_app_bar_title, MwAutocomplete as mw_autocomplete, MwAvatar as mw_avatar, MwButton as mw_button, MwCard as mw_card, MwCardBody as mw_card_body, MwCardFooter as mw_card_footer, MwCardHeader as mw_card_header, MwCardImage as mw_card_image, MwCardTitle as mw_card_title, MwCheckbox as mw_checkbox, MwChip as mw_chip, MwChipInput as mw_chip_input, MwDivider as mw_divider, MwDropdown as mw_dropdown, MwHelperText as mw_helper_text, MwIcon as mw_icon, MwIconGallery as mw_icon_gallery, MwLabel as mw_label, MwLink as mw_link, MwLogin as mw_login, MwMenu as mw_menu, MwMenuItem as mw_menu_item, MwMenuList as mw_menu_list, MwPopover as mw_popover, MwRadio as mw_radio, MwSlider as mw_slider, MwSwitch as mw_switch, MwTab as mw_tab, MwTabs as mw_tabs, MwTextfield as mw_textfield };
+exports.mw_app_bar = MwAppBar;
+exports.mw_app_bar_title = MwAppBarTitle;
+exports.mw_autocomplete = MwAutocomplete;
+exports.mw_avatar = MwAvatar;
+exports.mw_button = MwButton;
+exports.mw_card = MwCard;
+exports.mw_card_body = MwCardBody;
+exports.mw_card_footer = MwCardFooter;
+exports.mw_card_header = MwCardHeader;
+exports.mw_card_image = MwCardImage;
+exports.mw_card_title = MwCardTitle;
+exports.mw_checkbox = MwCheckbox;
+exports.mw_chip = MwChip;
+exports.mw_chip_input = MwChipInput;
+exports.mw_divider = MwDivider;
+exports.mw_dropdown = MwDropdown;
+exports.mw_helper_text = MwHelperText;
+exports.mw_icon = MwIcon;
+exports.mw_icon_gallery = MwIconGallery;
+exports.mw_label = MwLabel;
+exports.mw_link = MwLink;
+exports.mw_login = MwLogin;
+exports.mw_menu = MwMenu;
+exports.mw_menu_item = MwMenuItem;
+exports.mw_menu_list = MwMenuList;
+exports.mw_popover = MwPopover;
+exports.mw_radio = MwRadio;
+exports.mw_slider = MwSlider;
+exports.mw_switch = MwSwitch;
+exports.mw_tab = MwTab;
+exports.mw_tabs = MwTabs;
+exports.mw_textarea = MwTextarea;
+exports.mw_textfield = MwTextfield;
