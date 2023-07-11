@@ -1,5 +1,5 @@
 <script>
-import { MwAutocomplete, MwMenuItem, MwLogin, MwCard, MwButton, MwCardFooter, MwCardTitle, MwCardBody, MwIcon } from "@maibornwolff/mwui-vue";
+import { MwAutocomplete, MwTextarea, MwMenuItem, MwLogin, MwCard, MwButton, MwCardFooter, MwCardTitle, MwCardBody, MwIcon } from "@maibornwolff/mwui-vue";
 import bg from "../assets/background.jpg";
 export default {
     components: {
@@ -12,6 +12,7 @@ export default {
         MwCardFooter,
         MwButton,
         MwLogin,
+        MwTextarea,
     },
     data() {
         return {
@@ -65,6 +66,7 @@ export default {
                             <mw-menu-item text="Pear" />
                         </div>
                     </mw-autocomplete>
+                    <mw-textarea id="textarea" placeholder="Comments..." resize="horizontal" />
                 </mw-card-body>
                 <mw-card-footer>
                     <mw-button variant="filled" label="Send" @click="onSend" />
@@ -84,5 +86,8 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#textarea {
+    width: 500px;
 }
 </style>
