@@ -1,3 +1,10 @@
+-   chore: add build vue (03a803e)
+-   chore: update package-lock (c7ad4bd)
+-   chore: release v0.6.0 (582beee)
+-   chore: mwui-react 0.5.0 (b1dce7e)
+-   chore: add mwui-react build with mwui-stencil@0.5.0 (6abc4a9)
+-   chore: add build (daaa830)
+
 ## [0.5.0](https://github.com/MaibornWolff/mwui/compare/v0.3.1...v0.5.0) (2023-06-05)
 
 ### Reworks
