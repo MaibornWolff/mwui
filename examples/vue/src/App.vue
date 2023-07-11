@@ -1,6 +1,7 @@
 <script>
 import { MwAutocomplete, MwMenuItem, MwLogin, MwCard, MwButton, MwCardFooter, MwCardTitle, MwCardBody, MwIcon } from "@maibornwolff/mwui-vue";
 import bg from "../assets/background.jpg";
+import logo from "../assets/logo.png";
 export default {
     components: {
         MwAutocomplete,
@@ -17,6 +18,7 @@ export default {
         return {
             selected: ["Pineapple"],
             bg,
+            logo,
             showClose: true,
         };
     },
@@ -36,7 +38,7 @@ export default {
 
 <template>
     <div id="app">
-        <mw-login headline="Welcome back" :background-image="bg" layout="start" forgot-password-href="/aksddfd" sign-up-href="/askdf" @submitemitter="onSubmit" />
+        <mw-login :logo="logo" headline="Welcome back" :background-image="bg" layout="start" forgot-password-href="/aksddfd" sign-up-href="/askdf" @submitemitter="onSubmit" />
         <div class="container">
             <mw-card elevated>
                 <mw-card-title text="All about fruits" />
@@ -56,6 +58,7 @@ export default {
                         multiple
                         maximum="2"
                         @input="onInput"
+                        @mwautocompletevaluechanged="onInput"
                     >
                         <mw-icon slot="icon-start" icon="search" />
                         <div slot="dropdown-menu">
