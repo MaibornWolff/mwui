@@ -257,7 +257,7 @@
                     },
                     "lineHeight": {
                         "value": 20,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "md": {
@@ -271,7 +271,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     },
                     "fontSize": {
                         "value": 16,
@@ -289,7 +289,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     },
                     "fontSize": {
                         "value": 20,
@@ -307,7 +307,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     },
                     "fontSize": {
                         "value": 24,
@@ -331,7 +331,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "color": {
@@ -402,7 +402,7 @@
                         }
                     }
                 },
-                "toggle-switch": {
+                "switch": {
                     "defaultW": {
                         "value": 52,
                         "type": "sizing"
@@ -679,7 +679,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 }
             },
@@ -699,7 +699,7 @@
                     },
                     "lineHeight": {
                         "value": 20,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "helperText": {
@@ -717,7 +717,7 @@
                     },
                     "lineHeight": {
                         "value": 20,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "text": {
@@ -735,7 +735,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "fg": {
@@ -885,7 +885,7 @@
                     },
                     "lineHeight": {
                         "value": 16,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     },
                     "textCase": {
                         "value": "uppercase",
@@ -958,7 +958,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "subtitle": {
@@ -976,7 +976,7 @@
                     },
                     "lineHeight": {
                         "value": 20,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "borderRadius": {
@@ -1056,7 +1056,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "subtitle": {
@@ -1074,7 +1074,7 @@
                     },
                     "lineHeight": {
                         "value": 20,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "borderRadius": {
@@ -1267,7 +1267,7 @@
                     },
                     "lineHeight": {
                         "value": 16,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     },
                     "fontSize": {
                         "value": 14,
@@ -1376,7 +1376,7 @@
                         },
                         "lineHeight": {
                             "value": 16,
-                            "type": "lineHeights"
+                            "type": "lineHeight"
                         },
                         "fontSize": {
                             "value": 10,
@@ -1394,7 +1394,7 @@
                         },
                         "lineHeight": {
                             "value": 16,
-                            "type": "lineHeights"
+                            "type": "lineHeight"
                         },
                         "fontSize": {
                             "value": 14,
@@ -1412,7 +1412,7 @@
                         },
                         "lineHeight": {
                             "value": 48,
-                            "type": "lineHeights"
+                            "type": "lineHeight"
                         },
                         "fontSize": {
                             "value": 24,
@@ -1430,7 +1430,7 @@
                         },
                         "lineHeight": {
                             "value": 48,
-                            "type": "lineHeights"
+                            "type": "lineHeight"
                         },
                         "fontSize": {
                             "value": 32,
@@ -1643,7 +1643,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "title": {
@@ -1661,7 +1661,7 @@
                     },
                     "lineHeight": {
                         "value": 36,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "subhead": {
@@ -1679,7 +1679,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "subtitle": {
@@ -1697,7 +1697,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "metadata": {
@@ -1715,7 +1715,7 @@
                     },
                     "lineHeight": {
                         "value": 20,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "fg": {
@@ -1869,7 +1869,7 @@
                     },
                     "lineHeight": {
                         "value": 24,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     }
                 },
                 "fg": {
@@ -1931,7 +1931,7 @@
                     },
                     "lineHeight": {
                         "value": 36,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     },
                     "fontSize": {
                         "value": 24,
@@ -1965,7 +1965,7 @@
                     },
                     "lineHeight": {
                         "value": 20,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     },
                     "fontSize": {
                         "value": 14,
@@ -2036,7 +2036,7 @@
                     },
                     "lineHeight": {
                         "value": 48,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     },
                     "fontSize": {
                         "value": 24,
@@ -2056,7 +2056,7 @@
                     },
                     "lineHeight": {
                         "value": 60,
-                        "type": "lineHeights"
+                        "type": "lineHeight"
                     },
                     "fontSize": {
                         "value": 40,
@@ -2547,7 +2547,7 @@
                 },
                 "lineHeight": {
                     "value": 120,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "fontSize": {
                     "value": 112,
@@ -2565,7 +2565,7 @@
                 },
                 "lineHeight": {
                     "value": 108,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "fontSize": {
                     "value": 72,
@@ -2583,7 +2583,7 @@
                 },
                 "lineHeight": {
                     "value": 96,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "fontSize": {
                     "value": 64,
@@ -2605,7 +2605,7 @@
                 },
                 "lineHeight": {
                     "value": 84,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "fontSize": {
                     "value": 56,
@@ -2627,7 +2627,7 @@
                 },
                 "lineHeight": {
                     "value": 72,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "fontSize": {
                     "value": 48,
@@ -2649,7 +2649,7 @@
                 },
                 "lineHeight": {
                     "value": 60,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "fontSize": {
                     "value": 40,
@@ -2671,7 +2671,7 @@
                 },
                 "lineHeight": {
                     "value": 36,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "fontSize": {
                     "value": 24,
@@ -2697,7 +2697,7 @@
                 },
                 "lineHeight": {
                     "value": 28,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "textCase": {
                     "value": "",
@@ -2719,7 +2719,7 @@
                 },
                 "lineHeight": {
                     "value": 28,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "textCase": {
                     "value": "",
@@ -2741,7 +2741,7 @@
                 },
                 "lineHeight": {
                     "value": 24,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 }
             },
             "body-regular": {
@@ -2759,7 +2759,7 @@
                 },
                 "lineHeight": {
                     "value": 24,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 }
             },
             "subtitle-bold": {
@@ -2777,7 +2777,7 @@
                 },
                 "lineHeight": {
                     "value": 20,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 }
             },
             "subtitle-regular": {
@@ -2795,7 +2795,7 @@
                 },
                 "lineHeight": {
                     "value": 20,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 }
             },
             "caption-bold": {
@@ -2813,7 +2813,7 @@
                 },
                 "lineHeight": {
                     "value": 16,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "textCase": {
                     "value": "uppercase",
@@ -2839,7 +2839,7 @@
                 },
                 "lineHeight": {
                     "value": 16,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "textCase": {
                     "value": "uppercase",
@@ -2861,7 +2861,7 @@
                 },
                 "lineHeight": {
                     "value": 16,
-                    "type": "lineHeights"
+                    "type": "lineHeight"
                 },
                 "fontSize": {
                     "value": 14,

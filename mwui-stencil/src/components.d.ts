@@ -11,6 +11,7 @@ import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
+import { Position } from "./shared/models/enums/position.enum";
 import { SrcSetItem } from "./components/mw-img/mw-img";
 import { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 import { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
@@ -23,6 +24,7 @@ export { Size } from "./shared/models/enums/size.enum";
 export { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 export { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 export { Target } from "./components/mw-button/models/enums/button-target.enum";
+export { Position } from "./shared/models/enums/position.enum";
 export { SrcSetItem } from "./components/mw-img/mw-img";
 export { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 export { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
@@ -281,6 +283,10 @@ export namespace Components {
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: Position;
     /**
      * Name of checkbox input
      */
@@ -671,6 +677,10 @@ export namespace Components {
      */
     label?: string;
     /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: Position;
+    /**
      * Analog to HTML 'name' attribute used to group radios for unique selection
      */
     name: string;
@@ -752,6 +762,14 @@ export namespace Components {
      * Fixed label to be displayed next to the toggle switch
      */
     label?: string;
+    /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: Position;
+    /**
+     * Name of switch input
+     */
+    name?: string;
     /**
      * Label to be shown when switch state is unchecked. Overrides label prop
      */
@@ -1473,6 +1491,10 @@ declare namespace LocalJSX {
      */
     label?: string;
     /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: Position;
+    /**
      * Name of checkbox input
      */
     name?: string;
@@ -1898,6 +1920,10 @@ declare namespace LocalJSX {
      */
     label?: string;
     /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: Position;
+    /**
      * Analog to HTML 'name' attribute used to group radios for unique selection
      */
     name?: string;
@@ -1983,6 +2009,14 @@ declare namespace LocalJSX {
      * Fixed label to be displayed next to the toggle switch
      */
     label?: string;
+    /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: Position;
+    /**
+     * Name of switch input
+     */
+    name?: string;
     /**
      * Label to be shown when switch state is unchecked. Overrides label prop
      */

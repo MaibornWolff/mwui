@@ -1,0 +1,151 @@
+.mw-switch-container {
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  gap: var(--mw-component-controls-with-label-gap);
+  padding: var(--mw-component-controls-with-label-padding-y) var(--mw-component-controls-with-label-padding-r) var(--mw-component-controls-with-label-padding-y)
+    var(--mw-component-controls-with-label-padding-l);
+
+  .label {
+    font-size: var(--mw-component-control-label-font-size);
+    font-family: var(--mw-component-control-label-font-family);
+    color: var(--mw-component-controls-color-label-default);
+  }
+  .label.disabled {
+    color: var(--mw-component-controls-color-label-disabled);
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    /* TODO: Tokens are missing */
+    width: 52px;
+    height: 28px;
+  }
+
+  /* hidden input */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* handle */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--mw-component-controls-color-bg-unselected);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  /* handle, checked */
+  input:checked + .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 6px;
+    bottom: 4px;
+    background-color: var(--mw-component-controls-color-fg-default);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  /* handle, unchecked */
+  input:not(:checked) + .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 6px;
+    bottom: 6px;
+    background-color: var(--mw-component-controls-color-fg-off);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  /* handle, unchecked, active */
+  input:active + .slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--mw-component-controls-color-fg-default);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  /* handle, unchecked, not disabled, active */
+  input:not(:checked):not(:disabled):active + .slider:before {
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 2px;
+    bottom: 2px;
+    background-color: var(--mw-component-controls-color-fg-off);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  /* handle, disabled */
+  input:disabled + .slider:before {
+    background-color: var(--mw-component-controls-color-fg-disabled);
+  }
+
+  /* track, checked */
+  input:checked + .slider {
+    background-color: var(--mw-component-controls-color-bg-selected);
+  }
+
+  /* track, disabled */
+  input:disabled + .slider {
+    background-color: var(--mw-component-controls-color-bg-disabled);
+  }
+
+  /* track, focussed, not active, not disabled */
+  input:focus:not(:active):not(:disabled) + .slider {
+    box-shadow: inset 0 0 0 var(--mw-component-controls-border-width-focused) var(--mw-component-controls-color-outline-default);
+    background-color: var(--mw-component-controls-color-bg-focused);
+  }
+
+  /* track, hover, not disabled */
+  input:hover:not(:disabled) + .slider {
+    background-color: var(--mw-component-controls-color-bg-hover);
+  }
+
+  /* track, active, not disabled */
+  input:active:not(:disabled) + .slider {
+    background-color: var(--mw-component-controls-color-bg-pressed);
+  }
+
+  /* track, unchecked, not disabled */
+  input:not(:checked):not(:disabled) + .slider {
+    box-shadow: inset 0 0 0 var(--mw-component-controls-border-width-unselected) var(--mw-component-controls-color-outline-default);
+  }
+
+  /* track unchecked, disabled */
+  input:not(:checked):disabled + .slider {
+    box-shadow: inset 0 0 0 var(--mw-component-controls-border-width-unselected) var(--mw-component-controls-color-outline-disabled);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+    -webkit-border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+  }
+}
