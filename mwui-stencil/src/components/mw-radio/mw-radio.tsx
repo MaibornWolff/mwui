@@ -1,18 +1,18 @@
-import { Component, Element, h, Prop } from "@stencil/core";
+import { Component, Element, h, Host, Prop } from "@stencil/core";
 import { Position } from "../../shared/models/enums/position.enum";
 let radioIds = 0;
 
 @Component({
   tag: "mw-radio",
   styleUrl: "mw-radio.scss",
-  shadow: true,
+  shadow: false,
 })
 export class MwRadio {
   private radioId = `radio-input-${radioIds++}`;
 
   @Element() hostElement: HTMLMwRadioElement;
   /**
-   * Visually and functionally disbale radio button
+   * Visually and functionally disable radio button
    */
   @Prop() disabled?: boolean;
   /**
@@ -86,21 +86,28 @@ export class MwRadio {
   }
 
   private JSXLabel = (
-    <label class={`mw-radio-label ${this.disabled && "disabled"}`} htmlFor={this.radioId}>
+    <label class={`mw-radio-label ${this.disabled ? "disabled" : "enabled"}`} htmlFor={this.radioId}>
       {this.label}
     </label>
   );
 
   render() {
     return (
-      <div test-id={this.testId} onClick={this.onClick} class="mw-radio-container" aria-checked={`${this.checked}`} aria-hidden={this.disabled ? "true" : null} role="radio">
+      <Host
+        test-id={this.testId}
+        onClick={this.onClick}
+        class={`mw-radio-container ${this.disabled ? "disabled" : "enabled"}`}
+        aria-checked={`${this.checked}`}
+        aria-hidden={this.disabled ? "true" : null}
+        role="radio"
+      >
         {this.label && this.labelPosition === "left" && this.JSXLabel}
         <input id={this.radioId} type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} />
         <span class="mw-radio-outer">
           <span class="mw-radio"></span>
         </span>
         {this.label && this.labelPosition === "right" && this.JSXLabel}
-      </div>
+      </Host>
     );
   }
 }

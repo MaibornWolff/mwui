@@ -1,11 +1,11 @@
-import { Component, Event, EventEmitter, Prop, h } from "@stencil/core";
+import { Component, Event, EventEmitter, Prop, h, Host } from "@stencil/core";
 import { Position } from "../../shared/models/enums/position.enum";
 let switchIds = 0;
 
 @Component({
   tag: "mw-switch",
   styleUrl: "mw-switch.scss",
-  shadow: true,
+  shadow: false,
 })
 export class MwSwitch {
   private switchId = `checkbox-input-${switchIds++}`;
@@ -69,21 +69,28 @@ export class MwSwitch {
 
   private JSXLabel = (
     <label htmlFor={this.switchId}>
-      <span class={`label ${this.disabled && "disabled"}`}>{this.label}</span>
-      <span class={`label ${this.disabled && "disabled"}`}>{this.checked ? this.on : this.off}</span>
+      <span class={`mw-switch-label ${this.disabled ? "disabled" : "enabled"}`}>{this.label}</span>
+      <span class={`mw-switch-label on-off ${this.disabled ? "disabled" : "enabled"}`}>{this.checked ? this.on : this.off}</span>
     </label>
   );
 
   render() {
     return (
-      <div test-id={this.testId} class="mw-switch-container" onClick={this.toggleSwitch} aria-checked={`${this.checked}`} aria-hidden={this.disabled ? "true" : null} role="switch">
+      <Host
+        test-id={this.testId}
+        class={`mw-switch-container ${this.disabled ? "disabled" : "enabled"}`}
+        onClick={this.toggleSwitch}
+        aria-checked={`${this.checked}`}
+        aria-hidden={this.disabled ? "true" : null}
+        role="switch"
+      >
         {(this.hasLabel || this.hasOnOffLabel) && this.labelPosition === "left" && this.JSXLabel}
         <span class="switch">
           <input id={this.switchId} disabled={this.disabled} type="checkbox" onInput={this.toggleSwitch} checked={this.checked} name={this.name} />
           <span class="slider round"></span>
         </span>
         {(this.hasLabel || this.hasOnOffLabel) && this.labelPosition === "right" && this.JSXLabel}
-      </div>
+      </Host>
     );
   }
 }

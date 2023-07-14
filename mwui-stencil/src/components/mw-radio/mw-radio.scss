@@ -1,14 +1,17 @@
 .mw-radio-container {
   position: relative;
   display: inline-flex;
-  cursor: pointer;
   align-items: center;
   gap: var(--mw-component-controls-with-label-gap);
   padding: var(--mw-component-controls-with-label-padding-y) var(--mw-component-controls-with-label-padding-r) var(--mw-component-controls-with-label-padding-y)
     var(--mw-component-controls-with-label-padding-l);
 
-  &:has(input:disabled) {
-    cursor: default;
+  &.enabled {
+    cursor: pointer;
+
+    .mw-radio-label {
+      cursor: pointer;
+    }
   }
 
   /* Hover States */

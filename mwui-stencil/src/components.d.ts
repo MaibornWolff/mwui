@@ -669,7 +669,7 @@ export namespace Components {
      */
     checked?: boolean;
     /**
-     * Visually and functionally disbale radio button
+     * Visually and functionally disable radio button
      */
     disabled?: boolean;
     /**
@@ -1912,7 +1912,7 @@ declare namespace LocalJSX {
      */
     checked?: boolean;
     /**
-     * Visually and functionally disbale radio button
+     * Visually and functionally disable radio button
      */
     disabled?: boolean;
     /**

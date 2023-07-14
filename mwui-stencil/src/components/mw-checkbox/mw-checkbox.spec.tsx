@@ -12,7 +12,7 @@ describe("GIVEN MwCheckbox", () => {
   };
 
   const toggleCheckbox = (page: SpecPage) => {
-    page.root.shadowRoot.querySelector<HTMLButtonElement>(".mw-checkbox-container").click();
+    page.root.click();
   };
 
   it("SHOULD render MwCheckbox", async () => {
@@ -25,7 +25,7 @@ describe("GIVEN MwCheckbox", () => {
     const page = await setup({
       label,
     });
-    expect(page.root.shadowRoot.querySelector(".mw-checkbox-label").innerHTML).toEqual(label);
+    expect(page.root.querySelector(".mw-checkbox-label").innerHTML).toEqual(label);
   });
 
   it("SHOULD set value WHEN value is given", async () => {
@@ -33,7 +33,7 @@ describe("GIVEN MwCheckbox", () => {
     const page = await setup({
       value,
     });
-    expect(page.root.shadowRoot.querySelector("input").getAttribute("value")).toEqual(value);
+    expect(page.root.querySelector("input").getAttribute("value")).toEqual(value);
   });
 
   it("SHOULD set value WHEN value is given", async () => {
@@ -41,7 +41,7 @@ describe("GIVEN MwCheckbox", () => {
     const page = await setup({
       name,
     });
-    expect(page.root.shadowRoot.querySelector("input").getAttribute("name")).toEqual(name);
+    expect(page.root.querySelector("input").getAttribute("name")).toEqual(name);
   });
 
   it("SHOULD not emit an event WHEN disabled is true", async () => {
@@ -53,7 +53,7 @@ describe("GIVEN MwCheckbox", () => {
     toggleCheckbox(page);
 
     expect(clickMock).not.toHaveBeenCalled();
-    expect(page.root.shadowRoot.querySelector(".mw-checkbox")).toHaveClass("disabled");
+    expect(page.root.querySelector(".mw-checkbox")).toHaveClass("disabled");
   });
 
   it("SHOULD emit an event WHEN disabled is false", async () => {
@@ -65,7 +65,7 @@ describe("GIVEN MwCheckbox", () => {
     toggleCheckbox(page);
 
     expect(clickMock).toHaveBeenCalled();
-    expect(page.root.shadowRoot.querySelector(".mw-checkbox")).toHaveClass("enabled");
+    expect(page.root.querySelector(".mw-checkbox")).toHaveClass("enabled");
   });
 
   it("SHOULD set checked WHEN checkBox is toggled", async () => {
@@ -79,16 +79,16 @@ describe("GIVEN MwCheckbox", () => {
 
     await page.waitForChanges();
 
-    expect(page.root.shadowRoot.querySelector(".mw-checkbox")).toHaveClass("selected");
-    expect(page.root.shadowRoot.querySelector(".mw-checkmark")).toHaveClass("selected");
-    expect(page.root.shadowRoot.querySelector("input").getAttribute("checked")).toEqual("");
+    expect(page.root.querySelector(".mw-checkbox")).toHaveClass("selected");
+    expect(page.root.querySelector(".mw-checkmark")).toHaveClass("selected");
+    expect(page.root.querySelector("input").getAttribute("checked")).toEqual("");
 
     // toggle checkbox to deselected state
     toggleCheckbox(page);
 
     await page.waitForChanges();
-    expect(page.root.shadowRoot.querySelector(".mw-checkbox")).toHaveClass("unselected");
-    expect(page.root.shadowRoot.querySelector(".mw-checkmark")).toHaveClass("unselected");
-    expect(page.root.shadowRoot.querySelector("input").getAttribute("checked")).toBeNull();
+    expect(page.root.querySelector(".mw-checkbox")).toHaveClass("unselected");
+    expect(page.root.querySelector(".mw-checkmark")).toHaveClass("unselected");
+    expect(page.root.querySelector("input").getAttribute("checked")).toBeNull();
   });
 });

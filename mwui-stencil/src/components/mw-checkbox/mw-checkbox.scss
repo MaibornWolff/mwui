@@ -1,11 +1,18 @@
 .mw-checkbox-container {
   position: relative;
   display: inline-flex;
-  cursor: pointer;
   align-items: center;
   gap: var(--mw-component-controls-with-label-gap);
   padding: var(--mw-component-controls-with-label-padding-y) var(--mw-component-controls-with-label-padding-r) var(--mw-component-controls-with-label-padding-y)
     var(--mw-component-controls-with-label-padding-l);
+
+  &.enabled {
+    cursor: pointer;
+
+    .mw-checkbox-label {
+      cursor: pointer;
+    }
+  }
 
   input {
     position: absolute;
@@ -109,7 +116,6 @@
 
   /* mw-checkbox-label */
   .mw-checkbox-label {
-    cursor: pointer;
     font-family: var(--mw-component-control-label-font-family);
     font-weight: var(--mw-component-control-label-font-weight);
     font-size: var(--mw-component-control-label-font-size);
@@ -120,8 +126,4 @@
   .mw-checkbox-label.disabled {
     color: var(--mw-component-controls-color-label-disabled);
   }
-}
-
-label {
-  cursor: pointer;
 }

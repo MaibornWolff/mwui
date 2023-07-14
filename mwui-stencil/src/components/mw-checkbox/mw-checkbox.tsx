@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop } from "@stencil/core";
+import { Component, Event, EventEmitter, h, Host, Prop } from "@stencil/core";
 import { Position } from "../../shared/models/enums/position.enum";
 let checkboxIds = 0;
 
@@ -6,7 +6,7 @@ let checkboxIds = 0;
   tag: "mw-checkbox",
   styleUrl: "mw-checkbox.scss",
   assetsDirs: ["./../assets"],
-  shadow: true,
+  shadow: false,
 })
 export class MwCheckbox {
   private checkboxId = `checkbox-input-${checkboxIds++}`;
@@ -57,16 +57,16 @@ export class MwCheckbox {
   };
 
   private JSXLabel = (
-    <label class={`mw-checkbox-label ${this.disabled && "disabled"}`} htmlFor={this.checkboxId}>
+    <label class={`mw-checkbox-label ${this.disabled ? "disabled" : "enabled"}`} htmlFor={this.checkboxId}>
       {this.label}
     </label>
   );
 
   render() {
     return (
-      <div
+      <Host
         test-id={this.testId}
-        class="mw-checkbox-container"
+        class={`mw-checkbox-container ${this.disabled ? "disabled" : "enabled"}`}
         onClick={this.handleCheck}
         aria-checked={`${this.checked}`}
         aria-hidden={this.disabled ? "true" : null}
@@ -80,7 +80,7 @@ export class MwCheckbox {
           </span>
         </span>
         {this.label && this.labelPosition === "right" && this.JSXLabel}
-      </div>
+      </Host>
     );
   }
 }

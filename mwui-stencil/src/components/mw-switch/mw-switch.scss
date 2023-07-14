@@ -1,19 +1,27 @@
 .mw-switch-container {
   display: inline-flex;
-  cursor: pointer;
   align-items: center;
   gap: var(--mw-component-controls-with-label-gap);
   padding: var(--mw-component-controls-with-label-padding-y) var(--mw-component-controls-with-label-padding-r) var(--mw-component-controls-with-label-padding-y)
     var(--mw-component-controls-with-label-padding-l);
 
-  .label {
+  &.enabled {
+    cursor: pointer;
+
+    .mw-switch-label {
+      cursor: pointer;
+    }
+  }
+
+  .mw-switch-label {
     font-size: var(--mw-component-control-label-font-size);
     font-family: var(--mw-component-control-label-font-family);
     color: var(--mw-component-controls-color-label-default);
   }
-  .label.disabled {
+  .mw-switch-label.disabled {
     color: var(--mw-component-controls-color-label-disabled);
   }
+
   .switch {
     position: relative;
     display: inline-block;
@@ -32,7 +40,6 @@
   /* handle */
   .slider {
     position: absolute;
-    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
@@ -71,13 +78,48 @@
     transition: 0.4s;
   }
 
+  &:hover {
+    /* track, hover, not disabled */
+    input:not(:disabled) + .slider {
+      background-color: var(--mw-component-controls-color-bg-hover);
+    }
+  }
+
+  &:active {
+    /* handle, unchecked, active */
+    input:not(:disabled) + .slider:before {
+      position: absolute;
+      content: "";
+      height: 24px;
+      width: 24px;
+      left: 5px;
+      bottom: 2px;
+      background-color: var(--mw-component-controls-color-fg-default);
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    /* handle, unchecked, not disabled, active */
+    input:not(:checked):not(:disabled) + .slider:before {
+      position: absolute;
+      content: "";
+      height: 24px;
+      width: 24px;
+      left: 2px;
+      bottom: 2px;
+      background-color: var(--mw-component-controls-color-fg-off);
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+  }
+
   /* handle, unchecked, active */
-  input:active + .slider:before {
+  input:not(:disabled):active + .slider:before {
     position: absolute;
     content: "";
-    height: 28px;
-    width: 28px;
-    left: 2px;
+    height: 24px;
+    width: 24px;
+    left: 5px;
     bottom: 2px;
     background-color: var(--mw-component-controls-color-fg-default);
     -webkit-transition: 0.4s;
@@ -88,8 +130,8 @@
   input:not(:checked):not(:disabled):active + .slider:before {
     position: absolute;
     content: "";
-    height: 28px;
-    width: 28px;
+    height: 24px;
+    width: 24px;
     left: 2px;
     bottom: 2px;
     background-color: var(--mw-component-controls-color-fg-off);
@@ -116,11 +158,6 @@
   input:focus:not(:active):not(:disabled) + .slider {
     box-shadow: inset 0 0 0 var(--mw-component-controls-border-width-focused) var(--mw-component-controls-color-outline-default);
     background-color: var(--mw-component-controls-color-bg-focused);
-  }
-
-  /* track, hover, not disabled */
-  input:hover:not(:disabled) + .slider {
-    background-color: var(--mw-component-controls-color-bg-hover);
   }
 
   /* track, active, not disabled */
