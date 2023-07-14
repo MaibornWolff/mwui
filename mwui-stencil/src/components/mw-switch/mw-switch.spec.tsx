@@ -38,7 +38,7 @@ describe("GIVEN MwSwitch", () => {
       on,
     });
 
-    expect(page.root.querySelector(".mw-switch-label.on-off").innerHTML).toEqual(off);
+    expect(page.root.querySelector(".mw-switch-label").innerHTML).toEqual(off);
   });
 
   it("SHOULD render on-text label WHEN value is true", async () => {
@@ -50,6 +50,6 @@ describe("GIVEN MwSwitch", () => {
       on,
     });
 
-    expect(page.root.querySelector(".mw-switch-label.on-off").innerHTML).toEqual(on);
+    expect(page.root.querySelector(".mw-switch-label").innerHTML).toEqual(on);
   });
 });
