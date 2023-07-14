@@ -16,7 +16,8 @@ const Template = args => `
   name="${args.name}"
   checked="${args.checked}"
   disabled="${args.disabled}"
-  label="${args.label}">
+  label="${args.label}"
+  label-position="${args.labelPosition}">
 </mw-checkbox>`;
 
 export const EnabledUnchecked = Template.bind({});
@@ -27,6 +28,7 @@ EnabledUnchecked.args = {
   checked: false,
   disabled: false,
   label: "CHECKBOX",
+  labelPosition: "right",
 };
 
 export const EnabledChecked = Template.bind({});
@@ -37,6 +39,7 @@ EnabledChecked.args = {
   checked: true,
   disabled: false,
   label: "CHECKBOX",
+  labelPosition: "right",
 };
 
 export const DisabledUnchecked = Template.bind({});
@@ -47,6 +50,7 @@ DisabledUnchecked.args = {
   checked: false,
   disabled: true,
   label: "CHECKBOX",
+  labelPosition: "right",
 };
 
 export const DisabledChecked = Template.bind({});
@@ -57,4 +61,16 @@ DisabledChecked.args = {
   checked: true,
   disabled: true,
   label: "CHECKBOX",
+  labelPosition: "right",
+};
+
+export const WithLeftLabel = Template.bind({});
+WithLeftLabel.args = {
+  testId: "some-checkbox-id",
+  value: "some-value",
+  name: "some-name",
+  checked: true,
+  disabled: false,
+  label: "CHECKBOX",
+  labelPosition: "left",
 };

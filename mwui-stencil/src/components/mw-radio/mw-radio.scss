@@ -63,8 +63,8 @@
       &:after {
         content: "";
         border-radius: var(--border-radius-standard-circle);
-        height: var(--mw-component-size-controls-radiobutton-fill);
-        width: var(--mw-component-size-controls-radiobutton-fill);
+        height: var(--mw-component-size-controls-radio-fill);
+        width: var(--mw-component-size-controls-radio-fill);
         background-color: var(--mw-component-controls-color-fg-default);
       }
     }
@@ -106,8 +106,8 @@
 
   /* Create a custom radio button */
   .mw-radio-outer {
-    width: var(--mw-component-size-controls-checkbox-radiobutton-container);
-    height: var(--mw-component-size-controls-checkbox-radiobutton-container);
+    width: var(--mw-component-size-controls-checkbox-radio-container);
+    height: var(--mw-component-size-controls-checkbox-radio-container);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,8 +120,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: var(--mw-component-size-controls-radiobutton-outline);
-    width: var(--mw-component-size-controls-radiobutton-outline);
+    height: var(--mw-component-size-controls-radio-outline);
+    width: var(--mw-component-size-controls-radio-outline);
     border: var(--mw-component-controls-border-width-unselected) solid var(--mw-component-controls-color-outline-default);
     border-radius: var(--border-radius-standard-circle);
   }

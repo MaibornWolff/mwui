@@ -413,13 +413,13 @@
                     }
                 },
                 "controls": {
-                    "checkbox-radiobutton": {
+                    "checkbox-radio": {
                         "container": {
                             "value": 24,
                             "type": "sizing"
                         }
                     },
-                    "radiobutton": {
+                    "radio": {
                         "outline": {
                             "value": 20,
                             "type": "sizing"
@@ -636,6 +636,12 @@
                     "unselected": {
                         "value": "2px",
                         "type": "borderWidth"
+                    }
+                },
+                "margin": {
+                    "marginLeft": {
+                        "value": 32,
+                        "type": "spacing"
                     }
                 }
             },

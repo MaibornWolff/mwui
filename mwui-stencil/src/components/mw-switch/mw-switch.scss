@@ -29,9 +29,8 @@
   .switch {
     position: relative;
     display: inline-block;
-    /* TODO: Tokens are missing */
-    width: 52px;
-    height: 28px;
+    width: var(--mw-component-size-switch-default-w);
+    height: var(--mw-component-size-switch-default-h);
   }
 
   /* hidden input */
