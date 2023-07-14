@@ -96,7 +96,7 @@ export class MwRadio {
       <Host
         test-id={this.testId}
         onClick={this.onClick}
-        class={`mw-radio-container ${this.disabled ? "disabled" : "enabled"}`}
+        class={`mw-radio-container ${this.disabled ? "disabled" : "enabled"} ${this.labelPosition}`}
         aria-checked={`${this.checked}`}
         aria-hidden={this.disabled ? "true" : null}
         role="radio"

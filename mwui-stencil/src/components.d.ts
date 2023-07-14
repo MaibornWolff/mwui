@@ -695,9 +695,17 @@ export namespace Components {
   }
   interface MwRadioGroup {
     /**
-     * current value of the radio-group
+     * Dictates the flex direction of the group
+     */
+    direction?: Direction;
+    /**
+     * Current value of the radio-group
      */
     value?: string | number;
+    /**
+     * Dictates whether group should flex-wrap
+     */
+    wrap?: boolean;
   }
   interface MwSlider {
     /**
@@ -1938,13 +1946,21 @@ declare namespace LocalJSX {
   }
   interface MwRadioGroup {
     /**
+     * Dictates the flex direction of the group
+     */
+    direction?: Direction;
+    /**
      * Event emitted when radioGroup value changes (after radio selection)
      */
     onRadioChange?: (event: MwRadioGroupCustomEvent<{ value?: string | number }>) => void;
     /**
-     * current value of the radio-group
+     * Current value of the radio-group
      */
     value?: string | number;
+    /**
+     * Dictates whether group should flex-wrap
+     */
+    wrap?: boolean;
   }
   interface MwSlider {
     /**

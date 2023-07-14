@@ -1,5 +1,7 @@
 import { Component, h, Element, Host, Prop, Watch, EventEmitter, Event } from "@stencil/core";
 
+type Direction = "row" | "column" | "row-reverse" | "column-reverse";
+
 @Component({
   tag: "mw-radio-group",
   styleUrl: "mw-radio-group.scss",
@@ -17,9 +19,17 @@ export class MwRadioGroup {
   })
   radioChange: EventEmitter<{ value?: string | number }>;
   /**
-   * current value of the radio-group
+   * Current value of the radio-group
    */
   @Prop({ mutable: true }) value?: string | number;
+  /**
+   * Dictates the flex direction of the group
+   */
+  @Prop() direction?: Direction = "column";
+  /**
+   * Dictates whether group should flex-wrap
+   */
+  @Prop() wrap?: boolean = false;
   @Watch("value")
   valueChanged(value?: string | number): void {
     this.radioChange.emit({ value });
@@ -33,7 +43,7 @@ export class MwRadioGroup {
     event.preventDefault();
     const selectedRadio = event.target && (event.target as HTMLElement).closest("mw-radio");
 
-    if (selectedRadio) {
+    if (selectedRadio && !selectedRadio.disabled) {
       const currentValue = this.value;
       const newValue = selectedRadio.value;
       if (newValue !== currentValue) {
@@ -43,6 +53,6 @@ export class MwRadioGroup {
   };
 
   render() {
-    return <Host role="radiogroup" onClick={this.onClick}></Host>;
+    return <Host class={`mw-radio-group ${this.direction} ${this.wrap ? "wrap" : ""}`} role="radiogroup" onClick={this.onClick}></Host>;
   }
 }

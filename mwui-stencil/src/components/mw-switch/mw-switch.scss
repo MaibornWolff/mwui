@@ -13,6 +13,10 @@
     }
   }
 
+  &.left {
+    justify-content: end;
+  }
+
   .mw-switch-label {
     font-size: var(--mw-component-control-label-font-size);
     font-family: var(--mw-component-control-label-font-family);

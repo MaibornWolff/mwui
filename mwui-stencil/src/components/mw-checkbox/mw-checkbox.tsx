@@ -66,7 +66,7 @@ export class MwCheckbox {
     return (
       <Host
         test-id={this.testId}
-        class={`mw-checkbox-container ${this.disabled ? "disabled" : "enabled"}`}
+        class={`mw-checkbox-container ${this.disabled ? "disabled" : "enabled"} ${this.labelPosition}`}
         onClick={this.handleCheck}
         aria-checked={`${this.checked}`}
         aria-hidden={this.disabled ? "true" : null}

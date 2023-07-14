@@ -8,7 +8,7 @@ let switchIds = 0;
   shadow: false,
 })
 export class MwSwitch {
-  private switchId = `checkbox-input-${switchIds++}`;
+  private switchId = `switch-input-${switchIds++}`;
   /**
    * Provide unique identifier for automated testing
    */
@@ -67,29 +67,30 @@ export class MwSwitch {
     this.hasOnOffLabel = !!this.on && !!this.off;
   }
 
-  private JSXLabel = (
-    <label htmlFor={this.switchId}>
-      <span class={`mw-switch-label ${this.disabled ? "disabled" : "enabled"}`}>{this.label}</span>
-      <span class={`mw-switch-label on-off ${this.disabled ? "disabled" : "enabled"}`}>{this.checked ? this.on : this.off}</span>
-    </label>
-  );
+  private JSXLabel = (label: string) => {
+    return (
+      <label htmlFor={this.switchId}>
+        <span class={`mw-switch-label ${this.disabled ? "disabled" : "enabled"}`}>{label}</span>
+      </label>
+    );
+  };
 
   render() {
     return (
       <Host
         test-id={this.testId}
-        class={`mw-switch-container ${this.disabled ? "disabled" : "enabled"}`}
+        class={`mw-switch-container ${this.disabled ? "disabled" : "enabled"} ${this.labelPosition}`}
         onClick={this.toggleSwitch}
         aria-checked={`${this.checked}`}
         aria-hidden={this.disabled ? "true" : null}
         role="switch"
       >
-        {(this.hasLabel || this.hasOnOffLabel) && this.labelPosition === "left" && this.JSXLabel}
+        {(this.hasLabel || this.hasOnOffLabel) && this.labelPosition === "left" && this.JSXLabel(this.hasOnOffLabel ? (this.checked ? this.on : this.off) : this.label)}
         <span class="switch">
           <input id={this.switchId} disabled={this.disabled} type="checkbox" onInput={this.toggleSwitch} checked={this.checked} name={this.name} />
           <span class="slider round"></span>
         </span>
-        {(this.hasLabel || this.hasOnOffLabel) && this.labelPosition === "right" && this.JSXLabel}
+        {(this.hasLabel || this.hasOnOffLabel) && this.labelPosition === "right" && this.JSXLabel(this.hasOnOffLabel ? (this.checked ? this.on : this.off) : this.label)}
       </Host>
     );
   }

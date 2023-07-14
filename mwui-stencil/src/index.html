@@ -159,36 +159,38 @@
       <div style="display: flex; gap: 32px">
         <div style="display: flex; flex-flow: column">
           <h3>Switch</h3>
-          <mw-switch checked name="countries" label="Label"></mw-switch>
-          <mw-switch name="countries" label="Label"></mw-switch>
-          <mw-switch disabled name="countries" label="Label"></mw-switch>
-          <mw-switch checked disabled name="countries" label="Label"></mw-switch>
-          <mw-switch checked name="countries" label="Label" label-position="left"></mw-switch>
-          <mw-switch name="countries" label="Label" label-position="left"></mw-switch>
-          <mw-switch disabled name="countries" label="Label" label-position="left"></mw-switch>
-          <mw-switch checked disabled name="countries" label="Label" label-position="left"></mw-switch>
+          <mw-switch checked name="countries" label="Germany" on="ON" off="OFF"></mw-switch>
+          <mw-switch name="countries" label="France"></mw-switch>
+          <mw-switch disabled name="countries" label="USA"></mw-switch>
+          <mw-switch checked disabled name="countries" label="Japan"></mw-switch>
+          <mw-switch checked name="countries" label="India" label-position="left" on="ON" off="OFF"></mw-switch>
+          <mw-switch name="countries" label="Spain" label-position="left"></mw-switch>
+          <mw-switch disabled name="countries" label="Mexico" label-position="left"></mw-switch>
+          <mw-switch checked disabled name="countries" label="China" label-position="left"></mw-switch>
         </div>
         <div style="display: flex; flex-flow: column">
           <h3>Checkbox</h3>
-          <mw-checkbox value="Label" name="food" label="Label"></mw-checkbox>
-          <mw-checkbox value="Label" name="food" checked label="Label"></mw-checkbox>
-          <mw-checkbox value="Label" name="food" disabled label="Label"></mw-checkbox>
-          <mw-checkbox value="Label" name="food" checked disabled label="Label"></mw-checkbox>
-          <mw-checkbox value="Label" name="food" label="Label" label-position="left"></mw-checkbox>
-          <mw-checkbox value="Label" name="food" checked label="Label" label-position="left"></mw-checkbox>
-          <mw-checkbox value="Label" name="food" disabled label="Label" label-position="left"></mw-checkbox>
-          <mw-checkbox value="Label" name="food" checked disabled label="Label" label-position="left"></mw-checkbox>
+          <mw-checkbox value="Bananas" name="food" label="Bananas"></mw-checkbox>
+          <mw-checkbox value="Apples" name="food" checked label="Apples"></mw-checkbox>
+          <mw-checkbox value="Pasta" name="food" disabled label="Pasta"></mw-checkbox>
+          <mw-checkbox value="Meat" name="food" checked disabled label="Meat"></mw-checkbox>
+          <mw-checkbox value="Cheese" name="food" label="Cheese" label-position="left"></mw-checkbox>
+          <mw-checkbox value="Potatoes" name="food" checked label="Potatoes" label-position="left"></mw-checkbox>
+          <mw-checkbox value="Radish" name="food" disabled label="Radish" label-position="left"></mw-checkbox>
+          <mw-checkbox value="Chocolate" name="food" checked disabled label="Chocolate" label-position="left"></mw-checkbox>
         </div>
         <div style="display: flex; flex-flow: column">
-          <h3>Radio Button</h3>
-          <mw-radio checked name="transport" label="Label"></mw-radio>
-          <mw-radio name="transport" label="Label"></mw-radio>
-          <mw-radio disabled name="transport" label="Label"></mw-radio>
-          <mw-radio checked disabled label="Label"></mw-radio>
-          <mw-radio checked name="transport" label="Label" label-position="left"></mw-radio>
-          <mw-radio name="transport" label="Label" label-position="left"></mw-radio>
-          <mw-radio disabled name="transport" label="Label" label-position="left"></mw-radio>
-          <mw-radio checked disabled label="Label" label-position="left"></mw-radio>
+          <h3>Radio</h3>
+          <mw-radio-group value="Train" direction="column">
+            <mw-radio value="Car" checked name="transport" label="Car"></mw-radio>
+            <mw-radio value="Bus" name="transport" label="Bus"></mw-radio>
+            <mw-radio value="Train" disabled name="transport" label="Train"></mw-radio>
+            <mw-radio value="Plane" checked disabled label="Plane"></mw-radio>
+            <mw-radio value="Boat" checked name="transport" label="Boat" label-position="left"></mw-radio>
+            <mw-radio value="Subway" name="transport" label="Subway" label-position="left"></mw-radio>
+            <mw-radio value="Tram" disabled name="transport" label="Tram" label-position="left"></mw-radio>
+            <mw-radio value="Bike" checked disabled label="Bike" label-position="left"></mw-radio>
+          </mw-radio-group>
         </div>
       </div>
     </section>

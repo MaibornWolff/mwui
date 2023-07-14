@@ -68,7 +68,7 @@ describe("GIVEN MwCheckbox", () => {
     expect(page.root.querySelector(".mw-checkbox")).toHaveClass("enabled");
   });
 
-  it("SHOULD set checked WHEN checkBox is toggled", async () => {
+  it("SHOULD set checked WHEN checkbox is toggled", async () => {
     const page = await setup({
       disabled: false,
       checked: false,
