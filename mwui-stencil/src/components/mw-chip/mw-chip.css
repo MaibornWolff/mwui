@@ -34,7 +34,6 @@
 
 /* hover */
 .chip:hover:not(.disabled) {
-  /* FIXME: fg-hover doesn't currently exist */
   color: var(--mw-component-chips-color-fg-hover);
   background: var(--mw-component-chips-color-bg-hover);
 }
