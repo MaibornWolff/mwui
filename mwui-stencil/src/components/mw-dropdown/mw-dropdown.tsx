@@ -56,7 +56,7 @@ export class MwDropdown {
   @Listen("mwMenuItemClick")
   clickEmitterHandler(event): void {
     this.value = event.target.getAttribute("value");
-    this.valueLabel = event.target.getAttribute("title");
+    this.valueLabel = event.target.getAttribute("text");
   }
   @Listen("mwPopoverOpen")
   stateEmitterHandler(event): void {
@@ -94,7 +94,6 @@ export class MwDropdown {
         <div class="wrapper">
           <div class={{ "dropdown": true, "inline": this.inline, "has-error": this.hasError, "disabled": this.disabled }}>
             <mw-label name={this.name} label={this.label} required={this.required}></mw-label>
-
             <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen}>
               <div slot="anchor" onClick={this.onFocus} class={{ "input": true, "has-error": this.hasError, "disabled": this.disabled }}>
                 <span

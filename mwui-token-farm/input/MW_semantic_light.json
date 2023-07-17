@@ -1314,6 +1314,10 @@
                             "value": "#44555b",
                             "type": "color"
                         },
+                        "hover": {
+                            "value": "#44555b",
+                            "type": "color"
+                        },
                         "disabled": {
                             "value": "#95a0a4",
                             "type": "color"
