@@ -27,6 +27,10 @@ export class MwCheckbox {
    */
   @Prop({ mutable: true, reflect: true }) checked?: boolean = false;
   /**
+   * Whether input is set to indeterminate (overwrites check to 'false')
+   */
+  @Prop({ mutable: true, reflect: true }) indeterminate?: boolean = false;
+  /**
    * Whether input is disabled
    */
   @Prop() disabled?: boolean = false;
@@ -52,9 +56,14 @@ export class MwCheckbox {
     event.preventDefault();
     if (!this.disabled) {
       this.checked = !this.checked;
+      if (this.indeterminate) this.indeterminate = false;
       this.emitter.emit();
     }
   };
+
+  componentWillLoad(): void {
+    if (this.indeterminate) this.checked = false;
+  }
 
   private JSXLabel = (
     <label class={`mw-checkbox-label ${this.disabled ? "disabled" : "enabled"}`} htmlFor={this.checkboxId}>
@@ -75,8 +84,13 @@ export class MwCheckbox {
         {this.label && this.labelPosition === "left" && this.JSXLabel}
         <input id={this.checkboxId} type="checkbox" checked={this.checked} value={this.value} name={this.name} />
         <span class="mw-checkbox-outer">
-          <span class={`mw-checkbox ${this.checked ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
-            <mw-icon class={`mw-checkmark ${this.checked ? "selected" : "unselected"}`} color={`var(--mw-component-controls-color-fg-default)`} icon="check" size="small"></mw-icon>
+          <span class={`mw-checkbox ${this.checked || this.indeterminate ? "selected" : "unselected"} ${this.disabled ? "disabled" : "enabled"}`}>
+            <mw-icon
+              class={`mw-checkmark ${this.checked || this.indeterminate ? "selected" : "unselected"}`}
+              color={`var(--mw-component-controls-color-fg-default)`}
+              icon={this.indeterminate ? "check_indeterminate_small" : "check"}
+              size="small"
+            ></mw-icon>
           </span>
         </span>
         {this.label && this.labelPosition === "right" && this.JSXLabel}

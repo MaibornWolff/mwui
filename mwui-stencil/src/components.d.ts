@@ -280,6 +280,10 @@ export namespace Components {
      */
     disabled?: boolean;
     /**
+     * Whether input is set to indeterminate (overwrites check to 'false')
+     */
+    indeterminate?: boolean;
+    /**
      * Label to be displayed
      */
     label?: string;
@@ -299,6 +303,17 @@ export namespace Components {
      * Value of checkbox input
      */
     value?: string;
+  }
+  interface MwCheckboxGroup {
+    /**
+     * Dictates the flex direction of the group
+     */
+    direction?: Direction;
+    value?: Array<string | number>;
+    /**
+     * Dictates whether group should flex-wrap
+     */
+    wrap?: boolean;
   }
   interface MwChip {
     /**
@@ -944,6 +959,10 @@ export interface MwCheckboxCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwCheckboxElement;
 }
+export interface MwCheckboxGroupCustomEvent<T> extends CustomEvent<T> {
+  detail: T;
+  target: HTMLMwCheckboxGroupElement;
+}
 export interface MwChipCustomEvent<T> extends CustomEvent<T> {
   detail: T;
   target: HTMLMwChipElement;
@@ -1057,6 +1076,11 @@ declare global {
   var HTMLMwCheckboxElement: {
     prototype: HTMLMwCheckboxElement;
     new (): HTMLMwCheckboxElement;
+  };
+  interface HTMLMwCheckboxGroupElement extends Components.MwCheckboxGroup, HTMLStencilElement {}
+  var HTMLMwCheckboxGroupElement: {
+    prototype: HTMLMwCheckboxGroupElement;
+    new (): HTMLMwCheckboxGroupElement;
   };
   interface HTMLMwChipElement extends Components.MwChip, HTMLStencilElement {}
   var HTMLMwChipElement: {
@@ -1202,6 +1226,7 @@ declare global {
     "mw-card-image": HTMLMwCardImageElement;
     "mw-card-title": HTMLMwCardTitleElement;
     "mw-checkbox": HTMLMwCheckboxElement;
+    "mw-checkbox-group": HTMLMwCheckboxGroupElement;
     "mw-chip": HTMLMwChipElement;
     "mw-chip-input": HTMLMwChipInputElement;
     "mw-divider": HTMLMwDividerElement;
@@ -1495,6 +1520,10 @@ declare namespace LocalJSX {
      */
     disabled?: boolean;
     /**
+     * Whether input is set to indeterminate (overwrites check to 'false')
+     */
+    indeterminate?: boolean;
+    /**
      * Label to be displayed
      */
     label?: string;
@@ -1518,6 +1547,21 @@ declare namespace LocalJSX {
      * Value of checkbox input
      */
     value?: string;
+  }
+  interface MwCheckboxGroup {
+    /**
+     * Dictates the flex direction of the group
+     */
+    direction?: Direction;
+    /**
+     * Event emitted when radioGroup value changes (after radio selection)
+     */
+    onCheckboxChange?: (event: MwCheckboxGroupCustomEvent<{ value?: Array<string | number> }>) => void;
+    value?: Array<string | number>;
+    /**
+     * Dictates whether group should flex-wrap
+     */
+    wrap?: boolean;
   }
   interface MwChip {
     /**
@@ -2216,6 +2260,7 @@ declare namespace LocalJSX {
     "mw-card-image": MwCardImage;
     "mw-card-title": MwCardTitle;
     "mw-checkbox": MwCheckbox;
+    "mw-checkbox-group": MwCheckboxGroup;
     "mw-chip": MwChip;
     "mw-chip-input": MwChipInput;
     "mw-divider": MwDivider;
@@ -2261,6 +2306,7 @@ declare module "@stencil/core" {
       "mw-card-image": LocalJSX.MwCardImage & JSXBase.HTMLAttributes<HTMLMwCardImageElement>;
       "mw-card-title": LocalJSX.MwCardTitle & JSXBase.HTMLAttributes<HTMLMwCardTitleElement>;
       "mw-checkbox": LocalJSX.MwCheckbox & JSXBase.HTMLAttributes<HTMLMwCheckboxElement>;
+      "mw-checkbox-group": LocalJSX.MwCheckboxGroup & JSXBase.HTMLAttributes<HTMLMwCheckboxGroupElement>;
       "mw-chip": LocalJSX.MwChip & JSXBase.HTMLAttributes<HTMLMwChipElement>;
       "mw-chip-input": LocalJSX.MwChipInput & JSXBase.HTMLAttributes<HTMLMwChipInputElement>;
       "mw-divider": LocalJSX.MwDivider & JSXBase.HTMLAttributes<HTMLMwDividerElement>;
