@@ -1,9 +1,9 @@
 :host {
   .mw-app-bar-title {
-    color: var(--mw-component-header-fg-default);
-    font-family: var(--mw-component-header-title-font-family);
-    font-weight: var(--mw-component-header-title-font-weight);
-    line-height: var(--mw-component-header-title-line-height);
-    font-size: var(--mw-component-header-title-font-size);
+    color: var(--mw-component-app-bar-fg-default);
+    font-family: var(--mw-component-app-bar-title-font-family);
+    font-weight: var(--mw-component-app-bar-title-font-weight);
+    line-height: var(--mw-component-app-bar-title-line-height);
+    font-size: var(--mw-component-app-bar-title-font-size);
   }
 }
