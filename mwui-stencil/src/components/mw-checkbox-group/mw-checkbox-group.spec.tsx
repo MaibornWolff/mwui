@@ -1,5 +1,5 @@
 import { newSpecPage } from "@stencil/core/testing";
-import { MwCheckboxGroup } from "../mw-checkbox-group";
+import { MwCheckboxGroup } from "./mw-checkbox-group";
 
 describe("mw-checkbox-group", () => {
   it("renders", async () => {

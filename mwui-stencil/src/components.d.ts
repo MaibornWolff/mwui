@@ -309,6 +309,13 @@ export namespace Components {
      * Dictates the flex direction of the group
      */
     direction?: Direction;
+    /**
+     * Label of parent checkbox
+     */
+    parentLabel?: string;
+    /**
+     * Current value of the checkbox-group
+     */
     value?: Array<string | number>;
     /**
      * Dictates whether group should flex-wrap
@@ -1557,6 +1564,13 @@ declare namespace LocalJSX {
      * Event emitted when radioGroup value changes (after radio selection)
      */
     onCheckboxChange?: (event: MwCheckboxGroupCustomEvent<{ value?: Array<string | number> }>) => void;
+    /**
+     * Label of parent checkbox
+     */
+    parentLabel?: string;
+    /**
+     * Current value of the checkbox-group
+     */
     value?: Array<string | number>;
     /**
      * Dictates whether group should flex-wrap
