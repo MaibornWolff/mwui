@@ -61,8 +61,8 @@ We maintain several packages, including the core (mwui-stencil), token transform
 
 | Package                      | Status                                                                                                                                                                  |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| @maiborwolff/mwui-stencil    | [![@maibornwolff/mwui-stencil](https://img.shields.io/npm/v/@maibornwolff/mwui-stencil?color=green)](https://www.npmjs.com/package/@maibornwolff/mwui-stencil)          |
-| @maiborwolff/mwui-token-farm | [![@maibornwolff/mwui-token-farm](https://img.shields.io/npm/v/@maibornwolff/mwui-token-farm?color=green)](https://www.npmjs.com/package/@maibornwolff/mwui-token-farm) |
+| @maibornwolff/mwui-stencil    | [![@maibornwolff/mwui-stencil](https://img.shields.io/npm/v/@maibornwolff/mwui-stencil?color=green)](https://www.npmjs.com/package/@maibornwolff/mwui-stencil)          |
+| @maibornwolff/mwui-token-farm | [![@maibornwolff/mwui-token-farm](https://img.shields.io/npm/v/@maibornwolff/mwui-token-farm?color=green)](https://www.npmjs.com/package/@maibornwolff/mwui-token-farm) |
 | @maibornwolff/mwui-react     | [![@maibornwolff/mwui-react](https://img.shields.io/npm/v/@maibornwolff/mwui-react?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-react)                 |
 | @maibornwolff/mwui-vue       | [![@maibornwolff/mwui-vue](https://img.shields.io/npm/v/@maibornwolff/mwui-vue?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-vue)                       |
 | @maibornwolff/mwui-angular   | [![@maibornwolff/mwui-angular](https://img.shields.io/npm/v/@maibornwolff/mwui-angular?color=blue)](https://www.npmjs.com/package/@maibornwolff/mwui-angular)           |
