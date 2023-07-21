@@ -58,6 +58,8 @@ export class MwIcon {
         style={{
           "fontSize": getFontSize(this.size),
           "color": this.color,
+          "width": `${this.size}px`,
+          "height": `${this.size}px`,
           "font-variation-settings": `
           'FILL' ${this.fill ? 1 : 0},
           'wght' ${this.weight},

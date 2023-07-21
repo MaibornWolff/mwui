@@ -22,10 +22,10 @@ const Template = args => `
   disabled="${args.disabled}"
   >
   <div slot="dropdown-menu">
-    <mw-menu-item title="List Item 1" subtitle="Subtitle"></mw-menu-item>
-    <mw-menu-item title="List Item 2" subtitle="Subtitle"></mw-menu-item>
-    <mw-menu-item title="List Item 3" subtitle="Subtitle"></mw-menu-item>
-    <mw-menu-item title="List Item 4" subtitle="Subtitle"></mw-menu-item>
+    <mw-menu-item text="List Item 1" subtitle="Subtitle"></mw-menu-item>
+    <mw-menu-item text="List Item 2" subtitle="Subtitle"></mw-menu-item>
+    <mw-menu-item text="List Item 3" subtitle="Subtitle"></mw-menu-item>
+    <mw-menu-item text="List Item 4" subtitle="Subtitle"></mw-menu-item>
   </div>
 
 </mw-dropdown>`;
@@ -44,10 +44,10 @@ const IconTemplate = args => `
   >
   <mw-icon slot="icon-start" icon="language"></mw-icon>
   <div slot="dropdown-menu">
-    <mw-menu-item title="List Item 1" subtitle="Subtitle"></mw-menu-item>
-    <mw-menu-item title="List Item 2" subtitle="Subtitle"></mw-menu-item>
-    <mw-menu-item title="List Item 3" subtitle="Subtitle"></mw-menu-item>
-    <mw-menu-item title="List Item 4" subtitle="Subtitle"></mw-menu-item>
+    <mw-menu-item text="List Item 1" subtitle="Subtitle"></mw-menu-item>
+    <mw-menu-item text="List Item 2" subtitle="Subtitle"></mw-menu-item>
+    <mw-menu-item text="List Item 3" subtitle="Subtitle"></mw-menu-item>
+    <mw-menu-item text="List Item 4" subtitle="Subtitle"></mw-menu-item>
   </div>
 
 </mw-dropdown>`;
