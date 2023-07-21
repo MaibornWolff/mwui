@@ -1,5 +1,6 @@
-import { Component, Event, EventEmitter, Prop, h, Host } from "@stencil/core";
-import { Position } from "../../shared/models/enums/position.enum";
+import { Component, Event, EventEmitter, h, Host, Prop } from "@stencil/core";
+import { PositionEnum } from "../../shared/models/enums/position.enum";
+
 let switchIds = 0;
 
 @Component({
@@ -24,7 +25,7 @@ export class MwSwitch {
   /**
    * Dictates on which side of checkbox the label is placed
    */
-  @Prop() labelPosition?: Position = "right";
+  @Prop() labelPosition?: PositionEnum = PositionEnum.RIGHT;
   /**
    * Label to be shown when switch state is checked. Overrides label prop
    */

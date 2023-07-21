@@ -11,26 +11,28 @@ import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
-import { Position } from "./shared/models/enums/position.enum";
+import { Position, PositionEnum } from "./shared/models/enums/position.enum";
 import { SrcSetItem } from "./components/mw-img/mw-img";
 import { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 import { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
+import { LayoutDirectionEnum } from "./shared/models/enums/layout-direction.enum";
 export { AriaRolesEnum } from "./shared/models/enums/aria-roles.enum";
 export { AppBarPosition } from "./components/mw-app-bar/mw-app-bar";
 export { Size } from "./shared/models/enums/size.enum";
 export { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 export { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 export { Target } from "./components/mw-button/models/enums/button-target.enum";
-export { Position } from "./shared/models/enums/position.enum";
+export { Position, PositionEnum } from "./shared/models/enums/position.enum";
 export { SrcSetItem } from "./components/mw-img/mw-img";
 export { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 export { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
 export { PopoverPlacement } from "./components/mw-popover/mw-popover";
 export { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 export { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
+export { LayoutDirectionEnum } from "./shared/models/enums/layout-direction.enum";
 export namespace Components {
   interface MwAppBar {
     /**
@@ -697,7 +699,7 @@ export namespace Components {
     /**
      * Dictates the flex direction of the group
      */
-    direction?: Direction;
+    direction?: LayoutDirectionEnum;
     /**
      * Current value of the radio-group
      */
@@ -773,7 +775,7 @@ export namespace Components {
     /**
      * Dictates on which side of checkbox the label is placed
      */
-    labelPosition?: Position;
+    labelPosition?: PositionEnum;
     /**
      * Name of switch input
      */
@@ -1948,7 +1950,7 @@ declare namespace LocalJSX {
     /**
      * Dictates the flex direction of the group
      */
-    direction?: Direction;
+    direction?: LayoutDirectionEnum;
     /**
      * Event emitted when radioGroup value changes (after radio selection)
      */
@@ -2028,7 +2030,7 @@ declare namespace LocalJSX {
     /**
      * Dictates on which side of checkbox the label is placed
      */
-    labelPosition?: Position;
+    labelPosition?: PositionEnum;
     /**
      * Name of switch input
      */

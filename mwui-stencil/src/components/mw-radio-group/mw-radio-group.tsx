@@ -1,6 +1,5 @@
-import { Component, h, Element, Host, Prop, Watch, EventEmitter, Event } from "@stencil/core";
-
-type Direction = "row" | "column" | "row-reverse" | "column-reverse";
+import { Component, Element, Event, EventEmitter, h, Host, Prop, Watch } from "@stencil/core";
+import { LayoutDirectionEnum } from "../../shared/models/enums/layout-direction.enum";
 
 @Component({
   tag: "mw-radio-group",
@@ -25,7 +24,7 @@ export class MwRadioGroup {
   /**
    * Dictates the flex direction of the group
    */
-  @Prop() direction?: Direction = "column";
+  @Prop() direction?: LayoutDirectionEnum = LayoutDirectionEnum.COLUMN;
   /**
    * Dictates whether group should flex-wrap
    */
