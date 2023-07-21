@@ -26,7 +26,7 @@ const getFontSize = (size: Size): string =>
 @Component({
   assetsDirs: ["./assets"],
   tag: "mw-icon",
-  styleUrl: "mw-icon.css",
+  styleUrl: "mw-icon.scss",
   shadow: true,
 })
 export class MwIcon {
@@ -58,8 +58,6 @@ export class MwIcon {
         style={{
           "fontSize": getFontSize(this.size),
           "color": this.color,
-          "width": `${this.size}px`,
-          "height": `${this.size}px`,
           "font-variation-settings": `
           'FILL' ${this.fill ? 1 : 0},
           'wght' ${this.weight},
