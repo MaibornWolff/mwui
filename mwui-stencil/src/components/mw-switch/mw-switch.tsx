@@ -6,7 +6,6 @@ import { Component, Event, EventEmitter, Host, Prop, h } from "@stencil/core";
   shadow: true,
 })
 export class MwSwitch {
-  private checkbox: HTMLInputElement;
   /**
    * Provide unique identifier for automated testing
    */

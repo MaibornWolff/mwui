@@ -78,7 +78,7 @@ a {
     }
 
     &:focus {
-      box-shadow: inset 0 0 0 var(--mw-component-button-border-width-outline-default) var(--mw-component-button-outline-ghost-color-border-focused);
+      box-shadow: inset 0 0 0 var(--mw-component-button-border-width-outline-focused) var(--mw-component-button-outline-ghost-color-border-focused);
       color: var(--mw-component-button-outline-ghost-color-fg-focused);
     }
 

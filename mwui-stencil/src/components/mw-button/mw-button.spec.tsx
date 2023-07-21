@@ -1,6 +1,6 @@
 import { newSpecPage } from "@stencil/core/testing";
 import { h } from "@stencil/core";
-import { MwButton } from "./mw-button.component";
+import { MwButton } from "./mw-button";
 import { SpecPage } from "@stencil/core/internal";
 import { ButtonSizeEnum } from "./models/enums/button-size.enum";
 import { ButtonVariantEnum } from "./models/enums/button-variant.enum";
