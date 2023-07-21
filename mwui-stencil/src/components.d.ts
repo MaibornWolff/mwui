@@ -11,7 +11,7 @@ import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
-import { Position, PositionEnum } from "./shared/models/enums/position.enum";
+import { PositionEnum } from "./shared/models/enums/position.enum";
 import { SrcSetItem } from "./components/mw-img/mw-img";
 import { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 import { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
@@ -25,7 +25,7 @@ export { Size } from "./shared/models/enums/size.enum";
 export { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 export { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 export { Target } from "./components/mw-button/models/enums/button-target.enum";
-export { Position, PositionEnum } from "./shared/models/enums/position.enum";
+export { PositionEnum } from "./shared/models/enums/position.enum";
 export { SrcSetItem } from "./components/mw-img/mw-img";
 export { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 export { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
@@ -288,7 +288,7 @@ export namespace Components {
     /**
      * Dictates on which side of checkbox the label is placed
      */
-    labelPosition?: Position;
+    labelPosition?: PositionEnum;
     /**
      * Name of checkbox input
      */
@@ -681,7 +681,7 @@ export namespace Components {
     /**
      * Dictates on which side of checkbox the label is placed
      */
-    labelPosition?: Position;
+    labelPosition?: PositionEnum;
     /**
      * Analog to HTML 'name' attribute used to group radios for unique selection
      */
@@ -1503,7 +1503,7 @@ declare namespace LocalJSX {
     /**
      * Dictates on which side of checkbox the label is placed
      */
-    labelPosition?: Position;
+    labelPosition?: PositionEnum;
     /**
      * Name of checkbox input
      */
@@ -1932,7 +1932,7 @@ declare namespace LocalJSX {
     /**
      * Dictates on which side of checkbox the label is placed
      */
-    labelPosition?: Position;
+    labelPosition?: PositionEnum;
     /**
      * Analog to HTML 'name' attribute used to group radios for unique selection
      */
