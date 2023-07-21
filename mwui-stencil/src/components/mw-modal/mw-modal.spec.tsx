@@ -1,7 +1,7 @@
 import { newSpecPage } from "@stencil/core/testing";
 import { MwModal } from "./mw-modal";
 import { h } from "@stencil/core";
-import { MwButton } from "../mw-button/mw-button.component";
+import { MwButton } from "../mw-button/mw-button";
 
 describe("GIVEN MwModal", () => {
   const setup = async (

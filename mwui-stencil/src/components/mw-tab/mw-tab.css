@@ -31,8 +31,12 @@
   color: var(--mw-component-tabs-fg-selected);
   border-bottom: var(--mw-component-divider-border-width-default) solid var(--mw-component-tabs-fg-selected);
 }
-.mw-tab:active {
-  /* TODO: --mw-component-borders.scss-focused muss in mehrere Tokens aufgeteilt werden */
+.mw-tab:not(.selected):not(:disabled):active {
+  background: var(--mw-component-tabs-bg-pressed) !important;
+}
+.mw-tab:focus {
+  /* TODO: --mw-component-borders-focused muss in mehrere Tokens aufgeteilt werden */
+  border: 2px solid var(--mw-component-tabs-fg-selected);
 }
 .mw-tab:disabled {
   cursor: unset;

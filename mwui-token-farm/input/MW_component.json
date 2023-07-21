@@ -538,7 +538,7 @@
                         }
                     }
                 },
-                "header": {
+                "appBar": {
                     "height": {
                         "value": 72,
                         "type": "sizing"
@@ -1314,6 +1314,10 @@
                             "value": "#44555b",
                             "type": "color"
                         },
+                        "hover": {
+                            "value": "#44555b",
+                            "type": "color"
+                        },
                         "disabled": {
                             "value": "#95a0a4",
                             "type": "color"
@@ -1908,7 +1912,7 @@
                         }
                     }
                 },
-                "header": {
+                "appBar": {
                     "gapWithin": {
                         "value": 24,
                         "type": "spacing"
@@ -2010,7 +2014,7 @@
                     }
                 }
             },
-            "header": {
+            "appBar": {
                 "paddingX": {
                     "value": 24,
                     "type": "spacing"
