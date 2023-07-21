@@ -80,7 +80,7 @@ export class MwButton {
         title={this.label}
         class={{
           "mw-button": true,
-          "mw-button--icon-only": !this.label,
+          [`mw-button--icon-only--${this.size}`]: !this.label,
           [`mw-button--${this.variant}`]: true,
           [`mw-button--${this.size}`]: true,
         }}

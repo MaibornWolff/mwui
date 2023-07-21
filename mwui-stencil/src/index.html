@@ -78,13 +78,16 @@
         <mw-button label="BUTTON" test-id="test-button-10" variant="ghost-inverted" disabled></mw-button>
       </div>
       <h3>Icon</h3>
-      <div style="display: flex; gap: 16px">
-        <mw-button><mw-icon slot="icon-start" icon="coronavirus" title="Virus" /></mw-button>
-        <mw-button variant="outline"><mw-icon slot="icon-start" icon="coronavirus" title="Virus" /></mw-button>
-        <mw-button variant="ghost"><mw-icon slot="icon-start" icon="coronavirus" title="Virus" /></mw-button>
+      <div style="display: flex; gap: 16px; align-items: center">
+        <mw-button size="small"><mw-icon slot="icon-start" icon="coronavirus" title="Virus" size="x-small" /></mw-button>
+        <mw-button variant="outline" size="medium"><mw-icon slot="icon-start" icon="coronavirus" title="Virus" size="small" /></mw-button>
+        <mw-button variant="ghost" size="large"><mw-icon slot="icon-start" icon="coronavirus" title="Virus" size="medium" /></mw-button>
+        <span style="background: #1d184b; padding: 8px">
+          <mw-button variant="ghost-inverted" size="x-large"><mw-icon slot="icon-start" icon="coronavirus" title="Virus" size="large" /></mw-button>
+        </span>
       </div>
       <h3>Sizing</h3>
-      <div style="display: flex; gap: 16px">
+      <div style="display: flex; gap: 16px; align-items: center">
         <mw-button label="SMALL" size="small"></mw-button>
         <mw-button label="MEDIUM"></mw-button>
         <mw-button label="LARGE" size="large"></mw-button>

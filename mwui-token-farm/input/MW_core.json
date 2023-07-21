@@ -538,7 +538,7 @@
                         }
                     }
                 },
-                "header": {
+                "appBar": {
                     "height": {
                         "value": 72,
                         "type": "sizing"
@@ -1912,7 +1912,7 @@
                         }
                     }
                 },
-                "header": {
+                "appBar": {
                     "gapWithin": {
                         "value": 24,
                         "type": "spacing"
@@ -2014,7 +2014,7 @@
                     }
                 }
             },
-            "header": {
+            "appBar": {
                 "paddingX": {
                     "value": 24,
                     "type": "spacing"

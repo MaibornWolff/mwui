@@ -56,6 +56,42 @@ GhostInverted.args = {
   size: "medium",
 };
 
+export const FilledDisabled = Template.bind({});
+FilledDisabled.args = {
+  testId: "button",
+  label: "BUTTON",
+  disabled: true,
+  variant: "filled",
+  size: "medium",
+};
+
+export const Small = Template.bind({});
+Small.args = {
+  testId: "button",
+  label: "BUTTON",
+  disabled: false,
+  variant: "filled",
+  size: "small",
+};
+
+export const Large = Template.bind({});
+Large.args = {
+  testId: "button",
+  label: "BUTTON",
+  disabled: false,
+  variant: "filled",
+  size: "large",
+};
+
+export const XLarge = Template.bind({});
+XLarge.args = {
+  testId: "button",
+  label: "BUTTON",
+  disabled: false,
+  variant: "filled",
+  size: "x-large",
+};
+
 const WithIconTemplate = args => `
 <mw-button test-id="${args.testId}" label="${args.label}" onClick="${args.onClick}" size="${args.size}" disabled="${args.disabled}" variant="${args.variant}">
   <mw-icon slot="icon-start" icon="settings"></mw-icon>

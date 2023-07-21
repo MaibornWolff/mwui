@@ -1,5 +1,5 @@
 import { Component, Element, h, Host, Prop } from "@stencil/core";
-import { Position } from "../../shared/models/enums/position.enum";
+import { PositionEnum } from "../../shared/models/enums/position.enum";
 let radioIds = 0;
 
 @Component({
@@ -38,7 +38,7 @@ export class MwRadio {
   /**
    * Dictates on which side of checkbox the label is placed
    */
-  @Prop() labelPosition?: Position = "right";
+  @Prop() labelPosition?: PositionEnum = PositionEnum.RIGHT;
 
   constructor() {
     this.onClick = this.onClick.bind(this);

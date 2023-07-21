@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.x-small {
+    width: var(--mw-component-size-avatars-icon-xs);
+    height: var(--mw-component-size-avatars-icon-xs);
+  }
+
+  &.small {
+    width: var(--mw-component-size-avatars-icon-sm);
+    height: var(--mw-component-size-avatars-icon-sm);
+  }
+
+  &.medium {
+    width: var(--mw-component-size-avatars-icon-md);
+    height: var(--mw-component-size-avatars-icon-md);
+  }
+
+  &.large {
+    width: var(--mw-component-size-avatars-icon-lg);
+    height: var(--mw-component-size-avatars-icon-lg);
+  }
+
+  &.x-large {
+    width: var(--mw-component-size-avatars-icon-xl);
+    height: var(--mw-component-size-avatars-icon-xl);
+  }
+}

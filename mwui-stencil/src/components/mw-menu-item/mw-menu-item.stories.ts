@@ -4,11 +4,11 @@ export default {
 };
 
 const DefaultTemplate = args => `
-<mw-menu-item title="${args.title}" subtitle="${args.subtitle}" disabled="${args.disabled}" selected="${args.selected}"></mw-menu-item>`;
+<mw-menu-item text="${args.text}" subtitle="${args.subtitle}" disabled="${args.disabled}" selected="${args.selected}"></mw-menu-item>`;
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {
-  title: "Title",
+  text: "Title",
   subtitle: "Subtitle",
   disabled: false,
   selected: false,
