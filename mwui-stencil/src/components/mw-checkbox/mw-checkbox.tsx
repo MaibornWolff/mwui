@@ -1,7 +1,6 @@
 import { Component, Event, EventEmitter, h, Host, Prop } from "@stencil/core";
 import { PositionEnum } from "../../shared/models/enums/position.enum";
-
-let checkboxIds = 0;
+import { v4 as uuid } from "uuid";
 
 @Component({
   tag: "mw-checkbox",
@@ -10,7 +9,7 @@ let checkboxIds = 0;
   shadow: false,
 })
 export class MwCheckbox {
-  private checkboxId = `checkbox-input-${checkboxIds++}`;
+  private checkboxId = uuid();
   /**
    * Provide unique identifier for automated testing
    */

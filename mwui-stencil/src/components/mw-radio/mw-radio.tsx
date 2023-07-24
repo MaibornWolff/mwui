@@ -1,6 +1,6 @@
 import { Component, Element, h, Host, Prop } from "@stencil/core";
 import { PositionEnum } from "../../shared/models/enums/position.enum";
-let radioIds = 0;
+import { v4 as uuid } from "uuid";
 
 @Component({
   tag: "mw-radio",
@@ -8,7 +8,7 @@ let radioIds = 0;
   shadow: false,
 })
 export class MwRadio {
-  private radioId = `radio-input-${radioIds++}`;
+  private radioId = uuid();
 
   @Element() hostElement: HTMLMwRadioElement;
   /**

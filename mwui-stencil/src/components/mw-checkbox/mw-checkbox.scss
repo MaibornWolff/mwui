@@ -23,7 +23,7 @@
     opacity: 0;
     height: 0;
     width: 0;
-    /* Focus state doesn't work if we just do display: none */
+    cursor: pointer;
   }
 
   /* mw-checkbox */

@@ -1,7 +1,6 @@
 import { Component, Event, EventEmitter, h, Host, Prop } from "@stencil/core";
 import { PositionEnum } from "../../shared/models/enums/position.enum";
-
-let switchIds = 0;
+import { v4 as uuid } from "uuid";
 
 @Component({
   tag: "mw-switch",
@@ -9,7 +8,7 @@ let switchIds = 0;
   shadow: false,
 })
 export class MwSwitch {
-  private switchId = `switch-input-${switchIds++}`;
+  private switchId = uuid();
   /**
    * Provide unique identifier for automated testing
    */
