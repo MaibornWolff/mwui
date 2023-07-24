@@ -9,6 +9,7 @@
   display: inline-flex;
   flex-direction: column;
   width: 100%;
+  gap: var(--mw-component-text-field-gap-group-vertical);
 }
 
 mw-label {
@@ -30,9 +31,6 @@ mw-popover {
   @include ff.input;
 }
 
-.has-error {
-  color: var(--mw-component-text-field-fg-error);
-}
 .no-suggestions,
 .maximum-reached {
   flex-direction: column;

@@ -262,10 +262,12 @@ export class MwAutocomplete {
               </div>
             </mw-popover>
           </div>
-          <div class="helper-text-container">
-            <mw-helper-text helperText={this.helperText} hasError={this.hasError} />
-            {this.maximum && this.optionCounter && <mw-helper-text helperText={`${this.selection.length}/${this.maximum}`} />}
-          </div>
+          {(this.helperText || (this.optionCounter && this.maximum)) && (
+            <div class="helper-text-container">
+              <mw-helper-text helperText={this.helperText} hasError={this.hasError} />
+              {this.maximum && this.optionCounter && <mw-helper-text helperText={`${this.selection.length}/${this.maximum}`} />}
+            </div>
+          )}
         </div>
       </Host>
     );

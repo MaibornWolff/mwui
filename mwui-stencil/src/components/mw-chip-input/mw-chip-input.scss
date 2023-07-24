@@ -9,6 +9,7 @@
   display: inline-flex;
   flex-direction: column;
   width: 100%;
+  gap: var(--mw-component-text-field-gap-group-vertical);
 }
 
 .chip-input {

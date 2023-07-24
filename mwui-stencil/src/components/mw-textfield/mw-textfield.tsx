@@ -121,9 +121,9 @@ export class MwTextfield {
                 <slot name="icon-end"></slot>
               </span>
             </div>
-            {this.layout === LayoutEnum.VERTICAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
+            {this.helperText && this.layout === LayoutEnum.VERTICAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
           </div>
-          {this.layout === LayoutEnum.HORIZONTAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
+          {this.helperText && this.layout === LayoutEnum.HORIZONTAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
         </div>
       </Host>
     );

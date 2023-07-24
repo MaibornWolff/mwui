@@ -9,6 +9,7 @@
   display: inline-flex;
   flex-direction: column;
   width: 100%;
+  gap: var(--mw-component-text-field-gap-group-vertical);
 }
 
 .textfield {
@@ -17,8 +18,4 @@
 
 .input {
   @include ff.input;
-}
-
-.has-error {
-  color: var(--mw-component-text-field-fg-default);
 }

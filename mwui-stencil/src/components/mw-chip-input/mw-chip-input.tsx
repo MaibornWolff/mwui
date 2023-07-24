@@ -273,10 +273,12 @@ export class MwChipInput {
               </div>
             </div>
           </div>
-          <div class="helper-text-container">
-            <mw-helper-text helperText={helperText} hasError={hasError} />
-            {this.maximum && optionCounter && <mw-helper-text helperText={`${this.selected.length}/${maximum}`} />}
-          </div>
+          {(helperText || (optionCounter && maximum)) && (
+            <div class="helper-text-container">
+              <mw-helper-text helperText={helperText} hasError={hasError} />
+              {maximum && optionCounter && <mw-helper-text helperText={`${this.selected.length}/${maximum}`} />}
+            </div>
+          )}
         </div>
       </Host>
     );

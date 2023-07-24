@@ -3,6 +3,7 @@
   flex-direction: column;
   min-width: var(--mw-component-size-text-field-min-width);
   color: var(--mw-component-text-field-fg-default);
+  gap: var(--mw-component-text-field-gap-group-vertical);
 
   &.disabled,
   &.disabled input {
@@ -13,6 +14,7 @@
     flex-direction: row;
     display: flex;
     align-items: center;
+    gap: 0;
 
     .input {
       min-width: var(--mw-component-size-text-field-min-w);
@@ -42,6 +44,7 @@
 @mixin has-error {
   &.has-error {
     background: var(--mw-component-text-field-bg-error);
+    color: var(--mw-component-text-field-fg-error);
   }
 }
 
@@ -73,10 +76,6 @@
 
   .focused {
     color: var(--mw-component-text-field-fg-icon-focused);
-
-    &.has-error {
-      color: var(--mw-component-text-field-fg-error);
-    }
   }
 
   input {
@@ -139,9 +138,5 @@
 
   .focused {
     color: var(--mw-component-text-field-fg-icon-focused);
-
-    &.has-error {
-      color: var(--mw-component-text-field-fg-error);
-    }
   }
 }

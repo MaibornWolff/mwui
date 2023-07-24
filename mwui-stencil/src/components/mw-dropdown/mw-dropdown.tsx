@@ -143,9 +143,9 @@ export class MwDropdown {
                 <slot name="dropdown-menu"></slot>
               </div>
             </mw-popover>
-            {this.layout === LayoutEnum.VERTICAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
+            {this.helperText && this.layout === LayoutEnum.VERTICAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
           </div>
-          {this.layout === LayoutEnum.HORIZONTAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
+          {this.helperText && this.layout === LayoutEnum.HORIZONTAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
         </div>
       </Host>
     );

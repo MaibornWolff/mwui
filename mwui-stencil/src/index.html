@@ -477,8 +477,18 @@
       <br />
       <hr />
       <h2>Dropdown</h2>
-      <div style="display: flex; flex-flow: row">
+      <div style="display: flex; flex-flow: column">
         <mw-dropdown label="Dropdown" placeholder="Select option" layout="horizontal">
+          <div slot="dropdown-menu">
+            <mw-menu-item value="item-1" text="List Item 1" disabled></mw-menu-item>
+            <mw-menu-item value="item-2" text="List Item 2" subtitle="Subtitle"> </mw-menu-item>
+            <mw-divider></mw-divider>
+            <mw-menu-item value="item-3" text="List Item 3"> </mw-menu-item>
+            <mw-menu-item value="item-4" text="List Item 4" subtitle="Some very long Subtitle"> </mw-menu-item>
+            <mw-menu-item value="item-5" text="List Item 5" subtitle="Subtitle"> </mw-menu-item>
+          </div>
+        </mw-dropdown>
+        <mw-dropdown label="Dropdown" placeholder="Select option" required has-error helper-text="Helper Text">
           <div slot="dropdown-menu">
             <mw-menu-item value="item-1" text="List Item 1" disabled></mw-menu-item>
             <mw-menu-item value="item-2" text="List Item 2" subtitle="Subtitle"> </mw-menu-item>
@@ -507,7 +517,7 @@
             <mw-menu-item text="Volkswagen"></mw-menu-item>
           </div>
         </mw-autocomplete>
-        <mw-autocomplete multiple placeholder="Select options..." maximum="8" label="Multi choice" option-counter helper-text="Pick up to 4 options:">
+        <mw-autocomplete placeholder="Select options..." maximum="8" label="Multi choice" option-counter helper-text="Pick up to 4 options:">
           <mw-icon slot="icon-start" icon="directions_car"></mw-icon>
           <div slot="dropdown-menu">
             <mw-menu-item text="Audi"></mw-menu-item>
