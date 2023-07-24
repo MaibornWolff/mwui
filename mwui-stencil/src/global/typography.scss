@@ -1,0 +1,107 @@
+body,
+p {
+  font-family: var(--mw-semantic-body-regular-font-family);
+  font-weight: var(--mw-semantic-body-regular-font-weight);
+  line-height: var(--mw-semantic-body-regular-line-height);
+  font-size: var(--mw-semantic-body-regular-font-size);
+
+  &strong,
+  b {
+    font-family: var(--mw-semantic-body-bold-font-family);
+    font-weight: var(--mw-semantic-body-bold-font-weight);
+    line-height: var(--mw-semantic-body-bold-line-height);
+    font-size: var(--mw-semantic-body-bold-font-size);
+  }
+}
+
+h1 {
+  font-family: var(--mw-semantic-h1-font-family);
+  font-weight: var(--mw-semantic-h1-font-weight);
+  line-height: var(--mw-semantic-h1-line-height);
+  font-size: var(--mw-semantic-h1-font-size);
+}
+
+h2 {
+  font-family: var(--mw-semantic-h2-font-family);
+  font-weight: var(--mw-semantic-h2-font-weight);
+  line-height: var(--mw-semantic-h2-line-height);
+  font-size: var(--mw-semantic-h2-font-size);
+}
+
+h3 {
+  font-family: var(--mw-semantic-h3-font-family);
+  font-weight: var(--mw-semantic-h3-font-weight);
+  line-height: var(--mw-semantic-h3-line-height);
+  font-size: var(--mw-semantic-h3-font-size);
+}
+
+h4 {
+  font-family: var(--mw-semantic-h4-font-family);
+  font-weight: var(--mw-semantic-h4-font-weight);
+  line-height: var(--mw-semantic-h4-line-height);
+  font-size: var(--mw-semantic-h4-font-size);
+}
+
+h5 {
+  font-family: var(--mw-semantic-h5-font-family);
+  font-weight: var(--mw-semantic-h5-font-weight);
+  line-height: var(--mw-semantic-h5-line-height);
+  font-size: var(--mw-semantic-h5-font-size);
+}
+
+h6 {
+  font-family: var(--mw-semantic-h6-font-family);
+  font-weight: var(--mw-semantic-h6-font-weight);
+  line-height: var(--mw-semantic-h6-line-height);
+  font-size: var(--mw-semantic-h6-font-size);
+}
+
+.caption {
+  font-family: var(--mw-semantic-caption-regular-font-family);
+  font-size: var(--mw-semantic-caption-regular-font-size);
+  font-weight: var(--mw-semantic-caption-regular-font-weight);
+  line-height: var(--mw-semantic-caption-regular-line-height);
+  text-transform: var(--mw-semantic-caption-regular-text-case);
+  letter-spacing: var(--mw-semantic-caption-regular-letter-spacing);
+}
+
+.caption-bold,
+.caption strong,
+.caption b {
+  font-family: var(--mw-semantic-caption-bold-font-family);
+  font-size: var(--mw-semantic-caption-bold-font-size);
+  font-weight: var(--mw-semantic-caption-bold-font-weight);
+  line-height: var(--mw-semantic-caption-bold-line-height);
+  text-transform: var(--mw-semantic-caption-bold-text-case);
+  letter-spacing: var(--mw-semantic-caption-bold-letter-spacing);
+}
+
+.title {
+  font-family: var(--mw-semantic-title-regular-font-family);
+  font-size: var(--mw-semantic-title-regular-font-size);
+  font-weight: var(--mw-semantic-title-regular-font-weight);
+  line-height: var(--mw-semantic-title-regular-line-height);
+}
+
+.title strong,
+.title b {
+  font-family: var(--mw-semantic-title-bold-font-family);
+  font-size: var(--mw-semantic-title-bold-font-size);
+  font-weight: var(--mw-semantic-title-bold-font-weight);
+  line-height: var(--mw-semantic-title-bold-line-height);
+}
+
+.subtitle {
+  font-family: var(--mw-semantic-subtitle-regular-font-family);
+  font-size: var(--mw-semantic-subtitle-regular-font-size);
+  font-weight: var(--mw-semantic-subtitle-regular-font-weight);
+  line-height: var(--mw-semantic-subtitle-regular-line-height);
+}
+
+.subtitle strong,
+.subtitle b {
+  font-family: var(--mw-semantic-subtitle-bold-font-family);
+  font-size: var(--mw-semantic-subtitle-bold-font-size);
+  font-weight: var(--mw-semantic-subtitle-bold-font-weight);
+  line-height: var(--mw-semantic-subtitle-bold-line-height);
+}
