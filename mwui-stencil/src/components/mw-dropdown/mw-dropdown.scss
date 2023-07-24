@@ -6,13 +6,18 @@
 }
 
 .wrapper {
-  display: inline-flex;
+  width: 100%;
+  display: flex;
   flex-direction: column;
   gap: var(--mw-component-text-field-gap-group-vertical);
 }
 
 .dropdown {
   @include ff.form-field;
+
+  &.horizontal .input {
+    width: auto;
+  }
 }
 
 .input {
@@ -24,6 +29,7 @@
     padding: 0;
     width: 100%;
     background: transparent;
+    text-align: left;
     font-family: var(--mw-component-text-field-text-font-family);
     font-weight: var(--mw-component-text-field-text-font-weight);
     font-size: var(--mw-component-text-field-text-font-size);
