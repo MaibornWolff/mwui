@@ -60,7 +60,19 @@ export const MwCardImage = /*@__PURE__*/ defineContainer<JSX.MwCardImage>("mw-ca
 
 export const MwCardTitle = /*@__PURE__*/ defineContainer<JSX.MwCardTitle>("mw-card-title", undefined, ["text", "subtitle", "metadata"]);
 
-export const MwCheckbox = /*@__PURE__*/ defineContainer<JSX.MwCheckbox>("mw-checkbox", undefined, ["testId", "value", "name", "checked", "disabled", "label", "emitter"]);
+export const MwCheckbox = /*@__PURE__*/ defineContainer<JSX.MwCheckbox>("mw-checkbox", undefined, [
+    "testId",
+    "value",
+    "name",
+    "checked",
+    "indeterminate",
+    "disabled",
+    "label",
+    "labelPosition",
+    "emitter",
+]);
+
+export const MwCheckboxGroup = /*@__PURE__*/ defineContainer<JSX.MwCheckboxGroup>("mw-checkbox-group", undefined, ["value", "parentLabel", "direction", "wrap", "checkboxChange"]);
 
 export const MwChip = /*@__PURE__*/ defineContainer<JSX.MwChip>("mw-chip", undefined, [
     "testId",
@@ -153,9 +165,9 @@ export const MwPopover = /*@__PURE__*/ defineContainer<JSX.MwPopover>("mw-popove
     "mwPopoverOpen",
 ]);
 
-export const MwRadio = /*@__PURE__*/ defineContainer<JSX.MwRadio>("mw-radio", undefined, ["disabled", "checked", "value", "name", "testId", "label"]);
+export const MwRadio = /*@__PURE__*/ defineContainer<JSX.MwRadio>("mw-radio", undefined, ["disabled", "checked", "value", "name", "testId", "label", "labelPosition"]);
 
-export const MwRadioGroup = /*@__PURE__*/ defineContainer<JSX.MwRadioGroup>("mw-radio-group", undefined, ["value", "radioChange"]);
+export const MwRadioGroup = /*@__PURE__*/ defineContainer<JSX.MwRadioGroup>("mw-radio-group", undefined, ["value", "direction", "wrap", "radioChange"]);
 
 export const MwSlider = /*@__PURE__*/ defineContainer<JSX.MwSlider>("mw-slider", undefined, [
     "testId",
@@ -172,7 +184,17 @@ export const MwSlider = /*@__PURE__*/ defineContainer<JSX.MwSlider>("mw-slider",
     "disabled",
 ]);
 
-export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>("mw-switch", undefined, ["testId", "disabled", "label", "on", "off", "checked", "emitter"]);
+export const MwSwitch = /*@__PURE__*/ defineContainer<JSX.MwSwitch>("mw-switch", undefined, [
+    "testId",
+    "disabled",
+    "label",
+    "labelPosition",
+    "on",
+    "off",
+    "name",
+    "checked",
+    "emitter",
+]);
 
 export const MwTab = /*@__PURE__*/ defineContainer<JSX.MwTab>("mw-tab", undefined, ["selected", "icon", "label", "disabled"]);
 

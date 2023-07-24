@@ -1,6 +1,5 @@
-import { Component, Host, h, Prop, Element, Event, EventEmitter, Watch, State } from "@stencil/core";
-
-type Direction = "row" | "column" | "row-reverse" | "column-reverse";
+import { Component, Element, Event, EventEmitter, h, Host, Prop, State, Watch } from "@stencil/core";
+import { LayoutDirectionEnum } from "../../shared/models/enums/layout-direction.enum";
 
 @Component({
   tag: "mw-checkbox-group",
@@ -19,7 +18,7 @@ export class MwCheckboxGroup {
   })
   checkboxChange: EventEmitter<{ value?: Array<string | number> }>;
   /**
-   * Current value of the checkbox-group
+   * Current value of the checkbox-group; contains the values of all checked children
    */
   @Prop({ mutable: true }) value?: Array<string | number> = [];
   /**
@@ -29,7 +28,7 @@ export class MwCheckboxGroup {
   /**
    * Dictates the flex direction of the group
    */
-  @Prop() direction?: Direction = "column";
+  @Prop() direction?: LayoutDirectionEnum = LayoutDirectionEnum.COLUMN;
   /**
    * Dictates whether group should flex-wrap
    */
@@ -51,7 +50,7 @@ export class MwCheckboxGroup {
       if (this.host.children[i].tagName === "MW-CHECKBOX") {
         // TODO: Find better way of getting checked checkboxes
         if (this.host.children[i].getAttribute("checked") === "" || this.host.children[i].getAttribute("checked") === "true") {
-          this.value.push(this.host.children[i].getAttribute("value"));
+          this.value = [...this.value, this.host.children[i].getAttribute("value")];
         }
         checkboxes.push(this.host.children[i]);
       }
@@ -66,11 +65,13 @@ export class MwCheckboxGroup {
       if (this.value.includes(value)) {
         const index = this.value.indexOf(value);
         this.value.splice(index, 1);
+        // Force re-render
+        this.value = [...this.value];
         for (const checkbox of this.checkboxes) {
           if (checkbox.value === value) checkbox.setAttribute("checked", "false");
         }
       } else {
-        this.value.push(value);
+        this.value = [...this.value, value];
         for (const checkbox of this.checkboxes) {
           if (checkbox.value === value) checkbox.setAttribute("checked", "true");
         }
@@ -78,8 +79,6 @@ export class MwCheckboxGroup {
       this.checked = this.value.length >= this.checkboxes.length;
       this.indeterminate = this.value.length > 0 && this.value.length < this.checkboxes.length;
     }
-    console.log(this.value);
-    console.log(this.checkboxes);
   };
 
   private onParentClick = (): void => {
@@ -94,15 +93,13 @@ export class MwCheckboxGroup {
       for (const checkbox of this.checkboxes) {
         if (!this.value.includes(checkbox.value)) {
           checkbox.setAttribute("checked", "true");
-          checkboxValues.push(checkbox.value);
+          checkboxValues = [...checkboxValues, checkbox.value];
         }
       }
       this.checked = true;
       this.indeterminate = false;
     }
     this.value = checkboxValues;
-    console.log(this.checkboxes);
-    console.log(this.value);
   };
 
   render() {
