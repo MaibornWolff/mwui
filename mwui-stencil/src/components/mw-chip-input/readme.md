@@ -4,20 +4,20 @@
 
 ## Properties
 
-| Property        | Attribute        | Description                                                                                                            | Type               | Default     |
-| --------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------ | ----------- |
-| `disabled`      | `disabled`       | Visually and functionally disabled input                                                                               | `boolean`          | `false`     |
-| `hasError`      | `has-error`      | Use to display input and helper-text in error state                                                                    | `boolean`          | `false`     |
-| `helperText`    | `helper-text`    | Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined. | `string`           | `undefined` |
-| `inline`        | `inline`         | Display label and input horizontally                                                                                   | `boolean`          | `false`     |
-| `label`         | `label`          | Label to be displayed                                                                                                  | `string`           | `undefined` |
-| `maximum`       | `maximum`        | Amount of allowed `selected` values                                                                                    | `number`           | `undefined` |
-| `name`          | `name`           | input field name                                                                                                       | `string`           | `undefined` |
-| `optionCounter` | `option-counter` | Amount of currently selected options                                                                                   | `boolean`          | `false`     |
-| `placeholder`   | `placeholder`    | Placeholder to be displayed                                                                                            | `string`           | `undefined` |
-| `required`      | `required`       | Mark input as required                                                                                                 | `boolean`          | `false`     |
-| `selectedChips` | --               | Currently selected Values                                                                                              | `string[]`         | `undefined` |
-| `value`         | `value`          | input field value                                                                                                      | `number \| string` | `undefined` |
+| Property        | Attribute        | Description                                                                                                            | Type                                           | Default               |
+| --------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- | --------------------- |
+| `disabled`      | `disabled`       | Visually and functionally disabled input                                                                               | `boolean`                                      | `false`               |
+| `hasError`      | `has-error`      | Use to display input and helper-text in error state                                                                    | `boolean`                                      | `false`               |
+| `helperText`    | `helper-text`    | Shows how many options the user has selected as well as the allowed maximum. Only works, if `maximum` prop is defined. | `string`                                       | `undefined`           |
+| `label`         | `label`          | Label to be displayed                                                                                                  | `string`                                       | `undefined`           |
+| `layout`        | `layout`         | Dictates layout direction of combobox and label                                                                        | `LayoutEnum.HORIZONTAL \| LayoutEnum.VERTICAL` | `LayoutEnum.VERTICAL` |
+| `maximum`       | `maximum`        | Amount of allowed `selected` values                                                                                    | `number`                                       | `undefined`           |
+| `name`          | `name`           | input field name                                                                                                       | `string`                                       | `undefined`           |
+| `optionCounter` | `option-counter` | Amount of currently selected options                                                                                   | `boolean`                                      | `false`               |
+| `placeholder`   | `placeholder`    | Placeholder to be displayed                                                                                            | `string`                                       | `undefined`           |
+| `required`      | `required`       | Mark input as required                                                                                                 | `boolean`                                      | `false`               |
+| `selectedChips` | --               | Currently selected Values                                                                                              | `string[]`                                     | `undefined`           |
+| `value`         | `value`          | input field value                                                                                                      | `number \| string`                             | `undefined`           |
 
 ## Events
 

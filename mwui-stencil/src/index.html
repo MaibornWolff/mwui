@@ -130,8 +130,8 @@
           <mw-textfield disabled type="text" value="disabled" label="Label" placeholder="Placeholder" helper-text="helper text default"></mw-textfield>
         </div>
         <div style="display: flex; flex-direction: column; gap: 16px">
-          <h3>inline</h3>
-          <mw-textfield type="text" value="some value" label="Label" placeholder="Placeholder" helper-text="hfelper text default" inline></mw-textfield>
+          <h3>horizontal</h3>
+          <mw-textfield type="text" value="some value" label="Label" placeholder="Placeholder" helper-text="hfelper text default" layout="horizontal"></mw-textfield>
         </div>
         <div style="display: flex; flex-direction: column; gap: 16px">
           <h3>Icons</h3>
@@ -478,7 +478,7 @@
       <hr />
       <h2>Dropdown</h2>
       <div style="display: flex; flex-flow: row">
-        <mw-dropdown label="Dropdown" placeholder="Select option" inline="true">
+        <mw-dropdown label="Dropdown" placeholder="Select option" layout="horizontal">
           <div slot="dropdown-menu">
             <mw-menu-item value="item-1" text="List Item 1" disabled></mw-menu-item>
             <mw-menu-item value="item-2" text="List Item 2" subtitle="Subtitle"> </mw-menu-item>
@@ -495,7 +495,7 @@
       <hr />
       <h2>Autocomplete</h2>
       <div style="width: 500px">
-        <mw-autocomplete inline multiple placeholder="Select options..." maximum="4" label="Multi choice" option-counter helper-text="Pick up to 8 options:">
+        <mw-autocomplete layout="horizontal" multiple placeholder="Select options..." maximum="4" label="Multi choice" option-counter helper-text="Pick up to 8 options:">
           <div slot="dropdown-menu">
             <mw-menu-item text="Audi"></mw-menu-item>
             <mw-menu-item text="BMW" disabled></mw-menu-item>
@@ -528,7 +528,7 @@
             <mw-menu-item text="Item 4"></mw-menu-item>
           </div>
         </mw-autocomplete>
-        <mw-autocomplete label="Single choice" placeholder="Add choices..." inline>
+        <mw-autocomplete label="Single choice" placeholder="Add choices..." layout="horizontal">
           <div slot="dropdown-menu">
             <mw-menu-item text="Item 1"></mw-menu-item>
             <mw-menu-item text="Item 2"></mw-menu-item>

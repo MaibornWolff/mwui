@@ -1,4 +1,5 @@
-import { Component, Host, h, Prop, Element, State, Listen, Event, EventEmitter } from "@stencil/core";
+import { Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State } from "@stencil/core";
+import { LayoutEnum } from "../../shared/models/enums/layout.enum";
 
 @Component({
   tag: "mw-dropdown",
@@ -40,9 +41,9 @@ export class MwDropdown {
    */
   @Prop() hasError?: boolean = false;
   /**
-   * Display label and input horizonally
+   * Dictates layout direction of dropdown and label
    */
-  @Prop() inline?: boolean = false;
+  @Prop() layout?: LayoutEnum = LayoutEnum.VERTICAL;
   /**
    * Mark input as required
    */
@@ -92,7 +93,7 @@ export class MwDropdown {
     return (
       <Host>
         <div class="wrapper">
-          <div class={{ "dropdown": true, "inline": this.inline, "has-error": this.hasError, "disabled": this.disabled }}>
+          <div class={{ "dropdown": true, "horizontal": this.layout === LayoutEnum.HORIZONTAL, "has-error": this.hasError, "disabled": this.disabled }}>
             <mw-label name={this.name} label={this.label} required={this.required}></mw-label>
             <mw-popover noPadding={true} closeOnClick={true} open={this.isDropdownOpen}>
               <div slot="anchor" onClick={this.onFocus} class={{ "input": true, "has-error": this.hasError, "disabled": this.disabled }}>
@@ -142,9 +143,9 @@ export class MwDropdown {
                 <slot name="dropdown-menu"></slot>
               </div>
             </mw-popover>
-            {!this.inline && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
+            {this.layout === LayoutEnum.VERTICAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
           </div>
-          {this.inline && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
+          {this.layout === LayoutEnum.HORIZONTAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
         </div>
       </Host>
     );

@@ -46,7 +46,7 @@ const IconTemplate = args => `
   helper-text="${args.helperText}"
   no-suggestions-text="No suggestions found."
   has-error="${args.hasError}"
-  inline="${args.inline}"
+  layout="${args.layout}"
   required="${args.required}"
   disabled="${args.disabled}"
   read-only="${args.readOnly}"
@@ -75,7 +75,7 @@ Default.args = {
   helperText: "helper text",
   multiple: false,
   hasError: false,
-  inline: false,
+  layout: "vertical",
   required: false,
   disabled: false,
   maximum: 4,
@@ -90,7 +90,7 @@ Multiple.args = {
   placeholder: "Select options...",
   helperText: "helper text:",
   hasError: false,
-  inline: false,
+  layout: "vertical",
   required: false,
   disabled: false,
   multiple: true,
@@ -98,15 +98,15 @@ Multiple.args = {
   optionCounter: true,
 };
 
-export const Inline = IconTemplate.bind({});
-Inline.args = {
+export const Horizontal = IconTemplate.bind({});
+Horizontal.args = {
   label: "Multiple choice",
   value: "",
   name: "autocomplete",
   placeholder: "Select options...",
   helperText: "",
   hasError: false,
-  inline: true,
+  layout: "horizontal",
   required: true,
   disabled: false,
   multiple: true,
@@ -122,7 +122,7 @@ Disabled.args = {
   placeholder: "Select options...",
   helperText: "helper text:",
   hasError: false,
-  inline: false,
+  layout: "vertical",
   required: false,
   disabled: true,
   multiple: true,

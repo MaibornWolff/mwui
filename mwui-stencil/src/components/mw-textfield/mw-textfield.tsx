@@ -1,4 +1,5 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h, Element } from "@stencil/core";
+import { Component, Element, Event, EventEmitter, h, Host, Prop, State } from "@stencil/core";
+import { LayoutEnum } from "../../shared/models/enums/layout.enum";
 
 @Component({
   tag: "mw-textfield",
@@ -41,9 +42,9 @@ export class MwTextfield {
    */
   @Prop() hasError?: boolean = false;
   /**
-   * Display label and input horizonally
+   * Dictates layout direction of textfield and label
    */
-  @Prop() inline?: boolean = false;
+  @Prop() layout?: LayoutEnum = LayoutEnum.VERTICAL;
   /**
    * Mark input as required
    */
@@ -89,7 +90,7 @@ export class MwTextfield {
           <div
             class={{
               "textfield": true,
-              "inline": this.inline,
+              "horizontal": this.layout === LayoutEnum.HORIZONTAL,
               "has-error": this.hasError,
               "disabled": this.disabled,
             }}
@@ -120,9 +121,9 @@ export class MwTextfield {
                 <slot name="icon-end"></slot>
               </span>
             </div>
-            {!this.inline && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
+            {this.layout === LayoutEnum.VERTICAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
           </div>
-          {this.inline && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
+          {this.layout === LayoutEnum.HORIZONTAL && <mw-helper-text helperText={this.helperText} hasError={this.hasError} />}
         </div>
       </Host>
     );

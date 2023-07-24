@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-07-21T12:33:10",
+  "timestamp": "2023-07-24T08:58:04",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.3.1",
@@ -155,23 +155,6 @@
           "required": false
         },
         {
-          "name": "inline",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "inline",
-          "reflectToAttr": false,
-          "docs": "Display label and input horizontally",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "label",
           "type": "string",
           "mutable": false,
@@ -182,6 +165,26 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "layout",
+          "type": "LayoutEnum.HORIZONTAL | LayoutEnum.VERTICAL",
+          "mutable": false,
+          "attr": "layout",
+          "reflectToAttr": false,
+          "docs": "Dictates layout direction of autocomplete and label",
+          "docsTags": [],
+          "default": "LayoutEnum.VERTICAL",
+          "values": [
+            {
+              "type": "LayoutEnum.HORIZONTAL"
+            },
+            {
+              "type": "LayoutEnum.VERTICAL"
             }
           ],
           "optional": true,
@@ -1290,7 +1293,7 @@
       "filePath": "./src/components/mw-checkbox/mw-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "mw-checkbox",
-      "readme": "# mw-checkbox\n",
+      "readme": "# mw-checkbox\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1637,23 +1640,6 @@
           "required": false
         },
         {
-          "name": "inline",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "inline",
-          "reflectToAttr": false,
-          "docs": "Display label and input horizontally",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "label",
           "type": "string",
           "mutable": false,
@@ -1664,6 +1650,26 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "layout",
+          "type": "LayoutEnum.HORIZONTAL | LayoutEnum.VERTICAL",
+          "mutable": false,
+          "attr": "layout",
+          "reflectToAttr": false,
+          "docs": "Dictates layout direction of combobox and label",
+          "docsTags": [],
+          "default": "LayoutEnum.VERTICAL",
+          "values": [
+            {
+              "type": "LayoutEnum.HORIZONTAL"
+            },
+            {
+              "type": "LayoutEnum.VERTICAL"
             }
           ],
           "optional": true,
@@ -1927,23 +1933,6 @@
           "required": false
         },
         {
-          "name": "inline",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "inline",
-          "reflectToAttr": false,
-          "docs": "Display label and input horizonally",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "label",
           "type": "string",
           "mutable": false,
@@ -1954,6 +1943,26 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "layout",
+          "type": "LayoutEnum.HORIZONTAL | LayoutEnum.VERTICAL",
+          "mutable": false,
+          "attr": "layout",
+          "reflectToAttr": false,
+          "docs": "Dictates layout direction of dropdown and label",
+          "docsTags": [],
+          "default": "LayoutEnum.VERTICAL",
+          "values": [
+            {
+              "type": "LayoutEnum.HORIZONTAL"
+            },
+            {
+              "type": "LayoutEnum.VERTICAL"
             }
           ],
           "optional": true,
@@ -3451,7 +3460,7 @@
       "filePath": "./src/components/mw-radio/mw-radio.tsx",
       "encapsulation": "none",
       "tag": "mw-radio",
-      "readme": "# mw-radio\n",
+      "readme": "# mw-radio\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3568,7 +3577,7 @@
       "filePath": "./src/components/mw-radio-group/mw-radio-group.tsx",
       "encapsulation": "none",
       "tag": "mw-radio-group",
-      "readme": "# mw-radio-group\n",
+      "readme": "# mw-radio-group\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3838,7 +3847,7 @@
       "filePath": "./src/components/mw-switch/mw-switch.tsx",
       "encapsulation": "shadow",
       "tag": "mw-switch",
-      "readme": "# mw-switch\n",
+      "readme": "# mw-switch\r\n\r",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -4468,23 +4477,6 @@
           "required": false
         },
         {
-          "name": "inline",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "inline",
-          "reflectToAttr": false,
-          "docs": "Display label and input horizonally",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "label",
           "type": "string",
           "mutable": false,
@@ -4495,6 +4487,26 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "layout",
+          "type": "LayoutEnum.HORIZONTAL | LayoutEnum.VERTICAL",
+          "mutable": false,
+          "attr": "layout",
+          "reflectToAttr": false,
+          "docs": "Dictates layout direction of textfield and label",
+          "docsTags": [],
+          "default": "LayoutEnum.VERTICAL",
+          "values": [
+            {
+              "type": "LayoutEnum.HORIZONTAL"
+            },
+            {
+              "type": "LayoutEnum.VERTICAL"
             }
           ],
           "optional": true,

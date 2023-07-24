@@ -17,7 +17,7 @@ const Template = args => `
   placeholder="${args.placeholder}"
   helper-text="${args.helperText}"
   has-error="${args.hasError}"
-  inline="${args.inline}"
+  layout="${args.layout}"
   required="${args.required}"
   disabled="${args.disabled}"
   >
@@ -38,7 +38,7 @@ const IconTemplate = args => `
   placeholder="${args.placeholder}"
   helper-text="${args.helperText}"
   has-error="${args.hasError}"
-  inline="${args.inline}"
+  layout="${args.layout}"
   required="${args.required}"
   disabled="${args.disabled}"
   >
@@ -60,20 +60,20 @@ Default.args = {
   placeholder: "Select option",
   helperText: "",
   hasError: false,
-  inline: false,
+  layout: "vertical",
   required: false,
   disabled: false,
 };
 
-export const Inline = IconTemplate.bind({});
-Inline.args = {
+export const Horizontal = IconTemplate.bind({});
+Horizontal.args = {
   label: "Dropdown",
   value: "",
   name: "dropdown",
   placeholder: "Select option",
   helperText: "",
   hasError: false,
-  inline: true,
+  layout: "horizontal",
   required: false,
   disabled: false,
 };
@@ -86,7 +86,7 @@ WithError.args = {
   placeholder: "Select option",
   helperText: "Error",
   hasError: true,
-  inline: false,
+  layout: "vertical",
   required: true,
   disabled: false,
 };

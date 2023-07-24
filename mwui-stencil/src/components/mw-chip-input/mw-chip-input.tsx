@@ -1,5 +1,6 @@
 import { Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State, Watch } from "@stencil/core";
 import { Selection } from "../../utils/selection";
+import { LayoutEnum } from "../../shared/models/enums/layout.enum";
 
 @Component({
   tag: "mw-chip-input",
@@ -54,9 +55,9 @@ export class MwChipInput {
    */
   @Prop() hasError?: boolean = false;
   /**
-   * Display label and input horizontally
+   * Dictates layout direction of combobox and label
    */
-  @Prop() inline?: boolean = false;
+  @Prop() layout?: LayoutEnum = LayoutEnum.VERTICAL;
   /**
    * Mark input as required
    */
@@ -194,7 +195,7 @@ export class MwChipInput {
       selected,
       required,
       hasError,
-      inline,
+      layout,
       helperText,
       optionCounter,
       maximum,
@@ -206,7 +207,7 @@ export class MwChipInput {
           <div
             class={{
               "chip-input": true,
-              "inline": inline,
+              "layout": layout === LayoutEnum.HORIZONTAL,
               "has-error": hasError,
               "disabled": disabled,
             }}

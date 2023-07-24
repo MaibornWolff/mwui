@@ -15,11 +15,11 @@ describe("Given MwAutocomplete", () => {
     placeholder,
     helperText,
     hasError,
-    inline,
+    layout,
     required,
     disabled,
     selection,
-  }: Pick<MwAutocomplete, "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled" | "selection"> = defaultProps): Promise<SpecPage> => {
+  }: Pick<MwAutocomplete, "name" | "label" | "placeholder" | "helperText" | "hasError" | "layout" | "required" | "disabled" | "selection"> = defaultProps): Promise<SpecPage> => {
     return await newSpecPage({
       components: [MwAutocomplete],
       template: () => (
@@ -29,7 +29,7 @@ describe("Given MwAutocomplete", () => {
           placeholder={placeholder}
           helper-text={helperText}
           has-error={hasError}
-          inline={inline}
+          layout={layout}
           required={required}
           selection={selection}
           disabled={disabled}

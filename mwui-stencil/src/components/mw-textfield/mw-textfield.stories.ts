@@ -30,7 +30,7 @@ const DefaultTemplate = args => `
   helper-text="${args["helper-text"]}"
   has-error="${args["has-error"]}"
   required="${args.required}"
-  inline="${args.inline}"
+  layout="${args.layout}"
 >
 </mw-textfield>`;
 
@@ -46,7 +46,7 @@ Default.args = {
   "helper-text": "",
   "has-error": false,
   "required": false,
-  "inline": false,
+  "layout": "vertical",
 };
 
 export const Label = DefaultTemplate.bind({});
@@ -61,7 +61,7 @@ Label.args = {
   "helper-text": "",
   "has-error": false,
   "required": false,
-  "inline": false,
+  "layout": "vertical",
 };
 
 export const Placeholder = DefaultTemplate.bind({});
@@ -76,7 +76,7 @@ Placeholder.args = {
   "helper-text": "",
   "has-error": false,
   "required": false,
-  "inline": false,
+  "layout": "vertical",
 };
 
 export const HelperText = DefaultTemplate.bind({});
@@ -91,7 +91,7 @@ HelperText.args = {
   "helper-text": "helper text",
   "has-error": false,
   "required": false,
-  "inline": false,
+  "layout": "vertical",
 };
 
 export const ErrorState = DefaultTemplate.bind({});
@@ -106,7 +106,7 @@ ErrorState.args = {
   "helper-text": "error text",
   "has-error": true,
   "required": false,
-  "inline": false,
+  "layout": "vertical",
 };
 
 export const Required = DefaultTemplate.bind({});
@@ -121,11 +121,11 @@ Required.args = {
   "helper-text": "",
   "has-error": false,
   "required": true,
-  "inline": false,
+  "layout": "vertical",
 };
 
-export const Inline = DefaultTemplate.bind({});
-Inline.args = {
+export const Horizontal = DefaultTemplate.bind({});
+Horizontal.args = {
   "testId": "textfield",
   "value": "Some value",
   "disabled": false,
@@ -136,7 +136,7 @@ Inline.args = {
   "helper-text": "helper text",
   "has-error": false,
   "required": true,
-  "inline": true,
+  "layout": "horizontal",
 };
 
 const IconStartTemplate = args => `
@@ -151,7 +151,7 @@ const IconStartTemplate = args => `
   helper-text="${args["helper-text"]}"
   has-error="${args["has-error"]}"
   required="${args.required}"
-  inline="${args.inline}"
+  layout="${args.layout}"
 >
   <mw-icon icon="search" slot="icon-start"></mw-icon>
 </mw-textfield>`;
@@ -168,7 +168,7 @@ WithIconStart.args = {
   "helper-text": "helper text",
   "has-error": false,
   "required": true,
-  "inline": false,
+  "layout": "vertical",
 };
 
 const IconEndTemplate = args => `
@@ -183,7 +183,7 @@ const IconEndTemplate = args => `
   helper-text="${args["helper-text"]}"
   has-error="${args["has-error"]}"
   required="${args.required}"
-  inline="${args.inline}"
+  layout="${args.layout}"
 >
   <mw-icon icon="search" slot="icon-end"></mw-icon>
 </mw-textfield>`;
@@ -200,7 +200,7 @@ WithIconEnd.args = {
   "helper-text": "helper text",
   "has-error": false,
   "required": true,
-  "inline": false,
+  "layout": "vertical",
 };
 
 const IconStartEndTemplate = args => `
@@ -215,7 +215,7 @@ const IconStartEndTemplate = args => `
   helper-text="${args["helper-text"]}"
   has-error="${args["has-error"]}"
   required="${args.required}"
-  inline="${args.inline}"
+  layout="${args.layout}"
 >
   <mw-icon icon="search" slot="icon-start"></mw-icon>
   <mw-icon icon="close" slot="icon-end"></mw-icon>
@@ -233,5 +233,5 @@ WithIconBoth.args = {
   "helper-text": "helper text",
   "has-error": false,
   "required": true,
-  "inline": false,
+  "layout": "vertical",
 };
