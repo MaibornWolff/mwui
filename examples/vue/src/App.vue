@@ -31,6 +31,9 @@ export default {
         onInput(e) {
             console.log(e, "input..");
         },
+        onClickMenuItem(e) {
+            console.log("menu item clicked", e.target.value);
+        },
     },
 };
 </script>
@@ -60,7 +63,6 @@ export default {
                     >
                         <mw-icon slot="icon-start" icon="search" />
                         <div slot="dropdown-menu">
-                            <mw-menu-item text="Pineapple" />
                             <mw-menu-item text="Orange" />
                             <mw-menu-item text="Apple" />
                             <mw-menu-item text="Pear" />
@@ -72,6 +74,9 @@ export default {
                     <mw-button variant="filled" label="Send" @click="onSend" />
                 </mw-card-footer>
             </mw-card>
+            <div>
+                <mw-menu-item text="Pineapple" @click="onClickMenuItem" />
+            </div>
         </div>
     </div>
 </template>

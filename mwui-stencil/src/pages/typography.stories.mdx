@@ -1,0 +1,81 @@
+{/* icons.stories.mdx */}
+
+import { Title } from "@storybook/addon-docs";
+import { Meta, Typeset } from "@storybook/blocks";
+import {
+  mwSemanticFontFontSizeBodyRegular,
+  mwSemanticFontFontSizeH6Regular,
+  mwSemanticFontFontSizeH5Regular,
+  mwSemanticFontFontSizeH4Regular,
+  mwSemanticFontFontSizeH3Regular,
+  mwSemanticFontFontSizeH2Regular,
+  mwSemanticFontFontSizeH1Regular,
+  mwSemanticFontFontSizeHeroRegular,
+  mwSemanticFontFontSizeSubtitleRegular,
+  mwSemanticFontFontSizeCaptionRegular,
+  mwSemanticFontFontSizeOverlineRegular,
+} from "../../dist/mwui-token-farm/dist/js/MW_core.js";
+
+<Meta title="Utilities/Typography" />
+
+export const typography = {
+  type: {
+    primary: '"Poppins", sans-serif',
+  },
+  size: {
+    p: mwSemanticFontFontSizeBodyRegular,
+    h6: mwSemanticFontFontSizeH6Regular,
+    h5: mwSemanticFontFontSizeH5Regular,
+    h4: mwSemanticFontFontSizeH4Regular,
+    h3: mwSemanticFontFontSizeH3Regular,
+    h2: mwSemanticFontFontSizeH2Regular,
+    h1: mwSemanticFontFontSizeH1Regular,
+  },
+};
+
+export const extended = {
+  type: {
+    primary: '"Poppins", sans-serif',
+  },
+  size: {
+    hero: mwSemanticFontFontSizeHeroRegular,
+    title: mwSemanticFontFontSizeSubtitleRegular,
+    subtitle: mwSemanticFontFontSizeSubtitleRegular,
+    caption: mwSemanticFontFontSizeCaptionRegular,
+    overline: mwSemanticFontFontSizeOverlineRegular,
+  },
+};
+
+export const SampleText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+# Typography
+
+Regular font sizes for paragraphs, h6, h5, h4, h3, h2, h1 elements are applied when importing the global CSS stylesheet.
+
+**Font:** Poppins
+
+<Typeset
+  fontSizes={[typography.size.p, typography.size.h6, typography.size.h5, typography.size.h4, typography.size.h3, typography.size.h2, typography.size.h1]}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+
+### Extended Typography using injected CSS classes
+
+The following CSS classes can be used independently from the document's semantics to apply styling based on font design tokens.
+
+```html
+<h1 class="hero">Hero</h1>
+<p class="title">title</p>
+<p class="subtitle">subtitle</p>
+<p class="caption">caption</p>
+<p class="overline">overline</p>
+```
+
+> Keep in mind though, that the Website or Application should respect the [semantics of a HTML document](https://web.dev/learn/html/semantic-html/) to be compliant to web and A11Y standards.
+
+<h1 className="sb-unstyled hero">Hero</h1>
+<p className="sb-unstyled title">title</p>
+<p className="sb-unstyled subtitle">subtitle</p>
+<p className="sb-unstyled caption">caption</p>
+<p className="sb-unstyled overline">overline</p>
