@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-07-24T07:47:34",
+  "timestamp": "2023-07-26T11:49:11",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.3.1",
@@ -430,7 +430,7 @@
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-avatar",
-      "readme": "# mw-avatar\r\n\r\n\r\n\r",
+      "readme": "# mw-avatar\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -876,7 +876,7 @@
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-body",
-      "readme": "# mw-card-body\r\n\r\n\r\n\r",
+      "readme": "# mw-card-body\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -895,7 +895,7 @@
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-footer",
-      "readme": "# mw-card-footer\r\n\r\n\r\n\r",
+      "readme": "# mw-card-footer\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1987,7 +1987,7 @@
       "filePath": "./src/components/mw-divider/mw-divider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-divider",
-      "readme": "# mw-divider\r\n\r\n\r\n\r",
+      "readme": "# mw-divider\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2561,7 +2561,7 @@
           "mutable": false,
           "attr": "srcset",
           "reflectToAttr": false,
-          "docs": "Different resolutions for different viewport sizes can be passed\r\ne.g. \"img/vasen-420.webp 420w,\r\n      img/vasen-980.webp 980w,\r\n      img/vasen-1680.webp 1680w,\r\n      img/vasen-2400.webp 2400w\"",
+          "docs": "Different resolutions for different viewport sizes can be passed\ne.g. \"img/vasen-420.webp 420w,\n      img/vasen-980.webp 980w,\n      img/vasen-1680.webp 1680w,\n      img/vasen-2400.webp 2400w\"",
           "docsTags": [],
           "values": [
             {
