@@ -4,14 +4,14 @@ p {
   font-weight: var(--mw-semantic-body-regular-font-weight);
   line-height: var(--mw-semantic-font-line-height-body-regular);
   font-size: var(--mw-semantic-font-font-size-body-regular);
+}
 
-  &strong,
-  b {
-    font-family: var(--mw-semantic-body-bold-font-family);
-    font-weight: var(--mw-semantic-body-bold-font-weight);
-    line-height: var(--mw-semantic-font-line-height-body-regular);
-    font-size: var(--mw-semantic-font-font-size-body-regular);
-  }
+strong,
+b {
+  font-family: var(--mw-semantic-body-bold-font-family);
+  font-weight: var(--mw-semantic-body-bold-font-weight);
+  line-height: var(--mw-semantic-font-line-height-body-regular);
+  font-size: var(--mw-semantic-font-font-size-body-regular);
 }
 
 h1 {

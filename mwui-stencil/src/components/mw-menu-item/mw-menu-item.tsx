@@ -27,7 +27,7 @@ export class MwMenuItem {
    */
   @Prop({ mutable: true, reflect: true }) value?: string;
   /**
-   * MwMenuItem emits an event when its clicked
+   * Event is emitted when click menu item. Used internally by other components. Attach listener to click event when using.
    */
   @Event({
     bubbles: true,
