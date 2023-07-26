@@ -1,5 +1,6 @@
 import { Component, Element, h, Host, Prop } from "@stencil/core";
-let radioIds = 0;
+import { PositionEnum } from "../../shared/models/enums/position.enum";
+import { v4 as uuid } from "uuid";
 
 @Component({
   tag: "mw-radio",
@@ -7,11 +8,11 @@ let radioIds = 0;
   shadow: false,
 })
 export class MwRadio {
-  private radioId = `radio-input-${radioIds++}`;
+  private radioId = uuid();
 
   @Element() hostElement: HTMLMwRadioElement;
   /**
-   * Visually and functionally disbale radio button
+   * Visually and functionally disable radio button
    */
   @Prop() disabled?: boolean;
   /**
@@ -34,6 +35,10 @@ export class MwRadio {
    * Label to be displayed
    */
   @Prop() label?: string;
+  /**
+   * Dictates on which side of checkbox the label is placed
+   */
+  @Prop() labelPosition?: PositionEnum = PositionEnum.RIGHT;
 
   constructor() {
     this.onClick = this.onClick.bind(this);
@@ -65,7 +70,7 @@ export class MwRadio {
     }
   }
 
-  private setSelection = () => {
+  private setSelection = (): void => {
     const { radioGroup, radioGroupValue, value } = this;
 
     if (radioGroup) {
@@ -75,17 +80,33 @@ export class MwRadio {
 
   private onClick(event: Event): void {
     event.preventDefault();
-    this.checked = !this.checked;
+    if (!this.disabled) {
+      this.checked = !this.checked;
+    }
   }
+
+  private JSXLabel = (
+    <label class={`mw-radio-label ${this.disabled ? "disabled" : "enabled"}`} htmlFor={this.radioId}>
+      {this.label}
+    </label>
+  );
 
   render() {
     return (
-      <Host test-id={this.testId} class="mw-radio-container" onClick={this.onClick} aria-checked={`${this.checked}`} aria-hidden={this.disabled ? "true" : null} role="radio">
+      <Host
+        test-id={this.testId}
+        onClick={this.onClick}
+        class={`mw-radio-container ${this.disabled ? "disabled" : "enabled"} ${this.labelPosition}`}
+        aria-checked={`${this.checked}`}
+        aria-hidden={this.disabled ? "true" : null}
+        role="radio"
+      >
+        {this.label && this.labelPosition === "left" && this.JSXLabel}
         <input id={this.radioId} type="radio" value={this.value} name={this.name} checked={this.checked} disabled={this.disabled} />
-        <span class="mw-radio"></span>
-        <label class="mw-radio-label" htmlFor={this.radioId}>
-          {this.label}
-        </label>
+        <span class="mw-radio-outer">
+          <span class="mw-radio"></span>
+        </span>
+        {this.label && this.labelPosition === "right" && this.JSXLabel}
       </Host>
     );
   }

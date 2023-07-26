@@ -1,11 +1,14 @@
-import { Component, Event, EventEmitter, Host, Prop, h } from "@stencil/core";
+import { Component, Event, EventEmitter, h, Host, Prop } from "@stencil/core";
+import { PositionEnum } from "../../shared/models/enums/position.enum";
+import { v4 as uuid } from "uuid";
 
 @Component({
   tag: "mw-switch",
-  styleUrl: "mw-switch.css",
-  shadow: true,
+  styleUrl: "mw-switch.scss",
+  shadow: false,
 })
 export class MwSwitch {
+  private switchId = uuid();
   /**
    * Provide unique identifier for automated testing
    */
@@ -19,6 +22,10 @@ export class MwSwitch {
    */
   @Prop() label?: string;
   /**
+   * Dictates on which side of checkbox the label is placed
+   */
+  @Prop() labelPosition?: PositionEnum = PositionEnum.RIGHT;
+  /**
    * Label to be shown when switch state is checked. Overrides label prop
    */
   @Prop() on?: string;
@@ -26,6 +33,10 @@ export class MwSwitch {
    * Label to be shown when switch state is unchecked. Overrides label prop
    */
   @Prop() off?: string;
+  /**
+   * Name of switch input
+   */
+  @Prop() name?: string;
   /**
    * Switch state
    */
@@ -56,15 +67,30 @@ export class MwSwitch {
     this.hasOnOffLabel = !!this.on && !!this.off;
   }
 
+  private JSXLabel = (label: string) => {
+    return (
+      <label htmlFor={this.switchId}>
+        <span class={`mw-switch-label ${this.disabled ? "disabled" : "enabled"}`}>{label}</span>
+      </label>
+    );
+  };
+
   render() {
     return (
-      <Host>
-        <label test-id={this.testId} class="switch">
-          <input disabled={this.disabled} type="checkbox" onInput={this.toggleSwitch} checked={this.checked} />
+      <Host
+        test-id={this.testId}
+        class={`mw-switch-container ${this.disabled ? "disabled" : "enabled"} ${this.labelPosition}`}
+        onClick={this.toggleSwitch}
+        aria-checked={`${this.checked}`}
+        aria-hidden={this.disabled ? "true" : null}
+        role="switch"
+      >
+        {(this.hasLabel || this.hasOnOffLabel) && this.labelPosition === "left" && this.JSXLabel(this.hasOnOffLabel ? (this.checked ? this.on : this.off) : this.label)}
+        <span class="switch">
+          <input id={this.switchId} disabled={this.disabled} type="checkbox" onInput={this.toggleSwitch} checked={this.checked} name={this.name} />
           <span class="slider round"></span>
-        </label>
-        {this.hasLabel && <span class="label">{this.label}</span>}
-        {this.hasOnOffLabel && <span class="label">{this.checked ? this.on : this.off}</span>}
+        </span>
+        {(this.hasLabel || this.hasOnOffLabel) && this.labelPosition === "right" && this.JSXLabel(this.hasOnOffLabel ? (this.checked ? this.on : this.off) : this.label)}
       </Host>
     );
   }

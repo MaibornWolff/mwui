@@ -11,24 +11,28 @@ import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 import { Target } from "./components/mw-button/models/enums/button-target.enum";
+import { PositionEnum } from "./shared/models/enums/position.enum";
 import { SrcSetItem } from "./components/mw-img/mw-img";
 import { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 import { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
 import { PopoverPlacement } from "./components/mw-popover/mw-popover";
 import { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
+import { LayoutDirectionEnum } from "./shared/models/enums/layout-direction.enum";
 export { AriaRolesEnum } from "./shared/models/enums/aria-roles.enum";
 export { AppBarPosition } from "./components/mw-app-bar/mw-app-bar";
 export { Size } from "./shared/models/enums/size.enum";
 export { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 export { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
 export { Target } from "./components/mw-button/models/enums/button-target.enum";
+export { PositionEnum } from "./shared/models/enums/position.enum";
 export { SrcSetItem } from "./components/mw-img/mw-img";
 export { LoginLayout } from "./components/mw-login/models/enums/login-layout.enum";
 export { LoginFormData } from "./components/mw-login/models/interfaces/login-form-data";
 export { PopoverPlacement } from "./components/mw-popover/mw-popover";
 export { ModalSize } from "./components/mw-modal/models/enums/modal-size.enum";
 export { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/mw-popover";
+export { LayoutDirectionEnum } from "./shared/models/enums/layout-direction.enum";
 export namespace Components {
   interface MwAppBar {
     /**
@@ -281,6 +285,10 @@ export namespace Components {
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: PositionEnum;
     /**
      * Name of checkbox input
      */
@@ -663,13 +671,17 @@ export namespace Components {
      */
     checked?: boolean;
     /**
-     * Visually and functionally disbale radio button
+     * Visually and functionally disable radio button
      */
     disabled?: boolean;
     /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: PositionEnum;
     /**
      * Analog to HTML 'name' attribute used to group radios for unique selection
      */
@@ -685,9 +697,17 @@ export namespace Components {
   }
   interface MwRadioGroup {
     /**
-     * current value of the radio-group
+     * Dictates the flex direction of the group
+     */
+    direction?: LayoutDirectionEnum;
+    /**
+     * Current value of the radio-group
      */
     value?: string | number;
+    /**
+     * Dictates whether group should flex-wrap
+     */
+    wrap?: boolean;
   }
   interface MwSlider {
     /**
@@ -752,6 +772,14 @@ export namespace Components {
      * Fixed label to be displayed next to the toggle switch
      */
     label?: string;
+    /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: PositionEnum;
+    /**
+     * Name of switch input
+     */
+    name?: string;
     /**
      * Label to be shown when switch state is unchecked. Overrides label prop
      */
@@ -1473,6 +1501,10 @@ declare namespace LocalJSX {
      */
     label?: string;
     /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: PositionEnum;
+    /**
      * Name of checkbox input
      */
     name?: string;
@@ -1890,13 +1922,17 @@ declare namespace LocalJSX {
      */
     checked?: boolean;
     /**
-     * Visually and functionally disbale radio button
+     * Visually and functionally disable radio button
      */
     disabled?: boolean;
     /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: PositionEnum;
     /**
      * Analog to HTML 'name' attribute used to group radios for unique selection
      */
@@ -1912,13 +1948,21 @@ declare namespace LocalJSX {
   }
   interface MwRadioGroup {
     /**
+     * Dictates the flex direction of the group
+     */
+    direction?: LayoutDirectionEnum;
+    /**
      * Event emitted when radioGroup value changes (after radio selection)
      */
     onRadioChange?: (event: MwRadioGroupCustomEvent<{ value?: string | number }>) => void;
     /**
-     * current value of the radio-group
+     * Current value of the radio-group
      */
     value?: string | number;
+    /**
+     * Dictates whether group should flex-wrap
+     */
+    wrap?: boolean;
   }
   interface MwSlider {
     /**
@@ -1983,6 +2027,14 @@ declare namespace LocalJSX {
      * Fixed label to be displayed next to the toggle switch
      */
     label?: string;
+    /**
+     * Dictates on which side of checkbox the label is placed
+     */
+    labelPosition?: PositionEnum;
+    /**
+     * Name of switch input
+     */
+    name?: string;
     /**
      * Label to be shown when switch state is unchecked. Overrides label prop
      */

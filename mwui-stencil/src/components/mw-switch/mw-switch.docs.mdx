@@ -1,0 +1,40 @@
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as MwSwitch from "./mw-switch.stories.ts";
+
+<Title>Switch</Title>
+
+<Subtitle>Switch buttons allow users to toggle between two options</Subtitle>
+
+Using the "on" and "off" props the Switch can display a dynamic label.
+
+<Canvas
+  of={MwSwitch.Default}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-switch", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of="mw-switch" />
+
+### Default
+
+<Canvas of={MwSwitch.Default} />
+
+### With Label
+
+<Canvas of={MwSwitch.WithLabel} />
+
+### With Left Label
+
+<Canvas of={MwSwitch.WithLeftLabel} />
+
+### With Dynamic Label
+
+<Canvas of={MwSwitch.WithDynamicLabel} />

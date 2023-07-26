@@ -1,7 +1,7 @@
 import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
 import * as MwRadio from "./mw-radio.stories.ts";
 
-<Title>Radio Button</Title>
+<Title>Radio</Title>
 
 <Subtitle>Radio buttons allow for a single option to be selected from a visible list.</Subtitle>
 
@@ -38,3 +38,7 @@ All radio-buttons with the same name property comprise a set from which only one
 ### Disabled/Checked
 
 <Canvas of={MwRadio.DisabledChecked} />
+
+### Label on the left
+
+<Canvas of={MwRadio.WithLeftLabel} />
