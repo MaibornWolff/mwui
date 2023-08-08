@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-07-24T08:58:04",
+  "timestamp": "2023-07-26T11:49:11",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.3.1",
@@ -433,7 +433,7 @@
       "filePath": "./src/components/mw-avatar/mw-avatar.tsx",
       "encapsulation": "shadow",
       "tag": "mw-avatar",
-      "readme": "# mw-avatar\r\n\r\n\r\n\r",
+      "readme": "# mw-avatar\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -879,7 +879,7 @@
       "filePath": "./src/components/mw-card-body/mw-card-body.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-body",
-      "readme": "# mw-card-body\r\n\r\n\r\n\r",
+      "readme": "# mw-card-body\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -898,7 +898,7 @@
       "filePath": "./src/components/mw-card-footer/mw-card-footer.tsx",
       "encapsulation": "shadow",
       "tag": "mw-card-footer",
-      "readme": "# mw-card-footer\r\n\r\n\r\n\r",
+      "readme": "# mw-card-footer\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1291,7 +1291,7 @@
     },
     {
       "filePath": "./src/components/mw-checkbox/mw-checkbox.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "none",
       "tag": "mw-checkbox",
       "readme": "# mw-checkbox\r\n\r",
       "docs": "",
@@ -1333,6 +1333,23 @@
           "required": false
         },
         {
+          "name": "indeterminate",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "indeterminate",
+          "reflectToAttr": true,
+          "docs": "Whether input is set to indeterminate (overwrites check to 'false')",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "label",
           "type": "string",
           "mutable": false,
@@ -1343,6 +1360,26 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "labelPosition",
+          "type": "PositionEnum.LEFT | PositionEnum.RIGHT",
+          "mutable": false,
+          "attr": "label-position",
+          "reflectToAttr": false,
+          "docs": "Dictates on which side of checkbox the label is placed",
+          "docsTags": [],
+          "default": "PositionEnum.RIGHT",
+          "values": [
+            {
+              "type": "PositionEnum.LEFT"
+            },
+            {
+              "type": "PositionEnum.RIGHT"
             }
           ],
           "optional": true,
@@ -1413,11 +1450,127 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": ["mw-login"],
+      "dependents": ["mw-checkbox-group", "mw-login"],
       "dependencies": ["mw-icon"],
       "dependencyGraph": {
         "mw-checkbox": ["mw-icon"],
+        "mw-checkbox-group": ["mw-checkbox"],
         "mw-login": ["mw-checkbox"]
+      }
+    },
+    {
+      "filePath": "./src/components/mw-checkbox-group/mw-checkbox-group.tsx",
+      "encapsulation": "shadow",
+      "tag": "mw-checkbox-group",
+      "readme": "# mw-checkbox-group\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "direction",
+          "type": "\"column\" | \"column-reverse\" | \"row\" | \"row-reverse\"",
+          "mutable": false,
+          "attr": "direction",
+          "reflectToAttr": false,
+          "docs": "Dictates the flex direction of the group",
+          "docsTags": [],
+          "default": "\"column\"",
+          "values": [
+            {
+              "value": "column",
+              "type": "string"
+            },
+            {
+              "value": "column-reverse",
+              "type": "string"
+            },
+            {
+              "value": "row",
+              "type": "string"
+            },
+            {
+              "value": "row-reverse",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "parentLabel",
+          "type": "string",
+          "mutable": false,
+          "attr": "parent-label",
+          "reflectToAttr": false,
+          "docs": "Label of parent checkbox",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "(string | number)[]",
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "Current value of the checkbox-group",
+          "docsTags": [],
+          "default": "[]",
+          "values": [
+            {
+              "type": "(string"
+            },
+            {
+              "type": "number)[]"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "wrap",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "wrap",
+          "reflectToAttr": false,
+          "docs": "Dictates whether group should flex-wrap",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "checkboxChange",
+          "detail": "{ value?: (string | number)[]; }",
+          "bubbles": true,
+          "cancelable": false,
+          "composed": false,
+          "docs": "Event emitted when radioGroup value changes (after radio selection)",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": ["mw-checkbox"],
+      "dependencyGraph": {
+        "mw-checkbox-group": ["mw-checkbox"],
+        "mw-checkbox": ["mw-icon"]
       }
     },
     {
@@ -1840,7 +1993,7 @@
       "filePath": "./src/components/mw-divider/mw-divider.tsx",
       "encapsulation": "shadow",
       "tag": "mw-divider",
-      "readme": "# mw-divider\r\n\r\n\r\n\r",
+      "readme": "# mw-divider\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2417,7 +2570,7 @@
           "mutable": false,
           "attr": "srcset",
           "reflectToAttr": false,
-          "docs": "Different resolutions for different viewport sizes can be passed\r\ne.g. \"img/vasen-420.webp 420w,\r\n      img/vasen-980.webp 980w,\r\n      img/vasen-1680.webp 1680w,\r\n      img/vasen-2400.webp 2400w\"",
+          "docs": "Different resolutions for different viewport sizes can be passed\ne.g. \"img/vasen-420.webp 420w,\n      img/vasen-980.webp 980w,\n      img/vasen-1680.webp 1680w,\n      img/vasen-2400.webp 2400w\"",
           "docsTags": [],
           "values": [
             {
@@ -3488,7 +3641,7 @@
           "mutable": false,
           "attr": "disabled",
           "reflectToAttr": false,
-          "docs": "Visually and functionally disbale radio button",
+          "docs": "Visually and functionally disable radio button",
           "docsTags": [],
           "values": [
             {
@@ -3509,6 +3662,26 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "labelPosition",
+          "type": "PositionEnum.LEFT | PositionEnum.RIGHT",
+          "mutable": false,
+          "attr": "label-position",
+          "reflectToAttr": false,
+          "docs": "Dictates on which side of checkbox the label is placed",
+          "docsTags": [],
+          "default": "PositionEnum.RIGHT",
+          "values": [
+            {
+              "type": "PositionEnum.LEFT"
+            },
+            {
+              "type": "PositionEnum.RIGHT"
             }
           ],
           "optional": true,
@@ -3583,12 +3756,38 @@
       "usage": {},
       "props": [
         {
+          "name": "direction",
+          "type": "LayoutDirectionEnum.COLUMN | LayoutDirectionEnum.COLUMN_REVERSE | LayoutDirectionEnum.ROW | LayoutDirectionEnum.ROW_REVERSE",
+          "mutable": false,
+          "attr": "direction",
+          "reflectToAttr": false,
+          "docs": "Dictates the flex direction of the group",
+          "docsTags": [],
+          "default": "LayoutDirectionEnum.COLUMN",
+          "values": [
+            {
+              "type": "LayoutDirectionEnum.COLUMN"
+            },
+            {
+              "type": "LayoutDirectionEnum.COLUMN_REVERSE"
+            },
+            {
+              "type": "LayoutDirectionEnum.ROW"
+            },
+            {
+              "type": "LayoutDirectionEnum.ROW_REVERSE"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "value",
           "type": "number | string",
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "current value of the radio-group",
+          "docs": "Current value of the radio-group",
           "docsTags": [],
           "values": [
             {
@@ -3596,6 +3795,23 @@
             },
             {
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "wrap",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "wrap",
+          "reflectToAttr": false,
+          "docs": "Dictates whether group should flex-wrap",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": true,
@@ -3845,7 +4061,7 @@
     },
     {
       "filePath": "./src/components/mw-switch/mw-switch.tsx",
-      "encapsulation": "shadow",
+      "encapsulation": "none",
       "tag": "mw-switch",
       "readme": "# mw-switch\r\n\r",
       "docs": "",
@@ -3892,6 +4108,42 @@
           "attr": "label",
           "reflectToAttr": false,
           "docs": "Fixed label to be displayed next to the toggle switch",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "labelPosition",
+          "type": "PositionEnum.LEFT | PositionEnum.RIGHT",
+          "mutable": false,
+          "attr": "label-position",
+          "reflectToAttr": false,
+          "docs": "Dictates on which side of checkbox the label is placed",
+          "docsTags": [],
+          "default": "PositionEnum.RIGHT",
+          "values": [
+            {
+              "type": "PositionEnum.LEFT"
+            },
+            {
+              "type": "PositionEnum.RIGHT"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Name of switch input",
           "docsTags": [],
           "values": [
             {

@@ -1,0 +1,30 @@
+import { Canvas, Story, ArgTypes, Title, Subtitle } from "@storybook/addon-docs";
+import * as mwCheckboxGroup from "./mw-checkbox-group.stories.tsx";
+
+<Title>Checkbox Group</Title>
+
+<Subtitle>A Checkbox group contains multiple child checkboxes which can all be toggled by the parent checkbox of the group.</Subtitle>
+
+<Canvas
+  of={mwCheckboxGroup.Unchecked}
+  withToolbar
+  sourceState="shown"
+  additionalActions={[
+    {
+      title: "Open in GitHub",
+      onClick: () => {
+        window.open("https://github.com/MaibornWolff/mwui/tree/main/mwui-stencil/src/components/mw-checkbox-group", "_blank");
+      },
+    },
+  ]}
+/>
+
+<ArgTypes of="mw-checkbox-group" />
+
+### Indeterminate
+
+<Canvas of={mwCheckboxGroup.Indeterminate} />
+
+### Checked
+
+<Canvas of={mwCheckboxGroup.Checked} />

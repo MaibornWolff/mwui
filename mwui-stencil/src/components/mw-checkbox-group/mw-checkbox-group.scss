@@ -1,5 +1,6 @@
-.mw-radio-group {
+.mw-checkbox-group {
   display: flex;
+  padding-left: var(--mw-component-controls-margin-margin-left);
 
   &.row {
     flex-direction: row;

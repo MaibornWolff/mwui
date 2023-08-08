@@ -20,7 +20,7 @@ describe("GIVEN MwRadio", () => {
     return page.root.querySelector(`#${page.rootInstance.radioId}`);
   };
 
-  it("SHOULD render MwDivider", async () => {
+  it("SHOULD render MwRadio", async () => {
     const page = await setup();
     expect(page.root).toBeTruthy();
   });

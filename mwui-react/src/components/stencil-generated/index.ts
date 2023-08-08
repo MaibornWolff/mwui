@@ -21,6 +21,7 @@ export const MwCardHeader = /*@__PURE__*/ createReactComponent<JSX.MwCardHeader,
 export const MwCardImage = /*@__PURE__*/ createReactComponent<JSX.MwCardImage, HTMLMwCardImageElement>("mw-card-image");
 export const MwCardTitle = /*@__PURE__*/ createReactComponent<JSX.MwCardTitle, HTMLMwCardTitleElement>("mw-card-title");
 export const MwCheckbox = /*@__PURE__*/ createReactComponent<JSX.MwCheckbox, HTMLMwCheckboxElement>("mw-checkbox");
+export const MwCheckboxGroup = /*@__PURE__*/ createReactComponent<JSX.MwCheckboxGroup, HTMLMwCheckboxGroupElement>("mw-checkbox-group");
 export const MwChip = /*@__PURE__*/ createReactComponent<JSX.MwChip, HTMLMwChipElement>("mw-chip");
 export const MwChipInput = /*@__PURE__*/ createReactComponent<JSX.MwChipInput, HTMLMwChipInputElement>("mw-chip-input");
 export const MwDivider = /*@__PURE__*/ createReactComponent<JSX.MwDivider, HTMLMwDividerElement>("mw-divider");

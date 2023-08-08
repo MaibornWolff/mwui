@@ -327,14 +327,14 @@ export class MwCardTitle {
 export declare interface MwCardTitle extends Components.MwCardTitle {}
 
 @ProxyCmp({
-    inputs: ["checked", "disabled", "label", "name", "testId", "value"],
+    inputs: ["checked", "disabled", "indeterminate", "label", "labelPosition", "name", "testId", "value"],
 })
 @Component({
     selector: "mw-checkbox",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["checked", "disabled", "label", "name", "testId", "value"],
+    inputs: ["checked", "disabled", "indeterminate", "label", "labelPosition", "name", "testId", "value"],
 })
 export class MwCheckbox {
     protected el: HTMLElement;
@@ -350,6 +350,32 @@ export declare interface MwCheckbox extends Components.MwCheckbox {
      * MwCheckbox emits an event when checkbox checked state is changed
      */
     emitter: EventEmitter<CustomEvent<any>>;
+}
+
+@ProxyCmp({
+    inputs: ["direction", "parentLabel", "value", "wrap"],
+})
+@Component({
+    selector: "mw-checkbox-group",
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: "<ng-content></ng-content>",
+    // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+    inputs: ["direction", "parentLabel", "value", "wrap"],
+})
+export class MwCheckboxGroup {
+    protected el: HTMLElement;
+    constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+        c.detach();
+        this.el = r.nativeElement;
+        proxyOutputs(this, this.el, ["checkboxChange"]);
+    }
+}
+
+export declare interface MwCheckboxGroup extends Components.MwCheckboxGroup {
+    /**
+     * Event emitted when radioGroup value changes (after radio selection)
+     */
+    checkboxChange: EventEmitter<CustomEvent<{ value?: Array<string | number> }>>;
 }
 
 @ProxyCmp({
@@ -768,14 +794,14 @@ export declare interface MwPopover extends Components.MwPopover {
 }
 
 @ProxyCmp({
-    inputs: ["checked", "disabled", "label", "name", "testId", "value"],
+    inputs: ["checked", "disabled", "label", "labelPosition", "name", "testId", "value"],
 })
 @Component({
     selector: "mw-radio",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["checked", "disabled", "label", "name", "testId", "value"],
+    inputs: ["checked", "disabled", "label", "labelPosition", "name", "testId", "value"],
 })
 export class MwRadio {
     protected el: HTMLElement;
@@ -788,14 +814,14 @@ export class MwRadio {
 export declare interface MwRadio extends Components.MwRadio {}
 
 @ProxyCmp({
-    inputs: ["value"],
+    inputs: ["direction", "value", "wrap"],
 })
 @Component({
     selector: "mw-radio-group",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["value"],
+    inputs: ["direction", "value", "wrap"],
 })
 export class MwRadioGroup {
     protected el: HTMLElement;
@@ -834,14 +860,14 @@ export class MwSlider {
 export declare interface MwSlider extends Components.MwSlider {}
 
 @ProxyCmp({
-    inputs: ["checked", "disabled", "label", "off", "on", "testId"],
+    inputs: ["checked", "disabled", "label", "labelPosition", "name", "off", "on", "testId"],
 })
 @Component({
     selector: "mw-switch",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["checked", "disabled", "label", "off", "on", "testId"],
+    inputs: ["checked", "disabled", "label", "labelPosition", "name", "off", "on", "testId"],
 })
 export class MwSwitch {
     protected el: HTMLElement;
