@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AriaRolesEnum } from "./shared/models/enums/aria-roles.enum";
 import { AppBarPosition } from "./components/mw-app-bar/mw-app-bar";
+import { LayoutEnum } from "./shared/models/enums/layout.enum";
 import { Size } from "./shared/models/enums/size.enum";
 import { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 import { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
@@ -21,6 +22,7 @@ import { PopoverPlacement as PopoverPlacement1 } from "./components/mw-popover/m
 import { LayoutDirectionEnum } from "./shared/models/enums/layout-direction.enum";
 export { AriaRolesEnum } from "./shared/models/enums/aria-roles.enum";
 export { AppBarPosition } from "./components/mw-app-bar/mw-app-bar";
+export { LayoutEnum } from "./shared/models/enums/layout.enum";
 export { Size } from "./shared/models/enums/size.enum";
 export { ButtonVariant } from "./components/mw-button/models/enums/button-variant.enum";
 export { ButtonSize } from "./components/mw-button/models/enums/button-size.enum";
@@ -59,13 +61,13 @@ export namespace Components {
      */
     helperText?: string;
     /**
-     * Display label and input horizontally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates layout direction of autocomplete and label
+     */
+    layout?: LayoutEnum;
     /**
      * Amount of allowed `selected` options
      */
@@ -368,13 +370,13 @@ export namespace Components {
      */
     helperText?: string;
     /**
-     * Display label and input horizontally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates layout direction of combobox and label
+     */
+    layout?: LayoutEnum;
     /**
      * Amount of allowed `selected` values
      */
@@ -424,13 +426,13 @@ export namespace Components {
      */
     helperText?: string;
     /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates layout direction of dropdown and label
+     */
+    layout?: LayoutEnum;
     /**
      * input field name
      */
@@ -915,13 +917,13 @@ export namespace Components {
      */
     helperText?: string;
     /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates layout direction of textfield and label
+     */
+    layout?: LayoutEnum;
     /**
      * input field name
      */
@@ -1290,13 +1292,13 @@ declare namespace LocalJSX {
      */
     helperText?: string;
     /**
-     * Display label and input horizontally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates layout direction of autocomplete and label
+     */
+    layout?: LayoutEnum;
     /**
      * Amount of allowed `selected` options
      */
@@ -1631,13 +1633,13 @@ declare namespace LocalJSX {
      */
     helperText?: string;
     /**
-     * Display label and input horizontally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates layout direction of combobox and label
+     */
+    layout?: LayoutEnum;
     /**
      * Amount of allowed `selected` values
      */
@@ -1695,13 +1697,13 @@ declare namespace LocalJSX {
      */
     helperText?: string;
     /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates layout direction of dropdown and label
+     */
+    layout?: LayoutEnum;
     /**
      * input field name
      */
@@ -2226,13 +2228,13 @@ declare namespace LocalJSX {
      */
     helperText?: string;
     /**
-     * Display label and input horizonally
-     */
-    inline?: boolean;
-    /**
      * Label to be displayed
      */
     label?: string;
+    /**
+     * Dictates layout direction of textfield and label
+     */
+    layout?: LayoutEnum;
     /**
      * input field name
      */

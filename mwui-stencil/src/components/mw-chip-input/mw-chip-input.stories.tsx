@@ -17,7 +17,7 @@ const Template = args => `
     placeholder="${args.placeholder}"
     helper-text="${args.helperText}"
     has-error="${args.hasError}"
-    inline="${args.inline}"
+    layout="${args.layout}"
     required="${args.required}"
     disabled="${args.disabled}"
     ></mw-chip-input>
@@ -31,7 +31,7 @@ Default.args = {
   placeholder: "Enter a value",
   helperText: "",
   hasError: false,
-  inline: false,
+  layout: "vertical",
   required: false,
   disabled: false,
 };
@@ -44,13 +44,13 @@ const DisabledTemplate = args => `
     placeholder="${args.placeholder}"
     helper-text="${args.helperText}"
     has-error="${args.hasError}"
-    inline="${args.inline}"
+    layout="${args.layout}"
     required="${args.required}"
     disabled="${args.disabled}"
     ></mw-chip-input>
 `;
 
-const InlineTemplate = args => `
+const HorizontalTemplate = args => `
   <mw-chip-input
     selected-chips="${args.selectedChips}"
     name="${args.name}"
@@ -58,21 +58,21 @@ const InlineTemplate = args => `
     placeholder="${args.placeholder}"
     helper-text="${args.helperText}"
     has-error="${args.hasError}"
-    inline="${args.inline}"
+    layout="${args.layout}"
     required="${args.required}"
     disabled="${args.disabled}"
     ></mw-chip-input>
 `;
 
-export const Inline = InlineTemplate.bind({});
-Inline.args = {
+export const Horizontal = HorizontalTemplate.bind({});
+Horizontal.args = {
   label: "ChipInput",
   value: "",
   name: "chip-input",
   placeholder: "Enter a value",
   helperText: "",
   hasError: false,
-  inline: true,
+  layout: "horizontal",
   required: false,
   disabled: false,
 };
@@ -85,7 +85,7 @@ Disabled.args = {
   placeholder: "Enter a value",
   helperText: "",
   hasError: false,
-  inline: false,
+  layout: "vertical",
   required: false,
   disabled: true,
 };
@@ -98,7 +98,7 @@ Error.args = {
   placeholder: "Enter a value",
   helperText: "",
   hasError: true,
-  inline: false,
+  layout: "vertical",
   required: false,
   disabled: false,
 };

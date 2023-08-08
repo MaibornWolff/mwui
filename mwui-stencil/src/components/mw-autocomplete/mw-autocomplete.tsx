@@ -1,6 +1,7 @@
-import { Component, Event, EventEmitter, Host, Prop, State, h, Element, Listen, Watch } from "@stencil/core";
+import { Component, Element, Event, EventEmitter, h, Host, Listen, Prop, State, Watch } from "@stencil/core";
 import { AriaRolesEnum } from "../../shared/models/enums/aria-roles.enum";
 import { MwChipInputCustomEvent, MwTextfieldCustomEvent } from "../../components";
+import { LayoutEnum } from "../../shared/models/enums/layout.enum";
 
 @Component({
   tag: "mw-autocomplete",
@@ -46,9 +47,9 @@ export class MwAutocomplete {
    */
   @Prop() noSuggestionsText?: string = "No suggestions found.";
   /**
-   * Display label and input horizontally
+   * Dictates layout direction of autocomplete and label
    */
-  @Prop() inline?: boolean = false;
+  @Prop() layout?: LayoutEnum = LayoutEnum.VERTICAL;
   /**
    * Mark input as required
    */
@@ -185,7 +186,7 @@ export class MwAutocomplete {
           <div
             class={{
               "autocomplete": true,
-              "inline": this.inline,
+              "horizontal": this.layout === LayoutEnum.HORIZONTAL,
               "has-error": this.hasError,
               "disabled": this.disabled,
             }}
@@ -261,10 +262,12 @@ export class MwAutocomplete {
               </div>
             </mw-popover>
           </div>
-          <div class="helper-text-container">
-            <mw-helper-text helperText={this.helperText} hasError={this.hasError} />
-            {this.maximum && this.optionCounter && <mw-helper-text helperText={`${this.selection.length}/${this.maximum}`} />}
-          </div>
+          {(this.helperText || (this.optionCounter && this.maximum)) && (
+            <div class="helper-text-container">
+              <mw-helper-text helperText={this.helperText} hasError={this.hasError} />
+              {this.maximum && this.optionCounter && <mw-helper-text helperText={`${this.selection.length}/${this.maximum}`} />}
+            </div>
+          )}
         </div>
       </Host>
     );

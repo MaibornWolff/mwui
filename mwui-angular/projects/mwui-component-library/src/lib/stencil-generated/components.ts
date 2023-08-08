@@ -49,8 +49,8 @@ export declare interface MwAppBarTitle extends Components.MwAppBarTitle {}
         "disabled",
         "hasError",
         "helperText",
-        "inline",
         "label",
+        "layout",
         "maximum",
         "maximumText",
         "multiple",
@@ -74,8 +74,8 @@ export declare interface MwAppBarTitle extends Components.MwAppBarTitle {}
         "disabled",
         "hasError",
         "helperText",
-        "inline",
         "label",
+        "layout",
         "maximum",
         "maximumText",
         "multiple",
@@ -409,14 +409,14 @@ export declare interface MwChip extends Components.MwChip {
 }
 
 @ProxyCmp({
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips", "value"],
+    inputs: ["disabled", "hasError", "helperText", "label", "layout", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips", "value"],
 })
 @Component({
     selector: "mw-chip-input",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips", "value"],
+    inputs: ["disabled", "hasError", "helperText", "label", "layout", "maximum", "name", "optionCounter", "placeholder", "required", "selectedChips", "value"],
 })
 export class MwChipInput {
     protected el: HTMLElement;
@@ -459,14 +459,14 @@ export class MwDivider {
 export declare interface MwDivider extends Components.MwDivider {}
 
 @ProxyCmp({
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value", "valueLabel"],
+    inputs: ["disabled", "hasError", "helperText", "label", "layout", "name", "placeholder", "required", "value", "valueLabel"],
 })
 @Component({
     selector: "mw-dropdown",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "required", "value", "valueLabel"],
+    inputs: ["disabled", "hasError", "helperText", "label", "layout", "name", "placeholder", "required", "value", "valueLabel"],
 })
 export class MwDropdown {
     protected el: HTMLElement;
@@ -966,14 +966,14 @@ export declare interface MwTextarea extends Components.MwTextarea {
 }
 
 @ProxyCmp({
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
+    inputs: ["disabled", "hasError", "helperText", "label", "layout", "name", "placeholder", "readOnly", "required", "type", "value"],
 })
 @Component({
     selector: "mw-textfield",
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: "<ng-content></ng-content>",
     // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-    inputs: ["disabled", "hasError", "helperText", "inline", "label", "name", "placeholder", "readOnly", "required", "type", "value"],
+    inputs: ["disabled", "hasError", "helperText", "label", "layout", "name", "placeholder", "readOnly", "required", "type", "value"],
 })
 export class MwTextfield {
     protected el: HTMLElement;

@@ -1,6 +1,7 @@
-import { SpecPage, newSpecPage } from "@stencil/core/testing";
+import { newSpecPage, SpecPage } from "@stencil/core/testing";
 import { h } from "@stencil/core";
 import { MwTextfield } from "./mw-textfield";
+import { LayoutEnum } from "../../shared/models/enums/layout.enum";
 
 describe("GIVEN MwTextfield", () => {
   const setup = async (
@@ -12,11 +13,11 @@ describe("GIVEN MwTextfield", () => {
       placeholder,
       helperText,
       hasError,
-      inline,
+      layout,
       required,
       disabled,
       readOnly,
-    }: Pick<MwTextfield, "type" | "value" | "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled" | "readOnly"> = {
+    }: Pick<MwTextfield, "type" | "value" | "name" | "label" | "placeholder" | "helperText" | "hasError" | "layout" | "required" | "disabled" | "readOnly"> = {
       name: "",
     },
     slottedContent = "",
@@ -32,7 +33,7 @@ describe("GIVEN MwTextfield", () => {
           placeholder={placeholder}
           helperText={helperText}
           hasError={hasError}
-          inline={inline}
+          layout={layout}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
@@ -53,7 +54,7 @@ describe("GIVEN MwTextfield", () => {
     const page = await setup({
       name: "",
       hasError: true,
-      inline: true,
+      layout: LayoutEnum.HORIZONTAL,
       helperText: "some-helper-text",
     });
     expect(page.root.shadowRoot.querySelector(".textfield")).toHaveClass(className);
@@ -61,11 +62,11 @@ describe("GIVEN MwTextfield", () => {
     expect(page.root.shadowRoot.querySelector("input")).toHaveClass(className);
   });
 
-  it("SHOULD set the inline class correctly WHEN inline is true", async () => {
-    const className = "inline";
+  it("SHOULD set the horizontal class correctly WHEN layout is set to 'horizontal'", async () => {
+    const className = "horizontal";
     const page = await setup({
       name: "",
-      inline: true,
+      layout: LayoutEnum.HORIZONTAL,
       helperText: "some-helper-text",
     });
     expect(page.root.shadowRoot.querySelector(".textfield")).toHaveClass(className);

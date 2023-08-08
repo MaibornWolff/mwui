@@ -11,10 +11,10 @@ describe("GIVEN MwDropdown", () => {
       placeholder,
       helperText,
       hasError,
-      inline,
+      layout,
       required,
       disabled,
-    }: Pick<MwDropdown, "value" | "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled"> = {
+    }: Pick<MwDropdown, "value" | "name" | "label" | "placeholder" | "helperText" | "hasError" | "layout" | "required" | "disabled"> = {
       name: "",
     },
     slottedContent = "",
@@ -29,7 +29,7 @@ describe("GIVEN MwDropdown", () => {
           placeholder={placeholder}
           helperText={helperText}
           hasError={hasError}
-          inline={inline}
+          layout={layout}
           required={required}
           disabled={disabled}
         >

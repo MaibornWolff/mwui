@@ -15,11 +15,11 @@ describe("Given MwChipInput", () => {
     placeholder,
     helperText,
     hasError,
-    inline,
+    layout,
     required,
     disabled,
     selectedChips,
-  }: Pick<MwChipInput, "name" | "label" | "placeholder" | "helperText" | "hasError" | "inline" | "required" | "disabled" | "selectedChips"> = defaultProps): Promise<SpecPage> => {
+  }: Pick<MwChipInput, "name" | "label" | "placeholder" | "helperText" | "hasError" | "layout" | "required" | "disabled" | "selectedChips"> = defaultProps): Promise<SpecPage> => {
     return await newSpecPage({
       components: [MwChipInput],
       template: () => (
@@ -29,7 +29,7 @@ describe("Given MwChipInput", () => {
           placeholder={placeholder}
           helper-text={helperText}
           has-error={hasError}
-          inline={inline}
+          layout={layout}
           required={required}
           selectedChips={selectedChips}
           disabled={disabled}

@@ -4,19 +4,19 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                                                                                  | Type               | Default     |
-| ------------- | ------------- | -------------------------------------------------------------------------------------------- | ------------------ | ----------- |
-| `disabled`    | `disabled`    | Visually and functionally disabled input                                                     | `boolean`          | `false`     |
-| `hasError`    | `has-error`   | Use to display input and helper-text in error state                                          | `boolean`          | `false`     |
-| `helperText`  | `helper-text` | HelperText to be displayed. Can be used as hint or error text when combined with `has-error` | `string`           | `undefined` |
-| `inline`      | `inline`      | Display label and input horizonally                                                          | `boolean`          | `false`     |
-| `label`       | `label`       | Label to be displayed                                                                        | `string`           | `undefined` |
-| `name`        | `name`        | input field name                                                                             | `string`           | `undefined` |
-| `placeholder` | `placeholder` | Placeholder to be displayed                                                                  | `string`           | `undefined` |
-| `readOnly`    | `read-only`   | Whether user can't type in input field                                                       | `boolean`          | `false`     |
-| `required`    | `required`    | Mark input as required                                                                       | `boolean`          | `false`     |
-| `type`        | `type`        | HTML Input type                                                                              | `string`           | `"text"`    |
-| `value`       | `value`       | input field value                                                                            | `number \| string` | `undefined` |
+| Property      | Attribute     | Description                                                                                  | Type                                           | Default               |
+| ------------- | ------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------- | --------------------- |
+| `disabled`    | `disabled`    | Visually and functionally disabled input                                                     | `boolean`                                      | `false`               |
+| `hasError`    | `has-error`   | Use to display input and helper-text in error state                                          | `boolean`                                      | `false`               |
+| `helperText`  | `helper-text` | HelperText to be displayed. Can be used as hint or error text when combined with `has-error` | `string`                                       | `undefined`           |
+| `label`       | `label`       | Label to be displayed                                                                        | `string`                                       | `undefined`           |
+| `layout`      | `layout`      | Dictates layout direction of textfield and label                                             | `LayoutEnum.HORIZONTAL \| LayoutEnum.VERTICAL` | `LayoutEnum.VERTICAL` |
+| `name`        | `name`        | input field name                                                                             | `string`                                       | `undefined`           |
+| `placeholder` | `placeholder` | Placeholder to be displayed                                                                  | `string`                                       | `undefined`           |
+| `readOnly`    | `read-only`   | Whether user can't type in input field                                                       | `boolean`                                      | `false`               |
+| `required`    | `required`    | Mark input as required                                                                       | `boolean`                                      | `false`               |
+| `type`        | `type`        | HTML Input type                                                                              | `string`                                       | `"text"`              |
+| `value`       | `value`       | input field value                                                                            | `number \| string`                             | `undefined`           |
 
 ## Events
 
