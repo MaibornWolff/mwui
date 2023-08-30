@@ -10,7 +10,7 @@ export const MwAutocomplete = defineContainer("mw-autocomplete", undefined, [
     "helperText",
     "hasError",
     "noSuggestionsText",
-    "inline",
+    "layout",
     "required",
     "disabled",
     "readOnly",
@@ -42,7 +42,8 @@ export const MwCardFooter = defineContainer("mw-card-footer", undefined, [
 export const MwCardHeader = defineContainer("mw-card-header", undefined, ["header", "subheader"]);
 export const MwCardImage = defineContainer("mw-card-image", undefined, ["src", "alt", "height"]);
 export const MwCardTitle = defineContainer("mw-card-title", undefined, ["text", "subtitle", "metadata"]);
-export const MwCheckbox = defineContainer("mw-checkbox", undefined, ["testId", "value", "name", "checked", "disabled", "label", "emitter"]);
+export const MwCheckbox = defineContainer("mw-checkbox", undefined, ["testId", "value", "name", "checked", "indeterminate", "disabled", "label", "labelPosition", "emitter"]);
+export const MwCheckboxGroup = defineContainer("mw-checkbox-group", undefined, ["value", "parentLabel", "direction", "wrap", "checkboxChange"]);
 export const MwChip = defineContainer("mw-chip", undefined, ["testId", "icon", "disabled", "toggleable", "showClose", "value", "selected", "mwChipClick", "mwChipClose"]);
 export const MwChipInput = defineContainer("mw-chip-input", undefined, [
     "name",
@@ -53,7 +54,7 @@ export const MwChipInput = defineContainer("mw-chip-input", undefined, [
     "maximum",
     "helperText",
     "hasError",
-    "inline",
+    "layout",
     "required",
     "optionCounter",
     "selectedChips",
@@ -69,7 +70,7 @@ export const MwDropdown = defineContainer("mw-dropdown", undefined, [
     "placeholder",
     "helperText",
     "hasError",
-    "inline",
+    "layout",
     "required",
     "disabled",
     "valueChanged",
@@ -88,8 +89,8 @@ export const MwModal = defineContainer("mw-modal", undefined, ["backdropDismiss"
 export const MwModalFooter = defineContainer("mw-modal-footer", undefined);
 export const MwModalTitle = defineContainer("mw-modal-title", undefined, ["headline", "description"]);
 export const MwPopover = defineContainer("mw-popover", undefined, ["testId", "open", "disabled", "placement", "dismissable", "closeOnClick", "noPadding", "name", "mwPopoverOpen"]);
-export const MwRadio = defineContainer("mw-radio", undefined, ["disabled", "checked", "value", "name", "testId", "label"]);
-export const MwRadioGroup = defineContainer("mw-radio-group", undefined, ["value", "radioChange"]);
+export const MwRadio = defineContainer("mw-radio", undefined, ["disabled", "checked", "value", "name", "testId", "label", "labelPosition"]);
+export const MwRadioGroup = defineContainer("mw-radio-group", undefined, ["value", "direction", "wrap", "radioChange"]);
 export const MwSlider = defineContainer("mw-slider", undefined, [
     "testId",
     "name",
@@ -104,7 +105,7 @@ export const MwSlider = defineContainer("mw-slider", undefined, [
     "inline",
     "disabled",
 ]);
-export const MwSwitch = defineContainer("mw-switch", undefined, ["testId", "disabled", "label", "on", "off", "checked", "emitter"]);
+export const MwSwitch = defineContainer("mw-switch", undefined, ["testId", "disabled", "label", "labelPosition", "on", "off", "name", "checked", "emitter"]);
 export const MwTab = defineContainer("mw-tab", undefined, ["selected", "icon", "label", "disabled"]);
 export const MwTabs = defineContainer("mw-tabs", undefined, ["testId", "selected", "tabsClickEmitter"]);
 export const MwTextarea = defineContainer("mw-textarea", undefined, [
@@ -134,7 +135,7 @@ export const MwTextfield = defineContainer("mw-textfield", undefined, [
     "placeholder",
     "helperText",
     "hasError",
-    "inline",
+    "layout",
     "required",
     "disabled",
     "readOnly",
