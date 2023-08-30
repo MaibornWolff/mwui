@@ -14,9 +14,9 @@
 
 ## Events
 
-| Event             | Description                                | Type               |
-| ----------------- | ------------------------------------------ | ------------------ |
-| `mwMenuItemClick` | MwMenuItem emits an event when its clicked | `CustomEvent<any>` |
+| Event             | Description                                                                                                            | Type               |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| `mwMenuItemClick` | Event is emitted when click menu item. Used internally by other components. Attach listener to click event when using. | `CustomEvent<any>` |
 
 ---
 

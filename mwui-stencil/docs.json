@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-07-26T11:49:11",
+  "timestamp": "2023-08-30T11:56:59",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.3.1",
@@ -1293,7 +1293,7 @@
       "filePath": "./src/components/mw-checkbox/mw-checkbox.tsx",
       "encapsulation": "none",
       "tag": "mw-checkbox",
-      "readme": "# mw-checkbox\r\n\r",
+      "readme": "# mw-checkbox\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1462,36 +1462,32 @@
       "filePath": "./src/components/mw-checkbox-group/mw-checkbox-group.tsx",
       "encapsulation": "shadow",
       "tag": "mw-checkbox-group",
-      "readme": "# mw-checkbox-group\n\n\n",
+      "readme": "# mw-checkbox-group\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
       "props": [
         {
           "name": "direction",
-          "type": "\"column\" | \"column-reverse\" | \"row\" | \"row-reverse\"",
+          "type": "LayoutDirectionEnum.COLUMN | LayoutDirectionEnum.COLUMN_REVERSE | LayoutDirectionEnum.ROW | LayoutDirectionEnum.ROW_REVERSE",
           "mutable": false,
           "attr": "direction",
           "reflectToAttr": false,
           "docs": "Dictates the flex direction of the group",
           "docsTags": [],
-          "default": "\"column\"",
+          "default": "LayoutDirectionEnum.COLUMN",
           "values": [
             {
-              "value": "column",
-              "type": "string"
+              "type": "LayoutDirectionEnum.COLUMN"
             },
             {
-              "value": "column-reverse",
-              "type": "string"
+              "type": "LayoutDirectionEnum.COLUMN_REVERSE"
             },
             {
-              "value": "row",
-              "type": "string"
+              "type": "LayoutDirectionEnum.ROW"
             },
             {
-              "value": "row-reverse",
-              "type": "string"
+              "type": "LayoutDirectionEnum.ROW_REVERSE"
             }
           ],
           "optional": true,
@@ -1518,7 +1514,7 @@
           "type": "(string | number)[]",
           "mutable": true,
           "reflectToAttr": false,
-          "docs": "Current value of the checkbox-group",
+          "docs": "Current value of the checkbox-group; contains the values of all checked children",
           "docsTags": [],
           "default": "[]",
           "values": [
@@ -3135,7 +3131,7 @@
           "bubbles": true,
           "cancelable": false,
           "composed": false,
-          "docs": "MwMenuItem emits an event when its clicked",
+          "docs": "Event is emitted when click menu item. Used internally by other components. Attach listener to click event when using.",
           "docsTags": []
         }
       ],
@@ -3613,7 +3609,7 @@
       "filePath": "./src/components/mw-radio/mw-radio.tsx",
       "encapsulation": "none",
       "tag": "mw-radio",
-      "readme": "# mw-radio\r\n\r",
+      "readme": "# mw-radio\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3750,7 +3746,7 @@
       "filePath": "./src/components/mw-radio-group/mw-radio-group.tsx",
       "encapsulation": "none",
       "tag": "mw-radio-group",
-      "readme": "# mw-radio-group\r\n\r",
+      "readme": "# mw-radio-group\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -3825,7 +3821,7 @@
           "detail": "{ value?: string | number; }",
           "bubbles": true,
           "cancelable": false,
-          "composed": false,
+          "composed": true,
           "docs": "Event emitted when radioGroup value changes (after radio selection)",
           "docsTags": []
         }
@@ -4063,7 +4059,7 @@
       "filePath": "./src/components/mw-switch/mw-switch.tsx",
       "encapsulation": "none",
       "tag": "mw-switch",
-      "readme": "# mw-switch\r\n\r",
+      "readme": "# mw-switch\n",
       "docs": "",
       "docsTags": [],
       "usage": {},

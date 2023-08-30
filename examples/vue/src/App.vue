@@ -1,6 +1,22 @@
 <script>
-import { MwAutocomplete, MwTextarea, MwMenuItem, MwLogin, MwCard, MwButton, MwCardFooter, MwCardTitle, MwCardBody, MwIcon } from "@maibornwolff/mwui-vue";
+import {
+    MwAutocomplete,
+    MwTextfield,
+    MwRadio,
+    MwRadioGroup,
+    MwTextarea,
+    MwMenuItem,
+    MwLogin,
+    MwCard,
+    MwButton,
+    MwCardFooter,
+    MwCardTitle,
+    MwCardBody,
+    MwIcon,
+} from "@maibornwolff/mwui-vue";
 import bg from "../assets/background.jpg";
+import { ref } from "vue";
+
 export default {
     components: {
         MwAutocomplete,
@@ -13,23 +29,31 @@ export default {
         MwButton,
         MwLogin,
         MwTextarea,
+        MwRadioGroup,
+        MwRadio,
+        MwTextfield,
+    },
+    setup() {
+        const radioGroupRef = ref(null);
+        return { radioGroupRef };
     },
     data() {
         return {
             selected: ["Pineapple"],
             bg,
             showClose: true,
+            radioGroupSelection: "",
         };
     },
     methods: {
         onSend() {
-            console.log(this.selected);
+            console.log(this.selected, this.$refs.radioGroupRef.value);
         },
         onSubmit({ detail }) {
             alert(`${detail.email} ${detail.password}`);
         },
         onInput(e) {
-            console.log(e, "input..");
+            console.log(e.target.value, "input..");
         },
         onClickMenuItem(e) {
             console.log("menu item clicked", e.target.value);
@@ -68,15 +92,19 @@ export default {
                             <mw-menu-item text="Pear" />
                         </div>
                     </mw-autocomplete>
+
+                    <mw-radio-group ref="radioGroupRef">
+                        <mw-radio label="looking for help" name="idea" value="IDEA" />
+                        <mw-radio label="in progress" name="idea" value="ONGOING" />
+                        <mw-radio label="done / on hold" name="idea" value="DONE" />
+                    </mw-radio-group>
+                    <mw-textfield value="hello world" @input="onInput"></mw-textfield>
                     <mw-textarea id="textarea" placeholder="Comments..." resize="horizontal" />
                 </mw-card-body>
                 <mw-card-footer>
                     <mw-button variant="filled" label="Send" @click="onSend" />
                 </mw-card-footer>
             </mw-card>
-            <div>
-                <mw-menu-item text="Pineapple" @click="onClickMenuItem" />
-            </div>
         </div>
     </div>
 </template>

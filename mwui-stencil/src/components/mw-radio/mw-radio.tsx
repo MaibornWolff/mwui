@@ -80,7 +80,7 @@ export class MwRadio {
 
   private onClick(event: Event): void {
     event.preventDefault();
-    if (!this.disabled) {
+    if (!this.disabled && this.radioGroupValue !== this.value) {
       this.checked = !this.checked;
     }
   }

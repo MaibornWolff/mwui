@@ -14,7 +14,7 @@ export class MwRadioGroup {
   @Event({
     bubbles: true,
     cancelable: false,
-    composed: false,
+    composed: true,
   })
   radioChange: EventEmitter<{ value?: string | number }>;
   /**

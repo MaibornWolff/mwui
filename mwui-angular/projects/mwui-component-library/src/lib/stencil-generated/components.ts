@@ -683,7 +683,7 @@ export class MwMenuItem {
 
 export declare interface MwMenuItem extends Components.MwMenuItem {
     /**
-     * MwMenuItem emits an event when its clicked
+     * Event is emitted when click menu item. Used internally by other components. Attach listener to click event when using.
      */
     mwMenuItemClick: EventEmitter<CustomEvent<any>>;
 }

@@ -4,12 +4,12 @@
 
 ## Properties
 
-| Property      | Attribute      | Description                              | Type                                                     | Default     |
-| ------------- | -------------- | ---------------------------------------- | -------------------------------------------------------- | ----------- |
-| `direction`   | `direction`    | Dictates the flex direction of the group | `"column" \| "column-reverse" \| "row" \| "row-reverse"` | `"column"`  |
-| `parentLabel` | `parent-label` | Label of parent checkbox                 | `string`                                                 | `undefined` |
-| `value`       | --             | Current value of the checkbox-group      | `(string \| number)[]`                                   | `[]`        |
-| `wrap`        | `wrap`         | Dictates whether group should flex-wrap  | `boolean`                                                | `false`     |
+| Property      | Attribute      | Description                                                                      | Type                                                                                                                             | Default                      |
+| ------------- | -------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| `direction`   | `direction`    | Dictates the flex direction of the group                                         | `LayoutDirectionEnum.COLUMN \| LayoutDirectionEnum.COLUMN_REVERSE \| LayoutDirectionEnum.ROW \| LayoutDirectionEnum.ROW_REVERSE` | `LayoutDirectionEnum.COLUMN` |
+| `parentLabel` | `parent-label` | Label of parent checkbox                                                         | `string`                                                                                                                         | `undefined`                  |
+| `value`       | --             | Current value of the checkbox-group; contains the values of all checked children | `(string \| number)[]`                                                                                                           | `[]`                         |
+| `wrap`        | `wrap`         | Dictates whether group should flex-wrap                                          | `boolean`                                                                                                                        | `false`                      |
 
 ## Events
 
