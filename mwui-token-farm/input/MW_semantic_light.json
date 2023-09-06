@@ -553,6 +553,16 @@
                         "value": 480,
                         "type": "sizing"
                     }
+                },
+                "popover": {
+                    "defaultW": {
+                        "value": 256,
+                        "type": "sizing"
+                    },
+                    "defaultH": {
+                        "value": 96,
+                        "type": "sizing"
+                    }
                 }
             },
             "controls": {
@@ -2121,6 +2131,160 @@
                     "bg": {
                         "value": "#CFD6D8",
                         "type": "color"
+                    }
+                }
+            },
+            "popover": {
+                "title": {
+                    "fontFamily": {
+                        "value": "Poppins",
+                        "type": "fontFamilies"
+                    },
+                    "fontWeight": {
+                        "value": "SemiBold",
+                        "type": "fontWeights"
+                    },
+                    "fontSize": {
+                        "value": 14,
+                        "type": "fontSizes"
+                    },
+                    "lineHeight": {
+                        "value": 20,
+                        "type": "lineHeights"
+                    }
+                },
+                "description": {
+                    "fontFamily": {
+                        "value": "Poppins",
+                        "type": "fontFamilies"
+                    },
+                    "fontWeight": {
+                        "value": "Regular",
+                        "type": "fontWeights"
+                    },
+                    "fontSize": {
+                        "value": 14,
+                        "type": "fontSizes"
+                    },
+                    "lineHeight": {
+                        "value": 20,
+                        "type": "lineHeights"
+                    }
+                },
+                "shadow": {
+                    "default": {
+                        "0": {
+                            "x": {
+                                "value": 0,
+                                "type": "x"
+                            },
+                            "y": {
+                                "value": "3px",
+                                "type": "y"
+                            },
+                            "blur": {
+                                "value": "1px",
+                                "type": "blur"
+                            },
+                            "spread": {
+                                "value": "-2px",
+                                "type": "spread"
+                            },
+                            "color": {
+                                "value": "#00000033",
+                                "type": "color"
+                            },
+                            "type": {
+                                "value": "dropShadow",
+                                "type": "type"
+                            }
+                        },
+                        "1": {
+                            "x": {
+                                "value": 0,
+                                "type": "x"
+                            },
+                            "y": {
+                                "value": "2px",
+                                "type": "y"
+                            },
+                            "blur": {
+                                "value": "2px",
+                                "type": "blur"
+                            },
+                            "spread": {
+                                "value": 0,
+                                "type": "spread"
+                            },
+                            "color": {
+                                "value": "#00000024",
+                                "type": "color"
+                            },
+                            "type": {
+                                "value": "dropShadow",
+                                "type": "type"
+                            }
+                        },
+                        "2": {
+                            "x": {
+                                "value": 0,
+                                "type": "x"
+                            },
+                            "y": {
+                                "value": "1px",
+                                "type": "y"
+                            },
+                            "blur": {
+                                "value": "5px",
+                                "type": "blur"
+                            },
+                            "spread": {
+                                "value": 0,
+                                "type": "spread"
+                            },
+                            "color": {
+                                "value": "#0000001f",
+                                "type": "color"
+                            },
+                            "type": {
+                                "value": "dropShadow",
+                                "type": "type"
+                            }
+                        }
+                    }
+                },
+                "borderRadius": {
+                    "value": "4px",
+                    "type": "borderRadius"
+                },
+                "bg": {
+                    "default": {
+                        "value": "#FAFAFA",
+                        "type": "color"
+                    }
+                },
+                "fg-copy": {
+                    "default": {
+                        "value": "#001418",
+                        "type": "color"
+                    },
+                    "muted": {
+                        "value": "#44555b",
+                        "type": "color"
+                    }
+                },
+                "paddingX": {
+                    "value": 12,
+                    "type": "spacing"
+                },
+                "gapWithin": {
+                    "value": 8,
+                    "type": "spacing"
+                },
+                "arrow": {
+                    "padding": {
+                        "value": 16,
+                        "type": "spacing"
                     }
                 }
             }
