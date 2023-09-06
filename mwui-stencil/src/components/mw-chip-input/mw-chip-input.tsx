@@ -70,7 +70,8 @@ export class MwChipInput {
   /**
    * Currently selected Values
    */
-  @Prop({ reflect: true, mutable: false }) selectedChips: string[];
+  // eslint-disable-next-line @stencil-community/strict-mutable
+  @Prop({ reflect: true, mutable: true }) selectedChips: string[];
   @Watch("selectedChips")
   handleSelectionChange(selected: string[]): void {
     if (!this.canAddToValues() || !selected) {

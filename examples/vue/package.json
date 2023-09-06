@@ -10,8 +10,8 @@
         "type-check": "vue-tsc --noEmit"
     },
     "dependencies": {
-        "@maibornwolff/mwui-stencil": "^0.5.1",
-        "@maibornwolff/mwui-vue": "^0.6.1",
+        "@maibornwolff/mwui-stencil": "^0.5.4",
+        "@maibornwolff/mwui-vue": "^0.6.2",
         "vue": "^3.2.45"
     },
     "devDependencies": {
