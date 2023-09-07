@@ -600,7 +600,9 @@
     const tabs = document.getElementsByTagName("mw-tabs");
     const autocomplete = document.getElementsByTagName("mw-autocomplete")[0];
 
-    autocomplete.addEventListener("change", event => {
+    autocomplete.selection = ["BMW"];
+
+    autocomplete.addEventListener("selectionChanged", event => {
       console.log("autocomplete changed", event.target.selection);
     });
 

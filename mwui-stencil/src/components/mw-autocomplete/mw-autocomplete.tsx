@@ -13,7 +13,7 @@ export class MwAutocomplete {
   /**
    * Emits an event when its value changes
    */
-  @Event({ bubbles: true, composed: false, eventName: "selectionChanged" }) valueChanged: EventEmitter<string>;
+  @Event({ bubbles: true, composed: true, eventName: "selectionChanged" }) valueChanged: EventEmitter<string>;
   /**
    * HTML Input type
    */
@@ -115,6 +115,8 @@ export class MwAutocomplete {
   private hasIconStartSlot: boolean;
 
   componentWillLoad(): void {
+    this.selection = [...this.selection];
+    console.log(this.selection);
     this.hasIconStartSlot = !!this.hostElement.querySelector("[slot='icon-start']");
   }
 

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2023-09-06T13:58:01",
+  "timestamp": "2023-09-07T06:10:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "3.3.1",
@@ -400,7 +400,7 @@
           "detail": "string",
           "bubbles": true,
           "cancelable": true,
-          "composed": false,
+          "composed": true,
           "docs": "Emits an event when its value changes",
           "docsTags": []
         }
