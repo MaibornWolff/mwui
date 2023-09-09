@@ -87,52 +87,7 @@ npm i @maibornwolff/mwui-stencil`}
 
 ### Vue
 
-1. Install npm package
-
-<Source
-  dark
-  language="bash"
-  code={`npm i @maibornwolff/mwui-vue
-npm i @maibornwolff/mwui-stencil
-`}
-/>
-
-2. Import the library plugin and global styles in the `main.js` file:
-
-<Source
-  dark
-  language="tsx"
-  code={`import { MwuiComponents } from "@maibornwolff/mwui-vue";
-import "@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css";
-
-createApp(App).use(MwuiComponents).mount("#app");
-`}
-/>
-
-3. You can then use your components within vue:
-
-<Source
-  language="tsx"
-  dark
-  code={`<template>
-  <mw-button test-id="test-id" label="Press here" />
-</template>
-
-<script>
-import { MwButton } from '@maibornwolff/mwui-vue';
-
-export default {
-  name: 'HelloWorld',
-  components: {
-    MwButton
-  }
-}
-`}
-/>
-
-> **_IMPORTANT:_** If using `vue 3` and `vite`, [setup your vite.config accordingly](https://stenciljs.com/docs/vue#creating-a-consumer-vue-app).
-
-> **_NOTE:_** for known issues, see [MWUI Vue Integration](https://github.com/MaibornWolff/mwui/tree/main/mwui-vue#known-issues).
+See [Usage in Vue](?path=/docs/guides-usage-in-vue--docs) for the details.
 
 ### Angular
 
@@ -152,15 +107,3 @@ To enable support for web components in Angular, add the following to the `@NgMo
 - [Listening to events from a non-JSX element](https://stenciljs.com/docs/events#listening-to-events-from-a-non-jsx-element)
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,107 @@
+{/* icons.stories.mdx */}
+
+import { Meta, Title, Source } from "@storybook/addon-docs";
+
+<Meta title="Guides/Usage in Vue" />
+
+<Title>How to use the Vue Integration</Title>
+
+## Setup
+
+First, install the required dependencies:
+
+<Source
+  dark
+  language="bash"
+  code={`npm i @maibornwolff/mwui-vue
+npm i @maibornwolff/mwui-stencil
+`}
+/>
+
+Import the library plugin and global styles in the `main.js/ts` file:
+
+<Source
+  dark
+  language="tsx"
+  code={`import { MwuiComponents } from "@maibornwolff/mwui-vue";
+import "@maibornwolff/mwui-stencil/dist/mwui-stencil/mwui-stencil.css";
+
+createApp(App).use(MwuiComponents).mount("#app");
+`}
+/>
+
+> **_IMPORTANT:_** If using `vue 3` and `vite`, [setup your vite.config accordingly](https://stenciljs.com/docs/vue#creating-a-consumer-vue-app).
+
+## Usage
+
+You can then import and render the MWUI components like any other component.
+
+> See `props` and `events` below for some exceptions and troubleshooting.
+
+<Source
+  language="tsx"
+  dark
+  code={`<template>
+  <mw-button test-id="test-id" label="btn in vue" />
+</template>
+
+<script>
+import { MwButton } from '@maibornwolff/mwui-vue';
+
+export default {
+  name: 'HelloWorld',
+  components: {
+    MwButton
+  }
+}
+`}
+/>
+
+### Props
+
+Props can be passed to a MWUI component using the regular vue syntax (v-bind, or any shorthands).
+<Source
+  language="tsx"
+  dark
+  code={`<MWButton :label="label" />`}/>
+
+However, when passing objects or arrays as props that need to be rendered initially things [behave differently](https://gilfink.medium.com/using-complex-objects-arrays-as-props-in-stencil-components-f2d54b093e85) due to our custom components.
+For example when using the mw-autocomplete you might want to define pre-selected items as `selection` prop.
+To make this work, you have to assign the property using Javascript like:
+
+<Source
+  language="tsx"
+  dark
+  code={`mounted() {
+    this.$refs.autocompleteRef.$el.selection = this.selection;
+  }`}/>
+
+### Events
+
+Custom events emitted by a MWUI component can be listened to using Vue syntax.
+Due to some Vue internals, the Event Names are `lowercased`. Therefore an event `selectionChanged` will result in the following example usage:
+
+<Source
+  language="tsx"
+  dark
+  code={`<MWAutocomplete @selectionchanged="onSelectionChanged" ... />`}/>
+
+### Models
+
+When using v-model on one of the MWUI components, things might not yet work perfectly.
+In case you're facing problems, feel free to reach out.
+
+## Other
+
+Vue will throw a deprecation error if slots are used. This is due to eslint misidentifying the slots as outdated Vue 2 syntax.
+To disable the error, add the following under eslintConfig within the package.json:
+
+
+<Source
+  language="tsx"
+  dark
+  code={`"rules": {
+    "vue/no-deprecated-slot-attribute": "off"
+}`}/>
+
+
