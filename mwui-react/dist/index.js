@@ -1,6 +1,6 @@
 'use strict';
 
-var index = require('./index-39b5736f.js');
+var index = require('./index-f3b2ad8f.js');
 
 
 
@@ -17,6 +17,7 @@ exports.MwCardHeader = index.MwCardHeader;
 exports.MwCardImage = index.MwCardImage;
 exports.MwCardTitle = index.MwCardTitle;
 exports.MwCheckbox = index.MwCheckbox;
+exports.MwCheckboxGroup = index.MwCheckboxGroup;
 exports.MwChip = index.MwChip;
 exports.MwChipInput = index.MwChipInput;
 exports.MwDivider = index.MwDivider;

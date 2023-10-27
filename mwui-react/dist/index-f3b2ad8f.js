@@ -2803,9 +2803,9 @@ var React = /*@__PURE__*/getDefaultExportFromCjs(reactExports);
 
 const dashToPascalCase = (str) => str
     .toLowerCase()
-    .split("-")
-    .map(segment => segment.charAt(0).toUpperCase() + segment.slice(1))
-    .join("");
+    .split('-')
+    .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+    .join('');
 const camelToDashCase = (str) => str.replace(/([A-Z])/g, (m) => `-${m[0].toLowerCase()}`);
 
 const attachProps = (node, newProps, oldProps = {}) => {
@@ -2906,7 +2906,7 @@ const arrayToMap = (arr) => {
 };
 
 const setRef = (ref, value) => {
-    if (typeof ref === "function") {
+    if (typeof ref === 'function') {
         ref(value);
     }
     else if (ref != null) {
@@ -2916,7 +2916,7 @@ const setRef = (ref, value) => {
 };
 const mergeRefs = (...refs) => {
     return (value) => {
-        refs.forEach(ref => {
+        refs.forEach((ref) => {
             setRef(ref, value);
         });
     };
@@ -2952,9 +2952,9 @@ const createReactComponent = (tagName, ReactComponentContext, manipulatePropsFun
             const { children, forwardedRef, style, className, ref, ...cProps } = this.props;
             let propsToPass = Object.keys(cProps).reduce((acc, name) => {
                 const value = cProps[name];
-                if (name.indexOf("on") === 0 && name[2] === name[2].toUpperCase()) {
+                if (name.indexOf('on') === 0 && name[2] === name[2].toUpperCase()) {
                     const eventName = name.substring(2).toLowerCase();
-                    if (typeof document !== "undefined" && isCoveredByReact(eventName)) {
+                    if (typeof document !== 'undefined' && isCoveredByReact(eventName)) {
                         acc[name] = value;
                     }
                 }
@@ -2962,7 +2962,7 @@ const createReactComponent = (tagName, ReactComponentContext, manipulatePropsFun
                     // we should only render strings, booleans, and numbers as attrs in html.
                     // objects, functions, arrays etc get synced via properties on mount.
                     const type = typeof value;
-                    if (type === "string" || type === "boolean" || type === "number") {
+                    if (type === 'string' || type === 'boolean' || type === 'number') {
                         acc[camelToDashCase(name)] = value;
                     }
                 }
@@ -35862,34 +35862,30 @@ const loadModule = (cmpMeta, hostRef, hmrVersionId) => {
       };
       switch(bundleId) {
         
-        case 'mw-app-bar_33':
+        case 'mw-app-bar_35':
           return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-app-bar_33.entry-b983ca09.js'); }).then(processMod, consoleError);
+            './mw-app-bar_35.entry-c2a0d863.js'); }).then(processMod, consoleError);
         case 'mw-img':
           return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-img.entry-6517fdb1.js'); }).then(processMod, consoleError);
+            './mw-img.entry-70e2d046.js'); }).then(processMod, consoleError);
         case 'mw-modal':
           return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-modal.entry-85db31be.js'); }).then(processMod, consoleError);
+            './mw-modal.entry-f9cc7952.js'); }).then(processMod, consoleError);
         case 'mw-modal-footer':
           return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-modal-footer.entry-cb37ef6b.js'); }).then(processMod, consoleError);
+            './mw-modal-footer.entry-bebfce65.js'); }).then(processMod, consoleError);
         case 'mw-modal-title':
           return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-modal-title.entry-65461b15.js'); }).then(processMod, consoleError);
-        case 'mw-radio-group':
-          return Promise.resolve().then(function () { return require(
-            /* webpackMode: "lazy" */
-            './mw-radio-group.entry-ab7f2c80.js'); }).then(processMod, consoleError);
+            './mw-modal-title.entry-de9f231c.js'); }).then(processMod, consoleError);
         case 'mw-backdrop':
           return Promise.resolve().then(function () { return require(
             /* webpackMode: "lazy" */
-            './mw-backdrop.entry-2a6f7461.js'); }).then(processMod, consoleError);
+            './mw-backdrop.entry-e260d364.js'); }).then(processMod, consoleError);
       }
     }
     return import(
@@ -35966,7 +35962,7 @@ const flush = () => {
         }
     }
 };
-const nextTick =  (cb) => promiseResolve().then(cb);
+const nextTick = /*@__PURE__*/ (cb) => promiseResolve().then(cb);
 const writeTask = /*@__PURE__*/ queueTask(queueDomWrites, true);
 
 /*!
@@ -35984,7 +35980,7 @@ const patchEsm = () => {
 const defineCustomElements = (win, options) => {
   if (typeof window === 'undefined') return Promise.resolve();
   return patchEsm().then(() => {
-  return bootstrapLazy([["mw-modal",[[1,"mw-modal",{"backdropDismiss":[4,"backdrop-dismiss"],"size":[1],"trigger":[1],"dismissTrigger":[1,"dismiss-trigger"],"isOpen":[4,"is-open"],"dismissAnimationRunning":[32],"overlayHidden":[32],"modalIsOpen":[32],"present":[64],"dismiss":[64]}]]],["mw-img",[[1,"mw-img",{"preloadSrc":[1,"preload-src"],"src":[1],"alt":[1],"lazyLoad":[4,"lazy-load"],"fallback":[1],"srcset":[1],"isLoaded":[32],"srcSetState":[32]}]]],["mw-modal-footer",[[1,"mw-modal-footer"]]],["mw-modal-title",[[1,"mw-modal-title",{"headline":[1],"description":[1]}]]],["mw-radio-group",[[0,"mw-radio-group",{"value":[1032]}]]],["mw-backdrop",[[1,"mw-backdrop",{"backdropDismiss":[4,"backdrop-dismiss"]},[[2,"click","onMouseDown"]]]]],["mw-app-bar_33",[[1,"mw-autocomplete",{"type":[1],"value":[1544],"name":[1],"label":[513],"placeholder":[513],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"noSuggestionsText":[1,"no-suggestions-text"],"inline":[4],"required":[4],"disabled":[4],"readOnly":[4,"read-only"],"multiple":[4],"maximum":[2],"maximumText":[1,"maximum-text"],"optionCounter":[4,"option-counter"],"selection":[1040],"focused":[32],"isDropdownOpen":[32]},[[0,"mwMenuItemClick","clickEmitterHandler"],[0,"mwPopoverOpen","stateEmitterHandler"]]],[1,"mw-login",{"headline":[1],"layout":[1],"backgroundImage":[1,"background-image"],"logo":[1],"signUpHref":[1,"sign-up-href"],"forgotPasswordHref":[1,"forgot-password-href"],"passwordType":[32]}],[1,"mw-icon-gallery",{"icons":[16],"filteredIcons":[32],"fill":[32],"weight":[32]}],[1,"mw-dropdown",{"value":[1544],"valueLabel":[1544,"value-label"],"name":[1],"label":[513],"placeholder":[1],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"inline":[4],"required":[4],"disabled":[4],"focused":[32],"isDropdownOpen":[32]},[[0,"mwMenuItemClick","clickEmitterHandler"],[0,"mwPopoverOpen","stateEmitterHandler"]]],[1,"mw-tabs",{"testId":[1,"test-id"],"selected":[1538],"tabs":[32]}],[1,"mw-textarea",{"value":[1537],"name":[1],"label":[513],"placeholder":[1],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"required":[4],"disabled":[4],"readonly":[4],"maxlength":[2],"rows":[2],"cols":[2],"form":[1],"resize":[1]}],[1,"mw-avatar",{"testId":[1,"test-id"],"src":[1],"icon":[1],"alt":[1],"size":[1]}],[1,"mw-menu",{"testId":[1,"test-id"],"placement":[1],"open":[516]}],[1,"mw-app-bar",{"ariaRole":[1,"aria-role"],"position":[1]}],[1,"mw-app-bar-title"],[1,"mw-card",{"testId":[1,"test-id"],"outlined":[4],"elevated":[4]}],[1,"mw-card-body"],[1,"mw-card-footer",{"justifyCenter":[4,"justify-center"],"justifyStart":[4,"justify-start"],"justifyEnd":[4,"justify-end"],"justifyNormal":[4,"justify-normal"],"justifyLeft":[4,"justify-left"],"justifyRight":[4,"justify-right"],"justifyFlexStart":[4,"justify-flex-start"],"justifyFlexEnd":[4,"justify-flex-end"],"justifySpaceAround":[4,"justify-space-around"],"justifySpaceBetween":[4,"justify-space-between"],"justifySpaceEvenly":[4,"justify-space-evenly"]}],[1,"mw-card-header",{"header":[1],"subheader":[1]}],[1,"mw-card-image",{"src":[1],"alt":[1],"height":[1]}],[1,"mw-card-title",{"text":[1],"subtitle":[1],"metadata":[1]}],[1,"mw-divider",{"inset":[4]}],[1,"mw-menu-item",{"text":[1],"subtitle":[1],"disabled":[4],"selected":[516],"value":[1537]}],[1,"mw-menu-list",{"testId":[1,"test-id"]}],[0,"mw-radio",{"disabled":[4],"checked":[1540],"value":[1],"name":[1],"testId":[1,"test-id"],"label":[1]}],[4,"mw-chip-input",{"name":[1],"label":[513],"value":[520],"placeholder":[513],"disabled":[4],"maximum":[2],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"inline":[4],"required":[4],"optionCounter":[4,"option-counter"],"selectedChips":[16],"selected":[32],"focused":[32],"initialPlaceholder":[32]},[[0,"mwChipClose","closeEmitterHandler"],[1,"keydown","handleEnterPress"]]],[1,"mw-checkbox",{"testId":[1,"test-id"],"value":[513],"name":[1],"checked":[1540],"disabled":[4],"label":[1]}],[1,"mw-slider",{"testId":[1,"test-id"],"name":[1],"label":[1],"helperText":[1,"helper-text"],"startIcon":[1,"start-icon"],"endIcon":[1,"end-icon"],"min":[2],"max":[2],"step":[2],"value":[1538],"inline":[4],"disabled":[4]}],[1,"mw-tab",{"selected":[4],"icon":[1],"label":[1],"disabled":[4]}],[1,"mw-button",{"testId":[1,"test-id"],"disabled":[4],"label":[1],"variant":[1],"size":[1],"href":[1],"target":[1]}],[1,"mw-link",{"href":[1],"target":[1],"underline":[4]}],[1,"mw-switch",{"testId":[1,"test-id"],"disabled":[4],"label":[1],"on":[1],"off":[1],"checked":[1028]}],[1,"mw-chip",{"testId":[1,"test-id"],"icon":[1],"disabled":[516],"toggleable":[4],"showClose":[4,"show-close"],"value":[8],"selected":[1540]}],[1,"mw-textfield",{"type":[1],"value":[1544],"name":[1],"label":[513],"placeholder":[1],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"inline":[4],"required":[4],"disabled":[4],"readOnly":[4,"read-only"],"focused":[32]}],[1,"mw-popover",{"testId":[1,"test-id"],"open":[1028],"disabled":[4],"placement":[1],"dismissable":[4],"closeOnClick":[4,"close-on-click"],"noPadding":[4,"no-padding"],"name":[1]}],[1,"mw-helper-text",{"helperText":[1,"helper-text"],"hasError":[4,"has-error"]}],[0,"mw-label",{"name":[1],"label":[1],"required":[4]}],[1,"mw-icon",{"icon":[1],"size":[1],"fill":[4],"color":[1],"weight":[2]}]]]], options);
+  return bootstrapLazy([["mw-modal",[[1,"mw-modal",{"backdropDismiss":[4,"backdrop-dismiss"],"size":[1],"trigger":[1],"dismissTrigger":[1,"dismiss-trigger"],"isOpen":[4,"is-open"],"dismissAnimationRunning":[32],"overlayHidden":[32],"modalIsOpen":[32],"present":[64],"dismiss":[64]}]]],["mw-img",[[1,"mw-img",{"preloadSrc":[1,"preload-src"],"src":[1],"alt":[1],"lazyLoad":[4,"lazy-load"],"fallback":[1],"srcset":[1],"isLoaded":[32],"srcSetState":[32]}]]],["mw-modal-footer",[[1,"mw-modal-footer"]]],["mw-modal-title",[[1,"mw-modal-title",{"headline":[1],"description":[1]}]]],["mw-backdrop",[[1,"mw-backdrop",{"backdropDismiss":[4,"backdrop-dismiss"]},[[2,"click","onMouseDown"]]]]],["mw-app-bar_35",[[1,"mw-autocomplete",{"type":[1],"value":[1544],"name":[1],"label":[513],"placeholder":[513],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"noSuggestionsText":[1,"no-suggestions-text"],"layout":[1],"required":[4],"disabled":[4],"readOnly":[4,"read-only"],"multiple":[4],"maximum":[2],"maximumText":[1,"maximum-text"],"optionCounter":[4,"option-counter"],"selection":[1040],"focused":[32],"isDropdownOpen":[32]},[[0,"mwMenuItemClick","clickEmitterHandler"],[0,"mwPopoverOpen","stateEmitterHandler"]]],[1,"mw-login",{"headline":[1],"layout":[1],"backgroundImage":[1,"background-image"],"logo":[1],"signUpHref":[1,"sign-up-href"],"forgotPasswordHref":[1,"forgot-password-href"],"passwordType":[32]}],[1,"mw-icon-gallery",{"icons":[16],"filteredIcons":[32],"fill":[32],"weight":[32]}],[1,"mw-dropdown",{"value":[1544],"valueLabel":[1544,"value-label"],"name":[1],"label":[513],"placeholder":[1],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"layout":[1],"required":[4],"disabled":[4],"focused":[32],"isDropdownOpen":[32]},[[0,"mwMenuItemClick","clickEmitterHandler"],[0,"mwPopoverOpen","stateEmitterHandler"]]],[1,"mw-checkbox-group",{"value":[1040],"parentLabel":[1,"parent-label"],"direction":[1],"wrap":[4],"checkboxes":[32],"indeterminate":[32],"checked":[32]}],[1,"mw-tabs",{"testId":[1,"test-id"],"selected":[1538],"tabs":[32]}],[1,"mw-textarea",{"value":[1537],"name":[1],"label":[513],"placeholder":[1],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"required":[4],"disabled":[4],"readonly":[4],"maxlength":[2],"rows":[2],"cols":[2],"form":[1],"resize":[1]}],[1,"mw-avatar",{"testId":[1,"test-id"],"src":[1],"icon":[1],"alt":[1],"size":[1]}],[1,"mw-menu",{"testId":[1,"test-id"],"placement":[1],"open":[516]}],[1,"mw-app-bar",{"ariaRole":[1,"aria-role"],"position":[1]}],[1,"mw-app-bar-title"],[1,"mw-card",{"testId":[1,"test-id"],"outlined":[4],"elevated":[4]}],[1,"mw-card-body"],[1,"mw-card-footer",{"justifyCenter":[4,"justify-center"],"justifyStart":[4,"justify-start"],"justifyEnd":[4,"justify-end"],"justifyNormal":[4,"justify-normal"],"justifyLeft":[4,"justify-left"],"justifyRight":[4,"justify-right"],"justifyFlexStart":[4,"justify-flex-start"],"justifyFlexEnd":[4,"justify-flex-end"],"justifySpaceAround":[4,"justify-space-around"],"justifySpaceBetween":[4,"justify-space-between"],"justifySpaceEvenly":[4,"justify-space-evenly"]}],[1,"mw-card-header",{"header":[1],"subheader":[1]}],[1,"mw-card-image",{"src":[1],"alt":[1],"height":[1]}],[1,"mw-card-title",{"text":[1],"subtitle":[1],"metadata":[1]}],[1,"mw-divider",{"inset":[4]}],[1,"mw-menu-item",{"text":[1],"subtitle":[1],"disabled":[4],"selected":[516],"value":[1537]}],[1,"mw-menu-list",{"testId":[1,"test-id"]}],[0,"mw-radio",{"disabled":[4],"checked":[1540],"value":[1],"name":[1],"testId":[1,"test-id"],"label":[1],"labelPosition":[1,"label-position"]}],[0,"mw-radio-group",{"value":[1032],"direction":[1],"wrap":[4]}],[4,"mw-chip-input",{"name":[1],"label":[513],"value":[520],"placeholder":[513],"disabled":[4],"maximum":[2],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"layout":[1],"required":[4],"optionCounter":[4,"option-counter"],"selectedChips":[1040],"selected":[32],"focused":[32],"initialPlaceholder":[32]},[[0,"mwChipClose","closeEmitterHandler"],[1,"keydown","handleEnterPress"]]],[1,"mw-slider",{"testId":[1,"test-id"],"name":[1],"label":[1],"helperText":[1,"helper-text"],"startIcon":[1,"start-icon"],"endIcon":[1,"end-icon"],"min":[2],"max":[2],"step":[2],"value":[1538],"inline":[4],"disabled":[4]}],[1,"mw-tab",{"selected":[4],"icon":[1],"label":[1],"disabled":[4]}],[1,"mw-button",{"testId":[1,"test-id"],"disabled":[4],"label":[1],"variant":[1],"size":[1],"href":[1],"target":[1]}],[1,"mw-link",{"href":[1],"target":[1],"underline":[4]}],[0,"mw-switch",{"testId":[1,"test-id"],"disabled":[4],"label":[1],"labelPosition":[1,"label-position"],"on":[1],"off":[1],"name":[1],"checked":[1028]}],[0,"mw-checkbox",{"testId":[1,"test-id"],"value":[513],"name":[1],"checked":[1540],"indeterminate":[1540],"disabled":[4],"label":[1],"labelPosition":[1,"label-position"]}],[1,"mw-chip",{"testId":[1,"test-id"],"icon":[1],"disabled":[516],"toggleable":[4],"showClose":[4,"show-close"],"value":[8],"selected":[1540]}],[1,"mw-textfield",{"type":[1],"value":[1544],"name":[1],"label":[513],"placeholder":[1],"helperText":[513,"helper-text"],"hasError":[4,"has-error"],"layout":[1],"required":[4],"disabled":[4],"readOnly":[4,"read-only"],"focused":[32]}],[1,"mw-popover",{"testId":[1,"test-id"],"open":[1028],"disabled":[4],"placement":[1],"dismissable":[4],"closeOnClick":[4,"close-on-click"],"noPadding":[4,"no-padding"],"name":[1]}],[1,"mw-helper-text",{"helperText":[1,"helper-text"],"hasError":[4,"has-error"]}],[0,"mw-label",{"name":[1],"label":[1],"required":[4]}],[1,"mw-icon",{"icon":[1],"size":[1],"fill":[4],"color":[1],"weight":[2]}]]]], options);
   });
 };
 
@@ -35998,45 +35994,46 @@ const defineCustomElements = (win, options) => {
 /* tslint:disable */
 /* auto-generated react proxies */
 defineCustomElements();
-const MwAppBar = /*@__PURE__*/ createReactComponent("mw-app-bar");
-const MwAppBarTitle = /*@__PURE__*/ createReactComponent("mw-app-bar-title");
-const MwAutocomplete = /*@__PURE__*/ createReactComponent("mw-autocomplete");
-const MwAvatar = /*@__PURE__*/ createReactComponent("mw-avatar");
-const MwBackdrop = /*@__PURE__*/ createReactComponent("mw-backdrop");
-const MwButton = /*@__PURE__*/ createReactComponent("mw-button");
-const MwCard = /*@__PURE__*/ createReactComponent("mw-card");
-const MwCardBody = /*@__PURE__*/ createReactComponent("mw-card-body");
-const MwCardFooter = /*@__PURE__*/ createReactComponent("mw-card-footer");
-const MwCardHeader = /*@__PURE__*/ createReactComponent("mw-card-header");
-const MwCardImage = /*@__PURE__*/ createReactComponent("mw-card-image");
-const MwCardTitle = /*@__PURE__*/ createReactComponent("mw-card-title");
-const MwCheckbox = /*@__PURE__*/ createReactComponent("mw-checkbox");
-const MwChip = /*@__PURE__*/ createReactComponent("mw-chip");
-const MwChipInput = /*@__PURE__*/ createReactComponent("mw-chip-input");
-const MwDivider = /*@__PURE__*/ createReactComponent("mw-divider");
-const MwDropdown = /*@__PURE__*/ createReactComponent("mw-dropdown");
-const MwHelperText = /*@__PURE__*/ createReactComponent("mw-helper-text");
-const MwIcon = /*@__PURE__*/ createReactComponent("mw-icon");
-const MwIconGallery = /*@__PURE__*/ createReactComponent("mw-icon-gallery");
-const MwImg = /*@__PURE__*/ createReactComponent("mw-img");
-const MwLabel = /*@__PURE__*/ createReactComponent("mw-label");
-const MwLink = /*@__PURE__*/ createReactComponent("mw-link");
-const MwLogin = /*@__PURE__*/ createReactComponent("mw-login");
-const MwMenu = /*@__PURE__*/ createReactComponent("mw-menu");
-const MwMenuItem = /*@__PURE__*/ createReactComponent("mw-menu-item");
-const MwMenuList = /*@__PURE__*/ createReactComponent("mw-menu-list");
-const MwModal = /*@__PURE__*/ createReactComponent("mw-modal");
-const MwModalFooter = /*@__PURE__*/ createReactComponent("mw-modal-footer");
-const MwModalTitle = /*@__PURE__*/ createReactComponent("mw-modal-title");
-const MwPopover = /*@__PURE__*/ createReactComponent("mw-popover");
-const MwRadio = /*@__PURE__*/ createReactComponent("mw-radio");
-const MwRadioGroup = /*@__PURE__*/ createReactComponent("mw-radio-group");
-const MwSlider = /*@__PURE__*/ createReactComponent("mw-slider");
-const MwSwitch = /*@__PURE__*/ createReactComponent("mw-switch");
-const MwTab = /*@__PURE__*/ createReactComponent("mw-tab");
-const MwTabs = /*@__PURE__*/ createReactComponent("mw-tabs");
-const MwTextarea = /*@__PURE__*/ createReactComponent("mw-textarea");
-const MwTextfield = /*@__PURE__*/ createReactComponent("mw-textfield");
+const MwAppBar = /*@__PURE__*/ createReactComponent('mw-app-bar');
+const MwAppBarTitle = /*@__PURE__*/ createReactComponent('mw-app-bar-title');
+const MwAutocomplete = /*@__PURE__*/ createReactComponent('mw-autocomplete');
+const MwAvatar = /*@__PURE__*/ createReactComponent('mw-avatar');
+const MwBackdrop = /*@__PURE__*/ createReactComponent('mw-backdrop');
+const MwButton = /*@__PURE__*/ createReactComponent('mw-button');
+const MwCard = /*@__PURE__*/ createReactComponent('mw-card');
+const MwCardBody = /*@__PURE__*/ createReactComponent('mw-card-body');
+const MwCardFooter = /*@__PURE__*/ createReactComponent('mw-card-footer');
+const MwCardHeader = /*@__PURE__*/ createReactComponent('mw-card-header');
+const MwCardImage = /*@__PURE__*/ createReactComponent('mw-card-image');
+const MwCardTitle = /*@__PURE__*/ createReactComponent('mw-card-title');
+const MwCheckbox = /*@__PURE__*/ createReactComponent('mw-checkbox');
+const MwCheckboxGroup = /*@__PURE__*/ createReactComponent('mw-checkbox-group');
+const MwChip = /*@__PURE__*/ createReactComponent('mw-chip');
+const MwChipInput = /*@__PURE__*/ createReactComponent('mw-chip-input');
+const MwDivider = /*@__PURE__*/ createReactComponent('mw-divider');
+const MwDropdown = /*@__PURE__*/ createReactComponent('mw-dropdown');
+const MwHelperText = /*@__PURE__*/ createReactComponent('mw-helper-text');
+const MwIcon = /*@__PURE__*/ createReactComponent('mw-icon');
+const MwIconGallery = /*@__PURE__*/ createReactComponent('mw-icon-gallery');
+const MwImg = /*@__PURE__*/ createReactComponent('mw-img');
+const MwLabel = /*@__PURE__*/ createReactComponent('mw-label');
+const MwLink = /*@__PURE__*/ createReactComponent('mw-link');
+const MwLogin = /*@__PURE__*/ createReactComponent('mw-login');
+const MwMenu = /*@__PURE__*/ createReactComponent('mw-menu');
+const MwMenuItem = /*@__PURE__*/ createReactComponent('mw-menu-item');
+const MwMenuList = /*@__PURE__*/ createReactComponent('mw-menu-list');
+const MwModal = /*@__PURE__*/ createReactComponent('mw-modal');
+const MwModalFooter = /*@__PURE__*/ createReactComponent('mw-modal-footer');
+const MwModalTitle = /*@__PURE__*/ createReactComponent('mw-modal-title');
+const MwPopover = /*@__PURE__*/ createReactComponent('mw-popover');
+const MwRadio = /*@__PURE__*/ createReactComponent('mw-radio');
+const MwRadioGroup = /*@__PURE__*/ createReactComponent('mw-radio-group');
+const MwSlider = /*@__PURE__*/ createReactComponent('mw-slider');
+const MwSwitch = /*@__PURE__*/ createReactComponent('mw-switch');
+const MwTab = /*@__PURE__*/ createReactComponent('mw-tab');
+const MwTabs = /*@__PURE__*/ createReactComponent('mw-tabs');
+const MwTextarea = /*@__PURE__*/ createReactComponent('mw-textarea');
+const MwTextfield = /*@__PURE__*/ createReactComponent('mw-textfield');
 
 exports.Host = Host;
 exports.MwAppBar = MwAppBar;
@@ -36052,6 +36049,7 @@ exports.MwCardHeader = MwCardHeader;
 exports.MwCardImage = MwCardImage;
 exports.MwCardTitle = MwCardTitle;
 exports.MwCheckbox = MwCheckbox;
+exports.MwCheckboxGroup = MwCheckboxGroup;
 exports.MwChip = MwChip;
 exports.MwChipInput = MwChipInput;
 exports.MwDivider = MwDivider;

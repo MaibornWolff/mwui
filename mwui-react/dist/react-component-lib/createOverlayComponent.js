@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { attachProps, dashToPascalCase, defineCustomElement, setRef } from "./utils";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { attachProps, dashToPascalCase, defineCustomElement, setRef } from './utils';
 export const createOverlayComponent = (tagName, controller, customElement) => {
     defineCustomElement(tagName, customElement);
     const displayName = dashToPascalCase(tagName);
@@ -14,8 +14,8 @@ export const createOverlayComponent = (tagName, controller, customElement) => {
         el;
         constructor(props) {
             super(props);
-            if (typeof document !== "undefined") {
-                this.el = document.createElement("div");
+            if (typeof document !== 'undefined') {
+                this.el = document.createElement('div');
             }
             this.handleDismiss = this.handleDismiss.bind(this);
         }

@@ -1,5 +1,5 @@
-import React, { createElement } from "react";
-import { attachProps, camelToDashCase, createForwardRef, dashToPascalCase, isCoveredByReact, mergeRefs } from "./utils";
+import React, { createElement } from 'react';
+import { attachProps, camelToDashCase, createForwardRef, dashToPascalCase, isCoveredByReact, mergeRefs } from './utils';
 export const createReactComponent = (tagName, ReactComponentContext, manipulatePropsFunction, defineCustomElement) => {
     if (defineCustomElement !== undefined) {
         defineCustomElement();
@@ -23,9 +23,9 @@ export const createReactComponent = (tagName, ReactComponentContext, manipulateP
             const { children, forwardedRef, style, className, ref, ...cProps } = this.props;
             let propsToPass = Object.keys(cProps).reduce((acc, name) => {
                 const value = cProps[name];
-                if (name.indexOf("on") === 0 && name[2] === name[2].toUpperCase()) {
+                if (name.indexOf('on') === 0 && name[2] === name[2].toUpperCase()) {
                     const eventName = name.substring(2).toLowerCase();
-                    if (typeof document !== "undefined" && isCoveredByReact(eventName)) {
+                    if (typeof document !== 'undefined' && isCoveredByReact(eventName)) {
                         acc[name] = value;
                     }
                 }
@@ -33,7 +33,7 @@ export const createReactComponent = (tagName, ReactComponentContext, manipulateP
                     // we should only render strings, booleans, and numbers as attrs in html.
                     // objects, functions, arrays etc get synced via properties on mount.
                     const type = typeof value;
-                    if (type === "string" || type === "boolean" || type === "number") {
+                    if (type === 'string' || type === 'boolean' || type === 'number') {
                         acc[camelToDashCase(name)] = value;
                     }
                 }

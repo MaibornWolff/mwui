@@ -1,6 +1,4 @@
-'use strict';
-
-var index = require('./index-39b5736f.js');
+import { r as registerInstance, h, H as Host, g as getElement } from './index-78bd0f61.js';
 
 /*!
  * Built with Stencil
@@ -62,7 +60,7 @@ const mwModalCss = ":host{display:block}:host(.overlay-hidden){display:none}.mw-
 
 const MwModal = class {
   constructor(hostRef) {
-    index.registerInstance(this, hostRef);
+    registerInstance(this, hostRef);
     this.delegate = CoreDelegate();
     this.animationDuration = 300;
     this.configureTriggerInteraction = () => {
@@ -189,14 +187,14 @@ const MwModal = class {
     this.modalIsOpen = false;
   }
   render() {
-    return (index.h(index.Host, { class: {
+    return (h(Host, { class: {
         "overlay-hidden": this.overlayHidden,
-      }, onBackdropClick: this.handleDismiss, onIconClick: this.handleDismiss }, index.h("div", { class: {
+      }, onBackdropClick: this.handleDismiss, onIconClick: this.handleDismiss }, h("div", { class: {
         "mw-modal": true,
         "dismiss-animation": this.dismissAnimationRunning,
-      } }, index.h("mw-backdrop", { class: "mw-modal__backdrop", part: "backdrop", backdropDismiss: this.backdropDismiss }), index.h("div", { class: `mw-modal__wrapper mw-modal__wrapper--${this.size}`, part: "content" }, index.h("slot", null)))));
+      } }, h("mw-backdrop", { class: "mw-modal__backdrop", part: "backdrop", backdropDismiss: this.backdropDismiss }), h("div", { class: `mw-modal__wrapper mw-modal__wrapper--${this.size}`, part: "content" }, h("slot", null)))));
   }
-  get el() { return index.getElement(this); }
+  get el() { return getElement(this); }
   static get watchers() { return {
     "trigger": ["onTriggerChange", "onDismissTriggerChange"],
     "isOpen": ["onIsOpenChange"]
@@ -204,4 +202,4 @@ const MwModal = class {
 };
 MwModal.style = mwModalCss;
 
-exports.mw_modal = MwModal;
+export { MwModal as mw_modal };
