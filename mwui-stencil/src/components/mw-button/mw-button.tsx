@@ -111,6 +111,16 @@ export class MwButton {
       </button>
     );
 
-    return <Host>{this.href ? <a href={this.href}>{button}</a> : button}</Host>;
+    return (
+      <Host>
+        {this.href ? (
+          <a target={this.target} href={this.href}>
+            {button}
+          </a>
+        ) : (
+          button
+        )}
+      </Host>
+    );
   }
 }
