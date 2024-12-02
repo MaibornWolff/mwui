@@ -35,7 +35,7 @@
     "release": "release-it"
   },
   "dependencies": {
-    "@emotion/css": "^11.10.0",
+    "@emotion/css": "^11.11.2",
     "@emotion/styled": "^11.10.4",
     "@maibornwolff/mwui-stencil": "^0.1.12",
     "@stencil/angular-output-target": "^0.5.0",
